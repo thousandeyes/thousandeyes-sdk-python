@@ -1,0 +1,8 @@
+# flake8: noqa
+
+# import apis into api package
+from tests_api.api.dynamic_tests_agent_to_server_api import DynamicTestsAgentToServerApi
+from tests_api.api.list_endpoint_scheduled_tests_api import ListEndpointScheduledTestsApi
+from tests_api.api.scheduled_tests_agent_to_server_api import ScheduledTestsAgentToServerApi
+from tests_api.api.scheduled_tests_http_server_api import ScheduledTestsHTTPServerApi
+
