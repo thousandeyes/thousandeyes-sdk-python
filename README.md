@@ -1,6 +1,4 @@
-# thousandeyes-python-sdk
-
-## Owners: api-team-current
+# thousandeyes-sdk-python
 
 ## Description
 
