@@ -1,6 +1,4 @@
-# thousandeyes-python-sdk
-
-## Owners: api-team-admin
+# thousandeyes-sdk-python
 
 ## Description
 

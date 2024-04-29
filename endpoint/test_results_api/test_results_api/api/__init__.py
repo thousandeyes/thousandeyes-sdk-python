@@ -1,9 +1,0 @@
-# flake8: noqa
-
-# import apis into api package
-from test_results_api.api.local_network_tests_results_api import LocalNetworkTestsResultsApi
-from test_results_api.api.network_dynamic_tests_results_api import NetworkDynamicTestsResultsApi
-from test_results_api.api.network_scheduled_tests_results_api import NetworkScheduledTestsResultsApi
-from test_results_api.api.real_user_tests_results_api import RealUserTestsResultsApi
-from test_results_api.api.web_http_server_scheduled_test_results_api import WebHTTPServerScheduledTestResultsApi
-
