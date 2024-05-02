@@ -35,7 +35,7 @@ Name | Type | Description | Notes
 **throughput_duration** | **int** | The throughput duration. | [optional] [default to 10000]
 **throughput_rate** | **int** | The throughput rate, only applicable for UDP protocol. | [optional] 
 **fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
-**agents** | [**List[TestRequestAllOfAgents]**](TestRequestAllOfAgents.md) | Contains list of object with required &#x60;agentId&#x60; and optional &#x60;sourceIpAddress&#x60; | [optional] 
+**agents** | [**List[AgentRequest]**](AgentRequest.md) |  | [optional] 
 **bgp_measurements** | **bool** | Set to &#x60;true&#x60; to enable bgp measurements. | [optional] [default to True]
 **use_public_bgp** | **bool** | Indicate if all available public BGP monitors should be used, when ommited defaults to &#x60;bgpMeasurements&#x60; value. | [optional] [default to True]
 **monitors** | **List[str]** | Contains list of BGP monitor IDs (get &#x60;monitorId&#x60; from &#x60;/monitors&#x60; endpoint) | [optional] 

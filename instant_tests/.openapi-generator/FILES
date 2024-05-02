@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 docs/Agent.md
 docs/AgentBase.md
@@ -48,6 +47,7 @@ docs/PageLoadProperties.md
 docs/RunApi.md
 docs/SIPServerApi.md
 docs/ServerInstantTestRequest.md
+docs/SharedWithAccount.md
 docs/SimpleAgent.md
 docs/SipServerInstantTest.md
 docs/SipServerInstantTestRequest.md
@@ -62,12 +62,11 @@ docs/TestDnsServer.md
 docs/TestDnsTransportProtocol.md
 docs/TestDscpId.md
 docs/TestIpv6Policy.md
-docs/TestLabelsInner.md
+docs/TestLabel.md
 docs/TestPageLoadingStrategy.md
 docs/TestPathTraceMode.md
 docs/TestProbeMode.md
 docs/TestProtocol.md
-docs/TestSharedAccountsInner.md
 docs/TestSipCredentials.md
 docs/TestSslVersionId.md
 docs/TestType.md
@@ -141,6 +140,7 @@ instant_tests/models/page_load_instant_test.py
 instant_tests/models/page_load_instant_test_request.py
 instant_tests/models/page_load_properties.py
 instant_tests/models/server_instant_test_request.py
+instant_tests/models/shared_with_account.py
 instant_tests/models/simple_agent.py
 instant_tests/models/sip_server_instant_test.py
 instant_tests/models/sip_server_instant_test_request.py
@@ -155,12 +155,11 @@ instant_tests/models/test_dns_server.py
 instant_tests/models/test_dns_transport_protocol.py
 instant_tests/models/test_dscp_id.py
 instant_tests/models/test_ipv6_policy.py
-instant_tests/models/test_labels_inner.py
+instant_tests/models/test_label.py
 instant_tests/models/test_page_loading_strategy.py
 instant_tests/models/test_path_trace_mode.py
 instant_tests/models/test_probe_mode.py
 instant_tests/models/test_protocol.py
-instant_tests/models/test_shared_accounts_inner.py
 instant_tests/models/test_sip_credentials.py
 instant_tests/models/test_ssl_version_id.py
 instant_tests/models/test_type.py
@@ -221,6 +220,7 @@ test/test_page_load_instant_test.py
 test/test_page_load_instant_test_request.py
 test/test_page_load_properties.py
 test/test_server_instant_test_request.py
+test/test_shared_with_account.py
 test/test_simple_agent.py
 test/test_sip_server_instant_test.py
 test/test_sip_server_instant_test_request.py
@@ -235,12 +235,11 @@ test/test_test_dns_server.py
 test/test_test_dns_transport_protocol.py
 test/test_test_dscp_id.py
 test/test_test_ipv6_policy.py
-test/test_test_labels_inner.py
+test/test_test_label.py
 test/test_test_page_loading_strategy.py
 test/test_test_path_trace_mode.py
 test/test_test_probe_mode.py
 test/test_test_protocol.py
-test/test_test_shared_accounts_inner.py
 test/test_test_sip_credentials.py
 test/test_test_ssl_version_id.py
 test/test_test_type.py

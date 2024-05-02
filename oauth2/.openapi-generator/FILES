@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 docs/AccessToken.md
 docs/DefaultApi.md

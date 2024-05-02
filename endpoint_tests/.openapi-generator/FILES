@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 docs/AccountGroupId.md
 docs/AlertDirection.md
@@ -50,7 +49,7 @@ docs/SelfLinks.md
 docs/SelfLinksLinks.md
 docs/Severity.md
 docs/TestInterval.md
-docs/TestLabelsInner.md
+docs/TestLabel.md
 docs/TestProbeMode.md
 docs/TestProbeModeResponse.md
 docs/TestSslVersionId.md
@@ -114,7 +113,7 @@ endpoint_tests/models/self_links.py
 endpoint_tests/models/self_links_links.py
 endpoint_tests/models/severity.py
 endpoint_tests/models/test_interval.py
-endpoint_tests/models/test_labels_inner.py
+endpoint_tests/models/test_label.py
 endpoint_tests/models/test_probe_mode.py
 endpoint_tests/models/test_probe_mode_response.py
 endpoint_tests/models/test_ssl_version_id.py
@@ -175,7 +174,7 @@ test/test_self_links.py
 test/test_self_links_links.py
 test/test_severity.py
 test/test_test_interval.py
-test/test_test_labels_inner.py
+test/test_test_label.py
 test/test_test_probe_mode.py
 test/test_test_probe_mode_response.py
 test/test_test_ssl_version_id.py

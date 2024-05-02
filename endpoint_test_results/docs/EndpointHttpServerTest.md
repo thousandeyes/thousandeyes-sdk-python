@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **ssl_version** | **str** | Reflects the verbose SSL protocol version used by a test. | [optional] [readonly] 
 **use_ntlm** | **bool** | Set to true to use NTLM, false to use Basic Authentication. Requires username and password to be set. | [optional] 
 **user_agent** | **str** | User-agent string to be provided during the test. | [optional] 
-**labels** | [**List[TestLabelsInner]**](TestLabelsInner.md) |  | [optional] [readonly] 
+**labels** | [**List[TestLabel]**](TestLabel.md) |  | [optional] [readonly] 
 
 ## Example
 

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 docs/EndpointLabelsList200Response.md
 docs/Error.md
@@ -8,6 +7,7 @@ docs/Filter.md
 docs/FilterType.md
 docs/Label.md
 docs/LabelFilterMode.md
+docs/LabelRequest.md
 docs/Labels.md
 docs/LabelsLabelsInner.md
 docs/Link.md
@@ -19,7 +19,6 @@ docs/SelfLinks.md
 docs/SelfLinksLinks.md
 docs/UnauthorizedError.md
 docs/V7EndpointLabelsPost201Response.md
-docs/V7EndpointLabelsPostRequest.md
 docs/ValidationError.md
 docs/ValidationErrorAllOfErrors.md
 endpoint_labels/__init__.py
@@ -37,6 +36,7 @@ endpoint_labels/models/filter.py
 endpoint_labels/models/filter_type.py
 endpoint_labels/models/label.py
 endpoint_labels/models/label_filter_mode.py
+endpoint_labels/models/label_request.py
 endpoint_labels/models/labels.py
 endpoint_labels/models/labels_labels_inner.py
 endpoint_labels/models/link.py
@@ -47,7 +47,6 @@ endpoint_labels/models/self_links.py
 endpoint_labels/models/self_links_links.py
 endpoint_labels/models/unauthorized_error.py
 endpoint_labels/models/v7_endpoint_labels_post201_response.py
-endpoint_labels/models/v7_endpoint_labels_post_request.py
 endpoint_labels/models/validation_error.py
 endpoint_labels/models/validation_error_all_of_errors.py
 endpoint_labels/py.typed
@@ -65,6 +64,7 @@ test/test_filter.py
 test/test_filter_type.py
 test/test_label.py
 test/test_label_filter_mode.py
+test/test_label_request.py
 test/test_labels.py
 test/test_labels_labels_inner.py
 test/test_link.py
@@ -75,6 +75,5 @@ test/test_self_links.py
 test/test_self_links_links.py
 test/test_unauthorized_error.py
 test/test_v7_endpoint_labels_post201_response.py
-test/test_v7_endpoint_labels_post_request.py
 test/test_validation_error.py
 test/test_validation_error_all_of_errors.py

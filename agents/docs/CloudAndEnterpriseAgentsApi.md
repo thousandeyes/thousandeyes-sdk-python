@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/hal+json
+ - **Content-Type**: application/json
  - **Accept**: application/hal+json, application/problem+json
 
 ### HTTP response details

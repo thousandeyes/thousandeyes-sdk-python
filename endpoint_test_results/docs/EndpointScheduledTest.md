@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **type** | **str** | Type of test being queried. | [readonly] 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
 **alert_rules** | [**List[AlertRule]**](AlertRule.md) | Contains list of enabled alert rule objects. | [optional] 
-**labels** | [**List[TestLabelsInner]**](TestLabelsInner.md) |  | [optional] [readonly] 
+**labels** | [**List[TestLabel]**](TestLabel.md) |  | [optional] [readonly] 
 **auth_type** | [**EndpointTestAuthType**](EndpointTestAuthType.md) |  | [optional] 
 **http_time_limit** | **int** | Maximum amount of time in milliseconds the agents wait before a request times out. | [optional] 
 **url** | **str** | Test target URL. Optionally, you can specify a protocol (http or https). If no protocol is provided, the default &#x60;https&#x60; protocol is used. | [optional] 

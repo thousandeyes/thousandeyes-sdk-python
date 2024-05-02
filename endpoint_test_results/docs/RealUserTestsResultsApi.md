@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_endpoint_real_user_tests**
-> GetEndpointRealUserTests200Response get_endpoint_real_user_tests(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, get_endpoint_real_user_tests_request=get_endpoint_real_user_tests_request)
+> GetEndpointRealUserTests200Response get_endpoint_real_user_tests(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_real_user_test_results_request=endpoint_real_user_test_results_request)
 
 List endpoint real user tests
 
@@ -198,8 +198,8 @@ Returns a list of all endpoint real user tests. Results from the last round are 
 
 ```python
 import endpoint_test_results
+from endpoint_test_results.models.endpoint_real_user_test_results_request import EndpointRealUserTestResultsRequest
 from endpoint_test_results.models.get_endpoint_real_user_tests200_response import GetEndpointRealUserTests200Response
-from endpoint_test_results.models.get_endpoint_real_user_tests_request import GetEndpointRealUserTestsRequest
 from endpoint_test_results.rest import ApiException
 from pprint import pprint
 
@@ -228,11 +228,11 @@ with endpoint_test_results.ApiClient(configuration) as api_client:
     start_date = '2022-07-17T22:00:54Z' # datetime | Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
-    get_endpoint_real_user_tests_request = endpoint_test_results.GetEndpointRealUserTestsRequest() # GetEndpointRealUserTestsRequest |  (optional)
+    endpoint_real_user_test_results_request = endpoint_test_results.EndpointRealUserTestResultsRequest() # EndpointRealUserTestResultsRequest |  (optional)
 
     try:
         # List endpoint real user tests
-        api_response = api_instance.get_endpoint_real_user_tests(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, get_endpoint_real_user_tests_request=get_endpoint_real_user_tests_request)
+        api_response = api_instance.get_endpoint_real_user_tests(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_real_user_test_results_request=endpoint_real_user_test_results_request)
         print("The response of RealUserTestsResultsApi->get_endpoint_real_user_tests:\n")
         pprint(api_response)
     except Exception as e:
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
  **start_date** | **datetime**| Use with the &#x60;endDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
- **get_endpoint_real_user_tests_request** | [**GetEndpointRealUserTestsRequest**](GetEndpointRealUserTestsRequest.md)|  | [optional] 
+ **endpoint_real_user_test_results_request** | [**EndpointRealUserTestResultsRequest**](EndpointRealUserTestResultsRequest.md)|  | [optional] 
 
 ### Return type
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_endpoint_real_user_tests_network**
-> GetEndpointRealUserTestsNetwork200Response get_endpoint_real_user_tests_network(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, get_endpoint_real_user_tests_request=get_endpoint_real_user_tests_request)
+> GetEndpointRealUserTestsNetwork200Response get_endpoint_real_user_tests_network(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_real_user_test_results_request=endpoint_real_user_test_results_request)
 
 List endpoint real user tests
 
@@ -294,8 +294,8 @@ Returns a list of all endpoint real user tests.  Sessions from the last round ar
 
 ```python
 import endpoint_test_results
+from endpoint_test_results.models.endpoint_real_user_test_results_request import EndpointRealUserTestResultsRequest
 from endpoint_test_results.models.get_endpoint_real_user_tests_network200_response import GetEndpointRealUserTestsNetwork200Response
-from endpoint_test_results.models.get_endpoint_real_user_tests_request import GetEndpointRealUserTestsRequest
 from endpoint_test_results.rest import ApiException
 from pprint import pprint
 
@@ -324,11 +324,11 @@ with endpoint_test_results.ApiClient(configuration) as api_client:
     start_date = '2022-07-17T22:00:54Z' # datetime | Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
-    get_endpoint_real_user_tests_request = endpoint_test_results.GetEndpointRealUserTestsRequest() # GetEndpointRealUserTestsRequest |  (optional)
+    endpoint_real_user_test_results_request = endpoint_test_results.EndpointRealUserTestResultsRequest() # EndpointRealUserTestResultsRequest |  (optional)
 
     try:
         # List endpoint real user tests
-        api_response = api_instance.get_endpoint_real_user_tests_network(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, get_endpoint_real_user_tests_request=get_endpoint_real_user_tests_request)
+        api_response = api_instance.get_endpoint_real_user_tests_network(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_real_user_test_results_request=endpoint_real_user_test_results_request)
         print("The response of RealUserTestsResultsApi->get_endpoint_real_user_tests_network:\n")
         pprint(api_response)
     except Exception as e:
@@ -347,7 +347,7 @@ Name | Type | Description  | Notes
  **start_date** | **datetime**| Use with the &#x60;endDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
- **get_endpoint_real_user_tests_request** | [**GetEndpointRealUserTestsRequest**](GetEndpointRealUserTestsRequest.md)|  | [optional] 
+ **endpoint_real_user_test_results_request** | [**EndpointRealUserTestResultsRequest**](EndpointRealUserTestResultsRequest.md)|  | [optional] 
 
 ### Return type
 

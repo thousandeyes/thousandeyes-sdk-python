@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **shared_with_accounts** | **List[str]** | Contains list of account group IDs. Test is shared with the listed account groups (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint) | [optional] 
 **domain** | **str** | The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record. | 
 **dns_query_class** | [**DnsQueryClass**](DnsQueryClass.md) |  | [optional] 
-**agents** | [**List[TestRequestAllOfAgents]**](TestRequestAllOfAgents.md) | Contains list of object with required &#x60;agentId&#x60; and optional &#x60;sourceIpAddress&#x60; | [optional] 
+**agents** | [**List[AgentRequest]**](AgentRequest.md) |  | [optional] 
 
 ## Example
 
