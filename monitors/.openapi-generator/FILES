@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 docs/Error.md
 docs/GetBGPMonitors200Response.md

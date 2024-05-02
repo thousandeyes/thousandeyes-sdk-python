@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **test_name** | **str** | The name of the test. Test name must be unique. | [optional] 
 **type** | **str** |  | [optional] [readonly] 
 **links** | [**UnexpandedInstantTestLinks**](UnexpandedInstantTestLinks.md) |  | [optional] 
-**labels** | [**List[TestLabelsInner]**](TestLabelsInner.md) |  | [optional] [readonly] 
-**shared_with_accounts** | [**List[TestSharedAccountsInner]**](TestSharedAccountsInner.md) |  | [optional] [readonly] 
+**labels** | [**List[TestLabel]**](TestLabel.md) |  | [optional] [readonly] 
+**shared_with_accounts** | [**List[SharedWithAccount]**](SharedWithAccount.md) |  | [optional] [readonly] 
 **domain** | **str** | The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record. | 
 **dns_query_class** | [**DnsQueryClass**](DnsQueryClass.md) |  | [optional] 
 **agents** | [**List[Agent]**](Agent.md) | Contains list of agents. | [optional] [readonly] 

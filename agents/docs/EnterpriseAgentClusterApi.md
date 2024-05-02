@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **assign_enterprise_agent_cluster**
-> AgentDetails assign_enterprise_agent_cluster(agent_id, assign_enterprise_agent_cluster_request, aid=aid, expand=expand)
+> AgentDetails assign_enterprise_agent_cluster(agent_id, agent_cluster_assign_request, aid=aid, expand=expand)
 
 Add member to Enterprise Agent cluster
 
@@ -21,9 +21,9 @@ Adding a member to an Enterprise Agent cluster converts a standalone Enterprise 
 
 ```python
 import agents
+from agents.models.agent_cluster_assign_request import AgentClusterAssignRequest
 from agents.models.agent_details import AgentDetails
 from agents.models.agent_details_expand import AgentDetailsExpand
-from agents.models.assign_enterprise_agent_cluster_request import AssignEnterpriseAgentClusterRequest
 from agents.rest import ApiException
 from pprint import pprint
 
@@ -48,13 +48,13 @@ with agents.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = agents.EnterpriseAgentClusterApi(api_client)
     agent_id = '281474976710706' # str | Unique ID for the Enterprise Agent cluster to add new agents to.
-    assign_enterprise_agent_cluster_request = agents.AssignEnterpriseAgentClusterRequest() # AssignEnterpriseAgentClusterRequest | 
+    agent_cluster_assign_request = agents.AgentClusterAssignRequest() # AgentClusterAssignRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
     expand = [agents.AgentDetailsExpand()] # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
 
     try:
         # Add member to Enterprise Agent cluster
-        api_response = api_instance.assign_enterprise_agent_cluster(agent_id, assign_enterprise_agent_cluster_request, aid=aid, expand=expand)
+        api_response = api_instance.assign_enterprise_agent_cluster(agent_id, agent_cluster_assign_request, aid=aid, expand=expand)
         print("The response of EnterpriseAgentClusterApi->assign_enterprise_agent_cluster:\n")
         pprint(api_response)
     except Exception as e:
@@ -69,7 +69,7 @@ with agents.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agent_id** | **str**| Unique ID for the Enterprise Agent cluster to add new agents to. | 
- **assign_enterprise_agent_cluster_request** | [**AssignEnterpriseAgentClusterRequest**](AssignEnterpriseAgentClusterRequest.md)|  | 
+ **agent_cluster_assign_request** | [**AgentClusterAssignRequest**](AgentClusterAssignRequest.md)|  | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
  **expand** | [**List[AgentDetailsExpand]**](AgentDetailsExpand.md)| Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the &#x60;clusterMembers&#x60; sub-resource, pass the &#x60;?expand&#x3D;cluster-member&#x60; query. | [optional] 
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unassign_enterprise_agent_from_cluster**
-> GetAgents200Response unassign_enterprise_agent_from_cluster(agent_id, unassign_enterprise_agent_from_cluster_request, aid=aid, expand=expand)
+> GetAgents200Response unassign_enterprise_agent_from_cluster(agent_id, agent_cluster_unassign_request, aid=aid, expand=expand)
 
 Remove member from Enterprise Agent cluster
 
@@ -115,9 +115,9 @@ Converts a cluster with a single or multiple Enterprise Agent members back to a 
 
 ```python
 import agents
+from agents.models.agent_cluster_unassign_request import AgentClusterUnassignRequest
 from agents.models.agent_details_expand import AgentDetailsExpand
 from agents.models.get_agents200_response import GetAgents200Response
-from agents.models.unassign_enterprise_agent_from_cluster_request import UnassignEnterpriseAgentFromClusterRequest
 from agents.rest import ApiException
 from pprint import pprint
 
@@ -142,13 +142,13 @@ with agents.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = agents.EnterpriseAgentClusterApi(api_client)
     agent_id = '281474976710706' # str | Unique ID for the Enterprise Agent cluster to remove agents from.
-    unassign_enterprise_agent_from_cluster_request = agents.UnassignEnterpriseAgentFromClusterRequest() # UnassignEnterpriseAgentFromClusterRequest | 
+    agent_cluster_unassign_request = agents.AgentClusterUnassignRequest() # AgentClusterUnassignRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
     expand = [agents.AgentDetailsExpand()] # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
 
     try:
         # Remove member from Enterprise Agent cluster
-        api_response = api_instance.unassign_enterprise_agent_from_cluster(agent_id, unassign_enterprise_agent_from_cluster_request, aid=aid, expand=expand)
+        api_response = api_instance.unassign_enterprise_agent_from_cluster(agent_id, agent_cluster_unassign_request, aid=aid, expand=expand)
         print("The response of EnterpriseAgentClusterApi->unassign_enterprise_agent_from_cluster:\n")
         pprint(api_response)
     except Exception as e:
@@ -163,7 +163,7 @@ with agents.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **agent_id** | **str**| Unique ID for the Enterprise Agent cluster to remove agents from. | 
- **unassign_enterprise_agent_from_cluster_request** | [**UnassignEnterpriseAgentFromClusterRequest**](UnassignEnterpriseAgentFromClusterRequest.md)|  | 
+ **agent_cluster_unassign_request** | [**AgentClusterUnassignRequest**](AgentClusterUnassignRequest.md)|  | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
  **expand** | [**List[AgentDetailsExpand]**](AgentDetailsExpand.md)| Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the &#x60;clusterMembers&#x60; sub-resource, pass the &#x60;?expand&#x3D;cluster-member&#x60; query. | [optional] 
 

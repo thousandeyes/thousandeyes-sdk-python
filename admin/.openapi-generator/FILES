@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 admin/__init__.py
 admin/api/__init__.py

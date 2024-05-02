@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 dashboards/__init__.py
 dashboards/api/__init__.py

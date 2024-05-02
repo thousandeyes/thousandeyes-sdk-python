@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 
 # **endpoint_agent_bulk_transfer**
-> EndpointAgentBulkTransfer207Response endpoint_agent_bulk_transfer(aid=aid, endpoint_agent_bulk_transfer_request=endpoint_agent_bulk_transfer_request)
+> EndpointAgentBulkTransfer207Response endpoint_agent_bulk_transfer(aid=aid, agent_transfers=agent_transfers)
 
 Bulk transfer agents
 
@@ -21,8 +21,8 @@ Initiates the transfer of multiple agents between accounts. The following condit
 
 ```python
 import endpoint_agents
+from endpoint_agents.models.agent_transfers import AgentTransfers
 from endpoint_agents.models.endpoint_agent_bulk_transfer207_response import EndpointAgentBulkTransfer207Response
-from endpoint_agents.models.endpoint_agent_bulk_transfer_request import EndpointAgentBulkTransferRequest
 from endpoint_agents.rest import ApiException
 from pprint import pprint
 
@@ -47,11 +47,11 @@ with endpoint_agents.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = endpoint_agents.TransferApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    endpoint_agent_bulk_transfer_request = endpoint_agents.EndpointAgentBulkTransferRequest() # EndpointAgentBulkTransferRequest | A collection of `AgentTransfers`. (optional)
+    agent_transfers = endpoint_agents.AgentTransfers() # AgentTransfers | A collection of `AgentTransfers`. (optional)
 
     try:
         # Bulk transfer agents
-        api_response = api_instance.endpoint_agent_bulk_transfer(aid=aid, endpoint_agent_bulk_transfer_request=endpoint_agent_bulk_transfer_request)
+        api_response = api_instance.endpoint_agent_bulk_transfer(aid=aid, agent_transfers=agent_transfers)
         print("The response of TransferApi->endpoint_agent_bulk_transfer:\n")
         pprint(api_response)
     except Exception as e:
@@ -66,7 +66,7 @@ with endpoint_agents.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **endpoint_agent_bulk_transfer_request** | [**EndpointAgentBulkTransferRequest**](EndpointAgentBulkTransferRequest.md)| A collection of &#x60;AgentTransfers&#x60;. | [optional] 
+ **agent_transfers** | [**AgentTransfers**](AgentTransfers.md)| A collection of &#x60;AgentTransfers&#x60;. | [optional] 
 
 ### Return type
 

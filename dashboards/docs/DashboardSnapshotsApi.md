@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/hal+json
+ - **Content-Type**: application/json
  - **Accept**: application/hal+json, application/problem+json
 
 ### HTTP response details
@@ -513,7 +513,7 @@ void (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/hal+json
+ - **Content-Type**: application/json
  - **Accept**: application/problem+json
 
 ### HTTP response details

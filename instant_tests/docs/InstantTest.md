@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 **test_name** | **str** | The name of the test. Test name must be unique. | [optional] 
 **type** | [**TestType**](TestType.md) |  | [optional] 
 **links** | [**UnexpandedInstantTestLinks**](UnexpandedInstantTestLinks.md) |  | [optional] 
-**labels** | [**List[TestLabelsInner]**](TestLabelsInner.md) |  | [optional] [readonly] 
-**shared_with_accounts** | [**List[TestSharedAccountsInner]**](TestSharedAccountsInner.md) |  | [optional] [readonly] 
+**labels** | [**List[TestLabel]**](TestLabel.md) |  | [optional] [readonly] 
+**shared_with_accounts** | [**List[SharedWithAccount]**](SharedWithAccount.md) |  | [optional] [readonly] 
 
 ## Example
 

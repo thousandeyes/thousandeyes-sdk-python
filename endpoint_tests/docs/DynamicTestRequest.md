@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
 **test_id** | **str** | Each test is assigned a unique ID; this is used to access test information and results from other endpoints. | [optional] [readonly] 
 **test_name** | **str** | Name of the test. | [optional] 
-**labels** | [**List[TestLabelsInner]**](TestLabelsInner.md) |  | [optional] [readonly] 
+**labels** | [**List[TestLabel]**](TestLabel.md) |  | [optional] [readonly] 
 **agent_selector_type** | [**EndpointTestAgentSelectorType**](EndpointTestAgentSelectorType.md) |  | [optional] 
 **agents** | **List[str]** | List of endpoint agent IDs (obtained from &#x60;/endpoint/agents&#x60; endpoint). Required when &#x60;agentSelectorType&#x60; is set to &#x60;specific-agent&#x60;. | [optional] 
 **endpoint_agent_labels** | **List[str]** | List of endpoint agent label IDs (obtained from &#x60;/endpoint/labels&#x60; endpoint), required when &#x60;agentSelectorType&#x60; is set to &#x60;agent-labels&#x60;. | [optional] 

@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 docs/AccountGroupId.md
 docs/AlertDirection.md
@@ -25,6 +24,7 @@ docs/EndpointBrowser.md
 docs/EndpointHttpDataPointScore.md
 docs/EndpointHttpServerBaseTest.md
 docs/EndpointHttpServerTest.md
+docs/EndpointNetworkTopologyResultRequest.md
 docs/EndpointNetworkTopologyResultRequestFilter.md
 docs/EndpointPingDataPointScore.md
 docs/EndpointRealUserTest.md
@@ -33,6 +33,7 @@ docs/EndpointRealUserTestDetail.md
 docs/EndpointRealUserTestDetailResults.md
 docs/EndpointRealUserTestResultRequestFilter.md
 docs/EndpointRealUserTestResults.md
+docs/EndpointRealUserTestResultsRequest.md
 docs/EndpointResultRequestFilter.md
 docs/EndpointScheduledTest.md
 docs/EndpointScheduledTestType.md
@@ -50,13 +51,11 @@ docs/GetDynamicTestResultPathvisAgentRound200Response.md
 docs/GetEndpointLocalNetworkTopologyDetails200Response.md
 docs/GetEndpointLocalNetworks200Response.md
 docs/GetEndpointLocalNetworksTopologies200Response.md
-docs/GetEndpointLocalNetworksTopologiesRequest.md
 docs/GetEndpointRealUserTestDetails200Response.md
 docs/GetEndpointRealUserTestPagesDetails200Response.md
 docs/GetEndpointRealUserTests200Response.md
 docs/GetEndpointRealUserTestsNetwork200Response.md
 docs/GetEndpointRealUserTestsPages200Response.md
-docs/GetEndpointRealUserTestsRequest.md
 docs/GetTestResultHttpServer200Response.md
 docs/GetTestResultNetworkPathvis200Response.md
 docs/GetTestResultPathvisAgentRound200Response.md
@@ -134,7 +133,7 @@ docs/SortOrder.md
 docs/SystemMetrics.md
 docs/TcpConnect.md
 docs/TestInterval.md
-docs/TestLabelsInner.md
+docs/TestLabel.md
 docs/TestProbeModeResponse.md
 docs/TestResult.md
 docs/TestSslVersionId.md
@@ -191,6 +190,7 @@ endpoint_test_results/models/endpoint_browser.py
 endpoint_test_results/models/endpoint_http_data_point_score.py
 endpoint_test_results/models/endpoint_http_server_base_test.py
 endpoint_test_results/models/endpoint_http_server_test.py
+endpoint_test_results/models/endpoint_network_topology_result_request.py
 endpoint_test_results/models/endpoint_network_topology_result_request_filter.py
 endpoint_test_results/models/endpoint_ping_data_point_score.py
 endpoint_test_results/models/endpoint_real_user_test.py
@@ -199,6 +199,7 @@ endpoint_test_results/models/endpoint_real_user_test_detail.py
 endpoint_test_results/models/endpoint_real_user_test_detail_results.py
 endpoint_test_results/models/endpoint_real_user_test_result_request_filter.py
 endpoint_test_results/models/endpoint_real_user_test_results.py
+endpoint_test_results/models/endpoint_real_user_test_results_request.py
 endpoint_test_results/models/endpoint_result_request_filter.py
 endpoint_test_results/models/endpoint_scheduled_test.py
 endpoint_test_results/models/endpoint_scheduled_test_type.py
@@ -216,13 +217,11 @@ endpoint_test_results/models/get_dynamic_test_result_pathvis_agent_round200_resp
 endpoint_test_results/models/get_endpoint_local_network_topology_details200_response.py
 endpoint_test_results/models/get_endpoint_local_networks200_response.py
 endpoint_test_results/models/get_endpoint_local_networks_topologies200_response.py
-endpoint_test_results/models/get_endpoint_local_networks_topologies_request.py
 endpoint_test_results/models/get_endpoint_real_user_test_details200_response.py
 endpoint_test_results/models/get_endpoint_real_user_test_pages_details200_response.py
 endpoint_test_results/models/get_endpoint_real_user_tests200_response.py
 endpoint_test_results/models/get_endpoint_real_user_tests_network200_response.py
 endpoint_test_results/models/get_endpoint_real_user_tests_pages200_response.py
-endpoint_test_results/models/get_endpoint_real_user_tests_request.py
 endpoint_test_results/models/get_test_result_http_server200_response.py
 endpoint_test_results/models/get_test_result_network_pathvis200_response.py
 endpoint_test_results/models/get_test_result_pathvis_agent_round200_response.py
@@ -296,7 +295,7 @@ endpoint_test_results/models/sort_order.py
 endpoint_test_results/models/system_metrics.py
 endpoint_test_results/models/tcp_connect.py
 endpoint_test_results/models/test_interval.py
-endpoint_test_results/models/test_labels_inner.py
+endpoint_test_results/models/test_label.py
 endpoint_test_results/models/test_probe_mode_response.py
 endpoint_test_results/models/test_result.py
 endpoint_test_results/models/test_ssl_version_id.py
@@ -348,6 +347,7 @@ test/test_endpoint_browser.py
 test/test_endpoint_http_data_point_score.py
 test/test_endpoint_http_server_base_test.py
 test/test_endpoint_http_server_test.py
+test/test_endpoint_network_topology_result_request.py
 test/test_endpoint_network_topology_result_request_filter.py
 test/test_endpoint_ping_data_point_score.py
 test/test_endpoint_real_user_test.py
@@ -356,6 +356,7 @@ test/test_endpoint_real_user_test_detail.py
 test/test_endpoint_real_user_test_detail_results.py
 test/test_endpoint_real_user_test_result_request_filter.py
 test/test_endpoint_real_user_test_results.py
+test/test_endpoint_real_user_test_results_request.py
 test/test_endpoint_result_request_filter.py
 test/test_endpoint_scheduled_test.py
 test/test_endpoint_scheduled_test_type.py
@@ -373,13 +374,11 @@ test/test_get_dynamic_test_result_pathvis_agent_round200_response.py
 test/test_get_endpoint_local_network_topology_details200_response.py
 test/test_get_endpoint_local_networks200_response.py
 test/test_get_endpoint_local_networks_topologies200_response.py
-test/test_get_endpoint_local_networks_topologies_request.py
 test/test_get_endpoint_real_user_test_details200_response.py
 test/test_get_endpoint_real_user_test_pages_details200_response.py
 test/test_get_endpoint_real_user_tests200_response.py
 test/test_get_endpoint_real_user_tests_network200_response.py
 test/test_get_endpoint_real_user_tests_pages200_response.py
-test/test_get_endpoint_real_user_tests_request.py
 test/test_get_test_result_http_server200_response.py
 test/test_get_test_result_network_pathvis200_response.py
 test/test_get_test_result_pathvis_agent_round200_response.py
@@ -453,7 +452,7 @@ test/test_sort_order.py
 test/test_system_metrics.py
 test/test_tcp_connect.py
 test/test_test_interval.py
-test/test_test_labels_inner.py
+test/test_test_label.py
 test/test_test_probe_mode_response.py
 test/test_test_result.py
 test/test_test_ssl_version_id.py

@@ -31,7 +31,7 @@ Name | Type | Description | Notes
 **num_path_traces** | **int** | Number of path traces executed by the agent. | [optional] [default to 3]
 **port** | **int** | Port number for the chosen protocol. | [optional] 
 **target_agent_id** | **str** | Agent ID of the target agent for the test. | 
-**agents** | [**List[TestRequestAllOfAgents]**](TestRequestAllOfAgents.md) | Contains list of object with required &#x60;agentId&#x60; and optional &#x60;sourceIpAddress&#x60; | [optional] 
+**agents** | [**List[AgentRequest]**](AgentRequest.md) |  | [optional] 
 **bgp_measurements** | **bool** | Set to &#x60;true&#x60; to enable bgp measurements. | [optional] [default to True]
 **use_public_bgp** | **bool** | Indicate if all available public BGP monitors should be used, when ommited defaults to &#x60;bgpMeasurements&#x60; value. | [optional] [default to True]
 **monitors** | [**List[Monitor]**](Monitor.md) | Contains list of enabled BGP monitors. | [optional] [readonly] 

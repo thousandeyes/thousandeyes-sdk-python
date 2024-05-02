@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v7_endpoint_labels_post**
-> V7EndpointLabelsPost201Response v7_endpoint_labels_post(aid=aid, v7_endpoint_labels_post_request=v7_endpoint_labels_post_request)
+> V7EndpointLabelsPost201Response v7_endpoint_labels_post(aid=aid, label_request=label_request)
 
 Create label
 
@@ -368,8 +368,8 @@ Creates a new label.
 
 ```python
 import endpoint_labels
+from endpoint_labels.models.label_request import LabelRequest
 from endpoint_labels.models.v7_endpoint_labels_post201_response import V7EndpointLabelsPost201Response
-from endpoint_labels.models.v7_endpoint_labels_post_request import V7EndpointLabelsPostRequest
 from endpoint_labels.rest import ApiException
 from pprint import pprint
 
@@ -394,11 +394,11 @@ with endpoint_labels.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = endpoint_labels.ManageLabelsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    v7_endpoint_labels_post_request = endpoint_labels.V7EndpointLabelsPostRequest() # V7EndpointLabelsPostRequest | Label settings (optional)
+    label_request = endpoint_labels.LabelRequest() # LabelRequest | Label settings (optional)
 
     try:
         # Create label
-        api_response = api_instance.v7_endpoint_labels_post(aid=aid, v7_endpoint_labels_post_request=v7_endpoint_labels_post_request)
+        api_response = api_instance.v7_endpoint_labels_post(aid=aid, label_request=label_request)
         print("The response of ManageLabelsApi->v7_endpoint_labels_post:\n")
         pprint(api_response)
     except Exception as e:
@@ -413,7 +413,7 @@ with endpoint_labels.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **v7_endpoint_labels_post_request** | [**V7EndpointLabelsPostRequest**](V7EndpointLabelsPostRequest.md)| Label settings | [optional] 
+ **label_request** | [**LabelRequest**](LabelRequest.md)| Label settings | [optional] 
 
 ### Return type
 

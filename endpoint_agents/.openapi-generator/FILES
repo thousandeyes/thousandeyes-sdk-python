@@ -1,5 +1,4 @@
 .gitignore
-.openapi-generator-ignore
 README.md
 docs/AddressProfile.md
 docs/AddressType.md
@@ -13,12 +12,12 @@ docs/AgentThresholdFilter.md
 docs/AgentThresholdFilters.md
 docs/AgentTransfer.md
 docs/AgentTransferRequest.md
+docs/AgentTransfers.md
 docs/BrowserType.md
 docs/ConditionalOperator.md
 docs/EndpointAgent.md
 docs/EndpointAgentBulkTransfer207Response.md
 docs/EndpointAgentBulkTransfer207ResponseItemsInner.md
-docs/EndpointAgentBulkTransferRequest.md
 docs/EndpointAgentGet200Response.md
 docs/EndpointAgentLocation.md
 docs/EndpointAgentUpdate.md
@@ -76,12 +75,12 @@ endpoint_agents/models/agent_threshold_filter.py
 endpoint_agents/models/agent_threshold_filters.py
 endpoint_agents/models/agent_transfer.py
 endpoint_agents/models/agent_transfer_request.py
+endpoint_agents/models/agent_transfers.py
 endpoint_agents/models/browser_type.py
 endpoint_agents/models/conditional_operator.py
 endpoint_agents/models/endpoint_agent.py
 endpoint_agents/models/endpoint_agent_bulk_transfer207_response.py
 endpoint_agents/models/endpoint_agent_bulk_transfer207_response_items_inner.py
-endpoint_agents/models/endpoint_agent_bulk_transfer_request.py
 endpoint_agents/models/endpoint_agent_get200_response.py
 endpoint_agents/models/endpoint_agent_location.py
 endpoint_agents/models/endpoint_agent_update.py
@@ -135,12 +134,12 @@ test/test_agent_threshold_filter.py
 test/test_agent_threshold_filters.py
 test/test_agent_transfer.py
 test/test_agent_transfer_request.py
+test/test_agent_transfers.py
 test/test_browser_type.py
 test/test_conditional_operator.py
 test/test_endpoint_agent.py
 test/test_endpoint_agent_bulk_transfer207_response.py
 test/test_endpoint_agent_bulk_transfer207_response_items_inner.py
-test/test_endpoint_agent_bulk_transfer_request.py
 test/test_endpoint_agent_get200_response.py
 test/test_endpoint_agent_location.py
 test/test_endpoint_agent_update.py

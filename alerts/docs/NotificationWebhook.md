@@ -6,7 +6,7 @@ Webhook notification.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**integration_id** | **List[str]** | Integration ID. | [optional] 
+**integration_id** | **str** | Integration ID. | [optional] 
 **integration_type** | [**WebhookIntegrationType**](WebhookIntegrationType.md) |  | [optional] 
 
 ## Example
