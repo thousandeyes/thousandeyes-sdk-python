@@ -51,6 +51,7 @@ class TestCredentialsApi(unittest.TestCase):
                 {
                   "_links" : {
                     "self" : {
+                      "extra" : "unexpected",
                       "hreflang" : "hreflang",
                       "templated" : true,
                       "profile" : "profile",
