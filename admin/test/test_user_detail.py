@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.user_detail import UserDetail
+from thousandeyes_sdk.admin.models.user_detail import UserDetail
 
 class TestUserDetail(unittest.TestCase):
     """UserDetail unit test stubs"""
@@ -39,17 +39,17 @@ class TestUserDetail(unittest.TestCase):
                 email = 'userx@thousandeyes.com',
                 uid = '245',
                 date_registered = '2020-07-17T22:00:54Z',
-                login_account_group = admin.models.account_group_1.AccountGroup_1(),
+                login_account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1(),
                 last_login = '2022-07-17T22:00:54Z',
                 account_group_roles = [
-                    admin.models.account_group_roles_account_group_roles_inner.AccountGroupRoles_accountGroupRoles_inner(
-                        account_group = admin.models.account_group_1.AccountGroup_1(), 
+                    thousandeyes_sdk.admin.models.account_group_roles_account_group_roles_inner.AccountGroupRoles_accountGroupRoles_inner(
+                        account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1(), 
                         roles = [
-                            admin.models.role.Role()
+                            thousandeyes_sdk.admin.models.role.Role()
                             ], )
                     ],
                 all_account_group_roles = [
-                    admin.models.role.Role()
+                    thousandeyes_sdk.admin.models.role.Role()
                     ]
             )
         else:

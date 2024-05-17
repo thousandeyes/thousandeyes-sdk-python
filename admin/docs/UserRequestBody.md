@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.user_request_body import UserRequestBody
+from thousandeyes_sdk.admin.models.user_request_body import UserRequestBody
 
 # TODO update the JSON string below
 json = "{}"

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.account_group_roles_account_group_roles_inner import AccountGroupRolesAccountGroupRolesInner
+from thousandeyes_sdk.admin.models.account_group_roles_account_group_roles_inner import AccountGroupRolesAccountGroupRolesInner
 
 # TODO update the JSON string below
 json = "{}"

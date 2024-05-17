@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.get_users200_response import GetUsers200Response
+from thousandeyes_sdk.admin.models.get_users200_response import GetUsers200Response
 
 class TestGetUsers200Response(unittest.TestCase):
     """GetUsers200Response unit test stubs"""
@@ -38,8 +38,8 @@ class TestGetUsers200Response(unittest.TestCase):
                 users = [
                     null
                     ],
-                links = admin.models.self_links__links.SelfLinks__links(
-                    self = admin.models.link.Link(
+                links = thousandeyes_sdk.admin.models.self_links__links.SelfLinks__links(
+                    self = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 

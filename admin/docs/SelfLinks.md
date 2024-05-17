@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.self_links import SelfLinks
+from thousandeyes_sdk.admin.models.self_links import SelfLinks
 
 # TODO update the JSON string below
 json = "{}"

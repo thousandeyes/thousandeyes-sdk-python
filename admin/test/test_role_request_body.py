@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.role_request_body import RoleRequestBody
+from thousandeyes_sdk.admin.models.role_request_body import RoleRequestBody
 
 class TestRoleRequestBody(unittest.TestCase):
     """RoleRequestBody unit test stubs"""

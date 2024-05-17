@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.link import Link
+from thousandeyes_sdk.admin.models.link import Link
 
 class TestLink(unittest.TestCase):
     """Link unit test stubs"""

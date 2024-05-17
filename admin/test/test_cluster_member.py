@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.cluster_member import ClusterMember
+from thousandeyes_sdk.admin.models.cluster_member import ClusterMember
 
 class TestClusterMember(unittest.TestCase):
     """ClusterMember unit test stubs"""
@@ -41,7 +41,7 @@ class TestClusterMember(unittest.TestCase):
                 member_id = '10',
                 name = 'Cluster member name',
                 error_details = [
-                    admin.models.error_detail.ErrorDetail(
+                    thousandeyes_sdk.admin.models.error_detail.ErrorDetail(
                         code = 'agent-version-outdated', 
                         description = 'Agent Version 0.1.1 (latest: 1.0.0)', )
                     ],

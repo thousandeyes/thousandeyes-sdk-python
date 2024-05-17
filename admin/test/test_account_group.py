@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.account_group import AccountGroup
+from thousandeyes_sdk.admin.models.account_group import AccountGroup
 
 class TestAccountGroup(unittest.TestCase):
     """AccountGroup unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.account_group_roles_request_body_inner import AccountGroupRolesRequestBodyInner
+from thousandeyes_sdk.admin.models.account_group_roles_request_body_inner import AccountGroupRolesRequestBodyInner
 
 class TestAccountGroupRolesRequestBodyInner(unittest.TestCase):
     """AccountGroupRolesRequestBodyInner unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.cloud_enterprise_agent_type import CloudEnterpriseAgentType
+from thousandeyes_sdk.admin.models.cloud_enterprise_agent_type import CloudEnterpriseAgentType
 
 class TestCloudEnterpriseAgentType(unittest.TestCase):
     """CloudEnterpriseAgentType unit test stubs"""

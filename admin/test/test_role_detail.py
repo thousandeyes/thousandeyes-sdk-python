@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.role_detail import RoleDetail
+from thousandeyes_sdk.admin.models.role_detail import RoleDetail
 
 class TestRoleDetail(unittest.TestCase):
     """RoleDetail unit test stubs"""

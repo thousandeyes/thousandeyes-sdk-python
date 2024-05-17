@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.get_roles200_response import GetRoles200Response
+from thousandeyes_sdk.admin.models.get_roles200_response import GetRoles200Response
 
 class TestGetRoles200Response(unittest.TestCase):
     """GetRoles200Response unit test stubs"""
@@ -36,10 +36,10 @@ class TestGetRoles200Response(unittest.TestCase):
         if include_optional:
             return GetRoles200Response(
                 roles = [
-                    admin.models.role.Role()
+                    thousandeyes_sdk.admin.models.role.Role()
                     ],
-                links = admin.models.self_links__links.SelfLinks__links(
-                    self = admin.models.link.Link(
+                links = thousandeyes_sdk.admin.models.self_links__links.SelfLinks__links(
+                    self = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 

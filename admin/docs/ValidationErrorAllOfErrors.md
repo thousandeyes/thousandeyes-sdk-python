@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.validation_error_all_of_errors import ValidationErrorAllOfErrors
+from thousandeyes_sdk.admin.models.validation_error_all_of_errors import ValidationErrorAllOfErrors
 
 # TODO update the JSON string below
 json = "{}"

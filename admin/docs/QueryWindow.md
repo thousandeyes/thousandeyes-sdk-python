@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.query_window import QueryWindow
+from thousandeyes_sdk.admin.models.query_window import QueryWindow
 
 # TODO update the JSON string below
 json = "{}"

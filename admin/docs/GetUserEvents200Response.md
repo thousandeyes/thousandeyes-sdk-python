@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.get_user_events200_response import GetUserEvents200Response
+from thousandeyes_sdk.admin.models.get_user_events200_response import GetUserEvents200Response
 
 # TODO update the JSON string below
 json = "{}"

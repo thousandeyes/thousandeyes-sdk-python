@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.extended_user import ExtendedUser
+from thousandeyes_sdk.admin.models.extended_user import ExtendedUser
 
 class TestExtendedUser(unittest.TestCase):
     """ExtendedUser unit test stubs"""
@@ -39,7 +39,7 @@ class TestExtendedUser(unittest.TestCase):
                 email = 'userx@thousandeyes.com',
                 uid = '245',
                 date_registered = '2020-07-17T22:00:54Z',
-                login_account_group = admin.models.account_group_1.AccountGroup_1(),
+                login_account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1(),
                 last_login = '2022-07-17T22:00:54Z'
             )
         else:

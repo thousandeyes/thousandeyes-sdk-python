@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.unauthorized_error import UnauthorizedError
+from thousandeyes_sdk.admin.models.unauthorized_error import UnauthorizedError
 
 class TestUnauthorizedError(unittest.TestCase):
     """UnauthorizedError unit test stubs"""

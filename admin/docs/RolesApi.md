@@ -1,4 +1,4 @@
-# admin.RolesApi
+# thousandeyes_sdk.admin.RolesApi
 
 All URIs are relative to *https://api.thousandeyes.com*
 
@@ -23,15 +23,15 @@ Creates a new role.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import admin
-from admin.models.create_role201_response import CreateRole201Response
-from admin.models.role_request_body import RoleRequestBody
-from admin.rest import ApiException
+import thousandeyes_sdk.admin
+from thousandeyes_sdk.admin.models.create_role201_response import CreateRole201Response
+from thousandeyes_sdk.admin.models.role_request_body import RoleRequestBody
+from thousandeyes_sdk.admin.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -41,15 +41,15 @@ configuration = admin.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = admin.RolesApi(api_client)
-    role_request_body = admin.RoleRequestBody() # RoleRequestBody | 
+    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
+    role_request_body = thousandeyes_sdk.admin.RoleRequestBody() # RoleRequestBody | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -110,13 +110,13 @@ Deletes a role using its ID. The user needs appropriate permissions to successfu
 * Bearer Authentication (BearerAuth):
 
 ```python
-import admin
-from admin.rest import ApiException
+import thousandeyes_sdk.admin
+from thousandeyes_sdk.admin.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -126,14 +126,14 @@ configuration = admin.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = admin.RolesApi(api_client)
+    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
     id = '23' # str | The ID of the desired role.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
@@ -193,14 +193,14 @@ Returns detailed information about a role using its ID.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import admin
-from admin.models.create_role201_response import CreateRole201Response
-from admin.rest import ApiException
+import thousandeyes_sdk.admin
+from thousandeyes_sdk.admin.models.create_role201_response import CreateRole201Response
+from thousandeyes_sdk.admin.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -210,14 +210,14 @@ configuration = admin.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = admin.RolesApi(api_client)
+    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
     id = '23' # str | The ID of the desired role.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
@@ -279,14 +279,14 @@ Retrieves a list of defined roles visible to the current user.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import admin
-from admin.models.get_roles200_response import GetRoles200Response
-from admin.rest import ApiException
+import thousandeyes_sdk.admin
+from thousandeyes_sdk.admin.models.get_roles200_response import GetRoles200Response
+from thousandeyes_sdk.admin.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -296,14 +296,14 @@ configuration = admin.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = admin.RolesApi(api_client)
+    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -363,15 +363,15 @@ Updates a user-defined role using its ID.  When updating a role, the following a
 * Bearer Authentication (BearerAuth):
 
 ```python
-import admin
-from admin.models.create_role201_response import CreateRole201Response
-from admin.models.role_request_body import RoleRequestBody
-from admin.rest import ApiException
+import thousandeyes_sdk.admin
+from thousandeyes_sdk.admin.models.create_role201_response import CreateRole201Response
+from thousandeyes_sdk.admin.models.role_request_body import RoleRequestBody
+from thousandeyes_sdk.admin.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -381,16 +381,16 @@ configuration = admin.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = admin.RolesApi(api_client)
+    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
     id = '23' # str | The ID of the desired role.
-    role_request_body = admin.RoleRequestBody() # RoleRequestBody | 
+    role_request_body = thousandeyes_sdk.admin.RoleRequestBody() # RoleRequestBody | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:

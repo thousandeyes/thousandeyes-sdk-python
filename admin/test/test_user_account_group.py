@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.user_account_group import UserAccountGroup
+from thousandeyes_sdk.admin.models.user_account_group import UserAccountGroup
 
 class TestUserAccountGroup(unittest.TestCase):
     """UserAccountGroup unit test stubs"""
@@ -41,7 +41,7 @@ class TestUserAccountGroup(unittest.TestCase):
                 last_login = '2022-07-17T22:00:54Z',
                 date_registered = '2022-07-17T22:00:54Z',
                 roles = [
-                    admin.models.role.Role()
+                    thousandeyes_sdk.admin.models.role.Role()
                     ]
             )
         else:

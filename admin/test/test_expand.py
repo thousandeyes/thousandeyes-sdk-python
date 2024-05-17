@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.expand import Expand
+from thousandeyes_sdk.admin.models.expand import Expand
 
 class TestExpand(unittest.TestCase):
     """Expand unit test stubs"""

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.account_group_roles_request_body_inner import AccountGroupRolesRequestBodyInner
+from thousandeyes_sdk.admin.models.account_group_roles_request_body_inner import AccountGroupRolesRequestBodyInner
 
 # TODO update the JSON string below
 json = "{}"

@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.agent import Agent
+from thousandeyes_sdk.admin.models.agent import Agent
 
 class TestAgent(unittest.TestCase):
     """Agent unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.enterprise_agent_ipv6_policy import EnterpriseAgentIpv6Policy
+from thousandeyes_sdk.admin.models.enterprise_agent_ipv6_policy import EnterpriseAgentIpv6Policy
 
 class TestEnterpriseAgentIpv6Policy(unittest.TestCase):
     """EnterpriseAgentIpv6Policy unit test stubs"""

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.account_group_id import AccountGroupId
+from thousandeyes_sdk.admin.models.account_group_id import AccountGroupId
 
 # TODO update the JSON string below
 json = "{}"

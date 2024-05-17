@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.account_group_detail import AccountGroupDetail
+from thousandeyes_sdk.admin.models.account_group_detail import AccountGroupDetail
 
 class TestAccountGroupDetail(unittest.TestCase):
     """AccountGroupDetail unit test stubs"""
@@ -41,14 +41,14 @@ class TestAccountGroupDetail(unittest.TestCase):
                 is_default_account_group = True,
                 organization_name = '',
                 users = [
-                    admin.models.user_account_group.UserAccountGroup(
+                    thousandeyes_sdk.admin.models.user_account_group.UserAccountGroup(
                         name = 'User X', 
                         email = 'userx@thousandeyes.com', 
                         uid = '235', 
                         last_login = '2022-07-17T22:00:54Z', 
                         date_registered = '2022-07-17T22:00:54Z', 
                         roles = [
-                            admin.models.role.Role()
+                            thousandeyes_sdk.admin.models.role.Role()
                             ], )
                     ],
                 agents = [

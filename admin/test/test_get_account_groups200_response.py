@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.get_account_groups200_response import GetAccountGroups200Response
+from thousandeyes_sdk.admin.models.get_account_groups200_response import GetAccountGroups200Response
 
 class TestGetAccountGroups200Response(unittest.TestCase):
     """GetAccountGroups200Response unit test stubs"""
@@ -36,10 +36,10 @@ class TestGetAccountGroups200Response(unittest.TestCase):
         if include_optional:
             return GetAccountGroups200Response(
                 account_groups = [
-                    admin.models.account_group.AccountGroup()
+                    thousandeyes_sdk.admin.models.account_group.AccountGroup()
                     ],
-                links = admin.models.self_links__links.SelfLinks__links(
-                    self = admin.models.link.Link(
+                links = thousandeyes_sdk.admin.models.self_links__links.SelfLinks__links(
+                    self = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 

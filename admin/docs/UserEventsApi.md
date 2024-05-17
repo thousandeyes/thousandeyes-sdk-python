@@ -1,4 +1,4 @@
-# admin.UserEventsApi
+# thousandeyes_sdk.admin.UserEventsApi
 
 All URIs are relative to *https://api.thousandeyes.com*
 
@@ -19,14 +19,14 @@ Returns a list of activity log events in the current account group.   If `useAll
 * Bearer Authentication (BearerAuth):
 
 ```python
-import admin
-from admin.models.get_user_events200_response import GetUserEvents200Response
-from admin.rest import ApiException
+import thousandeyes_sdk.admin
+from thousandeyes_sdk.admin.models.get_user_events200_response import GetUserEvents200Response
+from thousandeyes_sdk.admin.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -36,14 +36,14 @@ configuration = admin.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = admin.Configuration(
+configuration = thousandeyes_sdk.client.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
 # Enter a context with an instance of the API client
-with admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = admin.UserEventsApi(api_client)
+    api_instance = thousandeyes_sdk.admin.UserEventsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
     use_all_permitted_aids = False # bool | Set to `true` to load data from all accounts the user has access to. (optional) (default to False)
     window = '12h' # str | A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`. (optional)

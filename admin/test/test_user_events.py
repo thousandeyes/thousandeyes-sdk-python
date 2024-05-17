@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.user_events import UserEvents
+from thousandeyes_sdk.admin.models.user_events import UserEvents
 
 class TestUserEvents(unittest.TestCase):
     """UserEvents unit test stubs"""

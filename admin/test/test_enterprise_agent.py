@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.enterprise_agent import EnterpriseAgent
+from thousandeyes_sdk.admin.models.enterprise_agent import EnterpriseAgent
 
 class TestEnterpriseAgent(unittest.TestCase):
     """EnterpriseAgent unit test stubs"""
@@ -51,11 +51,11 @@ class TestEnterpriseAgent(unittest.TestCase):
                     ],
                 utilization = 25,
                 account_groups = [
-                    admin.models.account_group_1.AccountGroup_1()
+                    thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1()
                     ],
                 ipv6_policy = 'force-ipv4',
                 error_details = [
-                    admin.models.error_detail.ErrorDetail(
+                    thousandeyes_sdk.admin.models.error_detail.ErrorDetail(
                         code = 'agent-version-outdated', 
                         description = 'Agent Version 0.1.1 (latest: 1.0.0)', )
                     ],
@@ -69,7 +69,7 @@ class TestEnterpriseAgent(unittest.TestCase):
                     '10.2.3.3/24'
                     ],
                 interface_ip_mappings = [
-                    admin.models.interface_ip_mapping.InterfaceIpMapping(
+                    thousandeyes_sdk.admin.models.interface_ip_mapping.InterfaceIpMapping(
                         interface_name = 'wlp4s0', 
                         ip_addresses = ["73.252.207.219","2601:646:300:3ae0::b977"], )
                     ]

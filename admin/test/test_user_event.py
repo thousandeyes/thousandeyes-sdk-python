@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.user_event import UserEvent
+from thousandeyes_sdk.admin.models.user_event import UserEvent
 
 class TestUserEvent(unittest.TestCase):
     """UserEvent unit test stubs"""
@@ -43,7 +43,7 @@ class TestUserEvent(unittest.TestCase):
                 uid = '245',
                 user = 'API Sandbox User (noreply@thousandeyes.com)',
                 resources = [
-                    admin.models.user_event_all_of_resources_inner.UserEvent_allOf_resources_inner(
+                    thousandeyes_sdk.admin.models.user_event_all_of_resources_inner.UserEvent_allOf_resources_inner(
                         type = '', 
                         name = '', )
                     ]

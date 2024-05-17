@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.self_links import SelfLinks
+from thousandeyes_sdk.admin.models.self_links import SelfLinks
 
 class TestSelfLinks(unittest.TestCase):
     """SelfLinks unit test stubs"""
@@ -35,8 +35,8 @@ class TestSelfLinks(unittest.TestCase):
         model = SelfLinks()
         if include_optional:
             return SelfLinks(
-                links = admin.models.self_links__links.SelfLinks__links(
-                    self = admin.models.link.Link(
+                links = thousandeyes_sdk.admin.models.self_links__links.SelfLinks__links(
+                    self = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 

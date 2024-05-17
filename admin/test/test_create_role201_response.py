@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.create_role201_response import CreateRole201Response
+from thousandeyes_sdk.admin.models.create_role201_response import CreateRole201Response
 
 class TestCreateRole201Response(unittest.TestCase):
     """CreateRole201Response unit test stubs"""
@@ -39,8 +39,8 @@ class TestCreateRole201Response(unittest.TestCase):
                 role_id = '35',
                 is_builtin = True,
                 permissions = [{label=View reports, permissionId=1, isManagementPermission=true, permission=REPORT_READ}, {label=View snapshots, permissionId=51, isManagementPermission=false, permission=REPORT_SNAPSHOTS_READ}],
-                links = admin.models.self_links__links.SelfLinks__links(
-                    self = admin.models.link.Link(
+                links = thousandeyes_sdk.admin.models.self_links__links.SelfLinks__links(
+                    self = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 

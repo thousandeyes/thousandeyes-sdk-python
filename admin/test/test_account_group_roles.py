@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.account_group_roles import AccountGroupRoles
+from thousandeyes_sdk.admin.models.account_group_roles import AccountGroupRoles
 
 class TestAccountGroupRoles(unittest.TestCase):
     """AccountGroupRoles unit test stubs"""
@@ -36,10 +36,10 @@ class TestAccountGroupRoles(unittest.TestCase):
         if include_optional:
             return AccountGroupRoles(
                 account_group_roles = [
-                    admin.models.account_group_roles_account_group_roles_inner.AccountGroupRoles_accountGroupRoles_inner(
-                        account_group = admin.models.account_group_1.AccountGroup_1(), 
+                    thousandeyes_sdk.admin.models.account_group_roles_account_group_roles_inner.AccountGroupRoles_accountGroupRoles_inner(
+                        account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1(), 
                         roles = [
-                            admin.models.role.Role()
+                            thousandeyes_sdk.admin.models.role.Role()
                             ], )
                     ]
             )

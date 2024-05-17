@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.enterprise_agent_state import EnterpriseAgentState
+from thousandeyes_sdk.admin.models.enterprise_agent_state import EnterpriseAgentState
 
 class TestEnterpriseAgentState(unittest.TestCase):
     """EnterpriseAgentState unit test stubs"""

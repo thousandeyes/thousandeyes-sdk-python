@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.get_user_events200_response import GetUserEvents200Response
+from thousandeyes_sdk.admin.models.get_user_events200_response import GetUserEvents200Response
 
 class TestGetUserEvents200Response(unittest.TestCase):
     """GetUserEvents200Response unit test stubs"""
@@ -38,8 +38,8 @@ class TestGetUserEvents200Response(unittest.TestCase):
                 start_date = '2022-07-17T22:00:54Z',
                 end_date = '2022-07-18T22:00:54Z',
                 audit_events = [{accountGroupName=API Sandbox, aid=1234, date=2020-07-17T21:54:54Z, event=Report created., ipAddress=99.128.0.0/11, uid=1234, user=API Sandbox User (noreply@thousandeyes.com), resources=[{name=My New report, type=reportTitle}, {name=Other Report, type=testName}]}, {accountGroupName=API Sandbox, aid=1234, date=2020-07-17T22:00:54Z, event=Login failed., ipAddress=99.128.0.0/11, uid=1234, user=API Sandbox User (noreply@thousandeyes.com)}],
-                links = admin.models.pagination_links__links.PaginationLinks__links(
-                    previous = admin.models.link.Link(
+                links = thousandeyes_sdk.admin.models.pagination_links__links.PaginationLinks__links(
+                    previous = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 
@@ -48,7 +48,7 @@ class TestGetUserEvents200Response(unittest.TestCase):
                         profile = '', 
                         title = '', 
                         hreflang = '', ), 
-                    next = admin.models.link.Link(
+                    next = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 

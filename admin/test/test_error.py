@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.error import Error
+from thousandeyes_sdk.admin.models.error import Error
 
 class TestError(unittest.TestCase):
     """Error unit test stubs"""

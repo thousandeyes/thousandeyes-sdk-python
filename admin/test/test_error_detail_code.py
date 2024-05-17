@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.error_detail_code import ErrorDetailCode
+from thousandeyes_sdk.admin.models.error_detail_code import ErrorDetailCode
 
 class TestErrorDetailCode(unittest.TestCase):
     """ErrorDetailCode unit test stubs"""

@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.get_permissions200_response import GetPermissions200Response
+from thousandeyes_sdk.admin.models.get_permissions200_response import GetPermissions200Response
 
 class TestGetPermissions200Response(unittest.TestCase):
     """GetPermissions200Response unit test stubs"""
@@ -36,8 +36,8 @@ class TestGetPermissions200Response(unittest.TestCase):
         if include_optional:
             return GetPermissions200Response(
                 permissions = [{label=View reports, permissionId=1, isManagementPermission=true, permission=REPORT_READ}, {label=View snapshots, permissionId=51, isManagementPermission=false, permission=REPORT_SNAPSHOTS_READ}],
-                links = admin.models.self_links__links.SelfLinks__links(
-                    self = admin.models.link.Link(
+                links = thousandeyes_sdk.admin.models.self_links__links.SelfLinks__links(
+                    self = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 

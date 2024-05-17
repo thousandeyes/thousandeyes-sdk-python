@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.account_group_request_body import AccountGroupRequestBody
+from thousandeyes_sdk.admin.models.account_group_request_body import AccountGroupRequestBody
 
 class TestAccountGroupRequestBody(unittest.TestCase):
     """AccountGroupRequestBody unit test stubs"""

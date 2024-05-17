@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.login_account_group import LoginAccountGroup
+from thousandeyes_sdk.admin.models.login_account_group import LoginAccountGroup
 
 class TestLoginAccountGroup(unittest.TestCase):
     """LoginAccountGroup unit test stubs"""
@@ -35,7 +35,7 @@ class TestLoginAccountGroup(unittest.TestCase):
         model = LoginAccountGroup()
         if include_optional:
             return LoginAccountGroup(
-                login_account_group = admin.models.account_group_1.AccountGroup_1()
+                login_account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1()
             )
         else:
             return LoginAccountGroup(

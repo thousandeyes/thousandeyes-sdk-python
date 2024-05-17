@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.roles import Roles
+from thousandeyes_sdk.admin.models.roles import Roles
 
 class TestRoles(unittest.TestCase):
     """Roles unit test stubs"""
@@ -36,7 +36,7 @@ class TestRoles(unittest.TestCase):
         if include_optional:
             return Roles(
                 roles = [
-                    admin.models.role.Role()
+                    thousandeyes_sdk.admin.models.role.Role()
                     ]
             )
         else:

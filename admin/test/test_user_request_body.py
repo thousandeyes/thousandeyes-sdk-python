@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.user_request_body import UserRequestBody
+from thousandeyes_sdk.admin.models.user_request_body import UserRequestBody
 
 class TestUserRequestBody(unittest.TestCase):
     """UserRequestBody unit test stubs"""
@@ -39,7 +39,7 @@ class TestUserRequestBody(unittest.TestCase):
                 email = 'userx@thousandeyes.com',
                 login_account_group_id = '691',
                 account_group_roles = [
-                    admin.models.account_group_roles_request_body_inner.AccountGroupRolesRequestBody_inner(
+                    thousandeyes_sdk.admin.models.account_group_roles_request_body_inner.AccountGroupRolesRequestBody_inner(
                         account_group_id = '315', 
                         role_ids = ["57","1140"], )
                     ],

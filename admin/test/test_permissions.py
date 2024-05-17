@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.permissions import Permissions
+from thousandeyes_sdk.admin.models.permissions import Permissions
 
 class TestPermissions(unittest.TestCase):
     """Permissions unit test stubs"""

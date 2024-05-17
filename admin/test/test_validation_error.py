@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.validation_error import ValidationError
+from thousandeyes_sdk.admin.models.validation_error import ValidationError
 
 class TestValidationError(unittest.TestCase):
     """ValidationError unit test stubs"""
@@ -41,7 +41,7 @@ class TestValidationError(unittest.TestCase):
                 detail = '',
                 instance = '',
                 errors = [
-                    admin.models.validation_error_all_of_errors.ValidationError_allOf_errors(
+                    thousandeyes_sdk.admin.models.validation_error_all_of_errors.ValidationError_allOf_errors(
                         code = '', 
                         field = 56, 
                         message = '', )

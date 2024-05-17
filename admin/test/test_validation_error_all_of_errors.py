@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.validation_error_all_of_errors import ValidationErrorAllOfErrors
+from thousandeyes_sdk.admin.models.validation_error_all_of_errors import ValidationErrorAllOfErrors
 
 class TestValidationErrorAllOfErrors(unittest.TestCase):
     """ValidationErrorAllOfErrors unit test stubs"""

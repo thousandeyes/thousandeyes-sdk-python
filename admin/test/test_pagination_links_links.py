@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.pagination_links_links import PaginationLinksLinks
+from thousandeyes_sdk.admin.models.pagination_links_links import PaginationLinksLinks
 
 class TestPaginationLinksLinks(unittest.TestCase):
     """PaginationLinksLinks unit test stubs"""
@@ -35,7 +35,7 @@ class TestPaginationLinksLinks(unittest.TestCase):
         model = PaginationLinksLinks()
         if include_optional:
             return PaginationLinksLinks(
-                previous = admin.models.link.Link(
+                previous = thousandeyes_sdk.admin.models.link.Link(
                     href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                     templated = True, 
                     type = '', 
@@ -44,7 +44,7 @@ class TestPaginationLinksLinks(unittest.TestCase):
                     profile = '', 
                     title = '', 
                     hreflang = '', ),
-                next = admin.models.link.Link(
+                next = thousandeyes_sdk.admin.models.link.Link(
                     href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                     templated = True, 
                     type = '', 
@@ -53,7 +53,7 @@ class TestPaginationLinksLinks(unittest.TestCase):
                     profile = '', 
                     title = '', 
                     hreflang = '', ),
-                var_self = admin.models.link.Link(
+                var_self = thousandeyes_sdk.admin.models.link.Link(
                     href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                     templated = True, 
                     type = '', 

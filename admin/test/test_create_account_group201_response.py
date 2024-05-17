@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.create_account_group201_response import CreateAccountGroup201Response
+from thousandeyes_sdk.admin.models.create_account_group201_response import CreateAccountGroup201Response
 
 class TestCreateAccountGroup201Response(unittest.TestCase):
     """CreateAccountGroup201Response unit test stubs"""
@@ -41,18 +41,18 @@ class TestCreateAccountGroup201Response(unittest.TestCase):
                 is_default_account_group = True,
                 organization_name = '',
                 users = [
-                    admin.models.user_account_group.UserAccountGroup(
+                    thousandeyes_sdk.admin.models.user_account_group.UserAccountGroup(
                         name = 'User X', 
                         email = 'userx@thousandeyes.com', 
                         uid = '235', 
                         last_login = '2022-07-17T22:00:54Z', 
                         date_registered = '2022-07-17T22:00:54Z', 
                         roles = [
-                            admin.models.role.Role()
+                            thousandeyes_sdk.admin.models.role.Role()
                             ], )
                     ],
-                links = admin.models.self_links__links.SelfLinks__links(
-                    self = admin.models.link.Link(
+                links = thousandeyes_sdk.admin.models.self_links__links.SelfLinks__links(
+                    self = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 

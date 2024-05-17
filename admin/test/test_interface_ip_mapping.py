@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.interface_ip_mapping import InterfaceIpMapping
+from thousandeyes_sdk.admin.models.interface_ip_mapping import InterfaceIpMapping
 
 class TestInterfaceIpMapping(unittest.TestCase):
     """InterfaceIpMapping unit test stubs"""

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.user_event_all_of_resources_inner import UserEventAllOfResourcesInner
+from thousandeyes_sdk.admin.models.user_event_all_of_resources_inner import UserEventAllOfResourcesInner
 
 # TODO update the JSON string below
 json = "{}"

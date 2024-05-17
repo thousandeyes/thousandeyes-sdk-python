@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.get_user200_response import GetUser200Response
+from thousandeyes_sdk.admin.models.get_user200_response import GetUser200Response
 
 class TestGetUser200Response(unittest.TestCase):
     """GetUser200Response unit test stubs"""
@@ -39,20 +39,20 @@ class TestGetUser200Response(unittest.TestCase):
                 email = 'userx@thousandeyes.com',
                 uid = '245',
                 date_registered = '2020-07-17T22:00:54Z',
-                login_account_group = admin.models.account_group_1.AccountGroup_1(),
+                login_account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1(),
                 last_login = '2022-07-17T22:00:54Z',
                 account_group_roles = [
-                    admin.models.account_group_roles_account_group_roles_inner.AccountGroupRoles_accountGroupRoles_inner(
-                        account_group = admin.models.account_group_1.AccountGroup_1(), 
+                    thousandeyes_sdk.admin.models.account_group_roles_account_group_roles_inner.AccountGroupRoles_accountGroupRoles_inner(
+                        account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1(), 
                         roles = [
-                            admin.models.role.Role()
+                            thousandeyes_sdk.admin.models.role.Role()
                             ], )
                     ],
                 all_account_group_roles = [
-                    admin.models.role.Role()
+                    thousandeyes_sdk.admin.models.role.Role()
                     ],
-                links = admin.models.self_links__links.SelfLinks__links(
-                    self = admin.models.link.Link(
+                links = thousandeyes_sdk.admin.models.self_links__links.SelfLinks__links(
+                    self = thousandeyes_sdk.admin.models.link.Link(
                         href = 'https://api.thousandeyes.com/v7/link/to/resource/id', 
                         templated = True, 
                         type = '', 

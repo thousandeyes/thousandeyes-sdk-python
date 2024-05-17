@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.users import Users
+from thousandeyes_sdk.admin.models.users import Users
 
 class TestUsers(unittest.TestCase):
     """Users unit test stubs"""

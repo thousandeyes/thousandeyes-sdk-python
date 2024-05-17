@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from admin.models.interface_ip_mapping import InterfaceIpMapping
+from thousandeyes_sdk.admin.models.interface_ip_mapping import InterfaceIpMapping
 
 # TODO update the JSON string below
 json = "{}"

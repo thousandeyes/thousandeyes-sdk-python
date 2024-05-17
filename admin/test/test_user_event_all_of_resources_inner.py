@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.user_event_all_of_resources_inner import UserEventAllOfResourcesInner
+from thousandeyes_sdk.admin.models.user_event_all_of_resources_inner import UserEventAllOfResourcesInner
 
 class TestUserEventAllOfResourcesInner(unittest.TestCase):
     """UserEventAllOfResourcesInner unit test stubs"""

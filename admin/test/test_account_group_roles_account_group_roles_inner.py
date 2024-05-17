@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.account_group_roles_account_group_roles_inner import AccountGroupRolesAccountGroupRolesInner
+from thousandeyes_sdk.admin.models.account_group_roles_account_group_roles_inner import AccountGroupRolesAccountGroupRolesInner
 
 class TestAccountGroupRolesAccountGroupRolesInner(unittest.TestCase):
     """AccountGroupRolesAccountGroupRolesInner unit test stubs"""
@@ -35,9 +35,9 @@ class TestAccountGroupRolesAccountGroupRolesInner(unittest.TestCase):
         model = AccountGroupRolesAccountGroupRolesInner()
         if include_optional:
             return AccountGroupRolesAccountGroupRolesInner(
-                account_group = admin.models.account_group_1.AccountGroup_1(),
+                account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1(),
                 roles = [
-                    admin.models.role.Role()
+                    thousandeyes_sdk.admin.models.role.Role()
                     ]
             )
         else:

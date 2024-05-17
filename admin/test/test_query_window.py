@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.query_window import QueryWindow
+from thousandeyes_sdk.admin.models.query_window import QueryWindow
 
 class TestQueryWindow(unittest.TestCase):
     """QueryWindow unit test stubs"""

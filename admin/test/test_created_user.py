@@ -14,7 +14,7 @@
 
 import unittest
 
-from admin.models.created_user import CreatedUser
+from thousandeyes_sdk.admin.models.created_user import CreatedUser
 
 class TestCreatedUser(unittest.TestCase):
     """CreatedUser unit test stubs"""
@@ -39,16 +39,16 @@ class TestCreatedUser(unittest.TestCase):
                 email = 'userx@thousandeyes.com',
                 uid = '245',
                 date_registered = '2020-07-17T22:00:54Z',
-                login_account_group = admin.models.account_group_1.AccountGroup_1(),
+                login_account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1(),
                 account_group_roles = [
-                    admin.models.account_group_roles_account_group_roles_inner.AccountGroupRoles_accountGroupRoles_inner(
-                        account_group = admin.models.account_group_1.AccountGroup_1(), 
+                    thousandeyes_sdk.admin.models.account_group_roles_account_group_roles_inner.AccountGroupRoles_accountGroupRoles_inner(
+                        account_group = thousandeyes_sdk.admin.models.account_group_1.AccountGroup_1(), 
                         roles = [
-                            admin.models.role.Role()
+                            thousandeyes_sdk.admin.models.role.Role()
                             ], )
                     ],
                 all_account_group_roles = [
-                    admin.models.role.Role()
+                    thousandeyes_sdk.admin.models.role.Role()
                     ]
             )
         else:
