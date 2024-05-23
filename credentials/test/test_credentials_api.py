@@ -34,7 +34,8 @@ class TestCredentialsApi(unittest.TestCase):
         request_body_json = """
                 {
                   "name" : "Example Credential 1",
-                  "value" : "Example Credential 1 Password"
+                  "value" : "Example Credential 1 Password",
+                  "extra" : "unexpected"
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
