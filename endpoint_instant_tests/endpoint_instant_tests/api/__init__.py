@@ -1,7 +1,0 @@
-# flake8: noqa
-
-# import apis into api package
-from endpoint_instant_tests.api.agent_to_server_instant_scheduled_test_api import AgentToServerInstantScheduledTestApi
-from endpoint_instant_tests.api.http_server_instant_scheduled_test_api import HttpServerInstantScheduledTestApi
-from endpoint_instant_tests.api.run_existing_test_api import RunExistingTestApi
-
