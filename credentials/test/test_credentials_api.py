@@ -16,8 +16,8 @@ import json
 import unittest
 import credentials.models
 
+from .test_utils import assert_constructed_model_matches_example_json
 from credentials.api.credentials_api import CredentialsApi
-from pydantic import BaseModel
 
 
 class TestCredentialsApi(unittest.TestCase):
@@ -38,20 +38,13 @@ class TestCredentialsApi(unittest.TestCase):
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
-        request_from_constructor = credentials.models.CredentialRequest(**request_loaded_json)
-        self.recursive_assert_no_extra_fields(request_from_constructor)
-
         request_from_json = credentials.models.CredentialRequest.from_json(request_body_json)
-        self.assertIsNotNone(request_from_json)
-        self.assertCountEqual(request_from_constructor.model_fields_set,
-                              request_from_json.model_fields_set,
-                              "Request model from constructor fields do not match model from json fields")
+        assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
         response_body_json = """
                 {
                   "_links" : {
                     "self" : {
-                      "extra" : "unexpected",
                       "hreflang" : "hreflang",
                       "templated" : true,
                       "profile" : "profile",
@@ -67,14 +60,8 @@ class TestCredentialsApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_constructor = credentials.models.CredentialWithoutValue(**response_loaded_json)
-        self.recursive_assert_no_extra_fields(response_from_constructor)
-
         response_from_json = credentials.models.CredentialWithoutValue.from_json(response_body_json)
-        self.assertIsNotNone(response_from_json)
-        self.assertCountEqual(response_from_constructor.model_fields_set,
-                              response_from_json.model_fields_set,
-                              "Response model from constructor fields do not match model from json fields")
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_delete_transaction_tests_credential_models_validation(self) -> None:
         """Test case for delete_transaction_tests_credential request a nd response models"""
@@ -103,14 +90,8 @@ class TestCredentialsApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_constructor = credentials.models.Credential(**response_loaded_json)
-        self.recursive_assert_no_extra_fields(response_from_constructor)
-
         response_from_json = credentials.models.Credential.from_json(response_body_json)
-        self.assertIsNotNone(response_from_json)
-        self.assertCountEqual(response_from_constructor.model_fields_set,
-                              response_from_json.model_fields_set,
-                              "Response model from constructor fields do not match model from json fields")
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_get_transaction_tests_credentials_list_models_validation(self) -> None:
         """Test case for get_transaction_tests_credentials_list request a nd response models"""
@@ -165,14 +146,8 @@ class TestCredentialsApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_constructor = credentials.models.Credentials(**response_loaded_json)
-        self.recursive_assert_no_extra_fields(response_from_constructor)
-
         response_from_json = credentials.models.Credentials.from_json(response_body_json)
-        self.assertIsNotNone(response_from_json)
-        self.assertCountEqual(response_from_constructor.model_fields_set,
-                              response_from_json.model_fields_set,
-                              "Response model from constructor fields do not match model from json fields")
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_update_transaction_tests_credential_models_validation(self) -> None:
         """Test case for update_transaction_tests_credential request a nd response models"""
@@ -183,14 +158,8 @@ class TestCredentialsApi(unittest.TestCase):
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
-        request_from_constructor = credentials.models.CredentialRequest(**request_loaded_json)
-        self.recursive_assert_no_extra_fields(request_from_constructor)
-
         request_from_json = credentials.models.CredentialRequest.from_json(request_body_json)
-        self.assertIsNotNone(request_from_json)
-        self.assertCountEqual(request_from_constructor.model_fields_set,
-                              request_from_json.model_fields_set,
-                              "Request model from constructor fields do not match model from json fields")
+        assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
         response_body_json = """
                 {
@@ -211,26 +180,8 @@ class TestCredentialsApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_constructor = credentials.models.CredentialWithoutValue(**response_loaded_json)
-        self.recursive_assert_no_extra_fields(response_from_constructor)
-
         response_from_json = credentials.models.CredentialWithoutValue.from_json(response_body_json)
-        self.assertIsNotNone(response_from_json)
-        self.assertCountEqual(response_from_constructor.model_fields_set,
-                              response_from_json.model_fields_set,
-                              "Response model from constructor fields do not match model from json fields")
-
-    def recursive_assert_no_extra_fields(self, model: BaseModel):
-        self.assertIsNotNone(model)
-        self.assertGreater(model.model_fields_set.__len__(), 0)
-        self.assertEquals(model.model_extra.__len__(), 0,
-                          'model {0}.{1} has unmapped extra fields {2}'
-                          .format(model.__class__.__module__, model.__class__.__name__,
-                                  model.model_extra))
-        for f in model.model_fields_set:
-            field = model.__dict__.get(f)
-            if isinstance(field, BaseModel):
-                self.recursive_assert_no_extra_fields(field)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
 
 if __name__ == '__main__':
