@@ -39,9 +39,8 @@ class ThousandEyesRetry(Retry):
                          remove_headers_on_redirect, backoff_jitter)
 
     def is_retry(self, method: str, status_code: int, has_retry_after: bool = False) -> bool:
-        ret = super().is_retry(method, status_code, has_retry_after)
         # Always retry on 429, regardless of method or status_forcelist
-        return ret or status_code == 429
+        return status_code == 429 or super().is_retry(method, status_code, has_retry_after)
 
     def get_retry_after(self, response: BaseHTTPResponse) -> Optional[float]:
         retry_after: Optional[float] = super().get_retry_after(response)
