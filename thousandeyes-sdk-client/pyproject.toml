@@ -1,6 +1,6 @@
 [project]
 name = "thousandeyes-sdk-client"
-version = "1.0.0"
+dynamic = ["version"]
 authors = [
     { name = "ThousandEyes API Team", email = "api-team@thousandeyes.com" }
 ]
@@ -12,6 +12,9 @@ dependencies = [
     "pydantic >=2",
     "typing-extensions >=4.7.1",
 ]
+
+[tool.setuptools.dynamic]
+version = {attr = "thousandeyes_sdk.client.__version__"}
 
 [project.optional-dependencies]
 test = [
