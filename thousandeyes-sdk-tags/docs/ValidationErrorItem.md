@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **code** | **str** | (Optional) A unique error type/code that can be referenced in the documentation for further details. | [optional] 
-**var_field** | **int** | Identifies the field that triggered this particular error. | [optional] 
+**var_field** | **str** | Identifies the field that triggered this particular error. | [optional] 
 **message** | **str** | A short, human-readable summary of the error. | [optional] 
 
 ## Example

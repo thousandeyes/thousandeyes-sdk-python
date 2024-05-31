@@ -4,271 +4,15 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_endpoint_agent_to_server_test**](ScheduledTestsAgentToServerApi.md#delete_endpoint_agent_to_server_test) | **DELETE** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Delete agent to server scheduled test
-[**get_endpoint_agent_to_server_detail**](ScheduledTestsAgentToServerApi.md#get_endpoint_agent_to_server_detail) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Retrieve agent to server endpoint scheduled test
-[**get_endpoint_agent_to_server_tests_list**](ScheduledTestsAgentToServerApi.md#get_endpoint_agent_to_server_tests_list) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server | List agent to server endpoint scheduled tests
-[**post_endpoint_agent_to_server_test**](ScheduledTestsAgentToServerApi.md#post_endpoint_agent_to_server_test) | **POST** /v7/endpoint/tests/scheduled-tests/agent-to-server | Creates agent to server endpoint scheduled test
-[**update_endpoint_agent_to_server_detail**](ScheduledTestsAgentToServerApi.md#update_endpoint_agent_to_server_detail) | **PATCH** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Update agent to server endpoint scheduled test
-
-
-# **delete_endpoint_agent_to_server_test**
-> delete_endpoint_agent_to_server_test(test_id, aid=aid)
-
-Delete agent to server scheduled test
-
-Deletes an agent to server endpoint scheduled test.
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import thousandeyes_sdk.endpoint_tests
-from thousandeyes_sdk.endpoint_tests.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.thousandeyes.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
-    host = "https://api.thousandeyes.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = thousandeyes_sdk.endpoint_tests.ScheduledTestsAgentToServerApi(api_client)
-    test_id = '584739201' # str | Unique ID of endpoint test.
-    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-
-    try:
-        # Delete agent to server scheduled test
-        api_instance.delete_endpoint_agent_to_server_test(test_id, aid=aid)
-    except Exception as e:
-        print("Exception when calling ScheduledTestsAgentToServerApi->delete_endpoint_agent_to_server_test: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **test_id** | **str**| Unique ID of endpoint test. | 
- **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
-
-### Return type
-
-void (empty response body)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**204** | No content |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Insufficient permissions to query endpoint |  -  |
-**404** | Not found |  -  |
-**429** | Exhausted rate limit for the organization |  -  |
-**500** | Internal server error |  -  |
-**502** | Bad Gateway |  -  |
-**0** | An error occurred |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_endpoint_agent_to_server_detail**
-> EndpointAgentToServerTest get_endpoint_agent_to_server_detail(test_id, aid=aid)
-
-Retrieve agent to server endpoint scheduled test
-
-Retrieves details of an agent to server endpoint scheduled test.
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import thousandeyes_sdk.endpoint_tests
-from thousandeyes_sdk.endpoint_tests.models.endpoint_agent_to_server_test import EndpointAgentToServerTest
-from thousandeyes_sdk.endpoint_tests.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.thousandeyes.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
-    host = "https://api.thousandeyes.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = thousandeyes_sdk.endpoint_tests.ScheduledTestsAgentToServerApi(api_client)
-    test_id = '584739201' # str | Unique ID of endpoint test.
-    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-
-    try:
-        # Retrieve agent to server endpoint scheduled test
-        api_response = api_instance.get_endpoint_agent_to_server_detail(test_id, aid=aid)
-        print("The response of ScheduledTestsAgentToServerApi->get_endpoint_agent_to_server_detail:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ScheduledTestsAgentToServerApi->get_endpoint_agent_to_server_detail: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **test_id** | **str**| Unique ID of endpoint test. | 
- **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
-
-### Return type
-
-[**EndpointAgentToServerTest**](EndpointAgentToServerTest.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**403** | Insufficient permissions to query endpoint |  -  |
-**404** | Not found |  -  |
-**429** | Exhausted rate limit for the organization |  -  |
-**500** | Internal server error |  -  |
-**502** | Bad Gateway |  -  |
-**0** | An error occurred |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_endpoint_agent_to_server_tests_list**
-> EndpointAgentToServerTests get_endpoint_agent_to_server_tests_list(aid=aid)
-
-List agent to server endpoint scheduled tests
-
-Returns a list of all agent to server endpoint scheduled tests configured in ThousandEyes. This list does not contain saved events. 
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import thousandeyes_sdk.endpoint_tests
-from thousandeyes_sdk.endpoint_tests.models.endpoint_agent_to_server_tests import EndpointAgentToServerTests
-from thousandeyes_sdk.endpoint_tests.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.thousandeyes.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
-    host = "https://api.thousandeyes.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = thousandeyes_sdk.endpoint_tests.ScheduledTestsAgentToServerApi(api_client)
-    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-
-    try:
-        # List agent to server endpoint scheduled tests
-        api_response = api_instance.get_endpoint_agent_to_server_tests_list(aid=aid)
-        print("The response of ScheduledTestsAgentToServerApi->get_endpoint_agent_to_server_tests_list:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling ScheduledTestsAgentToServerApi->get_endpoint_agent_to_server_tests_list: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
-
-### Return type
-
-[**EndpointAgentToServerTests**](EndpointAgentToServerTests.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**403** | Insufficient permissions to query endpoint |  -  |
-**429** | Exhausted rate limit for the organization |  -  |
-**500** | Internal server error |  -  |
-**502** | Bad Gateway |  -  |
-**0** | An error occurred |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **post_endpoint_agent_to_server_test**
-> EndpointAgentToServerTest post_endpoint_agent_to_server_test(endpoint_agent_to_server_test_request, aid=aid)
+[**create_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#create_agent_to_server_endpoint_scheduled_test) | **POST** /v7/endpoint/tests/scheduled-tests/agent-to-server | Creates agent to server endpoint scheduled test
+[**delete_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#delete_agent_to_server_endpoint_scheduled_test) | **DELETE** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Delete agent to server scheduled test
+[**get_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_test) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Retrieve agent to server endpoint scheduled test
+[**get_agent_to_server_endpoint_scheduled_tests**](ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server | List agent to server endpoint scheduled tests
+[**update_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#update_agent_to_server_endpoint_scheduled_test) | **PATCH** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Update agent to server endpoint scheduled test
+
+
+# **create_agent_to_server_endpoint_scheduled_test**
+> EndpointAgentToServerTest create_agent_to_server_endpoint_scheduled_test(endpoint_agent_to_server_test_request, aid=aid)
 
 Creates agent to server endpoint scheduled test
 
@@ -310,11 +54,11 @@ with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
 
     try:
         # Creates agent to server endpoint scheduled test
-        api_response = api_instance.post_endpoint_agent_to_server_test(endpoint_agent_to_server_test_request, aid=aid)
-        print("The response of ScheduledTestsAgentToServerApi->post_endpoint_agent_to_server_test:\n")
+        api_response = api_instance.create_agent_to_server_endpoint_scheduled_test(endpoint_agent_to_server_test_request, aid=aid)
+        print("The response of ScheduledTestsAgentToServerApi->create_agent_to_server_endpoint_scheduled_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ScheduledTestsAgentToServerApi->post_endpoint_agent_to_server_test: %s\n" % e)
+        print("Exception when calling ScheduledTestsAgentToServerApi->create_agent_to_server_endpoint_scheduled_test: %s\n" % e)
 ```
 
 
@@ -338,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -356,8 +100,264 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_endpoint_agent_to_server_detail**
-> EndpointAgentToServerTest update_endpoint_agent_to_server_detail(test_id, endpoint_network_test_update, aid=aid)
+# **delete_agent_to_server_endpoint_scheduled_test**
+> delete_agent_to_server_endpoint_scheduled_test(test_id, aid=aid)
+
+Delete agent to server scheduled test
+
+Deletes an agent to server endpoint scheduled test.
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.endpoint_tests
+from thousandeyes_sdk.endpoint_tests.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.client.Configuration(
+    host = "https://api.thousandeyes.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.endpoint_tests.ScheduledTestsAgentToServerApi(api_client)
+    test_id = '584739201' # str | Unique ID of endpoint test.
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # Delete agent to server scheduled test
+        api_instance.delete_agent_to_server_endpoint_scheduled_test(test_id, aid=aid)
+    except Exception as e:
+        print("Exception when calling ScheduledTestsAgentToServerApi->delete_agent_to_server_endpoint_scheduled_test: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **test_id** | **str**| Unique ID of endpoint test. | 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No content |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+**502** | Bad Gateway |  -  |
+**0** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_agent_to_server_endpoint_scheduled_test**
+> EndpointAgentToServerTest get_agent_to_server_endpoint_scheduled_test(test_id, aid=aid)
+
+Retrieve agent to server endpoint scheduled test
+
+Retrieves details of an agent to server endpoint scheduled test.
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.endpoint_tests
+from thousandeyes_sdk.endpoint_tests.models.endpoint_agent_to_server_test import EndpointAgentToServerTest
+from thousandeyes_sdk.endpoint_tests.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.client.Configuration(
+    host = "https://api.thousandeyes.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.endpoint_tests.ScheduledTestsAgentToServerApi(api_client)
+    test_id = '584739201' # str | Unique ID of endpoint test.
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # Retrieve agent to server endpoint scheduled test
+        api_response = api_instance.get_agent_to_server_endpoint_scheduled_test(test_id, aid=aid)
+        print("The response of ScheduledTestsAgentToServerApi->get_agent_to_server_endpoint_scheduled_test:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ScheduledTestsAgentToServerApi->get_agent_to_server_endpoint_scheduled_test: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **test_id** | **str**| Unique ID of endpoint test. | 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+[**EndpointAgentToServerTest**](EndpointAgentToServerTest.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+**502** | Bad Gateway |  -  |
+**0** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_agent_to_server_endpoint_scheduled_tests**
+> EndpointAgentToServerTests get_agent_to_server_endpoint_scheduled_tests(aid=aid)
+
+List agent to server endpoint scheduled tests
+
+Returns a list of all agent to server endpoint scheduled tests configured in ThousandEyes. This list does not contain saved events. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.endpoint_tests
+from thousandeyes_sdk.endpoint_tests.models.endpoint_agent_to_server_tests import EndpointAgentToServerTests
+from thousandeyes_sdk.endpoint_tests.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.client.Configuration(
+    host = "https://api.thousandeyes.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.endpoint_tests.ScheduledTestsAgentToServerApi(api_client)
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # List agent to server endpoint scheduled tests
+        api_response = api_instance.get_agent_to_server_endpoint_scheduled_tests(aid=aid)
+        print("The response of ScheduledTestsAgentToServerApi->get_agent_to_server_endpoint_scheduled_tests:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling ScheduledTestsAgentToServerApi->get_agent_to_server_endpoint_scheduled_tests: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+[**EndpointAgentToServerTests**](EndpointAgentToServerTests.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+**502** | Bad Gateway |  -  |
+**0** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_agent_to_server_endpoint_scheduled_test**
+> EndpointAgentToServerTest update_agent_to_server_endpoint_scheduled_test(test_id, endpoint_network_test_update, aid=aid)
 
 Update agent to server endpoint scheduled test
 
@@ -400,11 +400,11 @@ with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
 
     try:
         # Update agent to server endpoint scheduled test
-        api_response = api_instance.update_endpoint_agent_to_server_detail(test_id, endpoint_network_test_update, aid=aid)
-        print("The response of ScheduledTestsAgentToServerApi->update_endpoint_agent_to_server_detail:\n")
+        api_response = api_instance.update_agent_to_server_endpoint_scheduled_test(test_id, endpoint_network_test_update, aid=aid)
+        print("The response of ScheduledTestsAgentToServerApi->update_agent_to_server_endpoint_scheduled_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ScheduledTestsAgentToServerApi->update_endpoint_agent_to_server_detail: %s\n" % e)
+        print("Exception when calling ScheduledTestsAgentToServerApi->update_agent_to_server_endpoint_scheduled_test: %s\n" % e)
 ```
 
 
@@ -429,7 +429,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

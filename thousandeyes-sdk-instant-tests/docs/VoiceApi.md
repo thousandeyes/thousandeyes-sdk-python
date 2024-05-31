@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_instant_voice**](VoiceApi.md#post_instant_voice) | **POST** /v7/tests/voice/instant | Create voice instant test
+[**create_voice_instant_test**](VoiceApi.md#create_voice_instant_test) | **POST** /v7/tests/voice/instant | Create voice instant test
 
 
-# **post_instant_voice**
-> VoiceInstantTest post_instant_voice(voice_instant_test_request, aid=aid, expand=expand)
+# **create_voice_instant_test**
+> VoiceInstantTest create_voice_instant_test(voice_instant_test_request, aid=aid, expand=expand)
 
 Create voice instant test
 
@@ -52,11 +52,11 @@ with thousandeyes_sdk.instant_tests.ApiClient(configuration) as api_client:
 
     try:
         # Create voice instant test
-        api_response = api_instance.post_instant_voice(voice_instant_test_request, aid=aid, expand=expand)
-        print("The response of VoiceApi->post_instant_voice:\n")
+        api_response = api_instance.create_voice_instant_test(voice_instant_test_request, aid=aid, expand=expand)
+        print("The response of VoiceApi->create_voice_instant_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VoiceApi->post_instant_voice: %s\n" % e)
+        print("Exception when calling VoiceApi->create_voice_instant_test: %s\n" % e)
 ```
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

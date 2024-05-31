@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_instant_sip_server**](SIPServerApi.md#post_instant_sip_server) | **POST** /v7/tests/sip-server/instant | Create SIP server instant test
+[**create_sip_server_instant_test**](SIPServerApi.md#create_sip_server_instant_test) | **POST** /v7/tests/sip-server/instant | Create SIP server instant test
 
 
-# **post_instant_sip_server**
-> SipServerInstantTestResponse post_instant_sip_server(sip_server_instant_test_request, aid=aid, expand=expand)
+# **create_sip_server_instant_test**
+> SipServerInstantTestResponse create_sip_server_instant_test(sip_server_instant_test_request, aid=aid, expand=expand)
 
 Create SIP server instant test
 
@@ -52,11 +52,11 @@ with thousandeyes_sdk.instant_tests.ApiClient(configuration) as api_client:
 
     try:
         # Create SIP server instant test
-        api_response = api_instance.post_instant_sip_server(sip_server_instant_test_request, aid=aid, expand=expand)
-        print("The response of SIPServerApi->post_instant_sip_server:\n")
+        api_response = api_instance.create_sip_server_instant_test(sip_server_instant_test_request, aid=aid, expand=expand)
+        print("The response of SIPServerApi->create_sip_server_instant_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling SIPServerApi->post_instant_sip_server: %s\n" % e)
+        print("Exception when calling SIPServerApi->create_sip_server_instant_test: %s\n" % e)
 ```
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

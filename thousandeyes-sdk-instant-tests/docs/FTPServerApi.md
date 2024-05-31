@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_instant_ftp_server**](FTPServerApi.md#post_instant_ftp_server) | **POST** /v7/tests/ftp-server/instant | Create FTP server instant test
+[**create_ftp_server_instant_test**](FTPServerApi.md#create_ftp_server_instant_test) | **POST** /v7/tests/ftp-server/instant | Create FTP server instant test
 
 
-# **post_instant_ftp_server**
-> FtpServerInstantTest post_instant_ftp_server(server_instant_test_request, aid=aid, expand=expand)
+# **create_ftp_server_instant_test**
+> FtpServerInstantTest create_ftp_server_instant_test(server_instant_test_request, aid=aid, expand=expand)
 
 Create FTP server instant test
 
@@ -52,11 +52,11 @@ with thousandeyes_sdk.instant_tests.ApiClient(configuration) as api_client:
 
     try:
         # Create FTP server instant test
-        api_response = api_instance.post_instant_ftp_server(server_instant_test_request, aid=aid, expand=expand)
-        print("The response of FTPServerApi->post_instant_ftp_server:\n")
+        api_response = api_instance.create_ftp_server_instant_test(server_instant_test_request, aid=aid, expand=expand)
+        print("The response of FTPServerApi->create_ftp_server_instant_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling FTPServerApi->post_instant_ftp_server: %s\n" % e)
+        print("Exception when calling FTPServerApi->create_ftp_server_instant_test: %s\n" % e)
 ```
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

@@ -4,12 +4,12 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**catalog_provider_list**](CatalogProvidersApi.md#catalog_provider_list) | **POST** /v7/internet-insights/catalog/providers/filter | List catalog providers
+[**filter_catalog_providers**](CatalogProvidersApi.md#filter_catalog_providers) | **POST** /v7/internet-insights/catalog/providers/filter | List catalog providers
 [**get_catalog_provider**](CatalogProvidersApi.md#get_catalog_provider) | **GET** /v7/internet-insights/catalog/providers/{providerId} | Retrieve a catalog provider
 
 
-# **catalog_provider_list**
-> ApiCatalogProviderResponse catalog_provider_list(api_catalog_provider_filter, aid=aid)
+# **filter_catalog_providers**
+> ApiCatalogProviderResponse filter_catalog_providers(api_catalog_provider_filter, aid=aid)
 
 List catalog providers
 
@@ -51,11 +51,11 @@ with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
 
     try:
         # List catalog providers
-        api_response = api_instance.catalog_provider_list(api_catalog_provider_filter, aid=aid)
-        print("The response of CatalogProvidersApi->catalog_provider_list:\n")
+        api_response = api_instance.filter_catalog_providers(api_catalog_provider_filter, aid=aid)
+        print("The response of CatalogProvidersApi->filter_catalog_providers:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CatalogProvidersApi->catalog_provider_list: %s\n" % e)
+        print("Exception when calling CatalogProvidersApi->filter_catalog_providers: %s\n" % e)
 ```
 
 
@@ -79,7 +79,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_http_server_instant_test**](HttpServerInstantScheduledTestApi.md#post_http_server_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/http-server/instant | Run http server instant scheduled test
+[**create_http_server_scheduled_instant_test**](HttpServerInstantScheduledTestApi.md#create_http_server_scheduled_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/http-server/instant | Run http server instant scheduled test
 
 
-# **post_http_server_instant_test**
-> EndpointHttpServerTest post_http_server_instant_test(endpoint_http_server_instant_test, aid=aid)
+# **create_http_server_scheduled_instant_test**
+> EndpointHttpServerTest create_http_server_scheduled_instant_test(endpoint_http_server_instant_test, aid=aid)
 
 Run http server instant scheduled test
 
@@ -50,11 +50,11 @@ with thousandeyes_sdk.endpoint_instant_tests.ApiClient(configuration) as api_cli
 
     try:
         # Run http server instant scheduled test
-        api_response = api_instance.post_http_server_instant_test(endpoint_http_server_instant_test, aid=aid)
-        print("The response of HttpServerInstantScheduledTestApi->post_http_server_instant_test:\n")
+        api_response = api_instance.create_http_server_scheduled_instant_test(endpoint_http_server_instant_test, aid=aid)
+        print("The response of HttpServerInstantScheduledTestApi->create_http_server_scheduled_instant_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling HttpServerInstantScheduledTestApi->post_http_server_instant_test: %s\n" % e)
+        print("Exception when calling HttpServerInstantScheduledTestApi->create_http_server_scheduled_instant_test: %s\n" % e)
 ```
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

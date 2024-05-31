@@ -4,12 +4,12 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assign_enterprise_agent_cluster**](EnterpriseAgentClusterApi.md#assign_enterprise_agent_cluster) | **POST** /v7/agents/{agentId}/cluster/assign | Add member to Enterprise Agent cluster
-[**unassign_enterprise_agent_from_cluster**](EnterpriseAgentClusterApi.md#unassign_enterprise_agent_from_cluster) | **POST** /v7/agents/{agentId}/cluster/unassign | Remove member from Enterprise Agent cluster
+[**assign_agent_to_cluster**](EnterpriseAgentClusterApi.md#assign_agent_to_cluster) | **POST** /v7/agents/{agentId}/cluster/assign | Add member to Enterprise Agent cluster
+[**unassign_agent_from_cluster**](EnterpriseAgentClusterApi.md#unassign_agent_from_cluster) | **POST** /v7/agents/{agentId}/cluster/unassign | Remove member from Enterprise Agent cluster
 
 
-# **assign_enterprise_agent_cluster**
-> AgentDetails assign_enterprise_agent_cluster(agent_id, agent_cluster_assign_request, aid=aid, expand=expand)
+# **assign_agent_to_cluster**
+> AgentDetails assign_agent_to_cluster(agent_id, agent_cluster_assign_request, aid=aid, expand=expand)
 
 Add member to Enterprise Agent cluster
 
@@ -54,11 +54,11 @@ with thousandeyes_sdk.agents.ApiClient(configuration) as api_client:
 
     try:
         # Add member to Enterprise Agent cluster
-        api_response = api_instance.assign_enterprise_agent_cluster(agent_id, agent_cluster_assign_request, aid=aid, expand=expand)
-        print("The response of EnterpriseAgentClusterApi->assign_enterprise_agent_cluster:\n")
+        api_response = api_instance.assign_agent_to_cluster(agent_id, agent_cluster_assign_request, aid=aid, expand=expand)
+        print("The response of EnterpriseAgentClusterApi->assign_agent_to_cluster:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EnterpriseAgentClusterApi->assign_enterprise_agent_cluster: %s\n" % e)
+        print("Exception when calling EnterpriseAgentClusterApi->assign_agent_to_cluster: %s\n" % e)
 ```
 
 
@@ -84,7 +84,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -102,8 +102,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unassign_enterprise_agent_from_cluster**
-> CloudEnterpriseAgents unassign_enterprise_agent_from_cluster(agent_id, agent_cluster_unassign_request, aid=aid, expand=expand)
+# **unassign_agent_from_cluster**
+> CloudEnterpriseAgents unassign_agent_from_cluster(agent_id, agent_cluster_unassign_request, aid=aid, expand=expand)
 
 Remove member from Enterprise Agent cluster
 
@@ -148,11 +148,11 @@ with thousandeyes_sdk.agents.ApiClient(configuration) as api_client:
 
     try:
         # Remove member from Enterprise Agent cluster
-        api_response = api_instance.unassign_enterprise_agent_from_cluster(agent_id, agent_cluster_unassign_request, aid=aid, expand=expand)
-        print("The response of EnterpriseAgentClusterApi->unassign_enterprise_agent_from_cluster:\n")
+        api_response = api_instance.unassign_agent_from_cluster(agent_id, agent_cluster_unassign_request, aid=aid, expand=expand)
+        print("The response of EnterpriseAgentClusterApi->unassign_agent_from_cluster:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EnterpriseAgentClusterApi->unassign_enterprise_agent_from_cluster: %s\n" % e)
+        print("Exception when calling EnterpriseAgentClusterApi->unassign_agent_from_cluster: %s\n" % e)
 ```
 
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

@@ -4,12 +4,12 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_alert_details**](AlertsApi.md#get_alert_details) | **GET** /v7/alerts/{alertId} | Retrieve alert details
+[**get_alert**](AlertsApi.md#get_alert) | **GET** /v7/alerts/{alertId} | Retrieve alert details
 [**get_alerts**](AlertsApi.md#get_alerts) | **GET** /v7/alerts | List active alerts
 
 
-# **get_alert_details**
-> AlertDetail get_alert_details(alert_id, aid=aid)
+# **get_alert**
+> AlertDetail get_alert(alert_id, aid=aid)
 
 Retrieve alert details
 
@@ -50,11 +50,11 @@ with thousandeyes_sdk.alerts.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve alert details
-        api_response = api_instance.get_alert_details(alert_id, aid=aid)
-        print("The response of AlertsApi->get_alert_details:\n")
+        api_response = api_instance.get_alert(alert_id, aid=aid)
+        print("The response of AlertsApi->get_alert:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AlertsApi->get_alert_details: %s\n" % e)
+        print("Exception when calling AlertsApi->get_alert: %s\n" % e)
 ```
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -134,7 +134,7 @@ with thousandeyes_sdk.alerts.ApiClient(configuration) as api_client:
     window = '12h' # str | A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`. (optional)
     start_date = '2022-07-17T22:00:54Z' # datetime | Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
-    max = 5 # float | (Optional) Maximum number of objects to return. (optional)
+    max = 5 # int | (Optional) Maximum number of objects to return. (optional)
     state = thousandeyes_sdk.alerts.State() # State | Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`. (optional)
 
     try:
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
  **window** | **str**| A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: &#x60;s&#x60; for seconds (default if no type is specified), &#x60;m&#x60; for minutes, &#x60;h&#x60; for hours, &#x60;d&#x60; for days, and &#x60;w&#x60; for weeks. For a precise date range, use &#x60;startDate&#x60; and &#x60;endDate&#x60;. | [optional] 
  **start_date** | **datetime**| Use with the &#x60;endDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
- **max** | **float**| (Optional) Maximum number of objects to return. | [optional] 
+ **max** | **int**| (Optional) Maximum number of objects to return. | [optional] 
  **state** | [**State**](.md)| Optional parameter to match a specific alert state. If not specified, it defaults to &#x60;trigger&#x60;. | [optional] 
 
 ### Return type
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

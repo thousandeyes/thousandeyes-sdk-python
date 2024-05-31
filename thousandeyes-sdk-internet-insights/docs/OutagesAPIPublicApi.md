@@ -4,101 +4,13 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_outages_app**](OutagesAPIPublicApi.md#get_outages_app) | **GET** /v7/internet-insights/outages/app/{outageId} | Retrieve application outage
-[**get_outages_filter**](OutagesAPIPublicApi.md#get_outages_filter) | **POST** /v7/internet-insights/outages/filter | List network and application outages
-[**get_outages_net**](OutagesAPIPublicApi.md#get_outages_net) | **GET** /v7/internet-insights/outages/net/{outageId} | Retrieve network outage
+[**filter_outages**](OutagesAPIPublicApi.md#filter_outages) | **POST** /v7/internet-insights/outages/filter | List network and application outages
+[**get_app_outage**](OutagesAPIPublicApi.md#get_app_outage) | **GET** /v7/internet-insights/outages/app/{outageId} | Retrieve application outage
+[**get_network_outage**](OutagesAPIPublicApi.md#get_network_outage) | **GET** /v7/internet-insights/outages/net/{outageId} | Retrieve network outage
 
 
-# **get_outages_app**
-> ApiApplicationOutageDetails get_outages_app(outage_id, aid=aid)
-
-Retrieve application outage
-
-Returns the details of an application outage. 
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import thousandeyes_sdk.internet_insights
-from thousandeyes_sdk.internet_insights.models.api_application_outage_details import ApiApplicationOutageDetails
-from thousandeyes_sdk.internet_insights.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.thousandeyes.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
-    host = "https://api.thousandeyes.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = thousandeyes_sdk.internet_insights.OutagesAPIPublicApi(api_client)
-    outage_id = 'F73E24F17E4996923196826A208BB572508A8EB13BEE14B0' # str | 
-    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-
-    try:
-        # Retrieve application outage
-        api_response = api_instance.get_outages_app(outage_id, aid=aid)
-        print("The response of OutagesAPIPublicApi->get_outages_app:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling OutagesAPIPublicApi->get_outages_app: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **outage_id** | **str**|  | 
- **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
-
-### Return type
-
-[**ApiApplicationOutageDetails**](ApiApplicationOutageDetails.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Insufficient permissions to query endpoint |  -  |
-**404** | Not found |  -  |
-**429** | Exhausted rate limit for the organization |  -  |
-**500** | Internal server error |  -  |
-**502** | Bad Gateway |  -  |
-**0** | An error occurred |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_outages_filter**
-> ApiOutagesResponse get_outages_filter(api_outage_filter, aid=aid)
+# **filter_outages**
+> ApiOutagesResponse filter_outages(api_outage_filter, aid=aid)
 
 List network and application outages
 
@@ -140,11 +52,11 @@ with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
 
     try:
         # List network and application outages
-        api_response = api_instance.get_outages_filter(api_outage_filter, aid=aid)
-        print("The response of OutagesAPIPublicApi->get_outages_filter:\n")
+        api_response = api_instance.filter_outages(api_outage_filter, aid=aid)
+        print("The response of OutagesAPIPublicApi->filter_outages:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OutagesAPIPublicApi->get_outages_filter: %s\n" % e)
+        print("Exception when calling OutagesAPIPublicApi->filter_outages: %s\n" % e)
 ```
 
 
@@ -168,7 +80,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -186,8 +98,96 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_outages_net**
-> ApiNetworkOutageDetails get_outages_net(outage_id, aid=aid)
+# **get_app_outage**
+> ApiApplicationOutageDetails get_app_outage(outage_id, aid=aid)
+
+Retrieve application outage
+
+Returns the details of an application outage. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.internet_insights
+from thousandeyes_sdk.internet_insights.models.api_application_outage_details import ApiApplicationOutageDetails
+from thousandeyes_sdk.internet_insights.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.client.Configuration(
+    host = "https://api.thousandeyes.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.internet_insights.OutagesAPIPublicApi(api_client)
+    outage_id = 'F73E24F17E4996923196826A208BB572508A8EB13BEE14B0' # str | 
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # Retrieve application outage
+        api_response = api_instance.get_app_outage(outage_id, aid=aid)
+        print("The response of OutagesAPIPublicApi->get_app_outage:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling OutagesAPIPublicApi->get_app_outage: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **outage_id** | **str**|  | 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+[**ApiApplicationOutageDetails**](ApiApplicationOutageDetails.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+**502** | Bad Gateway |  -  |
+**0** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_network_outage**
+> ApiNetworkOutageDetails get_network_outage(outage_id, aid=aid)
 
 Retrieve network outage
 
@@ -228,11 +228,11 @@ with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve network outage
-        api_response = api_instance.get_outages_net(outage_id, aid=aid)
-        print("The response of OutagesAPIPublicApi->get_outages_net:\n")
+        api_response = api_instance.get_network_outage(outage_id, aid=aid)
+        print("The response of OutagesAPIPublicApi->get_network_outage:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling OutagesAPIPublicApi->get_outages_net: %s\n" % e)
+        print("Exception when calling OutagesAPIPublicApi->get_network_outage: %s\n" % e)
 ```
 
 
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

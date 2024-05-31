@@ -23,10 +23,5 @@ src/thousandeyes_sdk/monitors/models/self_links.py
 src/thousandeyes_sdk/monitors/models/unauthorized_error.py
 src/thousandeyes_sdk/monitors/py.typed
 test/__init__.py
-test/test_error.py
-test/test_link.py
-test/test_monitor.py
-test/test_monitor_type.py
-test/test_monitors.py
-test/test_self_links.py
-test/test_unauthorized_error.py
+test/test_list_bgp_monitors_api.py
+test/test_utils.py

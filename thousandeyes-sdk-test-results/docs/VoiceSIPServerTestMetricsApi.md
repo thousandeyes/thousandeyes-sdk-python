@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_result_sip_server**](VoiceSIPServerTestMetricsApi.md#get_test_result_sip_server) | **GET** /v7/test-results/{testId}/sip-server | Get SIP server test results
+[**get_test_sip_server_results**](VoiceSIPServerTestMetricsApi.md#get_test_sip_server_results) | **GET** /v7/test-results/{testId}/sip-server | Get SIP server test results
 
 
-# **get_test_result_sip_server**
-> SipServerTestResults get_test_result_sip_server(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+# **get_test_sip_server_results**
+> SipServerTestResults get_test_sip_server_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
 
 Get SIP server test results
 
@@ -53,11 +53,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Get SIP server test results
-        api_response = api_instance.get_test_result_sip_server(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
-        print("The response of VoiceSIPServerTestMetricsApi->get_test_result_sip_server:\n")
+        api_response = api_instance.get_test_sip_server_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of VoiceSIPServerTestMetricsApi->get_test_sip_server_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VoiceSIPServerTestMetricsApi->get_test_result_sip_server: %s\n" % e)
+        print("Exception when calling VoiceSIPServerTestMetricsApi->get_test_sip_server_results: %s\n" % e)
 ```
 
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
