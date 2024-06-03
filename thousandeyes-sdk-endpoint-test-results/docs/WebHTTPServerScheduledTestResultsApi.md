@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_result_http_server**](WebHTTPServerScheduledTestResultsApi.md#get_test_result_http_server) | **GET** /v7/endpoint/test-results/scheduled-tests/{testId}/http-server | Retrieve HTTP server scheduled test results
+[**get_http_server_scheduled_test_results**](WebHTTPServerScheduledTestResultsApi.md#get_http_server_scheduled_test_results) | **GET** /v7/endpoint/test-results/scheduled-tests/{testId}/http-server | Retrieve HTTP server scheduled test results
 
 
-# **get_test_result_http_server**
-> HttpTestResults get_test_result_http_server(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand)
+# **get_http_server_scheduled_test_results**
+> HttpTestResults get_http_server_scheduled_test_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand)
 
 Retrieve HTTP server scheduled test results
 
@@ -55,11 +55,11 @@ with thousandeyes_sdk.endpoint_test_results.ApiClient(configuration) as api_clie
 
     try:
         # Retrieve HTTP server scheduled test results
-        api_response = api_instance.get_test_result_http_server(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand)
-        print("The response of WebHTTPServerScheduledTestResultsApi->get_test_result_http_server:\n")
+        api_response = api_instance.get_http_server_scheduled_test_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand)
+        print("The response of WebHTTPServerScheduledTestResultsApi->get_http_server_scheduled_test_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebHTTPServerScheduledTestResultsApi->get_test_result_http_server: %s\n" % e)
+        print("Exception when calling WebHTTPServerScheduledTestResultsApi->get_http_server_scheduled_test_results: %s\n" % e)
 ```
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

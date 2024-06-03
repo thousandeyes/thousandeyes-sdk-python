@@ -29,13 +29,5 @@ src/thousandeyes_sdk/credentials/models/validation_error.py
 src/thousandeyes_sdk/credentials/models/validation_error_item.py
 src/thousandeyes_sdk/credentials/py.typed
 test/__init__.py
-test/test_credential.py
-test/test_credential_request.py
-test/test_credential_without_value.py
-test/test_credentials.py
-test/test_error.py
-test/test_link.py
-test/test_self_links.py
-test/test_unauthorized_error.py
-test/test_validation_error.py
-test/test_validation_error_item.py
+test/test_credentials_api.py
+test/test_utils.py

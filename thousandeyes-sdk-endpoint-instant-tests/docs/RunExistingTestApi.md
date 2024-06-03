@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_endpoint_instant_run**](RunExistingTestApi.md#post_endpoint_instant_run) | **POST** /v7/endpoint/tests/scheduled-tests/{testId}/run | Run endpoint instant scheduled test
+[**run_endpoint_scheduled_instant_test**](RunExistingTestApi.md#run_endpoint_scheduled_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/{testId}/run | Run endpoint instant scheduled test
 
 
-# **post_endpoint_instant_run**
-> post_endpoint_instant_run(test_id, aid=aid)
+# **run_endpoint_scheduled_instant_test**
+> run_endpoint_scheduled_instant_test(test_id, aid=aid)
 
 Run endpoint instant scheduled test
 
@@ -48,9 +48,9 @@ with thousandeyes_sdk.endpoint_instant_tests.ApiClient(configuration) as api_cli
 
     try:
         # Run endpoint instant scheduled test
-        api_instance.post_endpoint_instant_run(test_id, aid=aid)
+        api_instance.run_endpoint_scheduled_instant_test(test_id, aid=aid)
     except Exception as e:
-        print("Exception when calling RunExistingTestApi->post_endpoint_instant_run: %s\n" % e)
+        print("Exception when calling RunExistingTestApi->run_endpoint_scheduled_instant_test: %s\n" % e)
 ```
 
 

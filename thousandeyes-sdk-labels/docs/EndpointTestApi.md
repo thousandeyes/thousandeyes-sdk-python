@@ -4,15 +4,15 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_endpoint_tests_label**](EndpointTestApi.md#create_endpoint_tests_label) | **POST** /v7/labels/endpoint-test | Create a Label of type &#x60;endpoint-test&#x60;
+[**create_endpoint_test_label**](EndpointTestApi.md#create_endpoint_test_label) | **POST** /v7/labels/endpoint-test | Create a Label of type &#x60;endpoint-test&#x60;
 [**delete_endpoint_test_label**](EndpointTestApi.md#delete_endpoint_test_label) | **DELETE** /v7/labels/endpoint-test/{labelId} | Delete a Label object of type &#x60;endpoint-test&#x60;
 [**get_endpoint_test_label**](EndpointTestApi.md#get_endpoint_test_label) | **GET** /v7/labels/endpoint-test/{labelId} | Get a Label object of type &#x60;endpoint-test&#x60;
 [**get_endpoint_test_labels**](EndpointTestApi.md#get_endpoint_test_labels) | **GET** /v7/labels/endpoint-test | Get list of Labels of type &#x60;endpoint-test&#x60;
 [**update_endpoint_test_label**](EndpointTestApi.md#update_endpoint_test_label) | **PUT** /v7/labels/endpoint-test/{labelId} | Update a Label object of type &#x60;endpoint-test&#x60;
 
 
-# **create_endpoint_tests_label**
-> LabelDetail create_endpoint_tests_label(aid=aid, label_request=label_request)
+# **create_endpoint_test_label**
+> LabelDetail create_endpoint_test_label(aid=aid, label_request=label_request)
 
 Create a Label of type `endpoint-test`
 
@@ -54,11 +54,11 @@ with thousandeyes_sdk.labels.ApiClient(configuration) as api_client:
 
     try:
         # Create a Label of type `endpoint-test`
-        api_response = api_instance.create_endpoint_tests_label(aid=aid, label_request=label_request)
-        print("The response of EndpointTestApi->create_endpoint_tests_label:\n")
+        api_response = api_instance.create_endpoint_test_label(aid=aid, label_request=label_request)
+        print("The response of EndpointTestApi->create_endpoint_test_label:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling EndpointTestApi->create_endpoint_tests_label: %s\n" % e)
+        print("Exception when calling EndpointTestApi->create_endpoint_test_label: %s\n" % e)
 ```
 
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -163,7 +163,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/problem+json
+ - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
 
@@ -247,7 +247,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_instant_run**](RunApi.md#post_instant_run) | **POST** /v7/tests/{testId}/run | Run instant test
+[**run_instant_test**](RunApi.md#run_instant_test) | **POST** /v7/tests/{testId}/run | Run instant test
 
 
-# **post_instant_run**
-> post_instant_run(test_id, aid=aid)
+# **run_instant_test**
+> run_instant_test(test_id, aid=aid)
 
 Run instant test
 
@@ -48,9 +48,9 @@ with thousandeyes_sdk.instant_tests.ApiClient(configuration) as api_client:
 
     try:
         # Run instant test
-        api_instance.post_instant_run(test_id, aid=aid)
+        api_instance.run_instant_test(test_id, aid=aid)
     except Exception as e:
-        print("Exception when calling RunApi->post_instant_run: %s\n" % e)
+        print("Exception when calling RunApi->run_instant_test: %s\n" % e)
 ```
 
 
@@ -74,7 +74,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/problem+json
+ - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
 

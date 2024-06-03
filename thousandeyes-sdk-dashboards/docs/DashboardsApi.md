@@ -6,9 +6,9 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_dashboard**](DashboardsApi.md#create_dashboard) | **POST** /v7/dashboards | Create dashboard
 [**delete_dashboard**](DashboardsApi.md#delete_dashboard) | **DELETE** /v7/dashboards/{dashboardId} | Delete dashboard
-[**get_dashboard_by_id**](DashboardsApi.md#get_dashboard_by_id) | **GET** /v7/dashboards/{dashboardId} | Retrieve dashboard
-[**get_dashboard_data**](DashboardsApi.md#get_dashboard_data) | **GET** /v7/dashboards/{dashboardId}/widgets/{widgetId} | Retrieve dashboard widget data
-[**get_dashboards_for_user**](DashboardsApi.md#get_dashboards_for_user) | **GET** /v7/dashboards | List dashboards
+[**get_dashboard**](DashboardsApi.md#get_dashboard) | **GET** /v7/dashboards/{dashboardId} | Retrieve dashboard
+[**get_dashboard_widget_data**](DashboardsApi.md#get_dashboard_widget_data) | **GET** /v7/dashboards/{dashboardId}/widgets/{widgetId} | Retrieve dashboard widget data
+[**get_dashboards**](DashboardsApi.md#get_dashboards) | **GET** /v7/dashboards | List dashboards
 [**update_dashboard**](DashboardsApi.md#update_dashboard) | **PUT** /v7/dashboards/{dashboardId} | Update dashboard
 
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -165,7 +165,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/problem+json
+ - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
 
@@ -181,8 +181,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_dashboard_by_id**
-> ApiDashboard get_dashboard_by_id(dashboard_id, aid=aid)
+# **get_dashboard**
+> ApiDashboard get_dashboard(dashboard_id, aid=aid)
 
 Retrieve dashboard
 
@@ -223,11 +223,11 @@ with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve dashboard
-        api_response = api_instance.get_dashboard_by_id(dashboard_id, aid=aid)
-        print("The response of DashboardsApi->get_dashboard_by_id:\n")
+        api_response = api_instance.get_dashboard(dashboard_id, aid=aid)
+        print("The response of DashboardsApi->get_dashboard:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DashboardsApi->get_dashboard_by_id: %s\n" % e)
+        print("Exception when calling DashboardsApi->get_dashboard: %s\n" % e)
 ```
 
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -267,8 +267,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_dashboard_data**
-> ApiWidgetDataResponse get_dashboard_data(dashboard_id, widget_id, aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, sort=sort, order=order)
+# **get_dashboard_widget_data**
+> ApiWidgetDataResponse get_dashboard_widget_data(dashboard_id, widget_id, aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, sort=sort, order=order)
 
 Retrieve dashboard widget data
 
@@ -318,11 +318,11 @@ with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve dashboard widget data
-        api_response = api_instance.get_dashboard_data(dashboard_id, widget_id, aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, sort=sort, order=order)
-        print("The response of DashboardsApi->get_dashboard_data:\n")
+        api_response = api_instance.get_dashboard_widget_data(dashboard_id, widget_id, aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, sort=sort, order=order)
+        print("The response of DashboardsApi->get_dashboard_widget_data:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DashboardsApi->get_dashboard_data: %s\n" % e)
+        print("Exception when calling DashboardsApi->get_dashboard_widget_data: %s\n" % e)
 ```
 
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -370,8 +370,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_dashboards_for_user**
-> List[ApiDashboard] get_dashboards_for_user(aid=aid)
+# **get_dashboards**
+> List[ApiDashboard] get_dashboards(aid=aid)
 
 List dashboards
 
@@ -411,11 +411,11 @@ with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
 
     try:
         # List dashboards
-        api_response = api_instance.get_dashboards_for_user(aid=aid)
-        print("The response of DashboardsApi->get_dashboards_for_user:\n")
+        api_response = api_instance.get_dashboards(aid=aid)
+        print("The response of DashboardsApi->get_dashboards:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DashboardsApi->get_dashboards_for_user: %s\n" % e)
+        print("Exception when calling DashboardsApi->get_dashboards: %s\n" % e)
 ```
 
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

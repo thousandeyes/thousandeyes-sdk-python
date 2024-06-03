@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **links** | [**TestLinks**](TestLinks.md) |  | [optional] 
 **labels** | **List[str]** | Contains list of test label IDs (get &#x60;labelId&#x60; from &#x60;/labels&#x60; endpoint) | [optional] 
 **shared_with_accounts** | **List[str]** | Contains list of account group IDs. Test is shared with the listed account groups (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint) | [optional] 
-**follow_redirects** | **bool** | Indicates if HTTP/301 or HTTP/302 redirect directives should be followed. To disable following redirects, set this parameter to false. | [optional] [default to True]
+**follow_redirects** | **bool** | To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to &#x60;false&#x60;. | [optional] [default to True]
 **mtu_measurements** | **bool** | Set &#x60;true&#x60; to measure MTU sizes on network from agents to the target. | [optional] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
 **num_path_traces** | **int** | Number of path traces executed by the agent. | [optional] [default to 3]

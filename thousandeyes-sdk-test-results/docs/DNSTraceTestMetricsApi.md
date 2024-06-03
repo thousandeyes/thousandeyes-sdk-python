@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_result_dns_trace**](DNSTraceTestMetricsApi.md#get_test_result_dns_trace) | **GET** /v7/test-results/{testId}/dns-trace | Get DNS trace test results
+[**get_test_dns_trace_results**](DNSTraceTestMetricsApi.md#get_test_dns_trace_results) | **GET** /v7/test-results/{testId}/dns-trace | Get DNS trace test results
 
 
-# **get_test_result_dns_trace**
-> DnsTraceTestResults get_test_result_dns_trace(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+# **get_test_dns_trace_results**
+> DnsTraceTestResults get_test_dns_trace_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
 
 Get DNS trace test results
 
@@ -53,11 +53,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Get DNS trace test results
-        api_response = api_instance.get_test_result_dns_trace(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
-        print("The response of DNSTraceTestMetricsApi->get_test_result_dns_trace:\n")
+        api_response = api_instance.get_test_dns_trace_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of DNSTraceTestMetricsApi->get_test_dns_trace_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DNSTraceTestMetricsApi->get_test_result_dns_trace: %s\n" % e)
+        print("Exception when calling DNSTraceTestMetricsApi->get_test_dns_trace_results: %s\n" % e)
 ```
 
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

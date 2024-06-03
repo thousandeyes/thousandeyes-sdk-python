@@ -26,7 +26,7 @@ Name | Type | Description | Notes
 **custom_headers** | [**TestCustomHeaders**](TestCustomHeaders.md) |  | [optional] 
 **desired_status_code** | **str** | Specify the HTTP status code value that indicates a successful response. | [optional] [default to '200']
 **emulated_device_id** | **str** | id of the emulated device, if one was given when the test was created | [optional] 
-**follow_redirects** | **bool** | To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to false. | [optional] [default to True]
+**follow_redirects** | **bool** | To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to &#x60;false&#x60;. | [optional] [default to True]
 **http_target_time** | **int** | Target time for HTTP server completion, specified in milliseconds. | [optional] 
 **http_time_limit** | **int** | HTTP time limit in seconds. | [optional] [default to 5]
 **http_version** | **int** | HTTP protocol version. Set to &#39;2&#39; to prefer HTTP/2, or &#39;1&#39; to use only HTTP/1.1. | [optional] [default to 2]

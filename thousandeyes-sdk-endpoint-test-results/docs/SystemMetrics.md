@@ -5,11 +5,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**start_time_ms** | **float** | The start time of metrics collection, expressed in milliseconds since the Epoch. | [optional] [readonly] 
-**end_time_ms** | **float** | The end time of metrics collection, expressed in milliseconds since the Epoch. | [optional] [readonly] 
+**start_time_ms** | **int** | The start time of metrics collection, expressed in milliseconds since the Epoch. | [optional] [readonly] 
+**end_time_ms** | **int** | The end time of metrics collection, expressed in milliseconds since the Epoch. | [optional] [readonly] 
 **cpu_utilization** | [**CpuUtilization**](CpuUtilization.md) |  | [optional] 
 **physical_memory_used_bytes** | [**PhysicalMemoryUsedBytes**](PhysicalMemoryUsedBytes.md) |  | [optional] 
-**physical_memory_total_bytes** | **float** | Total physical memory of the system. | [optional] [readonly] 
+**physical_memory_total_bytes** | **int** | Total physical memory of the system. | [optional] [readonly] 
 
 ## Example
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **network_topology_id** | **str** | Network topology ID. Each network topology occurrence has a unique ID. | [optional] [readonly] 
 **round_id** | **int** | Epoch time (seconds) indicating the start time of the round. | [optional] [readonly] 
 **target** | **str** | IP of the target the network topology was performed against. This is typically a default gateway, proxy or VPN endpoint. | [optional] [readonly] 
-**target_port** | **float** | Port of the target the network topology was performed against. | [optional] [readonly] 
+**target_port** | **int** | Port of the target the network topology was performed against. | [optional] [readonly] 
 **type** | [**NetworkTopologyType**](NetworkTopologyType.md) |  | [optional] 
 **icmp_ping** | [**NetworkPing**](NetworkPing.md) |  | [optional] 
 **is_icmp_blocked** | **bool** | Set to &#x60;true&#x60; if network target is blocking ICMP echo (ping) queries. | [optional] [readonly] 
