@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**link_speed** | **float** | Ethernet profile link speed | [optional] [readonly] 
+**link_speed** | **int** | Ethernet profile link speed | [optional] [readonly] 
 
 ## Example
 

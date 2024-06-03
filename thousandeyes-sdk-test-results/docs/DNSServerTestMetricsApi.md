@@ -4,12 +4,12 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_result_dns_server**](DNSServerTestMetricsApi.md#get_test_result_dns_server) | **GET** /v7/test-results/{testId}/dns-server/{serverId} | Get DNS server test results by server
-[**get_test_result_dns_servers**](DNSServerTestMetricsApi.md#get_test_result_dns_servers) | **GET** /v7/test-results/{testId}/dns-server | Get DNS server test results
+[**get_test_dns_server_result**](DNSServerTestMetricsApi.md#get_test_dns_server_result) | **GET** /v7/test-results/{testId}/dns-server/{serverId} | Get DNS server test results by server
+[**get_test_dns_servers_results**](DNSServerTestMetricsApi.md#get_test_dns_servers_results) | **GET** /v7/test-results/{testId}/dns-server | Get DNS server test results
 
 
-# **get_test_result_dns_server**
-> DnsServerTestResults get_test_result_dns_server(test_id, server_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+# **get_test_dns_server_result**
+> DnsServerTestResults get_test_dns_server_result(test_id, server_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
 
 Get DNS server test results by server
 
@@ -55,11 +55,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Get DNS server test results by server
-        api_response = api_instance.get_test_result_dns_server(test_id, server_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
-        print("The response of DNSServerTestMetricsApi->get_test_result_dns_server:\n")
+        api_response = api_instance.get_test_dns_server_result(test_id, server_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of DNSServerTestMetricsApi->get_test_dns_server_result:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DNSServerTestMetricsApi->get_test_result_dns_server: %s\n" % e)
+        print("Exception when calling DNSServerTestMetricsApi->get_test_dns_server_result: %s\n" % e)
 ```
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -106,8 +106,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_test_result_dns_servers**
-> DnsServerTestResults get_test_result_dns_servers(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+# **get_test_dns_servers_results**
+> DnsServerTestResults get_test_dns_servers_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
 
 Get DNS server test results
 
@@ -152,11 +152,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Get DNS server test results
-        api_response = api_instance.get_test_result_dns_servers(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
-        print("The response of DNSServerTestMetricsApi->get_test_result_dns_servers:\n")
+        api_response = api_instance.get_test_dns_servers_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of DNSServerTestMetricsApi->get_test_dns_servers_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DNSServerTestMetricsApi->get_test_result_dns_servers: %s\n" % e)
+        print("Exception when calling DNSServerTestMetricsApi->get_test_dns_servers_results: %s\n" % e)
 ```
 
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_result_http_server**](WebHTTPServerTestMetricsApi.md#get_test_result_http_server) | **GET** /v7/test-results/{testId}/http-server | Get HTTP server test results
+[**get_test_http_server_results**](WebHTTPServerTestMetricsApi.md#get_test_http_server_results) | **GET** /v7/test-results/{testId}/http-server | Get HTTP server test results
 
 
-# **get_test_result_http_server**
-> HttpTestResults get_test_result_http_server(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand)
+# **get_test_http_server_results**
+> HttpTestResults get_test_http_server_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand)
 
 Get HTTP server test results
 
@@ -55,11 +55,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Get HTTP server test results
-        api_response = api_instance.get_test_result_http_server(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand)
-        print("The response of WebHTTPServerTestMetricsApi->get_test_result_http_server:\n")
+        api_response = api_instance.get_test_http_server_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand)
+        print("The response of WebHTTPServerTestMetricsApi->get_test_http_server_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebHTTPServerTestMetricsApi->get_test_result_http_server: %s\n" % e)
+        print("Exception when calling WebHTTPServerTestMetricsApi->get_test_http_server_results: %s\n" % e)
 ```
 
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

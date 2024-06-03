@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **var_date** | **datetime** | Data point date UTC (ISO date-time format). | [optional] [readonly] 
 **round_id** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
+**start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
+**end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
 **agent** | [**Agent**](Agent.md) |  | [optional] 
 **api_transaction_time** | **float** | Elapsed execution time of the API steps. | [optional] [readonly] 
 **completion** | **float** | Percentage of steps which completed successfully and passed assertions. | [optional] [readonly] 
