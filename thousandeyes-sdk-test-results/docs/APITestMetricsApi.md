@@ -4,12 +4,104 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_result_api**](APITestMetricsApi.md#get_test_result_api) | **GET** /v7/test-results/{testId}/api | Get API test results
-[**get_test_result_api_component_detail**](APITestMetricsApi.md#get_test_result_api_component_detail) | **GET** /v7/test-results/{testId}/api/agent/{agentId}/round/{roundId} | Get API test results by agent and round
+[**get_test_api_agent_round_results**](APITestMetricsApi.md#get_test_api_agent_round_results) | **GET** /v7/test-results/{testId}/api/agent/{agentId}/round/{roundId} | Get API test results by agent and round
+[**get_test_api_results**](APITestMetricsApi.md#get_test_api_results) | **GET** /v7/test-results/{testId}/api | Get API test results
 
 
-# **get_test_result_api**
-> ApiTestResults get_test_result_api(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+# **get_test_api_agent_round_results**
+> ApiDetailTestResults get_test_api_agent_round_results(test_id, agent_id, round_id, aid=aid)
+
+Get API test results by agent and round
+
+Returns test results for API for a given agent and round. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.test_results
+from thousandeyes_sdk.test_results.models.api_detail_test_results import ApiDetailTestResults
+from thousandeyes_sdk.test_results.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.client.Configuration(
+    host = "https://api.thousandeyes.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.client.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.test_results.APITestMetricsApi(api_client)
+    test_id = '202701' # str | Test ID
+    agent_id = '11' # str | Agent ID
+    round_id = '1384309800' # str | Round ID
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # Get API test results by agent and round
+        api_response = api_instance.get_test_api_agent_round_results(test_id, agent_id, round_id, aid=aid)
+        print("The response of APITestMetricsApi->get_test_api_agent_round_results:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling APITestMetricsApi->get_test_api_agent_round_results: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **test_id** | **str**| Test ID | 
+ **agent_id** | **str**| Agent ID | 
+ **round_id** | **str**| Round ID | 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+[**ApiDetailTestResults**](ApiDetailTestResults.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+**502** | Bad Gateway |  -  |
+**0** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_test_api_results**
+> ApiTestResults get_test_api_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
 
 Get API test results
 
@@ -54,11 +146,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Get API test results
-        api_response = api_instance.get_test_result_api(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
-        print("The response of APITestMetricsApi->get_test_result_api:\n")
+        api_response = api_instance.get_test_api_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of APITestMetricsApi->get_test_api_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling APITestMetricsApi->get_test_result_api: %s\n" % e)
+        print("Exception when calling APITestMetricsApi->get_test_api_results: %s\n" % e)
 ```
 
 
@@ -86,99 +178,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Insufficient permissions to query endpoint |  -  |
-**404** | Not found |  -  |
-**429** | Exhausted rate limit for the organization |  -  |
-**500** | Internal server error |  -  |
-**502** | Bad Gateway |  -  |
-**0** | An error occurred |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_test_result_api_component_detail**
-> ApiDetailTestResults get_test_result_api_component_detail(test_id, agent_id, round_id, aid=aid)
-
-Get API test results by agent and round
-
-Returns test results for API for a given agent and round. 
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import thousandeyes_sdk.test_results
-from thousandeyes_sdk.test_results.models.api_detail_test_results import ApiDetailTestResults
-from thousandeyes_sdk.test_results.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.thousandeyes.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
-    host = "https://api.thousandeyes.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = thousandeyes_sdk.test_results.APITestMetricsApi(api_client)
-    test_id = '202701' # str | Test ID
-    agent_id = '11' # str | Agent ID
-    round_id = '1384309800' # str | Round ID
-    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-
-    try:
-        # Get API test results by agent and round
-        api_response = api_instance.get_test_result_api_component_detail(test_id, agent_id, round_id, aid=aid)
-        print("The response of APITestMetricsApi->get_test_result_api_component_detail:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling APITestMetricsApi->get_test_result_api_component_detail: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **test_id** | **str**| Test ID | 
- **agent_id** | **str**| Agent ID | 
- **round_id** | **str**| Round ID | 
- **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
-
-### Return type
-
-[**ApiDetailTestResults**](ApiDetailTestResults.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

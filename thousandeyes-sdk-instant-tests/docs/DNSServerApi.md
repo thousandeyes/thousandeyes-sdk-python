@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_instant_dns_server**](DNSServerApi.md#post_instant_dns_server) | **POST** /v7/tests/dns-server/instant | Create DNS server instant test
+[**create_dns_server_instant_test**](DNSServerApi.md#create_dns_server_instant_test) | **POST** /v7/tests/dns-server/instant | Create DNS server instant test
 
 
-# **post_instant_dns_server**
-> DnsServerInstantTest post_instant_dns_server(dns_server_instant_test_request, aid=aid, expand=expand)
+# **create_dns_server_instant_test**
+> DnsServerInstantTest create_dns_server_instant_test(dns_server_instant_test_request, aid=aid, expand=expand)
 
 Create DNS server instant test
 
@@ -52,11 +52,11 @@ with thousandeyes_sdk.instant_tests.ApiClient(configuration) as api_client:
 
     try:
         # Create DNS server instant test
-        api_response = api_instance.post_instant_dns_server(dns_server_instant_test_request, aid=aid, expand=expand)
-        print("The response of DNSServerApi->post_instant_dns_server:\n")
+        api_response = api_instance.create_dns_server_instant_test(dns_server_instant_test_request, aid=aid, expand=expand)
+        print("The response of DNSServerApi->create_dns_server_instant_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DNSServerApi->post_instant_dns_server: %s\n" % e)
+        print("Exception when calling DNSServerApi->create_dns_server_instant_test: %s\n" % e)
 ```
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

@@ -4,12 +4,12 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_results_bgp**](NetworkBGPTestMetricsApi.md#get_test_results_bgp) | **GET** /v7/test-results/{testId}/bgp | Get BGP test results
-[**get_test_results_bgp_prefix**](NetworkBGPTestMetricsApi.md#get_test_results_bgp_prefix) | **GET** /v7/test-results/{testId}/bgp/routes/prefix/{prefixId}/round/{roundId} | Get BGP route test results by prefix
+[**get_test_bgp_results**](NetworkBGPTestMetricsApi.md#get_test_bgp_results) | **GET** /v7/test-results/{testId}/bgp | Get BGP test results
+[**get_test_bgp_routes_prefix_round_results**](NetworkBGPTestMetricsApi.md#get_test_bgp_routes_prefix_round_results) | **GET** /v7/test-results/{testId}/bgp/routes/prefix/{prefixId}/round/{roundId} | Get BGP route test results by prefix
 
 
-# **get_test_results_bgp**
-> BgpTestResults get_test_results_bgp(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+# **get_test_bgp_results**
+> BgpTestResults get_test_bgp_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
 
 Get BGP test results
 
@@ -54,11 +54,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Get BGP test results
-        api_response = api_instance.get_test_results_bgp(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
-        print("The response of NetworkBGPTestMetricsApi->get_test_results_bgp:\n")
+        api_response = api_instance.get_test_bgp_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of NetworkBGPTestMetricsApi->get_test_bgp_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NetworkBGPTestMetricsApi->get_test_results_bgp: %s\n" % e)
+        print("Exception when calling NetworkBGPTestMetricsApi->get_test_bgp_results: %s\n" % e)
 ```
 
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -104,8 +104,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_test_results_bgp_prefix**
-> BgpTestRouteInformationResults get_test_results_bgp_prefix(test_id, prefix_id, round_id, aid=aid)
+# **get_test_bgp_routes_prefix_round_results**
+> BgpTestRouteInformationResults get_test_bgp_routes_prefix_round_results(test_id, prefix_id, round_id, aid=aid)
 
 Get BGP route test results by prefix
 
@@ -148,11 +148,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Get BGP route test results by prefix
-        api_response = api_instance.get_test_results_bgp_prefix(test_id, prefix_id, round_id, aid=aid)
-        print("The response of NetworkBGPTestMetricsApi->get_test_results_bgp_prefix:\n")
+        api_response = api_instance.get_test_bgp_routes_prefix_round_results(test_id, prefix_id, round_id, aid=aid)
+        print("The response of NetworkBGPTestMetricsApi->get_test_bgp_routes_prefix_round_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling NetworkBGPTestMetricsApi->get_test_results_bgp_prefix: %s\n" % e)
+        print("Exception when calling NetworkBGPTestMetricsApi->get_test_bgp_routes_prefix_round_results: %s\n" % e)
 ```
 
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

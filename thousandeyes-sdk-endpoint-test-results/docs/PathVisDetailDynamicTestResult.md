@@ -20,6 +20,9 @@ Name | Type | Description | Notes
 **path_traces** | [**List[PathVisRoute]**](PathVisRoute.md) | Shows iterations of path trace, with each iteration specified by a pathId. | [optional] 
 **vpn_path_traces** | [**List[PathVisRoute]**](PathVisRoute.md) | Shows iterations of the VPN path trace, with each iteration specified by a pathId. | [optional] 
 **application** | **str** | Which supported application to monitor, can be one of &#x60;webex&#x60;, &#x60;zoom&#x60;, &#x60;microsoft-teams&#x60;. | [optional] 
+**protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
+**tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
+**udp_probe_mode** | [**UdpProbeModeResponse**](UdpProbeModeResponse.md) |  | [optional] 
 **webex** | [**DynamicTestWebex**](DynamicTestWebex.md) |  | [optional] 
 
 ## Example

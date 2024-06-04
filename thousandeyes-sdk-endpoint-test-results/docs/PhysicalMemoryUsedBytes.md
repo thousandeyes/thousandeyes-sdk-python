@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **mean** | **float** | The mean (average) value of memory usage sampled over the monitored period. | [optional] [readonly] 
 **median** | **float** | The median value of memory usage sampled over the monitored period. | [optional] [readonly] 
 **std_dev** | **float** | The standard deviation of memory usage sampled during the monitored period. | [optional] [readonly] 
-**count** | **float** | The total number of samples collected during the monitored period.. | [optional] [readonly] 
+**count** | **int** | The total number of samples collected during the monitored period. | [optional] [readonly] 
 
 ## Example
 

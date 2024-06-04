@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_instant_test_agent_to_agent**](AgentToAgentApi.md#post_instant_test_agent_to_agent) | **POST** /v7/tests/agent-to-agent/instant | Create agent-to-agent instant test
+[**create_agent_to_agent_instant_test**](AgentToAgentApi.md#create_agent_to_agent_instant_test) | **POST** /v7/tests/agent-to-agent/instant | Create agent-to-agent instant test
 
 
-# **post_instant_test_agent_to_agent**
-> AgentToAgentInstantTest post_instant_test_agent_to_agent(agent_to_agent_instant_test_request, aid=aid, expand=expand)
+# **create_agent_to_agent_instant_test**
+> AgentToAgentInstantTest create_agent_to_agent_instant_test(agent_to_agent_instant_test_request, aid=aid, expand=expand)
 
 Create agent-to-agent instant test
 
@@ -52,11 +52,11 @@ with thousandeyes_sdk.instant_tests.ApiClient(configuration) as api_client:
 
     try:
         # Create agent-to-agent instant test
-        api_response = api_instance.post_instant_test_agent_to_agent(agent_to_agent_instant_test_request, aid=aid, expand=expand)
-        print("The response of AgentToAgentApi->post_instant_test_agent_to_agent:\n")
+        api_response = api_instance.create_agent_to_agent_instant_test(agent_to_agent_instant_test_request, aid=aid, expand=expand)
+        print("The response of AgentToAgentApi->create_agent_to_agent_instant_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AgentToAgentApi->post_instant_test_agent_to_agent: %s\n" % e)
+        print("Exception when calling AgentToAgentApi->create_agent_to_agent_instant_test: %s\n" % e)
 ```
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

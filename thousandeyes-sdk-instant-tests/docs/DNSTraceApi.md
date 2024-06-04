@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_instant_dns_trace**](DNSTraceApi.md#post_instant_dns_trace) | **POST** /v7/tests/dns-trace/instant | Create DNS trace instant test
+[**create_dns_trace_instant_test**](DNSTraceApi.md#create_dns_trace_instant_test) | **POST** /v7/tests/dns-trace/instant | Create DNS trace instant test
 
 
-# **post_instant_dns_trace**
-> DnsTraceInstantTest post_instant_dns_trace(dns_trace_instant_test_request, aid=aid, expand=expand)
+# **create_dns_trace_instant_test**
+> DnsTraceInstantTest create_dns_trace_instant_test(dns_trace_instant_test_request, aid=aid, expand=expand)
 
 Create DNS trace instant test
 
@@ -52,11 +52,11 @@ with thousandeyes_sdk.instant_tests.ApiClient(configuration) as api_client:
 
     try:
         # Create DNS trace instant test
-        api_response = api_instance.post_instant_dns_trace(dns_trace_instant_test_request, aid=aid, expand=expand)
-        print("The response of DNSTraceApi->post_instant_dns_trace:\n")
+        api_response = api_instance.create_dns_trace_instant_test(dns_trace_instant_test_request, aid=aid, expand=expand)
+        print("The response of DNSTraceApi->create_dns_trace_instant_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DNSTraceApi->post_instant_dns_trace: %s\n" % e)
+        print("Exception when calling DNSTraceApi->create_dns_trace_instant_test: %s\n" % e)
 ```
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

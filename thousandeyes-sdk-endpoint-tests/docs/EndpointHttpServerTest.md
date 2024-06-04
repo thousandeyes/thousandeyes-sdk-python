@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **ssl_version_id** | [**TestSslVersionId**](TestSslVersionId.md) |  | [optional] 
 **verify_certificate** | **bool** | Flag indicating if a certificate should be verified. | [optional] 
 **content_regex** | **str** | Content regex, this field does not require escaping. | [optional] 
-**follow_redirects** | **bool** | To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to false. | [optional] [default to True]
+**follow_redirects** | **bool** | To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to &#x60;false&#x60;. | [optional] [default to True]
 **http_target_time** | **int** | Target time for HTTP server completion, specified in milliseconds. | [optional] 
 **http_version** | **int** | HTTP protocol version. Set to &#39;2&#39; to prefer HTTP/2, or &#39;1&#39; to use only HTTP/1.1. | [optional] [default to 2]
 **post_body** | **str** | Enter the body for the HTTP POST request in this field. No special escaping is necessary. If the post body is provided with content, the &#x60;requestMethod&#x60; is automatically set to POST. | [optional] 
