@@ -1,10 +1,10 @@
 [project]
-name = "thousandeyes-sdk-client"
+name = "thousandeyes-sdk-core"
 dynamic = ["version"]
 authors = [
     { name = "ThousandEyes API Team", email = "api-team@thousandeyes.com" }
 ]
-description = "ThousandEyes API Client"
+description = "ThousandEyes SDK Core"
 license = { text = "../LICENSE" }
 dependencies = [
     "urllib3 >= 1.25.3",
