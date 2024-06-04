@@ -26,7 +26,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -36,7 +36,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 

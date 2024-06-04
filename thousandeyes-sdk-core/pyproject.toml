@@ -14,7 +14,7 @@ dependencies = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "thousandeyes_sdk.client.__version__"}
+version = {attr = "thousandeyes_sdk.core.__version__"}
 
 [project.optional-dependencies]
 test = [

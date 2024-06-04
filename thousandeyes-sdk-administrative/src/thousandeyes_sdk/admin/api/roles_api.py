@@ -25,9 +25,10 @@ from thousandeyes_sdk.admin.models.role_detail import RoleDetail
 from thousandeyes_sdk.admin.models.role_request_body import RoleRequestBody
 from thousandeyes_sdk.admin.models.roles import Roles
 
-from thousandeyes_sdk.client.api_client import ApiClient, RequestSerialized
-from thousandeyes_sdk.client.api_response import ApiResponse
-from thousandeyes_sdk.client.rest import RESTResponseType
+from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
+from thousandeyes_sdk.core.api_response import ApiResponse
+from thousandeyes_sdk.core.rest import RESTResponseType
+from thousandeyes_sdk.core.version import Version
 
 
 class RolesApi:
@@ -40,6 +41,7 @@ class RolesApi:
     def __init__(self, api_client=None) -> None:
         if api_client is None:
             api_client = ApiClient.get_default()
+        api_client.user_agent = "ThousandEyesSDK-Python/{0}".format(Version.get())
         self.api_client = api_client
 
 

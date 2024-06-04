@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_endpoint_tests_list**](ListEndpointScheduledTestsApi.md#get_endpoint_tests_list) | **GET** /v7/endpoint/tests/scheduled-tests | List endpoint scheduled tests
+[**get_endpoint_scheduled_tests**](ListEndpointScheduledTestsApi.md#get_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests | List endpoint scheduled tests
 
 
-# **get_endpoint_tests_list**
-> EndpointTests get_endpoint_tests_list(aid=aid)
+# **get_endpoint_scheduled_tests**
+> EndpointTests get_endpoint_scheduled_tests(aid=aid)
 
 List endpoint scheduled tests
 
@@ -26,7 +26,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -36,7 +36,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -48,11 +48,11 @@ with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
 
     try:
         # List endpoint scheduled tests
-        api_response = api_instance.get_endpoint_tests_list(aid=aid)
-        print("The response of ListEndpointScheduledTestsApi->get_endpoint_tests_list:\n")
+        api_response = api_instance.get_endpoint_scheduled_tests(aid=aid)
+        print("The response of ListEndpointScheduledTestsApi->get_endpoint_scheduled_tests:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ListEndpointScheduledTestsApi->get_endpoint_tests_list: %s\n" % e)
+        print("Exception when calling ListEndpointScheduledTestsApi->get_endpoint_scheduled_tests: %s\n" % e)
 ```
 
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

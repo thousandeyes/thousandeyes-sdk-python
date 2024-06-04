@@ -14,8 +14,6 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
-
 # import apis into sdk package
 from thousandeyes_sdk.bgp_monitors.api.list_bgp_monitors_api import ListBGPMonitorsApi
 

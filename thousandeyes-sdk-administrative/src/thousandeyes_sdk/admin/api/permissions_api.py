@@ -23,9 +23,10 @@ from typing import Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.admin.models.permissions import Permissions
 
-from thousandeyes_sdk.client.api_client import ApiClient, RequestSerialized
-from thousandeyes_sdk.client.api_response import ApiResponse
-from thousandeyes_sdk.client.rest import RESTResponseType
+from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
+from thousandeyes_sdk.core.api_response import ApiResponse
+from thousandeyes_sdk.core.rest import RESTResponseType
+from thousandeyes_sdk.core.version import Version
 
 
 class PermissionsApi:
@@ -38,6 +39,7 @@ class PermissionsApi:
     def __init__(self, api_client=None) -> None:
         if api_client is None:
             api_client = ApiClient.get_default()
+        api_client.user_agent = "ThousandEyesSDK-Python/{0}".format(Version.get())
         self.api_client = api_client
 
 

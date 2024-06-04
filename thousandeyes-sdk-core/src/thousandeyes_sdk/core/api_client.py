@@ -10,10 +10,10 @@ from urllib.parse import quote
 
 from dateutil.parser import parse
 from pydantic import SecretStr
-from thousandeyes_sdk.client import rest
-from thousandeyes_sdk.client.api_response import ApiResponse, T as ApiResponseT
-from thousandeyes_sdk.client.configuration import Configuration
-from thousandeyes_sdk.client.exceptions import (
+from thousandeyes_sdk.core import rest
+from thousandeyes_sdk.core.api_response import ApiResponse, T as ApiResponseT
+from thousandeyes_sdk.core.configuration import Configuration
+from thousandeyes_sdk.core.exceptions import (
     ApiValueError,
     ApiException
 )

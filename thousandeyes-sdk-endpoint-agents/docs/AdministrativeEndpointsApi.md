@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**endpoint_agents_connection_string**](AdministrativeEndpointsApi.md#endpoint_agents_connection_string) | **GET** /v7/endpoint/agents/connection-string | Get agent connection string
+[**get_endpoint_agents_connection_string**](AdministrativeEndpointsApi.md#get_endpoint_agents_connection_string) | **GET** /v7/endpoint/agents/connection-string | Get agent connection string
 
 
-# **endpoint_agents_connection_string**
-> ConnectionString endpoint_agents_connection_string(aid=aid)
+# **get_endpoint_agents_connection_string**
+> ConnectionString get_endpoint_agents_connection_string(aid=aid)
 
 Get agent connection string
 
@@ -24,7 +24,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -34,7 +34,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -46,11 +46,11 @@ with thousandeyes_sdk.endpoint_agents.ApiClient(configuration) as api_client:
 
     try:
         # Get agent connection string
-        api_response = api_instance.endpoint_agents_connection_string(aid=aid)
-        print("The response of AdministrativeEndpointsApi->endpoint_agents_connection_string:\n")
+        api_response = api_instance.get_endpoint_agents_connection_string(aid=aid)
+        print("The response of AdministrativeEndpointsApi->get_endpoint_agents_connection_string:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AdministrativeEndpointsApi->endpoint_agents_connection_string: %s\n" % e)
+        print("Exception when calling AdministrativeEndpointsApi->get_endpoint_agents_connection_string: %s\n" % e)
 ```
 
 
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

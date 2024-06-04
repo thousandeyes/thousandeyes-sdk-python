@@ -4,14 +4,14 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_enterprise_agent**](CloudAndEnterpriseAgentsApi.md#delete_enterprise_agent) | **DELETE** /v7/agents/{agentId} | Delete Enterprise Agent
-[**get_agent_details**](CloudAndEnterpriseAgentsApi.md#get_agent_details) | **GET** /v7/agents/{agentId} | Retrieve Cloud and Enterprise Agent
+[**delete_agent**](CloudAndEnterpriseAgentsApi.md#delete_agent) | **DELETE** /v7/agents/{agentId} | Delete Enterprise Agent
+[**get_agent**](CloudAndEnterpriseAgentsApi.md#get_agent) | **GET** /v7/agents/{agentId} | Retrieve Cloud and Enterprise Agent
 [**get_agents**](CloudAndEnterpriseAgentsApi.md#get_agents) | **GET** /v7/agents | List Cloud and Enterprise Agents
-[**update_enterprise_agent_details**](CloudAndEnterpriseAgentsApi.md#update_enterprise_agent_details) | **PUT** /v7/agents/{agentId} | Update Enterprise Agent
+[**update_agent**](CloudAndEnterpriseAgentsApi.md#update_agent) | **PUT** /v7/agents/{agentId} | Update Enterprise Agent
 
 
-# **delete_enterprise_agent**
-> delete_enterprise_agent(agent_id, aid=aid)
+# **delete_agent**
+> delete_agent(agent_id, aid=aid)
 
 Delete Enterprise Agent
 
@@ -28,7 +28,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -38,7 +38,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -51,9 +51,9 @@ with thousandeyes_sdk.agents.ApiClient(configuration) as api_client:
 
     try:
         # Delete Enterprise Agent
-        api_instance.delete_enterprise_agent(agent_id, aid=aid)
+        api_instance.delete_agent(agent_id, aid=aid)
     except Exception as e:
-        print("Exception when calling CloudAndEnterpriseAgentsApi->delete_enterprise_agent: %s\n" % e)
+        print("Exception when calling CloudAndEnterpriseAgentsApi->delete_agent: %s\n" % e)
 ```
 
 
@@ -77,7 +77,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/problem+json
+ - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
 
@@ -94,8 +94,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_agent_details**
-> AgentDetails get_agent_details(agent_id, aid=aid, expand=expand)
+# **get_agent**
+> AgentDetails get_agent(agent_id, aid=aid, expand=expand)
 
 Retrieve Cloud and Enterprise Agent
 
@@ -114,7 +114,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -124,7 +124,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -138,11 +138,11 @@ with thousandeyes_sdk.agents.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve Cloud and Enterprise Agent
-        api_response = api_instance.get_agent_details(agent_id, aid=aid, expand=expand)
-        print("The response of CloudAndEnterpriseAgentsApi->get_agent_details:\n")
+        api_response = api_instance.get_agent(agent_id, aid=aid, expand=expand)
+        print("The response of CloudAndEnterpriseAgentsApi->get_agent:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CloudAndEnterpriseAgentsApi->get_agent_details: %s\n" % e)
+        print("Exception when calling CloudAndEnterpriseAgentsApi->get_agent: %s\n" % e)
 ```
 
 
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -205,7 +205,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -215,7 +215,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -275,8 +275,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_enterprise_agent_details**
-> AgentDetails update_enterprise_agent_details(agent_id, agent_request, aid=aid, expand=expand)
+# **update_agent**
+> AgentDetails update_agent(agent_id, agent_request, aid=aid, expand=expand)
 
 Update Enterprise Agent
 
@@ -296,7 +296,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -306,7 +306,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -321,11 +321,11 @@ with thousandeyes_sdk.agents.ApiClient(configuration) as api_client:
 
     try:
         # Update Enterprise Agent
-        api_response = api_instance.update_enterprise_agent_details(agent_id, agent_request, aid=aid, expand=expand)
-        print("The response of CloudAndEnterpriseAgentsApi->update_enterprise_agent_details:\n")
+        api_response = api_instance.update_agent(agent_id, agent_request, aid=aid, expand=expand)
+        print("The response of CloudAndEnterpriseAgentsApi->update_agent:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CloudAndEnterpriseAgentsApi->update_enterprise_agent_details: %s\n" % e)
+        print("Exception when calling CloudAndEnterpriseAgentsApi->update_agent: %s\n" % e)
 ```
 
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

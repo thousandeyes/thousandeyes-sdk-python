@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_result_rtp_stream**](VoiceRTPServerTestMetricsApi.md#get_test_result_rtp_stream) | **GET** /v7/test-results/{testId}/rtp-server | Retrieve RTP server test metrics
+[**get_test_rtp_server_results**](VoiceRTPServerTestMetricsApi.md#get_test_rtp_server_results) | **GET** /v7/test-results/{testId}/rtp-server | Retrieve RTP server test metrics
 
 
-# **get_test_result_rtp_stream**
-> RtpStreamTestResults get_test_result_rtp_stream(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+# **get_test_rtp_server_results**
+> RtpStreamTestResults get_test_rtp_server_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
 
 Retrieve RTP server test metrics
 
@@ -26,7 +26,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -36,7 +36,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -53,11 +53,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve RTP server test metrics
-        api_response = api_instance.get_test_result_rtp_stream(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
-        print("The response of VoiceRTPServerTestMetricsApi->get_test_result_rtp_stream:\n")
+        api_response = api_instance.get_test_rtp_server_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of VoiceRTPServerTestMetricsApi->get_test_rtp_server_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling VoiceRTPServerTestMetricsApi->get_test_result_rtp_stream: %s\n" % e)
+        print("Exception when calling VoiceRTPServerTestMetricsApi->get_test_rtp_server_results: %s\n" % e)
 ```
 
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

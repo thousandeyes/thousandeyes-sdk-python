@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_agent_proxies**](ProxiesApi.md#get_agent_proxies) | **GET** /v7/agents/proxies | List agent proxies
+[**get_agents_proxies**](ProxiesApi.md#get_agents_proxies) | **GET** /v7/agents/proxies | List agent proxies
 
 
-# **get_agent_proxies**
-> AgentProxies get_agent_proxies(aid=aid)
+# **get_agents_proxies**
+> AgentProxies get_agents_proxies(aid=aid)
 
 List agent proxies
 
@@ -26,7 +26,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -36,7 +36,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -48,11 +48,11 @@ with thousandeyes_sdk.agents.ApiClient(configuration) as api_client:
 
     try:
         # List agent proxies
-        api_response = api_instance.get_agent_proxies(aid=aid)
-        print("The response of ProxiesApi->get_agent_proxies:\n")
+        api_response = api_instance.get_agents_proxies(aid=aid)
+        print("The response of ProxiesApi->get_agents_proxies:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling ProxiesApi->get_agent_proxies: %s\n" % e)
+        print("Exception when calling ProxiesApi->get_agents_proxies: %s\n" % e)
 ```
 
 
@@ -75,7 +75,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

@@ -4,183 +4,13 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_endpoint_local_network_topology_details**](LocalNetworkTestsResultsApi.md#get_endpoint_local_network_topology_details) | **GET** /v7/endpoint/test-results/local-networks/topologies/{networkTopologyId} | Retrieve endpoint local network topology
-[**get_endpoint_local_networks**](LocalNetworkTestsResultsApi.md#get_endpoint_local_networks) | **GET** /v7/endpoint/test-results/local-networks | List local networks
-[**get_endpoint_local_networks_topologies**](LocalNetworkTestsResultsApi.md#get_endpoint_local_networks_topologies) | **POST** /v7/endpoint/test-results/local-networks/topologies/filter | List endpoint network topologies probes
+[**filter_local_networks_test_results_topologies**](LocalNetworkTestsResultsApi.md#filter_local_networks_test_results_topologies) | **POST** /v7/endpoint/test-results/local-networks/topologies/filter | List endpoint network topologies probes
+[**get_local_networks_test_results**](LocalNetworkTestsResultsApi.md#get_local_networks_test_results) | **GET** /v7/endpoint/test-results/local-networks | List local networks
+[**get_local_networks_test_results_topology**](LocalNetworkTestsResultsApi.md#get_local_networks_test_results_topology) | **GET** /v7/endpoint/test-results/local-networks/topologies/{networkTopologyId} | Retrieve endpoint local network topology
 
 
-# **get_endpoint_local_network_topology_details**
-> LocalNetworkTopologyDetailResults get_endpoint_local_network_topology_details(network_topology_id, aid=aid)
-
-Retrieve endpoint local network topology
-
-Returns detailed data of a local network topology. 
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import thousandeyes_sdk.endpoint_test_results
-from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_detail_results import LocalNetworkTopologyDetailResults
-from thousandeyes_sdk.endpoint_test_results.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.thousandeyes.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
-    host = "https://api.thousandeyes.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_test_results.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = thousandeyes_sdk.endpoint_test_results.LocalNetworkTestsResultsApi(api_client)
-    network_topology_id = '00160:39c518560de9:1491651900:236e6f18' # str | The network topology ID.
-    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-
-    try:
-        # Retrieve endpoint local network topology
-        api_response = api_instance.get_endpoint_local_network_topology_details(network_topology_id, aid=aid)
-        print("The response of LocalNetworkTestsResultsApi->get_endpoint_local_network_topology_details:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling LocalNetworkTestsResultsApi->get_endpoint_local_network_topology_details: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **network_topology_id** | **str**| The network topology ID. | 
- **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
-
-### Return type
-
-[**LocalNetworkTopologyDetailResults**](LocalNetworkTopologyDetailResults.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**403** | Insufficient permissions to query endpoint |  -  |
-**404** | Not found |  -  |
-**429** | Exhausted rate limit for the organization |  -  |
-**500** | Internal server error |  -  |
-**502** | Bad Gateway |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_endpoint_local_networks**
-> LocalNetworkResults get_endpoint_local_networks(aid=aid)
-
-List local networks
-
-Returns a list of all the networks used by endpoint agents.  Sends back a `localNetworks` array. 
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import thousandeyes_sdk.endpoint_test_results
-from thousandeyes_sdk.endpoint_test_results.models.local_network_results import LocalNetworkResults
-from thousandeyes_sdk.endpoint_test_results.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.thousandeyes.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
-    host = "https://api.thousandeyes.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_test_results.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = thousandeyes_sdk.endpoint_test_results.LocalNetworkTestsResultsApi(api_client)
-    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-
-    try:
-        # List local networks
-        api_response = api_instance.get_endpoint_local_networks(aid=aid)
-        print("The response of LocalNetworkTestsResultsApi->get_endpoint_local_networks:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling LocalNetworkTestsResultsApi->get_endpoint_local_networks: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
-
-### Return type
-
-[**LocalNetworkResults**](LocalNetworkResults.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**401** | Unauthorized |  -  |
-**403** | Insufficient permissions to query endpoint |  -  |
-**404** | Not found |  -  |
-**429** | Exhausted rate limit for the organization |  -  |
-**500** | Internal server error |  -  |
-**502** | Bad Gateway |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_endpoint_local_networks_topologies**
-> LocalNetworkTopologyResults get_endpoint_local_networks_topologies(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_network_topology_result_request=endpoint_network_topology_result_request)
+# **filter_local_networks_test_results_topologies**
+> LocalNetworkTopologyResults filter_local_networks_test_results_topologies(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_network_topology_result_request=endpoint_network_topology_result_request)
 
 List endpoint network topologies probes
 
@@ -199,7 +29,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -209,7 +39,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -226,11 +56,11 @@ with thousandeyes_sdk.endpoint_test_results.ApiClient(configuration) as api_clie
 
     try:
         # List endpoint network topologies probes
-        api_response = api_instance.get_endpoint_local_networks_topologies(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_network_topology_result_request=endpoint_network_topology_result_request)
-        print("The response of LocalNetworkTestsResultsApi->get_endpoint_local_networks_topologies:\n")
+        api_response = api_instance.filter_local_networks_test_results_topologies(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_network_topology_result_request=endpoint_network_topology_result_request)
+        print("The response of LocalNetworkTestsResultsApi->filter_local_networks_test_results_topologies:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling LocalNetworkTestsResultsApi->get_endpoint_local_networks_topologies: %s\n" % e)
+        print("Exception when calling LocalNetworkTestsResultsApi->filter_local_networks_test_results_topologies: %s\n" % e)
 ```
 
 
@@ -258,7 +88,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -266,6 +96,176 @@ Name | Type | Description  | Notes
 |-------------|-------------|------------------|
 **200** | OK |  -  |
 **400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+**502** | Bad Gateway |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_local_networks_test_results**
+> LocalNetworkResults get_local_networks_test_results(aid=aid)
+
+List local networks
+
+Returns a list of all the networks used by endpoint agents.  Sends back a `localNetworks` array. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.endpoint_test_results
+from thousandeyes_sdk.endpoint_test_results.models.local_network_results import LocalNetworkResults
+from thousandeyes_sdk.endpoint_test_results.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.core.Configuration(
+    host = "https://api.thousandeyes.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.core.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.endpoint_test_results.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.endpoint_test_results.LocalNetworkTestsResultsApi(api_client)
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # List local networks
+        api_response = api_instance.get_local_networks_test_results(aid=aid)
+        print("The response of LocalNetworkTestsResultsApi->get_local_networks_test_results:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LocalNetworkTestsResultsApi->get_local_networks_test_results: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+[**LocalNetworkResults**](LocalNetworkResults.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+**502** | Bad Gateway |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **get_local_networks_test_results_topology**
+> LocalNetworkTopologyDetailResults get_local_networks_test_results_topology(network_topology_id, aid=aid)
+
+Retrieve endpoint local network topology
+
+Returns detailed data of a local network topology. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.endpoint_test_results
+from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_detail_results import LocalNetworkTopologyDetailResults
+from thousandeyes_sdk.endpoint_test_results.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.core.Configuration(
+    host = "https://api.thousandeyes.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.core.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.endpoint_test_results.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.endpoint_test_results.LocalNetworkTestsResultsApi(api_client)
+    network_topology_id = '00160:39c518560de9:1491651900:236e6f18' # str | The network topology ID.
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # Retrieve endpoint local network topology
+        api_response = api_instance.get_local_networks_test_results_topology(network_topology_id, aid=aid)
+        print("The response of LocalNetworkTestsResultsApi->get_local_networks_test_results_topology:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling LocalNetworkTestsResultsApi->get_local_networks_test_results_topology: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **network_topology_id** | **str**| The network topology ID. | 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+[**LocalNetworkTopologyDetailResults**](LocalNetworkTopologyDetailResults.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
 **401** | Unauthorized |  -  |
 **403** | Insufficient permissions to query endpoint |  -  |
 **404** | Not found |  -  |

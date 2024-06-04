@@ -4,7 +4,7 @@ import re
 import ssl
 
 import urllib3
-from thousandeyes_sdk.client.exceptions import ApiException, ApiValueError
+from thousandeyes_sdk.core.exceptions import ApiException, ApiValueError
 
 SUPPORTED_SOCKS_PROXIES = {"socks5", "socks5h", "socks4", "socks4a"}
 RESTResponseType = urllib3.HTTPResponse

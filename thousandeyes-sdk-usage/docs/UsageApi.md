@@ -5,7 +5,7 @@ All URIs are relative to *https://api.thousandeyes.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_enterprise_agents_units_usage**](UsageApi.md#get_enterprise_agents_units_usage) | **GET** /v7/usage/units/enterprise-agents | Get enterprise agent usage
-[**get_test_units_usage**](UsageApi.md#get_test_units_usage) | **GET** /v7/usage/units/tests | Get cloud and enterprise agents units usage
+[**get_tests_units_usage**](UsageApi.md#get_tests_units_usage) | **GET** /v7/usage/units/tests | Get cloud and enterprise agents units usage
 [**get_usage**](UsageApi.md#get_usage) | **GET** /v7/usage | Get usage information for the last month
 
 
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Get enterprise agent usage
 
-This endpoint returns the organization's enterprise agents usage for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, a shared entprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the shared agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
+This endpoint returns the organization's enterprise agents usage for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, a shared enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the shared agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
 
 ### Example
 
@@ -28,7 +28,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -38,7 +38,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -97,12 +97,12 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_test_units_usage**
-> TestsUsage get_test_units_usage(aid=aid, start_date=start_date, end_date=end_date, cursor=cursor)
+# **get_tests_units_usage**
+> TestsUsage get_tests_units_usage(aid=aid, start_date=start_date, end_date=end_date, cursor=cursor)
 
 Get cloud and enterprise agents units usage
 
-This endpoint returns the cloud and enterprise agents usage for all the tests for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, an entprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
+This endpoint returns the cloud and enterprise agents usage for all the tests for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, an enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
 
 ### Example
 
@@ -116,7 +116,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -126,7 +126,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -141,11 +141,11 @@ with thousandeyes_sdk.usage.ApiClient(configuration) as api_client:
 
     try:
         # Get cloud and enterprise agents units usage
-        api_response = api_instance.get_test_units_usage(aid=aid, start_date=start_date, end_date=end_date, cursor=cursor)
-        print("The response of UsageApi->get_test_units_usage:\n")
+        api_response = api_instance.get_tests_units_usage(aid=aid, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of UsageApi->get_tests_units_usage:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling UsageApi->get_test_units_usage: %s\n" % e)
+        print("Exception when calling UsageApi->get_tests_units_usage: %s\n" % e)
 ```
 
 
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -207,7 +207,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -217,7 +217,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -258,7 +258,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

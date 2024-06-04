@@ -14,8 +14,6 @@
 """  # noqa: E501
 
 
-__version__ = "1.0.0"
-
 # import apis into sdk package
 from thousandeyes_sdk.admin.api.account_groups_api import AccountGroupsApi
 from thousandeyes_sdk.admin.api.permissions_api import PermissionsApi

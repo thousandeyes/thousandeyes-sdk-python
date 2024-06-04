@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_agent_to_server_instant_test**](AgentToServerInstantScheduledTestApi.md#post_agent_to_server_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/agent-to-server/instant | Run agent to server instant scheduled test
+[**create_agent_to_server_scheduled_instant_test**](AgentToServerInstantScheduledTestApi.md#create_agent_to_server_scheduled_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/agent-to-server/instant | Run agent to server instant scheduled test
 
 
-# **post_agent_to_server_instant_test**
-> EndpointAgentToServerTest post_agent_to_server_instant_test(endpoint_agent_to_server_instant_test, aid=aid)
+# **create_agent_to_server_scheduled_instant_test**
+> EndpointAgentToServerTest create_agent_to_server_scheduled_instant_test(endpoint_agent_to_server_instant_test, aid=aid)
 
 Run agent to server instant scheduled test
 
@@ -27,7 +27,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -37,7 +37,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -50,11 +50,11 @@ with thousandeyes_sdk.endpoint_instant_tests.ApiClient(configuration) as api_cli
 
     try:
         # Run agent to server instant scheduled test
-        api_response = api_instance.post_agent_to_server_instant_test(endpoint_agent_to_server_instant_test, aid=aid)
-        print("The response of AgentToServerInstantScheduledTestApi->post_agent_to_server_instant_test:\n")
+        api_response = api_instance.create_agent_to_server_scheduled_instant_test(endpoint_agent_to_server_instant_test, aid=aid)
+        print("The response of AgentToServerInstantScheduledTestApi->create_agent_to_server_scheduled_instant_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AgentToServerInstantScheduledTestApi->post_agent_to_server_instant_test: %s\n" % e)
+        print("Exception when calling AgentToServerInstantScheduledTestApi->create_agent_to_server_scheduled_instant_test: %s\n" % e)
 ```
 
 
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

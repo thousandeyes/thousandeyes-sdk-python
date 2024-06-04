@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**remote_port** | **float** | The remote port of a network flow towards the target. | [optional] [readonly] 
+**remote_port** | **int** | The remote port of a network flow towards the target. | [optional] [readonly] 
 **remote_ip_address** | **str** | The remote IP address of a network flow towards the target. | [optional] [readonly] 
 **protocol** | [**TestProtocol**](TestProtocol.md) |  | [optional] 
 

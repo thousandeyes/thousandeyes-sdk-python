@@ -8,7 +8,7 @@ from typing import Optional
 
 import urllib3
 
-from thousandeyes_sdk.client.thousandeyes_retry import ThousandEyesRetry
+from thousandeyes_sdk.core.thousandeyes_retry import ThousandEyesRetry
 
 JSON_SCHEMA_VALIDATION_KEYWORDS = {
     'multipleOf', 'maximum', 'exclusiveMaximum',

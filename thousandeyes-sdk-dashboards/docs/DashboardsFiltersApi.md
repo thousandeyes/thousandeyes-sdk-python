@@ -5,10 +5,10 @@ All URIs are relative to *https://api.thousandeyes.com*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_dashboard_filter**](DashboardsFiltersApi.md#create_dashboard_filter) | **POST** /v7/dashboards/filters | Create dashboard filter
-[**delete_dashboard_filter_by_id**](DashboardsFiltersApi.md#delete_dashboard_filter_by_id) | **DELETE** /v7/dashboards/filters/{id} | Delete dashboard filter
-[**get_all_dashboard_filters**](DashboardsFiltersApi.md#get_all_dashboard_filters) | **GET** /v7/dashboards/filters | List dashboard filters
-[**get_dashboard_filter_by_id**](DashboardsFiltersApi.md#get_dashboard_filter_by_id) | **GET** /v7/dashboards/filters/{id} | Get dashboard filter
-[**update_dashboard_filter_by_id**](DashboardsFiltersApi.md#update_dashboard_filter_by_id) | **PUT** /v7/dashboards/filters/{id} | Update dashboard filter
+[**delete_dashboard_filter**](DashboardsFiltersApi.md#delete_dashboard_filter) | **DELETE** /v7/dashboards/filters/{id} | Delete dashboard filter
+[**get_dashboard_filter**](DashboardsFiltersApi.md#get_dashboard_filter) | **GET** /v7/dashboards/filters/{id} | Get dashboard filter
+[**get_dashboards_filters**](DashboardsFiltersApi.md#get_dashboards_filters) | **GET** /v7/dashboards/filters | List dashboard filters
+[**update_dashboard_filter**](DashboardsFiltersApi.md#update_dashboard_filter) | **PUT** /v7/dashboards/filters/{id} | Update dashboard filter
 
 
 # **create_dashboard_filter**
@@ -31,7 +31,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -41,7 +41,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -98,8 +98,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_dashboard_filter_by_id**
-> delete_dashboard_filter_by_id(id, aid=aid)
+# **delete_dashboard_filter**
+> delete_dashboard_filter(id, aid=aid)
 
 Delete dashboard filter
 
@@ -116,7 +116,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -126,7 +126,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -139,9 +139,9 @@ with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
 
     try:
         # Delete dashboard filter
-        api_instance.delete_dashboard_filter_by_id(id, aid=aid)
+        api_instance.delete_dashboard_filter(id, aid=aid)
     except Exception as e:
-        print("Exception when calling DashboardsFiltersApi->delete_dashboard_filter_by_id: %s\n" % e)
+        print("Exception when calling DashboardsFiltersApi->delete_dashboard_filter: %s\n" % e)
 ```
 
 
@@ -165,7 +165,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/problem+json
+ - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
 
@@ -181,94 +181,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_all_dashboard_filters**
-> ApiContextFiltersResponse get_all_dashboard_filters(search_pattern=search_pattern, aid=aid)
-
-List dashboard filters
-
-Returns a list of dashboard filters and its context within your account group. 
-
-### Example
-
-* Bearer Authentication (BearerAuth):
-
-```python
-import thousandeyes_sdk.dashboards
-from thousandeyes_sdk.dashboards.models.api_context_filters_response import ApiContextFiltersResponse
-from thousandeyes_sdk.dashboards.rest import ApiException
-from pprint import pprint
-
-# Defining the host is optional and defaults to https://api.thousandeyes.com
-# See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
-    host = "https://api.thousandeyes.com"
-)
-
-# The client must configure the authentication and authorization parameters
-# in accordance with the API server security policy.
-# Examples for each auth method are provided below, use the example that
-# satisfies your auth use case.
-
-# Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
-    access_token = os.environ["BEARER_TOKEN"]
-)
-
-# Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
-    # Create an instance of the API class
-    api_instance = thousandeyes_sdk.dashboards.DashboardsFiltersApi(api_client)
-    search_pattern = 'cea-filter' # str | Optional search pattern parameter to filter list of dashboard filters by either name or description values. (optional)
-    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-
-    try:
-        # List dashboard filters
-        api_response = api_instance.get_all_dashboard_filters(search_pattern=search_pattern, aid=aid)
-        print("The response of DashboardsFiltersApi->get_all_dashboard_filters:\n")
-        pprint(api_response)
-    except Exception as e:
-        print("Exception when calling DashboardsFiltersApi->get_all_dashboard_filters: %s\n" % e)
-```
-
-
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **search_pattern** | **str**| Optional search pattern parameter to filter list of dashboard filters by either name or description values. | [optional] 
- **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
-
-### Return type
-
-[**ApiContextFiltersResponse**](ApiContextFiltersResponse.md)
-
-### Authorization
-
-[BearerAuth](../README.md#BearerAuth)
-
-### HTTP request headers
-
- - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
-
-### HTTP response details
-
-| Status code | Description | Response headers |
-|-------------|-------------|------------------|
-**200** | OK |  -  |
-**400** | Bad Request |  -  |
-**401** | Unauthorized |  -  |
-**403** | Insufficient permissions to query endpoint |  -  |
-**404** | Not found |  -  |
-**429** | Exhausted rate limit for the organization |  -  |
-**500** | Internal server error |  -  |
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **get_dashboard_filter_by_id**
-> ApiContextFilterResponse get_dashboard_filter_by_id(id, aid=aid)
+# **get_dashboard_filter**
+> ApiContextFilterResponse get_dashboard_filter(id, aid=aid)
 
 Get dashboard filter
 
@@ -286,7 +200,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -296,7 +210,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -309,11 +223,11 @@ with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
 
     try:
         # Get dashboard filter
-        api_response = api_instance.get_dashboard_filter_by_id(id, aid=aid)
-        print("The response of DashboardsFiltersApi->get_dashboard_filter_by_id:\n")
+        api_response = api_instance.get_dashboard_filter(id, aid=aid)
+        print("The response of DashboardsFiltersApi->get_dashboard_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DashboardsFiltersApi->get_dashboard_filter_by_id: %s\n" % e)
+        print("Exception when calling DashboardsFiltersApi->get_dashboard_filter: %s\n" % e)
 ```
 
 
@@ -337,7 +251,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -353,8 +267,94 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_dashboard_filter_by_id**
-> ApiContextFilterResponse update_dashboard_filter_by_id(id, api_context_filter_request, aid=aid)
+# **get_dashboards_filters**
+> ApiContextFiltersResponse get_dashboards_filters(search_pattern=search_pattern, aid=aid)
+
+List dashboard filters
+
+Returns a list of dashboard filters and its context within your account group. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.dashboards
+from thousandeyes_sdk.dashboards.models.api_context_filters_response import ApiContextFiltersResponse
+from thousandeyes_sdk.dashboards.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.core.Configuration(
+    host = "https://api.thousandeyes.com"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.core.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.dashboards.DashboardsFiltersApi(api_client)
+    search_pattern = 'cea-filter' # str | Optional search pattern parameter to filter list of dashboard filters by either name or description values. (optional)
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # List dashboard filters
+        api_response = api_instance.get_dashboards_filters(search_pattern=search_pattern, aid=aid)
+        print("The response of DashboardsFiltersApi->get_dashboards_filters:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DashboardsFiltersApi->get_dashboards_filters: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **search_pattern** | **str**| Optional search pattern parameter to filter list of dashboard filters by either name or description values. | [optional] 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+[**ApiContextFiltersResponse**](ApiContextFiltersResponse.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/hal+json, application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_dashboard_filter**
+> ApiContextFilterResponse update_dashboard_filter(id, api_context_filter_request, aid=aid)
 
 Update dashboard filter
 
@@ -373,7 +373,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -383,7 +383,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -397,11 +397,11 @@ with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
 
     try:
         # Update dashboard filter
-        api_response = api_instance.update_dashboard_filter_by_id(id, api_context_filter_request, aid=aid)
-        print("The response of DashboardsFiltersApi->update_dashboard_filter_by_id:\n")
+        api_response = api_instance.update_dashboard_filter(id, api_context_filter_request, aid=aid)
+        print("The response of DashboardsFiltersApi->update_dashboard_filter:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling DashboardsFiltersApi->update_dashboard_filter_by_id: %s\n" % e)
+        print("Exception when calling DashboardsFiltersApi->update_dashboard_filter: %s\n" % e)
 ```
 
 
@@ -426,7 +426,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

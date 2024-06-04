@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_result_ftp_server**](WebFTPServerTestMetricsApi.md#get_test_result_ftp_server) | **GET** /v7/test-results/{testId}/ftp-server | Get FTP server test results
+[**get_test_ftp_server_results**](WebFTPServerTestMetricsApi.md#get_test_ftp_server_results) | **GET** /v7/test-results/{testId}/ftp-server | Get FTP server test results
 
 
-# **get_test_result_ftp_server**
-> FtpServerTestResults get_test_result_ftp_server(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+# **get_test_ftp_server_results**
+> FtpServerTestResults get_test_ftp_server_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
 
 Get FTP server test results
 
@@ -26,7 +26,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -36,7 +36,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -53,11 +53,11 @@ with thousandeyes_sdk.test_results.ApiClient(configuration) as api_client:
 
     try:
         # Get FTP server test results
-        api_response = api_instance.get_test_result_ftp_server(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
-        print("The response of WebFTPServerTestMetricsApi->get_test_result_ftp_server:\n")
+        api_response = api_instance.get_test_ftp_server_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor)
+        print("The response of WebFTPServerTestMetricsApi->get_test_ftp_server_results:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling WebFTPServerTestMetricsApi->get_test_result_ftp_server: %s\n" % e)
+        print("Exception when calling WebFTPServerTestMetricsApi->get_test_ftp_server_results: %s\n" % e)
 ```
 
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

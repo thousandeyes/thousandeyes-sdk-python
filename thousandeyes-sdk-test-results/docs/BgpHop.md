@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**asn** | **float** | ASN of transit autonomous system | [optional] [readonly] 
+**asn** | **int** | ASN of transit autonomous system | [optional] [readonly] 
 **as_name** | **str** | Name of autonomous system. | [optional] [readonly] 
 
 ## Example
