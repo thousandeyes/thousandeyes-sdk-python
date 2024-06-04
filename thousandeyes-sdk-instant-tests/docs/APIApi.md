@@ -4,11 +4,11 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**post_instant_api**](APIApi.md#post_instant_api) | **POST** /v7/tests/api/instant | Create API instant test
+[**create_api_instant_test**](APIApi.md#create_api_instant_test) | **POST** /v7/tests/api/instant | Create API instant test
 
 
-# **post_instant_api**
-> ApiInstantTest post_instant_api(api_instant_test_request, aid=aid, expand=expand)
+# **create_api_instant_test**
+> ApiInstantTest create_api_instant_test(api_instant_test_request, aid=aid, expand=expand)
 
 Create API instant test
 
@@ -28,7 +28,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -38,7 +38,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -52,11 +52,11 @@ with thousandeyes_sdk.instant_tests.ApiClient(configuration) as api_client:
 
     try:
         # Create API instant test
-        api_response = api_instance.post_instant_api(api_instant_test_request, aid=aid, expand=expand)
-        print("The response of APIApi->post_instant_api:\n")
+        api_response = api_instance.create_api_instant_test(api_instant_test_request, aid=aid, expand=expand)
+        print("The response of APIApi->create_api_instant_test:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling APIApi->post_instant_api: %s\n" % e)
+        print("Exception when calling APIApi->create_api_instant_test: %s\n" % e)
 ```
 
 
@@ -81,7 +81,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

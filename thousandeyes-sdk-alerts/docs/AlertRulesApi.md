@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_alert_rule**](AlertRulesApi.md#create_alert_rule) | **POST** /v7/alerts/rules | Create alert rule
 [**delete_alert_rule**](AlertRulesApi.md#delete_alert_rule) | **DELETE** /v7/alerts/rules/{ruleId} | Delete alert rule
-[**get_alert_rule_details**](AlertRulesApi.md#get_alert_rule_details) | **GET** /v7/alerts/rules/{ruleId} | Retrieve alert rule
+[**get_alert_rule**](AlertRulesApi.md#get_alert_rule) | **GET** /v7/alerts/rules/{ruleId} | Retrieve alert rule
 [**get_alerts_rules**](AlertRulesApi.md#get_alerts_rules) | **GET** /v7/alerts/rules | List alert rules
 [**update_alert_rule**](AlertRulesApi.md#update_alert_rule) | **PUT** /v7/alerts/rules/{ruleId} | Update alert rule
 
@@ -31,7 +31,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -41,7 +41,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -116,7 +116,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -126,7 +126,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -165,7 +165,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/problem+json
+ - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
 
@@ -181,8 +181,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_alert_rule_details**
-> RuleDetail get_alert_rule_details(rule_id, aid=aid)
+# **get_alert_rule**
+> RuleDetail get_alert_rule(rule_id, aid=aid)
 
 Retrieve alert rule
 
@@ -200,7 +200,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -210,7 +210,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -223,11 +223,11 @@ with thousandeyes_sdk.alerts.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve alert rule
-        api_response = api_instance.get_alert_rule_details(rule_id, aid=aid)
-        print("The response of AlertRulesApi->get_alert_rule_details:\n")
+        api_response = api_instance.get_alert_rule(rule_id, aid=aid)
+        print("The response of AlertRulesApi->get_alert_rule:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling AlertRulesApi->get_alert_rule_details: %s\n" % e)
+        print("Exception when calling AlertRulesApi->get_alert_rule: %s\n" % e)
 ```
 
 
@@ -251,7 +251,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -285,7 +285,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -295,7 +295,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -369,7 +369,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -379,7 +379,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

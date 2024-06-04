@@ -32,7 +32,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -42,7 +42,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -85,7 +85,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -121,7 +121,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -131,7 +131,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -170,7 +170,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/problem+json
+ - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
 
@@ -207,7 +207,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -217,7 +217,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -260,7 +260,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -296,7 +296,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -306,7 +306,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -345,7 +345,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -383,7 +383,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -393,7 +393,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -438,7 +438,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**delete_stream**](StreamingApi.md#delete_stream) | **DELETE** /v7/stream/{id} | Delete a data stream
 [**get_stream**](StreamingApi.md#get_stream) | **GET** /v7/stream/{id} | Retrieve data stream
 [**get_streams**](StreamingApi.md#get_streams) | **GET** /v7/stream | List data streams
-[**put_stream**](StreamingApi.md#put_stream) | **PUT** /v7/stream/{id} | Update data stream
+[**update_stream**](StreamingApi.md#update_stream) | **PUT** /v7/stream/{id} | Update data stream
 
 
 # **create_stream**
@@ -31,7 +31,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -41,7 +41,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -115,7 +115,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -125,7 +125,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -164,7 +164,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/problem+json
+ - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
 
@@ -199,7 +199,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -209,7 +209,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -252,7 +252,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -287,7 +287,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -297,7 +297,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -354,8 +354,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **put_stream**
-> GetStreamResponse put_stream(id, aid=aid, put_stream=put_stream)
+# **update_stream**
+> GetStreamResponse update_stream(id, aid=aid, put_stream=put_stream)
 
 Update data stream
 
@@ -374,7 +374,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -384,7 +384,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -398,11 +398,11 @@ with thousandeyes_sdk.streaming.ApiClient(configuration) as api_client:
 
     try:
         # Update data stream
-        api_response = api_instance.put_stream(id, aid=aid, put_stream=put_stream)
-        print("The response of StreamingApi->put_stream:\n")
+        api_response = api_instance.update_stream(id, aid=aid, put_stream=put_stream)
+        print("The response of StreamingApi->update_stream:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling StreamingApi->put_stream: %s\n" % e)
+        print("Exception when calling StreamingApi->update_stream: %s\n" % e)
 ```
 
 
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 

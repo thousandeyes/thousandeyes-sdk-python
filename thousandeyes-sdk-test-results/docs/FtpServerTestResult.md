@@ -19,11 +19,11 @@ Name | Type | Description | Notes
 **wait_time** | **float** | Time elapsed between completion of request and first byte of response in milliseconds | [optional] [readonly] 
 **response_time** | **float** | Sum of DNS, connect, negotiation and wait times in milliseconds | [optional] [readonly] 
 **transfer_time** | **float** | Elapsed time between first and last byte of the transfer in milliseconds | [optional] [readonly] 
-**wire_size** | **float** | Size of content in bytes | [optional] [readonly] 
+**wire_size** | **int** | Size of content in bytes | [optional] [readonly] 
 **total_time** | **float** | Sum of response + transfer time in milliseconds | [optional] [readonly] 
 **error_type** | **str** | Type of error encountered; corresponds to phase of connection | [optional] [readonly] 
 **error_details** | **str** | Error details, if an error were encountered | [optional] [readonly] 
-**throughput** | **float** | WireSize divided by receiveTime in byter per second | [optional] [readonly] 
+**throughput** | **int** | WireSize divided by receiveTime in byter per second | [optional] [readonly] 
 
 ## Example
 
