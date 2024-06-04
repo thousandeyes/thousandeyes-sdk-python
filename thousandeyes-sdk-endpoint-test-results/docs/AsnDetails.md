@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **as_name** | **str** | Name of the provider. | [optional] [readonly] 
-**as_number** | **float** | Unique number assigned to an organization (also referred to as service provider). | [optional] [readonly] 
+**as_number** | **int** | Unique number assigned to an organization (also referred to as service provider). | [optional] [readonly] 
 
 ## Example
 

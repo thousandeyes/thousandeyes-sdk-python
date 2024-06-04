@@ -4,15 +4,15 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_transaction_tests_credential**](CredentialsApi.md#create_transaction_tests_credential) | **POST** /v7/credentials | Create credential
-[**delete_transaction_tests_credential**](CredentialsApi.md#delete_transaction_tests_credential) | **DELETE** /v7/credentials/{id} | Delete credential
-[**get_transaction_tests_credential_details**](CredentialsApi.md#get_transaction_tests_credential_details) | **GET** /v7/credentials/{id} | Retrieve credential
-[**get_transaction_tests_credentials_list**](CredentialsApi.md#get_transaction_tests_credentials_list) | **GET** /v7/credentials | List credentials
-[**update_transaction_tests_credential**](CredentialsApi.md#update_transaction_tests_credential) | **PUT** /v7/credentials/{id} | Update credential
+[**create_credential**](CredentialsApi.md#create_credential) | **POST** /v7/credentials | Create credential
+[**delete_credential**](CredentialsApi.md#delete_credential) | **DELETE** /v7/credentials/{id} | Delete credential
+[**get_credential**](CredentialsApi.md#get_credential) | **GET** /v7/credentials/{id} | Retrieve credential
+[**get_credentials**](CredentialsApi.md#get_credentials) | **GET** /v7/credentials | List credentials
+[**update_credential**](CredentialsApi.md#update_credential) | **PUT** /v7/credentials/{id} | Update credential
 
 
-# **create_transaction_tests_credential**
-> CredentialWithoutValue create_transaction_tests_credential(credential_request, aid=aid)
+# **create_credential**
+> CredentialWithoutValue create_credential(credential_request, aid=aid)
 
 Create credential
 
@@ -31,7 +31,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -41,7 +41,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -54,11 +54,11 @@ with thousandeyes_sdk.credentials.ApiClient(configuration) as api_client:
 
     try:
         # Create credential
-        api_response = api_instance.create_transaction_tests_credential(credential_request, aid=aid)
-        print("The response of CredentialsApi->create_transaction_tests_credential:\n")
+        api_response = api_instance.create_credential(credential_request, aid=aid)
+        print("The response of CredentialsApi->create_credential:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CredentialsApi->create_transaction_tests_credential: %s\n" % e)
+        print("Exception when calling CredentialsApi->create_credential: %s\n" % e)
 ```
 
 
@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -98,8 +98,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **delete_transaction_tests_credential**
-> delete_transaction_tests_credential(id, aid=aid)
+# **delete_credential**
+> delete_credential(id, aid=aid)
 
 Delete credential
 
@@ -116,7 +116,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -126,7 +126,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -139,9 +139,9 @@ with thousandeyes_sdk.credentials.ApiClient(configuration) as api_client:
 
     try:
         # Delete credential
-        api_instance.delete_transaction_tests_credential(id, aid=aid)
+        api_instance.delete_credential(id, aid=aid)
     except Exception as e:
-        print("Exception when calling CredentialsApi->delete_transaction_tests_credential: %s\n" % e)
+        print("Exception when calling CredentialsApi->delete_credential: %s\n" % e)
 ```
 
 
@@ -165,7 +165,7 @@ void (empty response body)
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/problem+json
+ - **Accept**: application/json, application/problem+json
 
 ### HTTP response details
 
@@ -180,8 +180,8 @@ void (empty response body)
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transaction_tests_credential_details**
-> Credential get_transaction_tests_credential_details(id, aid=aid)
+# **get_credential**
+> Credential get_credential(id, aid=aid)
 
 Retrieve credential
 
@@ -199,7 +199,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -209,7 +209,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -222,11 +222,11 @@ with thousandeyes_sdk.credentials.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve credential
-        api_response = api_instance.get_transaction_tests_credential_details(id, aid=aid)
-        print("The response of CredentialsApi->get_transaction_tests_credential_details:\n")
+        api_response = api_instance.get_credential(id, aid=aid)
+        print("The response of CredentialsApi->get_credential:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CredentialsApi->get_transaction_tests_credential_details: %s\n" % e)
+        print("Exception when calling CredentialsApi->get_credential: %s\n" % e)
 ```
 
 
@@ -250,7 +250,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -266,8 +266,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **get_transaction_tests_credentials_list**
-> Credentials get_transaction_tests_credentials_list(aid=aid)
+# **get_credentials**
+> Credentials get_credentials(aid=aid)
 
 List credentials
 
@@ -285,7 +285,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -295,7 +295,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -307,11 +307,11 @@ with thousandeyes_sdk.credentials.ApiClient(configuration) as api_client:
 
     try:
         # List credentials
-        api_response = api_instance.get_transaction_tests_credentials_list(aid=aid)
-        print("The response of CredentialsApi->get_transaction_tests_credentials_list:\n")
+        api_response = api_instance.get_credentials(aid=aid)
+        print("The response of CredentialsApi->get_credentials:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CredentialsApi->get_transaction_tests_credentials_list: %s\n" % e)
+        print("Exception when calling CredentialsApi->get_credentials: %s\n" % e)
 ```
 
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
@@ -349,8 +349,8 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **update_transaction_tests_credential**
-> CredentialWithoutValue update_transaction_tests_credential(id, credential_request, aid=aid)
+# **update_credential**
+> CredentialWithoutValue update_credential(id, credential_request, aid=aid)
 
 Update credential
 
@@ -369,7 +369,7 @@ from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
 # See configuration.py for a list of all supported configuration parameters.
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com"
 )
 
@@ -379,7 +379,7 @@ configuration = thousandeyes_sdk.client.Configuration(
 # satisfies your auth use case.
 
 # Configure Bearer authorization: BearerAuth
-configuration = thousandeyes_sdk.client.Configuration(
+configuration = thousandeyes_sdk.core.Configuration(
     access_token = os.environ["BEARER_TOKEN"]
 )
 
@@ -393,11 +393,11 @@ with thousandeyes_sdk.credentials.ApiClient(configuration) as api_client:
 
     try:
         # Update credential
-        api_response = api_instance.update_transaction_tests_credential(id, credential_request, aid=aid)
-        print("The response of CredentialsApi->update_transaction_tests_credential:\n")
+        api_response = api_instance.update_credential(id, credential_request, aid=aid)
+        print("The response of CredentialsApi->update_credential:\n")
         pprint(api_response)
     except Exception as e:
-        print("Exception when calling CredentialsApi->update_transaction_tests_credential: %s\n" % e)
+        print("Exception when calling CredentialsApi->update_credential: %s\n" % e)
 ```
 
 
@@ -422,7 +422,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/problem+json
+ - **Accept**: application/hal+json, application/json, application/problem+json
 
 ### HTTP response details
 
