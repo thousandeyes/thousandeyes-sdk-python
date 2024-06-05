@@ -1,4 +1,4 @@
-# thousandeyes_sdk.admin.RolesApi
+# thousandeyes_sdk.administrative.RolesApi
 
 All URIs are relative to *https://api.thousandeyes.com*
 
@@ -23,10 +23,10 @@ Creates a new role.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.role_detail import RoleDetail
-from thousandeyes_sdk.admin.models.role_request_body import RoleRequestBody
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.role_detail import RoleDetail
+from thousandeyes_sdk.administrative.models.role_request_body import RoleRequestBody
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -46,10 +46,10 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
-    role_request_body = thousandeyes_sdk.admin.RoleRequestBody() # RoleRequestBody | 
+    api_instance = thousandeyes_sdk.administrative.RolesApi(api_client)
+    role_request_body = thousandeyes_sdk.administrative.RoleRequestBody() # RoleRequestBody | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -110,8 +110,8 @@ Deletes a role using its ID. The user needs appropriate permissions to successfu
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -131,9 +131,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.RolesApi(api_client)
     id = '23' # str | The ID of the desired role.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
@@ -193,9 +193,9 @@ Returns detailed information about a role using its ID.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.role_detail import RoleDetail
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.role_detail import RoleDetail
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -215,9 +215,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.RolesApi(api_client)
     id = '23' # str | The ID of the desired role.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
@@ -279,9 +279,9 @@ Retrieves a list of defined roles visible to the current user.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.roles import Roles
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.roles import Roles
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -301,9 +301,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.RolesApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -363,10 +363,10 @@ Updates a user-defined role using its ID.  When updating a role, the following a
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.role_detail import RoleDetail
-from thousandeyes_sdk.admin.models.role_request_body import RoleRequestBody
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.role_detail import RoleDetail
+from thousandeyes_sdk.administrative.models.role_request_body import RoleRequestBody
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -386,11 +386,11 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.RolesApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.RolesApi(api_client)
     id = '23' # str | The ID of the desired role.
-    role_request_body = thousandeyes_sdk.admin.RoleRequestBody() # RoleRequestBody | 
+    role_request_body = thousandeyes_sdk.administrative.RoleRequestBody() # RoleRequestBody | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:

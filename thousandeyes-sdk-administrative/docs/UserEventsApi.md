@@ -1,4 +1,4 @@
-# thousandeyes_sdk.admin.UserEventsApi
+# thousandeyes_sdk.administrative.UserEventsApi
 
 All URIs are relative to *https://api.thousandeyes.com*
 
@@ -19,9 +19,9 @@ Returns a list of activity log events in the current account group.   If `useAll
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.audit_user_events import AuditUserEvents
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.audit_user_events import AuditUserEvents
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -41,9 +41,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.UserEventsApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.UserEventsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
     use_all_permitted_aids = False # bool | Set to `true` to load data from all accounts the user has access to. (optional) (default to False)
     window = '12h' # str | A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`. (optional)

@@ -33,7 +33,7 @@ pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandey
 
 Then import the package:
 ```python
-import thousandeyes_sdk.admin
+import thousandeyes_sdk.administrative
 ```
 
 ### Setuptools
@@ -47,7 +47,7 @@ python setup.py install --user
 
 Then import the package:
 ```python
-import thousandeyes_sdk.admin
+import thousandeyes_sdk.administrative
 ```
 
 ### Tests
@@ -61,7 +61,7 @@ Please follow the [installation procedure](#installation--usage) and then run th
 ```python
 
 import thousandeyes_sdk.core
-import thousandeyes_sdk.admin
+import thousandeyes_sdk.administrative
 from thousandeyes_sdk.core.exceptions import ApiException
 from pprint import pprint
 
@@ -85,9 +85,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 # Enter a context with an instance of the API client
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.AccountGroupsApi(api_client)
-    account_group_request = thousandeyes_sdk.admin.AccountGroupRequest() # AccountGroupRequest | 
-    expand = [thousandeyes_sdk.admin.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
+    account_group_request = thousandeyes_sdk.administrative.AccountGroupRequest() # AccountGroupRequest | 
+    expand = [thousandeyes_sdk.administrative.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Create account group

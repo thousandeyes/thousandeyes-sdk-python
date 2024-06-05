@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from thousandeyes_sdk.admin.models.pagination_links import PaginationLinks
+from thousandeyes_sdk.administrative.models.pagination_links import PaginationLinks
 
 # TODO update the JSON string below
 json = "{}"

@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from thousandeyes_sdk.admin.models.cluster_member import ClusterMember
+from thousandeyes_sdk.administrative.models.cluster_member import ClusterMember
 
 # TODO update the JSON string below
 json = "{}"

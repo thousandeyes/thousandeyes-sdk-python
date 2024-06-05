@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from thousandeyes_sdk.admin.models.error import Error
+from thousandeyes_sdk.administrative.models.error import Error
 
 # TODO update the JSON string below
 json = "{}"

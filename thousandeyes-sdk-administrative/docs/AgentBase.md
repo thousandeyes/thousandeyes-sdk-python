@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from thousandeyes_sdk.admin.models.agent_base import AgentBase
+from thousandeyes_sdk.administrative.models.agent_base import AgentBase
 
 # TODO update the JSON string below
 json = "{}"
