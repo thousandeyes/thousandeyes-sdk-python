@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from thousandeyes_sdk.admin.models.simple_agent import SimpleAgent
+from thousandeyes_sdk.administrative.models.simple_agent import SimpleAgent
 
 # TODO update the JSON string below
 json = "{}"

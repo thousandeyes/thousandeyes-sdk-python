@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from thousandeyes_sdk.admin.models.user_event import UserEvent
+from thousandeyes_sdk.administrative.models.user_event import UserEvent
 
 # TODO update the JSON string below
 json = "{}"

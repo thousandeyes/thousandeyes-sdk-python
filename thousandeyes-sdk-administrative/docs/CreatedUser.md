@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from thousandeyes_sdk.admin.models.created_user import CreatedUser
+from thousandeyes_sdk.administrative.models.created_user import CreatedUser
 
 # TODO update the JSON string below
 json = "{}"

@@ -1,4 +1,4 @@
-# thousandeyes_sdk.admin.UsersApi
+# thousandeyes_sdk.administrative.UsersApi
 
 All URIs are relative to *https://api.thousandeyes.com*
 
@@ -23,10 +23,10 @@ Creates a new user.  The following applies when creating a user:  * If the user 
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.created_user import CreatedUser
-from thousandeyes_sdk.admin.models.user_request import UserRequest
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.created_user import CreatedUser
+from thousandeyes_sdk.administrative.models.user_request import UserRequest
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -46,10 +46,10 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.UsersApi(api_client)
-    user_request = thousandeyes_sdk.admin.UserRequest() # UserRequest | 
+    api_instance = thousandeyes_sdk.administrative.UsersApi(api_client)
+    user_request = thousandeyes_sdk.administrative.UserRequest() # UserRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -110,8 +110,8 @@ Deletes a user using the user ID. This endpoint requires the `Edit users in all 
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -131,9 +131,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.UsersApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.UsersApi(api_client)
     id = '1234' # str | Identifier for the user.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
@@ -193,9 +193,9 @@ Retrieves detailed information about a user. This operation requires the `API Ac
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.user_detail import UserDetail
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.user_detail import UserDetail
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -215,9 +215,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.UsersApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.UsersApi(api_client)
     id = '1234' # str | Identifier for the user.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
@@ -279,9 +279,9 @@ Retrieves a list of users in the organization the account group ID belongs to. T
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.users import Users
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.users import Users
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -301,9 +301,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.UsersApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.UsersApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -363,10 +363,10 @@ Updates a user using the user ID. You can update the user name, email address, a
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.user_detail import UserDetail
-from thousandeyes_sdk.admin.models.user_request import UserRequest
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.user_detail import UserDetail
+from thousandeyes_sdk.administrative.models.user_request import UserRequest
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -386,11 +386,11 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.UsersApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.UsersApi(api_client)
     id = '1234' # str | Identifier for the user.
-    user_request = thousandeyes_sdk.admin.UserRequest() # UserRequest | 
+    user_request = thousandeyes_sdk.administrative.UserRequest() # UserRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:

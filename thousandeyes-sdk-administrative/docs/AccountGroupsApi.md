@@ -1,4 +1,4 @@
-# thousandeyes_sdk.admin.AccountGroupsApi
+# thousandeyes_sdk.administrative.AccountGroupsApi
 
 All URIs are relative to *https://api.thousandeyes.com*
 
@@ -23,11 +23,11 @@ Creates a new account group. This operation requires the `Edit all account group
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.account_group_request import AccountGroupRequest
-from thousandeyes_sdk.admin.models.created_account_group import CreatedAccountGroup
-from thousandeyes_sdk.admin.models.expand import Expand
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.account_group_request import AccountGroupRequest
+from thousandeyes_sdk.administrative.models.created_account_group import CreatedAccountGroup
+from thousandeyes_sdk.administrative.models.expand import Expand
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -47,11 +47,11 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.AccountGroupsApi(api_client)
-    account_group_request = thousandeyes_sdk.admin.AccountGroupRequest() # AccountGroupRequest | 
-    expand = [thousandeyes_sdk.admin.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
+    account_group_request = thousandeyes_sdk.administrative.AccountGroupRequest() # AccountGroupRequest | 
+    expand = [thousandeyes_sdk.administrative.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Create account group
@@ -111,8 +111,8 @@ Deletes an account group using its ID. This operation requires the following per
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -132,9 +132,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.AccountGroupsApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
     id = '1234' # str | Identifier for the account group.
 
     try:
@@ -192,10 +192,10 @@ Retrieves detailed information about an account group using its ID.  This operat
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.account_group_detail import AccountGroupDetail
-from thousandeyes_sdk.admin.models.expand import Expand
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.account_group_detail import AccountGroupDetail
+from thousandeyes_sdk.administrative.models.expand import Expand
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -215,11 +215,11 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.AccountGroupsApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
     id = '1234' # str | Identifier for the account group.
-    expand = [thousandeyes_sdk.admin.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    expand = [thousandeyes_sdk.administrative.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Retrieve account group
@@ -279,9 +279,9 @@ Retrieves a list of account groups available to the current user.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.account_groups import AccountGroups
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.account_groups import AccountGroups
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -301,9 +301,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.AccountGroupsApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -363,11 +363,11 @@ Updates an account group using its ID. You can modify the account group’s name
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.account_group_detail import AccountGroupDetail
-from thousandeyes_sdk.admin.models.account_group_request import AccountGroupRequest
-from thousandeyes_sdk.admin.models.expand import Expand
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.account_group_detail import AccountGroupDetail
+from thousandeyes_sdk.administrative.models.account_group_request import AccountGroupRequest
+from thousandeyes_sdk.administrative.models.expand import Expand
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -387,12 +387,12 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.AccountGroupsApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
     id = '1234' # str | Identifier for the account group.
-    account_group_request = thousandeyes_sdk.admin.AccountGroupRequest() # AccountGroupRequest | 
-    expand = [thousandeyes_sdk.admin.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    account_group_request = thousandeyes_sdk.administrative.AccountGroupRequest() # AccountGroupRequest | 
+    expand = [thousandeyes_sdk.administrative.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Update account group

@@ -14,10 +14,10 @@
 
 import json
 import unittest
-import thousandeyes_sdk.admin.models
+import thousandeyes_sdk.administrative.models
 
 from .test_utils import assert_constructed_model_matches_example_json
-from thousandeyes_sdk.admin.api.account_groups_api import AccountGroupsApi
+from thousandeyes_sdk.administrative.api.account_groups_api import AccountGroupsApi
 
 
 class TestAccountGroupsApi(unittest.TestCase):
@@ -38,7 +38,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
-        request_from_json = thousandeyes_sdk.admin.models.AccountGroupRequest.from_json(request_body_json)
+        request_from_json = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
         response_body_json = """
@@ -98,7 +98,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_json = thousandeyes_sdk.admin.models.CreatedAccountGroup.from_json(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.CreatedAccountGroup.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_delete_account_group_models_validation(self) -> None:
@@ -320,7 +320,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_json = thousandeyes_sdk.admin.models.AccountGroupDetail.from_json(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.AccountGroupDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_get_account_groups_models_validation(self) -> None:
@@ -356,7 +356,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_json = thousandeyes_sdk.admin.models.AccountGroups.from_json(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.AccountGroups.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_update_account_group_models_validation(self) -> None:
@@ -368,7 +368,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
-        request_from_json = thousandeyes_sdk.admin.models.AccountGroupRequest.from_json(request_body_json)
+        request_from_json = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
         response_body_json = """
@@ -583,7 +583,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_json = thousandeyes_sdk.admin.models.AccountGroupDetail.from_json(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.AccountGroupDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
 

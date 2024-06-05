@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 ## Example
 
 ```python
-from thousandeyes_sdk.admin.models.unauthorized_error import UnauthorizedError
+from thousandeyes_sdk.administrative.models.unauthorized_error import UnauthorizedError
 
 # TODO update the JSON string below
 json = "{}"

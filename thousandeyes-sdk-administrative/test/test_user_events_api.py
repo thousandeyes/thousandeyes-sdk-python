@@ -14,10 +14,10 @@
 
 import json
 import unittest
-import thousandeyes_sdk.admin.models
+import thousandeyes_sdk.administrative.models
 
 from .test_utils import assert_constructed_model_matches_example_json
-from thousandeyes_sdk.admin.api.user_events_api import UserEventsApi
+from thousandeyes_sdk.administrative.api.user_events_api import UserEventsApi
 
 
 class TestUserEventsApi(unittest.TestCase):
@@ -95,7 +95,7 @@ class TestUserEventsApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_json = thousandeyes_sdk.admin.models.AuditUserEvents.from_json(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.AuditUserEvents.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
 
