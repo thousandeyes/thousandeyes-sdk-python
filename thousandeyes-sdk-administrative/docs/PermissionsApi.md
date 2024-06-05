@@ -1,4 +1,4 @@
-# thousandeyes_sdk.admin.PermissionsApi
+# thousandeyes_sdk.administrative.PermissionsApi
 
 All URIs are relative to *https://api.thousandeyes.com*
 
@@ -19,9 +19,9 @@ Users must be in a role assigned management permissions to access this endpoint.
 * Bearer Authentication (BearerAuth):
 
 ```python
-import thousandeyes_sdk.admin
-from thousandeyes_sdk.admin.models.permissions import Permissions
-from thousandeyes_sdk.admin.rest import ApiException
+import thousandeyes_sdk.administrative
+from thousandeyes_sdk.administrative.models.permissions import Permissions
+from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
 # Defining the host is optional and defaults to https://api.thousandeyes.com
@@ -41,9 +41,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.admin.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
-    api_instance = thousandeyes_sdk.admin.PermissionsApi(api_client)
+    api_instance = thousandeyes_sdk.administrative.PermissionsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:

@@ -14,10 +14,10 @@
 
 import json
 import unittest
-import thousandeyes_sdk.admin.models
+import thousandeyes_sdk.administrative.models
 
 from .test_utils import assert_constructed_model_matches_example_json
-from thousandeyes_sdk.admin.api.roles_api import RolesApi
+from thousandeyes_sdk.administrative.api.roles_api import RolesApi
 
 
 class TestRolesApi(unittest.TestCase):
@@ -38,7 +38,7 @@ class TestRolesApi(unittest.TestCase):
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
-        request_from_json = thousandeyes_sdk.admin.models.RoleRequestBody.from_json(request_body_json)
+        request_from_json = thousandeyes_sdk.administrative.models.RoleRequestBody.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
         response_body_json = """
@@ -72,7 +72,7 @@ class TestRolesApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_json = thousandeyes_sdk.admin.models.RoleDetail.from_json(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.RoleDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_delete_role_models_validation(self) -> None:
@@ -113,7 +113,7 @@ class TestRolesApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_json = thousandeyes_sdk.admin.models.RoleDetail.from_json(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.RoleDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_get_roles_models_validation(self) -> None:
@@ -147,7 +147,7 @@ class TestRolesApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_json = thousandeyes_sdk.admin.models.Roles.from_json(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.Roles.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_update_role_models_validation(self) -> None:
@@ -159,7 +159,7 @@ class TestRolesApi(unittest.TestCase):
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
-        request_from_json = thousandeyes_sdk.admin.models.RoleRequestBody.from_json(request_body_json)
+        request_from_json = thousandeyes_sdk.administrative.models.RoleRequestBody.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
         response_body_json = """
@@ -193,7 +193,7 @@ class TestRolesApi(unittest.TestCase):
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
-        response_from_json = thousandeyes_sdk.admin.models.RoleDetail.from_json(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.RoleDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
 
