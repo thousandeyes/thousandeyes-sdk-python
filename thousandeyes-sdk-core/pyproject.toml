@@ -13,6 +13,10 @@ dependencies = [
     "typing-extensions >=4.7.1",
 ]
 
+[tool.setuptools.packages.find]
+where = ["src/"]
+include = ["thousandeyes_sdk.core"]
+
 [tool.setuptools.dynamic]
 version = {attr = "thousandeyes_sdk.core.__version__"}
 
