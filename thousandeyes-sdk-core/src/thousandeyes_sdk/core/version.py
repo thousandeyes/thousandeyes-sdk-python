@@ -1,6 +1,6 @@
-import os.path
+import thousandeyes_sdk.core
 
 class Version:
     @staticmethod
     def get() -> str:
-        return "1.0.0"
+        return thousandeyes_sdk.core.__version__

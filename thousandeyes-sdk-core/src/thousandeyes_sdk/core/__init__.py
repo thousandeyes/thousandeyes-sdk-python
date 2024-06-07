@@ -6,4 +6,4 @@ from .version import Version
 
 import os.path
 
-__version__ = Version.get()
+__version__ = "1.0.0"
