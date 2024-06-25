@@ -1,6 +1,6 @@
 # EndpointType
 
-The type of connection used to send data to the endpoint.
+The type of connection used to send data to the endpoint. **Note**: When using the `splunk-hec` 'type', the `EndpointType` must be `http`.
 
 ## Properties
 

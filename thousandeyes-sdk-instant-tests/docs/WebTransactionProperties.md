@@ -43,6 +43,8 @@ Name | Type | Description | Notes
 **page_loading_strategy** | [**TestPageLoadingStrategy**](TestPageLoadingStrategy.md) |  | [optional] 
 **fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
 **type** | **str** |  | [optional] [readonly] 
+**override_agent_proxy** | **bool** | Flag indicating if a proxy other than the default should be used. To override the default proxy for agents, set to &#x60;true&#x60; and specify a value for &#x60;overrideProxyId&#x60;. | [optional] [default to False]
+**override_proxy_id** | **str** | ID of the proxy to be used if the default proxy is overridden. | [optional] 
 
 ## Example
 

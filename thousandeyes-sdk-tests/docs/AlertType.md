@@ -1,6 +1,6 @@
 # AlertType
 
-Type of alert being triggered. In multi-layered tests, this value represents the layer the alert relates to. See [Alert Details](https://developer.thousandeyes.com/v7/alerts/#/alert-details) documentation for a list of possible values
+Type of alert being triggered. In multi-layered tests, this value represents the layer the alert relates to. See [Alert Details](https://developer.cisco.com/docs/thousandeyes/retrieve-alert-details/) documentation for a list of possible values
 
 ## Properties
 
