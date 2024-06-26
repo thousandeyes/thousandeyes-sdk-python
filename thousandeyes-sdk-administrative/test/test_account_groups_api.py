@@ -34,8 +34,7 @@ class TestAccountGroupsApi(unittest.TestCase):
         request_body_json = """
                 {
                   "accountGroupName" : "My testing account group",
-                  "agents" : [ "105", "719" ],
-                  "extra" : "extra"
+                  "agents" : [ "105", "719" ]
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
