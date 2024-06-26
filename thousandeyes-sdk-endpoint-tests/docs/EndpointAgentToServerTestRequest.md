@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **test_name** | **str** | Name of the test. | 
 **server_name** | **str** | A server address without a protocol or IP address. | 
 **interval** | [**TestInterval**](TestInterval.md) |  | 
+**protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
 
 ## Example
 

@@ -1,6 +1,6 @@
 # StreamType
 
-The type of data stream to configure. Currently, only `opentelemetry` is supported.
+The type of data stream to configure. When using `splunk-hec`:   - `endpointType` must be `http`.   - `customHeaders` must contain just one element with the key `token` and the value of the *Splunk HEC Token*.
 
 ## Properties
 

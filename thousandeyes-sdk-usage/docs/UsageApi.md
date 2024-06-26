@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 Get usage information for the last month
 
-This endpoint returns the organization's usage data for a specified time period. If no time period is specified, it defaults to the last month.   
+This endpoint returns usage for the current period. It provides visibility across all account groups within an organization. To access this endpoint, you need the `View Billing` permission (a management permission). If you have access to view billing in multiple organizations, query the endpoint using an `aid` querystring parameter (see optional parameters, below) from each organization. **Note:** Access to billing information older than one month is not supported by this endpoint.
 
 ### Example
 

@@ -54,6 +54,8 @@ Name | Type | Description | Notes
 **browser_language** | **str** | Set one of the available browser language that you want to use to configure the browser. | [optional] 
 **page_loading_strategy** | [**TestPageLoadingStrategy**](TestPageLoadingStrategy.md) |  | [optional] 
 **fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
+**override_agent_proxy** | **bool** | Flag indicating if a proxy other than the default should be used. To override the default proxy for agents, set to &#x60;true&#x60; and specify a value for &#x60;overrideProxyId&#x60;. | [optional] [default to False]
+**override_proxy_id** | **str** | ID of the proxy to be used if the default proxy is overridden. | [optional] 
 **agents** | [**List[TestAgent]**](TestAgent.md) | A list of objects with &#x60;agentId&#x60; (required) and &#x60;sourceIpAddress&#x60; (optional). | 
 
 ## Example
