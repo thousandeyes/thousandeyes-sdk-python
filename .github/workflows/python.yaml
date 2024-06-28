@@ -1,0 +1,29 @@
+name: Python CI
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Install core module
+        run: pip install -e thousandeyes-sdk-core
+
+      - name: Install and test modules
+        run: |
+          pip install pytest
+          for module in $(find . -maxdepth 1 -type d -name "thousandeyes-sdk-*" ! -name "thousandeyes-sdk-core" | cut -c 3-); do
+            pip install -e $module
+            pytest $module
+          done
