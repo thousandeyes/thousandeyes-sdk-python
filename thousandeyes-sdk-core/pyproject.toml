@@ -1,5 +1,6 @@
 [project]
 name = "thousandeyes-sdk-core"
+readme = "README.md"
 dynamic = ["version"]
 authors = [
     { name = "ThousandEyes API Team", email = "api-team@thousandeyes.com" }
