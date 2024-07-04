@@ -1,1 +1,71 @@
+name: Release
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  set-package-matrix:
+    # This action returns all sub-packages to be published, except the `thousandeyes-sdk-core`.
+    # It thens exports the variable to matrix, so that the deployment job is run individually for each sub-package
+    runs-on: ubuntu-latest
+    outputs:
+      packages: ${{ steps.packages.outputs.packages }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: packages
+        run: |
+          FOLDERS_JSON=$(find . -maxdepth 1 -type d -name "thousandeyes-sdk-*" ! -name "thousandeyes-sdk-core"| cut -c 3- | jq -R -s -c 'split("\n")[:-1]')
+          echo "packages=$FOLDERS_JSON" >> "$GITHUB_OUTPUT"
+  deployment:
+    if: github.event.pull_request.merged == true
+    needs: set-package-matrix
+    strategy:
+      matrix:
+        package-name: ${{ fromJSON(needs.set-package-matrix.outputs.packages) }}
+    runs-on: ubuntu-latest
+    permissions:
+      id-token: write
+    environment: 
+      name: test
+      url: https://pypi.org/p/${{ matrix.package-name }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          cache: pip
+          cache-dependency-path: '**/pyproject.toml'
+      - name: Install dependencies
+        run: |
+          pip install setuptools wheel build
+      - name: Build
+        run: |
+          cp .version ${{ matrix.package-name }}/ 
+          python -m build ${{ matrix.package-name }} --outdir dist/
+      - name: Publish
+        uses: pypa/gh-action-pypi-publish@release/v1
+        with:
+          skip-existing: true
+  bump-version:
+    needs: deployment
+    name: Bump version and commit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          cache: pip
+          python-version: '3.11'
+      - name: Install bumpversion
+        env: 
+          GITHUB_TOKEN: ${{ secrets.PAT_BYPASS }}
+        run: |
+          git config user.name "API Team"
+          git config user.email "api-team@thousandeyes.com"
+          
+          pip install bumpversion
+          bumpversion minor --commit
+          git push --force
 
