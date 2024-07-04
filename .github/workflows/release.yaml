@@ -27,7 +27,7 @@ jobs:
     permissions:
       id-token: write
     environment: 
-      name: test
+      name: release
       url: https://pypi.org/p/${{ matrix.package-name }}
     steps:
       - uses: actions/checkout@v4
