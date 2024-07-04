@@ -18,7 +18,7 @@ where = ["src/"]
 include = ["thousandeyes_sdk.core"]
 
 [tool.setuptools.dynamic]
-version = {file = ".version"}
+version = {attr = "thousandeyes_sdk.core.__version__"}
 
 [project.optional-dependencies]
 test = [
