@@ -1,10 +1,11 @@
 [project]
 name = "thousandeyes-sdk-bgp-monitors"
 dynamic = ["version"]
+readme = "README.md"
 authors = [
     { name = "ThousandEyes API Team", email = "api-team@thousandeyes.com" }
 ]
-description = "BGP Monitors API"
+description = "ThousandEyes SDK BGP Monitors API"
 license = { text = "../LICENSE" }
 dependencies = [
     "urllib3 >= 1.25.3",

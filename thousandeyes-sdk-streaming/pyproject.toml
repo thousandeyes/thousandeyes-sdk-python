@@ -1,10 +1,11 @@
 [project]
 name = "thousandeyes-sdk-streaming"
 dynamic = ["version"]
+readme = "README.md"
 authors = [
     { name = "ThousandEyes API Team", email = "api-team@thousandeyes.com" }
 ]
-description = "ThousandEyes for OpenTelemetry API"
+description = "ThousandEyes SDK ThousandEyes for OpenTelemetry API"
 license = { text = "../LICENSE" }
 dependencies = [
     "urllib3 >= 1.25.3",

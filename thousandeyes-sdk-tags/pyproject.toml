@@ -1,10 +1,11 @@
 [project]
 name = "thousandeyes-sdk-tags"
 dynamic = ["version"]
+readme = "README.md"
 authors = [
     { name = "ThousandEyes API Team", email = "api-team@thousandeyes.com" }
 ]
-description = "Tags API"
+description = "ThousandEyes SDK Tags API"
 license = { text = "../LICENSE" }
 dependencies = [
     "urllib3 >= 1.25.3",
