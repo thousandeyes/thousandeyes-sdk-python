@@ -41,7 +41,7 @@ jobs:
           pip install setuptools wheel build
       - name: Build
         run: |
-          cp .version ${{ matrix.package-name }}/ 
+          cp .version LICENSE NOTICE ${{ matrix.package-name }}/  
           python -m build ${{ matrix.package-name }} --outdir dist/
       - name: Publish
         uses: pypa/gh-action-pypi-publish@release/v1
