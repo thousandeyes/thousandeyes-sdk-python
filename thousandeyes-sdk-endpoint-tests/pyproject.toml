@@ -1,11 +1,12 @@
 [project]
 name = "thousandeyes-sdk-endpoint-tests"
 dynamic = ["version"]
+readme = "README.md"
 authors = [
     { name = "ThousandEyes API Team", email = "api-team@thousandeyes.com" }
 ]
-description = "Endpoint Tests API"
-license = { text = "../LICENSE" }
+description = "ThousandEyes SDK Endpoint Tests API"
+license = { file = "LICENSE" }
 dependencies = [
     "urllib3 >= 1.25.3",
     "python-dateutil >=2.8.2",
@@ -15,7 +16,7 @@ dependencies = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "thousandeyes_sdk.core.__version__"}
+version = {file = ".version"}
 
 [project.optional-dependencies]
 test = [
