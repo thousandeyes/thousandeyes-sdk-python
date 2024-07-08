@@ -42,7 +42,7 @@ jobs:
       - name: Build
         run: |
           echo $GITHUB_REF_NAME >> ${{ matrix.package-name }}/.version
-          cp .version LICENSE NOTICE ${{ matrix.package-name }}/  
+          cp LICENSE NOTICE ${{ matrix.package-name }}/  
           python -m build ${{ matrix.package-name }} --outdir dist/
       - name: Publish
         uses: pypa/gh-action-pypi-publish@release/v1
