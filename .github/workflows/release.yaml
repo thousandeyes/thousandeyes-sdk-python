@@ -1,8 +1,8 @@
 name: Release
 on:
-  pull_request:
-    types:
-      - closed
+  push:
+    tags:
+      - '*'
 
 jobs:
   set-package-matrix:
@@ -41,31 +41,11 @@ jobs:
           pip install setuptools wheel build
       - name: Build
         run: |
+          echo $GITHUB_REF_NAME >> ${{ matrix.package-name }}/.version
           cp .version LICENSE NOTICE ${{ matrix.package-name }}/  
           python -m build ${{ matrix.package-name }} --outdir dist/
       - name: Publish
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           skip-existing: true
-  bump-version:
-    needs: deployment
-    name: Bump version and commit
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          cache: pip
-          python-version: '3.11'
-      - name: Install bumpversion
-        env: 
-          GITHUB_TOKEN: ${{ secrets.PAT_BYPASS }}
-        run: |
-          git config user.name "API Team"
-          git config user.email "api-team@thousandeyes.com"
-          
-          pip install bumpversion
-          bumpversion minor --commit
-          git push --force
 
