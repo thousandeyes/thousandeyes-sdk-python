@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 README.md
 docs/AgentToServerInstantScheduledTestApi.md
 docs/AlertDirection.md
