@@ -15,6 +15,7 @@ import warnings
 from pydantic import validate_call, Field, StrictFloat, StrictStr, StrictInt
 from typing import Any, Dict, List, Optional, Tuple, Union
 from typing_extensions import Annotated
+from importlib.metadata import version
 
 import thousandeyes_sdk.test_results.models
 
@@ -31,7 +32,6 @@ from thousandeyes_sdk.test_results.models.test_direction import TestDirection
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
 from thousandeyes_sdk.core.rest import RESTResponseType
-from thousandeyes_sdk.core.version import Version
 
 
 class NetworkTestMetricsApi:
@@ -44,7 +44,7 @@ class NetworkTestMetricsApi:
     def __init__(self, api_client=None) -> None:
         if api_client is None:
             api_client = ApiClient.get_default()
-        api_client.user_agent = "ThousandEyesSDK-Python/{0}".format(Version.get())
+        api_client.user_agent = "ThousandEyesSDK-Python/{0}".format(version("thousandeyes-sdk-test-results"))
         self.api_client = api_client
 
 
