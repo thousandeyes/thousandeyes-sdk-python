@@ -15,12 +15,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-endpoint-labels\&subdirectory=thousandeyes-sdk-endpoint-labels
+pip install thousandeyes-sdk-endpoint-labels
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-endpoint-labels\&subdirectory=thousandeyes-sdk-endpoint-labels`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-endpoint-labels`)
 
 Then import the package:
 ```python
@@ -47,7 +47,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -96,31 +96,31 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ManageLabelsApi* | [**create_endpoint_label**](docs/ManageLabelsApi.md#create_endpoint_label) | **POST** /v7/endpoint/labels | Create label
-*ManageLabelsApi* | [**delete_endpoint_label**](docs/ManageLabelsApi.md#delete_endpoint_label) | **DELETE** /v7/endpoint/labels/{id} | Delete label
-*ManageLabelsApi* | [**get_endpoint_label**](docs/ManageLabelsApi.md#get_endpoint_label) | **GET** /v7/endpoint/labels/{id} | Retrieve label
-*ManageLabelsApi* | [**get_endpoint_labels**](docs/ManageLabelsApi.md#get_endpoint_labels) | **GET** /v7/endpoint/labels | List labels
-*ManageLabelsApi* | [**update_endpoint_label**](docs/ManageLabelsApi.md#update_endpoint_label) | **PATCH** /v7/endpoint/labels/{id} | Update label
+*ManageLabelsApi* | [**create_endpoint_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/ManageLabelsApi.md#create_endpoint_label) | **POST** /v7/endpoint/labels | Create label
+*ManageLabelsApi* | [**delete_endpoint_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/ManageLabelsApi.md#delete_endpoint_label) | **DELETE** /v7/endpoint/labels/{id} | Delete label
+*ManageLabelsApi* | [**get_endpoint_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/ManageLabelsApi.md#get_endpoint_label) | **GET** /v7/endpoint/labels/{id} | Retrieve label
+*ManageLabelsApi* | [**get_endpoint_labels**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/ManageLabelsApi.md#get_endpoint_labels) | **GET** /v7/endpoint/labels | List labels
+*ManageLabelsApi* | [**update_endpoint_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/ManageLabelsApi.md#update_endpoint_label) | **PATCH** /v7/endpoint/labels/{id} | Update label
 
 
 ## Documentation For Models
 
- - [Error](docs/Error.md)
- - [Expand](docs/Expand.md)
- - [Filter](docs/Filter.md)
- - [FilterType](docs/FilterType.md)
- - [Label](docs/Label.md)
- - [LabelFilterMode](docs/LabelFilterMode.md)
- - [LabelRequest](docs/LabelRequest.md)
- - [LabelResponse](docs/LabelResponse.md)
- - [Labels](docs/Labels.md)
- - [Link](docs/Link.md)
- - [MatchType](docs/MatchType.md)
- - [PaginationNextAndSelfLink](docs/PaginationNextAndSelfLink.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/Error.md)
+ - [Expand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/Expand.md)
+ - [Filter](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/Filter.md)
+ - [FilterType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/FilterType.md)
+ - [Label](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/Label.md)
+ - [LabelFilterMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/LabelFilterMode.md)
+ - [LabelRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/LabelRequest.md)
+ - [LabelResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/LabelResponse.md)
+ - [Labels](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/Labels.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/Link.md)
+ - [MatchType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/MatchType.md)
+ - [PaginationNextAndSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/PaginationNextAndSelfLink.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/SelfLinks.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-labels/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -136,6 +136,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

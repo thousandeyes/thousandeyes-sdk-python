@@ -1,3 +1,5 @@
+.openapi-generator-ignore
+MANIFEST.in
 README.md
 docs/AgentToServerInstantScheduledTestApi.md
 docs/AlertDirection.md

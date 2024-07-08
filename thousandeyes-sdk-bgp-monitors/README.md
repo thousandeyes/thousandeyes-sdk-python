@@ -20,12 +20,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-bgp-monitors\&subdirectory=thousandeyes-sdk-bgp-monitors
+pip install thousandeyes-sdk-bgp-monitors
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-bgp-monitors\&subdirectory=thousandeyes-sdk-bgp-monitors`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-bgp-monitors`)
 
 Then import the package:
 ```python
@@ -52,7 +52,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -100,18 +100,18 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*ListBGPMonitorsApi* | [**get_bgp_monitors**](docs/ListBGPMonitorsApi.md#get_bgp_monitors) | **GET** /v7/monitors | List BGP monitors
+*ListBGPMonitorsApi* | [**get_bgp_monitors**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-bgp-monitors/docs/ListBGPMonitorsApi.md#get_bgp_monitors) | **GET** /v7/monitors | List BGP monitors
 
 
 ## Documentation For Models
 
- - [Error](docs/Error.md)
- - [Link](docs/Link.md)
- - [Monitor](docs/Monitor.md)
- - [MonitorType](docs/MonitorType.md)
- - [Monitors](docs/Monitors.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-bgp-monitors/docs/Error.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-bgp-monitors/docs/Link.md)
+ - [Monitor](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-bgp-monitors/docs/Monitor.md)
+ - [MonitorType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-bgp-monitors/docs/MonitorType.md)
+ - [Monitors](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-bgp-monitors/docs/Monitors.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-bgp-monitors/docs/SelfLinks.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-bgp-monitors/docs/UnauthorizedError.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -127,6 +127,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

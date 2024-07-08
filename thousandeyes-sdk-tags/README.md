@@ -27,12 +27,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-tags\&subdirectory=thousandeyes-sdk-tags
+pip install thousandeyes-sdk-tags
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-tags\&subdirectory=thousandeyes-sdk-tags`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-tags`)
 
 Then import the package:
 ```python
@@ -59,7 +59,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -107,40 +107,40 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*TagAssignmentApi* | [**assign_tag**](docs/TagAssignmentApi.md#assign_tag) | **POST** /v7/tags/{id}/assign | Assign tag to multiple objects
-*TagAssignmentApi* | [**assign_tags**](docs/TagAssignmentApi.md#assign_tags) | **POST** /v7/tags/assign | Assign multiple tags to multiple objects
-*TagAssignmentApi* | [**unassign_tag**](docs/TagAssignmentApi.md#unassign_tag) | **POST** /v7/tags/{id}/unassign | Remove tag from multiple objects
-*TagAssignmentApi* | [**unassign_tags**](docs/TagAssignmentApi.md#unassign_tags) | **POST** /v7/tags/unassign | Remove multiple tags from multiple objects
-*TagsApi* | [**create_tag**](docs/TagsApi.md#create_tag) | **POST** /v7/tags | Create tag
-*TagsApi* | [**create_tags**](docs/TagsApi.md#create_tags) | **POST** /v7/tags/bulk | Create multiple tags
-*TagsApi* | [**delete_tag**](docs/TagsApi.md#delete_tag) | **DELETE** /v7/tags/{id} | Delete tag
-*TagsApi* | [**get_tag**](docs/TagsApi.md#get_tag) | **GET** /v7/tags/{id} | Retrieve tag
-*TagsApi* | [**get_tags**](docs/TagsApi.md#get_tags) | **GET** /v7/tags | List tags
-*TagsApi* | [**update_tag**](docs/TagsApi.md#update_tag) | **PUT** /v7/tags/{id} | Update tag
+*TagAssignmentApi* | [**assign_tag**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagAssignmentApi.md#assign_tag) | **POST** /v7/tags/{id}/assign | Assign tag to multiple objects
+*TagAssignmentApi* | [**assign_tags**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagAssignmentApi.md#assign_tags) | **POST** /v7/tags/assign | Assign multiple tags to multiple objects
+*TagAssignmentApi* | [**unassign_tag**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagAssignmentApi.md#unassign_tag) | **POST** /v7/tags/{id}/unassign | Remove tag from multiple objects
+*TagAssignmentApi* | [**unassign_tags**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagAssignmentApi.md#unassign_tags) | **POST** /v7/tags/unassign | Remove multiple tags from multiple objects
+*TagsApi* | [**create_tag**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagsApi.md#create_tag) | **POST** /v7/tags | Create tag
+*TagsApi* | [**create_tags**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagsApi.md#create_tags) | **POST** /v7/tags/bulk | Create multiple tags
+*TagsApi* | [**delete_tag**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagsApi.md#delete_tag) | **DELETE** /v7/tags/{id} | Delete tag
+*TagsApi* | [**get_tag**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagsApi.md#get_tag) | **GET** /v7/tags/{id} | Retrieve tag
+*TagsApi* | [**get_tags**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagsApi.md#get_tags) | **GET** /v7/tags | List tags
+*TagsApi* | [**update_tag**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagsApi.md#update_tag) | **PUT** /v7/tags/{id} | Update tag
 
 
 ## Documentation For Models
 
- - [AccessType](docs/AccessType.md)
- - [ApiError](docs/ApiError.md)
- - [Assignment](docs/Assignment.md)
- - [AssignmentType](docs/AssignmentType.md)
- - [BulkTagAssignment](docs/BulkTagAssignment.md)
- - [BulkTagAssignments](docs/BulkTagAssignments.md)
- - [BulkTagResponse](docs/BulkTagResponse.md)
- - [Error](docs/Error.md)
- - [Expand](docs/Expand.md)
- - [Link](docs/Link.md)
- - [ObjectType](docs/ObjectType.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [Tag](docs/Tag.md)
- - [TagAssignment](docs/TagAssignment.md)
- - [TagBulkCreateError](docs/TagBulkCreateError.md)
- - [TagInfo](docs/TagInfo.md)
- - [Tags](docs/Tags.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [AccessType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/AccessType.md)
+ - [ApiError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/ApiError.md)
+ - [Assignment](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/Assignment.md)
+ - [AssignmentType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/AssignmentType.md)
+ - [BulkTagAssignment](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/BulkTagAssignment.md)
+ - [BulkTagAssignments](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/BulkTagAssignments.md)
+ - [BulkTagResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/BulkTagResponse.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/Error.md)
+ - [Expand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/Expand.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/Link.md)
+ - [ObjectType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/ObjectType.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/SelfLinks.md)
+ - [Tag](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/Tag.md)
+ - [TagAssignment](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagAssignment.md)
+ - [TagBulkCreateError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagBulkCreateError.md)
+ - [TagInfo](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/TagInfo.md)
+ - [Tags](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/Tags.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tags/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -156,6 +156,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

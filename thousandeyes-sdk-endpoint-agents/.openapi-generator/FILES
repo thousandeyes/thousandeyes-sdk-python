@@ -1,3 +1,5 @@
+.openapi-generator-ignore
+MANIFEST.in
 README.md
 docs/AddressProfile.md
 docs/AddressType.md

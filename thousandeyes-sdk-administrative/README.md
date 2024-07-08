@@ -23,12 +23,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-administrative\&subdirectory=thousandeyes-sdk-administrative
+pip install thousandeyes-sdk-administrative
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-administrative\&subdirectory=thousandeyes-sdk-administrative`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-administrative`)
 
 Then import the package:
 ```python
@@ -55,7 +55,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -104,72 +104,72 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AccountGroupsApi* | [**create_account_group**](docs/AccountGroupsApi.md#create_account_group) | **POST** /v7/account-groups | Create account group
-*AccountGroupsApi* | [**delete_account_group**](docs/AccountGroupsApi.md#delete_account_group) | **DELETE** /v7/account-groups/{id} | Delete account group
-*AccountGroupsApi* | [**get_account_group**](docs/AccountGroupsApi.md#get_account_group) | **GET** /v7/account-groups/{id} | Retrieve account group
-*AccountGroupsApi* | [**get_account_groups**](docs/AccountGroupsApi.md#get_account_groups) | **GET** /v7/account-groups | List account groups
-*AccountGroupsApi* | [**update_account_group**](docs/AccountGroupsApi.md#update_account_group) | **PUT** /v7/account-groups/{id} | Update account group
-*PermissionsApi* | [**get_permissions**](docs/PermissionsApi.md#get_permissions) | **GET** /v7/permissions | List assignable permissions
-*RolesApi* | [**create_role**](docs/RolesApi.md#create_role) | **POST** /v7/roles | Create role
-*RolesApi* | [**delete_role**](docs/RolesApi.md#delete_role) | **DELETE** /v7/roles/{id} | Delete role
-*RolesApi* | [**get_role**](docs/RolesApi.md#get_role) | **GET** /v7/roles/{id} | Retrieve role
-*RolesApi* | [**get_roles**](docs/RolesApi.md#get_roles) | **GET** /v7/roles | List roles
-*RolesApi* | [**update_role**](docs/RolesApi.md#update_role) | **PUT** /v7/roles/{id} | Update role
-*UserEventsApi* | [**get_user_events**](docs/UserEventsApi.md#get_user_events) | **GET** /v7/audit-user-events | List activity log events
-*UsersApi* | [**create_user**](docs/UsersApi.md#create_user) | **POST** /v7/users | Create user
-*UsersApi* | [**delete_user**](docs/UsersApi.md#delete_user) | **DELETE** /v7/users/{id} | Delete user
-*UsersApi* | [**get_user**](docs/UsersApi.md#get_user) | **GET** /v7/users/{id} | Retrieve user
-*UsersApi* | [**get_users**](docs/UsersApi.md#get_users) | **GET** /v7/users | List users
-*UsersApi* | [**update_user**](docs/UsersApi.md#update_user) | **PUT** /v7/users/{id} | Update user
+*AccountGroupsApi* | [**create_account_group**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroupsApi.md#create_account_group) | **POST** /v7/account-groups | Create account group
+*AccountGroupsApi* | [**delete_account_group**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroupsApi.md#delete_account_group) | **DELETE** /v7/account-groups/{id} | Delete account group
+*AccountGroupsApi* | [**get_account_group**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroupsApi.md#get_account_group) | **GET** /v7/account-groups/{id} | Retrieve account group
+*AccountGroupsApi* | [**get_account_groups**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroupsApi.md#get_account_groups) | **GET** /v7/account-groups | List account groups
+*AccountGroupsApi* | [**update_account_group**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroupsApi.md#update_account_group) | **PUT** /v7/account-groups/{id} | Update account group
+*PermissionsApi* | [**get_permissions**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/PermissionsApi.md#get_permissions) | **GET** /v7/permissions | List assignable permissions
+*RolesApi* | [**create_role**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/RolesApi.md#create_role) | **POST** /v7/roles | Create role
+*RolesApi* | [**delete_role**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/RolesApi.md#delete_role) | **DELETE** /v7/roles/{id} | Delete role
+*RolesApi* | [**get_role**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/RolesApi.md#get_role) | **GET** /v7/roles/{id} | Retrieve role
+*RolesApi* | [**get_roles**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/RolesApi.md#get_roles) | **GET** /v7/roles | List roles
+*RolesApi* | [**update_role**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/RolesApi.md#update_role) | **PUT** /v7/roles/{id} | Update role
+*UserEventsApi* | [**get_user_events**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UserEventsApi.md#get_user_events) | **GET** /v7/audit-user-events | List activity log events
+*UsersApi* | [**create_user**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UsersApi.md#create_user) | **POST** /v7/users | Create user
+*UsersApi* | [**delete_user**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UsersApi.md#delete_user) | **DELETE** /v7/users/{id} | Delete user
+*UsersApi* | [**get_user**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UsersApi.md#get_user) | **GET** /v7/users/{id} | Retrieve user
+*UsersApi* | [**get_users**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UsersApi.md#get_users) | **GET** /v7/users | List users
+*UsersApi* | [**update_user**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UsersApi.md#update_user) | **PUT** /v7/users/{id} | Update user
 
 
 ## Documentation For Models
 
- - [AccountGroup](docs/AccountGroup.md)
- - [AccountGroupDetail](docs/AccountGroupDetail.md)
- - [AccountGroupInfo](docs/AccountGroupInfo.md)
- - [AccountGroupRequest](docs/AccountGroupRequest.md)
- - [AccountGroupRole](docs/AccountGroupRole.md)
- - [AccountGroups](docs/AccountGroups.md)
- - [Agent](docs/Agent.md)
- - [AgentBase](docs/AgentBase.md)
- - [AuditUserEvents](docs/AuditUserEvents.md)
- - [BaseRole](docs/BaseRole.md)
- - [CloudEnterpriseAgentType](docs/CloudEnterpriseAgentType.md)
- - [ClusterMember](docs/ClusterMember.md)
- - [CreatedAccountGroup](docs/CreatedAccountGroup.md)
- - [CreatedUser](docs/CreatedUser.md)
- - [EnterpriseAgent](docs/EnterpriseAgent.md)
- - [EnterpriseAgentData](docs/EnterpriseAgentData.md)
- - [EnterpriseAgentIpv6Policy](docs/EnterpriseAgentIpv6Policy.md)
- - [EnterpriseAgentState](docs/EnterpriseAgentState.md)
- - [Error](docs/Error.md)
- - [ErrorDetail](docs/ErrorDetail.md)
- - [ErrorDetailCode](docs/ErrorDetailCode.md)
- - [Expand](docs/Expand.md)
- - [ExtendedUser](docs/ExtendedUser.md)
- - [InterfaceIpMapping](docs/InterfaceIpMapping.md)
- - [Link](docs/Link.md)
- - [PaginationLinks](docs/PaginationLinks.md)
- - [Permission](docs/Permission.md)
- - [Permissions](docs/Permissions.md)
- - [Resource](docs/Resource.md)
- - [Role](docs/Role.md)
- - [RoleDetail](docs/RoleDetail.md)
- - [RoleRequestBody](docs/RoleRequestBody.md)
- - [Roles](docs/Roles.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [SimpleAgent](docs/SimpleAgent.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [User](docs/User.md)
- - [UserAccountGroup](docs/UserAccountGroup.md)
- - [UserAccountGroupRole](docs/UserAccountGroupRole.md)
- - [UserDetail](docs/UserDetail.md)
- - [UserEvent](docs/UserEvent.md)
- - [UserRequest](docs/UserRequest.md)
- - [Users](docs/Users.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [AccountGroup](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroup.md)
+ - [AccountGroupDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroupDetail.md)
+ - [AccountGroupInfo](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroupInfo.md)
+ - [AccountGroupRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroupRequest.md)
+ - [AccountGroupRole](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroupRole.md)
+ - [AccountGroups](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AccountGroups.md)
+ - [Agent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Agent.md)
+ - [AgentBase](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AgentBase.md)
+ - [AuditUserEvents](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/AuditUserEvents.md)
+ - [BaseRole](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/BaseRole.md)
+ - [CloudEnterpriseAgentType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/CloudEnterpriseAgentType.md)
+ - [ClusterMember](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/ClusterMember.md)
+ - [CreatedAccountGroup](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/CreatedAccountGroup.md)
+ - [CreatedUser](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/CreatedUser.md)
+ - [EnterpriseAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/EnterpriseAgent.md)
+ - [EnterpriseAgentData](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/EnterpriseAgentData.md)
+ - [EnterpriseAgentIpv6Policy](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/EnterpriseAgentIpv6Policy.md)
+ - [EnterpriseAgentState](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/EnterpriseAgentState.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Error.md)
+ - [ErrorDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/ErrorDetail.md)
+ - [ErrorDetailCode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/ErrorDetailCode.md)
+ - [Expand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Expand.md)
+ - [ExtendedUser](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/ExtendedUser.md)
+ - [InterfaceIpMapping](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/InterfaceIpMapping.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Link.md)
+ - [PaginationLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/PaginationLinks.md)
+ - [Permission](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Permission.md)
+ - [Permissions](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Permissions.md)
+ - [Resource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Resource.md)
+ - [Role](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Role.md)
+ - [RoleDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/RoleDetail.md)
+ - [RoleRequestBody](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/RoleRequestBody.md)
+ - [Roles](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Roles.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/SelfLinks.md)
+ - [SimpleAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/SimpleAgent.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UnauthorizedError.md)
+ - [User](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/User.md)
+ - [UserAccountGroup](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UserAccountGroup.md)
+ - [UserAccountGroupRole](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UserAccountGroupRole.md)
+ - [UserDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UserDetail.md)
+ - [UserEvent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UserEvent.md)
+ - [UserRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/UserRequest.md)
+ - [Users](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/Users.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-administrative/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -185,6 +185,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

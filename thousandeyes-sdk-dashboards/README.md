@@ -14,12 +14,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-dashboards\&subdirectory=thousandeyes-sdk-dashboards
+pip install thousandeyes-sdk-dashboards
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-dashboards\&subdirectory=thousandeyes-sdk-dashboards`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-dashboards`)
 
 Then import the package:
 ```python
@@ -46,7 +46,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -95,139 +95,139 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DashboardSnapshotsApi* | [**create_dashboard_snapshot**](docs/DashboardSnapshotsApi.md#create_dashboard_snapshot) | **POST** /v7/dashboard-snapshots | Create dashboard snapshot
-*DashboardSnapshotsApi* | [**delete_dashboard_snapshot**](docs/DashboardSnapshotsApi.md#delete_dashboard_snapshot) | **DELETE** /v7/dashboard-snapshots/{snapshotId} | Delete dashboard snapshot
-*DashboardSnapshotsApi* | [**get_dashboard_snapshot**](docs/DashboardSnapshotsApi.md#get_dashboard_snapshot) | **GET** /v7/dashboard-snapshots/{snapshotId} | Retrieve dashboard snapshot
-*DashboardSnapshotsApi* | [**get_dashboard_snapshot_widget_data**](docs/DashboardSnapshotsApi.md#get_dashboard_snapshot_widget_data) | **GET** /v7/dashboard-snapshots/{snapshotId}/widgets/{widgetId} | Retrieve dashboard snapshot data
-*DashboardSnapshotsApi* | [**get_dashboard_snapshots**](docs/DashboardSnapshotsApi.md#get_dashboard_snapshots) | **GET** /v7/dashboard-snapshots | List dashboard snapshots
-*DashboardSnapshotsApi* | [**update_dashboard_snapshot_expiration_date**](docs/DashboardSnapshotsApi.md#update_dashboard_snapshot_expiration_date) | **PATCH** /v7/dashboard-snapshots/{snapshotId} | Update snapshot expiration
-*DashboardsApi* | [**create_dashboard**](docs/DashboardsApi.md#create_dashboard) | **POST** /v7/dashboards | Create dashboard
-*DashboardsApi* | [**delete_dashboard**](docs/DashboardsApi.md#delete_dashboard) | **DELETE** /v7/dashboards/{dashboardId} | Delete dashboard
-*DashboardsApi* | [**get_dashboard**](docs/DashboardsApi.md#get_dashboard) | **GET** /v7/dashboards/{dashboardId} | Retrieve dashboard
-*DashboardsApi* | [**get_dashboard_widget_data**](docs/DashboardsApi.md#get_dashboard_widget_data) | **GET** /v7/dashboards/{dashboardId}/widgets/{widgetId} | Retrieve dashboard widget data
-*DashboardsApi* | [**get_dashboards**](docs/DashboardsApi.md#get_dashboards) | **GET** /v7/dashboards | List dashboards
-*DashboardsApi* | [**update_dashboard**](docs/DashboardsApi.md#update_dashboard) | **PUT** /v7/dashboards/{dashboardId} | Update dashboard
-*DashboardsFiltersApi* | [**create_dashboard_filter**](docs/DashboardsFiltersApi.md#create_dashboard_filter) | **POST** /v7/dashboards/filters | Create dashboard filter
-*DashboardsFiltersApi* | [**delete_dashboard_filter**](docs/DashboardsFiltersApi.md#delete_dashboard_filter) | **DELETE** /v7/dashboards/filters/{id} | Delete dashboard filter
-*DashboardsFiltersApi* | [**get_dashboard_filter**](docs/DashboardsFiltersApi.md#get_dashboard_filter) | **GET** /v7/dashboards/filters/{id} | Get dashboard filter
-*DashboardsFiltersApi* | [**get_dashboards_filters**](docs/DashboardsFiltersApi.md#get_dashboards_filters) | **GET** /v7/dashboards/filters | List dashboard filters
-*DashboardsFiltersApi* | [**update_dashboard_filter**](docs/DashboardsFiltersApi.md#update_dashboard_filter) | **PUT** /v7/dashboards/filters/{id} | Update dashboard filter
+*DashboardSnapshotsApi* | [**create_dashboard_snapshot**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardSnapshotsApi.md#create_dashboard_snapshot) | **POST** /v7/dashboard-snapshots | Create dashboard snapshot
+*DashboardSnapshotsApi* | [**delete_dashboard_snapshot**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardSnapshotsApi.md#delete_dashboard_snapshot) | **DELETE** /v7/dashboard-snapshots/{snapshotId} | Delete dashboard snapshot
+*DashboardSnapshotsApi* | [**get_dashboard_snapshot**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardSnapshotsApi.md#get_dashboard_snapshot) | **GET** /v7/dashboard-snapshots/{snapshotId} | Retrieve dashboard snapshot
+*DashboardSnapshotsApi* | [**get_dashboard_snapshot_widget_data**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardSnapshotsApi.md#get_dashboard_snapshot_widget_data) | **GET** /v7/dashboard-snapshots/{snapshotId}/widgets/{widgetId} | Retrieve dashboard snapshot data
+*DashboardSnapshotsApi* | [**get_dashboard_snapshots**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardSnapshotsApi.md#get_dashboard_snapshots) | **GET** /v7/dashboard-snapshots | List dashboard snapshots
+*DashboardSnapshotsApi* | [**update_dashboard_snapshot_expiration_date**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardSnapshotsApi.md#update_dashboard_snapshot_expiration_date) | **PATCH** /v7/dashboard-snapshots/{snapshotId} | Update snapshot expiration
+*DashboardsApi* | [**create_dashboard**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsApi.md#create_dashboard) | **POST** /v7/dashboards | Create dashboard
+*DashboardsApi* | [**delete_dashboard**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsApi.md#delete_dashboard) | **DELETE** /v7/dashboards/{dashboardId} | Delete dashboard
+*DashboardsApi* | [**get_dashboard**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsApi.md#get_dashboard) | **GET** /v7/dashboards/{dashboardId} | Retrieve dashboard
+*DashboardsApi* | [**get_dashboard_widget_data**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsApi.md#get_dashboard_widget_data) | **GET** /v7/dashboards/{dashboardId}/widgets/{widgetId} | Retrieve dashboard widget data
+*DashboardsApi* | [**get_dashboards**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsApi.md#get_dashboards) | **GET** /v7/dashboards | List dashboards
+*DashboardsApi* | [**update_dashboard**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsApi.md#update_dashboard) | **PUT** /v7/dashboards/{dashboardId} | Update dashboard
+*DashboardsFiltersApi* | [**create_dashboard_filter**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsFiltersApi.md#create_dashboard_filter) | **POST** /v7/dashboards/filters | Create dashboard filter
+*DashboardsFiltersApi* | [**delete_dashboard_filter**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsFiltersApi.md#delete_dashboard_filter) | **DELETE** /v7/dashboards/filters/{id} | Delete dashboard filter
+*DashboardsFiltersApi* | [**get_dashboard_filter**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsFiltersApi.md#get_dashboard_filter) | **GET** /v7/dashboards/filters/{id} | Get dashboard filter
+*DashboardsFiltersApi* | [**get_dashboards_filters**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsFiltersApi.md#get_dashboards_filters) | **GET** /v7/dashboards/filters | List dashboard filters
+*DashboardsFiltersApi* | [**update_dashboard_filter**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardsFiltersApi.md#update_dashboard_filter) | **PUT** /v7/dashboards/filters/{id} | Update dashboard filter
 
 
 ## Documentation For Models
 
- - [ActiveWithin](docs/ActiveWithin.md)
- - [AgentStatusDatasource](docs/AgentStatusDatasource.md)
- - [AlertListAlertType](docs/AlertListAlertType.md)
- - [AlertListDatasource](docs/AlertListDatasource.md)
- - [ApiAgentLocation](docs/ApiAgentLocation.md)
- - [ApiAgentStatusAgent](docs/ApiAgentStatusAgent.md)
- - [ApiAgentStatusIpInfo](docs/ApiAgentStatusIpInfo.md)
- - [ApiAgentStatusSummary](docs/ApiAgentStatusSummary.md)
- - [ApiAgentStatusWidget](docs/ApiAgentStatusWidget.md)
- - [ApiAgentWidgetShow](docs/ApiAgentWidgetShow.md)
- - [ApiAgentWidgetType](docs/ApiAgentWidgetType.md)
- - [ApiAggregateProperty](docs/ApiAggregateProperty.md)
- - [ApiAlertListAlert](docs/ApiAlertListAlert.md)
- - [ApiAlertListWidget](docs/ApiAlertListWidget.md)
- - [ApiBoxAndWhiskersWidget](docs/ApiBoxAndWhiskersWidget.md)
- - [ApiColorGridWidget](docs/ApiColorGridWidget.md)
- - [ApiContextFilterRequest](docs/ApiContextFilterRequest.md)
- - [ApiContextFilterResponse](docs/ApiContextFilterResponse.md)
- - [ApiContextFiltersResponse](docs/ApiContextFiltersResponse.md)
- - [ApiDashboard](docs/ApiDashboard.md)
- - [ApiDashboardAsw](docs/ApiDashboardAsw.md)
- - [ApiDashboardFilterUserDetails](docs/ApiDashboardFilterUserDetails.md)
- - [ApiDashboardSnapshot](docs/ApiDashboardSnapshot.md)
- - [ApiDataPointGroup](docs/ApiDataPointGroup.md)
- - [ApiDataSourceFilter](docs/ApiDataSourceFilter.md)
- - [ApiDataSourceFilters](docs/ApiDataSourceFilters.md)
- - [ApiDefaultTimespan](docs/ApiDefaultTimespan.md)
- - [ApiDuration](docs/ApiDuration.md)
- - [ApiDurationUnit](docs/ApiDurationUnit.md)
- - [ApiGeoMapWidget](docs/ApiGeoMapWidget.md)
- - [ApiGraphletPoint](docs/ApiGraphletPoint.md)
- - [ApiGroupedBarchartWidget](docs/ApiGroupedBarchartWidget.md)
- - [ApiMultiMetricColumn](docs/ApiMultiMetricColumn.md)
- - [ApiMultiMetricColumnData](docs/ApiMultiMetricColumnData.md)
- - [ApiMultiMetricTableWidget](docs/ApiMultiMetricTableWidget.md)
- - [ApiMultiSearchFilterApiTestTableFilterKey](docs/ApiMultiSearchFilterApiTestTableFilterKey.md)
- - [ApiNumbersCard](docs/ApiNumbersCard.md)
- - [ApiNumbersCardData](docs/ApiNumbersCardData.md)
- - [ApiNumbersCardWidget](docs/ApiNumbersCardWidget.md)
- - [ApiPieChartWidget](docs/ApiPieChartWidget.md)
- - [ApiReportDataComponentLabelMap](docs/ApiReportDataComponentLabelMap.md)
- - [ApiReportDataComponentLabelMapEntry](docs/ApiReportDataComponentLabelMapEntry.md)
- - [ApiReportSnapshotTimeSpan](docs/ApiReportSnapshotTimeSpan.md)
- - [ApiStackedAreaChartWidget](docs/ApiStackedAreaChartWidget.md)
- - [ApiStackedBarchartWidget](docs/ApiStackedBarchartWidget.md)
- - [ApiTableWidget](docs/ApiTableWidget.md)
- - [ApiTestTableData](docs/ApiTestTableData.md)
- - [ApiTestTableGraphletsData](docs/ApiTestTableGraphletsData.md)
- - [ApiTestTableWidget](docs/ApiTestTableWidget.md)
- - [ApiTimeseriesWidget](docs/ApiTimeseriesWidget.md)
- - [ApiWidget](docs/ApiWidget.md)
- - [ApiWidgetData](docs/ApiWidgetData.md)
- - [ApiWidgetDataPoint](docs/ApiWidgetDataPoint.md)
- - [ApiWidgetDataResponse](docs/ApiWidgetDataResponse.md)
- - [ApiWidgetDataSnapshotResponse](docs/ApiWidgetDataSnapshotResponse.md)
- - [ApiWidgetFilterApiTestTableFilterKey](docs/ApiWidgetFilterApiTestTableFilterKey.md)
- - [ApiWidgetFixedYScalePrefix](docs/ApiWidgetFixedYScalePrefix.md)
- - [ApiWidgetMeasure](docs/ApiWidgetMeasure.md)
- - [ApiWidgetSortDirection](docs/ApiWidgetSortDirection.md)
- - [ApiWidgetSortProperty](docs/ApiWidgetSortProperty.md)
- - [ApiWidgetsDataV2](docs/ApiWidgetsDataV2.md)
- - [AppAndSelfLinks](docs/AppAndSelfLinks.md)
- - [AswRepeat](docs/AswRepeat.md)
- - [AswRepeatUnit](docs/AswRepeatUnit.md)
- - [BoxAndWhiskersDatasource](docs/BoxAndWhiskersDatasource.md)
- - [ColorGridDatasource](docs/ColorGridDatasource.md)
- - [Dashboard](docs/Dashboard.md)
- - [DashboardGlobalFilterId](docs/DashboardGlobalFilterId.md)
- - [DashboardLinks](docs/DashboardLinks.md)
- - [DashboardMetric](docs/DashboardMetric.md)
- - [DashboardMetricDirection](docs/DashboardMetricDirection.md)
- - [DashboardOrder](docs/DashboardOrder.md)
- - [DashboardSnapshotResponse](docs/DashboardSnapshotResponse.md)
- - [DashboardSnapshotsPage](docs/DashboardSnapshotsPage.md)
- - [DefaultTimespan](docs/DefaultTimespan.md)
- - [EnterpriseAgentState](docs/EnterpriseAgentState.md)
- - [Error](docs/Error.md)
- - [GenerateDashboardSnapshotRequest](docs/GenerateDashboardSnapshotRequest.md)
- - [GeoMapDatasource](docs/GeoMapDatasource.md)
- - [GroupedBarChartDatasource](docs/GroupedBarChartDatasource.md)
- - [LegacyAgentWidgetShow](docs/LegacyAgentWidgetShow.md)
- - [LegacyAgentWidgetType](docs/LegacyAgentWidgetType.md)
- - [LegacyAlertListAlertType](docs/LegacyAlertListAlertType.md)
- - [LegacyApiDashboard](docs/LegacyApiDashboard.md)
- - [LegacyDashboardSnapshot](docs/LegacyDashboardSnapshot.md)
- - [LegacyDefaultTimespan](docs/LegacyDefaultTimespan.md)
- - [LegacyDurationUnit](docs/LegacyDurationUnit.md)
- - [LegacyWidgetSortDirection](docs/LegacyWidgetSortDirection.md)
- - [LegacyWidgetSortProperty](docs/LegacyWidgetSortProperty.md)
- - [Link](docs/Link.md)
- - [MetricGroup](docs/MetricGroup.md)
- - [MultiMetricsTableDatasource](docs/MultiMetricsTableDatasource.md)
- - [NumbersCardDatasource](docs/NumbersCardDatasource.md)
- - [PaginationLinks](docs/PaginationLinks.md)
- - [PieChartDatasource](docs/PieChartDatasource.md)
- - [ScalableWidget](docs/ScalableWidget.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [StackedAreaChartDatasource](docs/StackedAreaChartDatasource.md)
- - [StackedBarChartDatasource](docs/StackedBarChartDatasource.md)
- - [TableDatasource](docs/TableDatasource.md)
- - [TestTableDatasource](docs/TestTableDatasource.md)
- - [TestTableFilterKey](docs/TestTableFilterKey.md)
- - [TestTableFilterType](docs/TestTableFilterType.md)
- - [TimeseriesDatasource](docs/TimeseriesDatasource.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [UpdateSnapshotExpirationDateApiRequest](docs/UpdateSnapshotExpirationDateApiRequest.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
- - [VisualMode](docs/VisualMode.md)
- - [Widget](docs/Widget.md)
- - [WidgetMeasureType](docs/WidgetMeasureType.md)
- - [WidgetType](docs/WidgetType.md)
+ - [ActiveWithin](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ActiveWithin.md)
+ - [AgentStatusDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/AgentStatusDatasource.md)
+ - [AlertListAlertType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/AlertListAlertType.md)
+ - [AlertListDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/AlertListDatasource.md)
+ - [ApiAgentLocation](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentLocation.md)
+ - [ApiAgentStatusAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentStatusAgent.md)
+ - [ApiAgentStatusIpInfo](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentStatusIpInfo.md)
+ - [ApiAgentStatusSummary](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentStatusSummary.md)
+ - [ApiAgentStatusWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentStatusWidget.md)
+ - [ApiAgentWidgetShow](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentWidgetShow.md)
+ - [ApiAgentWidgetType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentWidgetType.md)
+ - [ApiAggregateProperty](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAggregateProperty.md)
+ - [ApiAlertListAlert](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAlertListAlert.md)
+ - [ApiAlertListWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAlertListWidget.md)
+ - [ApiBoxAndWhiskersWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiBoxAndWhiskersWidget.md)
+ - [ApiColorGridWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiColorGridWidget.md)
+ - [ApiContextFilterRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiContextFilterRequest.md)
+ - [ApiContextFilterResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiContextFilterResponse.md)
+ - [ApiContextFiltersResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiContextFiltersResponse.md)
+ - [ApiDashboard](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDashboard.md)
+ - [ApiDashboardAsw](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDashboardAsw.md)
+ - [ApiDashboardFilterUserDetails](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDashboardFilterUserDetails.md)
+ - [ApiDashboardSnapshot](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDashboardSnapshot.md)
+ - [ApiDataPointGroup](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDataPointGroup.md)
+ - [ApiDataSourceFilter](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDataSourceFilter.md)
+ - [ApiDataSourceFilters](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDataSourceFilters.md)
+ - [ApiDefaultTimespan](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDefaultTimespan.md)
+ - [ApiDuration](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDuration.md)
+ - [ApiDurationUnit](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiDurationUnit.md)
+ - [ApiGeoMapWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiGeoMapWidget.md)
+ - [ApiGraphletPoint](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiGraphletPoint.md)
+ - [ApiGroupedBarchartWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiGroupedBarchartWidget.md)
+ - [ApiMultiMetricColumn](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiMultiMetricColumn.md)
+ - [ApiMultiMetricColumnData](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiMultiMetricColumnData.md)
+ - [ApiMultiMetricTableWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiMultiMetricTableWidget.md)
+ - [ApiMultiSearchFilterApiTestTableFilterKey](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiMultiSearchFilterApiTestTableFilterKey.md)
+ - [ApiNumbersCard](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiNumbersCard.md)
+ - [ApiNumbersCardData](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiNumbersCardData.md)
+ - [ApiNumbersCardWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiNumbersCardWidget.md)
+ - [ApiPieChartWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiPieChartWidget.md)
+ - [ApiReportDataComponentLabelMap](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiReportDataComponentLabelMap.md)
+ - [ApiReportDataComponentLabelMapEntry](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiReportDataComponentLabelMapEntry.md)
+ - [ApiReportSnapshotTimeSpan](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiReportSnapshotTimeSpan.md)
+ - [ApiStackedAreaChartWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiStackedAreaChartWidget.md)
+ - [ApiStackedBarchartWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiStackedBarchartWidget.md)
+ - [ApiTableWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiTableWidget.md)
+ - [ApiTestTableData](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiTestTableData.md)
+ - [ApiTestTableGraphletsData](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiTestTableGraphletsData.md)
+ - [ApiTestTableWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiTestTableWidget.md)
+ - [ApiTimeseriesWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiTimeseriesWidget.md)
+ - [ApiWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidget.md)
+ - [ApiWidgetData](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetData.md)
+ - [ApiWidgetDataPoint](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetDataPoint.md)
+ - [ApiWidgetDataResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetDataResponse.md)
+ - [ApiWidgetDataSnapshotResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetDataSnapshotResponse.md)
+ - [ApiWidgetFilterApiTestTableFilterKey](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetFilterApiTestTableFilterKey.md)
+ - [ApiWidgetFixedYScalePrefix](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetFixedYScalePrefix.md)
+ - [ApiWidgetMeasure](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetMeasure.md)
+ - [ApiWidgetSortDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetSortDirection.md)
+ - [ApiWidgetSortProperty](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetSortProperty.md)
+ - [ApiWidgetsDataV2](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetsDataV2.md)
+ - [AppAndSelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/AppAndSelfLinks.md)
+ - [AswRepeat](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/AswRepeat.md)
+ - [AswRepeatUnit](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/AswRepeatUnit.md)
+ - [BoxAndWhiskersDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/BoxAndWhiskersDatasource.md)
+ - [ColorGridDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ColorGridDatasource.md)
+ - [Dashboard](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/Dashboard.md)
+ - [DashboardGlobalFilterId](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardGlobalFilterId.md)
+ - [DashboardLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardLinks.md)
+ - [DashboardMetric](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardMetric.md)
+ - [DashboardMetricDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardMetricDirection.md)
+ - [DashboardOrder](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardOrder.md)
+ - [DashboardSnapshotResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardSnapshotResponse.md)
+ - [DashboardSnapshotsPage](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DashboardSnapshotsPage.md)
+ - [DefaultTimespan](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/DefaultTimespan.md)
+ - [EnterpriseAgentState](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/EnterpriseAgentState.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/Error.md)
+ - [GenerateDashboardSnapshotRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/GenerateDashboardSnapshotRequest.md)
+ - [GeoMapDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/GeoMapDatasource.md)
+ - [GroupedBarChartDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/GroupedBarChartDatasource.md)
+ - [LegacyAgentWidgetShow](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/LegacyAgentWidgetShow.md)
+ - [LegacyAgentWidgetType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/LegacyAgentWidgetType.md)
+ - [LegacyAlertListAlertType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/LegacyAlertListAlertType.md)
+ - [LegacyApiDashboard](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/LegacyApiDashboard.md)
+ - [LegacyDashboardSnapshot](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/LegacyDashboardSnapshot.md)
+ - [LegacyDefaultTimespan](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/LegacyDefaultTimespan.md)
+ - [LegacyDurationUnit](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/LegacyDurationUnit.md)
+ - [LegacyWidgetSortDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/LegacyWidgetSortDirection.md)
+ - [LegacyWidgetSortProperty](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/LegacyWidgetSortProperty.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/Link.md)
+ - [MetricGroup](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/MetricGroup.md)
+ - [MultiMetricsTableDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/MultiMetricsTableDatasource.md)
+ - [NumbersCardDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/NumbersCardDatasource.md)
+ - [PaginationLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/PaginationLinks.md)
+ - [PieChartDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/PieChartDatasource.md)
+ - [ScalableWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ScalableWidget.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/SelfLinks.md)
+ - [StackedAreaChartDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/StackedAreaChartDatasource.md)
+ - [StackedBarChartDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/StackedBarChartDatasource.md)
+ - [TableDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/TableDatasource.md)
+ - [TestTableDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/TestTableDatasource.md)
+ - [TestTableFilterKey](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/TestTableFilterKey.md)
+ - [TestTableFilterType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/TestTableFilterType.md)
+ - [TimeseriesDatasource](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/TimeseriesDatasource.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/UnauthorizedError.md)
+ - [UpdateSnapshotExpirationDateApiRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/UpdateSnapshotExpirationDateApiRequest.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ValidationErrorItem.md)
+ - [VisualMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/VisualMode.md)
+ - [Widget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/Widget.md)
+ - [WidgetMeasureType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/WidgetMeasureType.md)
+ - [WidgetType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/WidgetType.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -243,6 +243,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

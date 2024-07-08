@@ -23,12 +23,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-alerts\&subdirectory=thousandeyes-sdk-alerts
+pip install thousandeyes-sdk-alerts
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-alerts\&subdirectory=thousandeyes-sdk-alerts`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-alerts`)
 
 Then import the package:
 ```python
@@ -55,7 +55,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -104,72 +104,72 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AlertRulesApi* | [**create_alert_rule**](docs/AlertRulesApi.md#create_alert_rule) | **POST** /v7/alerts/rules | Create alert rule
-*AlertRulesApi* | [**delete_alert_rule**](docs/AlertRulesApi.md#delete_alert_rule) | **DELETE** /v7/alerts/rules/{ruleId} | Delete alert rule
-*AlertRulesApi* | [**get_alert_rule**](docs/AlertRulesApi.md#get_alert_rule) | **GET** /v7/alerts/rules/{ruleId} | Retrieve alert rule
-*AlertRulesApi* | [**get_alerts_rules**](docs/AlertRulesApi.md#get_alerts_rules) | **GET** /v7/alerts/rules | List alert rules
-*AlertRulesApi* | [**update_alert_rule**](docs/AlertRulesApi.md#update_alert_rule) | **PUT** /v7/alerts/rules/{ruleId} | Update alert rule
-*AlertSuppressionWindowsApi* | [**create_alert_suppression_window**](docs/AlertSuppressionWindowsApi.md#create_alert_suppression_window) | **POST** /v7/alert-suppression-windows | Create alert suppression window
-*AlertSuppressionWindowsApi* | [**delete_alert_suppression_window**](docs/AlertSuppressionWindowsApi.md#delete_alert_suppression_window) | **DELETE** /v7/alert-suppression-windows/{windowId} | Delete alert suppression window
-*AlertSuppressionWindowsApi* | [**get_alert_suppression_window**](docs/AlertSuppressionWindowsApi.md#get_alert_suppression_window) | **GET** /v7/alert-suppression-windows/{windowId} | Retrieve alert suppression window
-*AlertSuppressionWindowsApi* | [**get_alert_suppression_windows**](docs/AlertSuppressionWindowsApi.md#get_alert_suppression_windows) | **GET** /v7/alert-suppression-windows | List alert suppression windows
-*AlertSuppressionWindowsApi* | [**update_alert_suppression_window**](docs/AlertSuppressionWindowsApi.md#update_alert_suppression_window) | **PUT** /v7/alert-suppression-windows/{windowId} | Update alert suppression window
-*AlertsApi* | [**get_alert**](docs/AlertsApi.md#get_alert) | **GET** /v7/alerts/{alertId} | Retrieve alert details
-*AlertsApi* | [**get_alerts**](docs/AlertsApi.md#get_alerts) | **GET** /v7/alerts | List active alerts
+*AlertRulesApi* | [**create_alert_rule**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertRulesApi.md#create_alert_rule) | **POST** /v7/alerts/rules | Create alert rule
+*AlertRulesApi* | [**delete_alert_rule**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertRulesApi.md#delete_alert_rule) | **DELETE** /v7/alerts/rules/{ruleId} | Delete alert rule
+*AlertRulesApi* | [**get_alert_rule**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertRulesApi.md#get_alert_rule) | **GET** /v7/alerts/rules/{ruleId} | Retrieve alert rule
+*AlertRulesApi* | [**get_alerts_rules**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertRulesApi.md#get_alerts_rules) | **GET** /v7/alerts/rules | List alert rules
+*AlertRulesApi* | [**update_alert_rule**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertRulesApi.md#update_alert_rule) | **PUT** /v7/alerts/rules/{ruleId} | Update alert rule
+*AlertSuppressionWindowsApi* | [**create_alert_suppression_window**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindowsApi.md#create_alert_suppression_window) | **POST** /v7/alert-suppression-windows | Create alert suppression window
+*AlertSuppressionWindowsApi* | [**delete_alert_suppression_window**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindowsApi.md#delete_alert_suppression_window) | **DELETE** /v7/alert-suppression-windows/{windowId} | Delete alert suppression window
+*AlertSuppressionWindowsApi* | [**get_alert_suppression_window**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindowsApi.md#get_alert_suppression_window) | **GET** /v7/alert-suppression-windows/{windowId} | Retrieve alert suppression window
+*AlertSuppressionWindowsApi* | [**get_alert_suppression_windows**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindowsApi.md#get_alert_suppression_windows) | **GET** /v7/alert-suppression-windows | List alert suppression windows
+*AlertSuppressionWindowsApi* | [**update_alert_suppression_window**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindowsApi.md#update_alert_suppression_window) | **PUT** /v7/alert-suppression-windows/{windowId} | Update alert suppression window
+*AlertsApi* | [**get_alert**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertsApi.md#get_alert) | **GET** /v7/alerts/{alertId} | Retrieve alert details
+*AlertsApi* | [**get_alerts**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertsApi.md#get_alerts) | **GET** /v7/alerts | List active alerts
 
 
 ## Documentation For Models
 
- - [Alert](docs/Alert.md)
- - [AlertDetail](docs/AlertDetail.md)
- - [AlertDirection](docs/AlertDirection.md)
- - [AlertLinks](docs/AlertLinks.md)
- - [AlertMeta](docs/AlertMeta.md)
- - [AlertMetricDetail](docs/AlertMetricDetail.md)
- - [AlertRoundsViolationMode](docs/AlertRoundsViolationMode.md)
- - [AlertRule](docs/AlertRule.md)
- - [AlertSuppressionWindow](docs/AlertSuppressionWindow.md)
- - [AlertSuppressionWindowDetail](docs/AlertSuppressionWindowDetail.md)
- - [AlertSuppressionWindowRequest](docs/AlertSuppressionWindowRequest.md)
- - [AlertSuppressionWindowState](docs/AlertSuppressionWindowState.md)
- - [AlertSuppressionWindows](docs/AlertSuppressionWindows.md)
- - [AlertType](docs/AlertType.md)
- - [Alerts](docs/Alerts.md)
- - [BaseAlert](docs/BaseAlert.md)
- - [BaseAlertSuppressionWindow](docs/BaseAlertSuppressionWindow.md)
- - [BaseRule](docs/BaseRule.md)
- - [BaseTest](docs/BaseTest.md)
- - [DaysOfWeek](docs/DaysOfWeek.md)
- - [EndAlertMetrics](docs/EndAlertMetrics.md)
- - [EndRepeat](docs/EndRepeat.md)
- - [EndRepeatType](docs/EndRepeatType.md)
- - [Error](docs/Error.md)
- - [Expand](docs/Expand.md)
- - [IntervalType](docs/IntervalType.md)
- - [LegacyAlert](docs/LegacyAlert.md)
- - [Link](docs/Link.md)
- - [Notification](docs/Notification.md)
- - [NotificationEmail](docs/NotificationEmail.md)
- - [NotificationThirdParty](docs/NotificationThirdParty.md)
- - [NotificationWebhook](docs/NotificationWebhook.md)
- - [PaginationLinks](docs/PaginationLinks.md)
- - [Repeat](docs/Repeat.md)
- - [RepeatType](docs/RepeatType.md)
- - [Rule](docs/Rule.md)
- - [RuleDetail](docs/RuleDetail.md)
- - [RuleDetailUpdate](docs/RuleDetailUpdate.md)
- - [Rules](docs/Rules.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [Severity](docs/Severity.md)
- - [StartAlertMetrics](docs/StartAlertMetrics.md)
- - [State](docs/State.md)
- - [TestInterval](docs/TestInterval.md)
- - [ThirdPartyIntegrationType](docs/ThirdPartyIntegrationType.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [UnexpandedTest](docs/UnexpandedTest.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
- - [WebhookIntegrationType](docs/WebhookIntegrationType.md)
+ - [Alert](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Alert.md)
+ - [AlertDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertDetail.md)
+ - [AlertDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertDirection.md)
+ - [AlertLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertLinks.md)
+ - [AlertMeta](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertMeta.md)
+ - [AlertMetricDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertMetricDetail.md)
+ - [AlertRoundsViolationMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertRoundsViolationMode.md)
+ - [AlertRule](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertRule.md)
+ - [AlertSuppressionWindow](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindow.md)
+ - [AlertSuppressionWindowDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindowDetail.md)
+ - [AlertSuppressionWindowRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindowRequest.md)
+ - [AlertSuppressionWindowState](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindowState.md)
+ - [AlertSuppressionWindows](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertSuppressionWindows.md)
+ - [AlertType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/AlertType.md)
+ - [Alerts](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Alerts.md)
+ - [BaseAlert](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/BaseAlert.md)
+ - [BaseAlertSuppressionWindow](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/BaseAlertSuppressionWindow.md)
+ - [BaseRule](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/BaseRule.md)
+ - [BaseTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/BaseTest.md)
+ - [DaysOfWeek](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/DaysOfWeek.md)
+ - [EndAlertMetrics](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/EndAlertMetrics.md)
+ - [EndRepeat](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/EndRepeat.md)
+ - [EndRepeatType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/EndRepeatType.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Error.md)
+ - [Expand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Expand.md)
+ - [IntervalType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/IntervalType.md)
+ - [LegacyAlert](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/LegacyAlert.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Link.md)
+ - [Notification](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Notification.md)
+ - [NotificationEmail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/NotificationEmail.md)
+ - [NotificationThirdParty](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/NotificationThirdParty.md)
+ - [NotificationWebhook](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/NotificationWebhook.md)
+ - [PaginationLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/PaginationLinks.md)
+ - [Repeat](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Repeat.md)
+ - [RepeatType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/RepeatType.md)
+ - [Rule](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Rule.md)
+ - [RuleDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/RuleDetail.md)
+ - [RuleDetailUpdate](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/RuleDetailUpdate.md)
+ - [Rules](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Rules.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/SelfLinks.md)
+ - [Severity](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/Severity.md)
+ - [StartAlertMetrics](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/StartAlertMetrics.md)
+ - [State](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/State.md)
+ - [TestInterval](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/TestInterval.md)
+ - [ThirdPartyIntegrationType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/ThirdPartyIntegrationType.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/UnauthorizedError.md)
+ - [UnexpandedTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/UnexpandedTest.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/ValidationErrorItem.md)
+ - [WebhookIntegrationType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-alerts/docs/WebhookIntegrationType.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -185,6 +185,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

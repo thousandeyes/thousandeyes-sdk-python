@@ -28,12 +28,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-usage\&subdirectory=thousandeyes-sdk-usage
+pip install thousandeyes-sdk-usage
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-usage\&subdirectory=thousandeyes-sdk-usage`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-usage`)
 
 Then import the package:
 ```python
@@ -60,7 +60,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -108,50 +108,50 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*QuotasApi* | [**assign_organizations_account_groups_quotas**](docs/QuotasApi.md#assign_organizations_account_groups_quotas) | **POST** /v7/quotas/account-groups/assign | Create or update accout group quotas
-*QuotasApi* | [**assign_organizations_quotas**](docs/QuotasApi.md#assign_organizations_quotas) | **POST** /v7/quotas/assign | Create or update organizations quotas
-*QuotasApi* | [**get_quotas**](docs/QuotasApi.md#get_quotas) | **GET** /v7/quotas | Get organization and account group usage quota
-*QuotasApi* | [**unassign_organizations_account_groups_quotas**](docs/QuotasApi.md#unassign_organizations_account_groups_quotas) | **POST** /v7/quotas/account-groups/unassign | Remove account group quotas from organizations
-*QuotasApi* | [**unassign_organizations_quotas**](docs/QuotasApi.md#unassign_organizations_quotas) | **POST** /v7/quotas/unassign | Remove organization quotas
-*UsageApi* | [**get_enterprise_agents_units_usage**](docs/UsageApi.md#get_enterprise_agents_units_usage) | **GET** /v7/usage/units/enterprise-agents | Get enterprise agent usage
-*UsageApi* | [**get_tests_units_usage**](docs/UsageApi.md#get_tests_units_usage) | **GET** /v7/usage/units/tests | Get cloud and enterprise agents units usage
-*UsageApi* | [**get_usage**](docs/UsageApi.md#get_usage) | **GET** /v7/usage | Get usage information for the last month
+*QuotasApi* | [**assign_organizations_account_groups_quotas**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/QuotasApi.md#assign_organizations_account_groups_quotas) | **POST** /v7/quotas/account-groups/assign | Create or update accout group quotas
+*QuotasApi* | [**assign_organizations_quotas**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/QuotasApi.md#assign_organizations_quotas) | **POST** /v7/quotas/assign | Create or update organizations quotas
+*QuotasApi* | [**get_quotas**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/QuotasApi.md#get_quotas) | **GET** /v7/quotas | Get organization and account group usage quota
+*QuotasApi* | [**unassign_organizations_account_groups_quotas**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/QuotasApi.md#unassign_organizations_account_groups_quotas) | **POST** /v7/quotas/account-groups/unassign | Remove account group quotas from organizations
+*QuotasApi* | [**unassign_organizations_quotas**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/QuotasApi.md#unassign_organizations_quotas) | **POST** /v7/quotas/unassign | Remove organization quotas
+*UsageApi* | [**get_enterprise_agents_units_usage**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/UsageApi.md#get_enterprise_agents_units_usage) | **GET** /v7/usage/units/enterprise-agents | Get enterprise agent usage
+*UsageApi* | [**get_tests_units_usage**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/UsageApi.md#get_tests_units_usage) | **GET** /v7/usage/units/tests | Get cloud and enterprise agents units usage
+*UsageApi* | [**get_usage**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/UsageApi.md#get_usage) | **GET** /v7/usage | Get usage information for the last month
 
 
 ## Documentation For Models
 
- - [AccountGroupQuota](docs/AccountGroupQuota.md)
- - [EndpointAgents](docs/EndpointAgents.md)
- - [EndpointAgentsEmbedded](docs/EndpointAgentsEmbedded.md)
- - [EndpointAgentsEssentials](docs/EndpointAgentsEssentials.md)
- - [EnterpriseAgentUnits](docs/EnterpriseAgentUnits.md)
- - [EnterpriseAgentUnitsByTestOwnerAccountGroup](docs/EnterpriseAgentUnitsByTestOwnerAccountGroup.md)
- - [EnterpriseAgents](docs/EnterpriseAgents.md)
- - [EnterpriseAgentsUsage](docs/EnterpriseAgentsUsage.md)
- - [Error](docs/Error.md)
- - [Expand](docs/Expand.md)
- - [Link](docs/Link.md)
- - [OrganizationQuota](docs/OrganizationQuota.md)
- - [OrganizationQuotaAssignment](docs/OrganizationQuotaAssignment.md)
- - [OrganizationQuotaUnassignment](docs/OrganizationQuotaUnassignment.md)
- - [OrganizationsQuotasAssign](docs/OrganizationsQuotasAssign.md)
- - [OrganizationsQuotasUnassign](docs/OrganizationsQuotasUnassign.md)
- - [PaginationLinks](docs/PaginationLinks.md)
- - [Quota](docs/Quota.md)
- - [Quotas](docs/Quotas.md)
- - [QuotasAssignRequest](docs/QuotasAssignRequest.md)
- - [QuotasAssignResponse](docs/QuotasAssignResponse.md)
- - [QuotasUnassign](docs/QuotasUnassign.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [Tests](docs/Tests.md)
- - [TestsUsage](docs/TestsUsage.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [UnitsByTests](docs/UnitsByTests.md)
- - [Usage](docs/Usage.md)
- - [UsageDetails](docs/UsageDetails.md)
- - [UsageQuota](docs/UsageQuota.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [AccountGroupQuota](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/AccountGroupQuota.md)
+ - [EndpointAgents](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/EndpointAgents.md)
+ - [EndpointAgentsEmbedded](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/EndpointAgentsEmbedded.md)
+ - [EndpointAgentsEssentials](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/EndpointAgentsEssentials.md)
+ - [EnterpriseAgentUnits](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/EnterpriseAgentUnits.md)
+ - [EnterpriseAgentUnitsByTestOwnerAccountGroup](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/EnterpriseAgentUnitsByTestOwnerAccountGroup.md)
+ - [EnterpriseAgents](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/EnterpriseAgents.md)
+ - [EnterpriseAgentsUsage](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/EnterpriseAgentsUsage.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/Error.md)
+ - [Expand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/Expand.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/Link.md)
+ - [OrganizationQuota](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/OrganizationQuota.md)
+ - [OrganizationQuotaAssignment](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/OrganizationQuotaAssignment.md)
+ - [OrganizationQuotaUnassignment](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/OrganizationQuotaUnassignment.md)
+ - [OrganizationsQuotasAssign](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/OrganizationsQuotasAssign.md)
+ - [OrganizationsQuotasUnassign](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/OrganizationsQuotasUnassign.md)
+ - [PaginationLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/PaginationLinks.md)
+ - [Quota](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/Quota.md)
+ - [Quotas](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/Quotas.md)
+ - [QuotasAssignRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/QuotasAssignRequest.md)
+ - [QuotasAssignResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/QuotasAssignResponse.md)
+ - [QuotasUnassign](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/QuotasUnassign.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/SelfLinks.md)
+ - [Tests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/Tests.md)
+ - [TestsUsage](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/TestsUsage.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/UnauthorizedError.md)
+ - [UnitsByTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/UnitsByTests.md)
+ - [Usage](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/Usage.md)
+ - [UsageDetails](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/UsageDetails.md)
+ - [UsageQuota](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/UsageQuota.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-usage/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -167,6 +167,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

@@ -24,12 +24,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-credentials\&subdirectory=thousandeyes-sdk-credentials
+pip install thousandeyes-sdk-credentials
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-credentials\&subdirectory=thousandeyes-sdk-credentials`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-credentials`)
 
 Then import the package:
 ```python
@@ -56,7 +56,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -105,25 +105,25 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CredentialsApi* | [**create_credential**](docs/CredentialsApi.md#create_credential) | **POST** /v7/credentials | Create credential
-*CredentialsApi* | [**delete_credential**](docs/CredentialsApi.md#delete_credential) | **DELETE** /v7/credentials/{id} | Delete credential
-*CredentialsApi* | [**get_credential**](docs/CredentialsApi.md#get_credential) | **GET** /v7/credentials/{id} | Retrieve credential
-*CredentialsApi* | [**get_credentials**](docs/CredentialsApi.md#get_credentials) | **GET** /v7/credentials | List credentials
-*CredentialsApi* | [**update_credential**](docs/CredentialsApi.md#update_credential) | **PUT** /v7/credentials/{id} | Update credential
+*CredentialsApi* | [**create_credential**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/CredentialsApi.md#create_credential) | **POST** /v7/credentials | Create credential
+*CredentialsApi* | [**delete_credential**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/CredentialsApi.md#delete_credential) | **DELETE** /v7/credentials/{id} | Delete credential
+*CredentialsApi* | [**get_credential**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/CredentialsApi.md#get_credential) | **GET** /v7/credentials/{id} | Retrieve credential
+*CredentialsApi* | [**get_credentials**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/CredentialsApi.md#get_credentials) | **GET** /v7/credentials | List credentials
+*CredentialsApi* | [**update_credential**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/CredentialsApi.md#update_credential) | **PUT** /v7/credentials/{id} | Update credential
 
 
 ## Documentation For Models
 
- - [Credential](docs/Credential.md)
- - [CredentialRequest](docs/CredentialRequest.md)
- - [CredentialWithoutValue](docs/CredentialWithoutValue.md)
- - [Credentials](docs/Credentials.md)
- - [Error](docs/Error.md)
- - [Link](docs/Link.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [Credential](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/Credential.md)
+ - [CredentialRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/CredentialRequest.md)
+ - [CredentialWithoutValue](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/CredentialWithoutValue.md)
+ - [Credentials](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/Credentials.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/Error.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/Link.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/SelfLinks.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-credentials/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -139,6 +139,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

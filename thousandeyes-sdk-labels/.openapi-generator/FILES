@@ -1,3 +1,5 @@
+.openapi-generator-ignore
+MANIFEST.in
 README.md
 docs/AgentApi.md
 docs/AllLabelsApi.md

@@ -24,12 +24,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-endpoint-instant-tests\&subdirectory=thousandeyes-sdk-endpoint-instant-tests
+pip install thousandeyes-sdk-endpoint-instant-tests
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-endpoint-instant-tests\&subdirectory=thousandeyes-sdk-endpoint-instant-tests`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-endpoint-instant-tests`)
 
 Then import the package:
 ```python
@@ -56,7 +56,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -105,44 +105,44 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AgentToServerInstantScheduledTestApi* | [**create_agent_to_server_scheduled_instant_test**](docs/AgentToServerInstantScheduledTestApi.md#create_agent_to_server_scheduled_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/agent-to-server/instant | Run agent to server instant scheduled test
-*HttpServerInstantScheduledTestApi* | [**create_http_server_scheduled_instant_test**](docs/HttpServerInstantScheduledTestApi.md#create_http_server_scheduled_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/http-server/instant | Run http server instant scheduled test
-*RunExistingTestApi* | [**run_endpoint_scheduled_instant_test**](docs/RunExistingTestApi.md#run_endpoint_scheduled_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/{testId}/run | Run endpoint instant scheduled test
+*AgentToServerInstantScheduledTestApi* | [**create_agent_to_server_scheduled_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/AgentToServerInstantScheduledTestApi.md#create_agent_to_server_scheduled_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/agent-to-server/instant | Run agent to server instant scheduled test
+*HttpServerInstantScheduledTestApi* | [**create_http_server_scheduled_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/HttpServerInstantScheduledTestApi.md#create_http_server_scheduled_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/http-server/instant | Run http server instant scheduled test
+*RunExistingTestApi* | [**run_endpoint_scheduled_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/RunExistingTestApi.md#run_endpoint_scheduled_instant_test) | **POST** /v7/endpoint/tests/scheduled-tests/{testId}/run | Run endpoint instant scheduled test
 
 
 ## Documentation For Models
 
- - [AlertDirection](docs/AlertDirection.md)
- - [AlertRoundsViolationMode](docs/AlertRoundsViolationMode.md)
- - [AlertRule](docs/AlertRule.md)
- - [AlertType](docs/AlertType.md)
- - [EndpointAgentLabelsSelectorConfig](docs/EndpointAgentLabelsSelectorConfig.md)
- - [EndpointAgentSelectorConfig](docs/EndpointAgentSelectorConfig.md)
- - [EndpointAgentToServerInstantTest](docs/EndpointAgentToServerInstantTest.md)
- - [EndpointAgentToServerTest](docs/EndpointAgentToServerTest.md)
- - [EndpointAllAgentsSelectorConfig](docs/EndpointAllAgentsSelectorConfig.md)
- - [EndpointHttpServerBaseTest](docs/EndpointHttpServerBaseTest.md)
- - [EndpointHttpServerInstantTest](docs/EndpointHttpServerInstantTest.md)
- - [EndpointHttpServerTest](docs/EndpointHttpServerTest.md)
- - [EndpointInstantTest](docs/EndpointInstantTest.md)
- - [EndpointScheduledTestType](docs/EndpointScheduledTestType.md)
- - [EndpointSpecificAgentsSelectorConfig](docs/EndpointSpecificAgentsSelectorConfig.md)
- - [EndpointTest](docs/EndpointTest.md)
- - [EndpointTestAgentSelectorType](docs/EndpointTestAgentSelectorType.md)
- - [EndpointTestAuthType](docs/EndpointTestAuthType.md)
- - [EndpointTestLinks](docs/EndpointTestLinks.md)
- - [EndpointTestProtocol](docs/EndpointTestProtocol.md)
- - [EndpointTestSelfLink](docs/EndpointTestSelfLink.md)
- - [Error](docs/Error.md)
- - [Link](docs/Link.md)
- - [Severity](docs/Severity.md)
- - [TestInterval](docs/TestInterval.md)
- - [TestLabel](docs/TestLabel.md)
- - [TestProbeModeResponse](docs/TestProbeModeResponse.md)
- - [TestSslVersionId](docs/TestSslVersionId.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [AlertDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/AlertDirection.md)
+ - [AlertRoundsViolationMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/AlertRoundsViolationMode.md)
+ - [AlertRule](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/AlertRule.md)
+ - [AlertType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/AlertType.md)
+ - [EndpointAgentLabelsSelectorConfig](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointAgentLabelsSelectorConfig.md)
+ - [EndpointAgentSelectorConfig](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointAgentSelectorConfig.md)
+ - [EndpointAgentToServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointAgentToServerInstantTest.md)
+ - [EndpointAgentToServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointAgentToServerTest.md)
+ - [EndpointAllAgentsSelectorConfig](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointAllAgentsSelectorConfig.md)
+ - [EndpointHttpServerBaseTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointHttpServerBaseTest.md)
+ - [EndpointHttpServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointHttpServerInstantTest.md)
+ - [EndpointHttpServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointHttpServerTest.md)
+ - [EndpointInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointInstantTest.md)
+ - [EndpointScheduledTestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointScheduledTestType.md)
+ - [EndpointSpecificAgentsSelectorConfig](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointSpecificAgentsSelectorConfig.md)
+ - [EndpointTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointTest.md)
+ - [EndpointTestAgentSelectorType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointTestAgentSelectorType.md)
+ - [EndpointTestAuthType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointTestAuthType.md)
+ - [EndpointTestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointTestLinks.md)
+ - [EndpointTestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointTestProtocol.md)
+ - [EndpointTestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/EndpointTestSelfLink.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/Error.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/Link.md)
+ - [Severity](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/Severity.md)
+ - [TestInterval](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/TestInterval.md)
+ - [TestLabel](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/TestLabel.md)
+ - [TestProbeModeResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/TestProbeModeResponse.md)
+ - [TestSslVersionId](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/TestSslVersionId.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-instant-tests/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -158,6 +158,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 
