@@ -1,11 +1,13 @@
 [project]
 name = "thousandeyes-sdk-credentials"
 dynamic = ["version"]
+readme = "README.md"
 authors = [
     { name = "ThousandEyes API Team", email = "api-team@thousandeyes.com" }
 ]
-description = "Credentials API"
-license = { text = "../LICENSE" }
+description = "ThousandEyes SDK Credentials API"
+license = { file = "LICENSE" }
+requires-python = ">= 3.8"
 dependencies = [
     "urllib3 >= 1.25.3",
     "python-dateutil >=2.8.2",
@@ -15,7 +17,7 @@ dependencies = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "thousandeyes_sdk.core.__version__"}
+version = {file = ".version"}
 
 [project.optional-dependencies]
 test = [
