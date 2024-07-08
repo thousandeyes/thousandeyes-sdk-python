@@ -15,12 +15,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-labels\&subdirectory=thousandeyes-sdk-labels
+pip install thousandeyes-sdk-labels
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-labels\&subdirectory=thousandeyes-sdk-labels`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-labels`)
 
 Then import the package:
 ```python
@@ -47,7 +47,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -96,42 +96,42 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AgentApi* | [**create_agent_label**](docs/AgentApi.md#create_agent_label) | **POST** /v7/labels/agent | Create a Label of type &#x60;agent&#x60;
-*AgentApi* | [**delete_agent_label**](docs/AgentApi.md#delete_agent_label) | **DELETE** /v7/labels/agent/{labelId} | Delete a Label object of type &#x60;agent&#x60;
-*AgentApi* | [**get_agent_label**](docs/AgentApi.md#get_agent_label) | **GET** /v7/labels/agent/{labelId} | Get a Label object of type &#x60;agent&#x60;
-*AgentApi* | [**get_agent_labels**](docs/AgentApi.md#get_agent_labels) | **GET** /v7/labels/agent | Get list of Labels of type &#x60;agent&#x60;
-*AgentApi* | [**update_agent_label**](docs/AgentApi.md#update_agent_label) | **PUT** /v7/labels/agent/{labelId} | Update a Label object of type &#x60;agent&#x60;
-*AllLabelsApi* | [**get_labels**](docs/AllLabelsApi.md#get_labels) | **GET** /v7/labels | Get list of Labels
-*DashboardApi* | [**create_dashboard_label**](docs/DashboardApi.md#create_dashboard_label) | **POST** /v7/labels/dashboard | Create a Label of type &#x60;dashboard&#x60;
-*DashboardApi* | [**delete_dashboard_label**](docs/DashboardApi.md#delete_dashboard_label) | **DELETE** /v7/labels/dashboard/{labelId} | Delete a Label object of type &#x60;dashboard&#x60;
-*DashboardApi* | [**get_dashboard_label**](docs/DashboardApi.md#get_dashboard_label) | **GET** /v7/labels/dashboard/{labelId} | Get a Label object of type &#x60;dashboard&#x60;
-*DashboardApi* | [**get_dashboard_labels**](docs/DashboardApi.md#get_dashboard_labels) | **GET** /v7/labels/dashboard | Get list of Labels of type &#x60;dashboard&#x60;
-*DashboardApi* | [**update_dashboard_label**](docs/DashboardApi.md#update_dashboard_label) | **PUT** /v7/labels/dashboard/{labelId} | Update a Label object of type &#x60;dashboard&#x60;
-*EndpointTestApi* | [**create_endpoint_test_label**](docs/EndpointTestApi.md#create_endpoint_test_label) | **POST** /v7/labels/endpoint-test | Create a Label of type &#x60;endpoint-test&#x60;
-*EndpointTestApi* | [**delete_endpoint_test_label**](docs/EndpointTestApi.md#delete_endpoint_test_label) | **DELETE** /v7/labels/endpoint-test/{labelId} | Delete a Label object of type &#x60;endpoint-test&#x60;
-*EndpointTestApi* | [**get_endpoint_test_label**](docs/EndpointTestApi.md#get_endpoint_test_label) | **GET** /v7/labels/endpoint-test/{labelId} | Get a Label object of type &#x60;endpoint-test&#x60;
-*EndpointTestApi* | [**get_endpoint_test_labels**](docs/EndpointTestApi.md#get_endpoint_test_labels) | **GET** /v7/labels/endpoint-test | Get list of Labels of type &#x60;endpoint-test&#x60;
-*EndpointTestApi* | [**update_endpoint_test_label**](docs/EndpointTestApi.md#update_endpoint_test_label) | **PUT** /v7/labels/endpoint-test/{labelId} | Update a Label object of type &#x60;endpoint-test&#x60;
-*TestApi* | [**create_test_label**](docs/TestApi.md#create_test_label) | **POST** /v7/labels/test | Create a Label of type &#x60;test&#x60;
-*TestApi* | [**delete_test_label**](docs/TestApi.md#delete_test_label) | **DELETE** /v7/labels/test/{labelId} | Delete a Label object of type &#x60;test&#x60;
-*TestApi* | [**get_test_label**](docs/TestApi.md#get_test_label) | **GET** /v7/labels/test/{labelId} | Get a Label object of type &#x60;test&#x60;
-*TestApi* | [**get_test_labels**](docs/TestApi.md#get_test_labels) | **GET** /v7/labels/test | Get list of Labels of type &#x60;test&#x60;
-*TestApi* | [**update_test_label**](docs/TestApi.md#update_test_label) | **PUT** /v7/labels/test/{labelId} | Update a Label object of type &#x60;test&#x60;
+*AgentApi* | [**create_agent_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/AgentApi.md#create_agent_label) | **POST** /v7/labels/agent | Create a Label of type &#x60;agent&#x60;
+*AgentApi* | [**delete_agent_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/AgentApi.md#delete_agent_label) | **DELETE** /v7/labels/agent/{labelId} | Delete a Label object of type &#x60;agent&#x60;
+*AgentApi* | [**get_agent_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/AgentApi.md#get_agent_label) | **GET** /v7/labels/agent/{labelId} | Get a Label object of type &#x60;agent&#x60;
+*AgentApi* | [**get_agent_labels**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/AgentApi.md#get_agent_labels) | **GET** /v7/labels/agent | Get list of Labels of type &#x60;agent&#x60;
+*AgentApi* | [**update_agent_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/AgentApi.md#update_agent_label) | **PUT** /v7/labels/agent/{labelId} | Update a Label object of type &#x60;agent&#x60;
+*AllLabelsApi* | [**get_labels**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/AllLabelsApi.md#get_labels) | **GET** /v7/labels | Get list of Labels
+*DashboardApi* | [**create_dashboard_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/DashboardApi.md#create_dashboard_label) | **POST** /v7/labels/dashboard | Create a Label of type &#x60;dashboard&#x60;
+*DashboardApi* | [**delete_dashboard_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/DashboardApi.md#delete_dashboard_label) | **DELETE** /v7/labels/dashboard/{labelId} | Delete a Label object of type &#x60;dashboard&#x60;
+*DashboardApi* | [**get_dashboard_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/DashboardApi.md#get_dashboard_label) | **GET** /v7/labels/dashboard/{labelId} | Get a Label object of type &#x60;dashboard&#x60;
+*DashboardApi* | [**get_dashboard_labels**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/DashboardApi.md#get_dashboard_labels) | **GET** /v7/labels/dashboard | Get list of Labels of type &#x60;dashboard&#x60;
+*DashboardApi* | [**update_dashboard_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/DashboardApi.md#update_dashboard_label) | **PUT** /v7/labels/dashboard/{labelId} | Update a Label object of type &#x60;dashboard&#x60;
+*EndpointTestApi* | [**create_endpoint_test_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/EndpointTestApi.md#create_endpoint_test_label) | **POST** /v7/labels/endpoint-test | Create a Label of type &#x60;endpoint-test&#x60;
+*EndpointTestApi* | [**delete_endpoint_test_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/EndpointTestApi.md#delete_endpoint_test_label) | **DELETE** /v7/labels/endpoint-test/{labelId} | Delete a Label object of type &#x60;endpoint-test&#x60;
+*EndpointTestApi* | [**get_endpoint_test_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/EndpointTestApi.md#get_endpoint_test_label) | **GET** /v7/labels/endpoint-test/{labelId} | Get a Label object of type &#x60;endpoint-test&#x60;
+*EndpointTestApi* | [**get_endpoint_test_labels**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/EndpointTestApi.md#get_endpoint_test_labels) | **GET** /v7/labels/endpoint-test | Get list of Labels of type &#x60;endpoint-test&#x60;
+*EndpointTestApi* | [**update_endpoint_test_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/EndpointTestApi.md#update_endpoint_test_label) | **PUT** /v7/labels/endpoint-test/{labelId} | Update a Label object of type &#x60;endpoint-test&#x60;
+*TestApi* | [**create_test_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/TestApi.md#create_test_label) | **POST** /v7/labels/test | Create a Label of type &#x60;test&#x60;
+*TestApi* | [**delete_test_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/TestApi.md#delete_test_label) | **DELETE** /v7/labels/test/{labelId} | Delete a Label object of type &#x60;test&#x60;
+*TestApi* | [**get_test_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/TestApi.md#get_test_label) | **GET** /v7/labels/test/{labelId} | Get a Label object of type &#x60;test&#x60;
+*TestApi* | [**get_test_labels**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/TestApi.md#get_test_labels) | **GET** /v7/labels/test | Get list of Labels of type &#x60;test&#x60;
+*TestApi* | [**update_test_label**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/TestApi.md#update_test_label) | **PUT** /v7/labels/test/{labelId} | Update a Label object of type &#x60;test&#x60;
 
 
 ## Documentation For Models
 
- - [Error](docs/Error.md)
- - [Label](docs/Label.md)
- - [LabelDetail](docs/LabelDetail.md)
- - [LabelRequest](docs/LabelRequest.md)
- - [LabelType](docs/LabelType.md)
- - [Labels](docs/Labels.md)
- - [Link](docs/Link.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/Error.md)
+ - [Label](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/Label.md)
+ - [LabelDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/LabelDetail.md)
+ - [LabelRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/LabelRequest.md)
+ - [LabelType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/LabelType.md)
+ - [Labels](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/Labels.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/Link.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/SelfLinks.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-labels/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -147,6 +147,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

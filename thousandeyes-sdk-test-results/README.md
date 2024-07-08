@@ -14,12 +14,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-test-results\&subdirectory=thousandeyes-sdk-test-results
+pip install thousandeyes-sdk-test-results
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-test-results\&subdirectory=thousandeyes-sdk-test-results`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-test-results`)
 
 Then import the package:
 ```python
@@ -46,7 +46,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -97,102 +97,102 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*APITestMetricsApi* | [**get_test_api_agent_round_results**](docs/APITestMetricsApi.md#get_test_api_agent_round_results) | **GET** /v7/test-results/{testId}/api/agent/{agentId}/round/{roundId} | Get API test results by agent and round
-*APITestMetricsApi* | [**get_test_api_results**](docs/APITestMetricsApi.md#get_test_api_results) | **GET** /v7/test-results/{testId}/api | Get API test results
-*DNSSECTestMetricsApi* | [**get_test_dns_sec_results**](docs/DNSSECTestMetricsApi.md#get_test_dns_sec_results) | **GET** /v7/test-results/{testId}/dnssec | Get DNSSEC test results
-*DNSServerTestMetricsApi* | [**get_test_dns_server_result**](docs/DNSServerTestMetricsApi.md#get_test_dns_server_result) | **GET** /v7/test-results/{testId}/dns-server/{serverId} | Get DNS server test results by server
-*DNSServerTestMetricsApi* | [**get_test_dns_servers_results**](docs/DNSServerTestMetricsApi.md#get_test_dns_servers_results) | **GET** /v7/test-results/{testId}/dns-server | Get DNS server test results
-*DNSTraceTestMetricsApi* | [**get_test_dns_trace_results**](docs/DNSTraceTestMetricsApi.md#get_test_dns_trace_results) | **GET** /v7/test-results/{testId}/dns-trace | Get DNS trace test results
-*NetworkBGPTestMetricsApi* | [**get_test_bgp_results**](docs/NetworkBGPTestMetricsApi.md#get_test_bgp_results) | **GET** /v7/test-results/{testId}/bgp | Get BGP test results
-*NetworkBGPTestMetricsApi* | [**get_test_bgp_routes_prefix_round_results**](docs/NetworkBGPTestMetricsApi.md#get_test_bgp_routes_prefix_round_results) | **GET** /v7/test-results/{testId}/bgp/routes/prefix/{prefixId}/round/{roundId} | Get BGP route test results by prefix
-*NetworkTestMetricsApi* | [**get_test_network_results**](docs/NetworkTestMetricsApi.md#get_test_network_results) | **GET** /v7/test-results/{testId}/network | Get network test results
-*NetworkTestMetricsApi* | [**get_test_path_vis_agent_round_results**](docs/NetworkTestMetricsApi.md#get_test_path_vis_agent_round_results) | **GET** /v7/test-results/{testId}/path-vis/agent/{agentId}/round/{roundId} | Get path visualization test results by agent and round
-*NetworkTestMetricsApi* | [**get_test_path_vis_results**](docs/NetworkTestMetricsApi.md#get_test_path_vis_results) | **GET** /v7/test-results/{testId}/path-vis | Get path visualization network test results
-*VoiceRTPServerTestMetricsApi* | [**get_test_rtp_server_results**](docs/VoiceRTPServerTestMetricsApi.md#get_test_rtp_server_results) | **GET** /v7/test-results/{testId}/rtp-server | Retrieve RTP server test metrics
-*VoiceSIPServerTestMetricsApi* | [**get_test_sip_server_results**](docs/VoiceSIPServerTestMetricsApi.md#get_test_sip_server_results) | **GET** /v7/test-results/{testId}/sip-server | Get SIP server test results
-*WebFTPServerTestMetricsApi* | [**get_test_ftp_server_results**](docs/WebFTPServerTestMetricsApi.md#get_test_ftp_server_results) | **GET** /v7/test-results/{testId}/ftp-server | Get FTP server test results
-*WebHTTPServerTestMetricsApi* | [**get_test_http_server_results**](docs/WebHTTPServerTestMetricsApi.md#get_test_http_server_results) | **GET** /v7/test-results/{testId}/http-server | Get HTTP server test results
-*WebPageLoadTestMetricsApi* | [**get_test_page_load_agent_round_results**](docs/WebPageLoadTestMetricsApi.md#get_test_page_load_agent_round_results) | **GET** /v7/test-results/{testId}/page-load/agent/{agentId}/round/{roundId} | Get page load server test results by agent and round
-*WebPageLoadTestMetricsApi* | [**get_test_page_load_results**](docs/WebPageLoadTestMetricsApi.md#get_test_page_load_results) | **GET** /v7/test-results/{testId}/page-load | Get page load server test results
-*WebTransactionsTestMetricsApi* | [**get_test_web_transaction_agent_round_page_results**](docs/WebTransactionsTestMetricsApi.md#get_test_web_transaction_agent_round_page_results) | **GET** /v7/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId}/page/{pageId} | Get detailed web transactions test result by agent, round, and page
-*WebTransactionsTestMetricsApi* | [**get_test_web_transaction_agent_round_results**](docs/WebTransactionsTestMetricsApi.md#get_test_web_transaction_agent_round_results) | **GET** /v7/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId} | Get web transactions test results by agent and round
-*WebTransactionsTestMetricsApi* | [**get_test_web_transaction_results**](docs/WebTransactionsTestMetricsApi.md#get_test_web_transaction_results) | **GET** /v7/test-results/{testId}/web-transactions | Get web transactions test results
+*APITestMetricsApi* | [**get_test_api_agent_round_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/APITestMetricsApi.md#get_test_api_agent_round_results) | **GET** /v7/test-results/{testId}/api/agent/{agentId}/round/{roundId} | Get API test results by agent and round
+*APITestMetricsApi* | [**get_test_api_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/APITestMetricsApi.md#get_test_api_results) | **GET** /v7/test-results/{testId}/api | Get API test results
+*DNSSECTestMetricsApi* | [**get_test_dns_sec_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DNSSECTestMetricsApi.md#get_test_dns_sec_results) | **GET** /v7/test-results/{testId}/dnssec | Get DNSSEC test results
+*DNSServerTestMetricsApi* | [**get_test_dns_server_result**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DNSServerTestMetricsApi.md#get_test_dns_server_result) | **GET** /v7/test-results/{testId}/dns-server/{serverId} | Get DNS server test results by server
+*DNSServerTestMetricsApi* | [**get_test_dns_servers_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DNSServerTestMetricsApi.md#get_test_dns_servers_results) | **GET** /v7/test-results/{testId}/dns-server | Get DNS server test results
+*DNSTraceTestMetricsApi* | [**get_test_dns_trace_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DNSTraceTestMetricsApi.md#get_test_dns_trace_results) | **GET** /v7/test-results/{testId}/dns-trace | Get DNS trace test results
+*NetworkBGPTestMetricsApi* | [**get_test_bgp_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/NetworkBGPTestMetricsApi.md#get_test_bgp_results) | **GET** /v7/test-results/{testId}/bgp | Get BGP test results
+*NetworkBGPTestMetricsApi* | [**get_test_bgp_routes_prefix_round_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/NetworkBGPTestMetricsApi.md#get_test_bgp_routes_prefix_round_results) | **GET** /v7/test-results/{testId}/bgp/routes/prefix/{prefixId}/round/{roundId} | Get BGP route test results by prefix
+*NetworkTestMetricsApi* | [**get_test_network_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/NetworkTestMetricsApi.md#get_test_network_results) | **GET** /v7/test-results/{testId}/network | Get network test results
+*NetworkTestMetricsApi* | [**get_test_path_vis_agent_round_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/NetworkTestMetricsApi.md#get_test_path_vis_agent_round_results) | **GET** /v7/test-results/{testId}/path-vis/agent/{agentId}/round/{roundId} | Get path visualization test results by agent and round
+*NetworkTestMetricsApi* | [**get_test_path_vis_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/NetworkTestMetricsApi.md#get_test_path_vis_results) | **GET** /v7/test-results/{testId}/path-vis | Get path visualization network test results
+*VoiceRTPServerTestMetricsApi* | [**get_test_rtp_server_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/VoiceRTPServerTestMetricsApi.md#get_test_rtp_server_results) | **GET** /v7/test-results/{testId}/rtp-server | Retrieve RTP server test metrics
+*VoiceSIPServerTestMetricsApi* | [**get_test_sip_server_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/VoiceSIPServerTestMetricsApi.md#get_test_sip_server_results) | **GET** /v7/test-results/{testId}/sip-server | Get SIP server test results
+*WebFTPServerTestMetricsApi* | [**get_test_ftp_server_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebFTPServerTestMetricsApi.md#get_test_ftp_server_results) | **GET** /v7/test-results/{testId}/ftp-server | Get FTP server test results
+*WebHTTPServerTestMetricsApi* | [**get_test_http_server_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebHTTPServerTestMetricsApi.md#get_test_http_server_results) | **GET** /v7/test-results/{testId}/http-server | Get HTTP server test results
+*WebPageLoadTestMetricsApi* | [**get_test_page_load_agent_round_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebPageLoadTestMetricsApi.md#get_test_page_load_agent_round_results) | **GET** /v7/test-results/{testId}/page-load/agent/{agentId}/round/{roundId} | Get page load server test results by agent and round
+*WebPageLoadTestMetricsApi* | [**get_test_page_load_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebPageLoadTestMetricsApi.md#get_test_page_load_results) | **GET** /v7/test-results/{testId}/page-load | Get page load server test results
+*WebTransactionsTestMetricsApi* | [**get_test_web_transaction_agent_round_page_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebTransactionsTestMetricsApi.md#get_test_web_transaction_agent_round_page_results) | **GET** /v7/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId}/page/{pageId} | Get detailed web transactions test result by agent, round, and page
+*WebTransactionsTestMetricsApi* | [**get_test_web_transaction_agent_round_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebTransactionsTestMetricsApi.md#get_test_web_transaction_agent_round_results) | **GET** /v7/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId} | Get web transactions test results by agent and round
+*WebTransactionsTestMetricsApi* | [**get_test_web_transaction_results**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebTransactionsTestMetricsApi.md#get_test_web_transaction_results) | **GET** /v7/test-results/{testId}/web-transactions | Get web transactions test results
 
 
 ## Documentation For Models
 
- - [Agent](docs/Agent.md)
- - [ApiDetailTestResult](docs/ApiDetailTestResult.md)
- - [ApiDetailTestResults](docs/ApiDetailTestResults.md)
- - [ApiRequestDetail](docs/ApiRequestDetail.md)
- - [ApiRequestDetailAssertion](docs/ApiRequestDetailAssertion.md)
- - [ApiTestResult](docs/ApiTestResult.md)
- - [ApiTestResults](docs/ApiTestResults.md)
- - [AppLinks](docs/AppLinks.md)
- - [BgpBasicTestResult](docs/BgpBasicTestResult.md)
- - [BgpHop](docs/BgpHop.md)
- - [BgpTestResult](docs/BgpTestResult.md)
- - [BgpTestResults](docs/BgpTestResults.md)
- - [BgpTestRouteInformationResult](docs/BgpTestRouteInformationResult.md)
- - [BgpTestRouteInformationResults](docs/BgpTestRouteInformationResults.md)
- - [DnsServerTestResult](docs/DnsServerTestResult.md)
- - [DnsServerTestResults](docs/DnsServerTestResults.md)
- - [DnsTraceTestResult](docs/DnsTraceTestResult.md)
- - [DnsTraceTestResults](docs/DnsTraceTestResults.md)
- - [DnssecTestResult](docs/DnssecTestResult.md)
- - [DnssecTestResults](docs/DnssecTestResults.md)
- - [EpochTimeWindow](docs/EpochTimeWindow.md)
- - [Error](docs/Error.md)
- - [Expand](docs/Expand.md)
- - [FtpServerTestResult](docs/FtpServerTestResult.md)
- - [FtpServerTestResults](docs/FtpServerTestResults.md)
- - [HttpTestResult](docs/HttpTestResult.md)
- - [HttpTestResultHeaders](docs/HttpTestResultHeaders.md)
- - [HttpTestResults](docs/HttpTestResults.md)
- - [Link](docs/Link.md)
- - [Marker](docs/Marker.md)
- - [Monitor](docs/Monitor.md)
- - [NetworkTestResult](docs/NetworkTestResult.md)
- - [NetworkTestResults](docs/NetworkTestResults.md)
- - [Page](docs/Page.md)
- - [PageLoadDetailTestResult](docs/PageLoadDetailTestResult.md)
- - [PageLoadDetailTestResults](docs/PageLoadDetailTestResults.md)
- - [PageLoadTestResult](docs/PageLoadTestResult.md)
- - [PageLoadTestResults](docs/PageLoadTestResults.md)
- - [PaginationLinks](docs/PaginationLinks.md)
- - [PathVisBaseTestResult](docs/PathVisBaseTestResult.md)
- - [PathVisDetailTestResult](docs/PathVisDetailTestResult.md)
- - [PathVisDetailTestResults](docs/PathVisDetailTestResults.md)
- - [PathVisDirection](docs/PathVisDirection.md)
- - [PathVisEndpoint](docs/PathVisEndpoint.md)
- - [PathVisHop](docs/PathVisHop.md)
- - [PathVisRoute](docs/PathVisRoute.md)
- - [PathVisTestResult](docs/PathVisTestResult.md)
- - [PathVisTestResults](docs/PathVisTestResults.md)
- - [RtpStreamTestResult](docs/RtpStreamTestResult.md)
- - [RtpStreamTestResults](docs/RtpStreamTestResults.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [SimpleTest](docs/SimpleTest.md)
- - [SipServerErrorType](docs/SipServerErrorType.md)
- - [SipServerTestResult](docs/SipServerTestResult.md)
- - [SipServerTestResults](docs/SipServerTestResults.md)
- - [SslCert](docs/SslCert.md)
- - [TestDirection](docs/TestDirection.md)
- - [TestInterval](docs/TestInterval.md)
- - [TestLinks](docs/TestLinks.md)
- - [TestResult](docs/TestResult.md)
- - [TestResultAppLinks](docs/TestResultAppLinks.md)
- - [TestSelfLink](docs/TestSelfLink.md)
- - [TestType](docs/TestType.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
- - [WebTransactionDetailTestResult](docs/WebTransactionDetailTestResult.md)
- - [WebTransactionDetailTestResults](docs/WebTransactionDetailTestResults.md)
- - [WebTransactionPageDetailTestResult](docs/WebTransactionPageDetailTestResult.md)
- - [WebTransactionPageDetailTestResults](docs/WebTransactionPageDetailTestResults.md)
- - [WebTransactionTestResult](docs/WebTransactionTestResult.md)
- - [WebTransactionTestResults](docs/WebTransactionTestResults.md)
+ - [Agent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/Agent.md)
+ - [ApiDetailTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/ApiDetailTestResult.md)
+ - [ApiDetailTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/ApiDetailTestResults.md)
+ - [ApiRequestDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/ApiRequestDetail.md)
+ - [ApiRequestDetailAssertion](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/ApiRequestDetailAssertion.md)
+ - [ApiTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/ApiTestResult.md)
+ - [ApiTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/ApiTestResults.md)
+ - [AppLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/AppLinks.md)
+ - [BgpBasicTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/BgpBasicTestResult.md)
+ - [BgpHop](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/BgpHop.md)
+ - [BgpTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/BgpTestResult.md)
+ - [BgpTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/BgpTestResults.md)
+ - [BgpTestRouteInformationResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/BgpTestRouteInformationResult.md)
+ - [BgpTestRouteInformationResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/BgpTestRouteInformationResults.md)
+ - [DnsServerTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DnsServerTestResult.md)
+ - [DnsServerTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DnsServerTestResults.md)
+ - [DnsTraceTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DnsTraceTestResult.md)
+ - [DnsTraceTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DnsTraceTestResults.md)
+ - [DnssecTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DnssecTestResult.md)
+ - [DnssecTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/DnssecTestResults.md)
+ - [EpochTimeWindow](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/EpochTimeWindow.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/Error.md)
+ - [Expand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/Expand.md)
+ - [FtpServerTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/FtpServerTestResult.md)
+ - [FtpServerTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/FtpServerTestResults.md)
+ - [HttpTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/HttpTestResult.md)
+ - [HttpTestResultHeaders](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/HttpTestResultHeaders.md)
+ - [HttpTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/HttpTestResults.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/Link.md)
+ - [Marker](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/Marker.md)
+ - [Monitor](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/Monitor.md)
+ - [NetworkTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/NetworkTestResult.md)
+ - [NetworkTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/NetworkTestResults.md)
+ - [Page](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/Page.md)
+ - [PageLoadDetailTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PageLoadDetailTestResult.md)
+ - [PageLoadDetailTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PageLoadDetailTestResults.md)
+ - [PageLoadTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PageLoadTestResult.md)
+ - [PageLoadTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PageLoadTestResults.md)
+ - [PaginationLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PaginationLinks.md)
+ - [PathVisBaseTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PathVisBaseTestResult.md)
+ - [PathVisDetailTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PathVisDetailTestResult.md)
+ - [PathVisDetailTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PathVisDetailTestResults.md)
+ - [PathVisDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PathVisDirection.md)
+ - [PathVisEndpoint](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PathVisEndpoint.md)
+ - [PathVisHop](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PathVisHop.md)
+ - [PathVisRoute](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PathVisRoute.md)
+ - [PathVisTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PathVisTestResult.md)
+ - [PathVisTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/PathVisTestResults.md)
+ - [RtpStreamTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/RtpStreamTestResult.md)
+ - [RtpStreamTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/RtpStreamTestResults.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/SelfLinks.md)
+ - [SimpleTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/SimpleTest.md)
+ - [SipServerErrorType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/SipServerErrorType.md)
+ - [SipServerTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/SipServerTestResult.md)
+ - [SipServerTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/SipServerTestResults.md)
+ - [SslCert](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/SslCert.md)
+ - [TestDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/TestDirection.md)
+ - [TestInterval](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/TestInterval.md)
+ - [TestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/TestLinks.md)
+ - [TestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/TestResult.md)
+ - [TestResultAppLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/TestResultAppLinks.md)
+ - [TestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/TestSelfLink.md)
+ - [TestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/TestType.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/ValidationErrorItem.md)
+ - [WebTransactionDetailTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebTransactionDetailTestResult.md)
+ - [WebTransactionDetailTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebTransactionDetailTestResults.md)
+ - [WebTransactionPageDetailTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebTransactionPageDetailTestResult.md)
+ - [WebTransactionPageDetailTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebTransactionPageDetailTestResults.md)
+ - [WebTransactionTestResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebTransactionTestResult.md)
+ - [WebTransactionTestResults](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-test-results/docs/WebTransactionTestResults.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -208,6 +208,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

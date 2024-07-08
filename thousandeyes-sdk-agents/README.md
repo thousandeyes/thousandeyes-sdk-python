@@ -16,12 +16,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-agents\&subdirectory=thousandeyes-sdk-agents
+pip install thousandeyes-sdk-agents
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-agents\&subdirectory=thousandeyes-sdk-agents`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-agents`)
 
 Then import the package:
 ```python
@@ -48,7 +48,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -97,70 +97,70 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CloudAndEnterpriseAgentNotificationRulesApi* | [**get_agents_notification_rule**](docs/CloudAndEnterpriseAgentNotificationRulesApi.md#get_agents_notification_rule) | **GET** /v7/agents/notification-rules/{notificationRuleId} | Retrieve agent notification rule
-*CloudAndEnterpriseAgentNotificationRulesApi* | [**get_agents_notification_rules**](docs/CloudAndEnterpriseAgentNotificationRulesApi.md#get_agents_notification_rules) | **GET** /v7/agents/notification-rules | List agent notification rules
-*CloudAndEnterpriseAgentsApi* | [**delete_agent**](docs/CloudAndEnterpriseAgentsApi.md#delete_agent) | **DELETE** /v7/agents/{agentId} | Delete Enterprise Agent
-*CloudAndEnterpriseAgentsApi* | [**get_agent**](docs/CloudAndEnterpriseAgentsApi.md#get_agent) | **GET** /v7/agents/{agentId} | Retrieve Cloud and Enterprise Agent
-*CloudAndEnterpriseAgentsApi* | [**get_agents**](docs/CloudAndEnterpriseAgentsApi.md#get_agents) | **GET** /v7/agents | List Cloud and Enterprise Agents
-*CloudAndEnterpriseAgentsApi* | [**update_agent**](docs/CloudAndEnterpriseAgentsApi.md#update_agent) | **PUT** /v7/agents/{agentId} | Update Enterprise Agent
-*EnterpriseAgentClusterApi* | [**assign_agent_to_cluster**](docs/EnterpriseAgentClusterApi.md#assign_agent_to_cluster) | **POST** /v7/agents/{agentId}/cluster/assign | Add member to Enterprise Agent cluster
-*EnterpriseAgentClusterApi* | [**unassign_agent_from_cluster**](docs/EnterpriseAgentClusterApi.md#unassign_agent_from_cluster) | **POST** /v7/agents/{agentId}/cluster/unassign | Remove member from Enterprise Agent cluster
-*ProxiesApi* | [**get_agents_proxies**](docs/ProxiesApi.md#get_agents_proxies) | **GET** /v7/agents/proxies | List agent proxies
+*CloudAndEnterpriseAgentNotificationRulesApi* | [**get_agents_notification_rule**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudAndEnterpriseAgentNotificationRulesApi.md#get_agents_notification_rule) | **GET** /v7/agents/notification-rules/{notificationRuleId} | Retrieve agent notification rule
+*CloudAndEnterpriseAgentNotificationRulesApi* | [**get_agents_notification_rules**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudAndEnterpriseAgentNotificationRulesApi.md#get_agents_notification_rules) | **GET** /v7/agents/notification-rules | List agent notification rules
+*CloudAndEnterpriseAgentsApi* | [**delete_agent**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudAndEnterpriseAgentsApi.md#delete_agent) | **DELETE** /v7/agents/{agentId} | Delete Enterprise Agent
+*CloudAndEnterpriseAgentsApi* | [**get_agent**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudAndEnterpriseAgentsApi.md#get_agent) | **GET** /v7/agents/{agentId} | Retrieve Cloud and Enterprise Agent
+*CloudAndEnterpriseAgentsApi* | [**get_agents**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudAndEnterpriseAgentsApi.md#get_agents) | **GET** /v7/agents | List Cloud and Enterprise Agents
+*CloudAndEnterpriseAgentsApi* | [**update_agent**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudAndEnterpriseAgentsApi.md#update_agent) | **PUT** /v7/agents/{agentId} | Update Enterprise Agent
+*EnterpriseAgentClusterApi* | [**assign_agent_to_cluster**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/EnterpriseAgentClusterApi.md#assign_agent_to_cluster) | **POST** /v7/agents/{agentId}/cluster/assign | Add member to Enterprise Agent cluster
+*EnterpriseAgentClusterApi* | [**unassign_agent_from_cluster**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/EnterpriseAgentClusterApi.md#unassign_agent_from_cluster) | **POST** /v7/agents/{agentId}/cluster/unassign | Remove member from Enterprise Agent cluster
+*ProxiesApi* | [**get_agents_proxies**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/ProxiesApi.md#get_agents_proxies) | **GET** /v7/agents/proxies | List agent proxies
 
 
 ## Documentation For Models
 
- - [AccountGroup](docs/AccountGroup.md)
- - [Agent](docs/Agent.md)
- - [AgentBase](docs/AgentBase.md)
- - [AgentClusterAssignRequest](docs/AgentClusterAssignRequest.md)
- - [AgentClusterUnassignRequest](docs/AgentClusterUnassignRequest.md)
- - [AgentDetails](docs/AgentDetails.md)
- - [AgentDetailsExpand](docs/AgentDetailsExpand.md)
- - [AgentIpv6Policy](docs/AgentIpv6Policy.md)
- - [AgentListExpand](docs/AgentListExpand.md)
- - [AgentProxies](docs/AgentProxies.md)
- - [AgentProxy](docs/AgentProxy.md)
- - [AgentRequest](docs/AgentRequest.md)
- - [AlertEmail](docs/AlertEmail.md)
- - [AlertIntegrationBase](docs/AlertIntegrationBase.md)
- - [AlertIntegrationType](docs/AlertIntegrationType.md)
- - [CloudAgentDetail](docs/CloudAgentDetail.md)
- - [CloudEnterpriseAgent](docs/CloudEnterpriseAgent.md)
- - [CloudEnterpriseAgentType](docs/CloudEnterpriseAgentType.md)
- - [CloudEnterpriseAgents](docs/CloudEnterpriseAgents.md)
- - [ClusterMember](docs/ClusterMember.md)
- - [EnterpriseAgent](docs/EnterpriseAgent.md)
- - [EnterpriseAgentClusterDetail](docs/EnterpriseAgentClusterDetail.md)
- - [EnterpriseAgentData](docs/EnterpriseAgentData.md)
- - [EnterpriseAgentDetail](docs/EnterpriseAgentDetail.md)
- - [EnterpriseAgentIpv6Policy](docs/EnterpriseAgentIpv6Policy.md)
- - [EnterpriseAgentResponseExpands](docs/EnterpriseAgentResponseExpands.md)
- - [EnterpriseAgentState](docs/EnterpriseAgentState.md)
- - [Error](docs/Error.md)
- - [ErrorDetail](docs/ErrorDetail.md)
- - [ErrorDetailCode](docs/ErrorDetailCode.md)
- - [InterfaceIpMapping](docs/InterfaceIpMapping.md)
- - [Labels](docs/Labels.md)
- - [Link](docs/Link.md)
- - [ListNotificationRulesResponse](docs/ListNotificationRulesResponse.md)
- - [Notification](docs/Notification.md)
- - [NotificationRule](docs/NotificationRule.md)
- - [NotificationRuleDetail](docs/NotificationRuleDetail.md)
- - [NotificationRules](docs/NotificationRules.md)
- - [ProxyAuthType](docs/ProxyAuthType.md)
- - [ProxyType](docs/ProxyType.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [SimpleAgent](docs/SimpleAgent.md)
- - [SimpleEnterpriseAgent](docs/SimpleEnterpriseAgent.md)
- - [SimpleTest](docs/SimpleTest.md)
- - [TestInterval](docs/TestInterval.md)
- - [TestLinks](docs/TestLinks.md)
- - [TestSelfLink](docs/TestSelfLink.md)
- - [TestType](docs/TestType.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [AccountGroup](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AccountGroup.md)
+ - [Agent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/Agent.md)
+ - [AgentBase](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentBase.md)
+ - [AgentClusterAssignRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentClusterAssignRequest.md)
+ - [AgentClusterUnassignRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentClusterUnassignRequest.md)
+ - [AgentDetails](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentDetails.md)
+ - [AgentDetailsExpand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentDetailsExpand.md)
+ - [AgentIpv6Policy](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentIpv6Policy.md)
+ - [AgentListExpand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentListExpand.md)
+ - [AgentProxies](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentProxies.md)
+ - [AgentProxy](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentProxy.md)
+ - [AgentRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AgentRequest.md)
+ - [AlertEmail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AlertEmail.md)
+ - [AlertIntegrationBase](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AlertIntegrationBase.md)
+ - [AlertIntegrationType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/AlertIntegrationType.md)
+ - [CloudAgentDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudAgentDetail.md)
+ - [CloudEnterpriseAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudEnterpriseAgent.md)
+ - [CloudEnterpriseAgentType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudEnterpriseAgentType.md)
+ - [CloudEnterpriseAgents](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/CloudEnterpriseAgents.md)
+ - [ClusterMember](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/ClusterMember.md)
+ - [EnterpriseAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/EnterpriseAgent.md)
+ - [EnterpriseAgentClusterDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/EnterpriseAgentClusterDetail.md)
+ - [EnterpriseAgentData](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/EnterpriseAgentData.md)
+ - [EnterpriseAgentDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/EnterpriseAgentDetail.md)
+ - [EnterpriseAgentIpv6Policy](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/EnterpriseAgentIpv6Policy.md)
+ - [EnterpriseAgentResponseExpands](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/EnterpriseAgentResponseExpands.md)
+ - [EnterpriseAgentState](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/EnterpriseAgentState.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/Error.md)
+ - [ErrorDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/ErrorDetail.md)
+ - [ErrorDetailCode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/ErrorDetailCode.md)
+ - [InterfaceIpMapping](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/InterfaceIpMapping.md)
+ - [Labels](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/Labels.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/Link.md)
+ - [ListNotificationRulesResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/ListNotificationRulesResponse.md)
+ - [Notification](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/Notification.md)
+ - [NotificationRule](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/NotificationRule.md)
+ - [NotificationRuleDetail](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/NotificationRuleDetail.md)
+ - [NotificationRules](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/NotificationRules.md)
+ - [ProxyAuthType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/ProxyAuthType.md)
+ - [ProxyType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/ProxyType.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/SelfLinks.md)
+ - [SimpleAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/SimpleAgent.md)
+ - [SimpleEnterpriseAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/SimpleEnterpriseAgent.md)
+ - [SimpleTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/SimpleTest.md)
+ - [TestInterval](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/TestInterval.md)
+ - [TestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/TestLinks.md)
+ - [TestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/TestSelfLink.md)
+ - [TestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/TestType.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-agents/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -176,6 +176,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

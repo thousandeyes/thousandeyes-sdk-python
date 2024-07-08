@@ -26,12 +26,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-streaming\&subdirectory=thousandeyes-sdk-streaming
+pip install thousandeyes-sdk-streaming
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-streaming\&subdirectory=thousandeyes-sdk-streaming`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-streaming`)
 
 Then import the package:
 ```python
@@ -58,7 +58,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -107,34 +107,34 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*StreamingApi* | [**create_stream**](docs/StreamingApi.md#create_stream) | **POST** /v7/stream | Create data stream
-*StreamingApi* | [**delete_stream**](docs/StreamingApi.md#delete_stream) | **DELETE** /v7/stream/{id} | Delete a data stream
-*StreamingApi* | [**get_stream**](docs/StreamingApi.md#get_stream) | **GET** /v7/stream/{id} | Retrieve data stream
-*StreamingApi* | [**get_streams**](docs/StreamingApi.md#get_streams) | **GET** /v7/stream | List data streams
-*StreamingApi* | [**update_stream**](docs/StreamingApi.md#update_stream) | **PUT** /v7/stream/{id} | Update data stream
+*StreamingApi* | [**create_stream**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamingApi.md#create_stream) | **POST** /v7/stream | Create data stream
+*StreamingApi* | [**delete_stream**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamingApi.md#delete_stream) | **DELETE** /v7/stream/{id} | Delete a data stream
+*StreamingApi* | [**get_stream**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamingApi.md#get_stream) | **GET** /v7/stream/{id} | Retrieve data stream
+*StreamingApi* | [**get_streams**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamingApi.md#get_streams) | **GET** /v7/stream | List data streams
+*StreamingApi* | [**update_stream**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamingApi.md#update_stream) | **PUT** /v7/stream/{id} | Update data stream
 
 
 ## Documentation For Models
 
- - [ApiError](docs/ApiError.md)
- - [ApiErrorIntegrationLimits](docs/ApiErrorIntegrationLimits.md)
- - [AuditOperation](docs/AuditOperation.md)
- - [AuditOperationWithUpdate](docs/AuditOperationWithUpdate.md)
- - [BadRequestError](docs/BadRequestError.md)
- - [CreateStreamResponse](docs/CreateStreamResponse.md)
- - [EndpointType](docs/EndpointType.md)
- - [GetStreamResponse](docs/GetStreamResponse.md)
- - [PutStream](docs/PutStream.md)
- - [Stream](docs/Stream.md)
- - [StreamLinks](docs/StreamLinks.md)
- - [StreamResponse](docs/StreamResponse.md)
- - [StreamSelfLink](docs/StreamSelfLink.md)
- - [StreamType](docs/StreamType.md)
- - [TagMatch](docs/TagMatch.md)
- - [TagMatchObjectType](docs/TagMatchObjectType.md)
- - [TestMatch](docs/TestMatch.md)
- - [TestMatchDomain](docs/TestMatchDomain.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
+ - [ApiError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/ApiError.md)
+ - [ApiErrorIntegrationLimits](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/ApiErrorIntegrationLimits.md)
+ - [AuditOperation](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/AuditOperation.md)
+ - [AuditOperationWithUpdate](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/AuditOperationWithUpdate.md)
+ - [BadRequestError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/BadRequestError.md)
+ - [CreateStreamResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/CreateStreamResponse.md)
+ - [EndpointType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/EndpointType.md)
+ - [GetStreamResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/GetStreamResponse.md)
+ - [PutStream](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/PutStream.md)
+ - [Stream](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/Stream.md)
+ - [StreamLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamLinks.md)
+ - [StreamResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamResponse.md)
+ - [StreamSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamSelfLink.md)
+ - [StreamType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamType.md)
+ - [TagMatch](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/TagMatch.md)
+ - [TagMatchObjectType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/TagMatchObjectType.md)
+ - [TestMatch](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/TestMatch.md)
+ - [TestMatchDomain](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/TestMatchDomain.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/UnauthorizedError.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -150,6 +150,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

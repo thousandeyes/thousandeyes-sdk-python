@@ -16,12 +16,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-endpoint-tests\&subdirectory=thousandeyes-sdk-endpoint-tests
+pip install thousandeyes-sdk-endpoint-tests
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-endpoint-tests\&subdirectory=thousandeyes-sdk-endpoint-tests`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-endpoint-tests`)
 
 Then import the package:
 ```python
@@ -48,7 +48,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -97,73 +97,73 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*DynamicTestsAgentToServerApi* | [**create_agent_to_server_endpoint_dynamic_test**](docs/DynamicTestsAgentToServerApi.md#create_agent_to_server_endpoint_dynamic_test) | **POST** /v7/endpoint/tests/dynamic-tests/agent-to-server | Create endpoint dynamic test
-*DynamicTestsAgentToServerApi* | [**delete_agent_to_server_endpoint_dynamic_test**](docs/DynamicTestsAgentToServerApi.md#delete_agent_to_server_endpoint_dynamic_test) | **DELETE** /v7/endpoint/tests/dynamic-tests/agent-to-server/{testId} | Delete agent to server dynamic test
-*DynamicTestsAgentToServerApi* | [**get_agent_to_server_endpoint_dynamic_test**](docs/DynamicTestsAgentToServerApi.md#get_agent_to_server_endpoint_dynamic_test) | **GET** /v7/endpoint/tests/dynamic-tests/agent-to-server/{testId} | Retrieve endpoint dynamic test
-*DynamicTestsAgentToServerApi* | [**get_agent_to_server_endpoint_dynamic_tests**](docs/DynamicTestsAgentToServerApi.md#get_agent_to_server_endpoint_dynamic_tests) | **GET** /v7/endpoint/tests/dynamic-tests/agent-to-server | List endpoint dynamic tests
-*DynamicTestsAgentToServerApi* | [**update_agent_to_server_endpoint_dynamic_test**](docs/DynamicTestsAgentToServerApi.md#update_agent_to_server_endpoint_dynamic_test) | **PATCH** /v7/endpoint/tests/dynamic-tests/agent-to-server/{testId} | Update agent to server dynamic test
-*ListEndpointScheduledTestsApi* | [**get_endpoint_scheduled_tests**](docs/ListEndpointScheduledTestsApi.md#get_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests | List endpoint scheduled tests
-*ScheduledTestsAgentToServerApi* | [**create_agent_to_server_endpoint_scheduled_test**](docs/ScheduledTestsAgentToServerApi.md#create_agent_to_server_endpoint_scheduled_test) | **POST** /v7/endpoint/tests/scheduled-tests/agent-to-server | Creates agent to server endpoint scheduled test
-*ScheduledTestsAgentToServerApi* | [**delete_agent_to_server_endpoint_scheduled_test**](docs/ScheduledTestsAgentToServerApi.md#delete_agent_to_server_endpoint_scheduled_test) | **DELETE** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Delete agent to server scheduled test
-*ScheduledTestsAgentToServerApi* | [**get_agent_to_server_endpoint_scheduled_test**](docs/ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_test) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Retrieve agent to server endpoint scheduled test
-*ScheduledTestsAgentToServerApi* | [**get_agent_to_server_endpoint_scheduled_tests**](docs/ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server | List agent to server endpoint scheduled tests
-*ScheduledTestsAgentToServerApi* | [**update_agent_to_server_endpoint_scheduled_test**](docs/ScheduledTestsAgentToServerApi.md#update_agent_to_server_endpoint_scheduled_test) | **PATCH** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Update agent to server endpoint scheduled test
-*ScheduledTestsHTTPServerApi* | [**create_http_server_endpoint_scheduled_test**](docs/ScheduledTestsHTTPServerApi.md#create_http_server_endpoint_scheduled_test) | **POST** /v7/endpoint/tests/scheduled-tests/http-server | Create HTTP server endpoint scheduled test
-*ScheduledTestsHTTPServerApi* | [**delete_http_server_endpoint_scheduled_test**](docs/ScheduledTestsHTTPServerApi.md#delete_http_server_endpoint_scheduled_test) | **DELETE** /v7/endpoint/tests/scheduled-tests/http-server/{testId} | Delete HTTP server scheduled test
-*ScheduledTestsHTTPServerApi* | [**get_http_server_endpoint_scheduled_test**](docs/ScheduledTestsHTTPServerApi.md#get_http_server_endpoint_scheduled_test) | **GET** /v7/endpoint/tests/scheduled-tests/http-server/{testId} | Retrieves HTTP server endpoint scheduled test
-*ScheduledTestsHTTPServerApi* | [**get_http_server_endpoint_scheduled_tests**](docs/ScheduledTestsHTTPServerApi.md#get_http_server_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests/http-server | List HTTP server endpoint scheduled tests
-*ScheduledTestsHTTPServerApi* | [**update_http_server_endpoint_scheduled_test**](docs/ScheduledTestsHTTPServerApi.md#update_http_server_endpoint_scheduled_test) | **PATCH** /v7/endpoint/tests/scheduled-tests/http-server/{testId} | Update HTTP server endpoint scheduled test
+*DynamicTestsAgentToServerApi* | [**create_agent_to_server_endpoint_dynamic_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTestsAgentToServerApi.md#create_agent_to_server_endpoint_dynamic_test) | **POST** /v7/endpoint/tests/dynamic-tests/agent-to-server | Create endpoint dynamic test
+*DynamicTestsAgentToServerApi* | [**delete_agent_to_server_endpoint_dynamic_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTestsAgentToServerApi.md#delete_agent_to_server_endpoint_dynamic_test) | **DELETE** /v7/endpoint/tests/dynamic-tests/agent-to-server/{testId} | Delete agent to server dynamic test
+*DynamicTestsAgentToServerApi* | [**get_agent_to_server_endpoint_dynamic_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTestsAgentToServerApi.md#get_agent_to_server_endpoint_dynamic_test) | **GET** /v7/endpoint/tests/dynamic-tests/agent-to-server/{testId} | Retrieve endpoint dynamic test
+*DynamicTestsAgentToServerApi* | [**get_agent_to_server_endpoint_dynamic_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTestsAgentToServerApi.md#get_agent_to_server_endpoint_dynamic_tests) | **GET** /v7/endpoint/tests/dynamic-tests/agent-to-server | List endpoint dynamic tests
+*DynamicTestsAgentToServerApi* | [**update_agent_to_server_endpoint_dynamic_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTestsAgentToServerApi.md#update_agent_to_server_endpoint_dynamic_test) | **PATCH** /v7/endpoint/tests/dynamic-tests/agent-to-server/{testId} | Update agent to server dynamic test
+*ListEndpointScheduledTestsApi* | [**get_endpoint_scheduled_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ListEndpointScheduledTestsApi.md#get_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests | List endpoint scheduled tests
+*ScheduledTestsAgentToServerApi* | [**create_agent_to_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsAgentToServerApi.md#create_agent_to_server_endpoint_scheduled_test) | **POST** /v7/endpoint/tests/scheduled-tests/agent-to-server | Creates agent to server endpoint scheduled test
+*ScheduledTestsAgentToServerApi* | [**delete_agent_to_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsAgentToServerApi.md#delete_agent_to_server_endpoint_scheduled_test) | **DELETE** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Delete agent to server scheduled test
+*ScheduledTestsAgentToServerApi* | [**get_agent_to_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_test) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Retrieve agent to server endpoint scheduled test
+*ScheduledTestsAgentToServerApi* | [**get_agent_to_server_endpoint_scheduled_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server | List agent to server endpoint scheduled tests
+*ScheduledTestsAgentToServerApi* | [**update_agent_to_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsAgentToServerApi.md#update_agent_to_server_endpoint_scheduled_test) | **PATCH** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Update agent to server endpoint scheduled test
+*ScheduledTestsHTTPServerApi* | [**create_http_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsHTTPServerApi.md#create_http_server_endpoint_scheduled_test) | **POST** /v7/endpoint/tests/scheduled-tests/http-server | Create HTTP server endpoint scheduled test
+*ScheduledTestsHTTPServerApi* | [**delete_http_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsHTTPServerApi.md#delete_http_server_endpoint_scheduled_test) | **DELETE** /v7/endpoint/tests/scheduled-tests/http-server/{testId} | Delete HTTP server scheduled test
+*ScheduledTestsHTTPServerApi* | [**get_http_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsHTTPServerApi.md#get_http_server_endpoint_scheduled_test) | **GET** /v7/endpoint/tests/scheduled-tests/http-server/{testId} | Retrieves HTTP server endpoint scheduled test
+*ScheduledTestsHTTPServerApi* | [**get_http_server_endpoint_scheduled_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsHTTPServerApi.md#get_http_server_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests/http-server | List HTTP server endpoint scheduled tests
+*ScheduledTestsHTTPServerApi* | [**update_http_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ScheduledTestsHTTPServerApi.md#update_http_server_endpoint_scheduled_test) | **PATCH** /v7/endpoint/tests/scheduled-tests/http-server/{testId} | Update HTTP server endpoint scheduled test
 
 
 ## Documentation For Models
 
- - [AlertDirection](docs/AlertDirection.md)
- - [AlertRoundsViolationMode](docs/AlertRoundsViolationMode.md)
- - [AlertRule](docs/AlertRule.md)
- - [AlertType](docs/AlertType.md)
- - [DynamicTest](docs/DynamicTest.md)
- - [DynamicTestLinks](docs/DynamicTestLinks.md)
- - [DynamicTestRequest](docs/DynamicTestRequest.md)
- - [DynamicTestSelfLink](docs/DynamicTestSelfLink.md)
- - [DynamicTests](docs/DynamicTests.md)
- - [EndpointAgentLabelsSelectorConfig](docs/EndpointAgentLabelsSelectorConfig.md)
- - [EndpointAgentSelectorConfig](docs/EndpointAgentSelectorConfig.md)
- - [EndpointAgentToServerInstantTest](docs/EndpointAgentToServerInstantTest.md)
- - [EndpointAgentToServerTest](docs/EndpointAgentToServerTest.md)
- - [EndpointAgentToServerTestRequest](docs/EndpointAgentToServerTestRequest.md)
- - [EndpointAgentToServerTests](docs/EndpointAgentToServerTests.md)
- - [EndpointAllAgentsSelectorConfig](docs/EndpointAllAgentsSelectorConfig.md)
- - [EndpointDynamicTestUpdate](docs/EndpointDynamicTestUpdate.md)
- - [EndpointHttpServerBaseTest](docs/EndpointHttpServerBaseTest.md)
- - [EndpointHttpServerInstantTest](docs/EndpointHttpServerInstantTest.md)
- - [EndpointHttpServerTest](docs/EndpointHttpServerTest.md)
- - [EndpointHttpServerTestRequest](docs/EndpointHttpServerTestRequest.md)
- - [EndpointHttpServerTests](docs/EndpointHttpServerTests.md)
- - [EndpointHttpTestUpdate](docs/EndpointHttpTestUpdate.md)
- - [EndpointInstantTest](docs/EndpointInstantTest.md)
- - [EndpointNetworkTestUpdate](docs/EndpointNetworkTestUpdate.md)
- - [EndpointScheduledTestType](docs/EndpointScheduledTestType.md)
- - [EndpointSpecificAgentsSelectorConfig](docs/EndpointSpecificAgentsSelectorConfig.md)
- - [EndpointTest](docs/EndpointTest.md)
- - [EndpointTestAgentSelectorType](docs/EndpointTestAgentSelectorType.md)
- - [EndpointTestAuthType](docs/EndpointTestAuthType.md)
- - [EndpointTestLinks](docs/EndpointTestLinks.md)
- - [EndpointTestProtocol](docs/EndpointTestProtocol.md)
- - [EndpointTestSelfLink](docs/EndpointTestSelfLink.md)
- - [EndpointTests](docs/EndpointTests.md)
- - [Error](docs/Error.md)
- - [Link](docs/Link.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [Severity](docs/Severity.md)
- - [TestInterval](docs/TestInterval.md)
- - [TestLabel](docs/TestLabel.md)
- - [TestProbeMode](docs/TestProbeMode.md)
- - [TestProbeModeResponse](docs/TestProbeModeResponse.md)
- - [TestSslVersionId](docs/TestSslVersionId.md)
- - [TestUpdate](docs/TestUpdate.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [AlertDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AlertDirection.md)
+ - [AlertRoundsViolationMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AlertRoundsViolationMode.md)
+ - [AlertRule](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AlertRule.md)
+ - [AlertType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AlertType.md)
+ - [DynamicTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTest.md)
+ - [DynamicTestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTestLinks.md)
+ - [DynamicTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTestRequest.md)
+ - [DynamicTestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTestSelfLink.md)
+ - [DynamicTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/DynamicTests.md)
+ - [EndpointAgentLabelsSelectorConfig](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointAgentLabelsSelectorConfig.md)
+ - [EndpointAgentSelectorConfig](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointAgentSelectorConfig.md)
+ - [EndpointAgentToServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointAgentToServerInstantTest.md)
+ - [EndpointAgentToServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointAgentToServerTest.md)
+ - [EndpointAgentToServerTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointAgentToServerTestRequest.md)
+ - [EndpointAgentToServerTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointAgentToServerTests.md)
+ - [EndpointAllAgentsSelectorConfig](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointAllAgentsSelectorConfig.md)
+ - [EndpointDynamicTestUpdate](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointDynamicTestUpdate.md)
+ - [EndpointHttpServerBaseTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointHttpServerBaseTest.md)
+ - [EndpointHttpServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointHttpServerInstantTest.md)
+ - [EndpointHttpServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointHttpServerTest.md)
+ - [EndpointHttpServerTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointHttpServerTestRequest.md)
+ - [EndpointHttpServerTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointHttpServerTests.md)
+ - [EndpointHttpTestUpdate](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointHttpTestUpdate.md)
+ - [EndpointInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointInstantTest.md)
+ - [EndpointNetworkTestUpdate](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointNetworkTestUpdate.md)
+ - [EndpointScheduledTestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointScheduledTestType.md)
+ - [EndpointSpecificAgentsSelectorConfig](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointSpecificAgentsSelectorConfig.md)
+ - [EndpointTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTest.md)
+ - [EndpointTestAgentSelectorType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestAgentSelectorType.md)
+ - [EndpointTestAuthType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestAuthType.md)
+ - [EndpointTestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestLinks.md)
+ - [EndpointTestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestProtocol.md)
+ - [EndpointTestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestSelfLink.md)
+ - [EndpointTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTests.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/Error.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/Link.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/SelfLinks.md)
+ - [Severity](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/Severity.md)
+ - [TestInterval](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/TestInterval.md)
+ - [TestLabel](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/TestLabel.md)
+ - [TestProbeMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/TestProbeMode.md)
+ - [TestProbeModeResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/TestProbeModeResponse.md)
+ - [TestSslVersionId](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/TestSslVersionId.md)
+ - [TestUpdate](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/TestUpdate.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -179,6 +179,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

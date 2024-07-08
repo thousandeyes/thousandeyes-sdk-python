@@ -16,12 +16,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-endpoint-agents\&subdirectory=thousandeyes-sdk-endpoint-agents
+pip install thousandeyes-sdk-endpoint-agents
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-endpoint-agents\&subdirectory=thousandeyes-sdk-endpoint-agents`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-endpoint-agents`)
 
 Then import the package:
 ```python
@@ -48,7 +48,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -96,66 +96,66 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*AdministrativeEndpointsApi* | [**get_endpoint_agents_connection_string**](docs/AdministrativeEndpointsApi.md#get_endpoint_agents_connection_string) | **GET** /v7/endpoint/agents/connection-string | Get agent connection string
-*ManageAgentsApi* | [**delete_endpoint_agent**](docs/ManageAgentsApi.md#delete_endpoint_agent) | **DELETE** /v7/endpoint/agents/{agentId} | Delete endpoint agent
-*ManageAgentsApi* | [**disable_endpoint_agent**](docs/ManageAgentsApi.md#disable_endpoint_agent) | **POST** /v7/endpoint/agents/{agentId}/disable | Disable endpoint agent
-*ManageAgentsApi* | [**enable_endpoint_agent**](docs/ManageAgentsApi.md#enable_endpoint_agent) | **POST** /v7/endpoint/agents/{agentId}/enable | Enable endpoint agent
-*ManageAgentsApi* | [**filter_endpoint_agents**](docs/ManageAgentsApi.md#filter_endpoint_agents) | **POST** /v7/endpoint/agents/filter | Filter endpoint agents
-*ManageAgentsApi* | [**get_endpoint_agent**](docs/ManageAgentsApi.md#get_endpoint_agent) | **GET** /v7/endpoint/agents/{agentId} | Retrieve endpoint agent
-*ManageAgentsApi* | [**get_endpoint_agents**](docs/ManageAgentsApi.md#get_endpoint_agents) | **GET** /v7/endpoint/agents | List endpoint agents
-*ManageAgentsApi* | [**update_endpoint_agent**](docs/ManageAgentsApi.md#update_endpoint_agent) | **PATCH** /v7/endpoint/agents/{agentId} | Update endpoint agent
-*TransferApi* | [**transfer_endpoint_agent**](docs/TransferApi.md#transfer_endpoint_agent) | **POST** /v7/endpoint/agents/{agentId}/transfer | Transfer endpoint agent
-*TransferApi* | [**transfer_endpoint_agents**](docs/TransferApi.md#transfer_endpoint_agents) | **POST** /v7/endpoint/agents/transfer/bulk | Bulk transfer agents
+*AdministrativeEndpointsApi* | [**get_endpoint_agents_connection_string**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AdministrativeEndpointsApi.md#get_endpoint_agents_connection_string) | **GET** /v7/endpoint/agents/connection-string | Get agent connection string
+*ManageAgentsApi* | [**delete_endpoint_agent**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ManageAgentsApi.md#delete_endpoint_agent) | **DELETE** /v7/endpoint/agents/{agentId} | Delete endpoint agent
+*ManageAgentsApi* | [**disable_endpoint_agent**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ManageAgentsApi.md#disable_endpoint_agent) | **POST** /v7/endpoint/agents/{agentId}/disable | Disable endpoint agent
+*ManageAgentsApi* | [**enable_endpoint_agent**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ManageAgentsApi.md#enable_endpoint_agent) | **POST** /v7/endpoint/agents/{agentId}/enable | Enable endpoint agent
+*ManageAgentsApi* | [**filter_endpoint_agents**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ManageAgentsApi.md#filter_endpoint_agents) | **POST** /v7/endpoint/agents/filter | Filter endpoint agents
+*ManageAgentsApi* | [**get_endpoint_agent**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ManageAgentsApi.md#get_endpoint_agent) | **GET** /v7/endpoint/agents/{agentId} | Retrieve endpoint agent
+*ManageAgentsApi* | [**get_endpoint_agents**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ManageAgentsApi.md#get_endpoint_agents) | **GET** /v7/endpoint/agents | List endpoint agents
+*ManageAgentsApi* | [**update_endpoint_agent**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ManageAgentsApi.md#update_endpoint_agent) | **PATCH** /v7/endpoint/agents/{agentId} | Update endpoint agent
+*TransferApi* | [**transfer_endpoint_agent**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/TransferApi.md#transfer_endpoint_agent) | **POST** /v7/endpoint/agents/{agentId}/transfer | Transfer endpoint agent
+*TransferApi* | [**transfer_endpoint_agents**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/TransferApi.md#transfer_endpoint_agents) | **POST** /v7/endpoint/agents/transfer/bulk | Bulk transfer agents
 
 
 ## Documentation For Models
 
- - [AddressProfile](docs/AddressProfile.md)
- - [AddressType](docs/AddressType.md)
- - [AgentLicenseType](docs/AgentLicenseType.md)
- - [AgentSearchFilters](docs/AgentSearchFilters.md)
- - [AgentSearchRequest](docs/AgentSearchRequest.md)
- - [AgentSearchSort](docs/AgentSearchSort.md)
- - [AgentSearchSortKey](docs/AgentSearchSortKey.md)
- - [AgentThresholdFilter](docs/AgentThresholdFilter.md)
- - [AgentThresholdFilters](docs/AgentThresholdFilters.md)
- - [AgentTransfer](docs/AgentTransfer.md)
- - [AgentTransferRequest](docs/AgentTransferRequest.md)
- - [AgentTransferStatus](docs/AgentTransferStatus.md)
- - [BrowserType](docs/BrowserType.md)
- - [BulkAgentTransferRequest](docs/BulkAgentTransferRequest.md)
- - [BulkAgentTransferResponse](docs/BulkAgentTransferResponse.md)
- - [ConditionalOperator](docs/ConditionalOperator.md)
- - [ConnectionString](docs/ConnectionString.md)
- - [EndpointAgent](docs/EndpointAgent.md)
- - [EndpointAgentLocation](docs/EndpointAgentLocation.md)
- - [EndpointAgentUpdate](docs/EndpointAgentUpdate.md)
- - [EndpointAgents](docs/EndpointAgents.md)
- - [EndpointAsnDetails](docs/EndpointAsnDetails.md)
- - [EndpointBrowserExtension](docs/EndpointBrowserExtension.md)
- - [EndpointClient](docs/EndpointClient.md)
- - [EndpointUserProfile](docs/EndpointUserProfile.md)
- - [EndpointVpnProfile](docs/EndpointVpnProfile.md)
- - [Error](docs/Error.md)
- - [EthernetProfile](docs/EthernetProfile.md)
- - [Expand](docs/Expand.md)
- - [FilterEndpointAgentsResponse](docs/FilterEndpointAgentsResponse.md)
- - [InterfaceHardwareType](docs/InterfaceHardwareType.md)
- - [InterfaceProfile](docs/InterfaceProfile.md)
- - [Link](docs/Link.md)
- - [ListEndpointAgentsResponse](docs/ListEndpointAgentsResponse.md)
- - [PaginationNextAndSelfLink](docs/PaginationNextAndSelfLink.md)
- - [PaginationNextLink](docs/PaginationNextLink.md)
- - [Platform](docs/Platform.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [SortOrder](docs/SortOrder.md)
- - [Status](docs/Status.md)
- - [ThresholdFilterOperator](docs/ThresholdFilterOperator.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
- - [VpnType](docs/VpnType.md)
- - [WirelessProfile](docs/WirelessProfile.md)
+ - [AddressProfile](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AddressProfile.md)
+ - [AddressType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AddressType.md)
+ - [AgentLicenseType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentLicenseType.md)
+ - [AgentSearchFilters](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentSearchFilters.md)
+ - [AgentSearchRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentSearchRequest.md)
+ - [AgentSearchSort](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentSearchSort.md)
+ - [AgentSearchSortKey](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentSearchSortKey.md)
+ - [AgentThresholdFilter](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentThresholdFilter.md)
+ - [AgentThresholdFilters](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentThresholdFilters.md)
+ - [AgentTransfer](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentTransfer.md)
+ - [AgentTransferRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentTransferRequest.md)
+ - [AgentTransferStatus](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/AgentTransferStatus.md)
+ - [BrowserType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/BrowserType.md)
+ - [BulkAgentTransferRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/BulkAgentTransferRequest.md)
+ - [BulkAgentTransferResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/BulkAgentTransferResponse.md)
+ - [ConditionalOperator](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ConditionalOperator.md)
+ - [ConnectionString](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ConnectionString.md)
+ - [EndpointAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EndpointAgent.md)
+ - [EndpointAgentLocation](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EndpointAgentLocation.md)
+ - [EndpointAgentUpdate](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EndpointAgentUpdate.md)
+ - [EndpointAgents](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EndpointAgents.md)
+ - [EndpointAsnDetails](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EndpointAsnDetails.md)
+ - [EndpointBrowserExtension](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EndpointBrowserExtension.md)
+ - [EndpointClient](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EndpointClient.md)
+ - [EndpointUserProfile](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EndpointUserProfile.md)
+ - [EndpointVpnProfile](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EndpointVpnProfile.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/Error.md)
+ - [EthernetProfile](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/EthernetProfile.md)
+ - [Expand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/Expand.md)
+ - [FilterEndpointAgentsResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/FilterEndpointAgentsResponse.md)
+ - [InterfaceHardwareType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/InterfaceHardwareType.md)
+ - [InterfaceProfile](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/InterfaceProfile.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/Link.md)
+ - [ListEndpointAgentsResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ListEndpointAgentsResponse.md)
+ - [PaginationNextAndSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/PaginationNextAndSelfLink.md)
+ - [PaginationNextLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/PaginationNextLink.md)
+ - [Platform](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/Platform.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/SelfLinks.md)
+ - [SortOrder](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/SortOrder.md)
+ - [Status](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/Status.md)
+ - [ThresholdFilterOperator](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ThresholdFilterOperator.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/ValidationErrorItem.md)
+ - [VpnType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/VpnType.md)
+ - [WirelessProfile](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-agents/docs/WirelessProfile.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -171,6 +171,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

@@ -19,12 +19,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-instant-tests\&subdirectory=thousandeyes-sdk-instant-tests
+pip install thousandeyes-sdk-instant-tests
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-instant-tests\&subdirectory=thousandeyes-sdk-instant-tests`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-instant-tests`)
 
 Then import the package:
 ```python
@@ -51,7 +51,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -101,107 +101,107 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*APIApi* | [**create_api_instant_test**](docs/APIApi.md#create_api_instant_test) | **POST** /v7/tests/api/instant | Create API instant test
-*AgentToAgentApi* | [**create_agent_to_agent_instant_test**](docs/AgentToAgentApi.md#create_agent_to_agent_instant_test) | **POST** /v7/tests/agent-to-agent/instant | Create agent-to-agent instant test
-*AgentToServerApi* | [**create_agent_to_server_instant_test**](docs/AgentToServerApi.md#create_agent_to_server_instant_test) | **POST** /v7/tests/agent-to-server/instant | Create agent-to-server instant test
-*DNSSecurityApi* | [**create_dns_sec_instant_test**](docs/DNSSecurityApi.md#create_dns_sec_instant_test) | **POST** /v7/tests/dnssec/instant | Create DNS security instant test
-*DNSServerApi* | [**create_dns_server_instant_test**](docs/DNSServerApi.md#create_dns_server_instant_test) | **POST** /v7/tests/dns-server/instant | Create DNS server instant test
-*DNSTraceApi* | [**create_dns_trace_instant_test**](docs/DNSTraceApi.md#create_dns_trace_instant_test) | **POST** /v7/tests/dns-trace/instant | Create DNS trace instant test
-*FTPServerApi* | [**create_ftp_server_instant_test**](docs/FTPServerApi.md#create_ftp_server_instant_test) | **POST** /v7/tests/ftp-server/instant | Create FTP server instant test
-*HTTPPageLoadApi* | [**create_page_load_instant_test**](docs/HTTPPageLoadApi.md#create_page_load_instant_test) | **POST** /v7/tests/page-load/instant | Create HTTP page load instant test
-*HTTPServerApi* | [**create_http_server_instant_test**](docs/HTTPServerApi.md#create_http_server_instant_test) | **POST** /v7/tests/http-server/instant | Create HTTP server instant test
-*RunApi* | [**run_instant_test**](docs/RunApi.md#run_instant_test) | **POST** /v7/tests/{testId}/run | Run instant test
-*SIPServerApi* | [**create_sip_server_instant_test**](docs/SIPServerApi.md#create_sip_server_instant_test) | **POST** /v7/tests/sip-server/instant | Create SIP server instant test
-*VoiceApi* | [**create_voice_instant_test**](docs/VoiceApi.md#create_voice_instant_test) | **POST** /v7/tests/voice/instant | Create voice instant test
-*WebTransactionApi* | [**create_web_transaction_instant_test**](docs/WebTransactionApi.md#create_web_transaction_instant_test) | **POST** /v7/tests/web-transactions/instant | Create web transactions instant test
+*APIApi* | [**create_api_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/APIApi.md#create_api_instant_test) | **POST** /v7/tests/api/instant | Create API instant test
+*AgentToAgentApi* | [**create_agent_to_agent_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentToAgentApi.md#create_agent_to_agent_instant_test) | **POST** /v7/tests/agent-to-agent/instant | Create agent-to-agent instant test
+*AgentToServerApi* | [**create_agent_to_server_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentToServerApi.md#create_agent_to_server_instant_test) | **POST** /v7/tests/agent-to-server/instant | Create agent-to-server instant test
+*DNSSecurityApi* | [**create_dns_sec_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DNSSecurityApi.md#create_dns_sec_instant_test) | **POST** /v7/tests/dnssec/instant | Create DNS security instant test
+*DNSServerApi* | [**create_dns_server_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DNSServerApi.md#create_dns_server_instant_test) | **POST** /v7/tests/dns-server/instant | Create DNS server instant test
+*DNSTraceApi* | [**create_dns_trace_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DNSTraceApi.md#create_dns_trace_instant_test) | **POST** /v7/tests/dns-trace/instant | Create DNS trace instant test
+*FTPServerApi* | [**create_ftp_server_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/FTPServerApi.md#create_ftp_server_instant_test) | **POST** /v7/tests/ftp-server/instant | Create FTP server instant test
+*HTTPPageLoadApi* | [**create_page_load_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/HTTPPageLoadApi.md#create_page_load_instant_test) | **POST** /v7/tests/page-load/instant | Create HTTP page load instant test
+*HTTPServerApi* | [**create_http_server_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/HTTPServerApi.md#create_http_server_instant_test) | **POST** /v7/tests/http-server/instant | Create HTTP server instant test
+*RunApi* | [**run_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/RunApi.md#run_instant_test) | **POST** /v7/tests/{testId}/run | Run instant test
+*SIPServerApi* | [**create_sip_server_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/SIPServerApi.md#create_sip_server_instant_test) | **POST** /v7/tests/sip-server/instant | Create SIP server instant test
+*VoiceApi* | [**create_voice_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/VoiceApi.md#create_voice_instant_test) | **POST** /v7/tests/voice/instant | Create voice instant test
+*WebTransactionApi* | [**create_web_transaction_instant_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/WebTransactionApi.md#create_web_transaction_instant_test) | **POST** /v7/tests/web-transactions/instant | Create web transactions instant test
 
 
 ## Documentation For Models
 
- - [Agent](docs/Agent.md)
- - [AgentBase](docs/AgentBase.md)
- - [AgentToAgentInstantTest](docs/AgentToAgentInstantTest.md)
- - [AgentToAgentInstantTestRequest](docs/AgentToAgentInstantTestRequest.md)
- - [AgentToAgentProperties](docs/AgentToAgentProperties.md)
- - [AgentToAgentTestProtocol](docs/AgentToAgentTestProtocol.md)
- - [AgentToServerInstantTest](docs/AgentToServerInstantTest.md)
- - [AgentToServerInstantTestRequest](docs/AgentToServerInstantTestRequest.md)
- - [AgentToServerProperties](docs/AgentToServerProperties.md)
- - [ApiInstantTest](docs/ApiInstantTest.md)
- - [ApiInstantTestRequest](docs/ApiInstantTestRequest.md)
- - [ApiPredefinedVariable](docs/ApiPredefinedVariable.md)
- - [ApiProperties](docs/ApiProperties.md)
- - [ApiRequest](docs/ApiRequest.md)
- - [ApiRequestAssertion](docs/ApiRequestAssertion.md)
- - [ApiRequestAssertionName](docs/ApiRequestAssertionName.md)
- - [ApiRequestAssertionOperator](docs/ApiRequestAssertionOperator.md)
- - [ApiRequestAuthType](docs/ApiRequestAuthType.md)
- - [ApiRequestHeader](docs/ApiRequestHeader.md)
- - [ApiRequestMethod](docs/ApiRequestMethod.md)
- - [ApiRequestVariable](docs/ApiRequestVariable.md)
- - [CloudEnterpriseAgentType](docs/CloudEnterpriseAgentType.md)
- - [DnsQueryClass](docs/DnsQueryClass.md)
- - [DnsSecInstantTest](docs/DnsSecInstantTest.md)
- - [DnsSecInstantTestRequest](docs/DnsSecInstantTestRequest.md)
- - [DnsSecProperties](docs/DnsSecProperties.md)
- - [DnsServerInstantTest](docs/DnsServerInstantTest.md)
- - [DnsServerInstantTestRequest](docs/DnsServerInstantTestRequest.md)
- - [DnsServerProperties](docs/DnsServerProperties.md)
- - [DnsServersRequest](docs/DnsServersRequest.md)
- - [DnsTraceInstantTest](docs/DnsTraceInstantTest.md)
- - [DnsTraceInstantTestRequest](docs/DnsTraceInstantTestRequest.md)
- - [DnsTraceProperties](docs/DnsTraceProperties.md)
- - [Error](docs/Error.md)
- - [Expand](docs/Expand.md)
- - [FtpServerInstantTest](docs/FtpServerInstantTest.md)
- - [FtpServerProperties](docs/FtpServerProperties.md)
- - [FtpServerRequestType](docs/FtpServerRequestType.md)
- - [HttpServerInstantTest](docs/HttpServerInstantTest.md)
- - [HttpServerInstantTestRequest](docs/HttpServerInstantTestRequest.md)
- - [HttpServerProperties](docs/HttpServerProperties.md)
- - [InstantTest](docs/InstantTest.md)
- - [InstantTestRequest](docs/InstantTestRequest.md)
- - [Link](docs/Link.md)
- - [PageLoadInstantTest](docs/PageLoadInstantTest.md)
- - [PageLoadInstantTestRequest](docs/PageLoadInstantTestRequest.md)
- - [PageLoadProperties](docs/PageLoadProperties.md)
- - [ServerInstantTestRequest](docs/ServerInstantTestRequest.md)
- - [SharedWithAccount](docs/SharedWithAccount.md)
- - [SimpleAgent](docs/SimpleAgent.md)
- - [SipServerInstantTest](docs/SipServerInstantTest.md)
- - [SipServerInstantTestRequest](docs/SipServerInstantTestRequest.md)
- - [SipServerInstantTestRequest1](docs/SipServerInstantTestRequest1.md)
- - [SipServerInstantTestResponse](docs/SipServerInstantTestResponse.md)
- - [SipServerProperties](docs/SipServerProperties.md)
- - [SipTestProtocol](docs/SipTestProtocol.md)
- - [TestAgent](docs/TestAgent.md)
- - [TestAuthType](docs/TestAuthType.md)
- - [TestCustomHeaders](docs/TestCustomHeaders.md)
- - [TestDirection](docs/TestDirection.md)
- - [TestDnsServer](docs/TestDnsServer.md)
- - [TestDnsTransportProtocol](docs/TestDnsTransportProtocol.md)
- - [TestDscpId](docs/TestDscpId.md)
- - [TestIpv6Policy](docs/TestIpv6Policy.md)
- - [TestLabel](docs/TestLabel.md)
- - [TestLinks](docs/TestLinks.md)
- - [TestPageLoadingStrategy](docs/TestPageLoadingStrategy.md)
- - [TestPathTraceMode](docs/TestPathTraceMode.md)
- - [TestProbeMode](docs/TestProbeMode.md)
- - [TestProtocol](docs/TestProtocol.md)
- - [TestSelfLink](docs/TestSelfLink.md)
- - [TestSipCredentials](docs/TestSipCredentials.md)
- - [TestSslVersionId](docs/TestSslVersionId.md)
- - [TestType](docs/TestType.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [UnexpandedInstantTest](docs/UnexpandedInstantTest.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
- - [VoiceInstantTest](docs/VoiceInstantTest.md)
- - [VoiceInstantTestRequest](docs/VoiceInstantTestRequest.md)
- - [VoiceProperties](docs/VoiceProperties.md)
- - [WebTransactionInstantTest](docs/WebTransactionInstantTest.md)
- - [WebTransactionInstantTestRequest](docs/WebTransactionInstantTestRequest.md)
- - [WebTransactionProperties](docs/WebTransactionProperties.md)
+ - [Agent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/Agent.md)
+ - [AgentBase](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentBase.md)
+ - [AgentToAgentInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentToAgentInstantTest.md)
+ - [AgentToAgentInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentToAgentInstantTestRequest.md)
+ - [AgentToAgentProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentToAgentProperties.md)
+ - [AgentToAgentTestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentToAgentTestProtocol.md)
+ - [AgentToServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentToServerInstantTest.md)
+ - [AgentToServerInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentToServerInstantTestRequest.md)
+ - [AgentToServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/AgentToServerProperties.md)
+ - [ApiInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiInstantTest.md)
+ - [ApiInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiInstantTestRequest.md)
+ - [ApiPredefinedVariable](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiPredefinedVariable.md)
+ - [ApiProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiProperties.md)
+ - [ApiRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiRequest.md)
+ - [ApiRequestAssertion](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiRequestAssertion.md)
+ - [ApiRequestAssertionName](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiRequestAssertionName.md)
+ - [ApiRequestAssertionOperator](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiRequestAssertionOperator.md)
+ - [ApiRequestAuthType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiRequestAuthType.md)
+ - [ApiRequestHeader](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiRequestHeader.md)
+ - [ApiRequestMethod](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiRequestMethod.md)
+ - [ApiRequestVariable](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ApiRequestVariable.md)
+ - [CloudEnterpriseAgentType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/CloudEnterpriseAgentType.md)
+ - [DnsQueryClass](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsQueryClass.md)
+ - [DnsSecInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsSecInstantTest.md)
+ - [DnsSecInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsSecInstantTestRequest.md)
+ - [DnsSecProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsSecProperties.md)
+ - [DnsServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsServerInstantTest.md)
+ - [DnsServerInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsServerInstantTestRequest.md)
+ - [DnsServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsServerProperties.md)
+ - [DnsServersRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsServersRequest.md)
+ - [DnsTraceInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsTraceInstantTest.md)
+ - [DnsTraceInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsTraceInstantTestRequest.md)
+ - [DnsTraceProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/DnsTraceProperties.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/Error.md)
+ - [Expand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/Expand.md)
+ - [FtpServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/FtpServerInstantTest.md)
+ - [FtpServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/FtpServerProperties.md)
+ - [FtpServerRequestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/FtpServerRequestType.md)
+ - [HttpServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/HttpServerInstantTest.md)
+ - [HttpServerInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/HttpServerInstantTestRequest.md)
+ - [HttpServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/HttpServerProperties.md)
+ - [InstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/InstantTest.md)
+ - [InstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/InstantTestRequest.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/Link.md)
+ - [PageLoadInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/PageLoadInstantTest.md)
+ - [PageLoadInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/PageLoadInstantTestRequest.md)
+ - [PageLoadProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/PageLoadProperties.md)
+ - [ServerInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ServerInstantTestRequest.md)
+ - [SharedWithAccount](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/SharedWithAccount.md)
+ - [SimpleAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/SimpleAgent.md)
+ - [SipServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/SipServerInstantTest.md)
+ - [SipServerInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/SipServerInstantTestRequest.md)
+ - [SipServerInstantTestRequest1](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/SipServerInstantTestRequest1.md)
+ - [SipServerInstantTestResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/SipServerInstantTestResponse.md)
+ - [SipServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/SipServerProperties.md)
+ - [SipTestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/SipTestProtocol.md)
+ - [TestAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestAgent.md)
+ - [TestAuthType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestAuthType.md)
+ - [TestCustomHeaders](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestCustomHeaders.md)
+ - [TestDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestDirection.md)
+ - [TestDnsServer](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestDnsServer.md)
+ - [TestDnsTransportProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestDnsTransportProtocol.md)
+ - [TestDscpId](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestDscpId.md)
+ - [TestIpv6Policy](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestIpv6Policy.md)
+ - [TestLabel](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestLabel.md)
+ - [TestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestLinks.md)
+ - [TestPageLoadingStrategy](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestPageLoadingStrategy.md)
+ - [TestPathTraceMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestPathTraceMode.md)
+ - [TestProbeMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestProbeMode.md)
+ - [TestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestProtocol.md)
+ - [TestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestSelfLink.md)
+ - [TestSipCredentials](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestSipCredentials.md)
+ - [TestSslVersionId](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestSslVersionId.md)
+ - [TestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/TestType.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/UnauthorizedError.md)
+ - [UnexpandedInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/UnexpandedInstantTest.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/ValidationErrorItem.md)
+ - [VoiceInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/VoiceInstantTest.md)
+ - [VoiceInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/VoiceInstantTestRequest.md)
+ - [VoiceProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/VoiceProperties.md)
+ - [WebTransactionInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/WebTransactionInstantTest.md)
+ - [WebTransactionInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/WebTransactionInstantTestRequest.md)
+ - [WebTransactionProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-instant-tests/docs/WebTransactionProperties.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -217,6 +217,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

@@ -25,12 +25,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-internet-insights\&subdirectory=thousandeyes-sdk-internet-insights
+pip install thousandeyes-sdk-internet-insights
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-internet-insights\&subdirectory=thousandeyes-sdk-internet-insights`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-internet-insights`)
 
 Then import the package:
 ```python
@@ -57,7 +57,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -106,38 +106,38 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CatalogProvidersApi* | [**filter_catalog_providers**](docs/CatalogProvidersApi.md#filter_catalog_providers) | **POST** /v7/internet-insights/catalog/providers/filter | List catalog providers
-*CatalogProvidersApi* | [**get_catalog_provider**](docs/CatalogProvidersApi.md#get_catalog_provider) | **GET** /v7/internet-insights/catalog/providers/{providerId} | Retrieve a catalog provider
-*OutagesAPIPublicApi* | [**filter_outages**](docs/OutagesAPIPublicApi.md#filter_outages) | **POST** /v7/internet-insights/outages/filter | List network and application outages
-*OutagesAPIPublicApi* | [**get_app_outage**](docs/OutagesAPIPublicApi.md#get_app_outage) | **GET** /v7/internet-insights/outages/app/{outageId} | Retrieve application outage
-*OutagesAPIPublicApi* | [**get_network_outage**](docs/OutagesAPIPublicApi.md#get_network_outage) | **GET** /v7/internet-insights/outages/net/{outageId} | Retrieve network outage
+*CatalogProvidersApi* | [**filter_catalog_providers**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/CatalogProvidersApi.md#filter_catalog_providers) | **POST** /v7/internet-insights/catalog/providers/filter | List catalog providers
+*CatalogProvidersApi* | [**get_catalog_provider**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/CatalogProvidersApi.md#get_catalog_provider) | **GET** /v7/internet-insights/catalog/providers/{providerId} | Retrieve a catalog provider
+*OutagesAPIPublicApi* | [**filter_outages**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/OutagesAPIPublicApi.md#filter_outages) | **POST** /v7/internet-insights/outages/filter | List network and application outages
+*OutagesAPIPublicApi* | [**get_app_outage**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/OutagesAPIPublicApi.md#get_app_outage) | **GET** /v7/internet-insights/outages/app/{outageId} | Retrieve application outage
+*OutagesAPIPublicApi* | [**get_network_outage**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/OutagesAPIPublicApi.md#get_network_outage) | **GET** /v7/internet-insights/outages/net/{outageId} | Retrieve network outage
 
 
 ## Documentation For Models
 
- - [ApiAffectedAgent](docs/ApiAffectedAgent.md)
- - [ApiAffectedTest](docs/ApiAffectedTest.md)
- - [ApiApplicationOutageAffectedLocation](docs/ApiApplicationOutageAffectedLocation.md)
- - [ApiApplicationOutageAffectedServer](docs/ApiApplicationOutageAffectedServer.md)
- - [ApiApplicationOutageDetails](docs/ApiApplicationOutageDetails.md)
- - [ApiAsn](docs/ApiAsn.md)
- - [ApiCatalogProvider](docs/ApiCatalogProvider.md)
- - [ApiCatalogProviderDetails](docs/ApiCatalogProviderDetails.md)
- - [ApiCatalogProviderFilter](docs/ApiCatalogProviderFilter.md)
- - [ApiCatalogProviderResponse](docs/ApiCatalogProviderResponse.md)
- - [ApiNetworkOutageAffectedLocation](docs/ApiNetworkOutageAffectedLocation.md)
- - [ApiNetworkOutageDetails](docs/ApiNetworkOutageDetails.md)
- - [ApiOutage](docs/ApiOutage.md)
- - [ApiOutageFilter](docs/ApiOutageFilter.md)
- - [ApiOutagesResponse](docs/ApiOutagesResponse.md)
- - [Error](docs/Error.md)
- - [Link](docs/Link.md)
- - [OutageScope](docs/OutageScope.md)
- - [ProviderLocation](docs/ProviderLocation.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [ApiAffectedAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiAffectedAgent.md)
+ - [ApiAffectedTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiAffectedTest.md)
+ - [ApiApplicationOutageAffectedLocation](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiApplicationOutageAffectedLocation.md)
+ - [ApiApplicationOutageAffectedServer](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiApplicationOutageAffectedServer.md)
+ - [ApiApplicationOutageDetails](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiApplicationOutageDetails.md)
+ - [ApiAsn](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiAsn.md)
+ - [ApiCatalogProvider](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiCatalogProvider.md)
+ - [ApiCatalogProviderDetails](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiCatalogProviderDetails.md)
+ - [ApiCatalogProviderFilter](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiCatalogProviderFilter.md)
+ - [ApiCatalogProviderResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiCatalogProviderResponse.md)
+ - [ApiNetworkOutageAffectedLocation](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiNetworkOutageAffectedLocation.md)
+ - [ApiNetworkOutageDetails](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiNetworkOutageDetails.md)
+ - [ApiOutage](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiOutage.md)
+ - [ApiOutageFilter](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiOutageFilter.md)
+ - [ApiOutagesResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ApiOutagesResponse.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/Error.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/Link.md)
+ - [OutageScope](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/OutageScope.md)
+ - [ProviderLocation](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ProviderLocation.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/SelfLinks.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/UnauthorizedError.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-internet-insights/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -153,6 +153,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

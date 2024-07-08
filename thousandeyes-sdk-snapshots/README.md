@@ -14,12 +14,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-snapshots\&subdirectory=thousandeyes-sdk-snapshots
+pip install thousandeyes-sdk-snapshots
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-snapshots\&subdirectory=thousandeyes-sdk-snapshots`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-snapshots`)
 
 Then import the package:
 ```python
@@ -46,7 +46,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -96,27 +96,27 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*CreateTestSnapshotApi* | [**create_test_snapshot**](docs/CreateTestSnapshotApi.md#create_test_snapshot) | **POST** /v7/tests/{testId}/snapshot | Create test snapshot
+*CreateTestSnapshotApi* | [**create_test_snapshot**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/CreateTestSnapshotApi.md#create_test_snapshot) | **POST** /v7/tests/{testId}/snapshot | Create test snapshot
 
 
 ## Documentation For Models
 
- - [AppAndSelfLinks](docs/AppAndSelfLinks.md)
- - [Error](docs/Error.md)
- - [Link](docs/Link.md)
- - [SnapshotLinks](docs/SnapshotLinks.md)
- - [SnapshotRequest](docs/SnapshotRequest.md)
- - [SnapshotResponse](docs/SnapshotResponse.md)
- - [SnapshotTest](docs/SnapshotTest.md)
- - [TestInterval](docs/TestInterval.md)
- - [TestLinks](docs/TestLinks.md)
- - [TestSelfLink](docs/TestSelfLink.md)
- - [TestType](docs/TestType.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [UnexpandedInstantTest](docs/UnexpandedInstantTest.md)
- - [UnexpandedTest](docs/UnexpandedTest.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
+ - [AppAndSelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/AppAndSelfLinks.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/Error.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/Link.md)
+ - [SnapshotLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/SnapshotLinks.md)
+ - [SnapshotRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/SnapshotRequest.md)
+ - [SnapshotResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/SnapshotResponse.md)
+ - [SnapshotTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/SnapshotTest.md)
+ - [TestInterval](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/TestInterval.md)
+ - [TestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/TestLinks.md)
+ - [TestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/TestSelfLink.md)
+ - [TestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/TestType.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/UnauthorizedError.md)
+ - [UnexpandedInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/UnexpandedInstantTest.md)
+ - [UnexpandedTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/UnexpandedTest.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-snapshots/docs/ValidationErrorItem.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -132,6 +132,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 

@@ -15,12 +15,12 @@ Python 3.8+
 ## Installation & Usage
 ### pip install
 
-If the python package is hosted on a repository, you can install directly using:
+Install directly via PyPi:
 
 ```sh
-pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-tests\&subdirectory=thousandeyes-sdk-tests
+pip install thousandeyes-sdk-tests
 ```
-(you may need to run `pip` with root permission: `sudo pip install -e git+https://github.com/GIT_USER_ID/GIT_REPO_ID.git#egg=thousandeyes-sdk-tests\&subdirectory=thousandeyes-sdk-tests`)
+(you may need to run `pip` with root permission: `sudo pip install thousandeyes-sdk-tests`)
 
 Then import the package:
 ```python
@@ -47,7 +47,7 @@ Execute `pytest` to run the tests.
 
 ## Getting Started
 
-Please follow the [installation procedure](#installation--usage) and then run the following:
+Please follow the installation procedure and then run the following:
 
 ```python
 
@@ -97,227 +97,227 @@ All URIs are relative to *https://api.thousandeyes.com*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*APIApi* | [**create_api_test**](docs/APIApi.md#create_api_test) | **POST** /v7/tests/api | Create API test
-*APIApi* | [**delete_api_test**](docs/APIApi.md#delete_api_test) | **DELETE** /v7/tests/api/{testId} | Delete API test
-*APIApi* | [**get_api_test**](docs/APIApi.md#get_api_test) | **GET** /v7/tests/api/{testId} | Get API test
-*APIApi* | [**get_api_tests**](docs/APIApi.md#get_api_tests) | **GET** /v7/tests/api | List API tests
-*APIApi* | [**update_api_test**](docs/APIApi.md#update_api_test) | **PUT** /v7/tests/api/{testId} | Update API test
-*AgentToAgentApi* | [**create_agent_to_agent_test**](docs/AgentToAgentApi.md#create_agent_to_agent_test) | **POST** /v7/tests/agent-to-agent | Create Agent to Agent test
-*AgentToAgentApi* | [**delete_agent_to_agent_test**](docs/AgentToAgentApi.md#delete_agent_to_agent_test) | **DELETE** /v7/tests/agent-to-agent/{testId} | Delete Agent to Agent test
-*AgentToAgentApi* | [**get_agent_to_agent_test**](docs/AgentToAgentApi.md#get_agent_to_agent_test) | **GET** /v7/tests/agent-to-agent/{testId} | Get Agent to Agent test
-*AgentToAgentApi* | [**get_agent_to_agent_tests**](docs/AgentToAgentApi.md#get_agent_to_agent_tests) | **GET** /v7/tests/agent-to-agent | List Agent to Agent tests
-*AgentToAgentApi* | [**update_agent_to_agent_test**](docs/AgentToAgentApi.md#update_agent_to_agent_test) | **PUT** /v7/tests/agent-to-agent/{testId} | Update Agent to Agent test
-*AgentToServerApi* | [**create_agent_to_server_test**](docs/AgentToServerApi.md#create_agent_to_server_test) | **POST** /v7/tests/agent-to-server | Create Agent to Server test
-*AgentToServerApi* | [**delete_agent_to_server_test**](docs/AgentToServerApi.md#delete_agent_to_server_test) | **DELETE** /v7/tests/agent-to-server/{testId} | Delete Agent to Server test
-*AgentToServerApi* | [**get_agent_to_server_test**](docs/AgentToServerApi.md#get_agent_to_server_test) | **GET** /v7/tests/agent-to-server/{testId} | Get Agent to Server test
-*AgentToServerApi* | [**get_agent_to_server_tests**](docs/AgentToServerApi.md#get_agent_to_server_tests) | **GET** /v7/tests/agent-to-server | List Agent to Server tests
-*AgentToServerApi* | [**update_agent_to_server_test**](docs/AgentToServerApi.md#update_agent_to_server_test) | **PUT** /v7/tests/agent-to-server/{testId} | Update Agent to Server test
-*AllTestTypesApi* | [**get_tests**](docs/AllTestTypesApi.md#get_tests) | **GET** /v7/tests | List configured tests
-*BGPApi* | [**create_bgp_test**](docs/BGPApi.md#create_bgp_test) | **POST** /v7/tests/bgp | Create BGP test
-*BGPApi* | [**delete_bgp_test**](docs/BGPApi.md#delete_bgp_test) | **DELETE** /v7/tests/bgp/{testId} | Delete BGP test
-*BGPApi* | [**get_bgp_test**](docs/BGPApi.md#get_bgp_test) | **GET** /v7/tests/bgp/{testId} | Get BGP test
-*BGPApi* | [**get_bgp_tests**](docs/BGPApi.md#get_bgp_tests) | **GET** /v7/tests/bgp | List BGP tests
-*BGPApi* | [**update_bgp_test**](docs/BGPApi.md#update_bgp_test) | **PUT** /v7/tests/bgp/{testId} | Update BGP test
-*DNSSECApi* | [**create_dns_sec_test**](docs/DNSSECApi.md#create_dns_sec_test) | **POST** /v7/tests/dnssec | Create DNSSEC test
-*DNSSECApi* | [**delete_dns_sec_test**](docs/DNSSECApi.md#delete_dns_sec_test) | **DELETE** /v7/tests/dnssec/{testId} | Delete DNSSEC test
-*DNSSECApi* | [**get_dns_sec_test**](docs/DNSSECApi.md#get_dns_sec_test) | **GET** /v7/tests/dnssec/{testId} | Get DNSSEC test
-*DNSSECApi* | [**get_dns_sec_tests**](docs/DNSSECApi.md#get_dns_sec_tests) | **GET** /v7/tests/dnssec | List DNSSEC tests
-*DNSSECApi* | [**update_dns_sec_test**](docs/DNSSECApi.md#update_dns_sec_test) | **PUT** /v7/tests/dnssec/{testId} | Update DNSSEC test
-*DNSServerApi* | [**create_dns_server_test**](docs/DNSServerApi.md#create_dns_server_test) | **POST** /v7/tests/dns-server | Create DNS Server test
-*DNSServerApi* | [**delete_dns_server_test**](docs/DNSServerApi.md#delete_dns_server_test) | **DELETE** /v7/tests/dns-server/{testId} | Delete DNS Server test
-*DNSServerApi* | [**get_dns_server_test**](docs/DNSServerApi.md#get_dns_server_test) | **GET** /v7/tests/dns-server/{testId} | Get DNS Server test
-*DNSServerApi* | [**get_dns_server_tests**](docs/DNSServerApi.md#get_dns_server_tests) | **GET** /v7/tests/dns-server | List DNS Server tests
-*DNSServerApi* | [**update_dns_server_test**](docs/DNSServerApi.md#update_dns_server_test) | **PUT** /v7/tests/dns-server/{testId} | Update DNS Server test
-*DNSTraceApi* | [**create_dns_trace_test**](docs/DNSTraceApi.md#create_dns_trace_test) | **POST** /v7/tests/dns-trace | Create DNS Trace test
-*DNSTraceApi* | [**delete_dns_trace_test**](docs/DNSTraceApi.md#delete_dns_trace_test) | **DELETE** /v7/tests/dns-trace/{testId} | Delete DNS Trace test
-*DNSTraceApi* | [**get_dns_trace_test**](docs/DNSTraceApi.md#get_dns_trace_test) | **GET** /v7/tests/dns-trace/{testId} | Get DNS Trace test
-*DNSTraceApi* | [**get_dns_trace_tests**](docs/DNSTraceApi.md#get_dns_trace_tests) | **GET** /v7/tests/dns-trace | List DNS Trace tests
-*DNSTraceApi* | [**update_dns_trace_test**](docs/DNSTraceApi.md#update_dns_trace_test) | **PUT** /v7/tests/dns-trace/{testId} | Update DNS Trace test
-*FTPServerApi* | [**create_ftp_server_test**](docs/FTPServerApi.md#create_ftp_server_test) | **POST** /v7/tests/ftp-server | Create FTP Server test
-*FTPServerApi* | [**delete_ftp_server_test**](docs/FTPServerApi.md#delete_ftp_server_test) | **DELETE** /v7/tests/ftp-server/{testId} | Delete FTP Server test
-*FTPServerApi* | [**get_ftp_server_test**](docs/FTPServerApi.md#get_ftp_server_test) | **GET** /v7/tests/ftp-server/{testId} | Get FTP Server test
-*FTPServerApi* | [**get_ftp_server_tests**](docs/FTPServerApi.md#get_ftp_server_tests) | **GET** /v7/tests/ftp-server | List FTP Server tests
-*FTPServerApi* | [**update_ftp_server_test**](docs/FTPServerApi.md#update_ftp_server_test) | **PUT** /v7/tests/ftp-server/{testId} | Update FTP Server test
-*HTTPServerApi* | [**create_http_server_test**](docs/HTTPServerApi.md#create_http_server_test) | **POST** /v7/tests/http-server | Create HTTP Server test
-*HTTPServerApi* | [**delete_http_server_test**](docs/HTTPServerApi.md#delete_http_server_test) | **DELETE** /v7/tests/http-server/{testId} | Delete HTTP Server test
-*HTTPServerApi* | [**get_http_server_test**](docs/HTTPServerApi.md#get_http_server_test) | **GET** /v7/tests/http-server/{testId} | Get HTTP Server test
-*HTTPServerApi* | [**get_http_server_tests**](docs/HTTPServerApi.md#get_http_server_tests) | **GET** /v7/tests/http-server | List HTTP Server tests
-*HTTPServerApi* | [**update_http_server_test**](docs/HTTPServerApi.md#update_http_server_test) | **PUT** /v7/tests/http-server/{testId} | Update HTTP Server test
-*PageLoadApi* | [**create_page_load_test**](docs/PageLoadApi.md#create_page_load_test) | **POST** /v7/tests/page-load | Create Page Load test
-*PageLoadApi* | [**delete_page_load_test**](docs/PageLoadApi.md#delete_page_load_test) | **DELETE** /v7/tests/page-load/{testId} | Delete Page Load test
-*PageLoadApi* | [**get_page_load_test**](docs/PageLoadApi.md#get_page_load_test) | **GET** /v7/tests/page-load/{testId} | Get Page Load test
-*PageLoadApi* | [**get_page_load_tests**](docs/PageLoadApi.md#get_page_load_tests) | **GET** /v7/tests/page-load | List Page Load tests
-*PageLoadApi* | [**update_page_load_test**](docs/PageLoadApi.md#update_page_load_test) | **PUT** /v7/tests/page-load/{testId} | Update Page Load test
-*PathVisualizationInterfaceGroupsApi* | [**create_path_vis_interface_groups**](docs/PathVisualizationInterfaceGroupsApi.md#create_path_vis_interface_groups) | **POST** /v7/network/path-vis/interface-groups | Create interface group for path visualization
-*PathVisualizationInterfaceGroupsApi* | [**delete_path_vis_interface_group**](docs/PathVisualizationInterfaceGroupsApi.md#delete_path_vis_interface_group) | **DELETE** /v7/network/path-vis/interface-groups/{interfaceGroupId} | Delete interface group
-*PathVisualizationInterfaceGroupsApi* | [**get_path_vis_interface_groups**](docs/PathVisualizationInterfaceGroupsApi.md#get_path_vis_interface_groups) | **GET** /v7/network/path-vis/interface-groups | List interface groups for path visualization
-*PathVisualizationInterfaceGroupsApi* | [**update_path_vis_interface_group**](docs/PathVisualizationInterfaceGroupsApi.md#update_path_vis_interface_group) | **PUT** /v7/network/path-vis/interface-groups/{interfaceGroupId} | Update interface group
-*SIPServerApi* | [**create_sip_server_test**](docs/SIPServerApi.md#create_sip_server_test) | **POST** /v7/tests/sip-server | Create SIP Server test
-*SIPServerApi* | [**delete_sip_server_test**](docs/SIPServerApi.md#delete_sip_server_test) | **DELETE** /v7/tests/sip-server/{testId} | Delete SIP Server test
-*SIPServerApi* | [**get_sip_server_test**](docs/SIPServerApi.md#get_sip_server_test) | **GET** /v7/tests/sip-server/{testId} | Get SIP Server test
-*SIPServerApi* | [**get_sip_server_tests**](docs/SIPServerApi.md#get_sip_server_tests) | **GET** /v7/tests/sip-server | List SIP Server tests
-*SIPServerApi* | [**update_sip_server_test**](docs/SIPServerApi.md#update_sip_server_test) | **PUT** /v7/tests/sip-server/{testId} | Update SIP Server test
-*VoiceApi* | [**create_voice_test**](docs/VoiceApi.md#create_voice_test) | **POST** /v7/tests/voice | Create Voice test
-*VoiceApi* | [**delete_voice_test**](docs/VoiceApi.md#delete_voice_test) | **DELETE** /v7/tests/voice/{testId} | Delete Voice test
-*VoiceApi* | [**get_voice_test**](docs/VoiceApi.md#get_voice_test) | **GET** /v7/tests/voice/{testId} | Get Voice test
-*VoiceApi* | [**get_voice_tests**](docs/VoiceApi.md#get_voice_tests) | **GET** /v7/tests/voice | List Voice tests
-*VoiceApi* | [**update_voice_test**](docs/VoiceApi.md#update_voice_test) | **PUT** /v7/tests/voice/{testId} | Update Voice test
-*WebTransactionApi* | [**create_web_transactions_test**](docs/WebTransactionApi.md#create_web_transactions_test) | **POST** /v7/tests/web-transactions | Create Web Transactions test
-*WebTransactionApi* | [**delete_web_transactions_test**](docs/WebTransactionApi.md#delete_web_transactions_test) | **DELETE** /v7/tests/web-transactions/{testId} | Delete Web Transactions test
-*WebTransactionApi* | [**get_web_transactions_test**](docs/WebTransactionApi.md#get_web_transactions_test) | **GET** /v7/tests/web-transactions/{testId} | Get Web Transactions test
-*WebTransactionApi* | [**get_web_transactions_tests**](docs/WebTransactionApi.md#get_web_transactions_tests) | **GET** /v7/tests/web-transactions | List Web Transactions tests
-*WebTransactionApi* | [**update_web_transactions_test**](docs/WebTransactionApi.md#update_web_transactions_test) | **PUT** /v7/tests/web-transactions/{testId} | Update Web Transactions test
+*APIApi* | [**create_api_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/APIApi.md#create_api_test) | **POST** /v7/tests/api | Create API test
+*APIApi* | [**delete_api_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/APIApi.md#delete_api_test) | **DELETE** /v7/tests/api/{testId} | Delete API test
+*APIApi* | [**get_api_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/APIApi.md#get_api_test) | **GET** /v7/tests/api/{testId} | Get API test
+*APIApi* | [**get_api_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/APIApi.md#get_api_tests) | **GET** /v7/tests/api | List API tests
+*APIApi* | [**update_api_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/APIApi.md#update_api_test) | **PUT** /v7/tests/api/{testId} | Update API test
+*AgentToAgentApi* | [**create_agent_to_agent_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentApi.md#create_agent_to_agent_test) | **POST** /v7/tests/agent-to-agent | Create Agent to Agent test
+*AgentToAgentApi* | [**delete_agent_to_agent_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentApi.md#delete_agent_to_agent_test) | **DELETE** /v7/tests/agent-to-agent/{testId} | Delete Agent to Agent test
+*AgentToAgentApi* | [**get_agent_to_agent_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentApi.md#get_agent_to_agent_test) | **GET** /v7/tests/agent-to-agent/{testId} | Get Agent to Agent test
+*AgentToAgentApi* | [**get_agent_to_agent_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentApi.md#get_agent_to_agent_tests) | **GET** /v7/tests/agent-to-agent | List Agent to Agent tests
+*AgentToAgentApi* | [**update_agent_to_agent_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentApi.md#update_agent_to_agent_test) | **PUT** /v7/tests/agent-to-agent/{testId} | Update Agent to Agent test
+*AgentToServerApi* | [**create_agent_to_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToServerApi.md#create_agent_to_server_test) | **POST** /v7/tests/agent-to-server | Create Agent to Server test
+*AgentToServerApi* | [**delete_agent_to_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToServerApi.md#delete_agent_to_server_test) | **DELETE** /v7/tests/agent-to-server/{testId} | Delete Agent to Server test
+*AgentToServerApi* | [**get_agent_to_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToServerApi.md#get_agent_to_server_test) | **GET** /v7/tests/agent-to-server/{testId} | Get Agent to Server test
+*AgentToServerApi* | [**get_agent_to_server_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToServerApi.md#get_agent_to_server_tests) | **GET** /v7/tests/agent-to-server | List Agent to Server tests
+*AgentToServerApi* | [**update_agent_to_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToServerApi.md#update_agent_to_server_test) | **PUT** /v7/tests/agent-to-server/{testId} | Update Agent to Server test
+*AllTestTypesApi* | [**get_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AllTestTypesApi.md#get_tests) | **GET** /v7/tests | List configured tests
+*BGPApi* | [**create_bgp_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BGPApi.md#create_bgp_test) | **POST** /v7/tests/bgp | Create BGP test
+*BGPApi* | [**delete_bgp_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BGPApi.md#delete_bgp_test) | **DELETE** /v7/tests/bgp/{testId} | Delete BGP test
+*BGPApi* | [**get_bgp_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BGPApi.md#get_bgp_test) | **GET** /v7/tests/bgp/{testId} | Get BGP test
+*BGPApi* | [**get_bgp_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BGPApi.md#get_bgp_tests) | **GET** /v7/tests/bgp | List BGP tests
+*BGPApi* | [**update_bgp_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BGPApi.md#update_bgp_test) | **PUT** /v7/tests/bgp/{testId} | Update BGP test
+*DNSSECApi* | [**create_dns_sec_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSSECApi.md#create_dns_sec_test) | **POST** /v7/tests/dnssec | Create DNSSEC test
+*DNSSECApi* | [**delete_dns_sec_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSSECApi.md#delete_dns_sec_test) | **DELETE** /v7/tests/dnssec/{testId} | Delete DNSSEC test
+*DNSSECApi* | [**get_dns_sec_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSSECApi.md#get_dns_sec_test) | **GET** /v7/tests/dnssec/{testId} | Get DNSSEC test
+*DNSSECApi* | [**get_dns_sec_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSSECApi.md#get_dns_sec_tests) | **GET** /v7/tests/dnssec | List DNSSEC tests
+*DNSSECApi* | [**update_dns_sec_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSSECApi.md#update_dns_sec_test) | **PUT** /v7/tests/dnssec/{testId} | Update DNSSEC test
+*DNSServerApi* | [**create_dns_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSServerApi.md#create_dns_server_test) | **POST** /v7/tests/dns-server | Create DNS Server test
+*DNSServerApi* | [**delete_dns_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSServerApi.md#delete_dns_server_test) | **DELETE** /v7/tests/dns-server/{testId} | Delete DNS Server test
+*DNSServerApi* | [**get_dns_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSServerApi.md#get_dns_server_test) | **GET** /v7/tests/dns-server/{testId} | Get DNS Server test
+*DNSServerApi* | [**get_dns_server_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSServerApi.md#get_dns_server_tests) | **GET** /v7/tests/dns-server | List DNS Server tests
+*DNSServerApi* | [**update_dns_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSServerApi.md#update_dns_server_test) | **PUT** /v7/tests/dns-server/{testId} | Update DNS Server test
+*DNSTraceApi* | [**create_dns_trace_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSTraceApi.md#create_dns_trace_test) | **POST** /v7/tests/dns-trace | Create DNS Trace test
+*DNSTraceApi* | [**delete_dns_trace_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSTraceApi.md#delete_dns_trace_test) | **DELETE** /v7/tests/dns-trace/{testId} | Delete DNS Trace test
+*DNSTraceApi* | [**get_dns_trace_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSTraceApi.md#get_dns_trace_test) | **GET** /v7/tests/dns-trace/{testId} | Get DNS Trace test
+*DNSTraceApi* | [**get_dns_trace_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSTraceApi.md#get_dns_trace_tests) | **GET** /v7/tests/dns-trace | List DNS Trace tests
+*DNSTraceApi* | [**update_dns_trace_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DNSTraceApi.md#update_dns_trace_test) | **PUT** /v7/tests/dns-trace/{testId} | Update DNS Trace test
+*FTPServerApi* | [**create_ftp_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FTPServerApi.md#create_ftp_server_test) | **POST** /v7/tests/ftp-server | Create FTP Server test
+*FTPServerApi* | [**delete_ftp_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FTPServerApi.md#delete_ftp_server_test) | **DELETE** /v7/tests/ftp-server/{testId} | Delete FTP Server test
+*FTPServerApi* | [**get_ftp_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FTPServerApi.md#get_ftp_server_test) | **GET** /v7/tests/ftp-server/{testId} | Get FTP Server test
+*FTPServerApi* | [**get_ftp_server_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FTPServerApi.md#get_ftp_server_tests) | **GET** /v7/tests/ftp-server | List FTP Server tests
+*FTPServerApi* | [**update_ftp_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FTPServerApi.md#update_ftp_server_test) | **PUT** /v7/tests/ftp-server/{testId} | Update FTP Server test
+*HTTPServerApi* | [**create_http_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/HTTPServerApi.md#create_http_server_test) | **POST** /v7/tests/http-server | Create HTTP Server test
+*HTTPServerApi* | [**delete_http_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/HTTPServerApi.md#delete_http_server_test) | **DELETE** /v7/tests/http-server/{testId} | Delete HTTP Server test
+*HTTPServerApi* | [**get_http_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/HTTPServerApi.md#get_http_server_test) | **GET** /v7/tests/http-server/{testId} | Get HTTP Server test
+*HTTPServerApi* | [**get_http_server_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/HTTPServerApi.md#get_http_server_tests) | **GET** /v7/tests/http-server | List HTTP Server tests
+*HTTPServerApi* | [**update_http_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/HTTPServerApi.md#update_http_server_test) | **PUT** /v7/tests/http-server/{testId} | Update HTTP Server test
+*PageLoadApi* | [**create_page_load_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PageLoadApi.md#create_page_load_test) | **POST** /v7/tests/page-load | Create Page Load test
+*PageLoadApi* | [**delete_page_load_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PageLoadApi.md#delete_page_load_test) | **DELETE** /v7/tests/page-load/{testId} | Delete Page Load test
+*PageLoadApi* | [**get_page_load_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PageLoadApi.md#get_page_load_test) | **GET** /v7/tests/page-load/{testId} | Get Page Load test
+*PageLoadApi* | [**get_page_load_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PageLoadApi.md#get_page_load_tests) | **GET** /v7/tests/page-load | List Page Load tests
+*PageLoadApi* | [**update_page_load_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PageLoadApi.md#update_page_load_test) | **PUT** /v7/tests/page-load/{testId} | Update Page Load test
+*PathVisualizationInterfaceGroupsApi* | [**create_path_vis_interface_groups**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PathVisualizationInterfaceGroupsApi.md#create_path_vis_interface_groups) | **POST** /v7/network/path-vis/interface-groups | Create interface group for path visualization
+*PathVisualizationInterfaceGroupsApi* | [**delete_path_vis_interface_group**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PathVisualizationInterfaceGroupsApi.md#delete_path_vis_interface_group) | **DELETE** /v7/network/path-vis/interface-groups/{interfaceGroupId} | Delete interface group
+*PathVisualizationInterfaceGroupsApi* | [**get_path_vis_interface_groups**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PathVisualizationInterfaceGroupsApi.md#get_path_vis_interface_groups) | **GET** /v7/network/path-vis/interface-groups | List interface groups for path visualization
+*PathVisualizationInterfaceGroupsApi* | [**update_path_vis_interface_group**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PathVisualizationInterfaceGroupsApi.md#update_path_vis_interface_group) | **PUT** /v7/network/path-vis/interface-groups/{interfaceGroupId} | Update interface group
+*SIPServerApi* | [**create_sip_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SIPServerApi.md#create_sip_server_test) | **POST** /v7/tests/sip-server | Create SIP Server test
+*SIPServerApi* | [**delete_sip_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SIPServerApi.md#delete_sip_server_test) | **DELETE** /v7/tests/sip-server/{testId} | Delete SIP Server test
+*SIPServerApi* | [**get_sip_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SIPServerApi.md#get_sip_server_test) | **GET** /v7/tests/sip-server/{testId} | Get SIP Server test
+*SIPServerApi* | [**get_sip_server_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SIPServerApi.md#get_sip_server_tests) | **GET** /v7/tests/sip-server | List SIP Server tests
+*SIPServerApi* | [**update_sip_server_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SIPServerApi.md#update_sip_server_test) | **PUT** /v7/tests/sip-server/{testId} | Update SIP Server test
+*VoiceApi* | [**create_voice_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/VoiceApi.md#create_voice_test) | **POST** /v7/tests/voice | Create Voice test
+*VoiceApi* | [**delete_voice_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/VoiceApi.md#delete_voice_test) | **DELETE** /v7/tests/voice/{testId} | Delete Voice test
+*VoiceApi* | [**get_voice_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/VoiceApi.md#get_voice_test) | **GET** /v7/tests/voice/{testId} | Get Voice test
+*VoiceApi* | [**get_voice_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/VoiceApi.md#get_voice_tests) | **GET** /v7/tests/voice | List Voice tests
+*VoiceApi* | [**update_voice_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/VoiceApi.md#update_voice_test) | **PUT** /v7/tests/voice/{testId} | Update Voice test
+*WebTransactionApi* | [**create_web_transactions_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/WebTransactionApi.md#create_web_transactions_test) | **POST** /v7/tests/web-transactions | Create Web Transactions test
+*WebTransactionApi* | [**delete_web_transactions_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/WebTransactionApi.md#delete_web_transactions_test) | **DELETE** /v7/tests/web-transactions/{testId} | Delete Web Transactions test
+*WebTransactionApi* | [**get_web_transactions_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/WebTransactionApi.md#get_web_transactions_test) | **GET** /v7/tests/web-transactions/{testId} | Get Web Transactions test
+*WebTransactionApi* | [**get_web_transactions_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/WebTransactionApi.md#get_web_transactions_tests) | **GET** /v7/tests/web-transactions | List Web Transactions tests
+*WebTransactionApi* | [**update_web_transactions_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/WebTransactionApi.md#update_web_transactions_test) | **PUT** /v7/tests/web-transactions/{testId} | Update Web Transactions test
 
 
 ## Documentation For Models
 
- - [Agent](docs/Agent.md)
- - [AgentBase](docs/AgentBase.md)
- - [AgentRequest](docs/AgentRequest.md)
- - [AgentToAgentInstantTest](docs/AgentToAgentInstantTest.md)
- - [AgentToAgentProperties](docs/AgentToAgentProperties.md)
- - [AgentToAgentTest](docs/AgentToAgentTest.md)
- - [AgentToAgentTestProtocol](docs/AgentToAgentTestProtocol.md)
- - [AgentToAgentTests](docs/AgentToAgentTests.md)
- - [AgentToServerInstantTest](docs/AgentToServerInstantTest.md)
- - [AgentToServerProperties](docs/AgentToServerProperties.md)
- - [AgentToServerTest](docs/AgentToServerTest.md)
- - [AgentToServerTests](docs/AgentToServerTests.md)
- - [AlertDirection](docs/AlertDirection.md)
- - [AlertRoundsViolationMode](docs/AlertRoundsViolationMode.md)
- - [AlertRule](docs/AlertRule.md)
- - [AlertType](docs/AlertType.md)
- - [ApiInstantTest](docs/ApiInstantTest.md)
- - [ApiPredefinedVariable](docs/ApiPredefinedVariable.md)
- - [ApiProperties](docs/ApiProperties.md)
- - [ApiRequest](docs/ApiRequest.md)
- - [ApiRequestAssertion](docs/ApiRequestAssertion.md)
- - [ApiRequestAssertionName](docs/ApiRequestAssertionName.md)
- - [ApiRequestAssertionOperator](docs/ApiRequestAssertionOperator.md)
- - [ApiRequestAuthType](docs/ApiRequestAuthType.md)
- - [ApiRequestHeader](docs/ApiRequestHeader.md)
- - [ApiRequestMethod](docs/ApiRequestMethod.md)
- - [ApiRequestVariable](docs/ApiRequestVariable.md)
- - [ApiTest](docs/ApiTest.md)
- - [ApiTests](docs/ApiTests.md)
- - [BaseBgpTest](docs/BaseBgpTest.md)
- - [BaseRequest](docs/BaseRequest.md)
- - [BaseTest](docs/BaseTest.md)
- - [BgpTest](docs/BgpTest.md)
- - [BgpTests](docs/BgpTests.md)
- - [CloudEnterpriseAgentType](docs/CloudEnterpriseAgentType.md)
- - [DnsQueryClass](docs/DnsQueryClass.md)
- - [DnsSecInstantTest](docs/DnsSecInstantTest.md)
- - [DnsSecProperties](docs/DnsSecProperties.md)
- - [DnsSecTest](docs/DnsSecTest.md)
- - [DnsSecTests](docs/DnsSecTests.md)
- - [DnsServerInstantTest](docs/DnsServerInstantTest.md)
- - [DnsServerProperties](docs/DnsServerProperties.md)
- - [DnsServerTest](docs/DnsServerTest.md)
- - [DnsServerTests](docs/DnsServerTests.md)
- - [DnsServersRequest](docs/DnsServersRequest.md)
- - [DnsTraceInstantTest](docs/DnsTraceInstantTest.md)
- - [DnsTraceProperties](docs/DnsTraceProperties.md)
- - [DnsTraceTest](docs/DnsTraceTest.md)
- - [DnsTraceTests](docs/DnsTraceTests.md)
- - [Error](docs/Error.md)
- - [Expand](docs/Expand.md)
- - [FtpServerInstantTest](docs/FtpServerInstantTest.md)
- - [FtpServerProperties](docs/FtpServerProperties.md)
- - [FtpServerRequestType](docs/FtpServerRequestType.md)
- - [FtpServerTest](docs/FtpServerTest.md)
- - [FtpServerTests](docs/FtpServerTests.md)
- - [HttpServerInstantTest](docs/HttpServerInstantTest.md)
- - [HttpServerProperties](docs/HttpServerProperties.md)
- - [HttpServerTest](docs/HttpServerTest.md)
- - [HttpServerTests](docs/HttpServerTests.md)
- - [InstantTest](docs/InstantTest.md)
- - [InterfaceGroup](docs/InterfaceGroup.md)
- - [InterfaceGroups](docs/InterfaceGroups.md)
- - [Link](docs/Link.md)
- - [Monitor](docs/Monitor.md)
- - [MonitorType](docs/MonitorType.md)
- - [MonitorsRequest](docs/MonitorsRequest.md)
- - [PageLoadInstantTest](docs/PageLoadInstantTest.md)
- - [PageLoadProperties](docs/PageLoadProperties.md)
- - [PageLoadTest](docs/PageLoadTest.md)
- - [PageLoadTests](docs/PageLoadTests.md)
- - [SelfLinks](docs/SelfLinks.md)
- - [Severity](docs/Severity.md)
- - [SharedWithAccount](docs/SharedWithAccount.md)
- - [SimpleAgent](docs/SimpleAgent.md)
- - [SimpleTest](docs/SimpleTest.md)
- - [SipServerInstantTest](docs/SipServerInstantTest.md)
- - [SipServerInstantTestRequest](docs/SipServerInstantTestRequest.md)
- - [SipServerInstantTestResponse](docs/SipServerInstantTestResponse.md)
- - [SipServerProperties](docs/SipServerProperties.md)
- - [SipServerTest](docs/SipServerTest.md)
- - [SipServerTests](docs/SipServerTests.md)
- - [SipTestProtocol](docs/SipTestProtocol.md)
- - [TestAuthType](docs/TestAuthType.md)
- - [TestCustomHeaders](docs/TestCustomHeaders.md)
- - [TestDirection](docs/TestDirection.md)
- - [TestDnsServer](docs/TestDnsServer.md)
- - [TestDnsTransportProtocol](docs/TestDnsTransportProtocol.md)
- - [TestDscpId](docs/TestDscpId.md)
- - [TestHttpInterval](docs/TestHttpInterval.md)
- - [TestInterval](docs/TestInterval.md)
- - [TestIpv6Policy](docs/TestIpv6Policy.md)
- - [TestLabel](docs/TestLabel.md)
- - [TestLinks](docs/TestLinks.md)
- - [TestMonitorsProperties](docs/TestMonitorsProperties.md)
- - [TestPageLoadingStrategy](docs/TestPageLoadingStrategy.md)
- - [TestPathTraceMode](docs/TestPathTraceMode.md)
- - [TestProbeMode](docs/TestProbeMode.md)
- - [TestProtocol](docs/TestProtocol.md)
- - [TestRequest](docs/TestRequest.md)
- - [TestSelfLink](docs/TestSelfLink.md)
- - [TestSipCredentials](docs/TestSipCredentials.md)
- - [TestSslVersionId](docs/TestSslVersionId.md)
- - [TestSubInterval](docs/TestSubInterval.md)
- - [TestType](docs/TestType.md)
- - [Tests](docs/Tests.md)
- - [UnauthorizedError](docs/UnauthorizedError.md)
- - [UnexpandedAgentToAgentTest](docs/UnexpandedAgentToAgentTest.md)
- - [UnexpandedAgentToServerTest](docs/UnexpandedAgentToServerTest.md)
- - [UnexpandedApiTest](docs/UnexpandedApiTest.md)
- - [UnexpandedBgpTest](docs/UnexpandedBgpTest.md)
- - [UnexpandedDnsSecTest](docs/UnexpandedDnsSecTest.md)
- - [UnexpandedDnsServerTest](docs/UnexpandedDnsServerTest.md)
- - [UnexpandedDnsTraceTest](docs/UnexpandedDnsTraceTest.md)
- - [UnexpandedFtpServerTest](docs/UnexpandedFtpServerTest.md)
- - [UnexpandedHttpServerTest](docs/UnexpandedHttpServerTest.md)
- - [UnexpandedInstantTest](docs/UnexpandedInstantTest.md)
- - [UnexpandedPageLoadTest](docs/UnexpandedPageLoadTest.md)
- - [UnexpandedSipServerTest](docs/UnexpandedSipServerTest.md)
- - [UnexpandedTest](docs/UnexpandedTest.md)
- - [UnexpandedVoiceTest](docs/UnexpandedVoiceTest.md)
- - [UnexpandedWebTransactionTest](docs/UnexpandedWebTransactionTest.md)
- - [UpdateAgentToAgentTest](docs/UpdateAgentToAgentTest.md)
- - [UpdateAgentToServerTest](docs/UpdateAgentToServerTest.md)
- - [UpdateApiTest](docs/UpdateApiTest.md)
- - [UpdateBgpTest](docs/UpdateBgpTest.md)
- - [UpdateBgpTestRequest](docs/UpdateBgpTestRequest.md)
- - [UpdateDnsSecTest](docs/UpdateDnsSecTest.md)
- - [UpdateDnsServerTest](docs/UpdateDnsServerTest.md)
- - [UpdateDnsTraceTest](docs/UpdateDnsTraceTest.md)
- - [UpdateFtpServerTest](docs/UpdateFtpServerTest.md)
- - [UpdateHttpServerTest](docs/UpdateHttpServerTest.md)
- - [UpdatePageLoadTest](docs/UpdatePageLoadTest.md)
- - [UpdateSipServerTest](docs/UpdateSipServerTest.md)
- - [UpdateSipServerTest1](docs/UpdateSipServerTest1.md)
- - [UpdateVoiceTest](docs/UpdateVoiceTest.md)
- - [UpdateWebTransactionTest](docs/UpdateWebTransactionTest.md)
- - [ValidationError](docs/ValidationError.md)
- - [ValidationErrorItem](docs/ValidationErrorItem.md)
- - [VoiceInstantTest](docs/VoiceInstantTest.md)
- - [VoiceProperties](docs/VoiceProperties.md)
- - [VoiceTest](docs/VoiceTest.md)
- - [VoiceTests](docs/VoiceTests.md)
- - [WebTransactionInstantTest](docs/WebTransactionInstantTest.md)
- - [WebTransactionProperties](docs/WebTransactionProperties.md)
- - [WebTransactionTest](docs/WebTransactionTest.md)
- - [WebTransactionTests](docs/WebTransactionTests.md)
+ - [Agent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/Agent.md)
+ - [AgentBase](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentBase.md)
+ - [AgentRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentRequest.md)
+ - [AgentToAgentInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentInstantTest.md)
+ - [AgentToAgentProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentProperties.md)
+ - [AgentToAgentTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentTest.md)
+ - [AgentToAgentTestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentTestProtocol.md)
+ - [AgentToAgentTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToAgentTests.md)
+ - [AgentToServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToServerInstantTest.md)
+ - [AgentToServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToServerProperties.md)
+ - [AgentToServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToServerTest.md)
+ - [AgentToServerTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AgentToServerTests.md)
+ - [AlertDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AlertDirection.md)
+ - [AlertRoundsViolationMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AlertRoundsViolationMode.md)
+ - [AlertRule](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AlertRule.md)
+ - [AlertType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/AlertType.md)
+ - [ApiInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiInstantTest.md)
+ - [ApiPredefinedVariable](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiPredefinedVariable.md)
+ - [ApiProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiProperties.md)
+ - [ApiRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiRequest.md)
+ - [ApiRequestAssertion](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiRequestAssertion.md)
+ - [ApiRequestAssertionName](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiRequestAssertionName.md)
+ - [ApiRequestAssertionOperator](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiRequestAssertionOperator.md)
+ - [ApiRequestAuthType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiRequestAuthType.md)
+ - [ApiRequestHeader](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiRequestHeader.md)
+ - [ApiRequestMethod](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiRequestMethod.md)
+ - [ApiRequestVariable](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiRequestVariable.md)
+ - [ApiTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiTest.md)
+ - [ApiTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ApiTests.md)
+ - [BaseBgpTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BaseBgpTest.md)
+ - [BaseRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BaseRequest.md)
+ - [BaseTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BaseTest.md)
+ - [BgpTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BgpTest.md)
+ - [BgpTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/BgpTests.md)
+ - [CloudEnterpriseAgentType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/CloudEnterpriseAgentType.md)
+ - [DnsQueryClass](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsQueryClass.md)
+ - [DnsSecInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsSecInstantTest.md)
+ - [DnsSecProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsSecProperties.md)
+ - [DnsSecTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsSecTest.md)
+ - [DnsSecTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsSecTests.md)
+ - [DnsServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsServerInstantTest.md)
+ - [DnsServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsServerProperties.md)
+ - [DnsServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsServerTest.md)
+ - [DnsServerTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsServerTests.md)
+ - [DnsServersRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsServersRequest.md)
+ - [DnsTraceInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsTraceInstantTest.md)
+ - [DnsTraceProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsTraceProperties.md)
+ - [DnsTraceTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsTraceTest.md)
+ - [DnsTraceTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/DnsTraceTests.md)
+ - [Error](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/Error.md)
+ - [Expand](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/Expand.md)
+ - [FtpServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FtpServerInstantTest.md)
+ - [FtpServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FtpServerProperties.md)
+ - [FtpServerRequestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FtpServerRequestType.md)
+ - [FtpServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FtpServerTest.md)
+ - [FtpServerTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/FtpServerTests.md)
+ - [HttpServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/HttpServerInstantTest.md)
+ - [HttpServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/HttpServerProperties.md)
+ - [HttpServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/HttpServerTest.md)
+ - [HttpServerTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/HttpServerTests.md)
+ - [InstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/InstantTest.md)
+ - [InterfaceGroup](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/InterfaceGroup.md)
+ - [InterfaceGroups](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/InterfaceGroups.md)
+ - [Link](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/Link.md)
+ - [Monitor](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/Monitor.md)
+ - [MonitorType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/MonitorType.md)
+ - [MonitorsRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/MonitorsRequest.md)
+ - [PageLoadInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PageLoadInstantTest.md)
+ - [PageLoadProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PageLoadProperties.md)
+ - [PageLoadTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PageLoadTest.md)
+ - [PageLoadTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/PageLoadTests.md)
+ - [SelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SelfLinks.md)
+ - [Severity](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/Severity.md)
+ - [SharedWithAccount](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SharedWithAccount.md)
+ - [SimpleAgent](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SimpleAgent.md)
+ - [SimpleTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SimpleTest.md)
+ - [SipServerInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SipServerInstantTest.md)
+ - [SipServerInstantTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SipServerInstantTestRequest.md)
+ - [SipServerInstantTestResponse](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SipServerInstantTestResponse.md)
+ - [SipServerProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SipServerProperties.md)
+ - [SipServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SipServerTest.md)
+ - [SipServerTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SipServerTests.md)
+ - [SipTestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/SipTestProtocol.md)
+ - [TestAuthType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestAuthType.md)
+ - [TestCustomHeaders](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestCustomHeaders.md)
+ - [TestDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestDirection.md)
+ - [TestDnsServer](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestDnsServer.md)
+ - [TestDnsTransportProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestDnsTransportProtocol.md)
+ - [TestDscpId](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestDscpId.md)
+ - [TestHttpInterval](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestHttpInterval.md)
+ - [TestInterval](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestInterval.md)
+ - [TestIpv6Policy](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestIpv6Policy.md)
+ - [TestLabel](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestLabel.md)
+ - [TestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestLinks.md)
+ - [TestMonitorsProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestMonitorsProperties.md)
+ - [TestPageLoadingStrategy](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestPageLoadingStrategy.md)
+ - [TestPathTraceMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestPathTraceMode.md)
+ - [TestProbeMode](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestProbeMode.md)
+ - [TestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestProtocol.md)
+ - [TestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestRequest.md)
+ - [TestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestSelfLink.md)
+ - [TestSipCredentials](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestSipCredentials.md)
+ - [TestSslVersionId](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestSslVersionId.md)
+ - [TestSubInterval](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestSubInterval.md)
+ - [TestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/TestType.md)
+ - [Tests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/Tests.md)
+ - [UnauthorizedError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnauthorizedError.md)
+ - [UnexpandedAgentToAgentTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedAgentToAgentTest.md)
+ - [UnexpandedAgentToServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedAgentToServerTest.md)
+ - [UnexpandedApiTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedApiTest.md)
+ - [UnexpandedBgpTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedBgpTest.md)
+ - [UnexpandedDnsSecTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedDnsSecTest.md)
+ - [UnexpandedDnsServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedDnsServerTest.md)
+ - [UnexpandedDnsTraceTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedDnsTraceTest.md)
+ - [UnexpandedFtpServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedFtpServerTest.md)
+ - [UnexpandedHttpServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedHttpServerTest.md)
+ - [UnexpandedInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedInstantTest.md)
+ - [UnexpandedPageLoadTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedPageLoadTest.md)
+ - [UnexpandedSipServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedSipServerTest.md)
+ - [UnexpandedTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedTest.md)
+ - [UnexpandedVoiceTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedVoiceTest.md)
+ - [UnexpandedWebTransactionTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UnexpandedWebTransactionTest.md)
+ - [UpdateAgentToAgentTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateAgentToAgentTest.md)
+ - [UpdateAgentToServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateAgentToServerTest.md)
+ - [UpdateApiTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateApiTest.md)
+ - [UpdateBgpTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateBgpTest.md)
+ - [UpdateBgpTestRequest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateBgpTestRequest.md)
+ - [UpdateDnsSecTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateDnsSecTest.md)
+ - [UpdateDnsServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateDnsServerTest.md)
+ - [UpdateDnsTraceTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateDnsTraceTest.md)
+ - [UpdateFtpServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateFtpServerTest.md)
+ - [UpdateHttpServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateHttpServerTest.md)
+ - [UpdatePageLoadTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdatePageLoadTest.md)
+ - [UpdateSipServerTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateSipServerTest.md)
+ - [UpdateSipServerTest1](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateSipServerTest1.md)
+ - [UpdateVoiceTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateVoiceTest.md)
+ - [UpdateWebTransactionTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/UpdateWebTransactionTest.md)
+ - [ValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ValidationError.md)
+ - [ValidationErrorItem](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/ValidationErrorItem.md)
+ - [VoiceInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/VoiceInstantTest.md)
+ - [VoiceProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/VoiceProperties.md)
+ - [VoiceTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/VoiceTest.md)
+ - [VoiceTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/VoiceTests.md)
+ - [WebTransactionInstantTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/WebTransactionInstantTest.md)
+ - [WebTransactionProperties](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/WebTransactionProperties.md)
+ - [WebTransactionTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/WebTransactionTest.md)
+ - [WebTransactionTests](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-tests/docs/WebTransactionTests.md)
 
 
 <a id="documentation-for-authorization"></a>
@@ -333,6 +333,6 @@ Authentication schemes defined for the API:
 
 ## Author
 
-
+<a href="mailto:api-team@thousandeyes.com">ThousandEyes API Team </a>
 
 
