@@ -30,6 +30,10 @@ jobs:
       url: https://pypi.org/p/${{ matrix.package-name }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          python-version: '3.11'
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
