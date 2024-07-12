@@ -7,7 +7,7 @@ on:
 jobs:
   set-package-matrix:
     # This action returns all sub-packages to be published.
-    # It thens exports the variable to matrix, so that the deployment job is run individually for each sub-package
+    # It thens exports the variable to `matrix`, so that the deployment job is run individually for each sub-package
     runs-on: ubuntu-latest
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
