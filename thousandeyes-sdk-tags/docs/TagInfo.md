@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **icon** | **str** |  | [optional] [readonly] 
 **id** | **str** | The tag ID | [optional] [readonly] 
 **key** | **str** | The tags&#39;s key | [optional] 
-**legacy_id** | **str** |  | [optional] [readonly] 
+**legacy_id** | **float** |  | [optional] [readonly] 
 **object_type** | [**ObjectType**](ObjectType.md) |  | [optional] 
 **value** | **str** | The tag&#39;s value | [optional] 
 
