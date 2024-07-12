@@ -33,7 +33,7 @@ jobs:
         with:
           ref: main
           python-version: '3.11'
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.CHECKOUT_PAT }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
