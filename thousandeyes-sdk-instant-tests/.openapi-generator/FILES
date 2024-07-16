@@ -48,6 +48,7 @@ docs/FtpServerProperties.md
 docs/FtpServerRequestType.md
 docs/HTTPPageLoadApi.md
 docs/HTTPServerApi.md
+docs/HttpServerBaseProperties.md
 docs/HttpServerInstantTest.md
 docs/HttpServerInstantTestRequest.md
 docs/HttpServerProperties.md
@@ -154,6 +155,7 @@ src/thousandeyes_sdk/instant_tests/models/expand.py
 src/thousandeyes_sdk/instant_tests/models/ftp_server_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/ftp_server_properties.py
 src/thousandeyes_sdk/instant_tests/models/ftp_server_request_type.py
+src/thousandeyes_sdk/instant_tests/models/http_server_base_properties.py
 src/thousandeyes_sdk/instant_tests/models/http_server_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/http_server_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/http_server_properties.py
