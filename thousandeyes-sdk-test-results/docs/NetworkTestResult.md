@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **agent** | [**Agent**](Agent.md) |  | [optional] 
 **server_ip** | **str** | IP of target server | [optional] [readonly] 
 **server** | **str** | Target server, including port (if method used is TCP) | [optional] [readonly] 
+**health_score** | **float** | A normalized value (0.0-1.0) representing the network connection health of the test target. Returns negative values as error codes. -1.0 indicates there was insufficient data to calculate the health score. | [optional] 
 **direction** | [**TestDirection**](TestDirection.md) |  | [optional] 
 
 ## Example

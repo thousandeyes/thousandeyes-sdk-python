@@ -4,6 +4,7 @@ README.md
 docs/APIApi.md
 docs/Agent.md
 docs/AgentBase.md
+docs/AgentInterfaces.md
 docs/AgentToAgentApi.md
 docs/AgentToAgentInstantTest.md
 docs/AgentToAgentInstantTestRequest.md
@@ -55,9 +56,11 @@ docs/HttpServerProperties.md
 docs/InstantTest.md
 docs/InstantTestRequest.md
 docs/Link.md
+docs/OAuth.md
 docs/PageLoadInstantTest.md
 docs/PageLoadInstantTestRequest.md
 docs/PageLoadProperties.md
+docs/RequestMethod.md
 docs/RunApi.md
 docs/SIPServerApi.md
 docs/ServerInstantTestRequest.md
@@ -119,6 +122,7 @@ src/thousandeyes_sdk/instant_tests/api/web_transaction_api.py
 src/thousandeyes_sdk/instant_tests/models/__init__.py
 src/thousandeyes_sdk/instant_tests/models/agent.py
 src/thousandeyes_sdk/instant_tests/models/agent_base.py
+src/thousandeyes_sdk/instant_tests/models/agent_interfaces.py
 src/thousandeyes_sdk/instant_tests/models/agent_to_agent_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/agent_to_agent_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/agent_to_agent_properties.py
@@ -162,9 +166,11 @@ src/thousandeyes_sdk/instant_tests/models/http_server_properties.py
 src/thousandeyes_sdk/instant_tests/models/instant_test.py
 src/thousandeyes_sdk/instant_tests/models/instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/link.py
+src/thousandeyes_sdk/instant_tests/models/o_auth.py
 src/thousandeyes_sdk/instant_tests/models/page_load_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/page_load_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/page_load_properties.py
+src/thousandeyes_sdk/instant_tests/models/request_method.py
 src/thousandeyes_sdk/instant_tests/models/server_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/shared_with_account.py
 src/thousandeyes_sdk/instant_tests/models/simple_agent.py
