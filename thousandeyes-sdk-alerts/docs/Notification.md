@@ -8,7 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | [**NotificationEmail**](NotificationEmail.md) |  | [optional] 
 **third_party** | [**List[NotificationThirdParty]**](NotificationThirdParty.md) | Third party notifications. | [optional] 
-**webhook** | [**List[NotificationWebhook]**](NotificationWebhook.md) | Webhooks notifications. | [optional] 
+**webhook** | [**List[NotificationWebhook]**](NotificationWebhook.md) | Webhook notifications. | [optional] 
+**custom_webhook** | [**List[NotificationCustomWebhook]**](NotificationCustomWebhook.md) | Custom webhook notifications. | [optional] 
 
 ## Example
 
