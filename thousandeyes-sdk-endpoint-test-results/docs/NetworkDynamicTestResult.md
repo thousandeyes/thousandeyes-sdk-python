@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **max_latency** | **float** | Maximum RTT for packets sent to destination. | [optional] [readonly] 
 **min_latency** | **float** | Minimum RTT for packets sent to destination. | [optional] [readonly] 
 **application** | **str** | Which supported application to monitor, can be one of &#x60;webex&#x60;, &#x60;zoom&#x60;, &#x60;microsoft-teams&#x60;. | [optional] 
-**protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
+**protocol** | [**EndpointTestResultProtocol**](EndpointTestResultProtocol.md) |  | [optional] 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
 **udp_probe_mode** | [**UdpProbeModeResponse**](UdpProbeModeResponse.md) |  | [optional] 
 **webex** | [**DynamicTestWebex**](DynamicTestWebex.md) |  | [optional] 

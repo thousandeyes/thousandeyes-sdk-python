@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **ssl_cipher** | **str** | Cipher suite | [optional] 
 **ssl_version** | **str** | TLS version | [optional] 
 **ssl_certificates** | [**List[SslCert]**](SslCert.md) |  | [optional] 
+**health_score** | **float** | A normalized value (0.0-1.0) representing the web application connection health of the test target. Returns negative values as error codes. -1.0 indicates there was insufficient data to calculate the health score. | [optional] 
 
 ## Example
 
