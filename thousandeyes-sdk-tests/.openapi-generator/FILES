@@ -4,6 +4,7 @@ README.md
 docs/APIApi.md
 docs/Agent.md
 docs/AgentBase.md
+docs/AgentInterfaces.md
 docs/AgentRequest.md
 docs/AgentToAgentApi.md
 docs/AgentToAgentInstantTest.md
@@ -79,12 +80,14 @@ docs/Link.md
 docs/Monitor.md
 docs/MonitorType.md
 docs/MonitorsRequest.md
+docs/OAuth.md
 docs/PageLoadApi.md
 docs/PageLoadInstantTest.md
 docs/PageLoadProperties.md
 docs/PageLoadTest.md
 docs/PageLoadTests.md
 docs/PathVisualizationInterfaceGroupsApi.md
+docs/RequestMethod.md
 docs/SIPServerApi.md
 docs/SelfLinks.md
 docs/Severity.md
@@ -186,6 +189,7 @@ src/thousandeyes_sdk/tests/api/web_transaction_api.py
 src/thousandeyes_sdk/tests/models/__init__.py
 src/thousandeyes_sdk/tests/models/agent.py
 src/thousandeyes_sdk/tests/models/agent_base.py
+src/thousandeyes_sdk/tests/models/agent_interfaces.py
 src/thousandeyes_sdk/tests/models/agent_request.py
 src/thousandeyes_sdk/tests/models/agent_to_agent_instant_test.py
 src/thousandeyes_sdk/tests/models/agent_to_agent_properties.py
@@ -252,10 +256,12 @@ src/thousandeyes_sdk/tests/models/link.py
 src/thousandeyes_sdk/tests/models/monitor.py
 src/thousandeyes_sdk/tests/models/monitor_type.py
 src/thousandeyes_sdk/tests/models/monitors_request.py
+src/thousandeyes_sdk/tests/models/o_auth.py
 src/thousandeyes_sdk/tests/models/page_load_instant_test.py
 src/thousandeyes_sdk/tests/models/page_load_properties.py
 src/thousandeyes_sdk/tests/models/page_load_test.py
 src/thousandeyes_sdk/tests/models/page_load_tests.py
+src/thousandeyes_sdk/tests/models/request_method.py
 src/thousandeyes_sdk/tests/models/self_links.py
 src/thousandeyes_sdk/tests/models/severity.py
 src/thousandeyes_sdk/tests/models/shared_with_account.py

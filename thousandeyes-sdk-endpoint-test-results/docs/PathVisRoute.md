@@ -6,6 +6,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **path_id** | **str** | Unique ID of path trace. | [optional] [readonly] 
+**protocol** | [**EndpointTestResultProtocol**](EndpointTestResultProtocol.md) |  | [optional] 
+**tcp_path_trace_mode** | [**TcpPathTraceModeResponse**](TcpPathTraceModeResponse.md) |  | [optional] 
+**udp_path_trace_mode** | [**UdpPathTraceModeResponse**](UdpPathTraceModeResponse.md) |  | [optional] 
 **hops** | [**List[PathVisHop]**](PathVisHop.md) | Array of hop objects indicating each step in the traceroute. | [optional] 
 
 ## Example
