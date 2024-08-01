@@ -1,6 +1,6 @@
 # EndpointTestProtocol
 
-Protocol used to perform the test.
+Protocol requested for the test.
 
 ## Properties
 
