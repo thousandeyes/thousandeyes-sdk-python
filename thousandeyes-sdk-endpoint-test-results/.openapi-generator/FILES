@@ -42,6 +42,7 @@ docs/EndpointTest.md
 docs/EndpointTestAuthType.md
 docs/EndpointTestLinks.md
 docs/EndpointTestProtocol.md
+docs/EndpointTestResultProtocol.md
 docs/EndpointTestSelfLink.md
 docs/Error.md
 docs/EthernetProfile.md
@@ -112,6 +113,7 @@ docs/TargetNetworkPing.md
 docs/TargetProfile.md
 docs/TargetTraceroute.md
 docs/TcpConnect.md
+docs/TcpPathTraceModeResponse.md
 docs/TestInterval.md
 docs/TestLabel.md
 docs/TestProbeModeResponse.md
@@ -129,6 +131,7 @@ docs/ThresholdFilterOperator.md
 docs/Traceroute.md
 docs/TracerouteHop.md
 docs/Trigger.md
+docs/UdpPathTraceModeResponse.md
 docs/UdpProbeModeResponse.md
 docs/UnauthorizedError.md
 docs/ValidationError.md
@@ -189,6 +192,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_auth_type.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_links.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_protocol.py
+src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_result_protocol.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_self_link.py
 src/thousandeyes_sdk/endpoint_test_results/models/error.py
 src/thousandeyes_sdk/endpoint_test_results/models/ethernet_profile.py
@@ -255,6 +259,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/target_network_ping.py
 src/thousandeyes_sdk/endpoint_test_results/models/target_profile.py
 src/thousandeyes_sdk/endpoint_test_results/models/target_traceroute.py
 src/thousandeyes_sdk/endpoint_test_results/models/tcp_connect.py
+src/thousandeyes_sdk/endpoint_test_results/models/tcp_path_trace_mode_response.py
 src/thousandeyes_sdk/endpoint_test_results/models/test_interval.py
 src/thousandeyes_sdk/endpoint_test_results/models/test_label.py
 src/thousandeyes_sdk/endpoint_test_results/models/test_probe_mode_response.py
@@ -272,6 +277,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/threshold_filter_operator.py
 src/thousandeyes_sdk/endpoint_test_results/models/traceroute.py
 src/thousandeyes_sdk/endpoint_test_results/models/traceroute_hop.py
 src/thousandeyes_sdk/endpoint_test_results/models/trigger.py
+src/thousandeyes_sdk/endpoint_test_results/models/udp_path_trace_mode_response.py
 src/thousandeyes_sdk/endpoint_test_results/models/udp_probe_mode_response.py
 src/thousandeyes_sdk/endpoint_test_results/models/unauthorized_error.py
 src/thousandeyes_sdk/endpoint_test_results/models/validation_error.py
