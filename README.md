@@ -16,6 +16,7 @@ Each of the APIs being published includes a README file with instructions on how
 * [credentials](/thousandeyes-sdk-credentials/README.md)
 * [dashboards](/thousandeyes-sdk-dashboards/README.md)
 * [emulation](/thousandeyes-sdk-emulation/README.md)
+* [event-detection](/thousandeyes-sdk-event-detection/README.md)
 * [endpoint-agents](/thousandeyes-sdk-endpoint-agents/README.md)
 * [endpoint-instant-tests](/thousandeyes-sdk-endpoint-instant-tests/README.md)
 * [endpoint-labels](/thousandeyes-sdk-endpoint-labels/README.md)
