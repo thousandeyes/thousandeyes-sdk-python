@@ -55,6 +55,7 @@ from thousandeyes_sdk.alerts.models.rule_detail import RuleDetail
 from thousandeyes_sdk.alerts.models.rule_detail_update import RuleDetailUpdate
 from thousandeyes_sdk.alerts.models.rules import Rules
 from thousandeyes_sdk.alerts.models.self_links import SelfLinks
+from thousandeyes_sdk.alerts.models.sensitivity_level import SensitivityLevel
 from thousandeyes_sdk.alerts.models.severity import Severity
 from thousandeyes_sdk.alerts.models.start_alert_metrics import StartAlertMetrics
 from thousandeyes_sdk.alerts.models.state import State

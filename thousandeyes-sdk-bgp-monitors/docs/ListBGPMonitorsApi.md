@@ -1,10 +1,10 @@
 # thousandeyes_sdk.bgp_monitors.ListBGPMonitorsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_bgp_monitors**](ListBGPMonitorsApi.md#get_bgp_monitors) | **GET** /v7/monitors | List BGP monitors
+[**get_bgp_monitors**](ListBGPMonitorsApi.md#get_bgp_monitors) | **GET** /monitors | List BGP monitors
 
 
 # **get_bgp_monitors**
@@ -24,10 +24,10 @@ from thousandeyes_sdk.bgp_monitors.models.monitors import Monitors
 from thousandeyes_sdk.bgp_monitors.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

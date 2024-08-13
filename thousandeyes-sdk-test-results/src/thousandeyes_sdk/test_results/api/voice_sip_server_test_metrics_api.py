@@ -413,7 +413,7 @@ class VoiceSIPServerTestMetricsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/test-results/{testId}/sip-server',
+            resource_path='/test-results/{testId}/sip-server',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

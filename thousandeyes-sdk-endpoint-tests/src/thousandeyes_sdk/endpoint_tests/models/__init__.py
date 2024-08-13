@@ -50,6 +50,7 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_tests import EndpointTests
 from thousandeyes_sdk.endpoint_tests.models.error import Error
 from thousandeyes_sdk.endpoint_tests.models.link import Link
 from thousandeyes_sdk.endpoint_tests.models.self_links import SelfLinks
+from thousandeyes_sdk.endpoint_tests.models.sensitivity_level import SensitivityLevel
 from thousandeyes_sdk.endpoint_tests.models.severity import Severity
 from thousandeyes_sdk.endpoint_tests.models.test_interval import TestInterval
 from thousandeyes_sdk.endpoint_tests.models.test_label import TestLabel

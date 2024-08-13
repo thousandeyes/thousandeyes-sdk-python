@@ -359,7 +359,7 @@ class HTTPPageLoadApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/tests/page-load/instant',
+            resource_path='/tests/page-load/instant',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

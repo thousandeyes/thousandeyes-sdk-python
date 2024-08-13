@@ -1,10 +1,10 @@
 # thousandeyes_sdk.agents.ProxiesApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_agents_proxies**](ProxiesApi.md#get_agents_proxies) | **GET** /v7/agents/proxies | List agent proxies
+[**get_agents_proxies**](ProxiesApi.md#get_agents_proxies) | **GET** /agents/proxies | List agent proxies
 
 
 # **get_agents_proxies**
@@ -24,10 +24,10 @@ from thousandeyes_sdk.agents.models.agent_proxies import AgentProxies
 from thousandeyes_sdk.agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

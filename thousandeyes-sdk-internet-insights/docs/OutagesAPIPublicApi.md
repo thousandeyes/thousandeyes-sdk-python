@@ -1,12 +1,12 @@
 # thousandeyes_sdk.internet_insights.OutagesAPIPublicApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**filter_outages**](OutagesAPIPublicApi.md#filter_outages) | **POST** /v7/internet-insights/outages/filter | List network and application outages
-[**get_app_outage**](OutagesAPIPublicApi.md#get_app_outage) | **GET** /v7/internet-insights/outages/app/{outageId} | Retrieve application outage
-[**get_network_outage**](OutagesAPIPublicApi.md#get_network_outage) | **GET** /v7/internet-insights/outages/net/{outageId} | Retrieve network outage
+[**filter_outages**](OutagesAPIPublicApi.md#filter_outages) | **POST** /internet-insights/outages/filter | List network and application outages
+[**get_app_outage**](OutagesAPIPublicApi.md#get_app_outage) | **GET** /internet-insights/outages/app/{outageId} | Retrieve application outage
+[**get_network_outage**](OutagesAPIPublicApi.md#get_network_outage) | **GET** /internet-insights/outages/net/{outageId} | Retrieve network outage
 
 
 # **filter_outages**
@@ -27,10 +27,10 @@ from thousandeyes_sdk.internet_insights.models.api_outages_response import ApiOu
 from thousandeyes_sdk.internet_insights.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -115,10 +115,10 @@ from thousandeyes_sdk.internet_insights.models.api_application_outage_details im
 from thousandeyes_sdk.internet_insights.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -203,10 +203,10 @@ from thousandeyes_sdk.internet_insights.models.api_network_outage_details import
 from thousandeyes_sdk.internet_insights.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

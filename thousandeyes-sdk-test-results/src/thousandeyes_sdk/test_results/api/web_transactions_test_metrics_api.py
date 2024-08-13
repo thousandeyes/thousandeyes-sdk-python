@@ -374,7 +374,7 @@ class WebTransactionsTestMetricsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId}/page/{pageId}',
+            resource_path='/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId}/page/{pageId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -704,7 +704,7 @@ class WebTransactionsTestMetricsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId}',
+            resource_path='/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1090,7 +1090,7 @@ class WebTransactionsTestMetricsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/test-results/{testId}/web-transactions',
+            resource_path='/test-results/{testId}/web-transactions',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

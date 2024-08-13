@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class AlertRoundsViolationMode(str, Enum):
     """
-    `exact` requires that the same agent(s) meet the threshold in consecutive rounds; default is `any`
+    `exact` requires the same agents to meet the threshold in consecutive rounds. `auto` is only enabled for CEA and Endpoint Scheduled test rules. The default is `any`.
     """
 
     """
@@ -27,6 +27,7 @@ class AlertRoundsViolationMode(str, Enum):
     """
     EXACT = 'exact'
     ANY = 'any'
+    AUTO = 'auto'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

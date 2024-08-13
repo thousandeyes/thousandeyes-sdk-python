@@ -1,11 +1,11 @@
 # thousandeyes_sdk.internet_insights.CatalogProvidersApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**filter_catalog_providers**](CatalogProvidersApi.md#filter_catalog_providers) | **POST** /v7/internet-insights/catalog/providers/filter | List catalog providers
-[**get_catalog_provider**](CatalogProvidersApi.md#get_catalog_provider) | **GET** /v7/internet-insights/catalog/providers/{providerId} | Retrieve a catalog provider
+[**filter_catalog_providers**](CatalogProvidersApi.md#filter_catalog_providers) | **POST** /internet-insights/catalog/providers/filter | List catalog providers
+[**get_catalog_provider**](CatalogProvidersApi.md#get_catalog_provider) | **GET** /internet-insights/catalog/providers/{providerId} | Retrieve a catalog provider
 
 
 # **filter_catalog_providers**
@@ -26,10 +26,10 @@ from thousandeyes_sdk.internet_insights.models.api_catalog_provider_response imp
 from thousandeyes_sdk.internet_insights.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -114,10 +114,10 @@ from thousandeyes_sdk.internet_insights.models.api_catalog_provider_details impo
 from thousandeyes_sdk.internet_insights.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

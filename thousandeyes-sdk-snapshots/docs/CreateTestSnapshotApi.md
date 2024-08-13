@@ -1,10 +1,10 @@
 # thousandeyes_sdk.snapshots.CreateTestSnapshotApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_test_snapshot**](CreateTestSnapshotApi.md#create_test_snapshot) | **POST** /v7/tests/{testId}/snapshot | Create test snapshot
+[**create_test_snapshot**](CreateTestSnapshotApi.md#create_test_snapshot) | **POST** /tests/{testId}/snapshot | Create test snapshot
 
 
 # **create_test_snapshot**
@@ -25,10 +25,10 @@ from thousandeyes_sdk.snapshots.models.snapshot_response import SnapshotResponse
 from thousandeyes_sdk.snapshots.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

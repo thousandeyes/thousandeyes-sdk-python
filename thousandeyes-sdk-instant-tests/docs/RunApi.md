@@ -1,10 +1,10 @@
 # thousandeyes_sdk.instant_tests.RunApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**run_instant_test**](RunApi.md#run_instant_test) | **POST** /v7/tests/{testId}/run | Run instant test
+[**run_instant_test**](RunApi.md#run_instant_test) | **POST** /tests/{testId}/run | Run instant test
 
 
 # **run_instant_test**
@@ -23,10 +23,10 @@ import thousandeyes_sdk.instant_tests
 from thousandeyes_sdk.instant_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

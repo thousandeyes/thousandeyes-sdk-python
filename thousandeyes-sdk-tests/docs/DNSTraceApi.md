@@ -1,14 +1,14 @@
 # thousandeyes_sdk.tests.DNSTraceApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_dns_trace_test**](DNSTraceApi.md#create_dns_trace_test) | **POST** /v7/tests/dns-trace | Create DNS Trace test
-[**delete_dns_trace_test**](DNSTraceApi.md#delete_dns_trace_test) | **DELETE** /v7/tests/dns-trace/{testId} | Delete DNS Trace test
-[**get_dns_trace_test**](DNSTraceApi.md#get_dns_trace_test) | **GET** /v7/tests/dns-trace/{testId} | Get DNS Trace test
-[**get_dns_trace_tests**](DNSTraceApi.md#get_dns_trace_tests) | **GET** /v7/tests/dns-trace | List DNS Trace tests
-[**update_dns_trace_test**](DNSTraceApi.md#update_dns_trace_test) | **PUT** /v7/tests/dns-trace/{testId} | Update DNS Trace test
+[**create_dns_trace_test**](DNSTraceApi.md#create_dns_trace_test) | **POST** /tests/dns-trace | Create DNS Trace test
+[**delete_dns_trace_test**](DNSTraceApi.md#delete_dns_trace_test) | **DELETE** /tests/dns-trace/{testId} | Delete DNS Trace test
+[**get_dns_trace_test**](DNSTraceApi.md#get_dns_trace_test) | **GET** /tests/dns-trace/{testId} | Get DNS Trace test
+[**get_dns_trace_tests**](DNSTraceApi.md#get_dns_trace_tests) | **GET** /tests/dns-trace | List DNS Trace tests
+[**update_dns_trace_test**](DNSTraceApi.md#update_dns_trace_test) | **PUT** /tests/dns-trace/{testId} | Update DNS Trace test
 
 
 # **create_dns_trace_test**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.tests.models.update_dns_trace_test import UpdateDnsTraceTe
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,10 +119,10 @@ import thousandeyes_sdk.tests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -205,10 +205,10 @@ from thousandeyes_sdk.tests.models.expand import Expand
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -294,10 +294,10 @@ from thousandeyes_sdk.tests.models.dns_trace_tests import DnsTraceTests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -381,10 +381,10 @@ from thousandeyes_sdk.tests.models.update_dns_trace_test import UpdateDnsTraceTe
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -1,14 +1,14 @@
 # thousandeyes_sdk.tests.BGPApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_bgp_test**](BGPApi.md#create_bgp_test) | **POST** /v7/tests/bgp | Create BGP test
-[**delete_bgp_test**](BGPApi.md#delete_bgp_test) | **DELETE** /v7/tests/bgp/{testId} | Delete BGP test
-[**get_bgp_test**](BGPApi.md#get_bgp_test) | **GET** /v7/tests/bgp/{testId} | Get BGP test
-[**get_bgp_tests**](BGPApi.md#get_bgp_tests) | **GET** /v7/tests/bgp | List BGP tests
-[**update_bgp_test**](BGPApi.md#update_bgp_test) | **PUT** /v7/tests/bgp/{testId} | Update BGP test
+[**create_bgp_test**](BGPApi.md#create_bgp_test) | **POST** /tests/bgp | Create BGP test
+[**delete_bgp_test**](BGPApi.md#delete_bgp_test) | **DELETE** /tests/bgp/{testId} | Delete BGP test
+[**get_bgp_test**](BGPApi.md#get_bgp_test) | **GET** /tests/bgp/{testId} | Get BGP test
+[**get_bgp_tests**](BGPApi.md#get_bgp_tests) | **GET** /tests/bgp | List BGP tests
+[**update_bgp_test**](BGPApi.md#update_bgp_test) | **PUT** /tests/bgp/{testId} | Update BGP test
 
 
 # **create_bgp_test**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.tests.models.update_bgp_test import UpdateBgpTest
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,10 +119,10 @@ import thousandeyes_sdk.tests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -205,10 +205,10 @@ from thousandeyes_sdk.tests.models.expand import Expand
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -294,10 +294,10 @@ from thousandeyes_sdk.tests.models.bgp_tests import BgpTests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -381,10 +381,10 @@ from thousandeyes_sdk.tests.models.update_bgp_test_request import UpdateBgpTestR
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

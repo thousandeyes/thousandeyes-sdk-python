@@ -341,7 +341,7 @@ class CatalogProvidersApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/internet-insights/catalog/providers/filter',
+            resource_path='/internet-insights/catalog/providers/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -641,7 +641,7 @@ class CatalogProvidersApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/internet-insights/catalog/providers/{providerId}',
+            resource_path='/internet-insights/catalog/providers/{providerId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

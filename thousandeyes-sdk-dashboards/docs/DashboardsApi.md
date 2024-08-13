@@ -1,15 +1,15 @@
 # thousandeyes_sdk.dashboards.DashboardsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_dashboard**](DashboardsApi.md#create_dashboard) | **POST** /v7/dashboards | Create dashboard
-[**delete_dashboard**](DashboardsApi.md#delete_dashboard) | **DELETE** /v7/dashboards/{dashboardId} | Delete dashboard
-[**get_dashboard**](DashboardsApi.md#get_dashboard) | **GET** /v7/dashboards/{dashboardId} | Retrieve dashboard
-[**get_dashboard_widget_data**](DashboardsApi.md#get_dashboard_widget_data) | **GET** /v7/dashboards/{dashboardId}/widgets/{widgetId} | Retrieve dashboard widget data
-[**get_dashboards**](DashboardsApi.md#get_dashboards) | **GET** /v7/dashboards | List dashboards
-[**update_dashboard**](DashboardsApi.md#update_dashboard) | **PUT** /v7/dashboards/{dashboardId} | Update dashboard
+[**create_dashboard**](DashboardsApi.md#create_dashboard) | **POST** /dashboards | Create dashboard
+[**delete_dashboard**](DashboardsApi.md#delete_dashboard) | **DELETE** /dashboards/{dashboardId} | Delete dashboard
+[**get_dashboard**](DashboardsApi.md#get_dashboard) | **GET** /dashboards/{dashboardId} | Retrieve dashboard
+[**get_dashboard_widget_data**](DashboardsApi.md#get_dashboard_widget_data) | **GET** /dashboards/{dashboardId}/widgets/{widgetId} | Retrieve dashboard widget data
+[**get_dashboards**](DashboardsApi.md#get_dashboards) | **GET** /dashboards | List dashboards
+[**update_dashboard**](DashboardsApi.md#update_dashboard) | **PUT** /dashboards/{dashboardId} | Update dashboard
 
 
 # **create_dashboard**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.dashboards.models.dashboard import Dashboard
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -114,10 +114,10 @@ import thousandeyes_sdk.dashboards
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -198,10 +198,10 @@ from thousandeyes_sdk.dashboards.models.api_dashboard import ApiDashboard
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -285,10 +285,10 @@ from thousandeyes_sdk.dashboards.models.dashboard_order import DashboardOrder
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -387,10 +387,10 @@ from thousandeyes_sdk.dashboards.models.api_dashboard import ApiDashboard
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -471,10 +471,10 @@ from thousandeyes_sdk.dashboards.models.dashboard import Dashboard
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

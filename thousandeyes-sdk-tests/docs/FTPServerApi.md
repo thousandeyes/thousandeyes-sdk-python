@@ -1,14 +1,14 @@
 # thousandeyes_sdk.tests.FTPServerApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_ftp_server_test**](FTPServerApi.md#create_ftp_server_test) | **POST** /v7/tests/ftp-server | Create FTP Server test
-[**delete_ftp_server_test**](FTPServerApi.md#delete_ftp_server_test) | **DELETE** /v7/tests/ftp-server/{testId} | Delete FTP Server test
-[**get_ftp_server_test**](FTPServerApi.md#get_ftp_server_test) | **GET** /v7/tests/ftp-server/{testId} | Get FTP Server test
-[**get_ftp_server_tests**](FTPServerApi.md#get_ftp_server_tests) | **GET** /v7/tests/ftp-server | List FTP Server tests
-[**update_ftp_server_test**](FTPServerApi.md#update_ftp_server_test) | **PUT** /v7/tests/ftp-server/{testId} | Update FTP Server test
+[**create_ftp_server_test**](FTPServerApi.md#create_ftp_server_test) | **POST** /tests/ftp-server | Create FTP Server test
+[**delete_ftp_server_test**](FTPServerApi.md#delete_ftp_server_test) | **DELETE** /tests/ftp-server/{testId} | Delete FTP Server test
+[**get_ftp_server_test**](FTPServerApi.md#get_ftp_server_test) | **GET** /tests/ftp-server/{testId} | Get FTP Server test
+[**get_ftp_server_tests**](FTPServerApi.md#get_ftp_server_tests) | **GET** /tests/ftp-server | List FTP Server tests
+[**update_ftp_server_test**](FTPServerApi.md#update_ftp_server_test) | **PUT** /tests/ftp-server/{testId} | Update FTP Server test
 
 
 # **create_ftp_server_test**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.tests.models.update_ftp_server_test import UpdateFtpServer
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,10 +119,10 @@ import thousandeyes_sdk.tests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -203,10 +203,10 @@ from thousandeyes_sdk.tests.models.ftp_server_test import FtpServerTest
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -292,10 +292,10 @@ from thousandeyes_sdk.tests.models.ftp_server_tests import FtpServerTests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -379,10 +379,10 @@ from thousandeyes_sdk.tests.models.update_ftp_server_test import UpdateFtpServer
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

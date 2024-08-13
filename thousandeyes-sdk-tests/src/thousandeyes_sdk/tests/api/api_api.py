@@ -360,7 +360,7 @@ class APIApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/tests/api',
+            resource_path='/tests/api',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -656,7 +656,7 @@ class APIApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/tests/api/{testId}',
+            resource_path='/tests/api/{testId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -971,7 +971,7 @@ class APIApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/tests/api/{testId}',
+            resource_path='/tests/api/{testId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1253,7 +1253,7 @@ class APIApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/tests/api',
+            resource_path='/tests/api',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1599,7 +1599,7 @@ class APIApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/v7/tests/api/{testId}',
+            resource_path='/tests/api/{testId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

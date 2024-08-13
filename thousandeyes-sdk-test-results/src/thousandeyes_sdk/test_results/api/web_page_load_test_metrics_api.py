@@ -358,7 +358,7 @@ class WebPageLoadTestMetricsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/test-results/{testId}/page-load/agent/{agentId}/round/{roundId}',
+            resource_path='/test-results/{testId}/page-load/agent/{agentId}/round/{roundId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -744,7 +744,7 @@ class WebPageLoadTestMetricsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/test-results/{testId}/page-load',
+            resource_path='/test-results/{testId}/page-load',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

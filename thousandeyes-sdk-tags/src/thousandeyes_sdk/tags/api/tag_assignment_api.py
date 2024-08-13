@@ -348,7 +348,7 @@ class TagAssignmentApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/tags/{id}/assign',
+            resource_path='/tags/{id}/assign',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -654,7 +654,7 @@ class TagAssignmentApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/tags/assign',
+            resource_path='/tags/assign',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -975,7 +975,7 @@ class TagAssignmentApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/tags/{id}/unassign',
+            resource_path='/tags/{id}/unassign',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1281,7 +1281,7 @@ class TagAssignmentApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/tags/unassign',
+            resource_path='/tags/unassign',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

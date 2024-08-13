@@ -305,7 +305,7 @@ class ListBGPMonitorsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/monitors',
+            resource_path='/monitors',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

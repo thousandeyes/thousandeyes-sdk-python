@@ -1,10 +1,10 @@
 # thousandeyes_sdk.administrative.UserEventsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_user_events**](UserEventsApi.md#get_user_events) | **GET** /v7/audit-user-events | List activity log events
+[**get_user_events**](UserEventsApi.md#get_user_events) | **GET** /audit-user-events | List activity log events
 
 
 # **get_user_events**
@@ -24,10 +24,10 @@ from thousandeyes_sdk.administrative.models.audit_user_events import AuditUserEv
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -432,7 +432,7 @@ class RealUserTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/test-results/real-user-tests/networks/filter',
+            resource_path='/endpoint/test-results/real-user-tests/networks/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -831,7 +831,7 @@ class RealUserTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/test-results/real-user-tests/filter',
+            resource_path='/endpoint/test-results/real-user-tests/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1230,7 +1230,7 @@ class RealUserTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/test-results/real-user-tests/pages/filter',
+            resource_path='/endpoint/test-results/real-user-tests/pages/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1542,7 +1542,7 @@ class RealUserTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/test-results/real-user-tests/{id}/pages/{pageId}',
+            resource_path='/endpoint/test-results/real-user-tests/{id}/pages/{pageId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1839,7 +1839,7 @@ class RealUserTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/test-results/real-user-tests/{id}',
+            resource_path='/endpoint/test-results/real-user-tests/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

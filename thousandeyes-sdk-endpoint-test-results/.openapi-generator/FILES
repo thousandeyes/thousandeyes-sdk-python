@@ -114,6 +114,7 @@ docs/RealUserTestPageResults.md
 docs/RealUserTestPageTimings.md
 docs/RealUserTestsResultsApi.md
 docs/SelfLinks.md
+docs/SensitivityLevel.md
 docs/Severity.md
 docs/SortOrder.md
 docs/SystemMetrics.md
@@ -268,6 +269,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/real_user_test_page_result.py
 src/thousandeyes_sdk/endpoint_test_results/models/real_user_test_page_results.py
 src/thousandeyes_sdk/endpoint_test_results/models/real_user_test_page_timings.py
 src/thousandeyes_sdk/endpoint_test_results/models/self_links.py
+src/thousandeyes_sdk/endpoint_test_results/models/sensitivity_level.py
 src/thousandeyes_sdk/endpoint_test_results/models/severity.py
 src/thousandeyes_sdk/endpoint_test_results/models/sort_order.py
 src/thousandeyes_sdk/endpoint_test_results/models/system_metrics.py

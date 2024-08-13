@@ -1,14 +1,14 @@
 # thousandeyes_sdk.endpoint_tests.DynamicTestsAgentToServerApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_agent_to_server_endpoint_dynamic_test**](DynamicTestsAgentToServerApi.md#create_agent_to_server_endpoint_dynamic_test) | **POST** /v7/endpoint/tests/dynamic-tests/agent-to-server | Create endpoint dynamic test
-[**delete_agent_to_server_endpoint_dynamic_test**](DynamicTestsAgentToServerApi.md#delete_agent_to_server_endpoint_dynamic_test) | **DELETE** /v7/endpoint/tests/dynamic-tests/agent-to-server/{testId} | Delete agent to server dynamic test
-[**get_agent_to_server_endpoint_dynamic_test**](DynamicTestsAgentToServerApi.md#get_agent_to_server_endpoint_dynamic_test) | **GET** /v7/endpoint/tests/dynamic-tests/agent-to-server/{testId} | Retrieve endpoint dynamic test
-[**get_agent_to_server_endpoint_dynamic_tests**](DynamicTestsAgentToServerApi.md#get_agent_to_server_endpoint_dynamic_tests) | **GET** /v7/endpoint/tests/dynamic-tests/agent-to-server | List endpoint dynamic tests
-[**update_agent_to_server_endpoint_dynamic_test**](DynamicTestsAgentToServerApi.md#update_agent_to_server_endpoint_dynamic_test) | **PATCH** /v7/endpoint/tests/dynamic-tests/agent-to-server/{testId} | Update agent to server dynamic test
+[**create_agent_to_server_endpoint_dynamic_test**](DynamicTestsAgentToServerApi.md#create_agent_to_server_endpoint_dynamic_test) | **POST** /endpoint/tests/dynamic-tests/agent-to-server | Create endpoint dynamic test
+[**delete_agent_to_server_endpoint_dynamic_test**](DynamicTestsAgentToServerApi.md#delete_agent_to_server_endpoint_dynamic_test) | **DELETE** /endpoint/tests/dynamic-tests/agent-to-server/{testId} | Delete agent to server dynamic test
+[**get_agent_to_server_endpoint_dynamic_test**](DynamicTestsAgentToServerApi.md#get_agent_to_server_endpoint_dynamic_test) | **GET** /endpoint/tests/dynamic-tests/agent-to-server/{testId} | Retrieve endpoint dynamic test
+[**get_agent_to_server_endpoint_dynamic_tests**](DynamicTestsAgentToServerApi.md#get_agent_to_server_endpoint_dynamic_tests) | **GET** /endpoint/tests/dynamic-tests/agent-to-server | List endpoint dynamic tests
+[**update_agent_to_server_endpoint_dynamic_test**](DynamicTestsAgentToServerApi.md#update_agent_to_server_endpoint_dynamic_test) | **PATCH** /endpoint/tests/dynamic-tests/agent-to-server/{testId} | Update agent to server dynamic test
 
 
 # **create_agent_to_server_endpoint_dynamic_test**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.endpoint_tests.models.dynamic_test_request import DynamicT
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -116,10 +116,10 @@ import thousandeyes_sdk.endpoint_tests
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -202,10 +202,10 @@ from thousandeyes_sdk.endpoint_tests.models.dynamic_test import DynamicTest
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -289,10 +289,10 @@ from thousandeyes_sdk.endpoint_tests.models.dynamic_tests import DynamicTests
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -374,10 +374,10 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_dynamic_test_update import 
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

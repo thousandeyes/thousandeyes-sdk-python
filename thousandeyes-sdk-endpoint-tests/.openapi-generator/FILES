@@ -42,6 +42,7 @@ docs/ListEndpointScheduledTestsApi.md
 docs/ScheduledTestsAgentToServerApi.md
 docs/ScheduledTestsHTTPServerApi.md
 docs/SelfLinks.md
+docs/SensitivityLevel.md
 docs/Severity.md
 docs/TestInterval.md
 docs/TestLabel.md
@@ -98,6 +99,7 @@ src/thousandeyes_sdk/endpoint_tests/models/endpoint_tests.py
 src/thousandeyes_sdk/endpoint_tests/models/error.py
 src/thousandeyes_sdk/endpoint_tests/models/link.py
 src/thousandeyes_sdk/endpoint_tests/models/self_links.py
+src/thousandeyes_sdk/endpoint_tests/models/sensitivity_level.py
 src/thousandeyes_sdk/endpoint_tests/models/severity.py
 src/thousandeyes_sdk/endpoint_tests/models/test_interval.py
 src/thousandeyes_sdk/endpoint_tests/models/test_label.py

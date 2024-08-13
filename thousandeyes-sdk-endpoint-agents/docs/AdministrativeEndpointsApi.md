@@ -1,10 +1,10 @@
 # thousandeyes_sdk.endpoint_agents.AdministrativeEndpointsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_endpoint_agents_connection_string**](AdministrativeEndpointsApi.md#get_endpoint_agents_connection_string) | **GET** /v7/endpoint/agents/connection-string | Get agent connection string
+[**get_endpoint_agents_connection_string**](AdministrativeEndpointsApi.md#get_endpoint_agents_connection_string) | **GET** /endpoint/agents/connection-string | Get agent connection string
 
 
 # **get_endpoint_agents_connection_string**
@@ -22,10 +22,10 @@ from thousandeyes_sdk.endpoint_agents.models.connection_string import Connection
 from thousandeyes_sdk.endpoint_agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

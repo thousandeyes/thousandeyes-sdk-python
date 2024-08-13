@@ -1,14 +1,14 @@
 # thousandeyes_sdk.tests.HTTPServerApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_http_server_test**](HTTPServerApi.md#create_http_server_test) | **POST** /v7/tests/http-server | Create HTTP Server test
-[**delete_http_server_test**](HTTPServerApi.md#delete_http_server_test) | **DELETE** /v7/tests/http-server/{testId} | Delete HTTP Server test
-[**get_http_server_test**](HTTPServerApi.md#get_http_server_test) | **GET** /v7/tests/http-server/{testId} | Get HTTP Server test
-[**get_http_server_tests**](HTTPServerApi.md#get_http_server_tests) | **GET** /v7/tests/http-server | List HTTP Server tests
-[**update_http_server_test**](HTTPServerApi.md#update_http_server_test) | **PUT** /v7/tests/http-server/{testId} | Update HTTP Server test
+[**create_http_server_test**](HTTPServerApi.md#create_http_server_test) | **POST** /tests/http-server | Create HTTP Server test
+[**delete_http_server_test**](HTTPServerApi.md#delete_http_server_test) | **DELETE** /tests/http-server/{testId} | Delete HTTP Server test
+[**get_http_server_test**](HTTPServerApi.md#get_http_server_test) | **GET** /tests/http-server/{testId} | Get HTTP Server test
+[**get_http_server_tests**](HTTPServerApi.md#get_http_server_tests) | **GET** /tests/http-server | List HTTP Server tests
+[**update_http_server_test**](HTTPServerApi.md#update_http_server_test) | **PUT** /tests/http-server/{testId} | Update HTTP Server test
 
 
 # **create_http_server_test**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.tests.models.update_http_server_test import UpdateHttpServ
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,10 +119,10 @@ import thousandeyes_sdk.tests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -205,10 +205,10 @@ from thousandeyes_sdk.tests.models.http_server_test import HttpServerTest
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -294,10 +294,10 @@ from thousandeyes_sdk.tests.models.http_server_tests import HttpServerTests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -381,10 +381,10 @@ from thousandeyes_sdk.tests.models.update_http_server_test import UpdateHttpServ
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

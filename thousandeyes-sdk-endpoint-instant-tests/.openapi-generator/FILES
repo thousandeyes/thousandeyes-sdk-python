@@ -27,6 +27,7 @@ docs/Error.md
 docs/HttpServerInstantScheduledTestApi.md
 docs/Link.md
 docs/RunExistingTestApi.md
+docs/SensitivityLevel.md
 docs/Severity.md
 docs/TestInterval.md
 docs/TestLabel.md
@@ -66,6 +67,7 @@ src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_test_protocol.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_test_self_link.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/error.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/link.py
+src/thousandeyes_sdk/endpoint_instant_tests/models/sensitivity_level.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/severity.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/test_interval.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/test_label.py

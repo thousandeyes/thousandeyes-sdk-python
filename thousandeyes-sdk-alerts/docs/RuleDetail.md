@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rule_id** | **str** | Unique ID of the rule | [optional] [readonly] 
+**rule_id** | **str** | Unique ID of the rule. | [optional] [readonly] 
 **rule_name** | **str** | Name of the alert rule. | 
 **expression** | **str** | The expression of the alert rule. | 
 **direction** | [**AlertDirection**](AlertDirection.md) |  | [optional] 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **rounds_violating_out_of** | **int** | Specifies the divisor (y value) in the “X of Y times” condition. | 
 **rounds_violating_required** | **int** | Specifies the numerator (x value) in the “X of Y times” condition. | 
 **include_covered_prefixes** | **bool** | Set true to include covered prefixes in the BGP alert rule. Only applicable to BGP alert rules. | [optional] 
+**sensitivity_level** | [**SensitivityLevel**](SensitivityLevel.md) |  | [optional] 
 **severity** | [**Severity**](Severity.md) |  | [optional] 
 **notifications** | [**Notification**](Notification.md) |  | [optional] 
 **tests** | [**List[BaseTest]**](BaseTest.md) |  | [optional] [readonly] 

@@ -1,14 +1,14 @@
 # thousandeyes_sdk.tests.SIPServerApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_sip_server_test**](SIPServerApi.md#create_sip_server_test) | **POST** /v7/tests/sip-server | Create SIP Server test
-[**delete_sip_server_test**](SIPServerApi.md#delete_sip_server_test) | **DELETE** /v7/tests/sip-server/{testId} | Delete SIP Server test
-[**get_sip_server_test**](SIPServerApi.md#get_sip_server_test) | **GET** /v7/tests/sip-server/{testId} | Get SIP Server test
-[**get_sip_server_tests**](SIPServerApi.md#get_sip_server_tests) | **GET** /v7/tests/sip-server | List SIP Server tests
-[**update_sip_server_test**](SIPServerApi.md#update_sip_server_test) | **PUT** /v7/tests/sip-server/{testId} | Update SIP Server test
+[**create_sip_server_test**](SIPServerApi.md#create_sip_server_test) | **POST** /tests/sip-server | Create SIP Server test
+[**delete_sip_server_test**](SIPServerApi.md#delete_sip_server_test) | **DELETE** /tests/sip-server/{testId} | Delete SIP Server test
+[**get_sip_server_test**](SIPServerApi.md#get_sip_server_test) | **GET** /tests/sip-server/{testId} | Get SIP Server test
+[**get_sip_server_tests**](SIPServerApi.md#get_sip_server_tests) | **GET** /tests/sip-server | List SIP Server tests
+[**update_sip_server_test**](SIPServerApi.md#update_sip_server_test) | **PUT** /tests/sip-server/{testId} | Update SIP Server test
 
 
 # **create_sip_server_test**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.tests.models.update_sip_server_test import UpdateSipServer
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,10 +119,10 @@ import thousandeyes_sdk.tests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -203,10 +203,10 @@ from thousandeyes_sdk.tests.models.sip_server_test import SipServerTest
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -292,10 +292,10 @@ from thousandeyes_sdk.tests.models.sip_server_tests import SipServerTests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -379,10 +379,10 @@ from thousandeyes_sdk.tests.models.update_sip_server_test import UpdateSipServer
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

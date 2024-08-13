@@ -1,10 +1,10 @@
 # thousandeyes_sdk.test_results.WebFTPServerTestMetricsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_ftp_server_results**](WebFTPServerTestMetricsApi.md#get_test_ftp_server_results) | **GET** /v7/test-results/{testId}/ftp-server | Get FTP server test results
+[**get_test_ftp_server_results**](WebFTPServerTestMetricsApi.md#get_test_ftp_server_results) | **GET** /test-results/{testId}/ftp-server | Get FTP server test results
 
 
 # **get_test_ftp_server_results**
@@ -24,10 +24,10 @@ from thousandeyes_sdk.test_results.models.ftp_server_test_results import FtpServ
 from thousandeyes_sdk.test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

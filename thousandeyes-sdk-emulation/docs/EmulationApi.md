@@ -1,12 +1,12 @@
 # thousandeyes_sdk.emulation.EmulationApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_emulated_device**](EmulationApi.md#create_emulated_device) | **POST** /v7/emulated-devices | Create emulated device
-[**get_emulated_devices**](EmulationApi.md#get_emulated_devices) | **GET** /v7/emulated-devices | List emulated devices
-[**get_user_agents**](EmulationApi.md#get_user_agents) | **GET** /v7/user-agents | List user-agents
+[**create_emulated_device**](EmulationApi.md#create_emulated_device) | **POST** /emulated-devices | Create emulated device
+[**get_emulated_devices**](EmulationApi.md#get_emulated_devices) | **GET** /emulated-devices | List emulated devices
+[**get_user_agents**](EmulationApi.md#get_user_agents) | **GET** /user-agents | List user-agents
 
 
 # **create_emulated_device**
@@ -27,10 +27,10 @@ from thousandeyes_sdk.emulation.models.emulated_device_response import EmulatedD
 from thousandeyes_sdk.emulation.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -113,10 +113,10 @@ from thousandeyes_sdk.emulation.models.expand import Expand
 from thousandeyes_sdk.emulation.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -196,10 +196,10 @@ from thousandeyes_sdk.emulation.models.user_agents import UserAgents
 from thousandeyes_sdk.emulation.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -1,12 +1,12 @@
 # thousandeyes_sdk.test_results.NetworkTestMetricsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_network_results**](NetworkTestMetricsApi.md#get_test_network_results) | **GET** /v7/test-results/{testId}/network | Get network test results
-[**get_test_path_vis_agent_round_results**](NetworkTestMetricsApi.md#get_test_path_vis_agent_round_results) | **GET** /v7/test-results/{testId}/path-vis/agent/{agentId}/round/{roundId} | Get path visualization test results by agent and round
-[**get_test_path_vis_results**](NetworkTestMetricsApi.md#get_test_path_vis_results) | **GET** /v7/test-results/{testId}/path-vis | Get path visualization network test results
+[**get_test_network_results**](NetworkTestMetricsApi.md#get_test_network_results) | **GET** /test-results/{testId}/network | Get network test results
+[**get_test_path_vis_agent_round_results**](NetworkTestMetricsApi.md#get_test_path_vis_agent_round_results) | **GET** /test-results/{testId}/path-vis/agent/{agentId}/round/{roundId} | Get path visualization test results by agent and round
+[**get_test_path_vis_results**](NetworkTestMetricsApi.md#get_test_path_vis_results) | **GET** /test-results/{testId}/path-vis | Get path visualization network test results
 
 
 # **get_test_network_results**
@@ -27,10 +27,10 @@ from thousandeyes_sdk.test_results.models.test_direction import TestDirection
 from thousandeyes_sdk.test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -126,10 +126,10 @@ from thousandeyes_sdk.test_results.models.path_vis_direction import PathVisDirec
 from thousandeyes_sdk.test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -221,10 +221,10 @@ from thousandeyes_sdk.test_results.models.path_vis_test_results import PathVisTe
 from thousandeyes_sdk.test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

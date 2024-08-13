@@ -48,7 +48,7 @@ class Alert(BaseModel):
     severity: Optional[StrictStr] = Field(default=None, description="The severity of the alert.")
     permalink: Optional[StrictStr] = Field(default=None, description="Hyperlink to alerts list, with row expanded")
     api_links: Optional[List[Dict[str, Any]]] = Field(default=None, description="List of hyperlinks to other areas of the API", alias="apiLinks")
-    alert_rule_id: Optional[StrictStr] = Field(default=None, description="Unique ID of the rule", alias="alertRuleId")
+    alert_rule_id: Optional[StrictStr] = Field(default=None, description="Unique ID of the rule.", alias="alertRuleId")
     alert_state: Optional[State] = Field(default=None, alias="alertState")
     alert_severity: Optional[Severity] = Field(default=None, alias="alertSeverity")
     __properties: ClassVar[List[str]] = ["id", "alertType", "startDate", "endDate", "violationCount", "duration", "suppressed", "meta", "_links", "alertId", "dateStart", "dateEnd", "ruleId", "state", "severity", "permalink", "apiLinks", "alertRuleId", "alertState", "alertSeverity"]

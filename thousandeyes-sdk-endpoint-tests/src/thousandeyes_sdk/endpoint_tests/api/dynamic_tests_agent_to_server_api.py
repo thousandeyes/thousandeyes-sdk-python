@@ -342,7 +342,7 @@ class DynamicTestsAgentToServerApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/tests/dynamic-tests/agent-to-server',
+            resource_path='/endpoint/tests/dynamic-tests/agent-to-server',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -641,7 +641,7 @@ class DynamicTestsAgentToServerApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/endpoint/tests/dynamic-tests/agent-to-server/{testId}',
+            resource_path='/endpoint/tests/dynamic-tests/agent-to-server/{testId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -938,7 +938,7 @@ class DynamicTestsAgentToServerApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/tests/dynamic-tests/agent-to-server/{testId}',
+            resource_path='/endpoint/tests/dynamic-tests/agent-to-server/{testId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1217,7 +1217,7 @@ class DynamicTestsAgentToServerApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/tests/dynamic-tests/agent-to-server',
+            resource_path='/endpoint/tests/dynamic-tests/agent-to-server',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1545,7 +1545,7 @@ class DynamicTestsAgentToServerApi:
 
         return self.api_client.param_serialize(
             method='PATCH',
-            resource_path='/v7/endpoint/tests/dynamic-tests/agent-to-server/{testId}',
+            resource_path='/endpoint/tests/dynamic-tests/agent-to-server/{testId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

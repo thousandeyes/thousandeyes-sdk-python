@@ -342,7 +342,7 @@ class OutagesAPIPublicApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/internet-insights/outages/filter',
+            resource_path='/internet-insights/outages/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -642,7 +642,7 @@ class OutagesAPIPublicApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/internet-insights/outages/app/{outageId}',
+            resource_path='/internet-insights/outages/app/{outageId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -942,7 +942,7 @@ class OutagesAPIPublicApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/internet-insights/outages/net/{outageId}',
+            resource_path='/internet-insights/outages/net/{outageId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

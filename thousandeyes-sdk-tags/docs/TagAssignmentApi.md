@@ -1,13 +1,13 @@
 # thousandeyes_sdk.tags.TagAssignmentApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assign_tag**](TagAssignmentApi.md#assign_tag) | **POST** /v7/tags/{id}/assign | Assign tag to multiple objects
-[**assign_tags**](TagAssignmentApi.md#assign_tags) | **POST** /v7/tags/assign | Assign multiple tags to multiple objects
-[**unassign_tag**](TagAssignmentApi.md#unassign_tag) | **POST** /v7/tags/{id}/unassign | Remove tag from multiple objects
-[**unassign_tags**](TagAssignmentApi.md#unassign_tags) | **POST** /v7/tags/unassign | Remove multiple tags from multiple objects
+[**assign_tag**](TagAssignmentApi.md#assign_tag) | **POST** /tags/{id}/assign | Assign tag to multiple objects
+[**assign_tags**](TagAssignmentApi.md#assign_tags) | **POST** /tags/assign | Assign multiple tags to multiple objects
+[**unassign_tag**](TagAssignmentApi.md#unassign_tag) | **POST** /tags/{id}/unassign | Remove tag from multiple objects
+[**unassign_tags**](TagAssignmentApi.md#unassign_tags) | **POST** /tags/unassign | Remove multiple tags from multiple objects
 
 
 # **assign_tag**
@@ -27,10 +27,10 @@ from thousandeyes_sdk.tags.models.tag_assignment import TagAssignment
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -112,10 +112,10 @@ from thousandeyes_sdk.tags.models.bulk_tag_assignments import BulkTagAssignments
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -195,10 +195,10 @@ from thousandeyes_sdk.tags.models.tag_assignment import TagAssignment
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -280,10 +280,10 @@ from thousandeyes_sdk.tags.models.bulk_tag_assignments import BulkTagAssignments
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

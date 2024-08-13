@@ -1,14 +1,14 @@
 # thousandeyes_sdk.administrative.UsersApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_user**](UsersApi.md#create_user) | **POST** /v7/users | Create user
-[**delete_user**](UsersApi.md#delete_user) | **DELETE** /v7/users/{id} | Delete user
-[**get_user**](UsersApi.md#get_user) | **GET** /v7/users/{id} | Retrieve user
-[**get_users**](UsersApi.md#get_users) | **GET** /v7/users | List users
-[**update_user**](UsersApi.md#update_user) | **PUT** /v7/users/{id} | Update user
+[**create_user**](UsersApi.md#create_user) | **POST** /users | Create user
+[**delete_user**](UsersApi.md#delete_user) | **DELETE** /users/{id} | Delete user
+[**get_user**](UsersApi.md#get_user) | **GET** /users/{id} | Retrieve user
+[**get_users**](UsersApi.md#get_users) | **GET** /users | List users
+[**update_user**](UsersApi.md#update_user) | **PUT** /users/{id} | Update user
 
 
 # **create_user**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.administrative.models.user_request import UserRequest
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -114,10 +114,10 @@ import thousandeyes_sdk.administrative
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -198,10 +198,10 @@ from thousandeyes_sdk.administrative.models.user_detail import UserDetail
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -284,10 +284,10 @@ from thousandeyes_sdk.administrative.models.users import Users
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -369,10 +369,10 @@ from thousandeyes_sdk.administrative.models.user_request import UserRequest
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
