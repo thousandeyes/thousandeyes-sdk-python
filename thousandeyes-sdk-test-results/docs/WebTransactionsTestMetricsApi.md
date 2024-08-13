@@ -1,12 +1,12 @@
 # thousandeyes_sdk.test_results.WebTransactionsTestMetricsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_test_web_transaction_agent_round_page_results**](WebTransactionsTestMetricsApi.md#get_test_web_transaction_agent_round_page_results) | **GET** /v7/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId}/page/{pageId} | Get detailed web transactions test result by agent, round, and page
-[**get_test_web_transaction_agent_round_results**](WebTransactionsTestMetricsApi.md#get_test_web_transaction_agent_round_results) | **GET** /v7/test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId} | Get web transactions test results by agent and round
-[**get_test_web_transaction_results**](WebTransactionsTestMetricsApi.md#get_test_web_transaction_results) | **GET** /v7/test-results/{testId}/web-transactions | Get web transactions test results
+[**get_test_web_transaction_agent_round_page_results**](WebTransactionsTestMetricsApi.md#get_test_web_transaction_agent_round_page_results) | **GET** /test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId}/page/{pageId} | Get detailed web transactions test result by agent, round, and page
+[**get_test_web_transaction_agent_round_results**](WebTransactionsTestMetricsApi.md#get_test_web_transaction_agent_round_results) | **GET** /test-results/{testId}/web-transactions/agent/{agentId}/round/{roundId} | Get web transactions test results by agent and round
+[**get_test_web_transaction_results**](WebTransactionsTestMetricsApi.md#get_test_web_transaction_results) | **GET** /test-results/{testId}/web-transactions | Get web transactions test results
 
 
 # **get_test_web_transaction_agent_round_page_results**
@@ -26,10 +26,10 @@ from thousandeyes_sdk.test_results.models.web_transaction_page_detail_test_resul
 from thousandeyes_sdk.test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -120,10 +120,10 @@ from thousandeyes_sdk.test_results.models.web_transaction_detail_test_results im
 from thousandeyes_sdk.test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -212,10 +212,10 @@ from thousandeyes_sdk.test_results.models.web_transaction_test_results import We
 from thousandeyes_sdk.test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

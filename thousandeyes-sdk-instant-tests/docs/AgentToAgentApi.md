@@ -1,10 +1,10 @@
 # thousandeyes_sdk.instant_tests.AgentToAgentApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_agent_to_agent_instant_test**](AgentToAgentApi.md#create_agent_to_agent_instant_test) | **POST** /v7/tests/agent-to-agent/instant | Create agent-to-agent instant test
+[**create_agent_to_agent_instant_test**](AgentToAgentApi.md#create_agent_to_agent_instant_test) | **POST** /tests/agent-to-agent/instant | Create agent-to-agent instant test
 
 
 # **create_agent_to_agent_instant_test**
@@ -26,10 +26,10 @@ from thousandeyes_sdk.instant_tests.models.expand import Expand
 from thousandeyes_sdk.instant_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

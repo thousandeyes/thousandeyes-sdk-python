@@ -341,7 +341,7 @@ class DashboardSnapshotsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/dashboard-snapshots',
+            resource_path='/dashboard-snapshots',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -637,7 +637,7 @@ class DashboardSnapshotsApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/dashboard-snapshots/{snapshotId}',
+            resource_path='/dashboard-snapshots/{snapshotId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -934,7 +934,7 @@ class DashboardSnapshotsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/dashboard-snapshots/{snapshotId}',
+            resource_path='/dashboard-snapshots/{snapshotId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1246,7 +1246,7 @@ class DashboardSnapshotsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/dashboard-snapshots/{snapshotId}/widgets/{widgetId}',
+            resource_path='/dashboard-snapshots/{snapshotId}/widgets/{widgetId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1562,7 +1562,7 @@ class DashboardSnapshotsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/dashboard-snapshots',
+            resource_path='/dashboard-snapshots',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1886,7 +1886,7 @@ class DashboardSnapshotsApi:
 
         return self.api_client.param_serialize(
             method='PATCH',
-            resource_path='/v7/dashboard-snapshots/{snapshotId}',
+            resource_path='/dashboard-snapshots/{snapshotId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -1,13 +1,13 @@
 # thousandeyes_sdk.agents.CloudAndEnterpriseAgentsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_agent**](CloudAndEnterpriseAgentsApi.md#delete_agent) | **DELETE** /v7/agents/{agentId} | Delete Enterprise Agent
-[**get_agent**](CloudAndEnterpriseAgentsApi.md#get_agent) | **GET** /v7/agents/{agentId} | Retrieve Cloud and Enterprise Agent
-[**get_agents**](CloudAndEnterpriseAgentsApi.md#get_agents) | **GET** /v7/agents | List Cloud and Enterprise Agents
-[**update_agent**](CloudAndEnterpriseAgentsApi.md#update_agent) | **PUT** /v7/agents/{agentId} | Update Enterprise Agent
+[**delete_agent**](CloudAndEnterpriseAgentsApi.md#delete_agent) | **DELETE** /agents/{agentId} | Delete Enterprise Agent
+[**get_agent**](CloudAndEnterpriseAgentsApi.md#get_agent) | **GET** /agents/{agentId} | Retrieve Cloud and Enterprise Agent
+[**get_agents**](CloudAndEnterpriseAgentsApi.md#get_agents) | **GET** /agents | List Cloud and Enterprise Agents
+[**update_agent**](CloudAndEnterpriseAgentsApi.md#update_agent) | **PUT** /agents/{agentId} | Update Enterprise Agent
 
 
 # **delete_agent**
@@ -26,10 +26,10 @@ import thousandeyes_sdk.agents
 from thousandeyes_sdk.agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -112,10 +112,10 @@ from thousandeyes_sdk.agents.models.agent_details_expand import AgentDetailsExpa
 from thousandeyes_sdk.agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -203,10 +203,10 @@ from thousandeyes_sdk.agents.models.cloud_enterprise_agents import CloudEnterpri
 from thousandeyes_sdk.agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -294,10 +294,10 @@ from thousandeyes_sdk.agents.models.agent_request import AgentRequest
 from thousandeyes_sdk.agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

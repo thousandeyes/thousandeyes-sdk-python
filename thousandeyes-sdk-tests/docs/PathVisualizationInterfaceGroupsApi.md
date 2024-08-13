@@ -1,13 +1,13 @@
 # thousandeyes_sdk.tests.PathVisualizationInterfaceGroupsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_path_vis_interface_groups**](PathVisualizationInterfaceGroupsApi.md#create_path_vis_interface_groups) | **POST** /v7/network/path-vis/interface-groups | Create interface group for path visualization
-[**delete_path_vis_interface_group**](PathVisualizationInterfaceGroupsApi.md#delete_path_vis_interface_group) | **DELETE** /v7/network/path-vis/interface-groups/{interfaceGroupId} | Delete interface group
-[**get_path_vis_interface_groups**](PathVisualizationInterfaceGroupsApi.md#get_path_vis_interface_groups) | **GET** /v7/network/path-vis/interface-groups | List interface groups for path visualization
-[**update_path_vis_interface_group**](PathVisualizationInterfaceGroupsApi.md#update_path_vis_interface_group) | **PUT** /v7/network/path-vis/interface-groups/{interfaceGroupId} | Update interface group
+[**create_path_vis_interface_groups**](PathVisualizationInterfaceGroupsApi.md#create_path_vis_interface_groups) | **POST** /network/path-vis/interface-groups | Create interface group for path visualization
+[**delete_path_vis_interface_group**](PathVisualizationInterfaceGroupsApi.md#delete_path_vis_interface_group) | **DELETE** /network/path-vis/interface-groups/{interfaceGroupId} | Delete interface group
+[**get_path_vis_interface_groups**](PathVisualizationInterfaceGroupsApi.md#get_path_vis_interface_groups) | **GET** /network/path-vis/interface-groups | List interface groups for path visualization
+[**update_path_vis_interface_group**](PathVisualizationInterfaceGroupsApi.md#update_path_vis_interface_group) | **PUT** /network/path-vis/interface-groups/{interfaceGroupId} | Update interface group
 
 
 # **create_path_vis_interface_groups**
@@ -27,10 +27,10 @@ from thousandeyes_sdk.tests.models.interface_group import InterfaceGroup
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -114,10 +114,10 @@ import thousandeyes_sdk.tests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -199,10 +199,10 @@ from thousandeyes_sdk.tests.models.interface_groups import InterfaceGroups
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -284,10 +284,10 @@ from thousandeyes_sdk.tests.models.interface_group import InterfaceGroup
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

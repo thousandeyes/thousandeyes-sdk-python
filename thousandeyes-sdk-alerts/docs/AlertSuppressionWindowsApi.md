@@ -1,14 +1,14 @@
 # thousandeyes_sdk.alerts.AlertSuppressionWindowsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_alert_suppression_window**](AlertSuppressionWindowsApi.md#create_alert_suppression_window) | **POST** /v7/alert-suppression-windows | Create alert suppression window
-[**delete_alert_suppression_window**](AlertSuppressionWindowsApi.md#delete_alert_suppression_window) | **DELETE** /v7/alert-suppression-windows/{windowId} | Delete alert suppression window
-[**get_alert_suppression_window**](AlertSuppressionWindowsApi.md#get_alert_suppression_window) | **GET** /v7/alert-suppression-windows/{windowId} | Retrieve alert suppression window
-[**get_alert_suppression_windows**](AlertSuppressionWindowsApi.md#get_alert_suppression_windows) | **GET** /v7/alert-suppression-windows | List alert suppression windows
-[**update_alert_suppression_window**](AlertSuppressionWindowsApi.md#update_alert_suppression_window) | **PUT** /v7/alert-suppression-windows/{windowId} | Update alert suppression window
+[**create_alert_suppression_window**](AlertSuppressionWindowsApi.md#create_alert_suppression_window) | **POST** /alert-suppression-windows | Create alert suppression window
+[**delete_alert_suppression_window**](AlertSuppressionWindowsApi.md#delete_alert_suppression_window) | **DELETE** /alert-suppression-windows/{windowId} | Delete alert suppression window
+[**get_alert_suppression_window**](AlertSuppressionWindowsApi.md#get_alert_suppression_window) | **GET** /alert-suppression-windows/{windowId} | Retrieve alert suppression window
+[**get_alert_suppression_windows**](AlertSuppressionWindowsApi.md#get_alert_suppression_windows) | **GET** /alert-suppression-windows | List alert suppression windows
+[**update_alert_suppression_window**](AlertSuppressionWindowsApi.md#update_alert_suppression_window) | **PUT** /alert-suppression-windows/{windowId} | Update alert suppression window
 
 
 # **create_alert_suppression_window**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.alerts.models.expand import Expand
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -117,10 +117,10 @@ import thousandeyes_sdk.alerts
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -202,10 +202,10 @@ from thousandeyes_sdk.alerts.models.expand import Expand
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -289,10 +289,10 @@ from thousandeyes_sdk.alerts.models.alert_suppression_windows import AlertSuppre
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -374,10 +374,10 @@ from thousandeyes_sdk.alerts.models.expand import Expand
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

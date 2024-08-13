@@ -337,7 +337,7 @@ class StreamingApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/stream',
+            resource_path='/stream',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -630,7 +630,7 @@ class StreamingApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/stream/{id}',
+            resource_path='/stream/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -941,7 +941,7 @@ class StreamingApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/stream/{id}',
+            resource_path='/stream/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1240,7 +1240,7 @@ class StreamingApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/stream',
+            resource_path='/stream',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1568,7 +1568,7 @@ class StreamingApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/v7/stream/{id}',
+            resource_path='/stream/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

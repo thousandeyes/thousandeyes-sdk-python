@@ -339,7 +339,7 @@ class AlertRulesApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/alerts/rules',
+            resource_path='/alerts/rules',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -635,7 +635,7 @@ class AlertRulesApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/alerts/rules/{ruleId}',
+            resource_path='/alerts/rules/{ruleId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -929,7 +929,7 @@ class AlertRulesApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/alerts/rules/{ruleId}',
+            resource_path='/alerts/rules/{ruleId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1208,7 +1208,7 @@ class AlertRulesApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/alerts/rules',
+            resource_path='/alerts/rules',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1533,7 +1533,7 @@ class AlertRulesApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/v7/alerts/rules/{ruleId}',
+            resource_path='/alerts/rules/{ruleId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

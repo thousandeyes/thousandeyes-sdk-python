@@ -346,7 +346,7 @@ class TransferApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/agents/{agentId}/transfer',
+            resource_path='/endpoint/agents/{agentId}/transfer',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -655,7 +655,7 @@ class TransferApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/agents/transfer/bulk',
+            resource_path='/endpoint/agents/transfer/bulk',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

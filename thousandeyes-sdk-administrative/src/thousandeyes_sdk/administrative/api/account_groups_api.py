@@ -341,7 +341,7 @@ class AccountGroupsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/account-groups',
+            resource_path='/account-groups',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -620,7 +620,7 @@ class AccountGroupsApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/account-groups/{id}',
+            resource_path='/account-groups/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -918,7 +918,7 @@ class AccountGroupsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/account-groups/{id}',
+            resource_path='/account-groups/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1200,7 +1200,7 @@ class AccountGroupsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/account-groups',
+            resource_path='/account-groups',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1526,7 +1526,7 @@ class AccountGroupsApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/v7/account-groups/{id}',
+            resource_path='/account-groups/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

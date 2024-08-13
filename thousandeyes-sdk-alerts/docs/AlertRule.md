@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**rule_id** | **str** | Unique ID of the rule | [optional] [readonly] 
+**rule_id** | **str** | Unique ID of the rule. | [optional] [readonly] 
 **rule_name** | **str** | Name of the alert rule | [optional] [readonly] 
 **expression** | **str** | String expression of alert rule | [optional] [readonly] 
 **direction** | [**AlertDirection**](AlertDirection.md) |  | [optional] 
@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **rounds_violating_mode** | [**AlertRoundsViolationMode**](AlertRoundsViolationMode.md) |  | [optional] 
 **rounds_violating_out_of** | **int** | Specifies the divisor (y value) for the “X of Y times” condition. | [optional] [readonly] 
 **rounds_violating_required** | **int** | Specifies the numerator (x value) for the “X of Y times” condition | [optional] [readonly] 
+**sensitivity_level** | [**SensitivityLevel**](SensitivityLevel.md) |  | [optional] 
 **severity** | [**Severity**](Severity.md) |  | [optional] 
 
 ## Example

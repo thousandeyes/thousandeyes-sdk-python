@@ -322,7 +322,7 @@ class AlertsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/alerts/{alertId}',
+            resource_path='/alerts/{alertId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -704,7 +704,7 @@ class AlertsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/alerts',
+            resource_path='/alerts',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

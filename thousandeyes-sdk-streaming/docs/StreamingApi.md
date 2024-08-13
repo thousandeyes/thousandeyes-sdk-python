@@ -1,14 +1,14 @@
 # thousandeyes_sdk.streaming.StreamingApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_stream**](StreamingApi.md#create_stream) | **POST** /v7/stream | Create data stream
-[**delete_stream**](StreamingApi.md#delete_stream) | **DELETE** /v7/stream/{id} | Delete a data stream
-[**get_stream**](StreamingApi.md#get_stream) | **GET** /v7/stream/{id} | Retrieve data stream
-[**get_streams**](StreamingApi.md#get_streams) | **GET** /v7/stream | List data streams
-[**update_stream**](StreamingApi.md#update_stream) | **PUT** /v7/stream/{id} | Update data stream
+[**create_stream**](StreamingApi.md#create_stream) | **POST** /stream | Create data stream
+[**delete_stream**](StreamingApi.md#delete_stream) | **DELETE** /stream/{id} | Delete a data stream
+[**get_stream**](StreamingApi.md#get_stream) | **GET** /stream/{id} | Retrieve data stream
+[**get_streams**](StreamingApi.md#get_streams) | **GET** /stream | List data streams
+[**update_stream**](StreamingApi.md#update_stream) | **PUT** /stream/{id} | Update data stream
 
 
 # **create_stream**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.streaming.models.stream import Stream
 from thousandeyes_sdk.streaming.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -113,10 +113,10 @@ import thousandeyes_sdk.streaming
 from thousandeyes_sdk.streaming.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -197,10 +197,10 @@ from thousandeyes_sdk.streaming.models.stream_type import StreamType
 from thousandeyes_sdk.streaming.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -285,10 +285,10 @@ from thousandeyes_sdk.streaming.models.stream_type import StreamType
 from thousandeyes_sdk.streaming.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -372,10 +372,10 @@ from thousandeyes_sdk.streaming.models.put_stream import PutStream
 from thousandeyes_sdk.streaming.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

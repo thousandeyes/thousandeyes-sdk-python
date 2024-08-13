@@ -1,6 +1,6 @@
 # AlertRoundsViolationMode
 
-`exact` requires that the same agent(s) meet the threshold in consecutive rounds; default is `any`
+`exact` requires the same agents to meet the threshold in consecutive rounds. `auto` is only enabled for CEA and Endpoint Scheduled test rules. The default is `any`.
 
 ## Properties
 

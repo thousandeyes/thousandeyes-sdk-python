@@ -338,7 +338,7 @@ class DashboardsFiltersApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/dashboards/filters',
+            resource_path='/dashboards/filters',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -634,7 +634,7 @@ class DashboardsFiltersApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/dashboards/filters/{id}',
+            resource_path='/dashboards/filters/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -931,7 +931,7 @@ class DashboardsFiltersApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/dashboards/filters/{id}',
+            resource_path='/dashboards/filters/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1230,7 +1230,7 @@ class DashboardsFiltersApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/dashboards/filters',
+            resource_path='/dashboards/filters',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1555,7 +1555,7 @@ class DashboardsFiltersApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/v7/dashboards/filters/{id}',
+            resource_path='/dashboards/filters/{id}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

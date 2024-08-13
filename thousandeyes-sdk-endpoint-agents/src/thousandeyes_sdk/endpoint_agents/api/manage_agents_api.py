@@ -339,7 +339,7 @@ class ManageAgentsApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/endpoint/agents/{agentId}',
+            resource_path='/endpoint/agents/{agentId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -630,7 +630,7 @@ class ManageAgentsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/agents/{agentId}/disable',
+            resource_path='/endpoint/agents/{agentId}/disable',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -921,7 +921,7 @@ class ManageAgentsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/agents/{agentId}/enable',
+            resource_path='/endpoint/agents/{agentId}/enable',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1294,7 +1294,7 @@ class ManageAgentsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/agents/filter',
+            resource_path='/endpoint/agents/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1620,7 +1620,7 @@ class ManageAgentsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/agents/{agentId}',
+            resource_path='/endpoint/agents/{agentId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2013,7 +2013,7 @@ class ManageAgentsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/agents',
+            resource_path='/endpoint/agents',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2350,7 +2350,7 @@ class ManageAgentsApi:
 
         return self.api_client.param_serialize(
             method='PATCH',
-            resource_path='/v7/endpoint/agents/{agentId}',
+            resource_path='/endpoint/agents/{agentId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

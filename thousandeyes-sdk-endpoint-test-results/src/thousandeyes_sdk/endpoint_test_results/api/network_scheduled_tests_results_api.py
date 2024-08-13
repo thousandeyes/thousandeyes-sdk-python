@@ -443,7 +443,7 @@ class NetworkScheduledTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/test-results/scheduled-tests/{testId}/network/filter',
+            resource_path='/endpoint/test-results/scheduled-tests/{testId}/network/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -856,7 +856,7 @@ class NetworkScheduledTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/test-results/scheduled-tests/network/filter',
+            resource_path='/endpoint/test-results/scheduled-tests/network/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1183,7 +1183,7 @@ class NetworkScheduledTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/test-results/scheduled-tests/{testId}/path-vis/agent/{agentId}/round/{roundId}',
+            resource_path='/endpoint/test-results/scheduled-tests/{testId}/path-vis/agent/{agentId}/round/{roundId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1566,7 +1566,7 @@ class NetworkScheduledTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/test-results/scheduled-tests/{testId}/path-vis',
+            resource_path='/endpoint/test-results/scheduled-tests/{testId}/path-vis',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

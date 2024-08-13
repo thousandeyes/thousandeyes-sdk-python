@@ -1,14 +1,14 @@
 # thousandeyes_sdk.tests.VoiceApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_voice_test**](VoiceApi.md#create_voice_test) | **POST** /v7/tests/voice | Create Voice test
-[**delete_voice_test**](VoiceApi.md#delete_voice_test) | **DELETE** /v7/tests/voice/{testId} | Delete Voice test
-[**get_voice_test**](VoiceApi.md#get_voice_test) | **GET** /v7/tests/voice/{testId} | Get Voice test
-[**get_voice_tests**](VoiceApi.md#get_voice_tests) | **GET** /v7/tests/voice | List Voice tests
-[**update_voice_test**](VoiceApi.md#update_voice_test) | **PUT** /v7/tests/voice/{testId} | Update Voice test
+[**create_voice_test**](VoiceApi.md#create_voice_test) | **POST** /tests/voice | Create Voice test
+[**delete_voice_test**](VoiceApi.md#delete_voice_test) | **DELETE** /tests/voice/{testId} | Delete Voice test
+[**get_voice_test**](VoiceApi.md#get_voice_test) | **GET** /tests/voice/{testId} | Get Voice test
+[**get_voice_tests**](VoiceApi.md#get_voice_tests) | **GET** /tests/voice | List Voice tests
+[**update_voice_test**](VoiceApi.md#update_voice_test) | **PUT** /tests/voice/{testId} | Update Voice test
 
 
 # **create_voice_test**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.tests.models.voice_test import VoiceTest
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,10 +119,10 @@ import thousandeyes_sdk.tests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -205,10 +205,10 @@ from thousandeyes_sdk.tests.models.voice_test import VoiceTest
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -294,10 +294,10 @@ from thousandeyes_sdk.tests.models.voice_tests import VoiceTests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -381,10 +381,10 @@ from thousandeyes_sdk.tests.models.voice_test import VoiceTest
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

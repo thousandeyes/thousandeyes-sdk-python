@@ -1,10 +1,10 @@
 # thousandeyes_sdk.tests.AllTestTypesApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_tests**](AllTestTypesApi.md#get_tests) | **GET** /v7/tests | List configured tests
+[**get_tests**](AllTestTypesApi.md#get_tests) | **GET** /tests | List configured tests
 
 
 # **get_tests**
@@ -24,10 +24,10 @@ from thousandeyes_sdk.tests.models.tests import Tests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

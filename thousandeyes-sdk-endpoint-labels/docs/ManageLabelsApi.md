@@ -1,14 +1,14 @@
 # thousandeyes_sdk.endpoint_labels.ManageLabelsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_endpoint_label**](ManageLabelsApi.md#create_endpoint_label) | **POST** /v7/endpoint/labels | Create label
-[**delete_endpoint_label**](ManageLabelsApi.md#delete_endpoint_label) | **DELETE** /v7/endpoint/labels/{id} | Delete label
-[**get_endpoint_label**](ManageLabelsApi.md#get_endpoint_label) | **GET** /v7/endpoint/labels/{id} | Retrieve label
-[**get_endpoint_labels**](ManageLabelsApi.md#get_endpoint_labels) | **GET** /v7/endpoint/labels | List labels
-[**update_endpoint_label**](ManageLabelsApi.md#update_endpoint_label) | **PATCH** /v7/endpoint/labels/{id} | Update label
+[**create_endpoint_label**](ManageLabelsApi.md#create_endpoint_label) | **POST** /endpoint/labels | Create label
+[**delete_endpoint_label**](ManageLabelsApi.md#delete_endpoint_label) | **DELETE** /endpoint/labels/{id} | Delete label
+[**get_endpoint_label**](ManageLabelsApi.md#get_endpoint_label) | **GET** /endpoint/labels/{id} | Retrieve label
+[**get_endpoint_labels**](ManageLabelsApi.md#get_endpoint_labels) | **GET** /endpoint/labels | List labels
+[**update_endpoint_label**](ManageLabelsApi.md#update_endpoint_label) | **PATCH** /endpoint/labels/{id} | Update label
 
 
 # **create_endpoint_label**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.endpoint_labels.models.label_response import LabelResponse
 from thousandeyes_sdk.endpoint_labels.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -112,10 +112,10 @@ import thousandeyes_sdk.endpoint_labels
 from thousandeyes_sdk.endpoint_labels.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -195,10 +195,10 @@ from thousandeyes_sdk.endpoint_labels.models.label_response import LabelResponse
 from thousandeyes_sdk.endpoint_labels.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -282,10 +282,10 @@ from thousandeyes_sdk.endpoint_labels.models.labels import Labels
 from thousandeyes_sdk.endpoint_labels.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -370,10 +370,10 @@ from thousandeyes_sdk.endpoint_labels.models.label_response import LabelResponse
 from thousandeyes_sdk.endpoint_labels.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

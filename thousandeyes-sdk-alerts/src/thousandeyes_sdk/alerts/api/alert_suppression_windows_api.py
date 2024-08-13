@@ -357,7 +357,7 @@ class AlertSuppressionWindowsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/alert-suppression-windows',
+            resource_path='/alert-suppression-windows',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -653,7 +653,7 @@ class AlertSuppressionWindowsApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/alert-suppression-windows/{windowId}',
+            resource_path='/alert-suppression-windows/{windowId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -965,7 +965,7 @@ class AlertSuppressionWindowsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/alert-suppression-windows/{windowId}',
+            resource_path='/alert-suppression-windows/{windowId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1244,7 +1244,7 @@ class AlertSuppressionWindowsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/alert-suppression-windows',
+            resource_path='/alert-suppression-windows',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1587,7 +1587,7 @@ class AlertSuppressionWindowsApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/v7/alert-suppression-windows/{windowId}',
+            resource_path='/alert-suppression-windows/{windowId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -1,14 +1,14 @@
 # thousandeyes_sdk.tests.PageLoadApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_page_load_test**](PageLoadApi.md#create_page_load_test) | **POST** /v7/tests/page-load | Create Page Load test
-[**delete_page_load_test**](PageLoadApi.md#delete_page_load_test) | **DELETE** /v7/tests/page-load/{testId} | Delete Page Load test
-[**get_page_load_test**](PageLoadApi.md#get_page_load_test) | **GET** /v7/tests/page-load/{testId} | Get Page Load test
-[**get_page_load_tests**](PageLoadApi.md#get_page_load_tests) | **GET** /v7/tests/page-load | List Page Load tests
-[**update_page_load_test**](PageLoadApi.md#update_page_load_test) | **PUT** /v7/tests/page-load/{testId} | Update Page Load test
+[**create_page_load_test**](PageLoadApi.md#create_page_load_test) | **POST** /tests/page-load | Create Page Load test
+[**delete_page_load_test**](PageLoadApi.md#delete_page_load_test) | **DELETE** /tests/page-load/{testId} | Delete Page Load test
+[**get_page_load_test**](PageLoadApi.md#get_page_load_test) | **GET** /tests/page-load/{testId} | Get Page Load test
+[**get_page_load_tests**](PageLoadApi.md#get_page_load_tests) | **GET** /tests/page-load | List Page Load tests
+[**update_page_load_test**](PageLoadApi.md#update_page_load_test) | **PUT** /tests/page-load/{testId} | Update Page Load test
 
 
 # **create_page_load_test**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.tests.models.update_page_load_test import UpdatePageLoadTe
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -119,10 +119,10 @@ import thousandeyes_sdk.tests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -205,10 +205,10 @@ from thousandeyes_sdk.tests.models.page_load_test import PageLoadTest
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -294,10 +294,10 @@ from thousandeyes_sdk.tests.models.page_load_tests import PageLoadTests
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -381,10 +381,10 @@ from thousandeyes_sdk.tests.models.update_page_load_test import UpdatePageLoadTe
 from thousandeyes_sdk.tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

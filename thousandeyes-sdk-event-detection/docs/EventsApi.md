@@ -1,11 +1,11 @@
 # thousandeyes_sdk.event_detection.EventsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_event**](EventsApi.md#get_event) | **GET** /v7/events/{id} | Retrieve event
-[**get_events**](EventsApi.md#get_events) | **GET** /v7/events | List events
+[**get_event**](EventsApi.md#get_event) | **GET** /events/{id} | Retrieve event
+[**get_events**](EventsApi.md#get_events) | **GET** /events | List events
 
 
 # **get_event**
@@ -25,10 +25,10 @@ from thousandeyes_sdk.event_detection.models.event_detail import EventDetail
 from thousandeyes_sdk.event_detection.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -112,10 +112,10 @@ from thousandeyes_sdk.event_detection.models.events import Events
 from thousandeyes_sdk.event_detection.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

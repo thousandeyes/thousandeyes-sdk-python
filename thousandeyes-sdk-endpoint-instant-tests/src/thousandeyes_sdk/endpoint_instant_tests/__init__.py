@@ -43,6 +43,7 @@ from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_test_protocol impor
 from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_test_self_link import EndpointTestSelfLink
 from thousandeyes_sdk.endpoint_instant_tests.models.error import Error
 from thousandeyes_sdk.endpoint_instant_tests.models.link import Link
+from thousandeyes_sdk.endpoint_instant_tests.models.sensitivity_level import SensitivityLevel
 from thousandeyes_sdk.endpoint_instant_tests.models.severity import Severity
 from thousandeyes_sdk.endpoint_instant_tests.models.test_interval import TestInterval
 from thousandeyes_sdk.endpoint_instant_tests.models.test_label import TestLabel

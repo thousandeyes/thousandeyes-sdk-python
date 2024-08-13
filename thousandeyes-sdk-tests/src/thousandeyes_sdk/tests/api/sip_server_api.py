@@ -360,7 +360,7 @@ class SIPServerApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/tests/sip-server',
+            resource_path='/tests/sip-server',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -653,7 +653,7 @@ class SIPServerApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/tests/sip-server/{testId}',
+            resource_path='/tests/sip-server/{testId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -968,7 +968,7 @@ class SIPServerApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/tests/sip-server/{testId}',
+            resource_path='/tests/sip-server/{testId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1250,7 +1250,7 @@ class SIPServerApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/tests/sip-server',
+            resource_path='/tests/sip-server',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1596,7 +1596,7 @@ class SIPServerApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/v7/tests/sip-server/{testId}',
+            resource_path='/tests/sip-server/{testId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

@@ -1,14 +1,14 @@
 # thousandeyes_sdk.endpoint_test_results.RealUserTestsResultsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**filter_real_user_tests_network_results**](RealUserTestsResultsApi.md#filter_real_user_tests_network_results) | **POST** /v7/endpoint/test-results/real-user-tests/networks/filter | List endpoint real user tests
-[**filter_real_user_tests_results**](RealUserTestsResultsApi.md#filter_real_user_tests_results) | **POST** /v7/endpoint/test-results/real-user-tests/filter | List endpoint real user tests
-[**filter_real_user_tests_visited_pages_results**](RealUserTestsResultsApi.md#filter_real_user_tests_visited_pages_results) | **POST** /v7/endpoint/test-results/real-user-tests/pages/filter | List endpoint real user tests visited pages
-[**get_real_user_test_page_results**](RealUserTestsResultsApi.md#get_real_user_test_page_results) | **GET** /v7/endpoint/test-results/real-user-tests/{id}/pages/{pageId} | Retrieve endpoint real user test page
-[**get_real_user_test_results**](RealUserTestsResultsApi.md#get_real_user_test_results) | **GET** /v7/endpoint/test-results/real-user-tests/{id} | Retrieve endpoint real user test
+[**filter_real_user_tests_network_results**](RealUserTestsResultsApi.md#filter_real_user_tests_network_results) | **POST** /endpoint/test-results/real-user-tests/networks/filter | List endpoint real user tests
+[**filter_real_user_tests_results**](RealUserTestsResultsApi.md#filter_real_user_tests_results) | **POST** /endpoint/test-results/real-user-tests/filter | List endpoint real user tests
+[**filter_real_user_tests_visited_pages_results**](RealUserTestsResultsApi.md#filter_real_user_tests_visited_pages_results) | **POST** /endpoint/test-results/real-user-tests/pages/filter | List endpoint real user tests visited pages
+[**get_real_user_test_page_results**](RealUserTestsResultsApi.md#get_real_user_test_page_results) | **GET** /endpoint/test-results/real-user-tests/{id}/pages/{pageId} | Retrieve endpoint real user test page
+[**get_real_user_test_results**](RealUserTestsResultsApi.md#get_real_user_test_results) | **GET** /endpoint/test-results/real-user-tests/{id} | Retrieve endpoint real user test
 
 
 # **filter_real_user_tests_network_results**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.endpoint_test_results.models.real_user_test_network_result
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -125,10 +125,10 @@ from thousandeyes_sdk.endpoint_test_results.models.endpoint_real_user_test_resul
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -221,10 +221,10 @@ from thousandeyes_sdk.endpoint_test_results.models.real_user_test_page_results i
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -316,10 +316,10 @@ from thousandeyes_sdk.endpoint_test_results.models.real_user_test_page_detail_re
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -404,10 +404,10 @@ from thousandeyes_sdk.endpoint_test_results.models.endpoint_real_user_test_detai
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

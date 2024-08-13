@@ -1,12 +1,12 @@
 # thousandeyes_sdk.endpoint_test_results.LocalNetworkTestsResultsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**filter_local_networks_test_results_topologies**](LocalNetworkTestsResultsApi.md#filter_local_networks_test_results_topologies) | **POST** /v7/endpoint/test-results/local-networks/topologies/filter | List endpoint network topologies probes
-[**get_local_networks_test_results**](LocalNetworkTestsResultsApi.md#get_local_networks_test_results) | **GET** /v7/endpoint/test-results/local-networks | List local networks
-[**get_local_networks_test_results_topology**](LocalNetworkTestsResultsApi.md#get_local_networks_test_results_topology) | **GET** /v7/endpoint/test-results/local-networks/topologies/{networkTopologyId} | Retrieve endpoint local network topology
+[**filter_local_networks_test_results_topologies**](LocalNetworkTestsResultsApi.md#filter_local_networks_test_results_topologies) | **POST** /endpoint/test-results/local-networks/topologies/filter | List endpoint network topologies probes
+[**get_local_networks_test_results**](LocalNetworkTestsResultsApi.md#get_local_networks_test_results) | **GET** /endpoint/test-results/local-networks | List local networks
+[**get_local_networks_test_results_topology**](LocalNetworkTestsResultsApi.md#get_local_networks_test_results_topology) | **GET** /endpoint/test-results/local-networks/topologies/{networkTopologyId} | Retrieve endpoint local network topology
 
 
 # **filter_local_networks_test_results_topologies**
@@ -27,10 +27,10 @@ from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_result
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -122,10 +122,10 @@ from thousandeyes_sdk.endpoint_test_results.models.local_network_results import 
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -206,10 +206,10 @@ from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_detail
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

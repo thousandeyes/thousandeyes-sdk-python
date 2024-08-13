@@ -108,6 +108,7 @@ from thousandeyes_sdk.tests.models.page_load_test import PageLoadTest
 from thousandeyes_sdk.tests.models.page_load_tests import PageLoadTests
 from thousandeyes_sdk.tests.models.request_method import RequestMethod
 from thousandeyes_sdk.tests.models.self_links import SelfLinks
+from thousandeyes_sdk.tests.models.sensitivity_level import SensitivityLevel
 from thousandeyes_sdk.tests.models.severity import Severity
 from thousandeyes_sdk.tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.tests.models.simple_agent import SimpleAgent

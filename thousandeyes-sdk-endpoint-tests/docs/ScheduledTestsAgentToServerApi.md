@@ -1,14 +1,14 @@
 # thousandeyes_sdk.endpoint_tests.ScheduledTestsAgentToServerApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#create_agent_to_server_endpoint_scheduled_test) | **POST** /v7/endpoint/tests/scheduled-tests/agent-to-server | Creates agent to server endpoint scheduled test
-[**delete_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#delete_agent_to_server_endpoint_scheduled_test) | **DELETE** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Delete agent to server scheduled test
-[**get_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_test) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Retrieve agent to server endpoint scheduled test
-[**get_agent_to_server_endpoint_scheduled_tests**](ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests/agent-to-server | List agent to server endpoint scheduled tests
-[**update_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#update_agent_to_server_endpoint_scheduled_test) | **PATCH** /v7/endpoint/tests/scheduled-tests/agent-to-server/{testId} | Update agent to server endpoint scheduled test
+[**create_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#create_agent_to_server_endpoint_scheduled_test) | **POST** /endpoint/tests/scheduled-tests/agent-to-server | Creates agent to server endpoint scheduled test
+[**delete_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#delete_agent_to_server_endpoint_scheduled_test) | **DELETE** /endpoint/tests/scheduled-tests/agent-to-server/{testId} | Delete agent to server scheduled test
+[**get_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_test) | **GET** /endpoint/tests/scheduled-tests/agent-to-server/{testId} | Retrieve agent to server endpoint scheduled test
+[**get_agent_to_server_endpoint_scheduled_tests**](ScheduledTestsAgentToServerApi.md#get_agent_to_server_endpoint_scheduled_tests) | **GET** /endpoint/tests/scheduled-tests/agent-to-server | List agent to server endpoint scheduled tests
+[**update_agent_to_server_endpoint_scheduled_test**](ScheduledTestsAgentToServerApi.md#update_agent_to_server_endpoint_scheduled_test) | **PATCH** /endpoint/tests/scheduled-tests/agent-to-server/{testId} | Update agent to server endpoint scheduled test
 
 
 # **create_agent_to_server_endpoint_scheduled_test**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_agent_to_server_test_reques
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -116,10 +116,10 @@ import thousandeyes_sdk.endpoint_tests
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -202,10 +202,10 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_agent_to_server_test import
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -289,10 +289,10 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_agent_to_server_tests impor
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -374,10 +374,10 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_network_test_update import 
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -1,14 +1,14 @@
 # thousandeyes_sdk.administrative.AccountGroupsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_group**](AccountGroupsApi.md#create_account_group) | **POST** /v7/account-groups | Create account group
-[**delete_account_group**](AccountGroupsApi.md#delete_account_group) | **DELETE** /v7/account-groups/{id} | Delete account group
-[**get_account_group**](AccountGroupsApi.md#get_account_group) | **GET** /v7/account-groups/{id} | Retrieve account group
-[**get_account_groups**](AccountGroupsApi.md#get_account_groups) | **GET** /v7/account-groups | List account groups
-[**update_account_group**](AccountGroupsApi.md#update_account_group) | **PUT** /v7/account-groups/{id} | Update account group
+[**create_account_group**](AccountGroupsApi.md#create_account_group) | **POST** /account-groups | Create account group
+[**delete_account_group**](AccountGroupsApi.md#delete_account_group) | **DELETE** /account-groups/{id} | Delete account group
+[**get_account_group**](AccountGroupsApi.md#get_account_group) | **GET** /account-groups/{id} | Retrieve account group
+[**get_account_groups**](AccountGroupsApi.md#get_account_groups) | **GET** /account-groups | List account groups
+[**update_account_group**](AccountGroupsApi.md#update_account_group) | **PUT** /account-groups/{id} | Update account group
 
 
 # **create_account_group**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.administrative.models.expand import Expand
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -115,10 +115,10 @@ import thousandeyes_sdk.administrative
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -198,10 +198,10 @@ from thousandeyes_sdk.administrative.models.expand import Expand
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -284,10 +284,10 @@ from thousandeyes_sdk.administrative.models.account_groups import AccountGroups
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -370,10 +370,10 @@ from thousandeyes_sdk.administrative.models.expand import Expand
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

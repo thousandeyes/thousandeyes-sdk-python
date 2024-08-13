@@ -1,14 +1,14 @@
 # thousandeyes_sdk.endpoint_tests.ScheduledTestsHTTPServerApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_http_server_endpoint_scheduled_test**](ScheduledTestsHTTPServerApi.md#create_http_server_endpoint_scheduled_test) | **POST** /v7/endpoint/tests/scheduled-tests/http-server | Create HTTP server endpoint scheduled test
-[**delete_http_server_endpoint_scheduled_test**](ScheduledTestsHTTPServerApi.md#delete_http_server_endpoint_scheduled_test) | **DELETE** /v7/endpoint/tests/scheduled-tests/http-server/{testId} | Delete HTTP server scheduled test
-[**get_http_server_endpoint_scheduled_test**](ScheduledTestsHTTPServerApi.md#get_http_server_endpoint_scheduled_test) | **GET** /v7/endpoint/tests/scheduled-tests/http-server/{testId} | Retrieves HTTP server endpoint scheduled test
-[**get_http_server_endpoint_scheduled_tests**](ScheduledTestsHTTPServerApi.md#get_http_server_endpoint_scheduled_tests) | **GET** /v7/endpoint/tests/scheduled-tests/http-server | List HTTP server endpoint scheduled tests
-[**update_http_server_endpoint_scheduled_test**](ScheduledTestsHTTPServerApi.md#update_http_server_endpoint_scheduled_test) | **PATCH** /v7/endpoint/tests/scheduled-tests/http-server/{testId} | Update HTTP server endpoint scheduled test
+[**create_http_server_endpoint_scheduled_test**](ScheduledTestsHTTPServerApi.md#create_http_server_endpoint_scheduled_test) | **POST** /endpoint/tests/scheduled-tests/http-server | Create HTTP server endpoint scheduled test
+[**delete_http_server_endpoint_scheduled_test**](ScheduledTestsHTTPServerApi.md#delete_http_server_endpoint_scheduled_test) | **DELETE** /endpoint/tests/scheduled-tests/http-server/{testId} | Delete HTTP server scheduled test
+[**get_http_server_endpoint_scheduled_test**](ScheduledTestsHTTPServerApi.md#get_http_server_endpoint_scheduled_test) | **GET** /endpoint/tests/scheduled-tests/http-server/{testId} | Retrieves HTTP server endpoint scheduled test
+[**get_http_server_endpoint_scheduled_tests**](ScheduledTestsHTTPServerApi.md#get_http_server_endpoint_scheduled_tests) | **GET** /endpoint/tests/scheduled-tests/http-server | List HTTP server endpoint scheduled tests
+[**update_http_server_endpoint_scheduled_test**](ScheduledTestsHTTPServerApi.md#update_http_server_endpoint_scheduled_test) | **PATCH** /endpoint/tests/scheduled-tests/http-server/{testId} | Update HTTP server endpoint scheduled test
 
 
 # **create_http_server_endpoint_scheduled_test**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_http_server_test_request im
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -116,10 +116,10 @@ import thousandeyes_sdk.endpoint_tests
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -202,10 +202,10 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_http_server_test import End
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -289,10 +289,10 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_http_server_tests import En
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -374,10 +374,10 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_http_test_update import End
 from thousandeyes_sdk.endpoint_tests.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

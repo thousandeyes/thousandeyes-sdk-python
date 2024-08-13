@@ -22,6 +22,7 @@ from thousandeyes_sdk.alerts.models.alert_direction import AlertDirection
 from thousandeyes_sdk.alerts.models.alert_rounds_violation_mode import AlertRoundsViolationMode
 from thousandeyes_sdk.alerts.models.alert_type import AlertType
 from thousandeyes_sdk.alerts.models.notification import Notification
+from thousandeyes_sdk.alerts.models.sensitivity_level import SensitivityLevel
 from thousandeyes_sdk.alerts.models.severity import Severity
 from typing import Optional, Set
 from typing_extensions import Self
@@ -30,7 +31,7 @@ class RuleDetailUpdate(BaseModel):
     """
     RuleDetailUpdate
     """ # noqa: E501
-    rule_id: Optional[StrictStr] = Field(default=None, description="Unique ID of the rule", alias="ruleId")
+    rule_id: Optional[StrictStr] = Field(default=None, description="Unique ID of the rule.", alias="ruleId")
     rule_name: StrictStr = Field(description="Name of the alert rule.", alias="ruleName")
     expression: StrictStr = Field(description="The expression of the alert rule.")
     direction: Optional[AlertDirection] = None
@@ -43,10 +44,11 @@ class RuleDetailUpdate(BaseModel):
     rounds_violating_out_of: StrictInt = Field(description="Specifies the divisor (y value) in the “X of Y times” condition.", alias="roundsViolatingOutOf")
     rounds_violating_required: StrictInt = Field(description="Specifies the numerator (x value) in the “X of Y times” condition.", alias="roundsViolatingRequired")
     include_covered_prefixes: Optional[StrictBool] = Field(default=None, description="Set true to include covered prefixes in the BGP alert rule. Only applicable to BGP alert rules.", alias="includeCoveredPrefixes")
+    sensitivity_level: Optional[SensitivityLevel] = Field(default=None, alias="sensitivityLevel")
     severity: Optional[Severity] = None
     notifications: Optional[Notification] = None
     test_ids: Optional[List[StrictStr]] = Field(default=None, description="Array of test IDs to link to alert rule (get `testId` from `/tests` endpoint).", alias="testIds")
-    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "notifyOnClear", "isDefault", "alertType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "severity", "notifications", "testIds"]
+    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "notifyOnClear", "isDefault", "alertType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "notifications", "testIds"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,6 +120,7 @@ class RuleDetailUpdate(BaseModel):
             "roundsViolatingOutOf": obj.get("roundsViolatingOutOf"),
             "roundsViolatingRequired": obj.get("roundsViolatingRequired"),
             "includeCoveredPrefixes": obj.get("includeCoveredPrefixes"),
+            "sensitivityLevel": obj.get("sensitivityLevel"),
             "severity": obj.get("severity"),
             "notifications": Notification.from_dict(obj["notifications"]) if obj.get("notifications") is not None else None,
             "testIds": obj.get("testIds")

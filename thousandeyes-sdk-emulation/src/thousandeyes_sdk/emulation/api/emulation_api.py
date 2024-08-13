@@ -337,7 +337,7 @@ class EmulationApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/emulated-devices',
+            resource_path='/emulated-devices',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -617,7 +617,7 @@ class EmulationApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/emulated-devices',
+            resource_path='/emulated-devices',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -896,7 +896,7 @@ class EmulationApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/user-agents',
+            resource_path='/user-agents',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

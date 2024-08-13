@@ -1,11 +1,11 @@
 # thousandeyes_sdk.endpoint_test_results.WebHTTPServerScheduledTestResultsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_http_server_scheduled_test_results**](WebHTTPServerScheduledTestResultsApi.md#get_http_server_scheduled_test_results) | **GET** /v7/endpoint/test-results/scheduled-tests/{testId}/http-server | Retrieve HTTP server scheduled test results
-[**get_multi_test_filtered_http_server_scheduled_test_results**](WebHTTPServerScheduledTestResultsApi.md#get_multi_test_filtered_http_server_scheduled_test_results) | **POST** /v7/endpoint/test-results/scheduled-tests/http-server/filter | Filter HTTP server scheduled test results
+[**get_http_server_scheduled_test_results**](WebHTTPServerScheduledTestResultsApi.md#get_http_server_scheduled_test_results) | **GET** /endpoint/test-results/scheduled-tests/{testId}/http-server | Retrieve HTTP server scheduled test results
+[**get_multi_test_filtered_http_server_scheduled_test_results**](WebHTTPServerScheduledTestResultsApi.md#get_multi_test_filtered_http_server_scheduled_test_results) | **POST** /endpoint/test-results/scheduled-tests/http-server/filter | Filter HTTP server scheduled test results
 
 
 # **get_http_server_scheduled_test_results**
@@ -26,10 +26,10 @@ from thousandeyes_sdk.endpoint_test_results.models.http_test_results import Http
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -124,10 +124,10 @@ from thousandeyes_sdk.endpoint_test_results.models.http_tests_data_rounds_search
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

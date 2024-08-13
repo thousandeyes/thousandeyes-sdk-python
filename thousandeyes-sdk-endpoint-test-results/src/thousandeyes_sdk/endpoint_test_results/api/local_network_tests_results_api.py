@@ -429,7 +429,7 @@ class LocalNetworkTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/endpoint/test-results/local-networks/topologies/filter',
+            resource_path='/endpoint/test-results/local-networks/topologies/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -711,7 +711,7 @@ class LocalNetworkTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/test-results/local-networks',
+            resource_path='/endpoint/test-results/local-networks',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1008,7 +1008,7 @@ class LocalNetworkTestsResultsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/endpoint/test-results/local-networks/topologies/{networkTopologyId}',
+            resource_path='/endpoint/test-results/local-networks/topologies/{networkTopologyId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

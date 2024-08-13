@@ -1,15 +1,15 @@
 # thousandeyes_sdk.dashboards.DashboardSnapshotsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_dashboard_snapshot**](DashboardSnapshotsApi.md#create_dashboard_snapshot) | **POST** /v7/dashboard-snapshots | Create dashboard snapshot
-[**delete_dashboard_snapshot**](DashboardSnapshotsApi.md#delete_dashboard_snapshot) | **DELETE** /v7/dashboard-snapshots/{snapshotId} | Delete dashboard snapshot
-[**get_dashboard_snapshot**](DashboardSnapshotsApi.md#get_dashboard_snapshot) | **GET** /v7/dashboard-snapshots/{snapshotId} | Retrieve dashboard snapshot
-[**get_dashboard_snapshot_widget_data**](DashboardSnapshotsApi.md#get_dashboard_snapshot_widget_data) | **GET** /v7/dashboard-snapshots/{snapshotId}/widgets/{widgetId} | Retrieve dashboard snapshot data
-[**get_dashboard_snapshots**](DashboardSnapshotsApi.md#get_dashboard_snapshots) | **GET** /v7/dashboard-snapshots | List dashboard snapshots
-[**update_dashboard_snapshot_expiration_date**](DashboardSnapshotsApi.md#update_dashboard_snapshot_expiration_date) | **PATCH** /v7/dashboard-snapshots/{snapshotId} | Update snapshot expiration
+[**create_dashboard_snapshot**](DashboardSnapshotsApi.md#create_dashboard_snapshot) | **POST** /dashboard-snapshots | Create dashboard snapshot
+[**delete_dashboard_snapshot**](DashboardSnapshotsApi.md#delete_dashboard_snapshot) | **DELETE** /dashboard-snapshots/{snapshotId} | Delete dashboard snapshot
+[**get_dashboard_snapshot**](DashboardSnapshotsApi.md#get_dashboard_snapshot) | **GET** /dashboard-snapshots/{snapshotId} | Retrieve dashboard snapshot
+[**get_dashboard_snapshot_widget_data**](DashboardSnapshotsApi.md#get_dashboard_snapshot_widget_data) | **GET** /dashboard-snapshots/{snapshotId}/widgets/{widgetId} | Retrieve dashboard snapshot data
+[**get_dashboard_snapshots**](DashboardSnapshotsApi.md#get_dashboard_snapshots) | **GET** /dashboard-snapshots | List dashboard snapshots
+[**update_dashboard_snapshot_expiration_date**](DashboardSnapshotsApi.md#update_dashboard_snapshot_expiration_date) | **PATCH** /dashboard-snapshots/{snapshotId} | Update snapshot expiration
 
 
 # **create_dashboard_snapshot**
@@ -30,10 +30,10 @@ from thousandeyes_sdk.dashboards.models.generate_dashboard_snapshot_request impo
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -115,10 +115,10 @@ import thousandeyes_sdk.dashboards
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -199,10 +199,10 @@ from thousandeyes_sdk.dashboards.models.api_dashboard_snapshot import ApiDashboa
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -285,10 +285,10 @@ from thousandeyes_sdk.dashboards.models.api_widget_data_snapshot_response import
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -373,10 +373,10 @@ from thousandeyes_sdk.dashboards.models.dashboard_snapshots_page import Dashboar
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -461,10 +461,10 @@ from thousandeyes_sdk.dashboards.models.update_snapshot_expiration_date_api_requ
 from thousandeyes_sdk.dashboards.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

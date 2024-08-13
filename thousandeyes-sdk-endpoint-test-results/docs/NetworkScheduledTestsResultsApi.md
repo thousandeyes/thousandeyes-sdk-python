@@ -1,13 +1,13 @@
 # thousandeyes_sdk.endpoint_test_results.NetworkScheduledTestsResultsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**filter_scheduled_test_network_results**](NetworkScheduledTestsResultsApi.md#filter_scheduled_test_network_results) | **POST** /v7/endpoint/test-results/scheduled-tests/{testId}/network/filter | Retrieve network scheduled test results
-[**filter_scheduled_tests_network_results**](NetworkScheduledTestsResultsApi.md#filter_scheduled_tests_network_results) | **POST** /v7/endpoint/test-results/scheduled-tests/network/filter | Retrieve network scheduled test results from multiple tests
-[**get_scheduled_test_path_vis_agent_round_results**](NetworkScheduledTestsResultsApi.md#get_scheduled_test_path_vis_agent_round_results) | **GET** /v7/endpoint/test-results/scheduled-tests/{testId}/path-vis/agent/{agentId}/round/{roundId} | Retrieve path visualization network scheduled test results details
-[**get_scheduled_test_path_vis_results**](NetworkScheduledTestsResultsApi.md#get_scheduled_test_path_vis_results) | **GET** /v7/endpoint/test-results/scheduled-tests/{testId}/path-vis | Retrieve path visualization network scheduled test results
+[**filter_scheduled_test_network_results**](NetworkScheduledTestsResultsApi.md#filter_scheduled_test_network_results) | **POST** /endpoint/test-results/scheduled-tests/{testId}/network/filter | Retrieve network scheduled test results
+[**filter_scheduled_tests_network_results**](NetworkScheduledTestsResultsApi.md#filter_scheduled_tests_network_results) | **POST** /endpoint/test-results/scheduled-tests/network/filter | Retrieve network scheduled test results from multiple tests
+[**get_scheduled_test_path_vis_agent_round_results**](NetworkScheduledTestsResultsApi.md#get_scheduled_test_path_vis_agent_round_results) | **GET** /endpoint/test-results/scheduled-tests/{testId}/path-vis/agent/{agentId}/round/{roundId} | Retrieve path visualization network scheduled test results details
+[**get_scheduled_test_path_vis_results**](NetworkScheduledTestsResultsApi.md#get_scheduled_test_path_vis_results) | **GET** /endpoint/test-results/scheduled-tests/{testId}/path-vis | Retrieve path visualization network scheduled test results
 
 
 # **filter_scheduled_test_network_results**
@@ -28,10 +28,10 @@ from thousandeyes_sdk.endpoint_test_results.models.tests_data_rounds_search impo
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -125,10 +125,10 @@ from thousandeyes_sdk.endpoint_test_results.models.multi_test_id_tests_data_roun
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -221,10 +221,10 @@ from thousandeyes_sdk.endpoint_test_results.models.path_vis_detail_test_results 
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -311,10 +311,10 @@ from thousandeyes_sdk.endpoint_test_results.models.path_vis_test_results import 
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

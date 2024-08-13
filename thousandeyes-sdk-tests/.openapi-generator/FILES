@@ -90,6 +90,7 @@ docs/PathVisualizationInterfaceGroupsApi.md
 docs/RequestMethod.md
 docs/SIPServerApi.md
 docs/SelfLinks.md
+docs/SensitivityLevel.md
 docs/Severity.md
 docs/SharedWithAccount.md
 docs/SimpleAgent.md
@@ -263,6 +264,7 @@ src/thousandeyes_sdk/tests/models/page_load_test.py
 src/thousandeyes_sdk/tests/models/page_load_tests.py
 src/thousandeyes_sdk/tests/models/request_method.py
 src/thousandeyes_sdk/tests/models/self_links.py
+src/thousandeyes_sdk/tests/models/sensitivity_level.py
 src/thousandeyes_sdk/tests/models/severity.py
 src/thousandeyes_sdk/tests/models/shared_with_account.py
 src/thousandeyes_sdk/tests/models/simple_agent.py

@@ -1,12 +1,12 @@
 # thousandeyes_sdk.endpoint_test_results.NetworkDynamicTestsResultsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**filter_dynamic_test_network_results**](NetworkDynamicTestsResultsApi.md#filter_dynamic_test_network_results) | **POST** /v7/endpoint/test-results/dynamic-tests/{testId}/network/filter | Retrieve network dynamic test results
-[**get_dynamic_test_path_vis_agent_round_results**](NetworkDynamicTestsResultsApi.md#get_dynamic_test_path_vis_agent_round_results) | **GET** /v7/endpoint/test-results/dynamic-tests/{testId}/path-vis/agent/{agentId}/round/{roundId} | Retrieve path visualization network dynamic test results details
-[**get_dynamic_test_path_vis_results**](NetworkDynamicTestsResultsApi.md#get_dynamic_test_path_vis_results) | **GET** /v7/endpoint/test-results/dynamic-tests/{testId}/path-vis | Retrieve path visualization network dynamic test results
+[**filter_dynamic_test_network_results**](NetworkDynamicTestsResultsApi.md#filter_dynamic_test_network_results) | **POST** /endpoint/test-results/dynamic-tests/{testId}/network/filter | Retrieve network dynamic test results
+[**get_dynamic_test_path_vis_agent_round_results**](NetworkDynamicTestsResultsApi.md#get_dynamic_test_path_vis_agent_round_results) | **GET** /endpoint/test-results/dynamic-tests/{testId}/path-vis/agent/{agentId}/round/{roundId} | Retrieve path visualization network dynamic test results details
+[**get_dynamic_test_path_vis_results**](NetworkDynamicTestsResultsApi.md#get_dynamic_test_path_vis_results) | **GET** /endpoint/test-results/dynamic-tests/{testId}/path-vis | Retrieve path visualization network dynamic test results
 
 
 # **filter_dynamic_test_network_results**
@@ -27,10 +27,10 @@ from thousandeyes_sdk.endpoint_test_results.models.network_dynamic_test_results 
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -123,10 +123,10 @@ from thousandeyes_sdk.endpoint_test_results.models.path_vis_detail_dynamic_test_
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -214,10 +214,10 @@ from thousandeyes_sdk.endpoint_test_results.models.path_vis_dynamic_test_results
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

@@ -340,7 +340,7 @@ class PathVisualizationInterfaceGroupsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/v7/network/path-vis/interface-groups',
+            resource_path='/network/path-vis/interface-groups',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -636,7 +636,7 @@ class PathVisualizationInterfaceGroupsApi:
 
         return self.api_client.param_serialize(
             method='DELETE',
-            resource_path='/v7/network/path-vis/interface-groups/{interfaceGroupId}',
+            resource_path='/network/path-vis/interface-groups/{interfaceGroupId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -918,7 +918,7 @@ class PathVisualizationInterfaceGroupsApi:
 
         return self.api_client.param_serialize(
             method='GET',
-            resource_path='/v7/network/path-vis/interface-groups',
+            resource_path='/network/path-vis/interface-groups',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -1246,7 +1246,7 @@ class PathVisualizationInterfaceGroupsApi:
 
         return self.api_client.param_serialize(
             method='PUT',
-            resource_path='/v7/network/path-vis/interface-groups/{interfaceGroupId}',
+            resource_path='/network/path-vis/interface-groups/{interfaceGroupId}',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

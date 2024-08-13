@@ -46,6 +46,7 @@ docs/RuleDetail.md
 docs/RuleDetailUpdate.md
 docs/Rules.md
 docs/SelfLinks.md
+docs/SensitivityLevel.md
 docs/Severity.md
 docs/StartAlertMetrics.md
 docs/State.md
@@ -106,6 +107,7 @@ src/thousandeyes_sdk/alerts/models/rule_detail.py
 src/thousandeyes_sdk/alerts/models/rule_detail_update.py
 src/thousandeyes_sdk/alerts/models/rules.py
 src/thousandeyes_sdk/alerts/models/self_links.py
+src/thousandeyes_sdk/alerts/models/sensitivity_level.py
 src/thousandeyes_sdk/alerts/models/severity.py
 src/thousandeyes_sdk/alerts/models/start_alert_metrics.py
 src/thousandeyes_sdk/alerts/models/state.py
