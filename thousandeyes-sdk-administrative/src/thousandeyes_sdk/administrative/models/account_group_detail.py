@@ -36,7 +36,8 @@ class AccountGroupDetail(BaseModel):
     users: Optional[List[UserAccountGroup]] = None
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
     agents: Optional[List[EnterpriseAgent]] = None
-    __properties: ClassVar[List[str]] = ["aid", "accountGroupName", "isCurrentAccountGroup", "isDefaultAccountGroup", "organizationName", "users", "_links", "agents"]
+    account_token: Optional[StrictStr] = Field(default=None, description="The account group token is an alphanumeric string used to bind an Enterprise Agent to a specific account group. This token is not a password that must be kept secret. You can retrieve your `AccountGroupToken` from the `/account-groups/{id}` endpoint.", alias="accountToken")
+    __properties: ClassVar[List[str]] = ["aid", "accountGroupName", "isCurrentAccountGroup", "isDefaultAccountGroup", "organizationName", "users", "_links", "agents", "accountToken"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -114,7 +115,8 @@ class AccountGroupDetail(BaseModel):
             "organizationName": obj.get("organizationName"),
             "users": [UserAccountGroup.from_dict(_item) for _item in obj["users"]] if obj.get("users") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "agents": [EnterpriseAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "agents": [EnterpriseAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
+            "accountToken": obj.get("accountToken")
         })
         return _obj
 

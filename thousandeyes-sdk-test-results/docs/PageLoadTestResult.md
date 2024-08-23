@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **response_time** | **float** | Time to first byte in milliseconds | [optional] [readonly] 
 **total_size** | **int** | Sum of wire size of all objects on page in bytes | [optional] [readonly] 
 **num_objects** | **int** | Number of objects found on the page | [optional] [readonly] 

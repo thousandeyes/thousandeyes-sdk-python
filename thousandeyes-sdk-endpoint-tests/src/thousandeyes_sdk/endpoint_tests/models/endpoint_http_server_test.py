@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.endpoint_tests.models.alert_rule import AlertRule
 from thousandeyes_sdk.endpoint_tests.models.endpoint_agent_selector_config import EndpointAgentSelectorConfig
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_auth_type import EndpointTestAuthType
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_links import EndpointTestLinks
@@ -53,23 +52,19 @@ class EndpointHttpServerTest(BaseModel):
     test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")
     type: Annotated[str, Field(strict=True)] = Field(description="Type of test being queried.")
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
-    alert_rules: Optional[List[AlertRule]] = Field(default=None, description="Contains list of enabled alert rule objects.", alias="alertRules")
     auth_type: Optional[EndpointTestAuthType] = Field(default=None, alias="authType")
-    http_time_limit: Optional[StrictInt] = Field(default=None, description="Maximum amount of time in milliseconds the agents wait before a request times out.", alias="httpTimeLimit")
+    http_time_limit: Optional[StrictInt] = Field(default=5000, description="Maximum amount of time in milliseconds the agents wait before a request times out.", alias="httpTimeLimit")
     url: Optional[StrictStr] = Field(default=None, description="Test target URL. Optionally, you can specify a protocol (http or https). If no protocol is provided, the default `https` protocol is used.")
     username: Optional[StrictStr] = Field(default=None, description="Username for Basic/NTLM authentication.")
     ssl_version_id: Optional[TestSslVersionId] = Field(default=None, alias="sslVersionId")
-    verify_certificate: Optional[StrictBool] = Field(default=None, description="Flag indicating if a certificate should be verified.", alias="verifyCertificate")
-    content_regex: Optional[StrictStr] = Field(default=None, description="Content regex, this field does not require escaping.", alias="contentRegex")
+    verify_certificate: Optional[StrictBool] = Field(default=True, description="Flag indicating if a certificate should be verified.", alias="verifyCertificate")
     follow_redirects: Optional[StrictBool] = Field(default=True, description="To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to `false`.", alias="followRedirects")
     http_target_time: Optional[Annotated[int, Field(le=5000, strict=True, ge=100)]] = Field(default=None, description="Target time for HTTP server completion, specified in milliseconds.", alias="httpTargetTime")
     http_version: Optional[Annotated[int, Field(le=2, strict=True, ge=1)]] = Field(default=2, description="HTTP protocol version. Set to '2' to prefer HTTP/2, or '1' to use only HTTP/1.1.", alias="httpVersion")
-    post_body: Optional[StrictStr] = Field(default=None, description="Enter the body for the HTTP POST request in this field. No special escaping is necessary. If the post body is provided with content, the `requestMethod` is automatically set to POST.", alias="postBody")
     ssl_version: Optional[StrictStr] = Field(default=None, description="Reflects the verbose SSL protocol version used by a test.", alias="sslVersion")
     use_ntlm: Optional[StrictBool] = Field(default=None, description="Set to true to use NTLM, false to use Basic Authentication. Requires username and password to be set.", alias="useNtlm")
-    user_agent: Optional[StrictStr] = Field(default=None, description="User-agent string to be provided during the test.", alias="userAgent")
     labels: Optional[List[TestLabel]] = None
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "port", "protocol", "server", "testId", "testName", "type", "tcpProbeMode", "alertRules", "authType", "httpTimeLimit", "url", "username", "sslVersionId", "verifyCertificate", "contentRegex", "followRedirects", "httpTargetTime", "httpVersion", "postBody", "sslVersion", "useNtlm", "userAgent", "labels"]
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "port", "protocol", "server", "testId", "testName", "type", "tcpProbeMode", "authType", "httpTimeLimit", "url", "username", "sslVersionId", "verifyCertificate", "followRedirects", "httpTargetTime", "httpVersion", "sslVersion", "useNtlm", "labels"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
@@ -138,13 +133,6 @@ class EndpointHttpServerTest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of agent_selector_config
         if self.agent_selector_config:
             _dict['agentSelectorConfig'] = self.agent_selector_config.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in alert_rules (list)
-        _items = []
-        if self.alert_rules:
-            for _item in self.alert_rules:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['alertRules'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in labels (list)
         _items = []
         if self.labels:
@@ -181,21 +169,17 @@ class EndpointHttpServerTest(BaseModel):
             "testName": obj.get("testName"),
             "type": obj.get("type"),
             "tcpProbeMode": obj.get("tcpProbeMode"),
-            "alertRules": [AlertRule.from_dict(_item) for _item in obj["alertRules"]] if obj.get("alertRules") is not None else None,
             "authType": obj.get("authType"),
-            "httpTimeLimit": obj.get("httpTimeLimit"),
+            "httpTimeLimit": obj.get("httpTimeLimit") if obj.get("httpTimeLimit") is not None else 5000,
             "url": obj.get("url"),
             "username": obj.get("username"),
             "sslVersionId": obj.get("sslVersionId"),
-            "verifyCertificate": obj.get("verifyCertificate"),
-            "contentRegex": obj.get("contentRegex"),
+            "verifyCertificate": obj.get("verifyCertificate") if obj.get("verifyCertificate") is not None else True,
             "followRedirects": obj.get("followRedirects") if obj.get("followRedirects") is not None else True,
             "httpTargetTime": obj.get("httpTargetTime"),
             "httpVersion": obj.get("httpVersion") if obj.get("httpVersion") is not None else 2,
-            "postBody": obj.get("postBody"),
             "sslVersion": obj.get("sslVersion"),
             "useNtlm": obj.get("useNtlm"),
-            "userAgent": obj.get("userAgent"),
             "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None
         })
         return _obj

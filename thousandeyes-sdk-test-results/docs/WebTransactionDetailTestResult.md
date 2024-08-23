@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **component_errors** | **int** | Number of components which did not successfully load | [optional] [readonly] 
 **transaction_time** | **int** | Elapsed execution time of the web transaction script in milliseconds | [optional] [readonly] 
 **error_type** | **str** | Type of error encountered; corresponds to phase of connection | [optional] [readonly] 

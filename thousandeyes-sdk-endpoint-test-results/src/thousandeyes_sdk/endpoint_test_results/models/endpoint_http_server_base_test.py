@@ -31,13 +31,13 @@ class EndpointHttpServerBaseTest(BaseModel):
     """ # noqa: E501
     auth_type: Optional[EndpointTestAuthType] = Field(default=None, alias="authType")
     has_path_trace_in_session: Optional[StrictBool] = Field(default=None, description="Enables \"in session\" path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session.", alias="hasPathTraceInSession")
-    http_time_limit: Optional[StrictInt] = Field(default=None, description="Maximum amount of time in milliseconds the agents wait before a request times out.", alias="httpTimeLimit")
+    http_time_limit: Optional[StrictInt] = Field(default=5000, description="Maximum amount of time in milliseconds the agents wait before a request times out.", alias="httpTimeLimit")
     protocol: Optional[EndpointTestProtocol] = None
     url: Optional[StrictStr] = Field(default=None, description="Test target URL. Optionally, you can specify a protocol (http or https). If no protocol is provided, the default `https` protocol is used.")
     username: Optional[StrictStr] = Field(default=None, description="Username for Basic/NTLM authentication.")
     ssl_version_id: Optional[TestSslVersionId] = Field(default=None, alias="sslVersionId")
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
-    verify_certificate: Optional[StrictBool] = Field(default=None, description="Flag indicating if a certificate should be verified.", alias="verifyCertificate")
+    verify_certificate: Optional[StrictBool] = Field(default=True, description="Flag indicating if a certificate should be verified.", alias="verifyCertificate")
     __properties: ClassVar[List[str]] = ["authType", "hasPathTraceInSession", "httpTimeLimit", "protocol", "url", "username", "sslVersionId", "tcpProbeMode", "verifyCertificate"]
 
     model_config = ConfigDict(
@@ -94,13 +94,13 @@ class EndpointHttpServerBaseTest(BaseModel):
         _obj = cls.model_validate({
             "authType": obj.get("authType"),
             "hasPathTraceInSession": obj.get("hasPathTraceInSession"),
-            "httpTimeLimit": obj.get("httpTimeLimit"),
+            "httpTimeLimit": obj.get("httpTimeLimit") if obj.get("httpTimeLimit") is not None else 5000,
             "protocol": obj.get("protocol"),
             "url": obj.get("url"),
             "username": obj.get("username"),
             "sslVersionId": obj.get("sslVersionId"),
             "tcpProbeMode": obj.get("tcpProbeMode"),
-            "verifyCertificate": obj.get("verifyCertificate")
+            "verifyCertificate": obj.get("verifyCertificate") if obj.get("verifyCertificate") is not None else True
         })
         return _obj
 

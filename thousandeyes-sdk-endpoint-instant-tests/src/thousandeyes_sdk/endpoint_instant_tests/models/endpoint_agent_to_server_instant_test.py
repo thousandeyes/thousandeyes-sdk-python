@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_test_agent_selector_type import EndpointTestAgentSelectorType
@@ -27,16 +27,14 @@ class EndpointAgentToServerInstantTest(BaseModel):
     """
     EndpointAgentToServerInstantTest
     """ # noqa: E501
-    agent_selector_type: EndpointTestAgentSelectorType = Field(alias="agentSelectorType")
+    agent_selector_type: Optional[EndpointTestAgentSelectorType] = Field(default=None, alias="agentSelectorType")
     agents: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent IDs (obtained from `/endpoint/agents` endpoint). Required when `agentSelectorType` is set to `specific-agent`.")
-    has_ping: Optional[StrictBool] = Field(default=True, description="Optional flag indicating if the test should run ping.", alias="hasPing")
-    has_traceroute: Optional[StrictBool] = Field(default=True, description="Optional flag indicating if the test should run traceroute.", alias="hasTraceroute")
     endpoint_agent_labels: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent label IDs (obtained from `/endpoint/labels` endpoint), required when `agentSelectorType` is set to `agent-labels`.", alias="endpointAgentLabels")
-    max_machines: Annotated[int, Field(le=50000, strict=True, ge=1)] = Field(description="Maximum number of agents which can execute the test.", alias="maxMachines")
+    max_machines: Optional[Annotated[int, Field(le=50000, strict=True, ge=1)]] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
     port: Optional[StrictInt] = Field(default=None, description="Port number, if not specified, the port is selected based on a protocol (HTTP 80, HTTPS 443).")
     test_name: StrictStr = Field(description="Name of the test.", alias="testName")
     server_name: StrictStr = Field(description="A server address without a protocol or IP address.", alias="serverName")
-    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "hasPing", "hasTraceroute", "endpointAgentLabels", "maxMachines", "port", "testName", "serverName"]
+    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "port", "testName", "serverName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,10 +90,8 @@ class EndpointAgentToServerInstantTest(BaseModel):
         _obj = cls.model_validate({
             "agentSelectorType": obj.get("agentSelectorType"),
             "agents": obj.get("agents"),
-            "hasPing": obj.get("hasPing") if obj.get("hasPing") is not None else True,
-            "hasTraceroute": obj.get("hasTraceroute") if obj.get("hasTraceroute") is not None else True,
             "endpointAgentLabels": obj.get("endpointAgentLabels"),
-            "maxMachines": obj.get("maxMachines"),
+            "maxMachines": obj.get("maxMachines") if obj.get("maxMachines") is not None else 25,
             "port": obj.get("port"),
             "testName": obj.get("testName"),
             "serverName": obj.get("serverName")

@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auth_type** | [**EndpointTestAuthType**](EndpointTestAuthType.md) |  | [optional] 
 **has_path_trace_in_session** | **bool** | Enables \&quot;in session\&quot; path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session. | [optional] 
-**http_time_limit** | **int** | Maximum amount of time in milliseconds the agents wait before a request times out. | [optional] 
+**http_time_limit** | **int** | Maximum amount of time in milliseconds the agents wait before a request times out. | [optional] [default to 5000]
 **protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
 **url** | **str** | Test target URL. Optionally, you can specify a protocol (http or https). If no protocol is provided, the default &#x60;https&#x60; protocol is used. | [optional] 
 **username** | **str** | Username for Basic/NTLM authentication. | [optional] 
 **ssl_version_id** | [**TestSslVersionId**](TestSslVersionId.md) |  | [optional] 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
-**verify_certificate** | **bool** | Flag indicating if a certificate should be verified. | [optional] 
+**verify_certificate** | **bool** | Flag indicating if a certificate should be verified. | [optional] [default to True]
 
 ## Example
 

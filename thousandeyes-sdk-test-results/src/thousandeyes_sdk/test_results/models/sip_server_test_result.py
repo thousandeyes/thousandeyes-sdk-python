@@ -19,8 +19,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from thousandeyes_sdk.test_results.models.agent import Agent
 from thousandeyes_sdk.test_results.models.sip_server_error_type import SipServerErrorType
+from thousandeyes_sdk.test_results.models.test_result_agent import TestResultAgent
 from thousandeyes_sdk.test_results.models.test_result_app_links import TestResultAppLinks
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,7 +35,7 @@ class SipServerTestResult(BaseModel):
     start_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the start time of the round", alias="startTime")
     end_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the end time of the round", alias="endTime")
     server_ip: Optional[StrictStr] = Field(default=None, description="Target agent IP address", alias="serverIp")
-    agent: Optional[Agent] = None
+    agent: Optional[TestResultAgent] = None
     availability: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="availability of the service")
     connect_time: Optional[StrictInt] = Field(default=None, description="Time required to establish a TCP connection to the server in milliseconds, only available when TCP is configured as protocol", alias="connectTime")
     dns_time: Optional[StrictInt] = Field(default=None, description="Time required to resolve DNS in milliseconds", alias="dnsTime")
@@ -155,7 +155,7 @@ class SipServerTestResult(BaseModel):
             "startTime": obj.get("startTime"),
             "endTime": obj.get("endTime"),
             "serverIp": obj.get("serverIp"),
-            "agent": Agent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
+            "agent": TestResultAgent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
             "availability": obj.get("availability"),
             "connectTime": obj.get("connectTime"),
             "dnsTime": obj.get("dnsTime"),

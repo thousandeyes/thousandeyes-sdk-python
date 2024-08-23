@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.instant_tests.models.agent import Agent
 from thousandeyes_sdk.instant_tests.models.api_predefined_variable import ApiPredefinedVariable
 from thousandeyes_sdk.instant_tests.models.api_request import ApiRequest
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
@@ -63,9 +62,8 @@ class ApiInstantTest(BaseModel):
     target_time: Optional[Annotated[int, Field(le=60, strict=True, ge=0)]] = Field(default=None, description="Target time for completion metric, defaults to 50% of time limit specified in seconds. (0 means default behavior)", alias="targetTime")
     time_limit: Optional[Annotated[int, Field(le=180, strict=True, ge=5)]] = Field(default=30, description="Time limit for transaction in seconds. Exceeding this limit will result in a Timeout error.", alias="timeLimit")
     url: StrictStr = Field(description="Target for the test.")
-    agents: Optional[List[Agent]] = Field(default=None, description="Contains list of agents.")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "agents", "credentials"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,7 +106,6 @@ class ApiInstantTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -121,7 +118,6 @@ class ApiInstantTest(BaseModel):
             "type",
             "labels",
             "shared_with_accounts",
-            "agents",
         ])
 
         _dict = self.model_dump(
@@ -160,13 +156,6 @@ class ApiInstantTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['requests'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in agents (list)
-        _items = []
-        if self.agents:
-            for _item in self.agents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['agents'] = _items
         return _dict
 
     @classmethod
@@ -205,7 +194,6 @@ class ApiInstantTest(BaseModel):
             "targetTime": obj.get("targetTime"),
             "timeLimit": obj.get("timeLimit") if obj.get("timeLimit") is not None else 30,
             "url": obj.get("url"),
-            "agents": [Agent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
             "credentials": obj.get("credentials")
         })
         return _obj

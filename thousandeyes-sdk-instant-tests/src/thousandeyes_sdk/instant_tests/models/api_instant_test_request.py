@@ -61,9 +61,9 @@ class ApiInstantTestRequest(BaseModel):
     target_time: Optional[Annotated[int, Field(le=60, strict=True, ge=0)]] = Field(default=None, description="Target time for completion metric, defaults to 50% of time limit specified in seconds. (0 means default behavior)", alias="targetTime")
     time_limit: Optional[Annotated[int, Field(le=180, strict=True, ge=5)]] = Field(default=30, description="Time limit for transaction in seconds. Exceeding this limit will result in a Timeout error.", alias="timeLimit")
     url: StrictStr = Field(description="Target for the test.")
-    agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "agents", "credentials"]
+    agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -183,8 +183,8 @@ class ApiInstantTestRequest(BaseModel):
             "targetTime": obj.get("targetTime"),
             "timeLimit": obj.get("timeLimit") if obj.get("timeLimit") is not None else 30,
             "url": obj.get("url"),
-            "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
-            "credentials": obj.get("credentials")
+            "credentials": obj.get("credentials"),
+            "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

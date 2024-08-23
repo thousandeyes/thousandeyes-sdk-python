@@ -61,7 +61,6 @@ Name | Type | Description | Notes
 **allow_geolocation** | **bool** | Set true to use the agent’s geolocation by the web page. | [optional] [default to False]
 **browser_language** | **str** | Set one of the available browser language that you want to use to configure the browser. | [optional] 
 **page_loading_strategy** | [**TestPageLoadingStrategy**](TestPageLoadingStrategy.md) |  | [optional] 
-**agents** | [**List[Agent]**](Agent.md) | Contains list of agents. | [optional] [readonly] 
 
 ## Example
 
