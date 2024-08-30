@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **users** | [**List[UserAccountGroup]**](UserAccountGroup.md) |  | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 **agents** | [**List[EnterpriseAgent]**](EnterpriseAgent.md) |  | [optional] 
+**account_token** | **str** | The account group token is an alphanumeric string used to bind an Enterprise Agent to a specific account group. This token is not a password that must be kept secret. You can retrieve your &#x60;AccountGroupToken&#x60; from the &#x60;/account-groups/{id}&#x60; endpoint. | [optional] 
 
 ## Example
 

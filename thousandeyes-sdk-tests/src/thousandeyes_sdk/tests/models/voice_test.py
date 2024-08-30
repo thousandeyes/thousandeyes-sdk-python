@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.tests.models.agent import Agent
 from thousandeyes_sdk.tests.models.alert_rule import AlertRule
 from thousandeyes_sdk.tests.models.monitor import Monitor
 from thousandeyes_sdk.tests.models.shared_with_account import SharedWithAccount
@@ -61,11 +60,10 @@ class VoiceTest(BaseModel):
     num_path_traces: Optional[Annotated[int, Field(le=10, strict=True, ge=1)]] = Field(default=3, description="Number of path traces executed by the agent.", alias="numPathTraces")
     port: Optional[Annotated[int, Field(le=65535, strict=True, ge=1024)]] = Field(default=None, description="Port number for the chosen protocol.")
     target_agent_id: StrictStr = Field(description="Agent ID of the target agent for the test.", alias="targetAgentId")
-    agents: Optional[List[Agent]] = Field(default=None, description="Contains list of agents.")
     bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
     monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "codec", "codecId", "dscp", "dscpId", "duration", "jitterBuffer", "numPathTraces", "port", "targetAgentId", "agents", "bgpMeasurements", "usePublicBgp", "monitors"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "codec", "codecId", "dscp", "dscpId", "duration", "jitterBuffer", "numPathTraces", "port", "targetAgentId", "bgpMeasurements", "usePublicBgp", "monitors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,7 +109,6 @@ class VoiceTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -126,7 +123,6 @@ class VoiceTest(BaseModel):
             "shared_with_accounts",
             "codec",
             "dscp",
-            "agents",
             "monitors",
         ])
 
@@ -159,13 +155,6 @@ class VoiceTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['sharedWithAccounts'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in agents (list)
-        _items = []
-        if self.agents:
-            for _item in self.agents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['agents'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in monitors (list)
         _items = []
         if self.monitors:
@@ -211,7 +200,6 @@ class VoiceTest(BaseModel):
             "numPathTraces": obj.get("numPathTraces") if obj.get("numPathTraces") is not None else 3,
             "port": obj.get("port"),
             "targetAgentId": obj.get("targetAgentId"),
-            "agents": [Agent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
             "bgpMeasurements": obj.get("bgpMeasurements") if obj.get("bgpMeasurements") is not None else True,
             "usePublicBgp": obj.get("usePublicBgp") if obj.get("usePublicBgp") is not None else True,
             "monitors": [Monitor.from_dict(_item) for _item in obj["monitors"]] if obj.get("monitors") is not None else None

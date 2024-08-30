@@ -5,10 +5,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**collect_proxy_network_data** | **bool** | Indicates whether network data to the proxy should be collected. | [optional] [default to False]
 **follow_redirects** | **bool** | To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to &#x60;false&#x60;. | [optional] [default to True]
 **mtu_measurements** | **bool** | Set &#x60;true&#x60; to measure MTU sizes on network from agents to the target. | [optional] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
 **num_path_traces** | **int** | Number of path traces executed by the agent. | [optional] [default to 3]
+**override_agent_proxy** | **bool** | Flag indicating if a proxy other than the default should be used. To override the default proxy for agents, set to &#x60;true&#x60; and specify a value for &#x60;overrideProxyId&#x60;. | [optional] [default to False]
+**override_proxy_id** | **str** | ID of the proxy to be used if the default proxy is overridden. | [optional] 
 **path_trace_mode** | [**TestPathTraceMode**](TestPathTraceMode.md) |  | [optional] 
 **predefined_variables** | [**List[ApiPredefinedVariable]**](ApiPredefinedVariable.md) |  | [optional] 
 **probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 

@@ -24,7 +24,7 @@ Name | Type | Description | Notes
 **client_certificate** | **str** | String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate. | [optional] 
 **content_regex** | **str** | Content regex, this field does not require escaping. | [optional] 
 **custom_headers** | [**TestCustomHeaders**](TestCustomHeaders.md) |  | [optional] 
-**desired_status_code** | **str** | Specify the HTTP status code value that indicates a successful response. | [optional] [default to '200']
+**desired_status_code** | **str** | Specify the HTTP status code value that indicates a successful response. The default value accepts any 2xx or 3xx status code. | [optional] [default to 'default']
 **download_limit** | **int** | Specifies maximum number of bytes to download from the target object. | [optional] 
 **dns_override** | **str** | IP address to use for DNS override. | [optional] 
 **http_target_time** | **int** | Target time for HTTP server completion, specified in milliseconds. | [optional] 
@@ -62,7 +62,6 @@ Name | Type | Description | Notes
 **allow_geolocation** | **bool** | Set true to use the agent’s geolocation by the web page. | [optional] [default to False]
 **browser_language** | **str** | Set one of the available browser language that you want to use to configure the browser. | [optional] 
 **page_loading_strategy** | [**TestPageLoadingStrategy**](TestPageLoadingStrategy.md) |  | [optional] 
-**agents** | [**List[Agent]**](Agent.md) | Contains list of agents. | [optional] [readonly] 
 **credentials** | **List[str]** | Contains a list of credential IDs (get &#x60;credentialId&#x60; from &#x60;/credentials&#x60; endpoint). | [optional] 
 
 ## Example

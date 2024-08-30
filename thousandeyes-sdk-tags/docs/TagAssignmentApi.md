@@ -47,7 +47,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
-    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | ID of the tag to associate
+    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
     tag_assignment = thousandeyes_sdk.tags.TagAssignment() # TagAssignment | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
@@ -65,7 +65,7 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of the tag to associate | 
+ **id** | **str**| Tag ID | 
  **tag_assignment** | [**TagAssignment**](TagAssignment.md)|  | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
 
@@ -215,7 +215,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
-    id = '2983u1' # str | ID of the tag to associate
+    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
     tag_assignment = thousandeyes_sdk.tags.TagAssignment() # TagAssignment | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
@@ -233,7 +233,7 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of the tag to associate | 
+ **id** | **str**| Tag ID | 
  **tag_assignment** | [**TagAssignment**](TagAssignment.md)|  | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
 

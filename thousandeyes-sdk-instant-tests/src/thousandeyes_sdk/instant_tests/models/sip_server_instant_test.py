@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.instant_tests.models.agent import Agent
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.instant_tests.models.test_ipv6_policy import TestIpv6Policy
 from thousandeyes_sdk.instant_tests.models.test_label import TestLabel
@@ -58,8 +57,7 @@ class SipServerInstantTest(BaseModel):
     sip_time_limit: Optional[Annotated[int, Field(le=10, strict=True, ge=5)]] = Field(default=5, description="Time limit in milliseconds.", alias="sipTimeLimit")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
-    agents: Optional[List[Agent]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,7 +100,6 @@ class SipServerInstantTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -115,7 +112,6 @@ class SipServerInstantTest(BaseModel):
             "type",
             "labels",
             "shared_with_accounts",
-            "agents",
         ])
 
         _dict = self.model_dump(
@@ -140,13 +136,6 @@ class SipServerInstantTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['sharedWithAccounts'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in agents (list)
-        _items = []
-        if self.agents:
-            for _item in self.agents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['agents'] = _items
         return _dict
 
     @classmethod
@@ -182,8 +171,7 @@ class SipServerInstantTest(BaseModel):
             "sipTargetTime": obj.get("sipTargetTime"),
             "sipTimeLimit": obj.get("sipTimeLimit") if obj.get("sipTimeLimit") is not None else 5,
             "fixedPacketRate": obj.get("fixedPacketRate"),
-            "ipv6Policy": obj.get("ipv6Policy"),
-            "agents": [Agent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "ipv6Policy": obj.get("ipv6Policy")
         })
         return _obj
 

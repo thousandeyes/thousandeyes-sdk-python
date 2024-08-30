@@ -19,7 +19,6 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.endpoint_test_results.models.alert_rule import AlertRule
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_agent_selector_config import EndpointAgentSelectorConfig
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_scheduled_test_type import EndpointScheduledTestType
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_test_links import EndpointTestLinks
@@ -50,8 +49,7 @@ class EndpointTest(BaseModel):
     test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")
     type: EndpointScheduledTestType
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
-    alert_rules: Optional[List[AlertRule]] = Field(default=None, description="Contains list of enabled alert rule objects.", alias="alertRules")
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "port", "protocol", "server", "testId", "testName", "type", "tcpProbeMode", "alertRules"]
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "port", "protocol", "server", "testId", "testName", "type", "tcpProbeMode"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,13 +105,6 @@ class EndpointTest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of agent_selector_config
         if self.agent_selector_config:
             _dict['agentSelectorConfig'] = self.agent_selector_config.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in alert_rules (list)
-        _items = []
-        if self.alert_rules:
-            for _item in self.alert_rules:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['alertRules'] = _items
         return _dict
 
     @classmethod
@@ -142,8 +133,7 @@ class EndpointTest(BaseModel):
             "testId": obj.get("testId"),
             "testName": obj.get("testName"),
             "type": obj.get("type"),
-            "tcpProbeMode": obj.get("tcpProbeMode"),
-            "alertRules": [AlertRule.from_dict(_item) for _item in obj["alertRules"]] if obj.get("alertRules") is not None else None
+            "tcpProbeMode": obj.get("tcpProbeMode")
         })
         return _obj
 

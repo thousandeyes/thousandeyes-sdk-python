@@ -211,7 +211,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagsApi(api_client)
-    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | ID of tag to delete
+    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -228,7 +228,7 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of tag to delete | 
+ **id** | **str**| Tag ID | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
 
 ### Return type
@@ -270,7 +270,7 @@ Retrieves a tag using its ID.
 
 ```python
 import thousandeyes_sdk.tags
-from thousandeyes_sdk.tags.models.expand import Expand
+from thousandeyes_sdk.tags.models.expand_tags_options import ExpandTagsOptions
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
@@ -294,9 +294,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagsApi(api_client)
-    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | ID of tag to retrieve
+    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tags.Expand()] # List[Expand] | Optional, to retrieve associated assignments (optional)
+    expand = [thousandeyes_sdk.tags.ExpandTagsOptions()] # List[ExpandTagsOptions] | Optional, to retrieve associated assignments (optional)
 
     try:
         # Retrieve tag
@@ -312,9 +312,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of tag to retrieve | 
+ **id** | **str**| Tag ID | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[Expand]**](Expand.md)| Optional, to retrieve associated assignments | [optional] 
+ **expand** | [**List[ExpandTagsOptions]**](ExpandTagsOptions.md)| Optional, to retrieve associated assignments | [optional] 
 
 ### Return type
 
@@ -355,7 +355,7 @@ This endpoint returns a list of tags in the specified account group (`aid`).
 
 ```python
 import thousandeyes_sdk.tags
-from thousandeyes_sdk.tags.models.expand import Expand
+from thousandeyes_sdk.tags.models.expand_tags_options import ExpandTagsOptions
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
@@ -380,7 +380,7 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tags.Expand()] # List[Expand] | Optional, to retrieve associated assignments (optional)
+    expand = [thousandeyes_sdk.tags.ExpandTagsOptions()] # List[ExpandTagsOptions] | Optional, to retrieve associated assignments (optional)
 
     try:
         # List tags
@@ -397,7 +397,7 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[Expand]**](Expand.md)| Optional, to retrieve associated assignments | [optional] 
+ **expand** | [**List[ExpandTagsOptions]**](ExpandTagsOptions.md)| Optional, to retrieve associated assignments | [optional] 
 
 ### Return type
 
