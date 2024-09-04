@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **var_date** | **datetime** | Data point date UTC (ISO date-time format). | [optional] [readonly] 
 **round_id** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
-**monitor** | [**Monitor**](Monitor.md) |  | [optional] 
+**monitor** | [**TestResultMonitor**](TestResultMonitor.md) |  | [optional] 
 **prefix_id** | **str** | Internally tracked prefix ID. | [optional] 
 **prefix** | **str** | Prefix being tracked. | [optional] 
 

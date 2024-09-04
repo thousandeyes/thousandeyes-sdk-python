@@ -22,7 +22,6 @@ Name | Type | Description | Notes
 **test_name** | **str** | Name of the test. | [optional] 
 **type** | **str** | Type of test being queried. | [readonly] 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
-**alert_rules** | [**List[AlertRule]**](AlertRule.md) | Contains list of enabled alert rule objects. | [optional] 
 **labels** | [**List[TestLabel]**](TestLabel.md) |  | [optional] [readonly] 
 
 ## Example

@@ -7,7 +7,7 @@ Any agent selection object.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_selector_type** | **str** |  | 
-**max_machines** | **int** | Maximum number of agents which can execute the test. | [optional] 
+**max_machines** | **int** | Maximum number of agents which can execute the test. | [optional] [default to 25]
 
 ## Example
 

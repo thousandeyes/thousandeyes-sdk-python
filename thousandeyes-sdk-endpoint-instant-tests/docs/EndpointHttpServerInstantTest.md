@@ -5,24 +5,25 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**agent_selector_type** | [**EndpointTestAgentSelectorType**](EndpointTestAgentSelectorType.md) |  | 
+**agent_selector_type** | [**EndpointTestAgentSelectorType**](EndpointTestAgentSelectorType.md) |  | [optional] 
 **agents** | **List[str]** | List of endpoint agent IDs (obtained from &#x60;/endpoint/agents&#x60; endpoint). Required when &#x60;agentSelectorType&#x60; is set to &#x60;specific-agent&#x60;. | [optional] 
-**has_ping** | **bool** | Optional flag indicating if the test should run ping. | [optional] [default to True]
-**has_traceroute** | **bool** | Optional flag indicating if the test should run traceroute. | [optional] [default to True]
 **endpoint_agent_labels** | **List[str]** | List of endpoint agent label IDs (obtained from &#x60;/endpoint/labels&#x60; endpoint), required when &#x60;agentSelectorType&#x60; is set to &#x60;agent-labels&#x60;. | [optional] 
-**max_machines** | **int** | Maximum number of agents which can execute the test. | 
+**max_machines** | **int** | Maximum number of agents which can execute the test. | [optional] [default to 25]
 **port** | **int** | Port number, if not specified, the port is selected based on a protocol (HTTP 80, HTTPS 443). | [optional] 
 **test_name** | **str** | Name of the test. | 
 **auth_type** | [**EndpointTestAuthType**](EndpointTestAuthType.md) |  | [optional] 
 **has_path_trace_in_session** | **bool** | Enables \&quot;in session\&quot; path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session. | [optional] 
-**http_time_limit** | **int** | Maximum amount of time in milliseconds the agents wait before a request times out. | 
+**http_time_limit** | **int** | Maximum amount of time in milliseconds the agents wait before a request times out. | [optional] [default to 5000]
 **protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
 **url** | **str** | Test target URL. Optionally, you can specify a protocol (http or https). If no protocol is provided, the default &#x60;https&#x60; protocol is used. | 
 **username** | **str** | Username for Basic/NTLM authentication. | [optional] 
-**ssl_version_id** | [**TestSslVersionId**](TestSslVersionId.md) |  | 
+**ssl_version_id** | [**TestSslVersionId**](TestSslVersionId.md) |  | [optional] 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
-**verify_certificate** | **bool** | Flag indicating if a certificate should be verified. | 
-**target_response_time** | **int** | Response time target in milliseconds. Affects the colors of agents and legends on the view page. The value is compared with actual response time in order to determine the color scale (from green to red). | 
+**verify_certificate** | **bool** | Flag indicating if a certificate should be verified. | [optional] [default to True]
+**has_ping** | **bool** | Optional flag indicating if the test should run ping. | [optional] [default to True]
+**has_traceroute** | **bool** | Optional flag indicating if the test should run traceroute. | [optional] [default to True]
+**network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
+**target_response_time** | **int** | Response time target in milliseconds. Affects the colors of agents and legends on the view page. The value is compared with actual response time in order to determine the color scale (from green to red). | [optional] [default to 1000]
 **password** | **str** | Password for Basic/NTLM authentication. | [optional] 
 
 ## Example

@@ -13,7 +13,6 @@
 
 
 # import models into model package
-from thousandeyes_sdk.test_results.models.agent import Agent
 from thousandeyes_sdk.test_results.models.api_detail_test_result import ApiDetailTestResult
 from thousandeyes_sdk.test_results.models.api_detail_test_results import ApiDetailTestResults
 from thousandeyes_sdk.test_results.models.api_request_detail import ApiRequestDetail
@@ -43,7 +42,6 @@ from thousandeyes_sdk.test_results.models.http_test_result_headers import HttpTe
 from thousandeyes_sdk.test_results.models.http_test_results import HttpTestResults
 from thousandeyes_sdk.test_results.models.link import Link
 from thousandeyes_sdk.test_results.models.marker import Marker
-from thousandeyes_sdk.test_results.models.monitor import Monitor
 from thousandeyes_sdk.test_results.models.network_test_result import NetworkTestResult
 from thousandeyes_sdk.test_results.models.network_test_results import NetworkTestResults
 from thousandeyes_sdk.test_results.models.page import Page
@@ -52,11 +50,11 @@ from thousandeyes_sdk.test_results.models.page_load_detail_test_results import P
 from thousandeyes_sdk.test_results.models.page_load_test_result import PageLoadTestResult
 from thousandeyes_sdk.test_results.models.page_load_test_results import PageLoadTestResults
 from thousandeyes_sdk.test_results.models.pagination_links import PaginationLinks
+from thousandeyes_sdk.test_results.models.path_trace import PathTrace
 from thousandeyes_sdk.test_results.models.path_vis_base_test_result import PathVisBaseTestResult
 from thousandeyes_sdk.test_results.models.path_vis_detail_test_result import PathVisDetailTestResult
 from thousandeyes_sdk.test_results.models.path_vis_detail_test_results import PathVisDetailTestResults
 from thousandeyes_sdk.test_results.models.path_vis_direction import PathVisDirection
-from thousandeyes_sdk.test_results.models.path_vis_endpoint import PathVisEndpoint
 from thousandeyes_sdk.test_results.models.path_vis_hop import PathVisHop
 from thousandeyes_sdk.test_results.models.path_vis_route import PathVisRoute
 from thousandeyes_sdk.test_results.models.path_vis_test_result import PathVisTestResult
@@ -73,7 +71,9 @@ from thousandeyes_sdk.test_results.models.test_direction import TestDirection
 from thousandeyes_sdk.test_results.models.test_interval import TestInterval
 from thousandeyes_sdk.test_results.models.test_links import TestLinks
 from thousandeyes_sdk.test_results.models.test_result import TestResult
+from thousandeyes_sdk.test_results.models.test_result_agent import TestResultAgent
 from thousandeyes_sdk.test_results.models.test_result_app_links import TestResultAppLinks
+from thousandeyes_sdk.test_results.models.test_result_monitor import TestResultMonitor
 from thousandeyes_sdk.test_results.models.test_self_link import TestSelfLink
 from thousandeyes_sdk.test_results.models.test_type import TestType
 from thousandeyes_sdk.test_results.models.unauthorized_error import UnauthorizedError

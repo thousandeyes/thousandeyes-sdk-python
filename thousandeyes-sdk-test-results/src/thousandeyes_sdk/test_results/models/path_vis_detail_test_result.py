@@ -19,9 +19,9 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.test_results.models.agent import Agent
 from thousandeyes_sdk.test_results.models.path_vis_direction import PathVisDirection
 from thousandeyes_sdk.test_results.models.path_vis_route import PathVisRoute
+from thousandeyes_sdk.test_results.models.test_result_agent import TestResultAgent
 from thousandeyes_sdk.test_results.models.test_result_app_links import TestResultAppLinks
 from typing import Optional, Set
 from typing_extensions import Self
@@ -35,7 +35,7 @@ class PathVisDetailTestResult(BaseModel):
     links: Optional[TestResultAppLinks] = Field(default=None, alias="_links")
     start_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the start time of the round", alias="startTime")
     end_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the end time of the round", alias="endTime")
-    agent: Optional[Agent] = None
+    agent: Optional[TestResultAgent] = None
     server: Optional[StrictStr] = Field(default=None, description="Target server, including port (if method used is TCP)")
     server_ip: Optional[StrictStr] = Field(default=None, description="IP of target server", alias="serverIp")
     source_ip: Optional[StrictStr] = Field(default=None, description="IP address of source agent", alias="sourceIp")
@@ -133,7 +133,7 @@ class PathVisDetailTestResult(BaseModel):
             "_links": TestResultAppLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "startTime": obj.get("startTime"),
             "endTime": obj.get("endTime"),
-            "agent": Agent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
+            "agent": TestResultAgent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
             "server": obj.get("server"),
             "serverIp": obj.get("serverIp"),
             "sourceIp": obj.get("sourceIp"),

@@ -18,12 +18,12 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.usage.models.endpoint_agents import EndpointAgents
 from thousandeyes_sdk.usage.models.endpoint_agents_embedded import EndpointAgentsEmbedded
 from thousandeyes_sdk.usage.models.endpoint_agents_essentials import EndpointAgentsEssentials
+from thousandeyes_sdk.usage.models.endpoint_agents_usage import EndpointAgentsUsage
 from thousandeyes_sdk.usage.models.enterprise_agent_units import EnterpriseAgentUnits
 from thousandeyes_sdk.usage.models.enterprise_agents import EnterpriseAgents
-from thousandeyes_sdk.usage.models.tests import Tests
+from thousandeyes_sdk.usage.models.test_usage import TestUsage
 from thousandeyes_sdk.usage.models.usage_quota import UsageQuota
 from typing import Optional, Set
 from typing_extensions import Self
@@ -47,8 +47,8 @@ class UsageDetails(BaseModel):
     endpoint_agents_embedded_used: Optional[StrictInt] = Field(default=None, description="Number of embedded endpoint agents used in the current usage period. This number is calculated by taking the maximum number of agents enabled for any one-hour period in the usage period. Disabled agents are excluded from this calculation.", alias="endpointAgentsEmbeddedUsed")
     enterprise_agents_used: Optional[StrictInt] = Field(default=None, description="Number of enterprise agents used in the current usage period. This number is calculated by taking the maximum number of agents enabled for any one-hour period in the usage period. Disabled agents are excluded from this calculation.", alias="enterpriseAgentsUsed")
     enterprise_agent_units: Optional[List[EnterpriseAgentUnits]] = Field(default=None, description="A breakdown of enterprise unit consumption for each agent during the current monthly period. Each entry provides data for both the current actual usage and the projected usage. Returns non-zero values for organizations with metered billing.", alias="enterpriseAgentUnits")
-    tests: Optional[List[Tests]] = Field(default=None, description="A breakdown of unit consumption for each test during the current monthly period. Each entry provides information about both the current actual usage and the projected usage.")
-    endpoint_agents: Optional[List[EndpointAgents]] = Field(default=None, description="Endpoint agents used by account group.", alias="endpointAgents")
+    tests: Optional[List[TestUsage]] = Field(default=None, description="A breakdown of unit consumption for each test during the current monthly period. Each entry provides information about both the current actual usage and the projected usage.")
+    endpoint_agents: Optional[List[EndpointAgentsUsage]] = Field(default=None, description="Endpoint agents used by account group.", alias="endpointAgents")
     endpoint_agents_essentials: Optional[List[EndpointAgentsEssentials]] = Field(default=None, description="Endpoint agents essentials used by account group.", alias="endpointAgentsEssentials")
     endpoint_agents_embedded: Optional[List[EndpointAgentsEmbedded]] = Field(default=None, description="Endpoint agents embedded used by account group.", alias="endpointAgentsEmbedded")
     enterprise_agents: Optional[List[EnterpriseAgents]] = Field(default=None, description="Enterprise agents used by account group.", alias="enterpriseAgents")
@@ -166,8 +166,8 @@ class UsageDetails(BaseModel):
             "endpointAgentsEmbeddedUsed": obj.get("endpointAgentsEmbeddedUsed"),
             "enterpriseAgentsUsed": obj.get("enterpriseAgentsUsed"),
             "enterpriseAgentUnits": [EnterpriseAgentUnits.from_dict(_item) for _item in obj["enterpriseAgentUnits"]] if obj.get("enterpriseAgentUnits") is not None else None,
-            "tests": [Tests.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
-            "endpointAgents": [EndpointAgents.from_dict(_item) for _item in obj["endpointAgents"]] if obj.get("endpointAgents") is not None else None,
+            "tests": [TestUsage.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
+            "endpointAgents": [EndpointAgentsUsage.from_dict(_item) for _item in obj["endpointAgents"]] if obj.get("endpointAgents") is not None else None,
             "endpointAgentsEssentials": [EndpointAgentsEssentials.from_dict(_item) for _item in obj["endpointAgentsEssentials"]] if obj.get("endpointAgentsEssentials") is not None else None,
             "endpointAgentsEmbedded": [EndpointAgentsEmbedded.from_dict(_item) for _item in obj["endpointAgentsEmbedded"]] if obj.get("endpointAgentsEmbedded") is not None else None,
             "enterpriseAgents": [EnterpriseAgents.from_dict(_item) for _item in obj["enterpriseAgents"]] if obj.get("enterpriseAgents") is not None else None

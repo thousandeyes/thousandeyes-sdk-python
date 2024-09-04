@@ -22,7 +22,6 @@ Name | Type | Description | Notes
 **test_name** | **str** | Name of the test. | [optional] 
 **type** | [**EndpointScheduledTestType**](EndpointScheduledTestType.md) |  | 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
-**alert_rules** | [**List[AlertRule]**](AlertRule.md) | Contains list of enabled alert rule objects. | [optional] 
 
 ## Example
 

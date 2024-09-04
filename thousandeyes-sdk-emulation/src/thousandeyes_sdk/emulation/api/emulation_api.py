@@ -24,7 +24,7 @@ from typing_extensions import Annotated
 from thousandeyes_sdk.emulation.models.emulated_device import EmulatedDevice
 from thousandeyes_sdk.emulation.models.emulated_device_response import EmulatedDeviceResponse
 from thousandeyes_sdk.emulation.models.emulated_device_responses import EmulatedDeviceResponses
-from thousandeyes_sdk.emulation.models.expand import Expand
+from thousandeyes_sdk.emulation.models.expand_emulated_device_options import ExpandEmulatedDeviceOptions
 from thousandeyes_sdk.emulation.models.user_agents import UserAgents
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
@@ -356,7 +356,7 @@ class EmulationApi:
     @validate_call
     def get_emulated_devices(
         self,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request. ")] = None,
+        expand: Annotated[Optional[List[ExpandEmulatedDeviceOptions]], Field(description="Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -375,7 +375,7 @@ class EmulationApi:
         Retrieves a list of emulated devices available for browser tests.
 
         :param expand: Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request. 
-        :type expand: List[Expand]
+        :type expand: List[ExpandEmulatedDeviceOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -429,7 +429,7 @@ class EmulationApi:
     @validate_call
     def get_emulated_devices_with_http_info(
         self,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request. ")] = None,
+        expand: Annotated[Optional[List[ExpandEmulatedDeviceOptions]], Field(description="Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -448,7 +448,7 @@ class EmulationApi:
         Retrieves a list of emulated devices available for browser tests.
 
         :param expand: Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request. 
-        :type expand: List[Expand]
+        :type expand: List[ExpandEmulatedDeviceOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -502,7 +502,7 @@ class EmulationApi:
     @validate_call
     def get_emulated_devices_without_preload_content(
         self,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request. ")] = None,
+        expand: Annotated[Optional[List[ExpandEmulatedDeviceOptions]], Field(description="Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request. ")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -521,7 +521,7 @@ class EmulationApi:
         Retrieves a list of emulated devices available for browser tests.
 
         :param expand: Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request. 
-        :type expand: List[Expand]
+        :type expand: List[ExpandEmulatedDeviceOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

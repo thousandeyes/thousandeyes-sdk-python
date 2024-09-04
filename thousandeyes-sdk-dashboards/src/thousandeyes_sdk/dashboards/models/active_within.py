@@ -24,7 +24,7 @@ from typing_extensions import Self
 
 class ActiveWithin(BaseModel):
     """
-    ActiveWithin
+    Timespan in which alerts must have been active to appear in the widget.
     """ # noqa: E501
     value: Optional[StrictInt] = Field(default=None, description="Timespan value.")
     unit: Optional[LegacyDurationUnit] = None
