@@ -24,7 +24,7 @@ from typing_extensions import Annotated
 from thousandeyes_sdk.alerts.models.alert_suppression_window_detail import AlertSuppressionWindowDetail
 from thousandeyes_sdk.alerts.models.alert_suppression_window_request import AlertSuppressionWindowRequest
 from thousandeyes_sdk.alerts.models.alert_suppression_windows import AlertSuppressionWindows
-from thousandeyes_sdk.alerts.models.expand import Expand
+from thousandeyes_sdk.alerts.models.expand_alert_test_options import ExpandAlertTestOptions
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
@@ -50,7 +50,7 @@ class AlertSuppressionWindowsApi:
         self,
         alert_suppression_window_request: AlertSuppressionWindowRequest,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAlertTestOptions]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -73,7 +73,7 @@ class AlertSuppressionWindowsApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAlertTestOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -132,7 +132,7 @@ class AlertSuppressionWindowsApi:
         self,
         alert_suppression_window_request: AlertSuppressionWindowRequest,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAlertTestOptions]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -155,7 +155,7 @@ class AlertSuppressionWindowsApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAlertTestOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -214,7 +214,7 @@ class AlertSuppressionWindowsApi:
         self,
         alert_suppression_window_request: AlertSuppressionWindowRequest,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAlertTestOptions]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -237,7 +237,7 @@ class AlertSuppressionWindowsApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAlertTestOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -674,7 +674,7 @@ class AlertSuppressionWindowsApi:
         self,
         window_id: Annotated[StrictStr, Field(description="Unique window ID.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAlertTestOptions]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -697,7 +697,7 @@ class AlertSuppressionWindowsApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAlertTestOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -755,7 +755,7 @@ class AlertSuppressionWindowsApi:
         self,
         window_id: Annotated[StrictStr, Field(description="Unique window ID.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAlertTestOptions]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -778,7 +778,7 @@ class AlertSuppressionWindowsApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAlertTestOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -836,7 +836,7 @@ class AlertSuppressionWindowsApi:
         self,
         window_id: Annotated[StrictStr, Field(description="Unique window ID.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAlertTestOptions]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -859,7 +859,7 @@ class AlertSuppressionWindowsApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAlertTestOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1266,7 +1266,7 @@ class AlertSuppressionWindowsApi:
         window_id: Annotated[StrictStr, Field(description="Unique window ID.")],
         alert_suppression_window_request: AlertSuppressionWindowRequest,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAlertTestOptions]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1291,7 +1291,7 @@ class AlertSuppressionWindowsApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAlertTestOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1352,7 +1352,7 @@ class AlertSuppressionWindowsApi:
         window_id: Annotated[StrictStr, Field(description="Unique window ID.")],
         alert_suppression_window_request: AlertSuppressionWindowRequest,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAlertTestOptions]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1377,7 +1377,7 @@ class AlertSuppressionWindowsApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAlertTestOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1438,7 +1438,7 @@ class AlertSuppressionWindowsApi:
         window_id: Annotated[StrictStr, Field(description="Unique window ID.")],
         alert_suppression_window_request: AlertSuppressionWindowRequest,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAlertTestOptions]], Field(description="Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1463,7 +1463,7 @@ class AlertSuppressionWindowsApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAlertTestOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

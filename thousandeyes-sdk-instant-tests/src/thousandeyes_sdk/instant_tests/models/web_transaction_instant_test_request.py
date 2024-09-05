@@ -57,7 +57,7 @@ class WebTransactionInstantTestRequest(BaseModel):
     client_certificate: Optional[StrictStr] = Field(default=None, description="String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate.", alias="clientCertificate")
     content_regex: Optional[StrictStr] = Field(default=None, description="Content regex, this field does not require escaping.", alias="contentRegex")
     custom_headers: Optional[TestCustomHeaders] = Field(default=None, alias="customHeaders")
-    desired_status_code: Optional[StrictStr] = Field(default='200', description="Specify the HTTP status code value that indicates a successful response.", alias="desiredStatusCode")
+    desired_status_code: Optional[StrictStr] = Field(default='default', description="Specify the HTTP status code value that indicates a successful response. The default value accepts any 2xx or 3xx status code.", alias="desiredStatusCode")
     download_limit: Optional[StrictInt] = Field(default=None, description="Specifies maximum number of bytes to download from the target object.", alias="downloadLimit")
     dns_override: Optional[StrictStr] = Field(default=None, description="IP address to use for DNS override.", alias="dnsOverride")
     http_target_time: Optional[Annotated[int, Field(le=5000, strict=True, ge=100)]] = Field(default=None, description="Target time for HTTP server completion, specified in milliseconds.", alias="httpTargetTime")
@@ -95,9 +95,9 @@ class WebTransactionInstantTestRequest(BaseModel):
     allow_geolocation: Optional[StrictBool] = Field(default=False, description="Set true to use the agent’s geolocation by the web page.", alias="allowGeolocation")
     browser_language: Optional[StrictStr] = Field(default=None, description="Set one of the available browser language that you want to use to configure the browser.", alias="browserLanguage")
     page_loading_strategy: Optional[TestPageLoadingStrategy] = Field(default=None, alias="pageLoadingStrategy")
-    agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "emulatedDeviceId", "targetTime", "timeLimit", "transactionScript", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "pageLoadingStrategy", "agents", "credentials"]
+    agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "emulatedDeviceId", "targetTime", "timeLimit", "transactionScript", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "pageLoadingStrategy", "credentials", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -207,7 +207,7 @@ class WebTransactionInstantTestRequest(BaseModel):
             "clientCertificate": obj.get("clientCertificate"),
             "contentRegex": obj.get("contentRegex"),
             "customHeaders": TestCustomHeaders.from_dict(obj["customHeaders"]) if obj.get("customHeaders") is not None else None,
-            "desiredStatusCode": obj.get("desiredStatusCode") if obj.get("desiredStatusCode") is not None else '200',
+            "desiredStatusCode": obj.get("desiredStatusCode") if obj.get("desiredStatusCode") is not None else 'default',
             "downloadLimit": obj.get("downloadLimit"),
             "dnsOverride": obj.get("dnsOverride"),
             "httpTargetTime": obj.get("httpTargetTime"),
@@ -245,8 +245,8 @@ class WebTransactionInstantTestRequest(BaseModel):
             "allowGeolocation": obj.get("allowGeolocation") if obj.get("allowGeolocation") is not None else False,
             "browserLanguage": obj.get("browserLanguage"),
             "pageLoadingStrategy": obj.get("pageLoadingStrategy"),
-            "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
-            "credentials": obj.get("credentials")
+            "credentials": obj.get("credentials"),
+            "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **is_valid** | **bool** | Indicates if keychain is valid (if false see errorDetails field) | [optional] [readonly] 
 **error_details** | **str** | Error details, if an error were encountered | [optional] [readonly] 
 

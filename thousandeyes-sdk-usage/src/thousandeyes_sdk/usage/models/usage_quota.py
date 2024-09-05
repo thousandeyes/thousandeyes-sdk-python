@@ -29,11 +29,12 @@ class UsageQuota(BaseModel):
     month_start: Optional[datetime] = Field(default=None, description="Beginning of usage period in UTC (ISO date-time format).", alias="monthStart")
     month_end: Optional[datetime] = Field(default=None, description="End of usage period in UTC (ISO date-time format)..", alias="monthEnd")
     cloud_units_included: Optional[StrictInt] = Field(default=None, description="Monthly number of cloud units allocated, as part of the contract.", alias="cloudUnitsIncluded")
+    device_agents_included: Optional[StrictInt] = Field(default=None, description="Number of device agents (connected devices product) allocated monthly, as specified in the contract.", alias="deviceAgentsIncluded")
     endpoint_agents_included: Optional[StrictInt] = Field(default=None, description="Monthly number of endpoint agents allocated, as part of the contract.", alias="endpointAgentsIncluded")
     endpoint_agents_essentials_included: Optional[StrictInt] = Field(default=None, description="Monthly number of endpoint agents essentials allocated, as part of the contract.", alias="endpointAgentsEssentialsIncluded")
     endpoint_agents_embedded_included: Optional[StrictInt] = Field(default=None, description="Number of embedded endpoint agents allocated monthly, as specified in the contract.", alias="endpointAgentsEmbeddedIncluded")
     enterprise_agents_included: Optional[StrictInt] = Field(default=None, description="Monthly number of enterprise agents allocated, as part of the contract. Returns non-zero value only for organizations with legacy billing.", alias="enterpriseAgentsIncluded")
-    __properties: ClassVar[List[str]] = ["monthStart", "monthEnd", "cloudUnitsIncluded", "endpointAgentsIncluded", "endpointAgentsEssentialsIncluded", "endpointAgentsEmbeddedIncluded", "enterpriseAgentsIncluded"]
+    __properties: ClassVar[List[str]] = ["monthStart", "monthEnd", "cloudUnitsIncluded", "deviceAgentsIncluded", "endpointAgentsIncluded", "endpointAgentsEssentialsIncluded", "endpointAgentsEmbeddedIncluded", "enterpriseAgentsIncluded"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,6 +91,7 @@ class UsageQuota(BaseModel):
             "monthStart": obj.get("monthStart"),
             "monthEnd": obj.get("monthEnd"),
             "cloudUnitsIncluded": obj.get("cloudUnitsIncluded"),
+            "deviceAgentsIncluded": obj.get("deviceAgentsIncluded"),
             "endpointAgentsIncluded": obj.get("endpointAgentsIncluded"),
             "endpointAgentsEssentialsIncluded": obj.get("endpointAgentsEssentialsIncluded"),
             "endpointAgentsEmbeddedIncluded": obj.get("endpointAgentsEmbeddedIncluded"),

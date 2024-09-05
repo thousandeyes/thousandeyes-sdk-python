@@ -222,6 +222,7 @@ class TestUsageApi(unittest.TestCase):
                       "enterpriseAgentsIncluded" : 25,
                       "monthStart" : "2020-01-05T08:00:00Z",
                       "cloudUnitsIncluded" : 4320000000,
+                      "deviceAgentsIncluded" : 100,
                       "endpointAgentsIncluded" : 200,
                       "endpointAgentsEssentialsIncluded" : 10
                     },

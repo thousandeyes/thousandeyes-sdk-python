@@ -14,9 +14,8 @@
 
 
 # import apis into sdk package
-from thousandeyes_sdk.endpoint_agents.api.administrative_endpoints_api import AdministrativeEndpointsApi
-from thousandeyes_sdk.endpoint_agents.api.manage_agents_api import ManageAgentsApi
-from thousandeyes_sdk.endpoint_agents.api.transfer_api import TransferApi
+from thousandeyes_sdk.endpoint_agents.api.endpoint_agents_api import EndpointAgentsApi
+from thousandeyes_sdk.endpoint_agents.api.endpoint_agents_transfer_api import EndpointAgentsTransferApi
 
 
 # import models into sdk package
@@ -38,6 +37,7 @@ from thousandeyes_sdk.endpoint_agents.models.bulk_agent_transfer_response import
 from thousandeyes_sdk.endpoint_agents.models.conditional_operator import ConditionalOperator
 from thousandeyes_sdk.endpoint_agents.models.connection_string import ConnectionString
 from thousandeyes_sdk.endpoint_agents.models.endpoint_agent import EndpointAgent
+from thousandeyes_sdk.endpoint_agents.models.endpoint_agent_ethernet_profile import EndpointAgentEthernetProfile
 from thousandeyes_sdk.endpoint_agents.models.endpoint_agent_location import EndpointAgentLocation
 from thousandeyes_sdk.endpoint_agents.models.endpoint_agent_update import EndpointAgentUpdate
 from thousandeyes_sdk.endpoint_agents.models.endpoint_agents import EndpointAgents
@@ -47,8 +47,7 @@ from thousandeyes_sdk.endpoint_agents.models.endpoint_client import EndpointClie
 from thousandeyes_sdk.endpoint_agents.models.endpoint_user_profile import EndpointUserProfile
 from thousandeyes_sdk.endpoint_agents.models.endpoint_vpn_profile import EndpointVpnProfile
 from thousandeyes_sdk.endpoint_agents.models.error import Error
-from thousandeyes_sdk.endpoint_agents.models.ethernet_profile import EthernetProfile
-from thousandeyes_sdk.endpoint_agents.models.expand import Expand
+from thousandeyes_sdk.endpoint_agents.models.expand_endpoint_agent_options import ExpandEndpointAgentOptions
 from thousandeyes_sdk.endpoint_agents.models.filter_endpoint_agents_response import FilterEndpointAgentsResponse
 from thousandeyes_sdk.endpoint_agents.models.interface_hardware_type import InterfaceHardwareType
 from thousandeyes_sdk.endpoint_agents.models.interface_profile import InterfaceProfile

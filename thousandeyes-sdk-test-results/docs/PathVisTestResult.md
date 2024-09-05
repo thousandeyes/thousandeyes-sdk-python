@@ -10,14 +10,14 @@ Name | Type | Description | Notes
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **server** | **str** | Target server, including port (if method used is TCP) | [optional] [readonly] 
 **server_ip** | **str** | IP of target server | [optional] [readonly] 
 **source_ip** | **str** | IP address of source agent | [optional] [readonly] 
 **source_prefix** | **str** | IP prefix of source agent | [optional] [readonly] 
 **target_is_proxy** | **bool** | Specifies whether the traces are targeting a proxy. If not set, it is considered as false. | [optional] [readonly] 
 **direction** | [**PathVisDirection**](PathVisDirection.md) |  | [optional] 
-**path_traces** | [**List[PathVisEndpoint]**](PathVisEndpoint.md) | Shows all iterations of path trace, with each iteration specified by a pathId | [optional] 
+**path_traces** | [**List[PathTrace]**](PathTrace.md) | Shows all iterations of path trace, with each iteration specified by a pathId | [optional] 
 
 ## Example
 

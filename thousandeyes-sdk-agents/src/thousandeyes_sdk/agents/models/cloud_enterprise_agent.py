@@ -18,28 +18,28 @@ import pprint
 import re  # noqa: F401
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Optional
-from thousandeyes_sdk.agents.models.agent import Agent
+from thousandeyes_sdk.agents.models.agent_response import AgentResponse
 from thousandeyes_sdk.agents.models.enterprise_agent import EnterpriseAgent
 from typing import Union, Any, List, Set, TYPE_CHECKING, Optional, Dict
 from typing_extensions import Literal, Self
 from pydantic import Field, model_serializer
 
-CLOUDENTERPRISEAGENT_ANY_OF_SCHEMAS = ["Agent", "EnterpriseAgent"]
+CLOUDENTERPRISEAGENT_ANY_OF_SCHEMAS = ["AgentResponse", "EnterpriseAgent"]
 
 class CloudEnterpriseAgent(BaseModel):
     """
     CloudEnterpriseAgent
     """
 
-    # data type: Agent
-    anyof_schema_1_validator: Optional[Agent] = None
+    # data type: AgentResponse
+    anyof_schema_1_validator: Optional[AgentResponse] = None
     # data type: EnterpriseAgent
     anyof_schema_2_validator: Optional[EnterpriseAgent] = None
     if TYPE_CHECKING:
-        actual_instance: Optional[Union[Agent, EnterpriseAgent]] = None
+        actual_instance: Optional[Union[AgentResponse, EnterpriseAgent]] = None
     else:
         actual_instance: Any = None
-    any_of_schemas: Set[str] = { "Agent", "EnterpriseAgent" }
+    any_of_schemas: Set[str] = { "AgentResponse", "EnterpriseAgent" }
 
     model_config = {
         "validate_assignment": True,
@@ -60,9 +60,9 @@ class CloudEnterpriseAgent(BaseModel):
     def actual_instance_must_validate_anyof(cls, v):
         instance = CloudEnterpriseAgent.model_construct()
         error_messages = []
-        # validate data type: Agent
-        if not isinstance(v, Agent):
-            error_messages.append(f"Error! Input type `{type(v)}` is not `Agent`")
+        # validate data type: AgentResponse
+        if not isinstance(v, AgentResponse):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AgentResponse`")
         else:
             return v
 
@@ -74,7 +74,7 @@ class CloudEnterpriseAgent(BaseModel):
 
         if error_messages:
             # no match
-            raise ValueError("No match found when setting the actual_instance in CloudEnterpriseAgent with anyOf schemas: Agent, EnterpriseAgent. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting the actual_instance in CloudEnterpriseAgent with anyOf schemas: AgentResponse, EnterpriseAgent. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -87,9 +87,9 @@ class CloudEnterpriseAgent(BaseModel):
         """Returns the object represented by the json string"""
         instance = cls.model_construct()
         error_messages = []
-        # anyof_schema_1_validator: Optional[Agent] = None
+        # anyof_schema_1_validator: Optional[AgentResponse] = None
         try:
-            instance.actual_instance = Agent.from_json(json_str)
+            instance.actual_instance = AgentResponse.from_json(json_str)
             return instance
         except (ValidationError, ValueError) as e:
              error_messages.append(str(e))
@@ -102,7 +102,7 @@ class CloudEnterpriseAgent(BaseModel):
 
         if error_messages:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into CloudEnterpriseAgent with anyOf schemas: Agent, EnterpriseAgent. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into CloudEnterpriseAgent with anyOf schemas: AgentResponse, EnterpriseAgent. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -120,7 +120,7 @@ class CloudEnterpriseAgent(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], Agent, EnterpriseAgent]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AgentResponse, EnterpriseAgent]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None

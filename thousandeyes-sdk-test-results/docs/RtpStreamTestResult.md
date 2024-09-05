@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **server_ip** | **str** | Target agent IP address | [optional] [readonly] 
 **dscp** | **str** | DSCP value received by the server from the agent | [optional] [readonly] 
 **dscp_name** | **str** | Name of DSCP value received by the server from the agent | [optional] [readonly] 

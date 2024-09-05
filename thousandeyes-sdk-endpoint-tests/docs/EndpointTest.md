@@ -15,14 +15,13 @@ Name | Type | Description | Notes
 **has_path_trace_in_session** | **bool** | Enables \&quot;in session\&quot; path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session. | [optional] 
 **modified_date** | **datetime** | UTC last modification date (ISO date-time format). | [optional] [readonly] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
-**port** | **int** | Port number, if not specified, the port is selected based on a protocol (HTTP 80, HTTPS 443). | [optional] 
 **protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
 **server** | **str** | Target domain name or IP address. | [optional] 
 **test_id** | **str** | Each test is assigned a unique ID to access test data from other endpoints. | [optional] [readonly] 
 **test_name** | **str** | Name of the test. | [optional] 
 **type** | [**EndpointScheduledTestType**](EndpointScheduledTestType.md) |  | 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
-**alert_rules** | [**List[AlertRule]**](AlertRule.md) | Contains list of enabled alert rule objects. | [optional] 
+**port** | **int** | Port number. | [optional] [default to 443]
 
 ## Example
 

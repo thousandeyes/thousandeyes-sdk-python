@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
 **server_ip** | **str** | Target agent IP address | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **availability** | **float** | availability of the service | [optional] [readonly] 
 **connect_time** | **int** | Time required to establish a TCP connection to the server in milliseconds, only available when TCP is configured as protocol | [optional] [readonly] 
 **dns_time** | **int** | Time required to resolve DNS in milliseconds | [optional] [readonly] 

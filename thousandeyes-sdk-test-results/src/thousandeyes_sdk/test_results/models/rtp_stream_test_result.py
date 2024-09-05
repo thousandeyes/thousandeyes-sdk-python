@@ -19,7 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from thousandeyes_sdk.test_results.models.agent import Agent
+from thousandeyes_sdk.test_results.models.test_result_agent import TestResultAgent
 from thousandeyes_sdk.test_results.models.test_result_app_links import TestResultAppLinks
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,7 +33,7 @@ class RtpStreamTestResult(BaseModel):
     links: Optional[TestResultAppLinks] = Field(default=None, alias="_links")
     start_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the start time of the round", alias="startTime")
     end_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the end time of the round", alias="endTime")
-    agent: Optional[Agent] = None
+    agent: Optional[TestResultAgent] = None
     server_ip: Optional[StrictStr] = Field(default=None, description="Target agent IP address", alias="serverIp")
     dscp: Optional[StrictStr] = Field(default=None, description="DSCP value received by the server from the agent")
     dscp_name: Optional[StrictStr] = Field(default=None, description="Name of DSCP value received by the server from the agent", alias="dscpName")
@@ -140,7 +140,7 @@ class RtpStreamTestResult(BaseModel):
             "_links": TestResultAppLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "startTime": obj.get("startTime"),
             "endTime": obj.get("endTime"),
-            "agent": Agent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
+            "agent": TestResultAgent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
             "serverIp": obj.get("serverIp"),
             "dscp": obj.get("dscp"),
             "dscpName": obj.get("dscpName"),

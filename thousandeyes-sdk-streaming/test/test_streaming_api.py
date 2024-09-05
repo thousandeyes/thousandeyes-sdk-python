@@ -49,7 +49,7 @@ class TestStreamingApi(unittest.TestCase):
                     "value" : "valueB"
                   } ],
                   "type" : "opentelemetry",
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -91,7 +91,7 @@ class TestStreamingApi(unittest.TestCase):
                     "createdBy" : 3962
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -141,7 +141,7 @@ class TestStreamingApi(unittest.TestCase):
                     "updatedDate" : 1679677853573
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -187,7 +187,7 @@ class TestStreamingApi(unittest.TestCase):
                     "updatedDate" : 1679677853573
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -223,7 +223,7 @@ class TestStreamingApi(unittest.TestCase):
                     "updatedDate" : 1679677853573
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -298,7 +298,7 @@ class TestStreamingApi(unittest.TestCase):
                     "updatedDate" : 1679677853573
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"

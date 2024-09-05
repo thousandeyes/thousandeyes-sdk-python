@@ -213,7 +213,7 @@ class TestAlertRulesApi(unittest.TestCase):
                       "ruleId" : "127094",
                       "direction" : "to-target"
                     } ],
-                    "interval" : 120,
+                    "interval" : 60,
                     "alertsEnabled" : true,
                     "enabled" : true
                   }, {
@@ -246,7 +246,7 @@ class TestAlertRulesApi(unittest.TestCase):
                       "ruleId" : "127094",
                       "direction" : "to-target"
                     } ],
-                    "interval" : 120,
+                    "interval" : 60,
                     "alertsEnabled" : true,
                     "enabled" : true
                   } ],

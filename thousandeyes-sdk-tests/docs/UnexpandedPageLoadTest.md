@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **client_certificate** | **str** | String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate. | [optional] 
 **content_regex** | **str** | Content regex, this field does not require escaping. | [optional] 
 **custom_headers** | [**TestCustomHeaders**](TestCustomHeaders.md) |  | [optional] 
-**desired_status_code** | **str** | Specify the HTTP status code value that indicates a successful response. | [optional] [default to '200']
+**desired_status_code** | **str** | Specify the HTTP status code value that indicates a successful response. The default value accepts any 2xx or 3xx status code. | [optional] [default to 'default']
 **download_limit** | **int** | Specifies maximum number of bytes to download from the target object. | [optional] 
 **dns_override** | **str** | IP address to use for DNS override. | [optional] 
 **http_target_time** | **int** | Target time for HTTP server completion, specified in milliseconds. | [optional] 

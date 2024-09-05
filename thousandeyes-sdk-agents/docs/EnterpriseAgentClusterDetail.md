@@ -30,7 +30,7 @@ Name | Type | Description | Notes
 **interface_ip_mappings** | [**List[InterfaceIpMapping]**](InterfaceIpMapping.md) |  | [optional] [readonly] 
 **tests** | [**List[SimpleTest]**](SimpleTest.md) | List of tests. See &#x60;/tests&#x60; for more information. | [optional] 
 **notification_rules** | [**List[NotificationRules]**](NotificationRules.md) | List of notification rule objects configured on agent | [optional] 
-**labels** | [**List[Labels]**](Labels.md) | List of labels. See &#x60;/labels&#x60; for more information. | [optional] [readonly] 
+**labels** | [**List[AgentLabel]**](AgentLabel.md) | List of labels. See &#x60;/labels&#x60; for more information. | [optional] [readonly] 
 **agent_type** | **str** | Enterprise Cluster agent type. | 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
