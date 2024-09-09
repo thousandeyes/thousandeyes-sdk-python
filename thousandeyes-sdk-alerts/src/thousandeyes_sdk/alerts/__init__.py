@@ -26,6 +26,7 @@ from thousandeyes_sdk.alerts.models.alert_direction import AlertDirection
 from thousandeyes_sdk.alerts.models.alert_links import AlertLinks
 from thousandeyes_sdk.alerts.models.alert_meta import AlertMeta
 from thousandeyes_sdk.alerts.models.alert_metric_detail import AlertMetricDetail
+from thousandeyes_sdk.alerts.models.alert_notification import AlertNotification
 from thousandeyes_sdk.alerts.models.alert_rounds_violation_mode import AlertRoundsViolationMode
 from thousandeyes_sdk.alerts.models.alert_rule import AlertRule
 from thousandeyes_sdk.alerts.models.alert_suppression_window import AlertSuppressionWindow
@@ -45,11 +46,10 @@ from thousandeyes_sdk.alerts.models.end_alert_metrics import EndAlertMetrics
 from thousandeyes_sdk.alerts.models.end_repeat import EndRepeat
 from thousandeyes_sdk.alerts.models.end_repeat_type import EndRepeatType
 from thousandeyes_sdk.alerts.models.error import Error
-from thousandeyes_sdk.alerts.models.expand import Expand
+from thousandeyes_sdk.alerts.models.expand_alert_test_options import ExpandAlertTestOptions
 from thousandeyes_sdk.alerts.models.interval_type import IntervalType
 from thousandeyes_sdk.alerts.models.legacy_alert import LegacyAlert
 from thousandeyes_sdk.alerts.models.link import Link
-from thousandeyes_sdk.alerts.models.notification import Notification
 from thousandeyes_sdk.alerts.models.notification_custom_webhook import NotificationCustomWebhook
 from thousandeyes_sdk.alerts.models.notification_email import NotificationEmail
 from thousandeyes_sdk.alerts.models.notification_third_party import NotificationThirdParty

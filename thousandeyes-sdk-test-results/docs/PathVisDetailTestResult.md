@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **server** | **str** | Target server, including port (if method used is TCP) | [optional] [readonly] 
 **server_ip** | **str** | IP of target server | [optional] [readonly] 
 **source_ip** | **str** | IP address of source agent | [optional] [readonly] 

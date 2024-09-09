@@ -21,12 +21,12 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.agents.models.account_group import AccountGroup
+from thousandeyes_sdk.agents.models.agent_label import AgentLabel
 from thousandeyes_sdk.agents.models.cluster_member import ClusterMember
 from thousandeyes_sdk.agents.models.enterprise_agent_ipv6_policy import EnterpriseAgentIpv6Policy
 from thousandeyes_sdk.agents.models.enterprise_agent_state import EnterpriseAgentState
 from thousandeyes_sdk.agents.models.error_detail import ErrorDetail
 from thousandeyes_sdk.agents.models.interface_ip_mapping import InterfaceIpMapping
-from thousandeyes_sdk.agents.models.labels import Labels
 from thousandeyes_sdk.agents.models.notification_rules import NotificationRules
 from thousandeyes_sdk.agents.models.self_links import SelfLinks
 from thousandeyes_sdk.agents.models.simple_test import SimpleTest
@@ -62,7 +62,7 @@ class EnterpriseAgentClusterDetail(BaseModel):
     interface_ip_mappings: Optional[List[InterfaceIpMapping]] = Field(default=None, alias="interfaceIpMappings")
     tests: Optional[List[SimpleTest]] = Field(default=None, description="List of tests. See `/tests` for more information.")
     notification_rules: Optional[List[NotificationRules]] = Field(default=None, description="List of notification rule objects configured on agent", alias="notificationRules")
-    labels: Optional[List[Labels]] = Field(default=None, description="List of labels. See `/labels` for more information.")
+    labels: Optional[List[AgentLabel]] = Field(default=None, description="List of labels. See `/labels` for more information.")
     agent_type: Annotated[str, Field(strict=True)] = Field(description="Enterprise Cluster agent type.", alias="agentType")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
     __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "enabled", "prefix", "verifySslCertificates", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMappings", "tests", "notificationRules", "labels", "agentType", "_links"]
@@ -235,7 +235,7 @@ class EnterpriseAgentClusterDetail(BaseModel):
             "interfaceIpMappings": [InterfaceIpMapping.from_dict(_item) for _item in obj["interfaceIpMappings"]] if obj.get("interfaceIpMappings") is not None else None,
             "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "notificationRules": [NotificationRules.from_dict(_item) for _item in obj["notificationRules"]] if obj.get("notificationRules") is not None else None,
-            "labels": [Labels.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
+            "labels": [AgentLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
             "agentType": obj.get("agentType"),
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

@@ -19,13 +19,14 @@ from typing_extensions import Self
 
 class DataModelVersion(str, Enum):
     """
-    The version of the data model used in the data stream. **Note**: The data model version is currently fixed at `v1`.
+    The version of the data model used in the data stream.
     """
 
     """
     allowed enum values
     """
     V1 = 'v1'
+    V2 = 'v2'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:

@@ -1,6 +1,6 @@
 # Platform
 
-OS platform types
+OS platform types. Platform \"linux\" was recently renamed to \"roomos\".
 
 ## Properties
 

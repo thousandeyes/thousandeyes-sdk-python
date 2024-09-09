@@ -19,10 +19,10 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.alerts.models.alert_direction import AlertDirection
+from thousandeyes_sdk.alerts.models.alert_notification import AlertNotification
 from thousandeyes_sdk.alerts.models.alert_rounds_violation_mode import AlertRoundsViolationMode
 from thousandeyes_sdk.alerts.models.alert_type import AlertType
 from thousandeyes_sdk.alerts.models.base_test import BaseTest
-from thousandeyes_sdk.alerts.models.notification import Notification
 from thousandeyes_sdk.alerts.models.self_links import SelfLinks
 from thousandeyes_sdk.alerts.models.sensitivity_level import SensitivityLevel
 from thousandeyes_sdk.alerts.models.severity import Severity
@@ -48,7 +48,7 @@ class RuleDetail(BaseModel):
     include_covered_prefixes: Optional[StrictBool] = Field(default=None, description="Set true to include covered prefixes in the BGP alert rule. Only applicable to BGP alert rules.", alias="includeCoveredPrefixes")
     sensitivity_level: Optional[SensitivityLevel] = Field(default=None, alias="sensitivityLevel")
     severity: Optional[Severity] = None
-    notifications: Optional[Notification] = None
+    notifications: Optional[AlertNotification] = None
     tests: Optional[List[BaseTest]] = None
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
     __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "notifyOnClear", "isDefault", "alertType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "notifications", "tests", "_links"]
@@ -137,7 +137,7 @@ class RuleDetail(BaseModel):
             "includeCoveredPrefixes": obj.get("includeCoveredPrefixes"),
             "sensitivityLevel": obj.get("sensitivityLevel"),
             "severity": obj.get("severity"),
-            "notifications": Notification.from_dict(obj["notifications"]) if obj.get("notifications") is not None else None,
+            "notifications": AlertNotification.from_dict(obj["notifications"]) if obj.get("notifications") is not None else None,
             "tests": [BaseTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

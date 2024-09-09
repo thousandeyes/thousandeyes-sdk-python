@@ -10,8 +10,8 @@ Name | Type | Description | Notes
 **expression** | **str** | Expression of agent notification rule | [optional] 
 **notify_on_clear** | **bool** | Send notification when notification clears | [optional] 
 **is_default** | **bool** | Agent notification rule will be automatically included on all new Enterprise Agents. | [optional] 
-**notifications** | [**Notification**](Notification.md) |  | [optional] 
-**agents** | [**List[Agent]**](Agent.md) |  | [optional] 
+**notifications** | [**AgentNotification**](AgentNotification.md) |  | [optional] 
+**agents** | [**List[AgentResponse]**](AgentResponse.md) |  | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
