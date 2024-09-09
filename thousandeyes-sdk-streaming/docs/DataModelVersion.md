@@ -1,6 +1,6 @@
 # DataModelVersion
 
-The version of the data model used in the data stream. **Note**: The data model version is currently fixed at `v1`.
+The version of the data model used in the data stream.
 
 ## Properties
 

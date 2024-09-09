@@ -27,7 +27,6 @@ Name | Type | Description | Notes
 **num_path_traces** | **int** | Number of path traces executed by the agent. | [optional] [default to 3]
 **port** | **int** | Port number for the chosen protocol. | [optional] 
 **target_agent_id** | **str** | Agent ID of the target agent for the test. | 
-**agents** | [**List[Agent]**](Agent.md) | Contains list of agents. | [optional] [readonly] 
 
 ## Example
 

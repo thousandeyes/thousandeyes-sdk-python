@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **gateway** | **str** | Network gateway address. | [optional] [readonly] 
 **wireless_profile** | [**NetworkWirelessProfile**](NetworkWirelessProfile.md) |  | [optional] 
 **proxy_profile** | [**NetworkProxyProfile**](NetworkProxyProfile.md) |  | [optional] 
-**ethernet_profile** | [**EthernetProfile**](EthernetProfile.md) |  | [optional] 
+**ethernet_profile** | [**EndpointTestEthernetProfile**](EndpointTestEthernetProfile.md) |  | [optional] 
 **previous_interface** | [**NetworkInterface**](NetworkInterface.md) |  | [optional] 
 
 ## Example

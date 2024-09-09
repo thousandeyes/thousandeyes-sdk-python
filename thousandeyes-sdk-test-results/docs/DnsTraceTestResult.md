@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **output** | **str** | Verbose output from the trace request | [optional] [readonly] 
 **error_details** | **str** | Error details, if an error were encountered | [optional] [readonly] 
 **queries** | **int** | How many queries were required to get to the requested result | [optional] [readonly] 

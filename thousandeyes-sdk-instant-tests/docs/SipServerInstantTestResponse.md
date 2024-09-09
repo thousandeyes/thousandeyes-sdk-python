@@ -29,13 +29,13 @@ Name | Type | Description | Notes
 **sip_time_limit** | **int** | Time limit in milliseconds. | [optional] [default to 5]
 **fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
 **ipv6_policy** | [**TestIpv6Policy**](TestIpv6Policy.md) |  | [optional] 
-**agents** | [**List[Agent]**](Agent.md) | Contains list of agents. | [optional] [readonly] 
 **auth_user** | **str** | Username for authentication with SIP server. | [optional] 
 **password** | **str** | Password for Basic/NTLM authentication. | [optional] 
 **port** | **int** | Target port. | [default to 49153]
 **protocol** | [**SipTestProtocol**](SipTestProtocol.md) |  | [optional] 
 **sip_registrar** | **str** | SIP server to be tested, specified by domain name or IP address. | [optional] 
 **user** | **str** | Username for SIP registration, should be unique within a ThousandEyes account group. | [optional] 
+**agents** | [**List[AgentResponse]**](AgentResponse.md) | Contains list of agents. | [optional] 
 
 ## Example
 

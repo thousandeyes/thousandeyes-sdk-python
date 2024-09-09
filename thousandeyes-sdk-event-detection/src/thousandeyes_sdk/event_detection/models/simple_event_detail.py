@@ -19,8 +19,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.event_detection.models.event_alert_severity import EventAlertSeverity
 from thousandeyes_sdk.event_detection.models.event_state import EventState
-from thousandeyes_sdk.event_detection.models.severity import Severity
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,7 +33,7 @@ class SimpleEventDetail(BaseModel):
     state: Optional[EventState] = None
     start_date: Optional[datetime] = Field(default=None, description="The start date and time (in UTC, ISO 8601 format) when the event was first detected.", alias="startDate")
     end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is populated for \"ongoing\" events.", alias="endDate")
-    severity: Optional[Severity] = None
+    severity: Optional[EventAlertSeverity] = None
     __properties: ClassVar[List[str]] = ["id", "typeName", "state", "startDate", "endDate", "severity"]
 
     model_config = ConfigDict(

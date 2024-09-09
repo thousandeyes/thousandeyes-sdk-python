@@ -28,8 +28,8 @@ from thousandeyes_sdk.administrative.models.account_group_info import AccountGro
 from thousandeyes_sdk.administrative.models.account_group_request import AccountGroupRequest
 from thousandeyes_sdk.administrative.models.account_group_role import AccountGroupRole
 from thousandeyes_sdk.administrative.models.account_groups import AccountGroups
-from thousandeyes_sdk.administrative.models.agent import Agent
 from thousandeyes_sdk.administrative.models.agent_base import AgentBase
+from thousandeyes_sdk.administrative.models.agent_response import AgentResponse
 from thousandeyes_sdk.administrative.models.audit_user_events import AuditUserEvents
 from thousandeyes_sdk.administrative.models.base_role import BaseRole
 from thousandeyes_sdk.administrative.models.cloud_enterprise_agent_type import CloudEnterpriseAgentType
@@ -43,7 +43,7 @@ from thousandeyes_sdk.administrative.models.enterprise_agent_state import Enterp
 from thousandeyes_sdk.administrative.models.error import Error
 from thousandeyes_sdk.administrative.models.error_detail import ErrorDetail
 from thousandeyes_sdk.administrative.models.error_detail_code import ErrorDetailCode
-from thousandeyes_sdk.administrative.models.expand import Expand
+from thousandeyes_sdk.administrative.models.expand_account_group_options import ExpandAccountGroupOptions
 from thousandeyes_sdk.administrative.models.extended_user import ExtendedUser
 from thousandeyes_sdk.administrative.models.interface_ip_mapping import InterfaceIpMapping
 from thousandeyes_sdk.administrative.models.link import Link

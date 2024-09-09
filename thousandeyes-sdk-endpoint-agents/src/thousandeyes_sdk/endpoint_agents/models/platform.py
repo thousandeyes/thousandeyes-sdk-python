@@ -19,13 +19,16 @@ from typing_extensions import Self
 
 class Platform(str, Enum):
     """
-    OS platform types
+    OS platform types. Platform \"linux\" was recently renamed to \"roomos\".
     """
 
     """
     allowed enum values
     """
     WINDOWS = 'windows'
+    ROOMOS = 'roomos'
+    PHONEOS = 'phoneos'
+    ELUX = 'elux'
     LINUX = 'linux'
     MAC = 'mac'
 

@@ -1,5 +1,6 @@
 # ActiveWithin
 
+Timespan in which alerts must have been active to appear in the widget.
 
 ## Properties
 

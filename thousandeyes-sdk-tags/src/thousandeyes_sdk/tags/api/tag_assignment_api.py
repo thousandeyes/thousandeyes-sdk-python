@@ -46,7 +46,7 @@ class TagAssignmentApi:
     @validate_call
     def assign_tag(
         self,
-        id: Annotated[StrictStr, Field(description="ID of the tag to associate")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         tag_assignment: TagAssignment,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
@@ -66,7 +66,7 @@ class TagAssignmentApi:
 
         Assigns a tag to one or more objects. This endpoint has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
-        :param id: ID of the tag to associate (required)
+        :param id: Tag ID (required)
         :type id: str
         :param tag_assignment: (required)
         :type tag_assignment: TagAssignment
@@ -127,7 +127,7 @@ class TagAssignmentApi:
     @validate_call
     def assign_tag_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="ID of the tag to associate")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         tag_assignment: TagAssignment,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
@@ -147,7 +147,7 @@ class TagAssignmentApi:
 
         Assigns a tag to one or more objects. This endpoint has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
-        :param id: ID of the tag to associate (required)
+        :param id: Tag ID (required)
         :type id: str
         :param tag_assignment: (required)
         :type tag_assignment: TagAssignment
@@ -208,7 +208,7 @@ class TagAssignmentApi:
     @validate_call
     def assign_tag_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="ID of the tag to associate")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         tag_assignment: TagAssignment,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
@@ -228,7 +228,7 @@ class TagAssignmentApi:
 
         Assigns a tag to one or more objects. This endpoint has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
-        :param id: ID of the tag to associate (required)
+        :param id: Tag ID (required)
         :type id: str
         :param tag_assignment: (required)
         :type tag_assignment: TagAssignment
@@ -673,7 +673,7 @@ class TagAssignmentApi:
     @validate_call
     def unassign_tag(
         self,
-        id: Annotated[StrictStr, Field(description="ID of the tag to associate")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         tag_assignment: TagAssignment,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
@@ -693,7 +693,7 @@ class TagAssignmentApi:
 
         Removes a tag from one or more objects.
 
-        :param id: ID of the tag to associate (required)
+        :param id: Tag ID (required)
         :type id: str
         :param tag_assignment: (required)
         :type tag_assignment: TagAssignment
@@ -754,7 +754,7 @@ class TagAssignmentApi:
     @validate_call
     def unassign_tag_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="ID of the tag to associate")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         tag_assignment: TagAssignment,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
@@ -774,7 +774,7 @@ class TagAssignmentApi:
 
         Removes a tag from one or more objects.
 
-        :param id: ID of the tag to associate (required)
+        :param id: Tag ID (required)
         :type id: str
         :param tag_assignment: (required)
         :type tag_assignment: TagAssignment
@@ -835,7 +835,7 @@ class TagAssignmentApi:
     @validate_call
     def unassign_tag_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="ID of the tag to associate")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         tag_assignment: TagAssignment,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
@@ -855,7 +855,7 @@ class TagAssignmentApi:
 
         Removes a tag from one or more objects.
 
-        :param id: ID of the tag to associate (required)
+        :param id: Tag ID (required)
         :type id: str
         :param tag_assignment: (required)
         :type tag_assignment: TagAssignment

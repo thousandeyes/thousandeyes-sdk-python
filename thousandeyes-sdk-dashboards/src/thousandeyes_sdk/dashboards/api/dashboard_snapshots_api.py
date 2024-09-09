@@ -110,7 +110,7 @@ class DashboardSnapshotsApi:
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
-            '429': "Error",
+            '429': None,
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -188,7 +188,7 @@ class DashboardSnapshotsApi:
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
-            '429': "Error",
+            '429': None,
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -266,7 +266,7 @@ class DashboardSnapshotsApi:
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
-            '429': "Error",
+            '429': None,
             '500': "Error",
         }
         response_data = self.api_client.call_api(

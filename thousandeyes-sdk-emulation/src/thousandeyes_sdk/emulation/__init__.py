@@ -23,7 +23,7 @@ from thousandeyes_sdk.emulation.models.emulated_device_category import EmulatedD
 from thousandeyes_sdk.emulation.models.emulated_device_response import EmulatedDeviceResponse
 from thousandeyes_sdk.emulation.models.emulated_device_responses import EmulatedDeviceResponses
 from thousandeyes_sdk.emulation.models.error import Error
-from thousandeyes_sdk.emulation.models.expand import Expand
+from thousandeyes_sdk.emulation.models.expand_emulated_device_options import ExpandEmulatedDeviceOptions
 from thousandeyes_sdk.emulation.models.link import Link
 from thousandeyes_sdk.emulation.models.self_links import SelfLinks
 from thousandeyes_sdk.emulation.models.unauthorized_error import UnauthorizedError

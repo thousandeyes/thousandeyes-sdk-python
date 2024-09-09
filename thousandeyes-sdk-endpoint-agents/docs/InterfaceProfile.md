@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **interface_name** | **str** |  | [optional] 
 **address_profiles** | [**List[AddressProfile]**](AddressProfile.md) |  | [optional] 
 **hardware_type** | [**InterfaceHardwareType**](InterfaceHardwareType.md) |  | [optional] 
-**ethernet_profile** | [**EthernetProfile**](EthernetProfile.md) |  | [optional] 
+**ethernet_profile** | [**EndpointAgentEthernetProfile**](EndpointAgentEthernetProfile.md) |  | [optional] 
 **wireless_profile** | [**WirelessProfile**](WirelessProfile.md) |  | [optional] 
 
 ## Example

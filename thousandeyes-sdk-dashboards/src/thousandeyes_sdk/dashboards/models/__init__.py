@@ -41,7 +41,6 @@ from thousandeyes_sdk.dashboards.models.api_data_source_filter import ApiDataSou
 from thousandeyes_sdk.dashboards.models.api_data_source_filters import ApiDataSourceFilters
 from thousandeyes_sdk.dashboards.models.api_default_timespan import ApiDefaultTimespan
 from thousandeyes_sdk.dashboards.models.api_duration import ApiDuration
-from thousandeyes_sdk.dashboards.models.api_duration_unit import ApiDurationUnit
 from thousandeyes_sdk.dashboards.models.api_geo_map_widget import ApiGeoMapWidget
 from thousandeyes_sdk.dashboards.models.api_graphlet_point import ApiGraphletPoint
 from thousandeyes_sdk.dashboards.models.api_grouped_barchart_widget import ApiGroupedBarchartWidget

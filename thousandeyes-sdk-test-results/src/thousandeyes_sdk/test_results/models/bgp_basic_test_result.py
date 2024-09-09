@@ -19,8 +19,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.test_results.models.monitor import Monitor
 from thousandeyes_sdk.test_results.models.test_result_app_links import TestResultAppLinks
+from thousandeyes_sdk.test_results.models.test_result_monitor import TestResultMonitor
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,7 +31,7 @@ class BgpBasicTestResult(BaseModel):
     var_date: Optional[datetime] = Field(default=None, description="Data point date UTC (ISO date-time format).", alias="date")
     round_id: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the start time of the round", alias="roundId")
     links: Optional[TestResultAppLinks] = Field(default=None, alias="_links")
-    monitor: Optional[Monitor] = None
+    monitor: Optional[TestResultMonitor] = None
     prefix_id: Optional[StrictStr] = Field(default=None, description="Internally tracked prefix ID.", alias="prefixId")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix being tracked.")
     __properties: ClassVar[List[str]] = ["date", "roundId", "_links", "monitor", "prefixId", "prefix"]
@@ -101,7 +101,7 @@ class BgpBasicTestResult(BaseModel):
             "date": obj.get("date"),
             "roundId": obj.get("roundId"),
             "_links": TestResultAppLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "monitor": Monitor.from_dict(obj["monitor"]) if obj.get("monitor") is not None else None,
+            "monitor": TestResultMonitor.from_dict(obj["monitor"]) if obj.get("monitor") is not None else None,
             "prefixId": obj.get("prefixId"),
             "prefix": obj.get("prefix")
         })
