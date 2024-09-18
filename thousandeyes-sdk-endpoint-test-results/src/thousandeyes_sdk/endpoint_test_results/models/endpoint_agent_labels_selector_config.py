@@ -27,7 +27,7 @@ class EndpointAgentLabelsSelectorConfig(BaseModel):
     Agent labels selection object.
     """ # noqa: E501
     agent_selector_type: Annotated[str, Field(strict=True)] = Field(alias="agentSelectorType")
-    max_machines: Optional[Annotated[int, Field(le=50000, strict=True, ge=1)]] = Field(default=None, description="Maximum number of agents which can execute the test.", alias="maxMachines")
+    max_machines: Optional[Annotated[int, Field(le=50000, strict=True, ge=1)]] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
     endpoint_agent_labels: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent label IDs (obtained from `/endpoint/labels` endpoint), required when `agentSelectorType` is set to `agent-labels`.", alias="endpointAgentLabels")
     __properties: ClassVar[List[str]] = ["agentSelectorType", "maxMachines", "endpointAgentLabels"]
 
@@ -91,7 +91,7 @@ class EndpointAgentLabelsSelectorConfig(BaseModel):
 
         _obj = cls.model_validate({
             "agentSelectorType": obj.get("agentSelectorType"),
-            "maxMachines": obj.get("maxMachines"),
+            "maxMachines": obj.get("maxMachines") if obj.get("maxMachines") is not None else 25,
             "endpointAgentLabels": obj.get("endpointAgentLabels")
         })
         return _obj

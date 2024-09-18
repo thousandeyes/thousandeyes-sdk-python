@@ -7,7 +7,7 @@ Specific agents selection object.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_selector_type** | **str** |  | 
-**max_machines** | **int** | Maximum number of agents which can execute the test. | [optional] 
+**max_machines** | **int** | Maximum number of agents which can execute the test. | [optional] [default to 25]
 **agents** | **List[str]** | List of endpoint agent IDs (obtained from &#x60;/endpoint/agents&#x60; endpoint). Required when &#x60;agentSelectorType&#x60; is set to &#x60;specific-agent&#x60;. | [optional] 
 
 ## Example

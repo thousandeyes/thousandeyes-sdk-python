@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.instant_tests.models.agent import Agent
 from thousandeyes_sdk.instant_tests.models.agent_to_agent_test_protocol import AgentToAgentTestProtocol
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.instant_tests.models.test_direction import TestDirection
@@ -61,8 +60,7 @@ class AgentToAgentInstantTest(BaseModel):
     throughput_duration: Optional[Annotated[int, Field(le=30000, strict=True, ge=5000)]] = Field(default=10000, description="The throughput duration.", alias="throughputDuration")
     throughput_rate: Optional[Annotated[int, Field(le=1000, strict=True, ge=8)]] = Field(default=None, description="The throughput rate, only applicable for UDP protocol.", alias="throughputRate")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
-    agents: Optional[List[Agent]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "direction", "dscp", "dscpId", "mss", "numPathTraces", "pathTraceMode", "port", "protocol", "targetAgentId", "throughputMeasurements", "throughputDuration", "throughputRate", "fixedPacketRate", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "direction", "dscp", "dscpId", "mss", "numPathTraces", "pathTraceMode", "port", "protocol", "targetAgentId", "throughputMeasurements", "throughputDuration", "throughputRate", "fixedPacketRate"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,7 +104,6 @@ class AgentToAgentInstantTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -120,7 +117,6 @@ class AgentToAgentInstantTest(BaseModel):
             "labels",
             "shared_with_accounts",
             "dscp",
-            "agents",
         ])
 
         _dict = self.model_dump(
@@ -145,13 +141,6 @@ class AgentToAgentInstantTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['sharedWithAccounts'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in agents (list)
-        _items = []
-        if self.agents:
-            for _item in self.agents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['agents'] = _items
         return _dict
 
     @classmethod
@@ -189,8 +178,7 @@ class AgentToAgentInstantTest(BaseModel):
             "throughputMeasurements": obj.get("throughputMeasurements") if obj.get("throughputMeasurements") is not None else False,
             "throughputDuration": obj.get("throughputDuration") if obj.get("throughputDuration") is not None else 10000,
             "throughputRate": obj.get("throughputRate"),
-            "fixedPacketRate": obj.get("fixedPacketRate"),
-            "agents": [Agent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "fixedPacketRate": obj.get("fixedPacketRate")
         })
         return _obj
 

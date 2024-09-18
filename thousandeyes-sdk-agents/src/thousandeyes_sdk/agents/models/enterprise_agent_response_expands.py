@@ -18,7 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.agents.models.labels import Labels
+from thousandeyes_sdk.agents.models.agent_label import AgentLabel
 from thousandeyes_sdk.agents.models.notification_rules import NotificationRules
 from thousandeyes_sdk.agents.models.simple_test import SimpleTest
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class EnterpriseAgentResponseExpands(BaseModel):
     """ # noqa: E501
     tests: Optional[List[SimpleTest]] = Field(default=None, description="List of tests. See `/tests` for more information.")
     notification_rules: Optional[List[NotificationRules]] = Field(default=None, description="List of notification rule objects configured on agent", alias="notificationRules")
-    labels: Optional[List[Labels]] = Field(default=None, description="List of labels. See `/labels` for more information.")
+    labels: Optional[List[AgentLabel]] = Field(default=None, description="List of labels. See `/labels` for more information.")
     __properties: ClassVar[List[str]] = ["tests", "notificationRules", "labels"]
 
     model_config = ConfigDict(
@@ -110,7 +110,7 @@ class EnterpriseAgentResponseExpands(BaseModel):
         _obj = cls.model_validate({
             "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "notificationRules": [NotificationRules.from_dict(_item) for _item in obj["notificationRules"]] if obj.get("notificationRules") is not None else None,
-            "labels": [Labels.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None
+            "labels": [AgentLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None
         })
         return _obj
 

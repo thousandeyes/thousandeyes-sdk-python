@@ -7,7 +7,7 @@ docs/EmulatedDeviceResponse.md
 docs/EmulatedDeviceResponses.md
 docs/EmulationApi.md
 docs/Error.md
-docs/Expand.md
+docs/ExpandEmulatedDeviceOptions.md
 docs/Link.md
 docs/SelfLinks.md
 docs/UnauthorizedError.md
@@ -24,7 +24,7 @@ src/thousandeyes_sdk/emulation/models/emulated_device_category.py
 src/thousandeyes_sdk/emulation/models/emulated_device_response.py
 src/thousandeyes_sdk/emulation/models/emulated_device_responses.py
 src/thousandeyes_sdk/emulation/models/error.py
-src/thousandeyes_sdk/emulation/models/expand.py
+src/thousandeyes_sdk/emulation/models/expand_emulated_device_options.py
 src/thousandeyes_sdk/emulation/models/link.py
 src/thousandeyes_sdk/emulation/models/self_links.py
 src/thousandeyes_sdk/emulation/models/unauthorized_error.py

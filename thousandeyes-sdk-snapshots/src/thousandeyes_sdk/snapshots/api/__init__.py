@@ -1,5 +1,5 @@
 # flake8: noqa
 
 # import apis into api package
-from thousandeyes_sdk.snapshots.api.create_test_snapshot_api import CreateTestSnapshotApi
+from thousandeyes_sdk.snapshots.api.test_snapshots_api import TestSnapshotsApi
 

@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **custom_headers** | **Dict[str, str]** | Custom headers. **Note**: When using the &#x60;splunk-hec&#x60; &#x60;type&#x60;, the &#x60;customHeaders&#x60; must contain just one element with the key &#x60;token&#x60; and the value of the *Splunk HEC Token*. | [optional] 
 **tag_match** | [**List[TagMatch]**](TagMatch.md) | A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics. | [optional] 
 **test_match** | [**List[TestMatch]**](TestMatch.md) | A collection of tests to be included in the data stream. | [optional] 
+**exporter_config** | [**ExporterConfig**](ExporterConfig.md) |  | [optional] 
 **audit_operation** | [**AuditOperation**](AuditOperation.md) |  | [optional] 
 
 ## Example

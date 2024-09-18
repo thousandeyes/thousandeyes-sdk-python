@@ -23,7 +23,7 @@ from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.usage.models.enterprise_agents_usage import EnterpriseAgentsUsage
-from thousandeyes_sdk.usage.models.expand import Expand
+from thousandeyes_sdk.usage.models.expand_usage_options import ExpandUsageOptions
 from thousandeyes_sdk.usage.models.tests_usage import TestsUsage
 from thousandeyes_sdk.usage.models.usage import Usage
 
@@ -735,7 +735,7 @@ class UsageApi:
     def get_usage(
         self,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'.")] = None,
+        expand: Annotated[Optional[List[ExpandUsageOptions]], Field(description="Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -756,7 +756,7 @@ class UsageApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'.
-        :type expand: List[Expand]
+        :type expand: List[ExpandUsageOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -813,7 +813,7 @@ class UsageApi:
     def get_usage_with_http_info(
         self,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'.")] = None,
+        expand: Annotated[Optional[List[ExpandUsageOptions]], Field(description="Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -834,7 +834,7 @@ class UsageApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'.
-        :type expand: List[Expand]
+        :type expand: List[ExpandUsageOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -891,7 +891,7 @@ class UsageApi:
     def get_usage_without_preload_content(
         self,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'.")] = None,
+        expand: Annotated[Optional[List[ExpandUsageOptions]], Field(description="Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -912,7 +912,7 @@ class UsageApi:
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'.
-        :type expand: List[Expand]
+        :type expand: List[ExpandUsageOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

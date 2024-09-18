@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.tests.models.agent import Agent
 from thousandeyes_sdk.tests.models.agent_interfaces import AgentInterfaces
 from thousandeyes_sdk.tests.models.alert_rule import AlertRule
 from thousandeyes_sdk.tests.models.monitor import Monitor
@@ -66,7 +65,7 @@ class HttpServerTest(BaseModel):
     client_certificate: Optional[StrictStr] = Field(default=None, description="String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate.", alias="clientCertificate")
     content_regex: Optional[StrictStr] = Field(default=None, description="Content regex, this field does not require escaping.", alias="contentRegex")
     custom_headers: Optional[TestCustomHeaders] = Field(default=None, alias="customHeaders")
-    desired_status_code: Optional[StrictStr] = Field(default='200', description="Specify the HTTP status code value that indicates a successful response.", alias="desiredStatusCode")
+    desired_status_code: Optional[StrictStr] = Field(default='default', description="Specify the HTTP status code value that indicates a successful response. The default value accepts any 2xx or 3xx status code.", alias="desiredStatusCode")
     download_limit: Optional[StrictInt] = Field(default=None, description="Specifies maximum number of bytes to download from the target object.", alias="downloadLimit")
     dns_override: Optional[StrictStr] = Field(default=None, description="IP address to use for DNS override.", alias="dnsOverride")
     http_target_time: Optional[Annotated[int, Field(le=5000, strict=True, ge=100)]] = Field(default=None, description="Target time for HTTP server completion, specified in milliseconds.", alias="httpTargetTime")
@@ -97,11 +96,10 @@ class HttpServerTest(BaseModel):
     headers: Optional[List[StrictStr]] = Field(default=None, description="HTTP request headers used.")
     post_body: Optional[StrictStr] = Field(default=None, description="Enter the body for the HTTP POST request in this field. No special escaping is necessary. If the post body is provided with content, the `requestMethod` is automatically set to POST.", alias="postBody")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
-    agents: Optional[List[Agent]] = Field(default=None, description="Contains list of agents.")
     bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
     monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "headers", "postBody", "ipv6Policy", "agents", "bgpMeasurements", "usePublicBgp", "monitors"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "headers", "postBody", "ipv6Policy", "bgpMeasurements", "usePublicBgp", "monitors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -146,7 +144,6 @@ class HttpServerTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -160,7 +157,6 @@ class HttpServerTest(BaseModel):
             "labels",
             "shared_with_accounts",
             "ssl_version",
-            "agents",
             "monitors",
         ])
 
@@ -202,13 +198,6 @@ class HttpServerTest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of o_auth
         if self.o_auth:
             _dict['oAuth'] = self.o_auth.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in agents (list)
-        _items = []
-        if self.agents:
-            for _item in self.agents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['agents'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in monitors (list)
         _items = []
         if self.monitors:
@@ -251,7 +240,7 @@ class HttpServerTest(BaseModel):
             "clientCertificate": obj.get("clientCertificate"),
             "contentRegex": obj.get("contentRegex"),
             "customHeaders": TestCustomHeaders.from_dict(obj["customHeaders"]) if obj.get("customHeaders") is not None else None,
-            "desiredStatusCode": obj.get("desiredStatusCode") if obj.get("desiredStatusCode") is not None else '200',
+            "desiredStatusCode": obj.get("desiredStatusCode") if obj.get("desiredStatusCode") is not None else 'default',
             "downloadLimit": obj.get("downloadLimit"),
             "dnsOverride": obj.get("dnsOverride"),
             "httpTargetTime": obj.get("httpTargetTime"),
@@ -282,7 +271,6 @@ class HttpServerTest(BaseModel):
             "headers": obj.get("headers"),
             "postBody": obj.get("postBody"),
             "ipv6Policy": obj.get("ipv6Policy"),
-            "agents": [Agent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
             "bgpMeasurements": obj.get("bgpMeasurements") if obj.get("bgpMeasurements") is not None else True,
             "usePublicBgp": obj.get("usePublicBgp") if obj.get("usePublicBgp") is not None else True,
             "monitors": [Monitor.from_dict(_item) for _item in obj["monitors"]] if obj.get("monitors") is not None else None
