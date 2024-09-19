@@ -19,7 +19,6 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.endpoint_test_results.models.alert_rule import AlertRule
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_agent_selector_config import EndpointAgentSelectorConfig
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_scheduled_test_type import EndpointScheduledTestType
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_test_links import EndpointTestLinks
@@ -43,15 +42,14 @@ class EndpointTest(BaseModel):
     has_path_trace_in_session: Optional[StrictBool] = Field(default=None, description="Enables \"in session\" path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session.", alias="hasPathTraceInSession")
     modified_date: Optional[datetime] = Field(default=None, description="UTC last modification date (ISO date-time format).", alias="modifiedDate")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
-    port: Optional[StrictInt] = Field(default=None, description="Port number, if not specified, the port is selected based on a protocol (HTTP 80, HTTPS 443).")
     protocol: Optional[EndpointTestProtocol] = None
     server: Optional[StrictStr] = Field(default=None, description="Target domain name or IP address.")
     test_id: Optional[StrictStr] = Field(default=None, description="Each test is assigned a unique ID to access test data from other endpoints.", alias="testId")
     test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")
     type: EndpointScheduledTestType
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
-    alert_rules: Optional[List[AlertRule]] = Field(default=None, description="Contains list of enabled alert rule objects.", alias="alertRules")
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "port", "protocol", "server", "testId", "testName", "type", "tcpProbeMode", "alertRules"]
+    port: Optional[StrictInt] = Field(default=443, description="Port number.")
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "protocol", "server", "testId", "testName", "type", "tcpProbeMode", "port"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,13 +105,6 @@ class EndpointTest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of agent_selector_config
         if self.agent_selector_config:
             _dict['agentSelectorConfig'] = self.agent_selector_config.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in alert_rules (list)
-        _items = []
-        if self.alert_rules:
-            for _item in self.alert_rules:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['alertRules'] = _items
         return _dict
 
     @classmethod
@@ -136,14 +127,13 @@ class EndpointTest(BaseModel):
             "hasPathTraceInSession": obj.get("hasPathTraceInSession"),
             "modifiedDate": obj.get("modifiedDate"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
-            "port": obj.get("port"),
             "protocol": obj.get("protocol"),
             "server": obj.get("server"),
             "testId": obj.get("testId"),
             "testName": obj.get("testName"),
             "type": obj.get("type"),
             "tcpProbeMode": obj.get("tcpProbeMode"),
-            "alertRules": [AlertRule.from_dict(_item) for _item in obj["alertRules"]] if obj.get("alertRules") is not None else None
+            "port": obj.get("port") if obj.get("port") is not None else 443
         })
         return _obj
 

@@ -20,6 +20,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.streaming.models.data_model_version import DataModelVersion
 from thousandeyes_sdk.streaming.models.endpoint_type import EndpointType
+from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
 from thousandeyes_sdk.streaming.models.stream_type import StreamType
 from thousandeyes_sdk.streaming.models.tag_match import TagMatch
 from thousandeyes_sdk.streaming.models.test_match import TestMatch
@@ -34,11 +35,12 @@ class Stream(BaseModel):
     tag_match: Optional[List[TagMatch]] = Field(default=None, description="A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics.", alias="tagMatch")
     test_match: Optional[List[TestMatch]] = Field(default=None, description="A collection of tests to be included in the data stream.", alias="testMatch")
     enabled: Optional[StrictBool] = Field(default=None, description="Flag to enable or disable the stream integration.")
+    exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
     type: Optional[StreamType] = None
     endpoint_type: Optional[EndpointType] = Field(default=None, alias="endpointType")
     stream_endpoint_url: Optional[StrictStr] = Field(default=None, description="The URL ThousandEyes sends data stream to. For a URL to be valid, it needs to: - Be syntactically correct. - Be reachable. - Use the HTTPS protocol. - When using the `grpc` endpointType, streamEndpointUrl cannot contain paths:     - Valid . `grpc` - `https://example.com`     - Invalid . `grpc` - `https://example.com/collector`.     - Valid . `http` - `https://example.com/collector`.      - When using the `http` endpointType, the endpoint must match the exact final full URL (including the path if there is one) to which the metrics will be sent. Examples below:     - `https://api.honeycomb.io:443/v1/metrics`     - `https://ingest.eu0.signalfx.com/v2/datapoint/otlp`", alias="streamEndpointUrl")
     data_model_version: Optional[DataModelVersion] = Field(default=None, alias="dataModelVersion")
-    __properties: ClassVar[List[str]] = ["customHeaders", "tagMatch", "testMatch", "enabled", "type", "endpointType", "streamEndpointUrl", "dataModelVersion"]
+    __properties: ClassVar[List[str]] = ["customHeaders", "tagMatch", "testMatch", "enabled", "exporterConfig", "type", "endpointType", "streamEndpointUrl", "dataModelVersion"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +96,9 @@ class Stream(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['testMatch'] = _items
+        # override the default output from pydantic by calling `to_dict()` of exporter_config
+        if self.exporter_config:
+            _dict['exporterConfig'] = self.exporter_config.to_dict()
         return _dict
 
     @classmethod
@@ -110,6 +115,7 @@ class Stream(BaseModel):
             "tagMatch": [TagMatch.from_dict(_item) for _item in obj["tagMatch"]] if obj.get("tagMatch") is not None else None,
             "testMatch": [TestMatch.from_dict(_item) for _item in obj["testMatch"]] if obj.get("testMatch") is not None else None,
             "enabled": obj.get("enabled"),
+            "exporterConfig": ExporterConfig.from_dict(obj["exporterConfig"]) if obj.get("exporterConfig") is not None else None,
             "type": obj.get("type"),
             "endpointType": obj.get("endpointType"),
             "streamEndpointUrl": obj.get("streamEndpointUrl"),

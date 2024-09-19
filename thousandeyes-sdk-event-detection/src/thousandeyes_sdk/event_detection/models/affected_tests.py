@@ -18,7 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.event_detection.models.api_affected_test import ApiAffectedTest
+from thousandeyes_sdk.event_detection.models.event_api_affected_test import EventApiAffectedTest
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class AffectedTests(BaseModel):
     """ # noqa: E501
     total: Optional[StrictInt] = Field(default=None, description="The total number affected.")
     in_account_group: Optional[StrictInt] = Field(default=None, description="Indicates if in the affected account group.", alias="inAccountGroup")
-    tests: Optional[List[ApiAffectedTest]] = Field(default=None, description="List of affected tests.")
+    tests: Optional[List[EventApiAffectedTest]] = Field(default=None, description="List of affected tests.")
     __properties: ClassVar[List[str]] = ["total", "inAccountGroup", "tests"]
 
     model_config = ConfigDict(
@@ -96,7 +96,7 @@ class AffectedTests(BaseModel):
         _obj = cls.model_validate({
             "total": obj.get("total"),
             "inAccountGroup": obj.get("inAccountGroup"),
-            "tests": [ApiAffectedTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None
+            "tests": [EventApiAffectedTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None
         })
         return _obj
 

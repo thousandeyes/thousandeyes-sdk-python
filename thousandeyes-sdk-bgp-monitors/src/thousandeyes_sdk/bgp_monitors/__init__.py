@@ -14,7 +14,7 @@
 
 
 # import apis into sdk package
-from thousandeyes_sdk.bgp_monitors.api.list_bgp_monitors_api import ListBGPMonitorsApi
+from thousandeyes_sdk.bgp_monitors.api.bgp_monitors_api import BGPMonitorsApi
 
 
 # import models into sdk package

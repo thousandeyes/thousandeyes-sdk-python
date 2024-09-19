@@ -19,8 +19,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from thousandeyes_sdk.test_results.models.agent import Agent
 from thousandeyes_sdk.test_results.models.test_direction import TestDirection
+from thousandeyes_sdk.test_results.models.test_result_agent import TestResultAgent
 from thousandeyes_sdk.test_results.models.test_result_app_links import TestResultAppLinks
 from typing import Optional, Set
 from typing_extensions import Self
@@ -43,7 +43,7 @@ class NetworkTestResult(BaseModel):
     max_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Maximum RTT for packets sent to destination", alias="maxLatency")
     min_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Minimum RTT for packets sent to destination", alias="minLatency")
     packets_by_second: Optional[List[List[StrictInt]]] = Field(default=None, description="Number of packets sent and received in a second.", alias="packetsBySecond")
-    agent: Optional[Agent] = None
+    agent: Optional[TestResultAgent] = None
     server_ip: Optional[StrictStr] = Field(default=None, description="IP of target server", alias="serverIp")
     server: Optional[StrictStr] = Field(default=None, description="Target server, including port (if method used is TCP)")
     health_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A normalized value (0.0-1.0) representing the network connection health of the test target. Returns negative values as error codes. -1.0 indicates there was insufficient data to calculate the health score.", alias="healthScore")
@@ -152,7 +152,7 @@ class NetworkTestResult(BaseModel):
             "maxLatency": obj.get("maxLatency"),
             "minLatency": obj.get("minLatency"),
             "packetsBySecond": obj.get("packetsBySecond"),
-            "agent": Agent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
+            "agent": TestResultAgent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
             "serverIp": obj.get("serverIp"),
             "server": obj.get("server"),
             "healthScore": obj.get("healthScore"),

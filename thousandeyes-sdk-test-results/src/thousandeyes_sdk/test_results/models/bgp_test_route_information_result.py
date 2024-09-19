@@ -20,8 +20,8 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.test_results.models.bgp_hop import BgpHop
-from thousandeyes_sdk.test_results.models.monitor import Monitor
 from thousandeyes_sdk.test_results.models.test_result_app_links import TestResultAppLinks
+from thousandeyes_sdk.test_results.models.test_result_monitor import TestResultMonitor
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class BgpTestRouteInformationResult(BaseModel):
     var_date: Optional[datetime] = Field(default=None, description="Data point date UTC (ISO date-time format).", alias="date")
     round_id: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the start time of the round", alias="roundId")
     links: Optional[TestResultAppLinks] = Field(default=None, alias="_links")
-    monitor: Optional[Monitor] = None
+    monitor: Optional[TestResultMonitor] = None
     prefix_id: Optional[StrictStr] = Field(default=None, description="Internally tracked prefix ID.", alias="prefixId")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix being tracked.")
     is_active: Optional[StrictBool] = Field(default=None, description="Represents whether the route is active or inactive. An inactive route was an active route in the previous test round and is now superseded by another active (preferred) route. When requesting data for the test round in which a route change happened, both routes (active and inactive one) are included in the response.", alias="isActive")
@@ -111,7 +111,7 @@ class BgpTestRouteInformationResult(BaseModel):
             "date": obj.get("date"),
             "roundId": obj.get("roundId"),
             "_links": TestResultAppLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "monitor": Monitor.from_dict(obj["monitor"]) if obj.get("monitor") is not None else None,
+            "monitor": TestResultMonitor.from_dict(obj["monitor"]) if obj.get("monitor") is not None else None,
             "prefixId": obj.get("prefixId"),
             "prefix": obj.get("prefix"),
             "isActive": obj.get("isActive"),

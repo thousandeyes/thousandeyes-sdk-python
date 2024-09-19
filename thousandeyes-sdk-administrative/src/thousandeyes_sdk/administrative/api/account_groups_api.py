@@ -25,7 +25,7 @@ from thousandeyes_sdk.administrative.models.account_group_detail import AccountG
 from thousandeyes_sdk.administrative.models.account_group_request import AccountGroupRequest
 from thousandeyes_sdk.administrative.models.account_groups import AccountGroups
 from thousandeyes_sdk.administrative.models.created_account_group import CreatedAccountGroup
-from thousandeyes_sdk.administrative.models.expand import Expand
+from thousandeyes_sdk.administrative.models.expand_account_group_options import ExpandAccountGroupOptions
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
@@ -50,7 +50,7 @@ class AccountGroupsApi:
     def create_account_group(
         self,
         account_group_request: AccountGroupRequest,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAccountGroupOptions]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -71,7 +71,7 @@ class AccountGroupsApi:
         :param account_group_request: (required)
         :type account_group_request: AccountGroupRequest
         :param expand: Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAccountGroupOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -128,7 +128,7 @@ class AccountGroupsApi:
     def create_account_group_with_http_info(
         self,
         account_group_request: AccountGroupRequest,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAccountGroupOptions]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -149,7 +149,7 @@ class AccountGroupsApi:
         :param account_group_request: (required)
         :type account_group_request: AccountGroupRequest
         :param expand: Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAccountGroupOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -206,7 +206,7 @@ class AccountGroupsApi:
     def create_account_group_without_preload_content(
         self,
         account_group_request: AccountGroupRequest,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAccountGroupOptions]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -227,7 +227,7 @@ class AccountGroupsApi:
         :param account_group_request: (required)
         :type account_group_request: AccountGroupRequest
         :param expand: Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAccountGroupOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -640,7 +640,7 @@ class AccountGroupsApi:
     def get_account_group(
         self,
         id: Annotated[StrictStr, Field(description="Identifier for the account group.")],
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAccountGroupOptions]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -661,7 +661,7 @@ class AccountGroupsApi:
         :param id: Identifier for the account group. (required)
         :type id: str
         :param expand: Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAccountGroupOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -718,7 +718,7 @@ class AccountGroupsApi:
     def get_account_group_with_http_info(
         self,
         id: Annotated[StrictStr, Field(description="Identifier for the account group.")],
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAccountGroupOptions]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -739,7 +739,7 @@ class AccountGroupsApi:
         :param id: Identifier for the account group. (required)
         :type id: str
         :param expand: Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAccountGroupOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -796,7 +796,7 @@ class AccountGroupsApi:
     def get_account_group_without_preload_content(
         self,
         id: Annotated[StrictStr, Field(description="Identifier for the account group.")],
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAccountGroupOptions]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -817,7 +817,7 @@ class AccountGroupsApi:
         :param id: Identifier for the account group. (required)
         :type id: str
         :param expand: Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAccountGroupOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1221,7 +1221,7 @@ class AccountGroupsApi:
         self,
         id: Annotated[StrictStr, Field(description="Identifier for the account group.")],
         account_group_request: AccountGroupRequest,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAccountGroupOptions]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1244,7 +1244,7 @@ class AccountGroupsApi:
         :param account_group_request: (required)
         :type account_group_request: AccountGroupRequest
         :param expand: Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAccountGroupOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1303,7 +1303,7 @@ class AccountGroupsApi:
         self,
         id: Annotated[StrictStr, Field(description="Identifier for the account group.")],
         account_group_request: AccountGroupRequest,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAccountGroupOptions]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1326,7 +1326,7 @@ class AccountGroupsApi:
         :param account_group_request: (required)
         :type account_group_request: AccountGroupRequest
         :param expand: Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAccountGroupOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1385,7 +1385,7 @@ class AccountGroupsApi:
         self,
         id: Annotated[StrictStr, Field(description="Identifier for the account group.")],
         account_group_request: AccountGroupRequest,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
+        expand: Annotated[Optional[List[ExpandAccountGroupOptions]], Field(description="Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1408,7 +1408,7 @@ class AccountGroupsApi:
         :param account_group_request: (required)
         :type account_group_request: AccountGroupRequest
         :param expand: Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query.
-        :type expand: List[Expand]
+        :type expand: List[ExpandAccountGroupOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

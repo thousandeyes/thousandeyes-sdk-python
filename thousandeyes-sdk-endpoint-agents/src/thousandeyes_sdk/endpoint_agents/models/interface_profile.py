@@ -19,7 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.endpoint_agents.models.address_profile import AddressProfile
-from thousandeyes_sdk.endpoint_agents.models.ethernet_profile import EthernetProfile
+from thousandeyes_sdk.endpoint_agents.models.endpoint_agent_ethernet_profile import EndpointAgentEthernetProfile
 from thousandeyes_sdk.endpoint_agents.models.interface_hardware_type import InterfaceHardwareType
 from thousandeyes_sdk.endpoint_agents.models.wireless_profile import WirelessProfile
 from typing import Optional, Set
@@ -32,7 +32,7 @@ class InterfaceProfile(BaseModel):
     interface_name: Optional[StrictStr] = Field(default=None, alias="interfaceName")
     address_profiles: Optional[List[AddressProfile]] = Field(default=None, alias="addressProfiles")
     hardware_type: Optional[InterfaceHardwareType] = Field(default=None, alias="hardwareType")
-    ethernet_profile: Optional[EthernetProfile] = Field(default=None, alias="ethernetProfile")
+    ethernet_profile: Optional[EndpointAgentEthernetProfile] = Field(default=None, alias="ethernetProfile")
     wireless_profile: Optional[WirelessProfile] = Field(default=None, alias="wirelessProfile")
     __properties: ClassVar[List[str]] = ["interfaceName", "addressProfiles", "hardwareType", "ethernetProfile", "wirelessProfile"]
 
@@ -104,7 +104,7 @@ class InterfaceProfile(BaseModel):
             "interfaceName": obj.get("interfaceName"),
             "addressProfiles": [AddressProfile.from_dict(_item) for _item in obj["addressProfiles"]] if obj.get("addressProfiles") is not None else None,
             "hardwareType": obj.get("hardwareType"),
-            "ethernetProfile": EthernetProfile.from_dict(obj["ethernetProfile"]) if obj.get("ethernetProfile") is not None else None,
+            "ethernetProfile": EndpointAgentEthernetProfile.from_dict(obj["ethernetProfile"]) if obj.get("ethernetProfile") is not None else None,
             "wirelessProfile": WirelessProfile.from_dict(obj["wirelessProfile"]) if obj.get("wirelessProfile") is not None else None
         })
         return _obj
