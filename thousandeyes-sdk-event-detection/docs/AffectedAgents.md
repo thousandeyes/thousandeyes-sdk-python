@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | **int** | The total number affected. | [optional] [readonly] 
 **in_account_group** | **int** | Indicates if in the affected account group. | [optional] [readonly] 
-**agents** | [**List[ApiAffectedAgent]**](ApiAffectedAgent.md) | List of affected agents. | [optional] 
+**agents** | [**List[EventApiAffectedAgent]**](EventApiAffectedAgent.md) | List of affected agents. | [optional] 
 
 ## Example
 

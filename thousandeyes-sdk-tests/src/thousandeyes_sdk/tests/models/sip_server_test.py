@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.tests.models.agent import Agent
 from thousandeyes_sdk.tests.models.alert_rule import AlertRule
 from thousandeyes_sdk.tests.models.monitor import Monitor
 from thousandeyes_sdk.tests.models.shared_with_account import SharedWithAccount
@@ -42,6 +41,9 @@ class SipServerTest(BaseModel):
     alerts_enabled: Optional[StrictBool] = Field(default=None, description="Indicates if alerts are enabled.", alias="alertsEnabled")
     enabled: Optional[StrictBool] = Field(default=True, description="Test is enabled.")
     alert_rules: Optional[List[AlertRule]] = Field(default=None, description="Contains list of enabled alert rule objects.", alias="alertRules")
+    bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
+    use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
+    monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
     created_by: Optional[StrictStr] = Field(default=None, description="User that created the test.", alias="createdBy")
     created_date: Optional[datetime] = Field(default=None, description="UTC created date (ISO date-time format).", alias="createdDate")
     description: Optional[StrictStr] = Field(default=None, description="A description of the test.")
@@ -66,17 +68,13 @@ class SipServerTest(BaseModel):
     sip_time_limit: Optional[Annotated[int, Field(le=10, strict=True, ge=5)]] = Field(default=5, description="Time limit in milliseconds.", alias="sipTimeLimit")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
-    agents: Optional[List[Agent]] = Field(default=None, description="Contains list of agents.")
     auth_user: Optional[StrictStr] = Field(default=None, description="Username for authentication with SIP server.", alias="authUser")
     password: Optional[StrictStr] = Field(default=None, description="Password for Basic/NTLM authentication.")
     port: Annotated[int, Field(le=65535, strict=True, ge=1)] = Field(description="Target port.")
     protocol: Optional[SipTestProtocol] = None
     sip_registrar: Optional[StrictStr] = Field(default=None, description="SIP server to be tested, specified by domain name or IP address.", alias="sipRegistrar")
     user: Optional[StrictStr] = Field(default=None, description="Username for SIP registration, should be unique within a ThousandEyes account group.")
-    bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
-    use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
-    monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "agents", "authUser", "password", "port", "protocol", "sipRegistrar", "user", "bgpMeasurements", "usePublicBgp", "monitors"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "bgpMeasurements", "usePublicBgp", "monitors", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "authUser", "password", "port", "protocol", "sipRegistrar", "user"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -120,9 +118,9 @@ class SipServerTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
+            "monitors",
             "created_by",
             "created_date",
             "live_share",
@@ -133,8 +131,6 @@ class SipServerTest(BaseModel):
             "type",
             "labels",
             "shared_with_accounts",
-            "agents",
-            "monitors",
         ])
 
         _dict = self.model_dump(
@@ -149,6 +145,13 @@ class SipServerTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['alertRules'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in monitors (list)
+        _items = []
+        if self.monitors:
+            for _item in self.monitors:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['monitors'] = _items
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
@@ -166,20 +169,6 @@ class SipServerTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['sharedWithAccounts'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in agents (list)
-        _items = []
-        if self.agents:
-            for _item in self.agents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['agents'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in monitors (list)
-        _items = []
-        if self.monitors:
-            for _item in self.monitors:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['monitors'] = _items
         return _dict
 
     @classmethod
@@ -196,6 +185,9 @@ class SipServerTest(BaseModel):
             "alertsEnabled": obj.get("alertsEnabled"),
             "enabled": obj.get("enabled") if obj.get("enabled") is not None else True,
             "alertRules": [AlertRule.from_dict(_item) for _item in obj["alertRules"]] if obj.get("alertRules") is not None else None,
+            "bgpMeasurements": obj.get("bgpMeasurements") if obj.get("bgpMeasurements") is not None else True,
+            "usePublicBgp": obj.get("usePublicBgp") if obj.get("usePublicBgp") is not None else True,
+            "monitors": [Monitor.from_dict(_item) for _item in obj["monitors"]] if obj.get("monitors") is not None else None,
             "createdBy": obj.get("createdBy"),
             "createdDate": obj.get("createdDate"),
             "description": obj.get("description"),
@@ -220,16 +212,12 @@ class SipServerTest(BaseModel):
             "sipTimeLimit": obj.get("sipTimeLimit") if obj.get("sipTimeLimit") is not None else 5,
             "fixedPacketRate": obj.get("fixedPacketRate"),
             "ipv6Policy": obj.get("ipv6Policy"),
-            "agents": [Agent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
             "authUser": obj.get("authUser"),
             "password": obj.get("password"),
             "port": obj.get("port") if obj.get("port") is not None else 49153,
             "protocol": obj.get("protocol"),
             "sipRegistrar": obj.get("sipRegistrar"),
-            "user": obj.get("user"),
-            "bgpMeasurements": obj.get("bgpMeasurements") if obj.get("bgpMeasurements") is not None else True,
-            "usePublicBgp": obj.get("usePublicBgp") if obj.get("usePublicBgp") is not None else True,
-            "monitors": [Monitor.from_dict(_item) for _item in obj["monitors"]] if obj.get("monitors") is not None else None
+            "user": obj.get("user")
         })
         return _obj
 

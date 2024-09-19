@@ -125,6 +125,82 @@ class TestUsersApi(unittest.TestCase):
         """Test case for delete_user request and response models"""
 
 
+    def test_get_current_user_models_validation(self) -> None:
+        """Test case for get_current_user request and response models"""
+
+        response_body_json = """
+                {
+                  "loginAccountGroup" : {
+                    "accountGroupName" : "Account A",
+                    "aid" : "1234"
+                  },
+                  "uid" : "245",
+                  "lastLogin" : "2022-07-17T22:00:54Z",
+                  "allAccountGroupRoles" : [ {
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
+                  }, {
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
+                  } ],
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "accountGroupRoles" : [ {
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
+                    }, {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
+                    } ],
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
+                    }
+                  }, {
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
+                    }, {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
+                    } ],
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
+                    }
+                  } ],
+                  "name" : "User X",
+                  "email" : "userx@thousandeyes.com",
+                  "dateRegistered" : "2020-07-17T22:00:54Z"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.administrative.models.UserDetail.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+
     def test_get_user_models_validation(self) -> None:
         """Test case for get_user request and response models"""
 
