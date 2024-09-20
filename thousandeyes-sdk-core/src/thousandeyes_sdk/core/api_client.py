@@ -49,8 +49,6 @@ class ApiClient:
     :param header_name: a header to pass when making calls to the API.
     :param header_value: a header value to pass when making calls to
         the API.
-    :param cookie: a cookie to include in the header when making calls
-        to the API
     """
 
     PRIMITIVE_TYPES = (float, bool, bytes, str, int)
@@ -71,19 +69,15 @@ class ApiClient:
             configuration=None,
             header_name=None,
             header_value=None,
-            cookie=None
     ) -> None:
         # use default configuration if none is provided
         if configuration is None:
             configuration = Configuration.get_default()
         self.configuration = configuration
-
         self.rest_client = rest.RESTClientObject(configuration)
         self.default_headers = {}
         if header_name is not None:
             self.default_headers[header_name] = header_value
-        self.cookie = cookie
-        self.client_side_validation = configuration.client_side_validation
 
     def __enter__(self):
         return self
@@ -171,8 +165,6 @@ class ApiClient:
         # header parameters
         header_params = header_params or {}
         header_params.update(self.default_headers)
-        if self.cookie:
-            header_params['Cookie'] = self.cookie
         if header_params:
             header_params = self.sanitize_for_serialization(header_params)
             header_params = dict(
@@ -190,7 +182,7 @@ class ApiClient:
                 # specified safe chars, encode everything
                 resource_path = resource_path.replace(
                     '{%s}' % k,
-                    quote(str(v), safe=config.safe_chars_for_path_param)
+                    quote(str(v), safe=''
                 )
 
         # post parameters
@@ -299,8 +291,6 @@ class ApiClient:
         try:
             if response_type == "bytearray":
                 return_data = response_data.data
-            elif response_type == "file":
-                return_data = self.__deserialize_file(response_data)
             elif response_type is not None:
                 match = None
                 content_type = response_data.getheader('content-type')
@@ -635,9 +625,7 @@ class ApiClient:
         The object type is the return value of sanitize_for_serialization().
         :param auth_setting: auth settings for the endpoint
         """
-        if auth_setting['in'] == 'cookie':
-            headers['Cookie'] = auth_setting['value']
-        elif auth_setting['in'] == 'header':
+        if auth_setting['in'] == 'header':
             if auth_setting['type'] != 'http-signature':
                 headers[auth_setting['key']] = auth_setting['value']
         elif auth_setting['in'] == 'query':
@@ -646,37 +634,6 @@ class ApiClient:
             raise ApiValueError(
                 'Authentication token must be in `query` or `header`'
             )
-
-    def __deserialize_file(self, response):
-        """Deserializes body to file
-
-        Saves response body into a file in a temporary folder,
-        using the filename from the `Content-Disposition` header if provided.
-
-        handle file downloading
-        save response body into a tmp file and return the instance
-
-        :param response:  RESTResponse.
-        :return: file path.
-        """
-        fd, path = tempfile.mkstemp(dir=self.configuration.temp_folder_path)
-        os.close(fd)
-        os.remove(path)
-
-        content_disposition = response.getheader("Content-Disposition")
-        if content_disposition:
-            m = re.search(
-                r'filename=[\'"]?([^\'"\s]+)[\'"]?',
-                content_disposition
-            )
-            assert m is not None, "Unexpected 'content-disposition' header value"
-            filename = m.group(1)
-            path = os.path.join(os.path.dirname(path), filename)
-
-        with open(path, "wb") as f:
-            f.write(response.data)
-
-        return path
 
     def __deserialize_primitive(self, data, klass):
         """Deserializes string to primitive type.
