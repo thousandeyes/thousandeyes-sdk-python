@@ -182,7 +182,7 @@ class ApiClient:
                 # specified safe chars, encode everything
                 resource_path = resource_path.replace(
                     '{%s}' % k,
-                    quote(str(v), safe=''
+                    quote(str(v), safe='')
                 )
 
         # post parameters

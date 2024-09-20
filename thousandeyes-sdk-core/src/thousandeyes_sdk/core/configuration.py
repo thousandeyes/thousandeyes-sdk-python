@@ -232,6 +232,11 @@ class Configuration:
             }
         ]
 
+    @property
+    def host(self):
+        """Return generated host."""
+        return self.get_host_from_settings(self.server_index, variables={})
+
     @host.setter
     def host(self, value):
         """Fix base path."""
