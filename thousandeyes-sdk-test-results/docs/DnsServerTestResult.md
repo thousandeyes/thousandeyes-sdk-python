@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **server_id** | **str** | Internal ID of DNS server being tested | [optional] [readonly] 
 **server** | **str** | Canonical name of server being tested | [optional] [readonly] 
 **resolution_time** | **int** | How long it took to run the query against the serverow long it took to run the query against the server | [optional] [readonly] 

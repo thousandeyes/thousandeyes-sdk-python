@@ -28,10 +28,15 @@ class EndpointTestAgentSelectorType(str, Enum):
     ALL_MINUS_AGENTS = 'all-agents'
     SPECIFIC_MINUS_AGENTS = 'specific-agents'
     AGENT_MINUS_LABELS = 'agent-labels'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of EndpointTestAgentSelectorType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

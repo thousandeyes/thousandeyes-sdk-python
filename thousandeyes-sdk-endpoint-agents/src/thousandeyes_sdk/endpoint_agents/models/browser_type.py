@@ -37,4 +37,8 @@ class BrowserType(str, Enum):
         """Create an instance of BrowserType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

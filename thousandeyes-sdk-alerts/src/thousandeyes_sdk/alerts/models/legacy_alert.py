@@ -41,8 +41,8 @@ class LegacyAlert(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['ACTIVE', 'CLEARED']):
-            raise ValueError("must be one of enum values ('ACTIVE', 'CLEARED')")
+        if value not in set(['ACTIVE', 'CLEARED', 'unknown']):
+            raise ValueError("must be one of enum values ('ACTIVE', 'CLEARED', 'unknown')")
         return value
 
     @field_validator('severity')

@@ -31,7 +31,6 @@ Name | Type | Description | Notes
 **throughput_duration** | **int** | The throughput duration. | [optional] [default to 10000]
 **throughput_rate** | **int** | The throughput rate, only applicable for UDP protocol. | [optional] 
 **fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
-**agents** | [**List[Agent]**](Agent.md) | Contains list of agents. | [optional] [readonly] 
 
 ## Example
 

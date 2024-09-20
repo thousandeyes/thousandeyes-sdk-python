@@ -27,10 +27,15 @@ class OutageScope(str, Enum):
     """
     ALL = 'all'
     WITH_MINUS_AFFECTED_MINUS_TEST = 'with-affected-test'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of OutageScope from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

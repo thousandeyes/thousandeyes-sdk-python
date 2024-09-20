@@ -30,10 +30,15 @@ class AddressType(str, Enum):
     UNIQUE_MINUS_LOCAL = 'unique-local'
     LINK_MINUS_LOCAL = 'link-local'
     UNIQUE_MINUS_GLOBAL = 'unique-global'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of AddressType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

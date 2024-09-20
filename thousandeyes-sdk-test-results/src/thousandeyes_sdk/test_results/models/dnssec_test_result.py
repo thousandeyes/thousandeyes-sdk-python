@@ -19,7 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.test_results.models.agent import Agent
+from thousandeyes_sdk.test_results.models.test_result_agent import TestResultAgent
 from thousandeyes_sdk.test_results.models.test_result_app_links import TestResultAppLinks
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,7 +33,7 @@ class DnssecTestResult(BaseModel):
     links: Optional[TestResultAppLinks] = Field(default=None, alias="_links")
     start_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the start time of the round", alias="startTime")
     end_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the end time of the round", alias="endTime")
-    agent: Optional[Agent] = None
+    agent: Optional[TestResultAgent] = None
     is_valid: Optional[StrictBool] = Field(default=None, description="Indicates if keychain is valid (if false see errorDetails field)", alias="isValid")
     error_details: Optional[StrictStr] = Field(default=None, description="Error details, if an error were encountered", alias="errorDetails")
     __properties: ClassVar[List[str]] = ["date", "roundId", "_links", "startTime", "endTime", "agent", "isValid", "errorDetails"]
@@ -113,7 +113,7 @@ class DnssecTestResult(BaseModel):
             "_links": TestResultAppLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "startTime": obj.get("startTime"),
             "endTime": obj.get("endTime"),
-            "agent": Agent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
+            "agent": TestResultAgent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
             "isValid": obj.get("isValid"),
             "errorDetails": obj.get("errorDetails")
         })

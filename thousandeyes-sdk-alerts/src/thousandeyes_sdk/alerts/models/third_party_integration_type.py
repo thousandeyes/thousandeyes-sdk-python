@@ -28,10 +28,15 @@ class ThirdPartyIntegrationType(str, Enum):
     PAGER_MINUS_DUTY = 'pager-duty'
     SLACK = 'slack'
     APP_MINUS_DYNAMICS = 'app-dynamics'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of ThirdPartyIntegrationType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

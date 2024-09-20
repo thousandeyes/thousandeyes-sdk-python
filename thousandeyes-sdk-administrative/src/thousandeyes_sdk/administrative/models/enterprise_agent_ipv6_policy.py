@@ -28,10 +28,15 @@ class EnterpriseAgentIpv6Policy(str, Enum):
     FORCE_MINUS_IPV4 = 'force-ipv4'
     PREFER_MINUS_IPV6 = 'prefer-ipv6'
     FORCE_MINUS_IPV6 = 'force-ipv6'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of EnterpriseAgentIpv6Policy from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

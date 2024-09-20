@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class EndpointType(str, Enum):
     """
-    The type of connection used to send data to the endpoint. **Note**: When using the `splunk-hec` 'type', the `EndpointType` must be `http`.
+    The type of connection used to send data to the endpoint. Default: `grpc` **Note**: When using the `splunk-hec` 'type', the `EndpointType` must be `http`.
     """
 
     """
@@ -27,10 +27,15 @@ class EndpointType(str, Enum):
     """
     GRPC = 'grpc'
     HTTP = 'http'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of EndpointType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **state** | [**EventState**](EventState.md) |  | [optional] 
 **start_date** | **datetime** | The start date and time (in UTC, ISO 8601 format) when the event was first detected. | [optional] [readonly] 
 **end_date** | **datetime** | The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is populated for \&quot;ongoing\&quot; events. | [optional] [readonly] 
-**severity** | [**Severity**](Severity.md) |  | [optional] 
+**severity** | [**EventAlertSeverity**](EventAlertSeverity.md) |  | [optional] 
 **title** | **str** | Event title | [optional] [readonly] 
 **type** | [**EventType**](EventType.md) |  | [optional] 
 **affected_tests** | [**AffectedCount**](AffectedCount.md) |  | [optional] 

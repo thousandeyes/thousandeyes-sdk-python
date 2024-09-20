@@ -109,7 +109,7 @@ Retrieves a list of emulated devices available for browser tests.
 ```python
 import thousandeyes_sdk.emulation
 from thousandeyes_sdk.emulation.models.emulated_device_responses import EmulatedDeviceResponses
-from thousandeyes_sdk.emulation.models.expand import Expand
+from thousandeyes_sdk.emulation.models.expand_emulated_device_options import ExpandEmulatedDeviceOptions
 from thousandeyes_sdk.emulation.rest import ApiException
 from pprint import pprint
 
@@ -133,7 +133,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.emulation.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.emulation.EmulationApi(api_client)
-    expand = [thousandeyes_sdk.emulation.Expand()] # List[Expand] | Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request.  (optional)
+    expand = [thousandeyes_sdk.emulation.ExpandEmulatedDeviceOptions()] # List[ExpandEmulatedDeviceOptions] | Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request.  (optional)
 
     try:
         # List emulated devices
@@ -151,7 +151,7 @@ with thousandeyes_sdk.emulation.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **expand** | [**List[Expand]**](Expand.md)| Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add &#x60;?expand&#x3D;user-agent&#x60; to the request.  | [optional] 
+ **expand** | [**List[ExpandEmulatedDeviceOptions]**](ExpandEmulatedDeviceOptions.md)| Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add &#x60;?expand&#x3D;user-agent&#x60; to the request.  | [optional] 
 
 ### Return type
 

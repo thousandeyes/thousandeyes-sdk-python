@@ -9,6 +9,9 @@ Name | Type | Description | Notes
 **alerts_enabled** | **bool** | Indicates if alerts are enabled. | [optional] 
 **enabled** | **bool** | Test is enabled. | [optional] [default to True]
 **alert_rules** | [**List[AlertRule]**](AlertRule.md) | Contains list of enabled alert rule objects. | [optional] 
+**bgp_measurements** | **bool** | Set to &#x60;true&#x60; to enable bgp measurements. | [optional] [default to True]
+**use_public_bgp** | **bool** | Indicate if all available public BGP monitors should be used, when ommited defaults to &#x60;bgpMeasurements&#x60; value. | [optional] [default to True]
+**monitors** | [**List[Monitor]**](Monitor.md) | Contains list of enabled BGP monitors. | [optional] [readonly] 
 **created_by** | **str** | User that created the test. | [optional] [readonly] 
 **created_date** | **datetime** | UTC created date (ISO date-time format). | [optional] [readonly] 
 **description** | **str** | A description of the test. | [optional] 
@@ -33,16 +36,12 @@ Name | Type | Description | Notes
 **sip_time_limit** | **int** | Time limit in milliseconds. | [optional] [default to 5]
 **fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
 **ipv6_policy** | [**TestIpv6Policy**](TestIpv6Policy.md) |  | [optional] 
-**agents** | [**List[Agent]**](Agent.md) | Contains list of agents. | [optional] [readonly] 
 **auth_user** | **str** | Username for authentication with SIP server. | [optional] 
 **password** | **str** | Password for Basic/NTLM authentication. | [optional] 
 **port** | **int** | Target port. | [default to 49153]
 **protocol** | [**SipTestProtocol**](SipTestProtocol.md) |  | [optional] 
 **sip_registrar** | **str** | SIP server to be tested, specified by domain name or IP address. | [optional] 
 **user** | **str** | Username for SIP registration, should be unique within a ThousandEyes account group. | [optional] 
-**bgp_measurements** | **bool** | Set to &#x60;true&#x60; to enable bgp measurements. | [optional] [default to True]
-**use_public_bgp** | **bool** | Indicate if all available public BGP monitors should be used, when ommited defaults to &#x60;bgpMeasurements&#x60; value. | [optional] [default to True]
-**monitors** | [**List[Monitor]**](Monitor.md) | Contains list of enabled BGP monitors. | [optional] [readonly] 
 
 ## Example
 

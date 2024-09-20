@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
 from thousandeyes_sdk.streaming.models.tag_match import TagMatch
 from thousandeyes_sdk.streaming.models.test_match import TestMatch
 from typing import Optional, Set
@@ -31,7 +32,8 @@ class PutStream(BaseModel):
     tag_match: Optional[List[TagMatch]] = Field(default=None, description="A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics.", alias="tagMatch")
     test_match: Optional[List[TestMatch]] = Field(default=None, description="A collection of tests to be included in the data stream.", alias="testMatch")
     enabled: Optional[StrictBool] = Field(default=None, description="Flag to enable or disable the stream integration.")
-    __properties: ClassVar[List[str]] = ["customHeaders", "tagMatch", "testMatch", "enabled"]
+    exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
+    __properties: ClassVar[List[str]] = ["customHeaders", "tagMatch", "testMatch", "enabled", "exporterConfig"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,6 +89,9 @@ class PutStream(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['testMatch'] = _items
+        # override the default output from pydantic by calling `to_dict()` of exporter_config
+        if self.exporter_config:
+            _dict['exporterConfig'] = self.exporter_config.to_dict()
         return _dict
 
     @classmethod
@@ -102,7 +107,8 @@ class PutStream(BaseModel):
             "customHeaders": obj.get("customHeaders"),
             "tagMatch": [TagMatch.from_dict(_item) for _item in obj["tagMatch"]] if obj.get("tagMatch") is not None else None,
             "testMatch": [TestMatch.from_dict(_item) for _item in obj["testMatch"]] if obj.get("testMatch") is not None else None,
-            "enabled": obj.get("enabled")
+            "enabled": obj.get("enabled"),
+            "exporterConfig": ExporterConfig.from_dict(obj["exporterConfig"]) if obj.get("exporterConfig") is not None else None
         })
         return _obj
 

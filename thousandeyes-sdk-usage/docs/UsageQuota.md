@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **month_start** | **datetime** | Beginning of usage period in UTC (ISO date-time format). | [optional] 
 **month_end** | **datetime** | End of usage period in UTC (ISO date-time format).. | [optional] 
 **cloud_units_included** | **int** | Monthly number of cloud units allocated, as part of the contract. | [optional] 
+**device_agents_included** | **int** | Number of device agents (connected devices product) allocated monthly, as specified in the contract. | [optional] 
 **endpoint_agents_included** | **int** | Monthly number of endpoint agents allocated, as part of the contract. | [optional] 
 **endpoint_agents_essentials_included** | **int** | Monthly number of endpoint agents essentials allocated, as part of the contract. | [optional] 
 **endpoint_agents_embedded_included** | **int** | Number of embedded endpoint agents allocated monthly, as specified in the contract. | [optional] 

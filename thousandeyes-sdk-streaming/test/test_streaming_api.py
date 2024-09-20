@@ -41,6 +41,14 @@ class TestStreamingApi(unittest.TestCase):
                   } ],
                   "endpointType" : "grpc",
                   "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
+                    }
+                  },
                   "tagMatch" : [ {
                     "key" : "keyA",
                     "value" : "valueA"
@@ -49,7 +57,7 @@ class TestStreamingApi(unittest.TestCase):
                     "value" : "valueB"
                   } ],
                   "type" : "opentelemetry",
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -77,6 +85,14 @@ class TestStreamingApi(unittest.TestCase):
                     }
                   },
                   "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
+                    }
+                  },
                   "tagMatch" : [ {
                     "key" : "keyA",
                     "value" : "valueA"
@@ -91,7 +107,7 @@ class TestStreamingApi(unittest.TestCase):
                     "createdBy" : 3962
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -125,6 +141,14 @@ class TestStreamingApi(unittest.TestCase):
                     }
                   },
                   "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
+                    }
+                  },
                   "tagMatch" : [ {
                     "key" : "keyA",
                     "value" : "valueA"
@@ -141,7 +165,7 @@ class TestStreamingApi(unittest.TestCase):
                     "updatedDate" : 1679677853573
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -171,6 +195,14 @@ class TestStreamingApi(unittest.TestCase):
                     }
                   },
                   "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
+                    }
+                  },
                   "tagMatch" : [ {
                     "key" : "keyA",
                     "value" : "valueA"
@@ -187,7 +219,7 @@ class TestStreamingApi(unittest.TestCase):
                     "updatedDate" : 1679677853573
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -207,6 +239,14 @@ class TestStreamingApi(unittest.TestCase):
                     }
                   },
                   "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
+                    }
+                  },
                   "tagMatch" : [ {
                     "key" : "keyA",
                     "value" : "valueA"
@@ -223,7 +263,7 @@ class TestStreamingApi(unittest.TestCase):
                     "updatedDate" : 1679677853573
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"
@@ -248,6 +288,14 @@ class TestStreamingApi(unittest.TestCase):
                     "id" : "5678",
                     "domain" : "endpoint"
                   } ],
+                  "exporterConfig" : {
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
+                    }
+                  },
                   "tagMatch" : [ {
                     "key" : "keyA",
                     "value" : "valueA"
@@ -282,6 +330,14 @@ class TestStreamingApi(unittest.TestCase):
                     }
                   },
                   "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
+                    }
+                  },
                   "tagMatch" : [ {
                     "key" : "keyA",
                     "value" : "valueA"
@@ -298,7 +354,7 @@ class TestStreamingApi(unittest.TestCase):
                     "updatedDate" : 1679677853573
                   },
                   "enabled" : true,
-                  "dataModelVersion" : "v1",
+                  "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
                     "Content-Type" : "*****"

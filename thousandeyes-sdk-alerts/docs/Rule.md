@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **include_covered_prefixes** | **bool** | Set true to include covered prefixes in the BGP alert rule. Only applicable to BGP alert rules. | [optional] 
 **sensitivity_level** | [**SensitivityLevel**](SensitivityLevel.md) |  | [optional] 
 **severity** | [**Severity**](Severity.md) |  | [optional] 
-**notifications** | [**Notification**](Notification.md) |  | [optional] 
+**notifications** | [**AlertNotification**](AlertNotification.md) |  | [optional] 
 **test_ids** | **List[str]** | Array of test IDs to link to alert rule (get &#x60;testId&#x60; from &#x60;/tests&#x60; endpoint). | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 

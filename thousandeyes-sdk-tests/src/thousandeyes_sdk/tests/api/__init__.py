@@ -1,19 +1,19 @@
 # flake8: noqa
 
 # import apis into api package
-from thousandeyes_sdk.tests.api.api_api import APIApi
-from thousandeyes_sdk.tests.api.agent_to_agent_api import AgentToAgentApi
-from thousandeyes_sdk.tests.api.agent_to_server_api import AgentToServerApi
-from thousandeyes_sdk.tests.api.all_test_types_api import AllTestTypesApi
-from thousandeyes_sdk.tests.api.bgp_api import BGPApi
-from thousandeyes_sdk.tests.api.dnssec_api import DNSSECApi
-from thousandeyes_sdk.tests.api.dns_server_api import DNSServerApi
-from thousandeyes_sdk.tests.api.dns_trace_api import DNSTraceApi
-from thousandeyes_sdk.tests.api.ftp_server_api import FTPServerApi
-from thousandeyes_sdk.tests.api.http_server_api import HTTPServerApi
-from thousandeyes_sdk.tests.api.page_load_api import PageLoadApi
+from thousandeyes_sdk.tests.api.api_tests_api import APITestsApi
+from thousandeyes_sdk.tests.api.agent_to_agent_tests_api import AgentToAgentTestsApi
+from thousandeyes_sdk.tests.api.agent_to_server_tests_api import AgentToServerTestsApi
+from thousandeyes_sdk.tests.api.bgp_tests_api import BGPTestsApi
+from thousandeyes_sdk.tests.api.dnssec_tests_api import DNSSECTestsApi
+from thousandeyes_sdk.tests.api.dns_server_tests_api import DNSServerTestsApi
+from thousandeyes_sdk.tests.api.dns_trace_tests_api import DNSTraceTestsApi
+from thousandeyes_sdk.tests.api.ftp_server_tests_api import FTPServerTestsApi
+from thousandeyes_sdk.tests.api.http_server_tests_api import HTTPServerTestsApi
+from thousandeyes_sdk.tests.api.page_load_tests_api import PageLoadTestsApi
 from thousandeyes_sdk.tests.api.path_visualization_interface_groups_api import PathVisualizationInterfaceGroupsApi
-from thousandeyes_sdk.tests.api.sip_server_api import SIPServerApi
-from thousandeyes_sdk.tests.api.voice_api import VoiceApi
-from thousandeyes_sdk.tests.api.web_transaction_api import WebTransactionApi
+from thousandeyes_sdk.tests.api.sip_server_tests_api import SIPServerTestsApi
+from thousandeyes_sdk.tests.api.tests_api import TestsApi
+from thousandeyes_sdk.tests.api.voice_tests_api import VoiceTestsApi
+from thousandeyes_sdk.tests.api.web_transaction_tests_api import WebTransactionTestsApi
 
