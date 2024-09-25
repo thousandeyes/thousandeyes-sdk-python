@@ -1,9 +1,9 @@
 .openapi-generator-ignore
 MANIFEST.in
 README.md
+docs/BGPMonitorsApi.md
 docs/Error.md
 docs/Link.md
-docs/ListBGPMonitorsApi.md
 docs/Monitor.md
 docs/MonitorType.md
 docs/Monitors.md
@@ -13,7 +13,7 @@ pyproject.toml
 setup.cfg
 src/thousandeyes_sdk/bgp_monitors/__init__.py
 src/thousandeyes_sdk/bgp_monitors/api/__init__.py
-src/thousandeyes_sdk/bgp_monitors/api/list_bgp_monitors_api.py
+src/thousandeyes_sdk/bgp_monitors/api/bgp_monitors_api.py
 src/thousandeyes_sdk/bgp_monitors/models/__init__.py
 src/thousandeyes_sdk/bgp_monitors/models/error.py
 src/thousandeyes_sdk/bgp_monitors/models/link.py
@@ -24,5 +24,5 @@ src/thousandeyes_sdk/bgp_monitors/models/self_links.py
 src/thousandeyes_sdk/bgp_monitors/models/unauthorized_error.py
 src/thousandeyes_sdk/bgp_monitors/py.typed
 test/__init__.py
-test/test_list_bgp_monitors_api.py
+test/test_bgp_monitors_api.py
 test/test_utils.py

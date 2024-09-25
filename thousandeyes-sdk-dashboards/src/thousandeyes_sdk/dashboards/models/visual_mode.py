@@ -27,10 +27,15 @@ class VisualMode(str, Enum):
     """
     FULL = 'Full'
     HALF_SCREEN = 'Half screen'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of VisualMode from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

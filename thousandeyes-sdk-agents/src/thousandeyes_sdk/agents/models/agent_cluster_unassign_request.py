@@ -25,7 +25,7 @@ class AgentClusterUnassignRequest(BaseModel):
     """
     AgentClusterUnassignRequest
     """ # noqa: E501
-    members: Optional[List[StrictStr]] = Field(default=None, description="Contains list of member IDs. (get `memberId` from `/agents/{agentId}` endpoint)")
+    members: Optional[List[StrictStr]] = Field(default=None, description="Contains list of member IDs. (get `memberId` from `/agents/{agentId}` operation)")
     __properties: ClassVar[List[str]] = ["members"]
 
     model_config = ConfigDict(

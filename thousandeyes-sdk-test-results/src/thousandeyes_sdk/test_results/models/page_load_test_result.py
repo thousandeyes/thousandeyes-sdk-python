@@ -19,7 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional, Union
-from thousandeyes_sdk.test_results.models.agent import Agent
+from thousandeyes_sdk.test_results.models.test_result_agent import TestResultAgent
 from thousandeyes_sdk.test_results.models.test_result_app_links import TestResultAppLinks
 from typing import Optional, Set
 from typing_extensions import Self
@@ -33,7 +33,7 @@ class PageLoadTestResult(BaseModel):
     links: Optional[TestResultAppLinks] = Field(default=None, alias="_links")
     start_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the start time of the round", alias="startTime")
     end_time: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the end time of the round", alias="endTime")
-    agent: Optional[Agent] = None
+    agent: Optional[TestResultAgent] = None
     response_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Time to first byte in milliseconds", alias="responseTime")
     total_size: Optional[StrictInt] = Field(default=None, description="Sum of wire size of all objects on page in bytes", alias="totalSize")
     num_objects: Optional[StrictInt] = Field(default=None, description="Number of objects found on the page", alias="numObjects")
@@ -125,7 +125,7 @@ class PageLoadTestResult(BaseModel):
             "_links": TestResultAppLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "startTime": obj.get("startTime"),
             "endTime": obj.get("endTime"),
-            "agent": Agent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
+            "agent": TestResultAgent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
             "responseTime": obj.get("responseTime"),
             "totalSize": obj.get("totalSize"),
             "numObjects": obj.get("numObjects"),

@@ -38,10 +38,16 @@ class AlertListDatasource(str, Enum):
     CLOUD_AND_ENTERPRISE_AGENTS = 'CLOUD_AND_ENTERPRISE_AGENTS'
     INTERNET_INSIGHTS = 'INTERNET_INSIGHTS'
     APPDYNAMICS_SERVICE_HEALTH = 'APPDYNAMICS_SERVICE_HEALTH'
+    CLOUD_NATIVE_MONITORING = 'CLOUD_NATIVE_MONITORING'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of AlertListDatasource from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

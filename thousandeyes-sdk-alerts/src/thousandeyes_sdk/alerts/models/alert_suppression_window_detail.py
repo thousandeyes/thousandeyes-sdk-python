@@ -20,10 +20,10 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.alerts.models.alert_suppression_window_state import AlertSuppressionWindowState
-from thousandeyes_sdk.alerts.models.base_test import BaseTest
 from thousandeyes_sdk.alerts.models.end_repeat import EndRepeat
 from thousandeyes_sdk.alerts.models.repeat import Repeat
 from thousandeyes_sdk.alerts.models.self_links import SelfLinks
+from thousandeyes_sdk.alerts.models.simple_test import SimpleTest
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -40,7 +40,7 @@ class AlertSuppressionWindowDetail(BaseModel):
     repeat: Optional[Repeat] = None
     end_repeat: Optional[EndRepeat] = Field(default=None, alias="endRepeat")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    tests: Optional[List[BaseTest]] = Field(default=None, description="List of tests assigned to the alert suppression window.")
+    tests: Optional[List[SimpleTest]] = Field(default=None, description="List of tests assigned to the alert suppression window.")
     __properties: ClassVar[List[str]] = ["alertSuppressionWindowId", "name", "isEnabled", "status", "startDate", "duration", "repeat", "endRepeat", "_links", "tests"]
 
     model_config = ConfigDict(
@@ -122,7 +122,7 @@ class AlertSuppressionWindowDetail(BaseModel):
             "repeat": Repeat.from_dict(obj["repeat"]) if obj.get("repeat") is not None else None,
             "endRepeat": EndRepeat.from_dict(obj["endRepeat"]) if obj.get("endRepeat") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "tests": [BaseTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None
+            "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None
         })
         return _obj
 

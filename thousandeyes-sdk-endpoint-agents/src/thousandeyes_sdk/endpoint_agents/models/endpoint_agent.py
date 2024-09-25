@@ -35,7 +35,7 @@ class EndpointAgent(BaseModel):
     """
     The `EndpointAgent` object, which may include multiple clients.
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description="Identifier of the agent this applies to.")
+    id: Optional[StrictStr] = Field(default=None, description="Unique ID of endpoint agent, from `/endpoint/agents` endpoint.")
     aid: Optional[Any] = None
     name: Optional[StrictStr] = Field(default=None, description="The name of the agent.")
     computer_name: Optional[StrictStr] = Field(default=None, alias="computerName")

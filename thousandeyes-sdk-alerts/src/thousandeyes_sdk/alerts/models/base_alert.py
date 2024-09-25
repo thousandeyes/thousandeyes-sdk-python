@@ -31,8 +31,8 @@ class BaseAlert(BaseModel):
     """ # noqa: E501
     id: Optional[StrictStr] = Field(default=None, description="A unique ID for each individual alert occurrence.")
     alert_type: Optional[AlertType] = Field(default=None, alias="alertType")
-    start_date: Optional[datetime] = Field(default=None, description="The start date and time (in UTC, ISO 8601 format) for querying alerts.", alias="startDate")
-    end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) for querying alerts.", alias="endDate")
+    start_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `startDate` parameter,  the client will also receive the `startDate` field indicating the UTC start date of the data's time range being retrieved  (ISO date-time format).", alias="startDate")
+    end_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `endDate` parameter,  the client will also receive the `endDate` field indicating the UTC end date of the data's time range being retrieved  (ISO date-time format).", alias="endDate")
     violation_count: Optional[StrictInt] = Field(default=None, description="Number of sources that meet the alert criteria.", alias="violationCount")
     duration: Optional[StrictInt] = Field(default=None, description="Duration in seconds the alert was active")
     suppressed: Optional[StrictBool] = Field(default=None, description="Indicates whether the alert is currently suppressed by a real-time ASW.")

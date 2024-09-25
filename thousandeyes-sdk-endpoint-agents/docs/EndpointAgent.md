@@ -6,7 +6,7 @@ The `EndpointAgent` object, which may include multiple clients.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | Identifier of the agent this applies to. | [optional] [readonly] 
+**id** | **str** | Unique ID of endpoint agent, from &#x60;/endpoint/agents&#x60; endpoint. | [optional] [readonly] 
 **aid** | **str** |  | [optional] 
 **name** | **str** | The name of the agent. | [optional] 
 **computer_name** | **str** |  | [optional] [readonly] 

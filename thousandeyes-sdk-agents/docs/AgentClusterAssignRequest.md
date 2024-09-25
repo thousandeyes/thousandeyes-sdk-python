@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**agents** | **List[str]** | Contains list of agent IDs (get &#x60;agentId&#x60; from &#x60;/agents&#x60; endpoint) | [optional] 
+**agents** | **List[str]** | Contains list of agent IDs (get &#x60;agentId&#x60; from &#x60;/agents&#x60; operation) | [optional] 
 
 ## Example
 

@@ -48,10 +48,15 @@ class AlertListAlertType(str, Enum):
     BROWSER_MINUS_SESSION_MINUS_AGENT = 'browser-session-agent'
     BROWSER_MINUS_SESSION_MINUS_APPLICATION = 'browser-session-application'
     ROUTING_MINUS_BGP = 'routing-bgp'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of AlertListAlertType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

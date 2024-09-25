@@ -27,10 +27,15 @@ class LegacyAgentWidgetType(str, Enum):
     """
     ENTERPRISE_AGENTS = 'Enterprise Agents'
     ENDPOINT_AGENTS = 'Endpoint Agents'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of LegacyAgentWidgetType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

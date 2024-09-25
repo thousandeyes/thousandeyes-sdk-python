@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **verify_ssl_certificates** | **bool** | Flag indicating if has normal SSL operations or  if instead it&#39;s set to ignore SSL errors on browserbot-based tests. | [optional] [readonly] 
 **agent_type** | **str** | Cloud agent type. | 
 **tests** | [**List[SimpleTest]**](SimpleTest.md) | List of tests. See &#x60;/tests&#x60; for more information. | [optional] 
-**labels** | [**List[Labels]**](Labels.md) | List of labels - see &#x60;/labels&#x60; for more information. | [optional] [readonly] 
+**labels** | [**List[AgentLabel]**](AgentLabel.md) | List of labels - see &#x60;/labels&#x60; for more information. | [optional] [readonly] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example

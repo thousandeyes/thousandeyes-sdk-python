@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | Name of the role. | [optional] 
-**permissions** | **List[str]** | Contains list of test permission IDs (get &#x60;permissionId&#x60; from &#x60;/permissions&#x60; endpoint) | [optional] 
+**permissions** | **List[str]** | Contains list of test permission IDs (get &#x60;permissionId&#x60; from &#x60;/permissions&#x60; operation) | [optional] 
 
 ## Example
 

@@ -14,7 +14,7 @@
 
 # import models into model package
 from thousandeyes_sdk.endpoint_labels.models.error import Error
-from thousandeyes_sdk.endpoint_labels.models.expand import Expand
+from thousandeyes_sdk.endpoint_labels.models.expand_label_options import ExpandLabelOptions
 from thousandeyes_sdk.endpoint_labels.models.filter import Filter
 from thousandeyes_sdk.endpoint_labels.models.filter_type import FilterType
 from thousandeyes_sdk.endpoint_labels.models.label import Label

@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 List assignable permissions
 
-Users must be in a role assigned management permissions to access this endpoint. Users without management permissions who attempt to access this endpoint receive an HTTP/403 response code.
+Users must be in a role assigned management permissions to access this operation. Users without management permissions who attempt to access this operation receive an HTTP/403 response code.
 
 ### Example
 

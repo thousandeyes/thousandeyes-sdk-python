@@ -2,7 +2,6 @@
 MANIFEST.in
 README.md
 docs/AppAndSelfLinks.md
-docs/CreateTestSnapshotApi.md
 docs/Error.md
 docs/Link.md
 docs/SnapshotLinks.md
@@ -12,6 +11,7 @@ docs/SnapshotTest.md
 docs/TestInterval.md
 docs/TestLinks.md
 docs/TestSelfLink.md
+docs/TestSnapshotsApi.md
 docs/TestType.md
 docs/UnauthorizedError.md
 docs/UnexpandedInstantTest.md
@@ -22,7 +22,7 @@ pyproject.toml
 setup.cfg
 src/thousandeyes_sdk/snapshots/__init__.py
 src/thousandeyes_sdk/snapshots/api/__init__.py
-src/thousandeyes_sdk/snapshots/api/create_test_snapshot_api.py
+src/thousandeyes_sdk/snapshots/api/test_snapshots_api.py
 src/thousandeyes_sdk/snapshots/models/__init__.py
 src/thousandeyes_sdk/snapshots/models/app_and_self_links.py
 src/thousandeyes_sdk/snapshots/models/error.py
@@ -42,5 +42,5 @@ src/thousandeyes_sdk/snapshots/models/validation_error.py
 src/thousandeyes_sdk/snapshots/models/validation_error_item.py
 src/thousandeyes_sdk/snapshots/py.typed
 test/__init__.py
-test/test_create_test_snapshot_api.py
+test/test_test_snapshots_api.py
 test/test_utils.py

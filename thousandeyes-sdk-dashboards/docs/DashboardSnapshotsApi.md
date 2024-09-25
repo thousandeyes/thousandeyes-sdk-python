@@ -89,12 +89,12 @@ Name | Type | Description  | Notes
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**201** | Created |  * Location -  <br>  |
+**201** | Created |  * Location -  <br>  * X-Dashboard-Snapshot-Rate-Limit-Limit -  <br>  * X-Dashboard-Snapshot-Rate-Limit-Remaining -  <br>  * X-Dashboard-Snapshot-Rate-Limit-Reset -  <br>  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Insufficient permissions to query endpoint |  -  |
 **404** | Not found |  -  |
-**429** | Exhausted rate limit for the organization |  -  |
+**429** | Exhausted rate limit for snapshot creation |  * X-Dashboard-Snapshot-Rate-Limit-Limit -  <br>  * X-Dashboard-Snapshot-Rate-Limit-Remaining -  <br>  * X-Dashboard-Snapshot-Rate-Limit-Reset -  <br>  |
 **500** | Internal server error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -187,7 +187,7 @@ void (empty response body)
 
 Retrieve dashboard snapshot
 
-This endpoint returns a list of widgets configured in dashboard snapshot configured in ThousandEyes. Seed this endpoint with a snapshotId found from the /dashboard-snapshots endpoint. This endpoint requires the `View Snapshots` permission be assigned to the role of the user accessing this endpoint. Returns a list of widgets configured within a dashboard snapshot. Use the `snapshotId` obtained from the `/dashboard-snapshots` endpoint. The `View Snapshots` permission is required to use this endpoint.\"
+This operation returns a list of widgets configured in dashboard snapshot configured in ThousandEyes. Seed this endpoint with a snapshotId found from the /dashboard-snapshots endpoint. This endpoint requires the `View Snapshots` permission be assigned to the role of the user accessing this endpoint. Returns a list of widgets configured within a dashboard snapshot. Use the `snapshotId` obtained from the `/dashboard-snapshots` endpoint. The `View Snapshots` permission is required to use this endpoint.\"
 
 ### Example
 

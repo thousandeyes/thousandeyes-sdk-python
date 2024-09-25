@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
 **is_enabled** | **bool** | Indicates if test is enabled. | [optional] [default to True]
 **tcp_probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
-**url** | **str** | Target for the test. | [optional] 
+**url** | **str** | The test target URL. You can optionally specify the protocol (&#x60;http&#x60; or &#x60;https&#x60;).   - **Default Protocol:** If no protocol is specified, &#x60;https&#x60; is used by default.  - **Port Number:** To specify a port, append it to the URL with a colon after the hostname or IP address (e.g., &#x60;https://example.com:443&#x60;).      - If no port is specified in the URL, the &#x60;port&#x60; is determined by the default for protocol (HTTP: 80, HTTPS: 443).  | [optional] 
 
 ## Example
 

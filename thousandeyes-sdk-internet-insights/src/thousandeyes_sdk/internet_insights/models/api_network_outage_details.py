@@ -18,9 +18,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.internet_insights.models.api_affected_agent import ApiAffectedAgent
-from thousandeyes_sdk.internet_insights.models.api_affected_test import ApiAffectedTest
 from thousandeyes_sdk.internet_insights.models.api_network_outage_affected_location import ApiNetworkOutageAffectedLocation
+from thousandeyes_sdk.internet_insights.models.internet_insights_api_affected_agent import InternetInsightsApiAffectedAgent
+from thousandeyes_sdk.internet_insights.models.internet_insights_api_affected_test import InternetInsightsApiAffectedTest
 from thousandeyes_sdk.internet_insights.models.self_links import SelfLinks
 from typing import Optional, Set
 from typing_extensions import Self
@@ -39,9 +39,9 @@ class ApiNetworkOutageDetails(BaseModel):
     end_date: Optional[StrictStr] = Field(default=None, description="Date and time when the outage ended.", alias="endDate")
     end_round_id: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) when the outage ended.", alias="endRoundId")
     duration: Optional[StrictInt] = Field(default=None, description="Duration of the outage in seconds.")
-    affected_tests: Optional[List[ApiAffectedTest]] = Field(default=None, description="List of affected tests.", alias="affectedTests")
+    affected_tests: Optional[List[InternetInsightsApiAffectedTest]] = Field(default=None, description="List of affected tests.", alias="affectedTests")
     affected_domains: Optional[List[StrictStr]] = Field(default=None, description="List of affected domains.", alias="affectedDomains")
-    affected_agents: Optional[List[ApiAffectedAgent]] = Field(default=None, description="List of affected agents.", alias="affectedAgents")
+    affected_agents: Optional[List[InternetInsightsApiAffectedAgent]] = Field(default=None, description="List of affected agents.", alias="affectedAgents")
     affected_locations: Optional[List[ApiNetworkOutageAffectedLocation]] = Field(default=None, description="List of affected locations.", alias="affectedLocations")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
     __properties: ClassVar[List[str]] = ["id", "providerName", "providerType", "networkName", "asn", "startDate", "startRoundId", "endDate", "endRoundId", "duration", "affectedTests", "affectedDomains", "affectedAgents", "affectedLocations", "_links"]
@@ -132,9 +132,9 @@ class ApiNetworkOutageDetails(BaseModel):
             "endDate": obj.get("endDate"),
             "endRoundId": obj.get("endRoundId"),
             "duration": obj.get("duration"),
-            "affectedTests": [ApiAffectedTest.from_dict(_item) for _item in obj["affectedTests"]] if obj.get("affectedTests") is not None else None,
+            "affectedTests": [InternetInsightsApiAffectedTest.from_dict(_item) for _item in obj["affectedTests"]] if obj.get("affectedTests") is not None else None,
             "affectedDomains": obj.get("affectedDomains"),
-            "affectedAgents": [ApiAffectedAgent.from_dict(_item) for _item in obj["affectedAgents"]] if obj.get("affectedAgents") is not None else None,
+            "affectedAgents": [InternetInsightsApiAffectedAgent.from_dict(_item) for _item in obj["affectedAgents"]] if obj.get("affectedAgents") is not None else None,
             "affectedLocations": [ApiNetworkOutageAffectedLocation.from_dict(_item) for _item in obj["affectedLocations"]] if obj.get("affectedLocations") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

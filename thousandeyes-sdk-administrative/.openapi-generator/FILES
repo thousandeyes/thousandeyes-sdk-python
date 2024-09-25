@@ -8,8 +8,8 @@ docs/AccountGroupRequest.md
 docs/AccountGroupRole.md
 docs/AccountGroups.md
 docs/AccountGroupsApi.md
-docs/Agent.md
 docs/AgentBase.md
+docs/AgentResponse.md
 docs/AuditUserEvents.md
 docs/BaseRole.md
 docs/CloudEnterpriseAgentType.md
@@ -23,7 +23,7 @@ docs/EnterpriseAgentState.md
 docs/Error.md
 docs/ErrorDetail.md
 docs/ErrorDetailCode.md
-docs/Expand.md
+docs/ExpandAccountGroupOptions.md
 docs/ExtendedUser.md
 docs/InterfaceIpMapping.md
 docs/Link.md
@@ -67,8 +67,8 @@ src/thousandeyes_sdk/administrative/models/account_group_info.py
 src/thousandeyes_sdk/administrative/models/account_group_request.py
 src/thousandeyes_sdk/administrative/models/account_group_role.py
 src/thousandeyes_sdk/administrative/models/account_groups.py
-src/thousandeyes_sdk/administrative/models/agent.py
 src/thousandeyes_sdk/administrative/models/agent_base.py
+src/thousandeyes_sdk/administrative/models/agent_response.py
 src/thousandeyes_sdk/administrative/models/audit_user_events.py
 src/thousandeyes_sdk/administrative/models/base_role.py
 src/thousandeyes_sdk/administrative/models/cloud_enterprise_agent_type.py
@@ -82,7 +82,7 @@ src/thousandeyes_sdk/administrative/models/enterprise_agent_state.py
 src/thousandeyes_sdk/administrative/models/error.py
 src/thousandeyes_sdk/administrative/models/error_detail.py
 src/thousandeyes_sdk/administrative/models/error_detail_code.py
-src/thousandeyes_sdk/administrative/models/expand.py
+src/thousandeyes_sdk/administrative/models/expand_account_group_options.py
 src/thousandeyes_sdk/administrative/models/extended_user.py
 src/thousandeyes_sdk/administrative/models/interface_ip_mapping.py
 src/thousandeyes_sdk/administrative/models/link.py

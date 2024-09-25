@@ -36,10 +36,16 @@ class TimeseriesDatasource(str, Enum):
     ENDPOINT_SCHEDULED_TEST = 'ENDPOINT_SCHEDULED_TEST'
     INTERNET_INSIGHTS = 'INTERNET_INSIGHTS'
     ROUTING = 'ROUTING'
+    CLOUD_NATIVE_MONITORING = 'CLOUD_NATIVE_MONITORING'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of TimeseriesDatasource from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

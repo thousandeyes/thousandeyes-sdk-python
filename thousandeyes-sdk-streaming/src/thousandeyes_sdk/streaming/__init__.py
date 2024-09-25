@@ -26,6 +26,8 @@ from thousandeyes_sdk.streaming.models.bad_request_error import BadRequestError
 from thousandeyes_sdk.streaming.models.create_stream_response import CreateStreamResponse
 from thousandeyes_sdk.streaming.models.data_model_version import DataModelVersion
 from thousandeyes_sdk.streaming.models.endpoint_type import EndpointType
+from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
+from thousandeyes_sdk.streaming.models.exporter_config_splunk_hec import ExporterConfigSplunkHec
 from thousandeyes_sdk.streaming.models.get_stream_response import GetStreamResponse
 from thousandeyes_sdk.streaming.models.put_stream import PutStream
 from thousandeyes_sdk.streaming.models.stream import Stream

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **total** | **int** | The total number affected. | [optional] [readonly] 
 **in_account_group** | **int** | Indicates if in the affected account group. | [optional] [readonly] 
-**tests** | [**List[ApiAffectedTest]**](ApiAffectedTest.md) | List of affected tests. | [optional] 
+**tests** | [**List[EventApiAffectedTest]**](EventApiAffectedTest.md) | List of affected tests. | [optional] 
 
 ## Example
 

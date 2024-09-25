@@ -22,7 +22,7 @@ from pydantic import Field, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.tags.models.bulk_tag_response import BulkTagResponse
-from thousandeyes_sdk.tags.models.expand import Expand
+from thousandeyes_sdk.tags.models.expand_tags_options import ExpandTagsOptions
 from thousandeyes_sdk.tags.models.tag_info import TagInfo
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
@@ -650,7 +650,7 @@ class TagsApi:
     @validate_call
     def delete_tag(
         self,
-        id: Annotated[StrictStr, Field(description="ID of tag to delete")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
             None,
@@ -669,7 +669,7 @@ class TagsApi:
 
         Deletes a tag.
 
-        :param id: ID of tag to delete (required)
+        :param id: Tag ID (required)
         :type id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -727,7 +727,7 @@ class TagsApi:
     @validate_call
     def delete_tag_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="ID of tag to delete")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
             None,
@@ -746,7 +746,7 @@ class TagsApi:
 
         Deletes a tag.
 
-        :param id: ID of tag to delete (required)
+        :param id: Tag ID (required)
         :type id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -804,7 +804,7 @@ class TagsApi:
     @validate_call
     def delete_tag_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="ID of tag to delete")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
             None,
@@ -823,7 +823,7 @@ class TagsApi:
 
         Deletes a tag.
 
-        :param id: ID of tag to delete (required)
+        :param id: Tag ID (required)
         :type id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -943,9 +943,9 @@ class TagsApi:
     @validate_call
     def get_tag(
         self,
-        id: Annotated[StrictStr, Field(description="ID of tag to retrieve")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -963,12 +963,12 @@ class TagsApi:
 
         Retrieves a tag using its ID.
 
-        :param id: ID of tag to retrieve (required)
+        :param id: Tag ID (required)
         :type id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional, to retrieve associated assignments
-        :type expand: List[Expand]
+        :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1024,9 +1024,9 @@ class TagsApi:
     @validate_call
     def get_tag_with_http_info(
         self,
-        id: Annotated[StrictStr, Field(description="ID of tag to retrieve")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1044,12 +1044,12 @@ class TagsApi:
 
         Retrieves a tag using its ID.
 
-        :param id: ID of tag to retrieve (required)
+        :param id: Tag ID (required)
         :type id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional, to retrieve associated assignments
-        :type expand: List[Expand]
+        :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1105,9 +1105,9 @@ class TagsApi:
     @validate_call
     def get_tag_without_preload_content(
         self,
-        id: Annotated[StrictStr, Field(description="ID of tag to retrieve")],
+        id: Annotated[StrictStr, Field(description="Tag ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1125,12 +1125,12 @@ class TagsApi:
 
         Retrieves a tag using its ID.
 
-        :param id: ID of tag to retrieve (required)
+        :param id: Tag ID (required)
         :type id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional, to retrieve associated assignments
-        :type expand: List[Expand]
+        :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1255,7 +1255,7 @@ class TagsApi:
     def get_tags(
         self,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1271,12 +1271,12 @@ class TagsApi:
     ) -> None:
         """List tags
 
-        This endpoint returns a list of tags in the specified account group (`aid`).
+        This operation returns a list of tags in the specified account group (`aid`).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional, to retrieve associated assignments
-        :type expand: List[Expand]
+        :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1332,7 +1332,7 @@ class TagsApi:
     def get_tags_with_http_info(
         self,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1348,12 +1348,12 @@ class TagsApi:
     ) -> ApiResponse[None]:
         """List tags
 
-        This endpoint returns a list of tags in the specified account group (`aid`).
+        This operation returns a list of tags in the specified account group (`aid`).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional, to retrieve associated assignments
-        :type expand: List[Expand]
+        :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1409,7 +1409,7 @@ class TagsApi:
     def get_tags_without_preload_content(
         self,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[Expand]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1425,12 +1425,12 @@ class TagsApi:
     ) -> RESTResponseType:
         """List tags
 
-        This endpoint returns a list of tags in the specified account group (`aid`).
+        This operation returns a list of tags in the specified account group (`aid`).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param expand: Optional, to retrieve associated assignments
-        :type expand: List[Expand]
+        :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

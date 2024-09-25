@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Get enterprise agent usage
 
-This endpoint returns the organization's enterprise agents usage for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, a shared enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the shared agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
+This operation returns the organization's enterprise agents usage for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, a shared enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the shared agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
 
 ### Example
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 Get cloud and enterprise agents units usage
 
-This endpoint returns the cloud and enterprise agents usage for all the tests for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, an enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
+This operation returns the cloud and enterprise agents usage for all the tests for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, an enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
 
 ### Example
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 Get usage information for the last month
 
-This endpoint returns usage for the current period. It provides visibility across all account groups within an organization. To access this endpoint, you need the `View Billing` permission (a management permission). If you have access to view billing in multiple organizations, query the endpoint using an `aid` querystring parameter (see optional parameters, below) from each organization. **Note:** Access to billing information older than one month is not supported by this endpoint.
+This operation returns usage for the current period. It provides visibility across all account groups within an organization. To access this endpoint, you need the `View Billing` permission (a management permission). If you have access to view billing in multiple organizations, query the endpoint using an `aid` querystring parameter (see optional parameters, below) from each organization. **Note:** Access to billing information older than one month is not supported by this endpoint.
 
 ### Example
 
@@ -200,7 +200,7 @@ This endpoint returns usage for the current period. It provides visibility acros
 
 ```python
 import thousandeyes_sdk.usage
-from thousandeyes_sdk.usage.models.expand import Expand
+from thousandeyes_sdk.usage.models.expand_usage_options import ExpandUsageOptions
 from thousandeyes_sdk.usage.models.usage import Usage
 from thousandeyes_sdk.usage.rest import ApiException
 from pprint import pprint
@@ -226,7 +226,7 @@ with thousandeyes_sdk.usage.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.usage.UsageApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.usage.Expand()] # List[Expand] | Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'. (optional)
+    expand = [thousandeyes_sdk.usage.ExpandUsageOptions()] # List[ExpandUsageOptions] | Expands the available resources. By default, no expansion takes place if the  `expand` query parameter is not passed. For example, to expand the \"tests\"  resource, pass the query '?expand=test'. (optional)
 
     try:
         # Get usage information for the last month
@@ -245,7 +245,7 @@ with thousandeyes_sdk.usage.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[Expand]**](Expand.md)| Expands the available resources. By default, no expansion takes place if the  &#x60;expand&#x60; query parameter is not passed. For example, to expand the \&quot;tests\&quot;  resource, pass the query &#39;?expand&#x3D;test&#39;. | [optional] 
+ **expand** | [**List[ExpandUsageOptions]**](ExpandUsageOptions.md)| Expands the available resources. By default, no expansion takes place if the  &#x60;expand&#x60; query parameter is not passed. For example, to expand the \&quot;tests\&quot;  resource, pass the query &#39;?expand&#x3D;test&#39;. | [optional] 
 
 ### Return type
 

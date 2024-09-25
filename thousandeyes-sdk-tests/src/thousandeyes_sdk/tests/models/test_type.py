@@ -38,10 +38,15 @@ class TestType(str, Enum):
     DNSSEC = 'dnssec'
     SIP_MINUS_SERVER = 'sip-server'
     VOICE = 'voice'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of TestType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 
