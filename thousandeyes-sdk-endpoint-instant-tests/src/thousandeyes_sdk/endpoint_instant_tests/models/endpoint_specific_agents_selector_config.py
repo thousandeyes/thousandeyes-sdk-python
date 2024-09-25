@@ -27,7 +27,7 @@ class EndpointSpecificAgentsSelectorConfig(BaseModel):
     Specific agents selection object.
     """ # noqa: E501
     agent_selector_type: Annotated[str, Field(strict=True)] = Field(alias="agentSelectorType")
-    max_machines: Optional[Annotated[int, Field(le=50000, strict=True, ge=1)]] = Field(default=None, description="Maximum number of agents which can execute the test.", alias="maxMachines")
+    max_machines: Optional[Annotated[int, Field(le=50000, strict=True, ge=1)]] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
     agents: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent IDs (obtained from `/endpoint/agents` endpoint). Required when `agentSelectorType` is set to `specific-agent`.")
     __properties: ClassVar[List[str]] = ["agentSelectorType", "maxMachines", "agents"]
 
@@ -91,7 +91,7 @@ class EndpointSpecificAgentsSelectorConfig(BaseModel):
 
         _obj = cls.model_validate({
             "agentSelectorType": obj.get("agentSelectorType"),
-            "maxMachines": obj.get("maxMachines"),
+            "maxMachines": obj.get("maxMachines") if obj.get("maxMachines") is not None else 25,
             "agents": obj.get("agents")
         })
         return _obj

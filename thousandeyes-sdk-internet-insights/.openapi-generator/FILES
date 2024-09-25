@@ -1,8 +1,6 @@
 .openapi-generator-ignore
 MANIFEST.in
 README.md
-docs/ApiAffectedAgent.md
-docs/ApiAffectedTest.md
 docs/ApiApplicationOutageAffectedLocation.md
 docs/ApiApplicationOutageAffectedServer.md
 docs/ApiApplicationOutageDetails.md
@@ -16,11 +14,13 @@ docs/ApiNetworkOutageDetails.md
 docs/ApiOutage.md
 docs/ApiOutageFilter.md
 docs/ApiOutagesResponse.md
-docs/CatalogProvidersApi.md
 docs/Error.md
+docs/InternetInsightsApiAffectedAgent.md
+docs/InternetInsightsApiAffectedTest.md
+docs/InternetInsightsCatalogProvidersApi.md
+docs/InternetInsightsOutagesApi.md
 docs/Link.md
 docs/OutageScope.md
-docs/OutagesAPIPublicApi.md
 docs/ProviderLocation.md
 docs/SelfLinks.md
 docs/UnauthorizedError.md
@@ -30,11 +30,9 @@ pyproject.toml
 setup.cfg
 src/thousandeyes_sdk/internet_insights/__init__.py
 src/thousandeyes_sdk/internet_insights/api/__init__.py
-src/thousandeyes_sdk/internet_insights/api/catalog_providers_api.py
-src/thousandeyes_sdk/internet_insights/api/outages_api_public_api.py
+src/thousandeyes_sdk/internet_insights/api/internet_insights_catalog_providers_api.py
+src/thousandeyes_sdk/internet_insights/api/internet_insights_outages_api.py
 src/thousandeyes_sdk/internet_insights/models/__init__.py
-src/thousandeyes_sdk/internet_insights/models/api_affected_agent.py
-src/thousandeyes_sdk/internet_insights/models/api_affected_test.py
 src/thousandeyes_sdk/internet_insights/models/api_application_outage_affected_location.py
 src/thousandeyes_sdk/internet_insights/models/api_application_outage_affected_server.py
 src/thousandeyes_sdk/internet_insights/models/api_application_outage_details.py
@@ -49,6 +47,8 @@ src/thousandeyes_sdk/internet_insights/models/api_outage.py
 src/thousandeyes_sdk/internet_insights/models/api_outage_filter.py
 src/thousandeyes_sdk/internet_insights/models/api_outages_response.py
 src/thousandeyes_sdk/internet_insights/models/error.py
+src/thousandeyes_sdk/internet_insights/models/internet_insights_api_affected_agent.py
+src/thousandeyes_sdk/internet_insights/models/internet_insights_api_affected_test.py
 src/thousandeyes_sdk/internet_insights/models/link.py
 src/thousandeyes_sdk/internet_insights/models/outage_scope.py
 src/thousandeyes_sdk/internet_insights/models/provider_location.py
@@ -58,6 +58,6 @@ src/thousandeyes_sdk/internet_insights/models/validation_error.py
 src/thousandeyes_sdk/internet_insights/models/validation_error_item.py
 src/thousandeyes_sdk/internet_insights/py.typed
 test/__init__.py
-test/test_catalog_providers_api.py
-test/test_outages_api_public_api.py
+test/test_internet_insights_catalog_providers_api.py
+test/test_internet_insights_outages_api.py
 test/test_utils.py

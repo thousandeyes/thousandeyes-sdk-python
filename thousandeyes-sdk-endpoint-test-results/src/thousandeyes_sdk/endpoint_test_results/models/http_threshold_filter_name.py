@@ -30,10 +30,15 @@ class HttpThresholdFilterName(str, Enum):
     CONNECT_MINUS_TIME = 'connect-time'
     SSL_MINUS_TIME = 'ssl-time'
     WAIT_MINUS_TIME = 'wait-time'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of HttpThresholdFilterName from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

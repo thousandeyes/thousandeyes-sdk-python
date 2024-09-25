@@ -1,17 +1,17 @@
 # flake8: noqa
 
 # import apis into api package
-from thousandeyes_sdk.instant_tests.api.api_api import APIApi
-from thousandeyes_sdk.instant_tests.api.agent_to_agent_api import AgentToAgentApi
-from thousandeyes_sdk.instant_tests.api.agent_to_server_api import AgentToServerApi
-from thousandeyes_sdk.instant_tests.api.dns_security_api import DNSSecurityApi
-from thousandeyes_sdk.instant_tests.api.dns_server_api import DNSServerApi
-from thousandeyes_sdk.instant_tests.api.dns_trace_api import DNSTraceApi
-from thousandeyes_sdk.instant_tests.api.ftp_server_api import FTPServerApi
-from thousandeyes_sdk.instant_tests.api.http_page_load_api import HTTPPageLoadApi
-from thousandeyes_sdk.instant_tests.api.http_server_api import HTTPServerApi
-from thousandeyes_sdk.instant_tests.api.run_api import RunApi
-from thousandeyes_sdk.instant_tests.api.sip_server_api import SIPServerApi
-from thousandeyes_sdk.instant_tests.api.voice_api import VoiceApi
-from thousandeyes_sdk.instant_tests.api.web_transaction_api import WebTransactionApi
+from thousandeyes_sdk.instant_tests.api.api_instant_tests_api import APIInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.agent_to_agent_instant_tests_api import AgentToAgentInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.agent_to_server_instant_tests_api import AgentToServerInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.dnssec_instant_tests_api import DNSSECInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.dns_server_instant_tests_api import DNSServerInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.dns_trace_instant_tests_api import DNSTraceInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.ftp_server_instant_tests_api import FTPServerInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.http_page_load_instant_tests_api import HTTPPageLoadInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.http_server_instant_tests_api import HTTPServerInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.instant_tests_api import InstantTestsApi
+from thousandeyes_sdk.instant_tests.api.sip_server_instant_tests_api import SIPServerInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.voice_instant_tests_api import VoiceInstantTestsApi
+from thousandeyes_sdk.instant_tests.api.web_transaction_instant_tests_api import WebTransactionInstantTestsApi
 

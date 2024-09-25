@@ -1,8 +1,9 @@
 .openapi-generator-ignore
 MANIFEST.in
 README.md
+docs/EndpointAgentLabelsApi.md
 docs/Error.md
-docs/Expand.md
+docs/ExpandLabelOptions.md
 docs/Filter.md
 docs/FilterType.md
 docs/Label.md
@@ -11,7 +12,6 @@ docs/LabelRequest.md
 docs/LabelResponse.md
 docs/Labels.md
 docs/Link.md
-docs/ManageLabelsApi.md
 docs/MatchType.md
 docs/PaginationNextAndSelfLink.md
 docs/SelfLinks.md
@@ -22,10 +22,10 @@ pyproject.toml
 setup.cfg
 src/thousandeyes_sdk/endpoint_labels/__init__.py
 src/thousandeyes_sdk/endpoint_labels/api/__init__.py
-src/thousandeyes_sdk/endpoint_labels/api/manage_labels_api.py
+src/thousandeyes_sdk/endpoint_labels/api/endpoint_agent_labels_api.py
 src/thousandeyes_sdk/endpoint_labels/models/__init__.py
 src/thousandeyes_sdk/endpoint_labels/models/error.py
-src/thousandeyes_sdk/endpoint_labels/models/expand.py
+src/thousandeyes_sdk/endpoint_labels/models/expand_label_options.py
 src/thousandeyes_sdk/endpoint_labels/models/filter.py
 src/thousandeyes_sdk/endpoint_labels/models/filter_type.py
 src/thousandeyes_sdk/endpoint_labels/models/label.py
@@ -42,5 +42,5 @@ src/thousandeyes_sdk/endpoint_labels/models/validation_error.py
 src/thousandeyes_sdk/endpoint_labels/models/validation_error_item.py
 src/thousandeyes_sdk/endpoint_labels/py.typed
 test/__init__.py
-test/test_manage_labels_api.py
+test/test_endpoint_agent_labels_api.py
 test/test_utils.py

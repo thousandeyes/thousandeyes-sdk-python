@@ -48,10 +48,15 @@ class LegacyAlertListAlertType(str, Enum):
     BROWSER_SESSIONS_MINUS__AGENT = 'Browser Sessions - Agent'
     BROWSER_SESSIONS_MINUS__APPLICATION = 'Browser Sessions - Application'
     ROUTING_MINUS__BGP = 'Routing - BGP'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of LegacyAlertListAlertType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

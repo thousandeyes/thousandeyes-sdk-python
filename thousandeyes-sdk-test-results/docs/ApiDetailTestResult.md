@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **links** | [**TestResultAppLinks**](TestResultAppLinks.md) |  | [optional] 
 **start_time** | **int** | Epoch time (seconds) indicating the start time of the round | [optional] [readonly] 
 **end_time** | **int** | Epoch time (seconds) indicating the end time of the round | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **api_transaction_time** | **float** | Elapsed execution time of the API steps. | [optional] [readonly] 
 **completion** | **float** | Percentage of steps which completed successfully and passed assertions. | [optional] [readonly] 
 **error_type** | **str** | Type of error encountered. | [optional] [readonly] 

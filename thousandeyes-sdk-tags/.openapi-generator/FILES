@@ -9,7 +9,7 @@ docs/BulkTagAssignment.md
 docs/BulkTagAssignments.md
 docs/BulkTagResponse.md
 docs/Error.md
-docs/Expand.md
+docs/ExpandTagsOptions.md
 docs/Link.md
 docs/ObjectType.md
 docs/SelfLinks.md
@@ -38,7 +38,7 @@ src/thousandeyes_sdk/tags/models/bulk_tag_assignment.py
 src/thousandeyes_sdk/tags/models/bulk_tag_assignments.py
 src/thousandeyes_sdk/tags/models/bulk_tag_response.py
 src/thousandeyes_sdk/tags/models/error.py
-src/thousandeyes_sdk/tags/models/expand.py
+src/thousandeyes_sdk/tags/models/expand_tags_options.py
 src/thousandeyes_sdk/tags/models/link.py
 src/thousandeyes_sdk/tags/models/object_type.py
 src/thousandeyes_sdk/tags/models/self_links.py

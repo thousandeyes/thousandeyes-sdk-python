@@ -21,7 +21,7 @@ from thousandeyes_sdk.tags.models.bulk_tag_assignment import BulkTagAssignment
 from thousandeyes_sdk.tags.models.bulk_tag_assignments import BulkTagAssignments
 from thousandeyes_sdk.tags.models.bulk_tag_response import BulkTagResponse
 from thousandeyes_sdk.tags.models.error import Error
-from thousandeyes_sdk.tags.models.expand import Expand
+from thousandeyes_sdk.tags.models.expand_tags_options import ExpandTagsOptions
 from thousandeyes_sdk.tags.models.link import Link
 from thousandeyes_sdk.tags.models.object_type import ObjectType
 from thousandeyes_sdk.tags.models.self_links import SelfLinks

@@ -28,10 +28,15 @@ class SipTestProtocol(str, Enum):
     TCP = 'tcp'
     TLS = 'tls'
     UDP = 'udp'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of SipTestProtocol from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

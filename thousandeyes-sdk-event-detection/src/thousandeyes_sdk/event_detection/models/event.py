@@ -20,10 +20,10 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.event_detection.models.affected_count import AffectedCount
+from thousandeyes_sdk.event_detection.models.event_alert_severity import EventAlertSeverity
 from thousandeyes_sdk.event_detection.models.event_state import EventState
 from thousandeyes_sdk.event_detection.models.event_type import EventType
 from thousandeyes_sdk.event_detection.models.self_links import SelfLinks
-from thousandeyes_sdk.event_detection.models.severity import Severity
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -36,7 +36,7 @@ class Event(BaseModel):
     state: Optional[EventState] = None
     start_date: Optional[datetime] = Field(default=None, description="The start date and time (in UTC, ISO 8601 format) when the event was first detected.", alias="startDate")
     end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is populated for \"ongoing\" events.", alias="endDate")
-    severity: Optional[Severity] = None
+    severity: Optional[EventAlertSeverity] = None
     title: Optional[StrictStr] = Field(default=None, description="Event title")
     type: Optional[EventType] = None
     affected_tests: Optional[AffectedCount] = Field(default=None, alias="affectedTests")

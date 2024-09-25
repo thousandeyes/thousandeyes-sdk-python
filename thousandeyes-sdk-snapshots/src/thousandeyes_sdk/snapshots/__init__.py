@@ -14,7 +14,7 @@
 
 
 # import apis into sdk package
-from thousandeyes_sdk.snapshots.api.create_test_snapshot_api import CreateTestSnapshotApi
+from thousandeyes_sdk.snapshots.api.test_snapshots_api import TestSnapshotsApi
 
 
 # import models into sdk package

@@ -241,10 +241,15 @@ class DashboardMetric(str, Enum):
     APPLICATION_OUTAGES_LOCATIONS = 'APPLICATION_OUTAGES_LOCATIONS'
     APPLICATION_OUTAGES_OUTAGES = 'APPLICATION_OUTAGES_OUTAGES'
     APPDYNAMICS_SERVICE_HEALTH = 'APPDYNAMICS_SERVICE_HEALTH'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of DashboardMetric from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

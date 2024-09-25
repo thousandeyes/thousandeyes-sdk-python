@@ -14,17 +14,19 @@
 
 # import models into model package
 from thousandeyes_sdk.agents.models.account_group import AccountGroup
-from thousandeyes_sdk.agents.models.agent import Agent
 from thousandeyes_sdk.agents.models.agent_base import AgentBase
 from thousandeyes_sdk.agents.models.agent_cluster_assign_request import AgentClusterAssignRequest
 from thousandeyes_sdk.agents.models.agent_cluster_unassign_request import AgentClusterUnassignRequest
 from thousandeyes_sdk.agents.models.agent_details import AgentDetails
 from thousandeyes_sdk.agents.models.agent_details_expand import AgentDetailsExpand
 from thousandeyes_sdk.agents.models.agent_ipv6_policy import AgentIpv6Policy
+from thousandeyes_sdk.agents.models.agent_label import AgentLabel
 from thousandeyes_sdk.agents.models.agent_list_expand import AgentListExpand
+from thousandeyes_sdk.agents.models.agent_notification import AgentNotification
 from thousandeyes_sdk.agents.models.agent_proxies import AgentProxies
 from thousandeyes_sdk.agents.models.agent_proxy import AgentProxy
 from thousandeyes_sdk.agents.models.agent_request import AgentRequest
+from thousandeyes_sdk.agents.models.agent_response import AgentResponse
 from thousandeyes_sdk.agents.models.alert_email import AlertEmail
 from thousandeyes_sdk.agents.models.alert_integration_base import AlertIntegrationBase
 from thousandeyes_sdk.agents.models.alert_integration_type import AlertIntegrationType
@@ -44,10 +46,8 @@ from thousandeyes_sdk.agents.models.error import Error
 from thousandeyes_sdk.agents.models.error_detail import ErrorDetail
 from thousandeyes_sdk.agents.models.error_detail_code import ErrorDetailCode
 from thousandeyes_sdk.agents.models.interface_ip_mapping import InterfaceIpMapping
-from thousandeyes_sdk.agents.models.labels import Labels
 from thousandeyes_sdk.agents.models.link import Link
 from thousandeyes_sdk.agents.models.list_notification_rules_response import ListNotificationRulesResponse
-from thousandeyes_sdk.agents.models.notification import Notification
 from thousandeyes_sdk.agents.models.notification_rule import NotificationRule
 from thousandeyes_sdk.agents.models.notification_rule_detail import NotificationRuleDetail
 from thousandeyes_sdk.agents.models.notification_rules import NotificationRules

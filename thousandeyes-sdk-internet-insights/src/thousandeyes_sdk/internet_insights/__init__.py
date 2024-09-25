@@ -14,13 +14,11 @@
 
 
 # import apis into sdk package
-from thousandeyes_sdk.internet_insights.api.catalog_providers_api import CatalogProvidersApi
-from thousandeyes_sdk.internet_insights.api.outages_api_public_api import OutagesAPIPublicApi
+from thousandeyes_sdk.internet_insights.api.internet_insights_catalog_providers_api import InternetInsightsCatalogProvidersApi
+from thousandeyes_sdk.internet_insights.api.internet_insights_outages_api import InternetInsightsOutagesApi
 
 
 # import models into sdk package
-from thousandeyes_sdk.internet_insights.models.api_affected_agent import ApiAffectedAgent
-from thousandeyes_sdk.internet_insights.models.api_affected_test import ApiAffectedTest
 from thousandeyes_sdk.internet_insights.models.api_application_outage_affected_location import ApiApplicationOutageAffectedLocation
 from thousandeyes_sdk.internet_insights.models.api_application_outage_affected_server import ApiApplicationOutageAffectedServer
 from thousandeyes_sdk.internet_insights.models.api_application_outage_details import ApiApplicationOutageDetails
@@ -35,6 +33,8 @@ from thousandeyes_sdk.internet_insights.models.api_outage import ApiOutage
 from thousandeyes_sdk.internet_insights.models.api_outage_filter import ApiOutageFilter
 from thousandeyes_sdk.internet_insights.models.api_outages_response import ApiOutagesResponse
 from thousandeyes_sdk.internet_insights.models.error import Error
+from thousandeyes_sdk.internet_insights.models.internet_insights_api_affected_agent import InternetInsightsApiAffectedAgent
+from thousandeyes_sdk.internet_insights.models.internet_insights_api_affected_test import InternetInsightsApiAffectedTest
 from thousandeyes_sdk.internet_insights.models.link import Link
 from thousandeyes_sdk.internet_insights.models.outage_scope import OutageScope
 from thousandeyes_sdk.internet_insights.models.provider_location import ProviderLocation

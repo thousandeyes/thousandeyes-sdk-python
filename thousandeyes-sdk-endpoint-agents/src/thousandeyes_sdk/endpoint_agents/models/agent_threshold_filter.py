@@ -37,8 +37,8 @@ class AgentThresholdFilter(BaseModel):
         if value is None:
             return value
 
-        if value not in set(['last-seen-ms']):
-            raise ValueError("must be one of enum values ('last-seen-ms')")
+        if value not in set(['last-seen-ms', 'unknown']):
+            raise ValueError("must be one of enum values ('last-seen-ms', 'unknown')")
         return value
 
     model_config = ConfigDict(
