@@ -19,7 +19,6 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.instant_tests.models.agent import Agent
 from thousandeyes_sdk.instant_tests.models.dns_query_class import DnsQueryClass
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.instant_tests.models.test_label import TestLabel
@@ -46,8 +45,7 @@ class DnsSecInstantTest(BaseModel):
     shared_with_accounts: Optional[List[SharedWithAccount]] = Field(default=None, alias="sharedWithAccounts")
     domain: StrictStr = Field(description="The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record.")
     dns_query_class: Optional[DnsQueryClass] = Field(default=None, alias="dnsQueryClass")
-    agents: Optional[List[Agent]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "domain", "dnsQueryClass", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "domain", "dnsQueryClass"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,7 +88,6 @@ class DnsSecInstantTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -103,7 +100,6 @@ class DnsSecInstantTest(BaseModel):
             "type",
             "labels",
             "shared_with_accounts",
-            "agents",
         ])
 
         _dict = self.model_dump(
@@ -128,13 +124,6 @@ class DnsSecInstantTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['sharedWithAccounts'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in agents (list)
-        _items = []
-        if self.agents:
-            for _item in self.agents:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['agents'] = _items
         return _dict
 
     @classmethod
@@ -161,8 +150,7 @@ class DnsSecInstantTest(BaseModel):
             "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None,
             "domain": obj.get("domain"),
-            "dnsQueryClass": obj.get("dnsQueryClass"),
-            "agents": [Agent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "dnsQueryClass": obj.get("dnsQueryClass")
         })
         return _obj
 

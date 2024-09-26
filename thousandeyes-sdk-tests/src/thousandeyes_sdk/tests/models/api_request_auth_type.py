@@ -28,10 +28,15 @@ class ApiRequestAuthType(str, Enum):
     NONE = 'none'
     BASIC = 'basic'
     BEARER_MINUS_TOKEN = 'bearer-token'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of ApiRequestAuthType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

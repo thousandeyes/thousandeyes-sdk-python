@@ -24,9 +24,9 @@ from thousandeyes_sdk.event_detection.models.affected_agents import AffectedAgen
 from thousandeyes_sdk.event_detection.models.affected_targets import AffectedTargets
 from thousandeyes_sdk.event_detection.models.affected_tests import AffectedTests
 from thousandeyes_sdk.event_detection.models.agent_local_event_grouping import AgentLocalEventGrouping
+from thousandeyes_sdk.event_detection.models.event_alert_severity import EventAlertSeverity
 from thousandeyes_sdk.event_detection.models.event_state import EventState
 from thousandeyes_sdk.event_detection.models.self_links import SelfLinks
-from thousandeyes_sdk.event_detection.models.severity import Severity
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,7 +39,7 @@ class AgentLocalEventDetail(BaseModel):
     state: Optional[EventState] = None
     start_date: Optional[datetime] = Field(default=None, description="The start date and time (in UTC, ISO 8601 format) when the event was first detected.", alias="startDate")
     end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is populated for \"ongoing\" events.", alias="endDate")
-    severity: Optional[Severity] = None
+    severity: Optional[EventAlertSeverity] = None
     aid: Optional[StrictStr] = Field(default=None, description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint.")
     summary: Optional[StrictStr] = Field(default=None, description="A brief summary describing the cause of the event.")
     affected_tests: Optional[AffectedTests] = Field(default=None, alias="affectedTests")

@@ -26,10 +26,15 @@ class CustomWebhookIntegrationType(str, Enum):
     allowed enum values
     """
     CUSTOM_MINUS_WEBHOOK = 'custom-webhook'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of CustomWebhookIntegrationType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

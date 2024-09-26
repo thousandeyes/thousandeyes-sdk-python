@@ -29,7 +29,6 @@ docs/ApiDataSourceFilter.md
 docs/ApiDataSourceFilters.md
 docs/ApiDefaultTimespan.md
 docs/ApiDuration.md
-docs/ApiDurationUnit.md
 docs/ApiGeoMapWidget.md
 docs/ApiGraphletPoint.md
 docs/ApiGroupedBarchartWidget.md
@@ -152,7 +151,6 @@ src/thousandeyes_sdk/dashboards/models/api_data_source_filter.py
 src/thousandeyes_sdk/dashboards/models/api_data_source_filters.py
 src/thousandeyes_sdk/dashboards/models/api_default_timespan.py
 src/thousandeyes_sdk/dashboards/models/api_duration.py
-src/thousandeyes_sdk/dashboards/models/api_duration_unit.py
 src/thousandeyes_sdk/dashboards/models/api_geo_map_widget.py
 src/thousandeyes_sdk/dashboards/models/api_graphlet_point.py
 src/thousandeyes_sdk/dashboards/models/api_grouped_barchart_widget.py

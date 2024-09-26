@@ -27,10 +27,15 @@ class TestMatchDomain(str, Enum):
     """
     CEA = 'cea'
     ENDPOINT = 'endpoint'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of TestMatchDomain from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

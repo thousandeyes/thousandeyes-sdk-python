@@ -48,10 +48,13 @@ class ApiInstantTestRequest(BaseModel):
     links: Optional[TestLinks] = Field(default=None, alias="_links")
     labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
     shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
+    collect_proxy_network_data: Optional[StrictBool] = Field(default=False, description="Indicates whether network data to the proxy should be collected.", alias="collectProxyNetworkData")
     follow_redirects: Optional[StrictBool] = Field(default=True, description="To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to `false`.", alias="followRedirects")
     mtu_measurements: Optional[StrictBool] = Field(default=None, description="Set `true` to measure MTU sizes on network from agents to the target.", alias="mtuMeasurements")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
     num_path_traces: Optional[Annotated[int, Field(le=10, strict=True, ge=1)]] = Field(default=3, description="Number of path traces executed by the agent.", alias="numPathTraces")
+    override_agent_proxy: Optional[StrictBool] = Field(default=False, description="Flag indicating if a proxy other than the default should be used. To override the default proxy for agents, set to `true` and specify a value for `overrideProxyId`.", alias="overrideAgentProxy")
+    override_proxy_id: Optional[StrictStr] = Field(default=None, description="ID of the proxy to be used if the default proxy is overridden.", alias="overrideProxyId")
     path_trace_mode: Optional[TestPathTraceMode] = Field(default=None, alias="pathTraceMode")
     predefined_variables: Optional[List[ApiPredefinedVariable]] = Field(default=None, alias="predefinedVariables")
     probe_mode: Optional[TestProbeMode] = Field(default=None, alias="probeMode")
@@ -61,9 +64,9 @@ class ApiInstantTestRequest(BaseModel):
     target_time: Optional[Annotated[int, Field(le=60, strict=True, ge=0)]] = Field(default=None, description="Target time for completion metric, defaults to 50% of time limit specified in seconds. (0 means default behavior)", alias="targetTime")
     time_limit: Optional[Annotated[int, Field(le=180, strict=True, ge=5)]] = Field(default=30, description="Time limit for transaction in seconds. Exceeding this limit will result in a Timeout error.", alias="timeLimit")
     url: StrictStr = Field(description="Target for the test.")
-    agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "agents", "credentials"]
+    agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "collectProxyNetworkData", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -170,10 +173,13 @@ class ApiInstantTestRequest(BaseModel):
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "labels": obj.get("labels"),
             "sharedWithAccounts": obj.get("sharedWithAccounts"),
+            "collectProxyNetworkData": obj.get("collectProxyNetworkData") if obj.get("collectProxyNetworkData") is not None else False,
             "followRedirects": obj.get("followRedirects") if obj.get("followRedirects") is not None else True,
             "mtuMeasurements": obj.get("mtuMeasurements"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
             "numPathTraces": obj.get("numPathTraces") if obj.get("numPathTraces") is not None else 3,
+            "overrideAgentProxy": obj.get("overrideAgentProxy") if obj.get("overrideAgentProxy") is not None else False,
+            "overrideProxyId": obj.get("overrideProxyId"),
             "pathTraceMode": obj.get("pathTraceMode"),
             "predefinedVariables": [ApiPredefinedVariable.from_dict(_item) for _item in obj["predefinedVariables"]] if obj.get("predefinedVariables") is not None else None,
             "probeMode": obj.get("probeMode"),
@@ -183,8 +189,8 @@ class ApiInstantTestRequest(BaseModel):
             "targetTime": obj.get("targetTime"),
             "timeLimit": obj.get("timeLimit") if obj.get("timeLimit") is not None else 30,
             "url": obj.get("url"),
-            "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
-            "credentials": obj.get("credentials")
+            "credentials": obj.get("credentials"),
+            "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

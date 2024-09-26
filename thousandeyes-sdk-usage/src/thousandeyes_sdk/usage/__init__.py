@@ -20,15 +20,15 @@ from thousandeyes_sdk.usage.api.usage_api import UsageApi
 
 # import models into sdk package
 from thousandeyes_sdk.usage.models.account_group_quota import AccountGroupQuota
-from thousandeyes_sdk.usage.models.endpoint_agents import EndpointAgents
 from thousandeyes_sdk.usage.models.endpoint_agents_embedded import EndpointAgentsEmbedded
 from thousandeyes_sdk.usage.models.endpoint_agents_essentials import EndpointAgentsEssentials
+from thousandeyes_sdk.usage.models.endpoint_agents_usage import EndpointAgentsUsage
 from thousandeyes_sdk.usage.models.enterprise_agent_units import EnterpriseAgentUnits
 from thousandeyes_sdk.usage.models.enterprise_agent_units_by_test_owner_account_group import EnterpriseAgentUnitsByTestOwnerAccountGroup
 from thousandeyes_sdk.usage.models.enterprise_agents import EnterpriseAgents
 from thousandeyes_sdk.usage.models.enterprise_agents_usage import EnterpriseAgentsUsage
 from thousandeyes_sdk.usage.models.error import Error
-from thousandeyes_sdk.usage.models.expand import Expand
+from thousandeyes_sdk.usage.models.expand_usage_options import ExpandUsageOptions
 from thousandeyes_sdk.usage.models.link import Link
 from thousandeyes_sdk.usage.models.organization_quota import OrganizationQuota
 from thousandeyes_sdk.usage.models.organization_quota_assignment import OrganizationQuotaAssignment
@@ -42,7 +42,7 @@ from thousandeyes_sdk.usage.models.quotas_assign_request import QuotasAssignRequ
 from thousandeyes_sdk.usage.models.quotas_assign_response import QuotasAssignResponse
 from thousandeyes_sdk.usage.models.quotas_unassign import QuotasUnassign
 from thousandeyes_sdk.usage.models.self_links import SelfLinks
-from thousandeyes_sdk.usage.models.tests import Tests
+from thousandeyes_sdk.usage.models.test_usage import TestUsage
 from thousandeyes_sdk.usage.models.tests_usage import TestsUsage
 from thousandeyes_sdk.usage.models.unauthorized_error import UnauthorizedError
 from thousandeyes_sdk.usage.models.units_by_tests import UnitsByTests

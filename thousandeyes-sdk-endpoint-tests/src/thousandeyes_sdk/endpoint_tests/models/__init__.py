@@ -13,10 +13,6 @@
 
 
 # import models into model package
-from thousandeyes_sdk.endpoint_tests.models.alert_direction import AlertDirection
-from thousandeyes_sdk.endpoint_tests.models.alert_rounds_violation_mode import AlertRoundsViolationMode
-from thousandeyes_sdk.endpoint_tests.models.alert_rule import AlertRule
-from thousandeyes_sdk.endpoint_tests.models.alert_type import AlertType
 from thousandeyes_sdk.endpoint_tests.models.dynamic_test import DynamicTest
 from thousandeyes_sdk.endpoint_tests.models.dynamic_test_links import DynamicTestLinks
 from thousandeyes_sdk.endpoint_tests.models.dynamic_test_request import DynamicTestRequest
@@ -50,8 +46,6 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_tests import EndpointTests
 from thousandeyes_sdk.endpoint_tests.models.error import Error
 from thousandeyes_sdk.endpoint_tests.models.link import Link
 from thousandeyes_sdk.endpoint_tests.models.self_links import SelfLinks
-from thousandeyes_sdk.endpoint_tests.models.sensitivity_level import SensitivityLevel
-from thousandeyes_sdk.endpoint_tests.models.severity import Severity
 from thousandeyes_sdk.endpoint_tests.models.test_interval import TestInterval
 from thousandeyes_sdk.endpoint_tests.models.test_label import TestLabel
 from thousandeyes_sdk.endpoint_tests.models.test_probe_mode import TestProbeMode

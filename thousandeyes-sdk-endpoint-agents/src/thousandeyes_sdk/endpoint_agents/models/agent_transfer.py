@@ -25,7 +25,7 @@ class AgentTransfer(BaseModel):
     """
     AgentTransfer
     """ # noqa: E501
-    agent_id: Optional[StrictStr] = Field(default=None, description="Identifier of the agent this applies to.", alias="agentId")
+    agent_id: Optional[StrictStr] = Field(default=None, description="Unique ID of endpoint agent, from `/endpoint/agents` endpoint.", alias="agentId")
     from_aid: Optional[StrictStr] = Field(default=None, description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint.", alias="fromAid")
     to_aid: Optional[StrictStr] = Field(default=None, description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint.", alias="toAid")
     __properties: ClassVar[List[str]] = ["agentId", "fromAid", "toAid"]

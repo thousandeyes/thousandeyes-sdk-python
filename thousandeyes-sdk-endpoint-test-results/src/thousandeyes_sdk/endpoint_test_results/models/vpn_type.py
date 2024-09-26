@@ -30,10 +30,15 @@ class VpnType(str, Enum):
     IVANTI_MINUS_CONNECT_MINUS_SECURE = 'ivanti-connect-secure'
     ZSCALER_MINUS_INTERNET_MINUS_ACCESS = 'zscaler-internet-access'
     F5_MINUS_BIG_MINUS_IP = 'f5-big-ip'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of VpnType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 

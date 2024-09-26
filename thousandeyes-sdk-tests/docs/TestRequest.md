@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **labels** | **List[str]** | Contains list of test label IDs (get &#x60;labelId&#x60; from &#x60;/labels&#x60; endpoint) | [optional] 
 **shared_with_accounts** | **List[str]** | Contains list of account group IDs. Test is shared with the listed account groups (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint) | [optional] 
 **alert_rules** | **List[str]** | List of alert rules IDs to apply to the test (get &#x60;ruleId&#x60; from &#x60;/alerts/rules&#x60; endpoint. If &#x60;alertsEnabled&#x60; is set to &#x60;true&#x60; and &#x60;alertRules&#x60; is not included on test creation or update, applicable user default alert rules will be used) | [optional] 
-**agents** | [**List[AgentRequest]**](AgentRequest.md) |  | [optional] 
+**agents** | [**List[TestAgentRequest]**](TestAgentRequest.md) | Contains list of Agent IDs (get &#x60;agentId&#x60; from &#x60;/agents&#x60; endpoint). | 
 
 ## Example
 

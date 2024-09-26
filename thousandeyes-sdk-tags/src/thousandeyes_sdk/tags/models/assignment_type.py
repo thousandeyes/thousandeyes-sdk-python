@@ -29,10 +29,15 @@ class AssignmentType(str, Enum):
     V_MINUS_AGENT = 'v-agent'
     ENDPOINT_MINUS_TEST = 'endpoint-test'
     DASHBOARD = 'dashboard'
+    UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
         """Create an instance of AssignmentType from a JSON string"""
         return cls(json.loads(json_str))
 
+    @classmethod
+    def _missing_(cls, value):
+        """Handle unknown values"""
+        return cls.UNKNOWN
 
