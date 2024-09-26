@@ -220,22 +220,10 @@ class Configuration:
             }
         return auth
 
-    def get_host_settings(self):
-        """Gets an array of host settings
-
-        :return: An array of host settings
-        """
-        return [
-            {
-                'url': "https://api.thousandeyes.com",
-                'description': "ThousandEyes API production URL",
-            }
-        ]
-
     @property
     def host(self):
         """Return generated host."""
-        return self.get_host_from_settings(self.server_index, variables={})
+        return self._base_path
 
     @host.setter
     def host(self, value):
