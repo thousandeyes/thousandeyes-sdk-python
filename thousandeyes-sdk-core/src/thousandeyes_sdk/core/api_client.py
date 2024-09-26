@@ -178,6 +178,12 @@ class ApiClient:
                 path_params,
                 collection_formats
             )
+            for k, v in path_params:
+                # specified safe chars, encode everything
+                resource_path = resource_path.replace(
+                    '{%s}' % k,
+                    quote(str(v), safe='')
+                )
 
         # post parameters
         if post_params or files:
