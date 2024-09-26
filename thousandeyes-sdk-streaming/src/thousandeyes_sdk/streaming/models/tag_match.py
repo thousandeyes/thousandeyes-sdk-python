@@ -18,7 +18,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.streaming.models.tag_match_object_type import TagMatchObjectType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,10 +25,9 @@ class TagMatch(BaseModel):
     """
     TagMatch
     """ # noqa: E501
-    object_type: Optional[TagMatchObjectType] = Field(default=None, alias="objectType")
     key: Optional[StrictStr] = Field(default=None, description="The name of the tag key to match")
     value: Optional[StrictStr] = Field(default=None, description="The value of the tag to match")
-    __properties: ClassVar[List[str]] = ["objectType", "key", "value"]
+    __properties: ClassVar[List[str]] = ["key", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +81,6 @@ class TagMatch(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "objectType": obj.get("objectType"),
             "key": obj.get("key"),
             "value": obj.get("value")
         })
