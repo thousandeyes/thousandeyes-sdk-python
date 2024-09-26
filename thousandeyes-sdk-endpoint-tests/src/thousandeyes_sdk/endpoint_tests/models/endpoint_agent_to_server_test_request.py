@@ -18,7 +18,6 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_agent_selector_type import EndpointTestAgentSelectorType
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_protocol import EndpointTestProtocol
 from thousandeyes_sdk.endpoint_tests.models.test_interval import TestInterval
@@ -32,7 +31,7 @@ class EndpointAgentToServerTestRequest(BaseModel):
     agent_selector_type: Optional[EndpointTestAgentSelectorType] = Field(default=None, alias="agentSelectorType")
     agents: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent IDs (obtained from `/endpoint/agents` endpoint). Required when `agentSelectorType` is set to `specific-agent`.")
     endpoint_agent_labels: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent label IDs (obtained from `/endpoint/labels` endpoint), required when `agentSelectorType` is set to `agent-labels`.", alias="endpointAgentLabels")
-    max_machines: Optional[Annotated[int, Field(le=50000, strict=True, ge=1)]] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
+    max_machines: Optional[StrictInt] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
     test_name: StrictStr = Field(description="Name of the test.", alias="testName")
     server_name: StrictStr = Field(description="A server address without a protocol or IP address.", alias="serverName")
     port: Optional[StrictInt] = Field(default=443, description="Port number.")

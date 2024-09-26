@@ -16,20 +16,20 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.alerts.models.test_interval import TestInterval
+from thousandeyes_sdk.alerts.models.link import Link
+from thousandeyes_sdk.alerts.models.test_self_link import TestSelfLink
 from typing import Optional, Set
 from typing_extensions import Self
 
-class UnexpandedTest(BaseModel):
+class TestLinks(BaseModel):
     """
-    UnexpandedTest
+    A list of links that can be accessed to get more information
     """ # noqa: E501
-    interval: Optional[TestInterval] = None
-    alerts_enabled: Optional[StrictBool] = Field(default=None, description="Indicates if alerts are enabled.", alias="alertsEnabled")
-    enabled: Optional[StrictBool] = Field(default=True, description="Test is enabled.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled"]
+    var_self: Optional[TestSelfLink] = Field(default=None, alias="self")
+    test_results: Optional[List[Link]] = Field(default=None, description="Reference to the test results.", alias="testResults")
+    __properties: ClassVar[List[str]] = ["self", "testResults"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +50,7 @@ class UnexpandedTest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of UnexpandedTest from a JSON string"""
+        """Create an instance of TestLinks from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,11 +71,21 @@ class UnexpandedTest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of var_self
+        if self.var_self:
+            _dict['self'] = self.var_self.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in test_results (list)
+        _items = []
+        if self.test_results:
+            for _item in self.test_results:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['testResults'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of UnexpandedTest from a dict"""
+        """Create an instance of TestLinks from a dict"""
         if obj is None:
             return None
 
@@ -83,9 +93,8 @@ class UnexpandedTest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "interval": obj.get("interval"),
-            "alertsEnabled": obj.get("alertsEnabled"),
-            "enabled": obj.get("enabled") if obj.get("enabled") is not None else True
+            "self": TestSelfLink.from_dict(obj["self"]) if obj.get("self") is not None else None,
+            "testResults": [Link.from_dict(_item) for _item in obj["testResults"]] if obj.get("testResults") is not None else None
         })
         return _obj
 

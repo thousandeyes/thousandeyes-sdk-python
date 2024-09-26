@@ -18,13 +18,12 @@ Name | Type | Description | Notes
 **ssl_version_id** | [**TestSslVersionId**](TestSslVersionId.md) |  | [optional] 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
 **verify_certificate** | **bool** | Flag indicating if a certificate should be verified. | [optional] [default to True]
-**url** | **str** | The test target URL. You can optionally specify the protocol (&#x60;http&#x60; or &#x60;https&#x60;).   - **Default Protocol:** If no protocol is specified, &#x60;https&#x60; is used by default.  - **Port Number:** To specify a port, append it to the URL with a colon after the hostname or IP address (e.g., &#x60;https://example.com:443&#x60;).      - If no port is specified in the URL, the &#x60;port&#x60; is determined by either the deprecated &#x60;port&#x60; field or the default protocol (HTTP: 80, HTTPS: 443).  | 
+**url** | **str** | The test target URL. You can optionally specify the protocol (&#x60;http&#x60; or &#x60;https&#x60;).   - **Default Protocol:** If no protocol is specified, &#x60;https&#x60; is used by default.  - **Port Number:** To specify a port, append it to the URL with a colon after the hostname or IP address (e.g., &#x60;https://example.com:443&#x60;).      - If no port is specified in the URL, the &#x60;port&#x60; is determined by the default for protocol (HTTP: 80, HTTPS: 443).  | 
 **has_ping** | **bool** | Optional flag indicating if the test should run ping. | [optional] [default to True]
 **has_traceroute** | **bool** | Optional flag indicating if the test should run traceroute. | [optional] [default to True]
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
 **target_response_time** | **int** | Response time target in milliseconds. Affects the colors of agents and legends on the view page. The value is compared with actual response time in order to determine the color scale (from green to red). | [optional] [default to 1000]
 **password** | **str** | Password for Basic/NTLM authentication. | [optional] 
-**port** | **int** | **(Deprecated)** The port number to use for the test. It&#39;s recommended to specify the port directly in the &#x60;url&#x60; field instead. If this field is set, it will override the default protocol ports (HTTP: 80, HTTPS: 443) and any port specified in the &#x60;url&#x60;.  | [optional] 
 **interval** | [**TestInterval**](TestInterval.md) |  | [optional] 
 
 ## Example

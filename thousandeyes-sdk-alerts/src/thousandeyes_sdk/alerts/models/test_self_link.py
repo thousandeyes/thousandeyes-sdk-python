@@ -16,22 +16,24 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.alerts.models.alert_rule import AlertRule
-from thousandeyes_sdk.alerts.models.test_interval import TestInterval
 from typing import Optional, Set
 from typing_extensions import Self
 
-class BaseTest(BaseModel):
+class TestSelfLink(BaseModel):
     """
-    BaseTest
+    TestSelfLink
     """ # noqa: E501
-    interval: Optional[TestInterval] = None
-    alerts_enabled: Optional[StrictBool] = Field(default=None, description="Indicates if alerts are enabled.", alias="alertsEnabled")
-    enabled: Optional[StrictBool] = Field(default=True, description="Test is enabled.")
-    alert_rules: Optional[List[AlertRule]] = Field(default=None, description="Contains list of enabled alert rule objects.", alias="alertRules")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules"]
+    href: StrictStr = Field(description="Its value is either a URI [RFC3986] or a URI template [RFC6570].")
+    templated: Optional[StrictBool] = Field(default=None, description="Should be true when the link object's \"href\" property is a URI template.")
+    type: Optional[StrictStr] = Field(default=None, description="Used as a hint to indicate the media type expected when dereferencing the target resource.")
+    deprecation: Optional[StrictStr] = Field(default=None, description="Its presence indicates that the link is to be deprecated at a future date. Its value is a URL that should provide further information about the deprecation.")
+    name: Optional[StrictStr] = Field(default=None, description="Its value may be used as a secondary key for selecting link objects that share the same relation type.")
+    profile: Optional[StrictStr] = Field(default=None, description="A URI that hints about the profile of the target resource.")
+    title: Optional[StrictStr] = Field(default=None, description="Intended for labelling the link with a human-readable identifier")
+    hreflang: Optional[StrictStr] = Field(default=None, description="Indicates the language of the target resource")
+    __properties: ClassVar[List[str]] = ["href", "templated", "type", "deprecation", "name", "profile", "title", "hreflang"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -52,7 +54,7 @@ class BaseTest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of BaseTest from a JSON string"""
+        """Create an instance of TestSelfLink from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,18 +75,11 @@ class BaseTest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in alert_rules (list)
-        _items = []
-        if self.alert_rules:
-            for _item in self.alert_rules:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['alertRules'] = _items
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of BaseTest from a dict"""
+        """Create an instance of TestSelfLink from a dict"""
         if obj is None:
             return None
 
@@ -92,10 +87,14 @@ class BaseTest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "interval": obj.get("interval"),
-            "alertsEnabled": obj.get("alertsEnabled"),
-            "enabled": obj.get("enabled") if obj.get("enabled") is not None else True,
-            "alertRules": [AlertRule.from_dict(_item) for _item in obj["alertRules"]] if obj.get("alertRules") is not None else None
+            "href": obj.get("href"),
+            "templated": obj.get("templated"),
+            "type": obj.get("type"),
+            "deprecation": obj.get("deprecation"),
+            "name": obj.get("name"),
+            "profile": obj.get("profile"),
+            "title": obj.get("title"),
+            "hreflang": obj.get("hreflang")
         })
         return _obj
 

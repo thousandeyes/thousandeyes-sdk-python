@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 Get enterprise agent usage
 
-This endpoint returns the organization's enterprise agents usage for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, a shared enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the shared agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
+This operation returns the organization's enterprise agents usage for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, a shared enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the shared agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
 
 ### Example
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 Get cloud and enterprise agents units usage
 
-This endpoint returns the cloud and enterprise agents usage for all the tests for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, an enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
+This operation returns the cloud and enterprise agents usage for all the tests for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, an enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
 
 ### Example
 
@@ -192,7 +192,7 @@ Name | Type | Description  | Notes
 
 Get usage information for the last month
 
-This endpoint returns usage for the current period. It provides visibility across all account groups within an organization. To access this endpoint, you need the `View Billing` permission (a management permission). If you have access to view billing in multiple organizations, query the endpoint using an `aid` querystring parameter (see optional parameters, below) from each organization. **Note:** Access to billing information older than one month is not supported by this endpoint.
+This operation returns usage for the current period. It provides visibility across all account groups within an organization. To access this endpoint, you need the `View Billing` permission (a management permission). If you have access to view billing in multiple organizations, query the endpoint using an `aid` querystring parameter (see optional parameters, below) from each organization. **Note:** Access to billing information older than one month is not supported by this endpoint.
 
 ### Example
 

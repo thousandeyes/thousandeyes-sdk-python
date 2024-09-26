@@ -673,7 +673,7 @@ class DashboardSnapshotsApi:
     ) -> ApiDashboardSnapshot:
         """Retrieve dashboard snapshot
 
-        This endpoint returns a list of widgets configured in dashboard snapshot configured in ThousandEyes. Seed this endpoint with a snapshotId found from the /dashboard-snapshots endpoint. This endpoint requires the `View Snapshots` permission be assigned to the role of the user accessing this endpoint. Returns a list of widgets configured within a dashboard snapshot. Use the `snapshotId` obtained from the `/dashboard-snapshots` endpoint. The `View Snapshots` permission is required to use this endpoint.\"
+        This operation returns a list of widgets configured in dashboard snapshot configured in ThousandEyes. Seed this endpoint with a snapshotId found from the /dashboard-snapshots endpoint. This endpoint requires the `View Snapshots` permission be assigned to the role of the user accessing this endpoint. Returns a list of widgets configured within a dashboard snapshot. Use the `snapshotId` obtained from the `/dashboard-snapshots` endpoint. The `View Snapshots` permission is required to use this endpoint.\"
 
         :param snapshot_id: A Identifier for a dashboard snapshot which can be obtained from the `/dashboards-snapshots` endpoint. (required)
         :type snapshot_id: str
@@ -751,7 +751,7 @@ class DashboardSnapshotsApi:
     ) -> ApiResponse[ApiDashboardSnapshot]:
         """Retrieve dashboard snapshot
 
-        This endpoint returns a list of widgets configured in dashboard snapshot configured in ThousandEyes. Seed this endpoint with a snapshotId found from the /dashboard-snapshots endpoint. This endpoint requires the `View Snapshots` permission be assigned to the role of the user accessing this endpoint. Returns a list of widgets configured within a dashboard snapshot. Use the `snapshotId` obtained from the `/dashboard-snapshots` endpoint. The `View Snapshots` permission is required to use this endpoint.\"
+        This operation returns a list of widgets configured in dashboard snapshot configured in ThousandEyes. Seed this endpoint with a snapshotId found from the /dashboard-snapshots endpoint. This endpoint requires the `View Snapshots` permission be assigned to the role of the user accessing this endpoint. Returns a list of widgets configured within a dashboard snapshot. Use the `snapshotId` obtained from the `/dashboard-snapshots` endpoint. The `View Snapshots` permission is required to use this endpoint.\"
 
         :param snapshot_id: A Identifier for a dashboard snapshot which can be obtained from the `/dashboards-snapshots` endpoint. (required)
         :type snapshot_id: str
@@ -829,7 +829,7 @@ class DashboardSnapshotsApi:
     ) -> RESTResponseType:
         """Retrieve dashboard snapshot
 
-        This endpoint returns a list of widgets configured in dashboard snapshot configured in ThousandEyes. Seed this endpoint with a snapshotId found from the /dashboard-snapshots endpoint. This endpoint requires the `View Snapshots` permission be assigned to the role of the user accessing this endpoint. Returns a list of widgets configured within a dashboard snapshot. Use the `snapshotId` obtained from the `/dashboard-snapshots` endpoint. The `View Snapshots` permission is required to use this endpoint.\"
+        This operation returns a list of widgets configured in dashboard snapshot configured in ThousandEyes. Seed this endpoint with a snapshotId found from the /dashboard-snapshots endpoint. This endpoint requires the `View Snapshots` permission be assigned to the role of the user accessing this endpoint. Returns a list of widgets configured within a dashboard snapshot. Use the `snapshotId` obtained from the `/dashboard-snapshots` endpoint. The `View Snapshots` permission is required to use this endpoint.\"
 
         :param snapshot_id: A Identifier for a dashboard snapshot which can be obtained from the `/dashboards-snapshots` endpoint. (required)
         :type snapshot_id: str

@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **sensitivity_level** | [**SensitivityLevel**](SensitivityLevel.md) |  | [optional] 
 **severity** | [**Severity**](Severity.md) |  | [optional] 
 **notifications** | [**AlertNotification**](AlertNotification.md) |  | [optional] 
-**tests** | [**List[BaseTest]**](BaseTest.md) |  | [optional] [readonly] 
+**tests** | [**List[SimpleTest]**](SimpleTest.md) |  | [optional] [readonly] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example

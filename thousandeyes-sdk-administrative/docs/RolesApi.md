@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 Delete role
 
-Deletes a role using its ID. The user needs appropriate permissions to successfully call this endpoint.
+Deletes a role using its ID. The user needs appropriate permissions to successfully call this operation.
 
 ### Example
 
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 Update role
 
-Updates a user-defined role using its ID.  When updating a role, the following applies:  * The full list of permissions must be sent, This endpoint does not support delta-based grant or revoking of permissions.  * Permission definitions and details can be obtained from the Permissions endpoint.
+Updates a user-defined role using its ID.  When updating a role, the following applies:  * The full list of permissions must be sent, This operation does not support delta-based grant or revoking of permissions.  * Permission definitions and details can be obtained from the Permissions operation.
 
 ### Example
 

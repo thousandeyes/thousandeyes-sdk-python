@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create or update accout group quotas
 
-This endpoint assigns quota values to multiple account groups across multiple organizations. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. This endpoint follows a cumulative behavior––This means that the quotas are assigned to the designated account groups, and any previous assignments remain in place without any unassignment occurring.
+This operation assigns quota values to multiple account groups across multiple organizations. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. This operation follows a cumulative behavior––This means that the quotas are assigned to the designated account groups, and any previous assignments remain in place without any unassignment occurring.
 
 ### Example
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 Create or update organizations quotas
 
-This endpoint recieves a list of organization quotas to create or update. If there's no specific `orgId` defined for a quota, it defaults to using the authenticated organization. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. This endpoint follows cumulative behavior––This means that the quotas are assigned to the specified organizations, and any previous assignments remain unchanged; no unassignments occur.
+This operation recieves a list of organization quotas to create or update. If there's no specific `orgId` defined for a quota, it defaults to using the authenticated organization. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. This operation follows cumulative behavior––This means that the quotas are assigned to the specified organizations, and any previous assignments remain unchanged; no unassignments occur.
 
 ### Example
 
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 Get organization and account group usage quota
 
-This endpoint retrieves usage quotas for both organization and account groups. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. If a user has quota update permission in multiple organizations, the API returns data from all such organizations.
+This operation retrieves usage quotas for both organization and account groups. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. If a user has quota update permission in multiple organizations, the API returns data from all such organizations.
 
 ### Example
 
@@ -265,7 +265,7 @@ This endpoint does not need any parameter.
 
 Remove account group quotas from organizations
 
-This endpoint removes quotas from multiple account groups across multiple organizations. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission.
+This operation removes quotas from multiple account groups across multiple organizations. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission.
 
 ### Example
 
@@ -347,7 +347,7 @@ void (empty response body)
 
 Remove organization quotas
 
-This endpoint recieves a list of organization IDs to remove their current quota. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission.
+This operation recieves a list of organization IDs to remove their current quota. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission.
 
 ### Example
 

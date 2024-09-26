@@ -347,7 +347,7 @@ void (empty response body)
 
 List tags
 
-This endpoint returns a list of tags in the specified account group (`aid`).
+This operation returns a list of tags in the specified account group (`aid`).
 
 ### Example
 

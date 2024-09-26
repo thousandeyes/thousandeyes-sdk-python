@@ -35,13 +35,14 @@ class Tag(BaseModel):
     color: Optional[StrictStr] = Field(default=None, description="Tag color")
     create_date: Optional[StrictStr] = Field(default=None, description="Tag creation date", alias="createDate")
     icon: Optional[StrictStr] = None
+    description: Optional[StrictStr] = Field(default=None, description="The tag's description.")
     id: Optional[StrictStr] = Field(default=None, description="The tag ID")
     key: Optional[StrictStr] = Field(default=None, description="The tags's key")
     legacy_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="legacyId")
     object_type: Optional[ObjectType] = Field(default=None, alias="objectType")
     value: Optional[StrictStr] = Field(default=None, description="The tag's value")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["assignments", "accessType", "aid", "color", "createDate", "icon", "id", "key", "legacyId", "objectType", "value", "_links"]
+    __properties: ClassVar[List[str]] = ["assignments", "accessType", "aid", "color", "createDate", "icon", "description", "id", "key", "legacyId", "objectType", "value", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,13 +80,11 @@ class Tag(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "assignments",
             "aid",
             "create_date",
-            "icon",
             "id",
             "legacy_id",
         ])
@@ -110,6 +109,11 @@ class Tag(BaseModel):
         if self.icon is None and "icon" in self.model_fields_set:
             _dict['icon'] = None
 
+        # set to None if description (nullable) is None
+        # and model_fields_set contains the field
+        if self.description is None and "description" in self.model_fields_set:
+            _dict['description'] = None
+
         # set to None if legacy_id (nullable) is None
         # and model_fields_set contains the field
         if self.legacy_id is None and "legacy_id" in self.model_fields_set:
@@ -133,6 +137,7 @@ class Tag(BaseModel):
             "color": obj.get("color"),
             "createDate": obj.get("createDate"),
             "icon": obj.get("icon"),
+            "description": obj.get("description"),
             "id": obj.get("id"),
             "key": obj.get("key"),
             "legacyId": obj.get("legacyId"),

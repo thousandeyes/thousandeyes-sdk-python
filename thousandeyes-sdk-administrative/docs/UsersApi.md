@@ -104,7 +104,7 @@ Name | Type | Description  | Notes
 
 Delete user
 
-Deletes a user using the user ID. This endpoint requires the `Edit users in all account groups` or `Edit users` permission.
+Deletes a user using the user ID. This operation requires the `Edit users in all account groups` or `Edit users` permission.
 
 ### Example
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 Update user
 
-Updates a user using the user ID. You can update the user name, email address, account group assignments, or roles. This endpoint requires the `Edit users in all account groups` or `Edit users` permission.   When updating a user, the following applies: * When updating a user's email address, the user must confirm the username change before they can subsequently log in or perform API operations. * Any update that includes `accountGroupRoles` is a replace-based update and not a delta-based update.
+Updates a user using the user ID. You can update the user name, email address, account group assignments, or roles. This operation requires the `Edit users in all account groups` or `Edit users` permission.   When updating a user, the following applies: * When updating a user's email address, the user must confirm the username change before they can subsequently log in or perform API operations. * Any update that includes `accountGroupRoles` is a replace-based update and not a delta-based update.
 
 ### Example
 

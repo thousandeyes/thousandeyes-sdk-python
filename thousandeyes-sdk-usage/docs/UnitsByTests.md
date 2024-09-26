@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **cloud_units_projected** | **int** | Cloud Units projected in the current usage period, based on units consumed to date and configuration of the test | [optional] 
 **test_id** | **str** | Unique ID of the test generating usage | [optional] 
 **test_name** | **str** | Name of the test generating usage | [optional] 
-**test_type** | **str** | Type of test generating usage. Note that this is a friendly testType entry (so it shouldn’t be parsed to discover the correct endpoint to query for configuration details). | [optional] 
+**test_type** | **str** | Type of test generating usage. Note that this is a friendly testType entry (so it shouldn’t be parsed to discover the correct operation to query for configuration details). | [optional] 
 **is_instant_test** | **bool** | Indicates whether the test is scheduled or instant | [optional] 
 
 ## Example

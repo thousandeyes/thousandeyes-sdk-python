@@ -40,11 +40,10 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                   "networkMeasurements" : true,
                   "endpointAgentLabels" : [ "567", "214" ],
                   "tcpProbeMode" : "auto",
-                  "url" : "url",
+                  "url" : "https://example.com:443",
                   "agents" : [ "0a3b9998-dc3a-4ff2-b50d-ac4a7cd986e1", "66eec0f1-72b4-4755-aa83-3aed61d17f3c" ],
                   "protocol" : "icmp",
                   "password" : "password",
-                  "port" : 443,
                   "hasTraceroute" : true,
                   "targetResponseTime" : 1000,
                   "interval" : 60,
@@ -340,7 +339,7 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                   "isEnabled" : true,
                   "interval" : 60,
                   "tcpProbeMode" : "auto",
-                  "url" : "www.thousandeyes.com",
+                  "url" : "https://example.com:443",
                   "testName" : "Test name"
                 }"""
 

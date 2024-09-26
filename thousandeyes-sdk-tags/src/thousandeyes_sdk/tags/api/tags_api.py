@@ -1271,7 +1271,7 @@ class TagsApi:
     ) -> None:
         """List tags
 
-        This endpoint returns a list of tags in the specified account group (`aid`).
+        This operation returns a list of tags in the specified account group (`aid`).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1348,7 +1348,7 @@ class TagsApi:
     ) -> ApiResponse[None]:
         """List tags
 
-        This endpoint returns a list of tags in the specified account group (`aid`).
+        This operation returns a list of tags in the specified account group (`aid`).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1425,7 +1425,7 @@ class TagsApi:
     ) -> RESTResponseType:
         """List tags
 
-        This endpoint returns a list of tags in the specified account group (`aid`).
+        This operation returns a list of tags in the specified account group (`aid`).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str

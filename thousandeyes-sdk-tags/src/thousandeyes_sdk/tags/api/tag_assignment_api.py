@@ -64,7 +64,7 @@ class TagAssignmentApi:
     ) -> None:
         """Assign tag to multiple objects
 
-        Assigns a tag to one or more objects. This endpoint has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
+        Assigns a tag to one or more objects. This operation has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
         :param id: Tag ID (required)
         :type id: str
@@ -145,7 +145,7 @@ class TagAssignmentApi:
     ) -> ApiResponse[None]:
         """Assign tag to multiple objects
 
-        Assigns a tag to one or more objects. This endpoint has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
+        Assigns a tag to one or more objects. This operation has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
         :param id: Tag ID (required)
         :type id: str
@@ -226,7 +226,7 @@ class TagAssignmentApi:
     ) -> RESTResponseType:
         """Assign tag to multiple objects
 
-        Assigns a tag to one or more objects. This endpoint has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
+        Assigns a tag to one or more objects. This operation has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
         :param id: Tag ID (required)
         :type id: str
@@ -384,7 +384,7 @@ class TagAssignmentApi:
     ) -> None:
         """Assign multiple tags to multiple objects
 
-        Assigns the specified tags to the specified objects. This endpoint has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
+        Assigns the specified tags to the specified objects. This operation has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
         :param bulk_tag_assignments: (required)
         :type bulk_tag_assignments: BulkTagAssignments
@@ -461,7 +461,7 @@ class TagAssignmentApi:
     ) -> ApiResponse[None]:
         """Assign multiple tags to multiple objects
 
-        Assigns the specified tags to the specified objects. This endpoint has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
+        Assigns the specified tags to the specified objects. This operation has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
         :param bulk_tag_assignments: (required)
         :type bulk_tag_assignments: BulkTagAssignments
@@ -538,7 +538,7 @@ class TagAssignmentApi:
     ) -> RESTResponseType:
         """Assign multiple tags to multiple objects
 
-        Assigns the specified tags to the specified objects. This endpoint has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
+        Assigns the specified tags to the specified objects. This operation has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
         :param bulk_tag_assignments: (required)
         :type bulk_tag_assignments: BulkTagAssignments

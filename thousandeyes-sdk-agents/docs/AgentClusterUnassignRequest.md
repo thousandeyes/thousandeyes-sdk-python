@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**members** | **List[str]** | Contains list of member IDs. (get &#x60;memberId&#x60; from &#x60;/agents/{agentId}&#x60; endpoint) | [optional] 
+**members** | **List[str]** | Contains list of member IDs. (get &#x60;memberId&#x60; from &#x60;/agents/{agentId}&#x60; operation) | [optional] 
 
 ## Example
 

@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from typing import Optional, Set
@@ -27,7 +27,7 @@ class EndpointAllAgentsSelectorConfig(BaseModel):
     Any agent selection object.
     """ # noqa: E501
     agent_selector_type: Annotated[str, Field(strict=True)] = Field(alias="agentSelectorType")
-    max_machines: Optional[Annotated[int, Field(le=50000, strict=True, ge=1)]] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
+    max_machines: Optional[StrictInt] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
     __properties: ClassVar[List[str]] = ["agentSelectorType", "maxMachines"]
 
     @field_validator('agent_selector_type')

@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **repeat** | [**Repeat**](Repeat.md) |  | [optional] 
 **end_repeat** | [**EndRepeat**](EndRepeat.md) |  | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
-**tests** | [**List[BaseTest]**](BaseTest.md) | List of tests assigned to the alert suppression window. | [optional] 
+**tests** | [**List[SimpleTest]**](SimpleTest.md) | List of tests assigned to the alert suppression window. | [optional] 
 
 ## Example
 

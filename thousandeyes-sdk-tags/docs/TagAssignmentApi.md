@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 Assign tag to multiple objects
 
-Assigns a tag to one or more objects. This endpoint has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
+Assigns a tag to one or more objects. This operation has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
 ### Example
 
@@ -100,7 +100,7 @@ void (empty response body)
 
 Assign multiple tags to multiple objects
 
-Assigns the specified tags to the specified objects. This endpoint has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
+Assigns the specified tags to the specified objects. This operation has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
 
 ### Example
 

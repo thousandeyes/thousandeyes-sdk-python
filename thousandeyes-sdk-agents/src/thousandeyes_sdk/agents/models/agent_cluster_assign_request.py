@@ -25,7 +25,7 @@ class AgentClusterAssignRequest(BaseModel):
     """
     AgentClusterAssignRequest
     """ # noqa: E501
-    agents: Optional[List[StrictStr]] = Field(default=None, description="Contains list of agent IDs (get `agentId` from `/agents` endpoint)")
+    agents: Optional[List[StrictStr]] = Field(default=None, description="Contains list of agent IDs (get `agentId` from `/agents` operation)")
     __properties: ClassVar[List[str]] = ["agents"]
 
     model_config = ConfigDict(
