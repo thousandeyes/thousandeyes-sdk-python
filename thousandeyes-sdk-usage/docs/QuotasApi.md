@@ -1,14 +1,14 @@
 # thousandeyes_sdk.usage.QuotasApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**assign_organizations_account_groups_quotas**](QuotasApi.md#assign_organizations_account_groups_quotas) | **POST** /v7/quotas/account-groups/assign | Create or update accout group quotas
-[**assign_organizations_quotas**](QuotasApi.md#assign_organizations_quotas) | **POST** /v7/quotas/assign | Create or update organizations quotas
-[**get_quotas**](QuotasApi.md#get_quotas) | **GET** /v7/quotas | Get organization and account group usage quota
-[**unassign_organizations_account_groups_quotas**](QuotasApi.md#unassign_organizations_account_groups_quotas) | **POST** /v7/quotas/account-groups/unassign | Remove account group quotas from organizations
-[**unassign_organizations_quotas**](QuotasApi.md#unassign_organizations_quotas) | **POST** /v7/quotas/unassign | Remove organization quotas
+[**assign_organizations_account_groups_quotas**](QuotasApi.md#assign_organizations_account_groups_quotas) | **POST** /quotas/account-groups/assign | Create or update accout group quotas
+[**assign_organizations_quotas**](QuotasApi.md#assign_organizations_quotas) | **POST** /quotas/assign | Create or update organizations quotas
+[**get_quotas**](QuotasApi.md#get_quotas) | **GET** /quotas | Get organization and account group usage quota
+[**unassign_organizations_account_groups_quotas**](QuotasApi.md#unassign_organizations_account_groups_quotas) | **POST** /quotas/account-groups/unassign | Remove account group quotas from organizations
+[**unassign_organizations_quotas**](QuotasApi.md#unassign_organizations_quotas) | **POST** /quotas/unassign | Remove organization quotas
 
 
 # **assign_organizations_account_groups_quotas**
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create or update accout group quotas
 
-This endpoint assigns quota values to multiple account groups across multiple organizations. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. This endpoint follows a cumulative behavior––This means that the quotas are assigned to the designated account groups, and any previous assignments remain in place without any unassignment occurring.
+This operation assigns quota values to multiple account groups across multiple organizations. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. This operation follows a cumulative behavior––This means that the quotas are assigned to the designated account groups, and any previous assignments remain in place without any unassignment occurring.
 
 ### Example
 
@@ -28,10 +28,10 @@ from thousandeyes_sdk.usage.models.organizations_quotas_assign import Organizati
 from thousandeyes_sdk.usage.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 Create or update organizations quotas
 
-This endpoint recieves a list of organization quotas to create or update. If there's no specific `orgId` defined for a quota, it defaults to using the authenticated organization. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. This endpoint follows cumulative behavior––This means that the quotas are assigned to the specified organizations, and any previous assignments remain unchanged; no unassignments occur.
+This operation recieves a list of organization quotas to create or update. If there's no specific `orgId` defined for a quota, it defaults to using the authenticated organization. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. This operation follows cumulative behavior––This means that the quotas are assigned to the specified organizations, and any previous assignments remain unchanged; no unassignments occur.
 
 ### Example
 
@@ -113,10 +113,10 @@ from thousandeyes_sdk.usage.models.quotas_assign_response import QuotasAssignRes
 from thousandeyes_sdk.usage.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 Get organization and account group usage quota
 
-This endpoint retrieves usage quotas for both organization and account groups. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. If a user has quota update permission in multiple organizations, the API returns data from all such organizations.
+This operation retrieves usage quotas for both organization and account groups. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission. If a user has quota update permission in multiple organizations, the API returns data from all such organizations.
 
 ### Example
 
@@ -197,10 +197,10 @@ from thousandeyes_sdk.usage.models.quotas import Quotas
 from thousandeyes_sdk.usage.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -265,7 +265,7 @@ This endpoint does not need any parameter.
 
 Remove account group quotas from organizations
 
-This endpoint removes quotas from multiple account groups across multiple organizations. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission.
+This operation removes quotas from multiple account groups across multiple organizations. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission.
 
 ### Example
 
@@ -277,10 +277,10 @@ from thousandeyes_sdk.usage.models.organizations_quotas_unassign import Organiza
 from thousandeyes_sdk.usage.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -347,7 +347,7 @@ void (empty response body)
 
 Remove organization quotas
 
-This endpoint recieves a list of organization IDs to remove their current quota. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission.
+This operation recieves a list of organization IDs to remove their current quota. To use this endpoint, you need the `Edit organization and account group quotas` permission, which is a management-level permission.
 
 ### Example
 
@@ -359,10 +359,10 @@ from thousandeyes_sdk.usage.models.quotas_unassign import QuotasUnassign
 from thousandeyes_sdk.usage.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

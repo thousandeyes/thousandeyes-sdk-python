@@ -7,7 +7,10 @@ docs/AuditOperation.md
 docs/AuditOperationWithUpdate.md
 docs/BadRequestError.md
 docs/CreateStreamResponse.md
+docs/DataModelVersion.md
 docs/EndpointType.md
+docs/ExporterConfig.md
+docs/ExporterConfigSplunkHec.md
 docs/GetStreamResponse.md
 docs/PutStream.md
 docs/Stream.md
@@ -33,7 +36,10 @@ src/thousandeyes_sdk/streaming/models/audit_operation.py
 src/thousandeyes_sdk/streaming/models/audit_operation_with_update.py
 src/thousandeyes_sdk/streaming/models/bad_request_error.py
 src/thousandeyes_sdk/streaming/models/create_stream_response.py
+src/thousandeyes_sdk/streaming/models/data_model_version.py
 src/thousandeyes_sdk/streaming/models/endpoint_type.py
+src/thousandeyes_sdk/streaming/models/exporter_config.py
+src/thousandeyes_sdk/streaming/models/exporter_config_splunk_hec.py
 src/thousandeyes_sdk/streaming/models/get_stream_response.py
 src/thousandeyes_sdk/streaming/models/put_stream.py
 src/thousandeyes_sdk/streaming/models/stream.py

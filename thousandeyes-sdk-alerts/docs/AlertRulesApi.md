@@ -1,14 +1,14 @@
 # thousandeyes_sdk.alerts.AlertRulesApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_alert_rule**](AlertRulesApi.md#create_alert_rule) | **POST** /v7/alerts/rules | Create alert rule
-[**delete_alert_rule**](AlertRulesApi.md#delete_alert_rule) | **DELETE** /v7/alerts/rules/{ruleId} | Delete alert rule
-[**get_alert_rule**](AlertRulesApi.md#get_alert_rule) | **GET** /v7/alerts/rules/{ruleId} | Retrieve alert rule
-[**get_alerts_rules**](AlertRulesApi.md#get_alerts_rules) | **GET** /v7/alerts/rules | List alert rules
-[**update_alert_rule**](AlertRulesApi.md#update_alert_rule) | **PUT** /v7/alerts/rules/{ruleId} | Update alert rule
+[**create_alert_rule**](AlertRulesApi.md#create_alert_rule) | **POST** /alerts/rules | Create alert rule
+[**delete_alert_rule**](AlertRulesApi.md#delete_alert_rule) | **DELETE** /alerts/rules/{ruleId} | Delete alert rule
+[**get_alert_rule**](AlertRulesApi.md#get_alert_rule) | **GET** /alerts/rules/{ruleId} | Retrieve alert rule
+[**get_alerts_rules**](AlertRulesApi.md#get_alerts_rules) | **GET** /alerts/rules | List alert rules
+[**update_alert_rule**](AlertRulesApi.md#update_alert_rule) | **PUT** /alerts/rules/{ruleId} | Update alert rule
 
 
 # **create_alert_rule**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.alerts.models.rule_detail_update import RuleDetailUpdate
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -114,10 +114,10 @@ import thousandeyes_sdk.alerts
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -198,10 +198,10 @@ from thousandeyes_sdk.alerts.models.rule_detail import RuleDetail
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -283,10 +283,10 @@ from thousandeyes_sdk.alerts.models.rules import Rules
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -367,10 +367,10 @@ from thousandeyes_sdk.alerts.models.rule_detail_update import RuleDetailUpdate
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

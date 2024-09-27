@@ -1,14 +1,14 @@
 # thousandeyes_sdk.alerts.AlertSuppressionWindowsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_alert_suppression_window**](AlertSuppressionWindowsApi.md#create_alert_suppression_window) | **POST** /v7/alert-suppression-windows | Create alert suppression window
-[**delete_alert_suppression_window**](AlertSuppressionWindowsApi.md#delete_alert_suppression_window) | **DELETE** /v7/alert-suppression-windows/{windowId} | Delete alert suppression window
-[**get_alert_suppression_window**](AlertSuppressionWindowsApi.md#get_alert_suppression_window) | **GET** /v7/alert-suppression-windows/{windowId} | Retrieve alert suppression window
-[**get_alert_suppression_windows**](AlertSuppressionWindowsApi.md#get_alert_suppression_windows) | **GET** /v7/alert-suppression-windows | List alert suppression windows
-[**update_alert_suppression_window**](AlertSuppressionWindowsApi.md#update_alert_suppression_window) | **PUT** /v7/alert-suppression-windows/{windowId} | Update alert suppression window
+[**create_alert_suppression_window**](AlertSuppressionWindowsApi.md#create_alert_suppression_window) | **POST** /alert-suppression-windows | Create alert suppression window
+[**delete_alert_suppression_window**](AlertSuppressionWindowsApi.md#delete_alert_suppression_window) | **DELETE** /alert-suppression-windows/{windowId} | Delete alert suppression window
+[**get_alert_suppression_window**](AlertSuppressionWindowsApi.md#get_alert_suppression_window) | **GET** /alert-suppression-windows/{windowId} | Retrieve alert suppression window
+[**get_alert_suppression_windows**](AlertSuppressionWindowsApi.md#get_alert_suppression_windows) | **GET** /alert-suppression-windows | List alert suppression windows
+[**update_alert_suppression_window**](AlertSuppressionWindowsApi.md#update_alert_suppression_window) | **PUT** /alert-suppression-windows/{windowId} | Update alert suppression window
 
 
 # **create_alert_suppression_window**
@@ -26,14 +26,14 @@ Creates a new alert suppression window in ThousandEyes, using the  provided POST
 import thousandeyes_sdk.alerts
 from thousandeyes_sdk.alerts.models.alert_suppression_window_detail import AlertSuppressionWindowDetail
 from thousandeyes_sdk.alerts.models.alert_suppression_window_request import AlertSuppressionWindowRequest
-from thousandeyes_sdk.alerts.models.expand import Expand
+from thousandeyes_sdk.alerts.models.expand_alert_test_options import ExpandAlertTestOptions
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -52,7 +52,7 @@ with thousandeyes_sdk.alerts.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.alerts.AlertSuppressionWindowsApi(api_client)
     alert_suppression_window_request = thousandeyes_sdk.alerts.AlertSuppressionWindowRequest() # AlertSuppressionWindowRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.alerts.Expand()] # List[Expand] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
+    expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()] # List[ExpandAlertTestOptions] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
 
     try:
         # Create alert suppression window
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alert_suppression_window_request** | [**AlertSuppressionWindowRequest**](AlertSuppressionWindowRequest.md)|  | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[Expand]**](Expand.md)| Optional parameter on whether or not to expand alert related resources.  Without this parameter, there&#39;s no default expansion. For example, to expand the \&quot;tests\&quot; resource, use the &#x60;?expand&#x3D;test&#x60; query. | [optional] 
+ **expand** | [**List[ExpandAlertTestOptions]**](ExpandAlertTestOptions.md)| Optional parameter on whether or not to expand alert related resources.  Without this parameter, there&#39;s no default expansion. For example, to expand the \&quot;tests\&quot; resource, use the &#x60;?expand&#x3D;test&#x60; query. | [optional] 
 
 ### Return type
 
@@ -117,10 +117,10 @@ import thousandeyes_sdk.alerts
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -198,14 +198,14 @@ Returns detailed information about an alert suppression window configured in you
 ```python
 import thousandeyes_sdk.alerts
 from thousandeyes_sdk.alerts.models.alert_suppression_window_detail import AlertSuppressionWindowDetail
-from thousandeyes_sdk.alerts.models.expand import Expand
+from thousandeyes_sdk.alerts.models.expand_alert_test_options import ExpandAlertTestOptions
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -224,7 +224,7 @@ with thousandeyes_sdk.alerts.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.alerts.AlertSuppressionWindowsApi(api_client)
     window_id = '2411' # str | Unique window ID.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.alerts.Expand()] # List[Expand] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
+    expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()] # List[ExpandAlertTestOptions] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
 
     try:
         # Retrieve alert suppression window
@@ -244,7 +244,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **window_id** | **str**| Unique window ID. | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[Expand]**](Expand.md)| Optional parameter on whether or not to expand alert related resources.  Without this parameter, there&#39;s no default expansion. For example, to expand the \&quot;tests\&quot; resource, use the &#x60;?expand&#x3D;test&#x60; query. | [optional] 
+ **expand** | [**List[ExpandAlertTestOptions]**](ExpandAlertTestOptions.md)| Optional parameter on whether or not to expand alert related resources.  Without this parameter, there&#39;s no default expansion. For example, to expand the \&quot;tests\&quot; resource, use the &#x60;?expand&#x3D;test&#x60; query. | [optional] 
 
 ### Return type
 
@@ -289,10 +289,10 @@ from thousandeyes_sdk.alerts.models.alert_suppression_windows import AlertSuppre
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -370,14 +370,14 @@ Updates an alert suppression window in ThousandEyes, using the  provided POST da
 import thousandeyes_sdk.alerts
 from thousandeyes_sdk.alerts.models.alert_suppression_window_detail import AlertSuppressionWindowDetail
 from thousandeyes_sdk.alerts.models.alert_suppression_window_request import AlertSuppressionWindowRequest
-from thousandeyes_sdk.alerts.models.expand import Expand
+from thousandeyes_sdk.alerts.models.expand_alert_test_options import ExpandAlertTestOptions
 from thousandeyes_sdk.alerts.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -397,7 +397,7 @@ with thousandeyes_sdk.alerts.ApiClient(configuration) as api_client:
     window_id = '2411' # str | Unique window ID.
     alert_suppression_window_request = thousandeyes_sdk.alerts.AlertSuppressionWindowRequest() # AlertSuppressionWindowRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.alerts.Expand()] # List[Expand] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
+    expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()] # List[ExpandAlertTestOptions] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
 
     try:
         # Update alert suppression window
@@ -418,7 +418,7 @@ Name | Type | Description  | Notes
  **window_id** | **str**| Unique window ID. | 
  **alert_suppression_window_request** | [**AlertSuppressionWindowRequest**](AlertSuppressionWindowRequest.md)|  | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[Expand]**](Expand.md)| Optional parameter on whether or not to expand alert related resources.  Without this parameter, there&#39;s no default expansion. For example, to expand the \&quot;tests\&quot; resource, use the &#x60;?expand&#x3D;test&#x60; query. | [optional] 
+ **expand** | [**List[ExpandAlertTestOptions]**](ExpandAlertTestOptions.md)| Optional parameter on whether or not to expand alert related resources.  Without this parameter, there&#39;s no default expansion. For example, to expand the \&quot;tests\&quot; resource, use the &#x60;?expand&#x3D;test&#x60; query. | [optional] 
 
 ### Return type
 

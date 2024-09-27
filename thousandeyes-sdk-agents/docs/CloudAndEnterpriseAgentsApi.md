@@ -1,13 +1,13 @@
 # thousandeyes_sdk.agents.CloudAndEnterpriseAgentsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_agent**](CloudAndEnterpriseAgentsApi.md#delete_agent) | **DELETE** /v7/agents/{agentId} | Delete Enterprise Agent
-[**get_agent**](CloudAndEnterpriseAgentsApi.md#get_agent) | **GET** /v7/agents/{agentId} | Retrieve Cloud and Enterprise Agent
-[**get_agents**](CloudAndEnterpriseAgentsApi.md#get_agents) | **GET** /v7/agents | List Cloud and Enterprise Agents
-[**update_agent**](CloudAndEnterpriseAgentsApi.md#update_agent) | **PUT** /v7/agents/{agentId} | Update Enterprise Agent
+[**delete_agent**](CloudAndEnterpriseAgentsApi.md#delete_agent) | **DELETE** /agents/{agentId} | Delete Enterprise Agent
+[**get_agent**](CloudAndEnterpriseAgentsApi.md#get_agent) | **GET** /agents/{agentId} | Retrieve Cloud and Enterprise Agent
+[**get_agents**](CloudAndEnterpriseAgentsApi.md#get_agents) | **GET** /agents | List Cloud and Enterprise Agents
+[**update_agent**](CloudAndEnterpriseAgentsApi.md#update_agent) | **PUT** /agents/{agentId} | Update Enterprise Agent
 
 
 # **delete_agent**
@@ -26,10 +26,10 @@ import thousandeyes_sdk.agents
 from thousandeyes_sdk.agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -99,7 +99,7 @@ void (empty response body)
 
 Retrieve Cloud and Enterprise Agent
 
-Returns details for an agent, including assigned tests.  For Enterprise Agents, this endpoint returns additional details, including utilization data, assigned accounts, a list of account groups the agent is assigned to, and utilization details. 
+Returns details for an agent, including assigned tests.  For Enterprise Agents, this operation returns additional details, including utilization data, assigned accounts, a list of account groups the agent is assigned to, and utilization details. 
 
 ### Example
 
@@ -112,10 +112,10 @@ from thousandeyes_sdk.agents.models.agent_details_expand import AgentDetailsExpa
 from thousandeyes_sdk.agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -189,7 +189,7 @@ Name | Type | Description  | Notes
 
 List Cloud and Enterprise Agents
 
-Returns a list of all agents available to your ThousandEyes account, including both Enterprise and Cloud Agents.  If an agent is an Enterprise Agent, this endpoint returns the agent’s public and private IP addresses, as well as the public network where the agent is located. 
+Returns a list of all agents available to your ThousandEyes account, including both Enterprise and Cloud Agents.  If an agent is an Enterprise Agent, this operation returns the agent’s public and private IP addresses, as well as the public network where the agent is located. 
 
 ### Example
 
@@ -203,10 +203,10 @@ from thousandeyes_sdk.agents.models.cloud_enterprise_agents import CloudEnterpri
 from thousandeyes_sdk.agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 Update Enterprise Agent
 
-Updates details for an Enterprise Agent. This endpoint can only be used for Enterprise Agents, and only for users in a role that permits modification of Enterprise Agents.  Important notes related to agent modification on tests: * if an agent is removed from a test, the modification date for tests using that agent at the time it was removed will be changed. * If an agent is removed from an entire account group, then all tests using this agent in the removed account group will be updated to reflect the removed agent. * If a removed agent is the final remaining agent on a test, then the test will be disabled when the agent is removed.  Users can update the following fields: * `agentName`: String representation of an agent. No two agents can have the same display name. * `enabled`: Boolean representation of agent state. * `accountGroups`: An array of account group ids. See `v7/account-groups` to pull a list of account IDs. * `tests`: An array of test Is. See `v7/tests` to retrieve a list tests available in the current account context. * `ipv6Policy`: Enum representation of the IP version policy. * `keepBrowserCache`: Boolean representation of the Keep browser cache state. * `targetForTests`: String representation of the target IP address or domain name. This represents the test destination when agent is acting as a test target in an agent-to-agent test. * `localResolutionPrefixes`: This array of strings represents the public IP ranges where the Enterprise Agent performs rDNS (Reverse DNS) lookups. The range should be in CIDR notation, such as `10.1.1.0/24`. Please note that a maximum of 5 prefixes is allowed. This only applies to Enterprise Agents and Enterprise Agent clusters.
+Updates details for an Enterprise Agent. This operation can only be used for Enterprise Agents, and only for users in a role that permits modification of Enterprise Agents.  Important notes related to agent modification on tests: * if an agent is removed from a test, the modification date for tests using that agent at the time it was removed will be changed. * If an agent is removed from an entire account group, then all tests using this agent in the removed account group will be updated to reflect the removed agent. * If a removed agent is the final remaining agent on a test, then the test will be disabled when the agent is removed.  Users can update the following fields: * `agentName`: String representation of an agent. No two agents can have the same display name. * `enabled`: Boolean representation of agent state. * `accountGroups`: An array of account group ids. See `v7/account-groups` to pull a list of account IDs. * `tests`: An array of test Is. See `v7/tests` to retrieve a list tests available in the current account context. * `ipv6Policy`: Enum representation of the IP version policy. * `keepBrowserCache`: Boolean representation of the Keep browser cache state. * `targetForTests`: String representation of the target IP address or domain name. This represents the test destination when agent is acting as a test target in an agent-to-agent test. * `localResolutionPrefixes`: This array of strings represents the public IP ranges where the Enterprise Agent performs rDNS (Reverse DNS) lookups. The range should be in CIDR notation, such as `10.1.1.0/24`. Please note that a maximum of 5 prefixes is allowed. This only applies to Enterprise Agents and Enterprise Agent clusters.
 
 ### Example
 
@@ -294,10 +294,10 @@ from thousandeyes_sdk.agents.models.agent_request import AgentRequest
 from thousandeyes_sdk.agents.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

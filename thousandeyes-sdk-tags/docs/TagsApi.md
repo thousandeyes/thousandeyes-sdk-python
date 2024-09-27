@@ -1,15 +1,15 @@
 # thousandeyes_sdk.tags.TagsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_tag**](TagsApi.md#create_tag) | **POST** /v7/tags | Create tag
-[**create_tags**](TagsApi.md#create_tags) | **POST** /v7/tags/bulk | Create multiple tags
-[**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /v7/tags/{id} | Delete tag
-[**get_tag**](TagsApi.md#get_tag) | **GET** /v7/tags/{id} | Retrieve tag
-[**get_tags**](TagsApi.md#get_tags) | **GET** /v7/tags | List tags
-[**update_tag**](TagsApi.md#update_tag) | **PUT** /v7/tags/{id} | Update tag
+[**create_tag**](TagsApi.md#create_tag) | **POST** /tags | Create tag
+[**create_tags**](TagsApi.md#create_tags) | **POST** /tags/bulk | Create multiple tags
+[**delete_tag**](TagsApi.md#delete_tag) | **DELETE** /tags/{id} | Delete tag
+[**get_tag**](TagsApi.md#get_tag) | **GET** /tags/{id} | Retrieve tag
+[**get_tags**](TagsApi.md#get_tags) | **GET** /tags | List tags
+[**update_tag**](TagsApi.md#update_tag) | **PUT** /tags/{id} | Update tag
 
 
 # **create_tag**
@@ -29,10 +29,10 @@ from thousandeyes_sdk.tags.models.tag_info import TagInfo
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -111,10 +111,10 @@ from thousandeyes_sdk.tags.models.bulk_tag_response import BulkTagResponse
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -191,10 +191,10 @@ import thousandeyes_sdk.tags
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -211,7 +211,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagsApi(api_client)
-    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | ID of tag to delete
+    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -228,7 +228,7 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of tag to delete | 
+ **id** | **str**| Tag ID | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
 
 ### Return type
@@ -270,14 +270,14 @@ Retrieves a tag using its ID.
 
 ```python
 import thousandeyes_sdk.tags
-from thousandeyes_sdk.tags.models.expand import Expand
+from thousandeyes_sdk.tags.models.expand_tags_options import ExpandTagsOptions
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -294,9 +294,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagsApi(api_client)
-    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | ID of tag to retrieve
+    id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tags.Expand()] # List[Expand] | Optional, to retrieve associated assignments (optional)
+    expand = [thousandeyes_sdk.tags.ExpandTagsOptions()] # List[ExpandTagsOptions] | Optional, to retrieve associated assignments (optional)
 
     try:
         # Retrieve tag
@@ -312,9 +312,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| ID of tag to retrieve | 
+ **id** | **str**| Tag ID | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[Expand]**](Expand.md)| Optional, to retrieve associated assignments | [optional] 
+ **expand** | [**List[ExpandTagsOptions]**](ExpandTagsOptions.md)| Optional, to retrieve associated assignments | [optional] 
 
 ### Return type
 
@@ -347,7 +347,7 @@ void (empty response body)
 
 List tags
 
-This endpoint returns a list of tags in the specified account group (`aid`).
+This operation returns a list of tags in the specified account group (`aid`).
 
 ### Example
 
@@ -355,14 +355,14 @@ This endpoint returns a list of tags in the specified account group (`aid`).
 
 ```python
 import thousandeyes_sdk.tags
-from thousandeyes_sdk.tags.models.expand import Expand
+from thousandeyes_sdk.tags.models.expand_tags_options import ExpandTagsOptions
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -380,7 +380,7 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tags.Expand()] # List[Expand] | Optional, to retrieve associated assignments (optional)
+    expand = [thousandeyes_sdk.tags.ExpandTagsOptions()] # List[ExpandTagsOptions] | Optional, to retrieve associated assignments (optional)
 
     try:
         # List tags
@@ -397,7 +397,7 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[Expand]**](Expand.md)| Optional, to retrieve associated assignments | [optional] 
+ **expand** | [**List[ExpandTagsOptions]**](ExpandTagsOptions.md)| Optional, to retrieve associated assignments | [optional] 
 
 ### Return type
 
@@ -442,10 +442,10 @@ from thousandeyes_sdk.tags.models.tag_info import TagInfo
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters

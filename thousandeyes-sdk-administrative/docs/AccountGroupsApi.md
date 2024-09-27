@@ -1,14 +1,14 @@
 # thousandeyes_sdk.administrative.AccountGroupsApi
 
-All URIs are relative to *https://api.thousandeyes.com*
+All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_account_group**](AccountGroupsApi.md#create_account_group) | **POST** /v7/account-groups | Create account group
-[**delete_account_group**](AccountGroupsApi.md#delete_account_group) | **DELETE** /v7/account-groups/{id} | Delete account group
-[**get_account_group**](AccountGroupsApi.md#get_account_group) | **GET** /v7/account-groups/{id} | Retrieve account group
-[**get_account_groups**](AccountGroupsApi.md#get_account_groups) | **GET** /v7/account-groups | List account groups
-[**update_account_group**](AccountGroupsApi.md#update_account_group) | **PUT** /v7/account-groups/{id} | Update account group
+[**create_account_group**](AccountGroupsApi.md#create_account_group) | **POST** /account-groups | Create account group
+[**delete_account_group**](AccountGroupsApi.md#delete_account_group) | **DELETE** /account-groups/{id} | Delete account group
+[**get_account_group**](AccountGroupsApi.md#get_account_group) | **GET** /account-groups/{id} | Retrieve account group
+[**get_account_groups**](AccountGroupsApi.md#get_account_groups) | **GET** /account-groups | List account groups
+[**update_account_group**](AccountGroupsApi.md#update_account_group) | **PUT** /account-groups/{id} | Update account group
 
 
 # **create_account_group**
@@ -26,14 +26,14 @@ Creates a new account group. This operation requires the `Edit all account group
 import thousandeyes_sdk.administrative
 from thousandeyes_sdk.administrative.models.account_group_request import AccountGroupRequest
 from thousandeyes_sdk.administrative.models.created_account_group import CreatedAccountGroup
-from thousandeyes_sdk.administrative.models.expand import Expand
+from thousandeyes_sdk.administrative.models.expand_account_group_options import ExpandAccountGroupOptions
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -51,7 +51,7 @@ with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
     account_group_request = thousandeyes_sdk.administrative.AccountGroupRequest() # AccountGroupRequest | 
-    expand = [thousandeyes_sdk.administrative.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()] # List[ExpandAccountGroupOptions] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Create account group
@@ -70,7 +70,7 @@ with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **account_group_request** | [**AccountGroupRequest**](AccountGroupRequest.md)|  | 
- **expand** | [**List[Expand]**](Expand.md)| Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the &#x60;users&#x60; resource, pass the &#x60;?expand&#x3D;user&#x60; query. | [optional] 
+ **expand** | [**List[ExpandAccountGroupOptions]**](ExpandAccountGroupOptions.md)| Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the &#x60;users&#x60; resource, pass the &#x60;?expand&#x3D;user&#x60; query. | [optional] 
 
 ### Return type
 
@@ -115,10 +115,10 @@ import thousandeyes_sdk.administrative
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -194,14 +194,14 @@ Retrieves detailed information about an account group using its ID.  This operat
 ```python
 import thousandeyes_sdk.administrative
 from thousandeyes_sdk.administrative.models.account_group_detail import AccountGroupDetail
-from thousandeyes_sdk.administrative.models.expand import Expand
+from thousandeyes_sdk.administrative.models.expand_account_group_options import ExpandAccountGroupOptions
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -219,7 +219,7 @@ with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
     id = '1234' # str | Identifier for the account group.
-    expand = [thousandeyes_sdk.administrative.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()] # List[ExpandAccountGroupOptions] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Retrieve account group
@@ -238,7 +238,7 @@ with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Identifier for the account group. | 
- **expand** | [**List[Expand]**](Expand.md)| Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the &#x60;users&#x60; resource, pass the &#x60;?expand&#x3D;user&#x60; query. | [optional] 
+ **expand** | [**List[ExpandAccountGroupOptions]**](ExpandAccountGroupOptions.md)| Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the &#x60;users&#x60; resource, pass the &#x60;?expand&#x3D;user&#x60; query. | [optional] 
 
 ### Return type
 
@@ -284,10 +284,10 @@ from thousandeyes_sdk.administrative.models.account_groups import AccountGroups
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -366,14 +366,14 @@ Updates an account group using its ID. You can modify the account group’s name
 import thousandeyes_sdk.administrative
 from thousandeyes_sdk.administrative.models.account_group_detail import AccountGroupDetail
 from thousandeyes_sdk.administrative.models.account_group_request import AccountGroupRequest
-from thousandeyes_sdk.administrative.models.expand import Expand
+from thousandeyes_sdk.administrative.models.expand_account_group_options import ExpandAccountGroupOptions
 from thousandeyes_sdk.administrative.rest import ApiException
 from pprint import pprint
 
-# Defining the host is optional and defaults to https://api.thousandeyes.com
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
 # See configuration.py for a list of all supported configuration parameters.
 configuration = thousandeyes_sdk.core.Configuration(
-    host = "https://api.thousandeyes.com"
+    host = "https://api.thousandeyes.com/v7"
 )
 
 # The client must configure the authentication and authorization parameters
@@ -392,7 +392,7 @@ with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
     id = '1234' # str | Identifier for the account group.
     account_group_request = thousandeyes_sdk.administrative.AccountGroupRequest() # AccountGroupRequest | 
-    expand = [thousandeyes_sdk.administrative.Expand()] # List[Expand] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()] # List[ExpandAccountGroupOptions] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Update account group
@@ -412,7 +412,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Identifier for the account group. | 
  **account_group_request** | [**AccountGroupRequest**](AccountGroupRequest.md)|  | 
- **expand** | [**List[Expand]**](Expand.md)| Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the &#x60;users&#x60; resource, pass the &#x60;?expand&#x3D;user&#x60; query. | [optional] 
+ **expand** | [**List[ExpandAccountGroupOptions]**](ExpandAccountGroupOptions.md)| Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the &#x60;users&#x60; resource, pass the &#x60;?expand&#x3D;user&#x60; query. | [optional] 
 
 ### Return type
 

@@ -7,7 +7,7 @@ on:
 jobs:
   set-package-matrix:
     # This action returns all sub-packages to be published.
-    # It thens exports the variable to matrix, so that the deployment job is run individually for each sub-package
+    # It thens exports the variable to `matrix`, so that the deployment job is run individually for each sub-package
     runs-on: ubuntu-latest
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
@@ -18,7 +18,6 @@ jobs:
           FOLDERS_JSON=$(find . -maxdepth 1 -type d -name "thousandeyes-sdk-*" | cut -c 3- | jq -R -s -c 'split("\n")[:-1]')
           echo "packages=$FOLDERS_JSON" >> "$GITHUB_OUTPUT"
   deployment:
-    if: github.event.pull_request.merged == true
     needs: set-package-matrix
     strategy:
       matrix:
@@ -31,6 +30,10 @@ jobs:
       url: https://pypi.org/p/${{ matrix.package-name }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
+          python-version: '3.11'
+          token: ${{ secrets.CHECKOUT_PAT }}
       - name: Set up Python
         uses: actions/setup-python@v5
         with:

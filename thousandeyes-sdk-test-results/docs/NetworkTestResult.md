@@ -19,9 +19,10 @@ Name | Type | Description | Notes
 **max_latency** | **float** | Maximum RTT for packets sent to destination | [optional] [readonly] 
 **min_latency** | **float** | Minimum RTT for packets sent to destination | [optional] [readonly] 
 **packets_by_second** | **List[List[int]]** | Number of packets sent and received in a second. | [optional] [readonly] 
-**agent** | [**Agent**](Agent.md) |  | [optional] 
+**agent** | [**TestResultAgent**](TestResultAgent.md) |  | [optional] 
 **server_ip** | **str** | IP of target server | [optional] [readonly] 
 **server** | **str** | Target server, including port (if method used is TCP) | [optional] [readonly] 
+**health_score** | **float** | A normalized value (0.0-1.0) representing the network connection health of the test target. Returns negative values as error codes. -1.0 indicates there was insufficient data to calculate the health score. | [optional] 
 **direction** | [**TestDirection**](TestDirection.md) |  | [optional] 
 
 ## Example
