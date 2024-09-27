@@ -111,6 +111,7 @@ class AccountGroupsApi:
             '404': "Error",
             '429': "Error",
             '500': "Error",
+            '501': "error"
         }
         response_data = self.api_client.call_api(
             *_param,
