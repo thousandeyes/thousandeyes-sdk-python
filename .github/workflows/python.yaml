@@ -23,7 +23,27 @@ jobs:
       - name: Install and test modules
         run: |
           pip install pytest
-          for module in $(find . -maxdepth 1 -type d -name "thousandeyes-sdk-*" ! -name "thousandeyes-sdk-core" | cut -c 3-); do
+          pip install coverage
+          
+          # Initialize coverage data file
+          coverage erase
+          
+          for module in $(find . -maxdepth 1 -type d -name "thousandeyes-sdk-*" ! -name "thousandeyes-sdk-core" | cut -c 3-); do            
             pip install -e $module
-            pytest $module
+            coverage run --source=$module -m pytest $module
+            # Move the .coverage file to a unique name
+            mv .coverage .coverage.$module
           done
+          
+          # Combine all .coverage files
+          coverage combine .coverage.*
+          coverage report
+          coverage xml
+
+      - name: Get Coverage
+        uses: orgoro/coverage@v3.2
+        with:
+          coverageFile: ./coverage.xml
+          thresholdAll: 0.4
+          thresholdNew: 0.6
+          token: ${{ secrets.GITHUB_TOKEN }}
