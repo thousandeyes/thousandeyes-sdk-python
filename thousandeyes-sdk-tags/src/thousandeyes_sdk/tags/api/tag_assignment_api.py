@@ -21,6 +21,7 @@ import thousandeyes_sdk.tags.models
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from thousandeyes_sdk.tags.models.bulk_tag_assignment import BulkTagAssignment
 from thousandeyes_sdk.tags.models.bulk_tag_assignments import BulkTagAssignments
 from thousandeyes_sdk.tags.models.tag_assignment import TagAssignment
 
@@ -61,7 +62,7 @@ class TagAssignmentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> BulkTagAssignment:
         """Assign tag to multiple objects
 
         Assigns a tag to one or more objects. This operation has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
@@ -105,7 +106,7 @@ class TagAssignmentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagAssignment",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -142,7 +143,7 @@ class TagAssignmentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[BulkTagAssignment]:
         """Assign tag to multiple objects
 
         Assigns a tag to one or more objects. This operation has cumulative behavior: The tag is assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
@@ -186,7 +187,7 @@ class TagAssignmentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagAssignment",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -267,7 +268,7 @@ class TagAssignmentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagAssignment",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -381,7 +382,7 @@ class TagAssignmentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> BulkTagAssignments:
         """Assign multiple tags to multiple objects
 
         Assigns the specified tags to the specified objects. This operation has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
@@ -422,7 +423,7 @@ class TagAssignmentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagAssignments",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -458,7 +459,7 @@ class TagAssignmentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[BulkTagAssignments]:
         """Assign multiple tags to multiple objects
 
         Assigns the specified tags to the specified objects. This operation has cumulative behavior: The tags are assigned to the specified objects, and the previous assignments persist. No unassignment takes place.
@@ -499,7 +500,7 @@ class TagAssignmentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagAssignments",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -576,7 +577,7 @@ class TagAssignmentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagAssignments",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1008,7 +1009,7 @@ class TagAssignmentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> BulkTagAssignments:
         """Remove multiple tags from multiple objects
 
         Removes the specified tags from one or more objects.
@@ -1049,7 +1050,7 @@ class TagAssignmentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagAssignments",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1085,7 +1086,7 @@ class TagAssignmentApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[BulkTagAssignments]:
         """Remove multiple tags from multiple objects
 
         Removes the specified tags from one or more objects.
@@ -1126,7 +1127,7 @@ class TagAssignmentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagAssignments",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1203,7 +1204,7 @@ class TagAssignmentApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagAssignments",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",

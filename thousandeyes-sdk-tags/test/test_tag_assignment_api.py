@@ -45,6 +45,21 @@ class TestTagAssignmentApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.TagAssignment.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        response_body_json = """
+                {
+                  "assignments" : [ {
+                    "id" : "123",
+                    "type" : "test"
+                  }, {
+                    "id" : "123",
+                    "type" : "test"
+                  } ],
+                  "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.tags.models.BulkTagAssignment.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_assign_tags_models_validation(self) -> None:
         """Test case for assign_tags request and response models"""
@@ -75,6 +90,32 @@ class TestTagAssignmentApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        response_body_json = """
+                {
+                  "tags" : [ {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                  }, {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                  } ]
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_unassign_tag_models_validation(self) -> None:
         """Test case for unassign_tag request and response models"""
@@ -123,6 +164,32 @@ class TestTagAssignmentApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        response_body_json = """
+                {
+                  "tags" : [ {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                  }, {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                  } ]
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
 
 if __name__ == '__main__':

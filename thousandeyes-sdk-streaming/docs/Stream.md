@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **tag_match** | [**List[TagMatch]**](TagMatch.md) | A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics. | [optional] 
 **test_match** | [**List[TestMatch]**](TestMatch.md) | A collection of tests to be included in the data stream. | [optional] 
 **enabled** | **bool** | Flag to enable or disable the stream integration. | [optional] 
+**filters** | [**Filters**](Filters.md) |  | [optional] 
 **exporter_config** | [**ExporterConfig**](ExporterConfig.md) |  | [optional] 
 **type** | [**StreamType**](StreamType.md) |  | [optional] 
 **endpoint_type** | [**EndpointType**](EndpointType.md) |  | [optional] 
