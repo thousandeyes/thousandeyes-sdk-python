@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_tag**
-> create_tag(aid=aid, tag_info=tag_info)
+> TagInfo create_tag(aid=aid, tag_info=tag_info)
 
 Create tag
 
@@ -54,7 +54,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
     try:
         # Create tag
-        api_instance.create_tag(aid=aid, tag_info=tag_info)
+        api_response = api_instance.create_tag(aid=aid, tag_info=tag_info)
+        print("The response of TagsApi->create_tag:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TagsApi->create_tag: %s\n" % e)
 ```
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**TagInfo**](TagInfo.md)
 
 ### Authorization
 
@@ -95,7 +97,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_tags**
-> create_tags(aid=aid, bulk_tag_response=bulk_tag_response)
+> BulkTagResponse create_tags(aid=aid, bulk_tag_response=bulk_tag_response)
 
 Create multiple tags
 
@@ -136,7 +138,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
     try:
         # Create multiple tags
-        api_instance.create_tags(aid=aid, bulk_tag_response=bulk_tag_response)
+        api_response = api_instance.create_tags(aid=aid, bulk_tag_response=bulk_tag_response)
+        print("The response of TagsApi->create_tags:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TagsApi->create_tags: %s\n" % e)
 ```
@@ -153,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**BulkTagResponse**](BulkTagResponse.md)
 
 ### Authorization
 
@@ -258,7 +262,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tag**
-> get_tag(id, aid=aid, expand=expand)
+> Tag get_tag(id, aid=aid, expand=expand)
 
 Retrieve tag
 
@@ -271,6 +275,7 @@ Retrieves a tag using its ID.
 ```python
 import thousandeyes_sdk.tags
 from thousandeyes_sdk.tags.models.expand_tags_options import ExpandTagsOptions
+from thousandeyes_sdk.tags.models.tag import Tag
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
@@ -300,7 +305,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
     try:
         # Retrieve tag
-        api_instance.get_tag(id, aid=aid, expand=expand)
+        api_response = api_instance.get_tag(id, aid=aid, expand=expand)
+        print("The response of TagsApi->get_tag:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TagsApi->get_tag: %s\n" % e)
 ```
@@ -318,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -343,7 +350,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_tags**
-> get_tags(aid=aid, expand=expand)
+> Tags get_tags(aid=aid, expand=expand)
 
 List tags
 
@@ -356,6 +363,7 @@ This operation returns a list of tags in the specified account group (`aid`).
 ```python
 import thousandeyes_sdk.tags
 from thousandeyes_sdk.tags.models.expand_tags_options import ExpandTagsOptions
+from thousandeyes_sdk.tags.models.tags import Tags
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
 
@@ -384,7 +392,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
     try:
         # List tags
-        api_instance.get_tags(aid=aid, expand=expand)
+        api_response = api_instance.get_tags(aid=aid, expand=expand)
+        print("The response of TagsApi->get_tags:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TagsApi->get_tags: %s\n" % e)
 ```
@@ -401,7 +411,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**Tags**](Tags.md)
 
 ### Authorization
 
@@ -426,7 +436,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_tag**
-> update_tag(id, aid=aid, tag_info=tag_info)
+> TagInfo update_tag(id, aid=aid, tag_info=tag_info)
 
 Update tag
 
@@ -468,7 +478,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
     try:
         # Update tag
-        api_instance.update_tag(id, aid=aid, tag_info=tag_info)
+        api_response = api_instance.update_tag(id, aid=aid, tag_info=tag_info)
+        print("The response of TagsApi->update_tag:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TagsApi->update_tag: %s\n" % e)
 ```
@@ -486,7 +498,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**TagInfo**](TagInfo.md)
 
 ### Authorization
 

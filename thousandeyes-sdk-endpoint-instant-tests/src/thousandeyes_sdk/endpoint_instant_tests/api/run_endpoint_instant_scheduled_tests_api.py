@@ -21,6 +21,7 @@ import thousandeyes_sdk.endpoint_instant_tests.models
 from pydantic import Field, StrictStr
 from typing import Optional
 from typing_extensions import Annotated
+from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_run_scheduled_instant_test_result import EndpointRunScheduledInstantTestResult
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
@@ -58,7 +59,7 @@ class RunEndpointInstantScheduledTestsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> EndpointRunScheduledInstantTestResult:
         """Run endpoint instant scheduled test
 
         Runs an existing endpoint instant scheduled test in ThousandEyes.
@@ -99,7 +100,7 @@ class RunEndpointInstantScheduledTestsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "EndpointRunScheduledInstantTestResult",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
@@ -137,7 +138,7 @@ class RunEndpointInstantScheduledTestsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[EndpointRunScheduledInstantTestResult]:
         """Run endpoint instant scheduled test
 
         Runs an existing endpoint instant scheduled test in ThousandEyes.
@@ -178,7 +179,7 @@ class RunEndpointInstantScheduledTestsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "EndpointRunScheduledInstantTestResult",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
@@ -257,7 +258,7 @@ class RunEndpointInstantScheduledTestsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "EndpointRunScheduledInstantTestResult",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",

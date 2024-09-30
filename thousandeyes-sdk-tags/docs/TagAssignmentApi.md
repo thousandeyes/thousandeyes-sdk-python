@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **assign_tag**
-> assign_tag(id, tag_assignment, aid=aid)
+> BulkTagAssignment assign_tag(id, tag_assignment, aid=aid)
 
 Assign tag to multiple objects
 
@@ -23,6 +23,7 @@ Assigns a tag to one or more objects. This operation has cumulative behavior: Th
 
 ```python
 import thousandeyes_sdk.tags
+from thousandeyes_sdk.tags.models.bulk_tag_assignment import BulkTagAssignment
 from thousandeyes_sdk.tags.models.tag_assignment import TagAssignment
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
@@ -53,7 +54,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
     try:
         # Assign tag to multiple objects
-        api_instance.assign_tag(id, tag_assignment, aid=aid)
+        api_response = api_instance.assign_tag(id, tag_assignment, aid=aid)
+        print("The response of TagAssignmentApi->assign_tag:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TagAssignmentApi->assign_tag: %s\n" % e)
 ```
@@ -71,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**BulkTagAssignment**](BulkTagAssignment.md)
 
 ### Authorization
 
@@ -96,7 +99,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **assign_tags**
-> assign_tags(bulk_tag_assignments, aid=aid)
+> BulkTagAssignments assign_tags(bulk_tag_assignments, aid=aid)
 
 Assign multiple tags to multiple objects
 
@@ -137,7 +140,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
     try:
         # Assign multiple tags to multiple objects
-        api_instance.assign_tags(bulk_tag_assignments, aid=aid)
+        api_response = api_instance.assign_tags(bulk_tag_assignments, aid=aid)
+        print("The response of TagAssignmentApi->assign_tags:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TagAssignmentApi->assign_tags: %s\n" % e)
 ```
@@ -154,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**BulkTagAssignments**](BulkTagAssignments.md)
 
 ### Authorization
 
@@ -264,7 +269,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **unassign_tags**
-> unassign_tags(bulk_tag_assignments, aid=aid)
+> BulkTagAssignments unassign_tags(bulk_tag_assignments, aid=aid)
 
 Remove multiple tags from multiple objects
 
@@ -305,7 +310,9 @@ with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
 
     try:
         # Remove multiple tags from multiple objects
-        api_instance.unassign_tags(bulk_tag_assignments, aid=aid)
+        api_response = api_instance.unassign_tags(bulk_tag_assignments, aid=aid)
+        print("The response of TagAssignmentApi->unassign_tags:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling TagAssignmentApi->unassign_tags: %s\n" % e)
 ```
@@ -322,7 +329,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**BulkTagAssignments**](BulkTagAssignments.md)
 
 ### Authorization
 

@@ -11,6 +11,8 @@ docs/DataModelVersion.md
 docs/EndpointType.md
 docs/ExporterConfig.md
 docs/ExporterConfigSplunkHec.md
+docs/Filters.md
+docs/FiltersTestTypes.md
 docs/GetStreamResponse.md
 docs/PutStream.md
 docs/Stream.md
@@ -23,6 +25,7 @@ docs/TagMatch.md
 docs/TagMatchObjectType.md
 docs/TestMatch.md
 docs/TestMatchDomain.md
+docs/TestType.md
 docs/UnauthorizedError.md
 pyproject.toml
 setup.cfg
@@ -40,6 +43,8 @@ src/thousandeyes_sdk/streaming/models/data_model_version.py
 src/thousandeyes_sdk/streaming/models/endpoint_type.py
 src/thousandeyes_sdk/streaming/models/exporter_config.py
 src/thousandeyes_sdk/streaming/models/exporter_config_splunk_hec.py
+src/thousandeyes_sdk/streaming/models/filters.py
+src/thousandeyes_sdk/streaming/models/filters_test_types.py
 src/thousandeyes_sdk/streaming/models/get_stream_response.py
 src/thousandeyes_sdk/streaming/models/put_stream.py
 src/thousandeyes_sdk/streaming/models/stream.py
@@ -51,6 +56,7 @@ src/thousandeyes_sdk/streaming/models/tag_match.py
 src/thousandeyes_sdk/streaming/models/tag_match_object_type.py
 src/thousandeyes_sdk/streaming/models/test_match.py
 src/thousandeyes_sdk/streaming/models/test_match_domain.py
+src/thousandeyes_sdk/streaming/models/test_type.py
 src/thousandeyes_sdk/streaming/models/unauthorized_error.py
 src/thousandeyes_sdk/streaming/py.typed
 test/__init__.py
