@@ -5,7 +5,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**object_type** | [**TagMatchObjectType**](TagMatchObjectType.md) |  | [optional] 
 **key** | **str** | The name of the tag key to match | [optional] 
 **value** | **str** | The value of the tag to match | [optional] 
 

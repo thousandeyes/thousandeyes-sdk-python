@@ -22,6 +22,7 @@ from thousandeyes_sdk.streaming.models.audit_operation import AuditOperation
 from thousandeyes_sdk.streaming.models.data_model_version import DataModelVersion
 from thousandeyes_sdk.streaming.models.endpoint_type import EndpointType
 from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
+from thousandeyes_sdk.streaming.models.filters import Filters
 from thousandeyes_sdk.streaming.models.stream_links import StreamLinks
 from thousandeyes_sdk.streaming.models.stream_type import StreamType
 from thousandeyes_sdk.streaming.models.tag_match import TagMatch
@@ -43,9 +44,10 @@ class CreateStreamResponse(BaseModel):
     custom_headers: Optional[Dict[str, StrictStr]] = Field(default=None, description="Custom headers. **Note**: When using the `splunk-hec` `type`, the `customHeaders` must contain just one element with the key `token` and the value of the *Splunk HEC Token*.", alias="customHeaders")
     tag_match: Optional[List[TagMatch]] = Field(default=None, description="A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics.", alias="tagMatch")
     test_match: Optional[List[TestMatch]] = Field(default=None, description="A collection of tests to be included in the data stream.", alias="testMatch")
+    filters: Optional[Filters] = None
     exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
     audit_operation: Optional[AuditOperation] = Field(default=None, alias="auditOperation")
-    __properties: ClassVar[List[str]] = ["id", "enabled", "_links", "type", "endpointType", "streamEndpointUrl", "dataModelVersion", "customHeaders", "tagMatch", "testMatch", "exporterConfig", "auditOperation"]
+    __properties: ClassVar[List[str]] = ["id", "enabled", "_links", "type", "endpointType", "streamEndpointUrl", "dataModelVersion", "customHeaders", "tagMatch", "testMatch", "filters", "exporterConfig", "auditOperation"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +108,9 @@ class CreateStreamResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['testMatch'] = _items
+        # override the default output from pydantic by calling `to_dict()` of filters
+        if self.filters:
+            _dict['filters'] = self.filters.to_dict()
         # override the default output from pydantic by calling `to_dict()` of exporter_config
         if self.exporter_config:
             _dict['exporterConfig'] = self.exporter_config.to_dict()
@@ -134,6 +139,7 @@ class CreateStreamResponse(BaseModel):
             "customHeaders": obj.get("customHeaders"),
             "tagMatch": [TagMatch.from_dict(_item) for _item in obj["tagMatch"]] if obj.get("tagMatch") is not None else None,
             "testMatch": [TestMatch.from_dict(_item) for _item in obj["testMatch"]] if obj.get("testMatch") is not None else None,
+            "filters": Filters.from_dict(obj["filters"]) if obj.get("filters") is not None else None,
             "exporterConfig": ExporterConfig.from_dict(obj["exporterConfig"]) if obj.get("exporterConfig") is not None else None,
             "auditOperation": AuditOperation.from_dict(obj["auditOperation"]) if obj.get("auditOperation") is not None else None
         })
