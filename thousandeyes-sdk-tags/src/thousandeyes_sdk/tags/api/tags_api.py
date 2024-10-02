@@ -23,7 +23,9 @@ from typing import List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.tags.models.bulk_tag_response import BulkTagResponse
 from thousandeyes_sdk.tags.models.expand_tags_options import ExpandTagsOptions
+from thousandeyes_sdk.tags.models.tag import Tag
 from thousandeyes_sdk.tags.models.tag_info import TagInfo
+from thousandeyes_sdk.tags.models.tags import Tags
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
@@ -61,7 +63,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> TagInfo:
         """Create tag
 
         Creates a new tag.
@@ -102,7 +104,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': None,
+            '201': "TagInfo",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '409': None,
@@ -137,7 +139,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[TagInfo]:
         """Create tag
 
         Creates a new tag.
@@ -178,7 +180,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': None,
+            '201': "TagInfo",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '409': None,
@@ -254,7 +256,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': None,
+            '201': "TagInfo",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '409': None,
@@ -364,7 +366,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> BulkTagResponse:
         """Create multiple tags
 
         Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array.  
@@ -405,7 +407,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagResponse",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '500': "ApiError",
@@ -439,7 +441,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[BulkTagResponse]:
         """Create multiple tags
 
         Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array.  
@@ -480,7 +482,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagResponse",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '500': "ApiError",
@@ -555,7 +557,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '207': None,
+            '207': "BulkTagResponse",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '500': "ApiError",
@@ -958,7 +960,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> Tag:
         """Retrieve tag
 
         Retrieves a tag using its ID.
@@ -1002,7 +1004,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "Tag",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1039,7 +1041,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[Tag]:
         """Retrieve tag
 
         Retrieves a tag using its ID.
@@ -1083,7 +1085,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "Tag",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1164,7 +1166,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "Tag",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1268,7 +1270,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> Tags:
         """List tags
 
         This operation returns a list of tags in the specified account group (`aid`).
@@ -1309,7 +1311,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "Tags",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1345,7 +1347,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[Tags]:
         """List tags
 
         This operation returns a list of tags in the specified account group (`aid`).
@@ -1386,7 +1388,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "Tags",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1463,7 +1465,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "Tags",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1565,7 +1567,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> None:
+    ) -> TagInfo:
         """Update tag
 
         Updates a tag.
@@ -1609,7 +1611,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "TagInfo",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1646,7 +1648,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[None]:
+    ) -> ApiResponse[TagInfo]:
         """Update tag
 
         Updates a tag.
@@ -1690,7 +1692,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "TagInfo",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1771,7 +1773,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': None,
+            '200': "TagInfo",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",

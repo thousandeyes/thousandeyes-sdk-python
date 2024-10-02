@@ -16,26 +16,18 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
-from thousandeyes_sdk.streaming.models.filters import Filters
-from thousandeyes_sdk.streaming.models.tag_match import TagMatch
-from thousandeyes_sdk.streaming.models.test_match import TestMatch
+from thousandeyes_sdk.streaming.models.test_type import TestType
 from typing import Optional, Set
 from typing_extensions import Self
 
-class PutStream(BaseModel):
+class FiltersTestTypes(BaseModel):
     """
-    PutStream
+    Test types that can be used for filtering data points.
     """ # noqa: E501
-    custom_headers: Optional[Dict[str, StrictStr]] = Field(default=None, description="Custom headers. **Note**: When using the `splunk-hec` `type`, the `customHeaders` must contain just one element with the key `token` and the value of the *Splunk HEC Token*.", alias="customHeaders")
-    tag_match: Optional[List[TagMatch]] = Field(default=None, description="A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics.", alias="tagMatch")
-    test_match: Optional[List[TestMatch]] = Field(default=None, description="A collection of tests to be included in the data stream.", alias="testMatch")
-    enabled: Optional[StrictBool] = Field(default=None, description="Flag to enable or disable the stream integration.")
-    filters: Optional[Filters] = None
-    exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
-    __properties: ClassVar[List[str]] = ["customHeaders", "tagMatch", "testMatch", "enabled", "filters", "exporterConfig"]
+    values: Optional[List[TestType]] = Field(default=None, description="A list of test types to filter data points.")
+    __properties: ClassVar[List[str]] = ["values"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -56,7 +48,7 @@ class PutStream(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of PutStream from a JSON string"""
+        """Create an instance of FiltersTestTypes from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -77,31 +69,11 @@ class PutStream(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of each item in tag_match (list)
-        _items = []
-        if self.tag_match:
-            for _item in self.tag_match:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['tagMatch'] = _items
-        # override the default output from pydantic by calling `to_dict()` of each item in test_match (list)
-        _items = []
-        if self.test_match:
-            for _item in self.test_match:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['testMatch'] = _items
-        # override the default output from pydantic by calling `to_dict()` of filters
-        if self.filters:
-            _dict['filters'] = self.filters.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of exporter_config
-        if self.exporter_config:
-            _dict['exporterConfig'] = self.exporter_config.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of PutStream from a dict"""
+        """Create an instance of FiltersTestTypes from a dict"""
         if obj is None:
             return None
 
@@ -109,12 +81,7 @@ class PutStream(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "customHeaders": obj.get("customHeaders"),
-            "tagMatch": [TagMatch.from_dict(_item) for _item in obj["tagMatch"]] if obj.get("tagMatch") is not None else None,
-            "testMatch": [TestMatch.from_dict(_item) for _item in obj["testMatch"]] if obj.get("testMatch") is not None else None,
-            "enabled": obj.get("enabled"),
-            "filters": Filters.from_dict(obj["filters"]) if obj.get("filters") is not None else None,
-            "exporterConfig": ExporterConfig.from_dict(obj["exporterConfig"]) if obj.get("exporterConfig") is not None else None
+            "values": obj.get("values")
         })
         return _obj
 

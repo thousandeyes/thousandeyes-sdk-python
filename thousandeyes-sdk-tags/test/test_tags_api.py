@@ -56,6 +56,31 @@ class TestTagsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.TagInfo.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        response_body_json = """
+                {
+                  "accessType" : "all",
+                  "assignments" : [ {
+                    "id" : "123",
+                    "type" : "test"
+                  }, {
+                    "id" : "123",
+                    "type" : "test"
+                  } ],
+                  "color" : "#FF0000",
+                  "icon" : "icon",
+                  "description" : "To tag assets in San Francisco",
+                  "legacyId" : 0.8008281904610115,
+                  "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                  "aid" : 1234,
+                  "value" : "sfo",
+                  "key" : "branch",
+                  "createDate" : "2022-03-01T23:31:11Z",
+                  "objectType" : "test"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.tags.models.TagInfo.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_create_tags_models_validation(self) -> None:
         """Test case for create_tags request and response models"""
@@ -181,6 +206,127 @@ class TestTagsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.BulkTagResponse.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        response_body_json = """
+                {
+                  "errors" : [ {
+                    "tag" : {
+                      "key" : {
+                        "accessType" : "all",
+                        "assignments" : [ {
+                          "id" : "123",
+                          "type" : "test"
+                        }, {
+                          "id" : "123",
+                          "type" : "test"
+                        } ],
+                        "color" : "#FF0000",
+                        "icon" : "icon",
+                        "description" : "To tag assets in San Francisco",
+                        "legacyId" : 0.8008281904610115,
+                        "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                        "aid" : 1234,
+                        "value" : "sfo",
+                        "key" : "branch",
+                        "createDate" : "2022-03-01T23:31:11Z",
+                        "objectType" : "test"
+                      }
+                    },
+                    "message" : "Object successfully created",
+                    "responseCode" : 200
+                  }, {
+                    "tag" : {
+                      "key" : {
+                        "accessType" : "all",
+                        "assignments" : [ {
+                          "id" : "123",
+                          "type" : "test"
+                        }, {
+                          "id" : "123",
+                          "type" : "test"
+                        } ],
+                        "color" : "#FF0000",
+                        "icon" : "icon",
+                        "description" : "To tag assets in San Francisco",
+                        "legacyId" : 0.8008281904610115,
+                        "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                        "aid" : 1234,
+                        "value" : "sfo",
+                        "key" : "branch",
+                        "createDate" : "2022-03-01T23:31:11Z",
+                        "objectType" : "test"
+                      }
+                    },
+                    "message" : "Object successfully created",
+                    "responseCode" : 200
+                  } ],
+                  "tags" : [ {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
+                  }, {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
+                  } ]
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.tags.models.BulkTagResponse.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_delete_tag_models_validation(self) -> None:
         """Test case for delete_tag request and response models"""
@@ -189,10 +335,129 @@ class TestTagsApi(unittest.TestCase):
     def test_get_tag_models_validation(self) -> None:
         """Test case for get_tag request and response models"""
 
+        response_body_json = """
+                {
+                  "assignments" : [ {
+                    "id" : "123",
+                    "type" : "test"
+                  }, {
+                    "id" : "123",
+                    "type" : "test"
+                  } ],
+                  "color" : "#FF0000",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "icon" : "icon",
+                  "description" : "To tag assets in San Francisco",
+                  "objectType" : "test",
+                  "accessType" : "all",
+                  "legacyId" : 0.8008281904610115,
+                  "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                  "aid" : 1234,
+                  "value" : "sfo",
+                  "key" : "branch",
+                  "createDate" : "2022-03-01T23:31:11Z"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.tags.models.Tag.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_get_tags_models_validation(self) -> None:
         """Test case for get_tags request and response models"""
 
+        response_body_json = """
+                {
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "tags" : [ {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
+                  }, {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
+                  } ]
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.tags.models.Tags.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_update_tag_models_validation(self) -> None:
         """Test case for update_tag request and response models"""
@@ -222,6 +487,31 @@ class TestTagsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.TagInfo.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        response_body_json = """
+                {
+                  "accessType" : "all",
+                  "assignments" : [ {
+                    "id" : "123",
+                    "type" : "test"
+                  }, {
+                    "id" : "123",
+                    "type" : "test"
+                  } ],
+                  "color" : "#FF0000",
+                  "icon" : "icon",
+                  "description" : "To tag assets in San Francisco",
+                  "legacyId" : 0.8008281904610115,
+                  "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                  "aid" : 1234,
+                  "value" : "sfo",
+                  "key" : "branch",
+                  "createDate" : "2022-03-01T23:31:11Z",
+                  "objectType" : "test"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.tags.models.TagInfo.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
 
 if __name__ == '__main__':

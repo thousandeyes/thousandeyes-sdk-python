@@ -23,6 +23,8 @@ from thousandeyes_sdk.streaming.models.data_model_version import DataModelVersio
 from thousandeyes_sdk.streaming.models.endpoint_type import EndpointType
 from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
 from thousandeyes_sdk.streaming.models.exporter_config_splunk_hec import ExporterConfigSplunkHec
+from thousandeyes_sdk.streaming.models.filters import Filters
+from thousandeyes_sdk.streaming.models.filters_test_types import FiltersTestTypes
 from thousandeyes_sdk.streaming.models.get_stream_response import GetStreamResponse
 from thousandeyes_sdk.streaming.models.put_stream import PutStream
 from thousandeyes_sdk.streaming.models.stream import Stream
@@ -34,4 +36,5 @@ from thousandeyes_sdk.streaming.models.tag_match import TagMatch
 from thousandeyes_sdk.streaming.models.tag_match_object_type import TagMatchObjectType
 from thousandeyes_sdk.streaming.models.test_match import TestMatch
 from thousandeyes_sdk.streaming.models.test_match_domain import TestMatchDomain
+from thousandeyes_sdk.streaming.models.test_type import TestType
 from thousandeyes_sdk.streaming.models.unauthorized_error import UnauthorizedError

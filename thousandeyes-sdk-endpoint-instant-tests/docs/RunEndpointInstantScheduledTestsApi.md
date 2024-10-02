@@ -8,7 +8,7 @@ Method | HTTP request | Description
 
 
 # **run_endpoint_scheduled_instant_test**
-> run_endpoint_scheduled_instant_test(test_id, aid=aid)
+> EndpointRunScheduledInstantTestResult run_endpoint_scheduled_instant_test(test_id, aid=aid)
 
 Run endpoint instant scheduled test
 
@@ -20,6 +20,7 @@ Runs an existing endpoint instant scheduled test in ThousandEyes.
 
 ```python
 import thousandeyes_sdk.endpoint_instant_tests
+from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_run_scheduled_instant_test_result import EndpointRunScheduledInstantTestResult
 from thousandeyes_sdk.endpoint_instant_tests.rest import ApiException
 from pprint import pprint
 
@@ -48,7 +49,9 @@ with thousandeyes_sdk.endpoint_instant_tests.ApiClient(configuration) as api_cli
 
     try:
         # Run endpoint instant scheduled test
-        api_instance.run_endpoint_scheduled_instant_test(test_id, aid=aid)
+        api_response = api_instance.run_endpoint_scheduled_instant_test(test_id, aid=aid)
+        print("The response of RunEndpointInstantScheduledTestsApi->run_endpoint_scheduled_instant_test:\n")
+        pprint(api_response)
     except Exception as e:
         print("Exception when calling RunEndpointInstantScheduledTestsApi->run_endpoint_scheduled_instant_test: %s\n" % e)
 ```
@@ -65,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-void (empty response body)
+[**EndpointRunScheduledInstantTestResult**](EndpointRunScheduledInstantTestResult.md)
 
 ### Authorization
 

@@ -31,6 +31,14 @@ class TestRunEndpointInstantScheduledTestsApi(unittest.TestCase):
     def test_run_endpoint_scheduled_instant_test_models_validation(self) -> None:
         """Test case for run_endpoint_scheduled_instant_test request and response models"""
 
+        response_body_json = """
+                {
+                  "message" : "Successfully reran the instant scheduled test with testId=765231567"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.endpoint_instant_tests.models.EndpointRunScheduledInstantTestResult.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
 
 if __name__ == '__main__':
