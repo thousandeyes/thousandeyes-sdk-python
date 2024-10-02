@@ -937,7 +937,6 @@ class AccountGroupsApi:
     @validate_call
     def get_account_groups(
         self,
-        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -955,8 +954,6 @@ class AccountGroupsApi:
 
         Retrieves a list of account groups available to the current user.
 
-        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
-        :type aid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -980,7 +977,6 @@ class AccountGroupsApi:
         """ # noqa: E501
 
         _param = self._get_account_groups_serialize(
-            aid=aid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1011,7 +1007,6 @@ class AccountGroupsApi:
     @validate_call
     def get_account_groups_with_http_info(
         self,
-        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1029,8 +1024,6 @@ class AccountGroupsApi:
 
         Retrieves a list of account groups available to the current user.
 
-        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
-        :type aid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1054,7 +1047,6 @@ class AccountGroupsApi:
         """ # noqa: E501
 
         _param = self._get_account_groups_serialize(
-            aid=aid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1085,7 +1077,6 @@ class AccountGroupsApi:
     @validate_call
     def get_account_groups_without_preload_content(
         self,
-        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1103,8 +1094,6 @@ class AccountGroupsApi:
 
         Retrieves a list of account groups available to the current user.
 
-        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
-        :type aid: str
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -1128,7 +1117,6 @@ class AccountGroupsApi:
         """ # noqa: E501
 
         _param = self._get_account_groups_serialize(
-            aid=aid,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -1153,7 +1141,6 @@ class AccountGroupsApi:
 
     def _get_account_groups_serialize(
         self,
-        aid,
         _request_auth,
         _content_type,
         _headers,
@@ -1174,10 +1161,6 @@ class AccountGroupsApi:
 
         # process the path parameters
         # process the query parameters
-        if aid is not None:
-            
-            _query_params.append(('aid', aid))
-            
         # process the header parameters
         # process the form parameters
         # process the body parameter

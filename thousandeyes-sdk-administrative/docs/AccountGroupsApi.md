@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_account_groups**
-> AccountGroups get_account_groups(aid=aid)
+> AccountGroups get_account_groups()
 
 List account groups
 
@@ -304,11 +304,10 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
-    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
         # List account groups
-        api_response = api_instance.get_account_groups(aid=aid)
+        api_response = api_instance.get_account_groups()
         print("The response of AccountGroupsApi->get_account_groups:\n")
         pprint(api_response)
     except Exception as e:
@@ -319,10 +318,7 @@ with thousandeyes_sdk.administrative.ApiClient(configuration) as api_client:
 
 ### Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+This endpoint does not need any parameter.
 
 ### Return type
 
