@@ -28,6 +28,7 @@ class ThirdPartyIntegrationType(str, Enum):
     PAGER_MINUS_DUTY = 'pager-duty'
     SLACK = 'slack'
     APP_MINUS_DYNAMICS = 'app-dynamics'
+    SERVICE_MINUS_NOW = 'service-now'
     UNKNOWN = 'unknown'
 
     @classmethod

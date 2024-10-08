@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_alerts**
-> Alerts get_alerts(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, state=state)
+> Alerts get_alerts(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, state=state)
 
 List active alerts
 
@@ -135,11 +135,12 @@ with thousandeyes_sdk.alerts.ApiClient(configuration) as api_client:
     start_date = '2022-07-17T22:00:54Z' # datetime | Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     max = 5 # int | (Optional) Maximum number of objects to return. (optional)
+    cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
     state = thousandeyes_sdk.alerts.State() # State | Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`. (optional)
 
     try:
         # List active alerts
-        api_response = api_instance.get_alerts(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, state=state)
+        api_response = api_instance.get_alerts(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, state=state)
         print("The response of AlertsApi->get_alerts:\n")
         pprint(api_response)
     except Exception as e:
@@ -158,6 +159,7 @@ Name | Type | Description  | Notes
  **start_date** | **datetime**| Use with the &#x60;endDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **max** | **int**| (Optional) Maximum number of objects to return. | [optional] 
+ **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
  **state** | [**State**](.md)| Optional parameter to match a specific alert state. If not specified, it defaults to &#x60;trigger&#x60;. | [optional] 
 
 ### Return type
