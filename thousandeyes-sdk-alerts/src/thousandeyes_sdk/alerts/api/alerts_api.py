@@ -346,6 +346,7 @@ class AlertsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
         state: Annotated[Optional[Any], Field(description="Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`.")] = None,
         _request_timeout: Union[
             None,
@@ -374,6 +375,8 @@ class AlertsApi:
         :type end_date: datetime
         :param max: (Optional) Maximum number of objects to return.
         :type max: int
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
         :param state: Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`.
         :type state: State
         :param _request_timeout: timeout setting for this request. If one
@@ -404,6 +407,7 @@ class AlertsApi:
             start_date=start_date,
             end_date=end_date,
             max=max,
+            cursor=cursor,
             state=state,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -439,6 +443,7 @@ class AlertsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
         state: Annotated[Optional[Any], Field(description="Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`.")] = None,
         _request_timeout: Union[
             None,
@@ -467,6 +472,8 @@ class AlertsApi:
         :type end_date: datetime
         :param max: (Optional) Maximum number of objects to return.
         :type max: int
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
         :param state: Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`.
         :type state: State
         :param _request_timeout: timeout setting for this request. If one
@@ -497,6 +504,7 @@ class AlertsApi:
             start_date=start_date,
             end_date=end_date,
             max=max,
+            cursor=cursor,
             state=state,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -532,6 +540,7 @@ class AlertsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
         state: Annotated[Optional[Any], Field(description="Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`.")] = None,
         _request_timeout: Union[
             None,
@@ -560,6 +569,8 @@ class AlertsApi:
         :type end_date: datetime
         :param max: (Optional) Maximum number of objects to return.
         :type max: int
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
         :param state: Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`.
         :type state: State
         :param _request_timeout: timeout setting for this request. If one
@@ -590,6 +601,7 @@ class AlertsApi:
             start_date=start_date,
             end_date=end_date,
             max=max,
+            cursor=cursor,
             state=state,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -619,6 +631,7 @@ class AlertsApi:
         start_date,
         end_date,
         max,
+        cursor,
         state,
         _request_auth,
         _content_type,
@@ -677,6 +690,10 @@ class AlertsApi:
         if max is not None:
             
             _query_params.append(('max', max))
+            
+        if cursor is not None:
+            
+            _query_params.append(('cursor', cursor))
             
         if state is not None:
             

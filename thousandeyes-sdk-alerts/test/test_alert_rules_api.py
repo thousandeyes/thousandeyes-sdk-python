@@ -69,12 +69,12 @@ class TestAlertRulesApi(unittest.TestCase):
                     "customWebhook" : [ {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     }, {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     } ]
                   },
@@ -136,12 +136,12 @@ class TestAlertRulesApi(unittest.TestCase):
                     "customWebhook" : [ {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     }, {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     } ]
                   },
@@ -272,12 +272,12 @@ class TestAlertRulesApi(unittest.TestCase):
                     "customWebhook" : [ {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     }, {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     } ]
                   },
@@ -385,12 +385,12 @@ class TestAlertRulesApi(unittest.TestCase):
                     "customWebhook" : [ {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     }, {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     } ]
                   },
@@ -452,12 +452,12 @@ class TestAlertRulesApi(unittest.TestCase):
                     "customWebhook" : [ {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     }, {
                       "integrationType" : "custom-webhook",
                       "integrationName" : "My webhook",
-                      "integrationId" : "cwb-201",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     } ]
                   },
