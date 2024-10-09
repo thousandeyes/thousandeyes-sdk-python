@@ -418,8 +418,6 @@ class ApiClient:
             # convert str to class
             if klass in self.NATIVE_TYPES_MAPPING:
                 klass = self.NATIVE_TYPES_MAPPING[klass]
-            elif klass == 'dict':
-                return data
             else:
                 klass = getattr(models, klass)
 
