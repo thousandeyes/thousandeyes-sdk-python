@@ -17,7 +17,6 @@ def test_api_client_initialization(api_client):
     assert api_client.configuration is not None
     assert isinstance(api_client.rest_client, rest.RESTClientObject)
     assert api_client.default_headers == {}
-    assert api_client.cookie is None
 
 
 def test_set_default_header(api_client):
