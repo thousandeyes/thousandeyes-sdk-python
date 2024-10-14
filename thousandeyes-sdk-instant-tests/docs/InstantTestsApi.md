@@ -40,7 +40,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.instant_tests.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.instant_tests.InstantTestsApi(api_client)
     test_id = '105' # str | Identifier for the instant test you wish to rerun.

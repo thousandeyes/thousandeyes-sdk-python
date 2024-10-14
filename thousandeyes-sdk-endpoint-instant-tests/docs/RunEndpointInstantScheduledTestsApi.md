@@ -41,7 +41,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_instant_tests.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_instant_tests.RunEndpointInstantScheduledTestsApi(api_client)
     test_id = '765231567' # str | ID of the endpoint instant scheduled test to rerun

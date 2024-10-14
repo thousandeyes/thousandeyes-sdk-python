@@ -43,7 +43,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.internet_insights.InternetInsightsCatalogProvidersApi(api_client)
     api_catalog_provider_filter = thousandeyes_sdk.internet_insights.ApiCatalogProviderFilter() # ApiCatalogProviderFilter | 
@@ -131,7 +131,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.internet_insights.InternetInsightsCatalogProvidersApi(api_client)
     provider_id = '85602a0a-54a7-4e97-946e-67492ef1fa26' # str | 
