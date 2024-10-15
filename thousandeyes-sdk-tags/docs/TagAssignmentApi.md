@@ -45,7 +45,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
     id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
@@ -132,7 +132,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
     bulk_tag_assignments = thousandeyes_sdk.tags.BulkTagAssignments() # BulkTagAssignments | 
@@ -217,7 +217,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
     id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
@@ -302,7 +302,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.tags.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
     bulk_tag_assignments = thousandeyes_sdk.tags.BulkTagAssignments() # BulkTagAssignments | 

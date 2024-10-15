@@ -46,7 +46,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsFiltersApi(api_client)
     api_context_filter_request = thousandeyes_sdk.dashboards.ApiContextFilterRequest() # ApiContextFilterRequest | Dashboard filter object to be created and saved
@@ -131,7 +131,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsFiltersApi(api_client)
     id = '65bc18e8f2073a4a469cd958' # str | Unique dashboard filter ID.
@@ -215,7 +215,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsFiltersApi(api_client)
     id = '65bc18e8f2073a4a469cd958' # str | Unique dashboard filter ID.
@@ -301,7 +301,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsFiltersApi(api_client)
     search_pattern = 'cea-filter' # str | Optional search pattern parameter to filter list of dashboard filters by either name or description values. (optional)
@@ -388,7 +388,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsFiltersApi(api_client)
     id = '65bc18e8f2073a4a469cd958' # str | Unique dashboard filter ID.

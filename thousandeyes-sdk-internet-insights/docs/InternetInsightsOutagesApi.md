@@ -44,7 +44,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.internet_insights.InternetInsightsOutagesApi(api_client)
     api_outage_filter = thousandeyes_sdk.internet_insights.ApiOutageFilter() # ApiOutageFilter | 
@@ -132,7 +132,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.internet_insights.InternetInsightsOutagesApi(api_client)
     outage_id = 'F73E24F17E4996923196826A208BB572508A8EB13BEE14B0' # str | 
@@ -220,7 +220,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.internet_insights.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.internet_insights.InternetInsightsOutagesApi(api_client)
     outage_id = '694D8656960F34F76489BCE5E9BCD58EC53027462740D75F' # str | 
