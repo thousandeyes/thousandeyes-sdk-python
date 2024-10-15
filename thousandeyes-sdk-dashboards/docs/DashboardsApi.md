@@ -46,7 +46,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsApi(api_client)
     dashboard = thousandeyes_sdk.dashboards.Dashboard() # Dashboard | Request body schema to create a dashboard.
@@ -131,7 +131,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsApi(api_client)
     dashboard_id = '646f4d2ce3c99b0536c3821e' # str | A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.
@@ -215,7 +215,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsApi(api_client)
     dashboard_id = '646f4d2ce3c99b0536c3821e' # str | A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.
@@ -302,7 +302,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsApi(api_client)
     dashboard_id = '646f4d2ce3c99b0536c3821e' # str | A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.
@@ -404,7 +404,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
@@ -488,7 +488,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.dashboards.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsApi(api_client)
     dashboard_id = '646f4d2ce3c99b0536c3821e' # str | A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.

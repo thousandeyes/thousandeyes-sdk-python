@@ -46,7 +46,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.HTTPServerEndpointScheduledTestsApi(api_client)
     endpoint_http_server_test_request = thousandeyes_sdk.endpoint_tests.EndpointHttpServerTestRequest() # EndpointHttpServerTestRequest | 
@@ -133,7 +133,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.HTTPServerEndpointScheduledTestsApi(api_client)
     test_id = '584739201' # str | Unique ID of endpoint test.
@@ -219,7 +219,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.HTTPServerEndpointScheduledTestsApi(api_client)
     test_id = '584739201' # str | Unique ID of endpoint test.
@@ -306,7 +306,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.HTTPServerEndpointScheduledTestsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
@@ -391,7 +391,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 )
 
 # Enter a context with an instance of the API client
-with thousandeyes_sdk.endpoint_tests.ApiClient(configuration) as api_client:
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.HTTPServerEndpointScheduledTestsApi(api_client)
     test_id = '584739201' # str | Unique ID of endpoint test.
