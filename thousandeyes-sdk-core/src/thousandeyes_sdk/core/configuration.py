@@ -38,7 +38,7 @@ class Configuration:
                  ) -> None:
         """Constructor
         """
-        self._base_path = "https://api.thousandeyes.com" if host is None else host
+        self._base_path = "https://api.thousandeyes.com/v7" if host is None else host
         """Default Base url
         """
         self.access_token = access_token
