@@ -32,6 +32,7 @@ from thousandeyes_sdk.streaming.models.filters import Filters
 from thousandeyes_sdk.streaming.models.filters_test_types import FiltersTestTypes
 from thousandeyes_sdk.streaming.models.get_stream_response import GetStreamResponse
 from thousandeyes_sdk.streaming.models.put_stream import PutStream
+from thousandeyes_sdk.streaming.models.signal import Signal
 from thousandeyes_sdk.streaming.models.stream import Stream
 from thousandeyes_sdk.streaming.models.stream_links import StreamLinks
 from thousandeyes_sdk.streaming.models.stream_response import StreamResponse

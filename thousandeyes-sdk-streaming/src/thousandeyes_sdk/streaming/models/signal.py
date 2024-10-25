@@ -17,21 +17,21 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class DataModelVersion(str, Enum):
+class Signal(str, Enum):
     """
-    The version of the data model used in the data stream. When using `v1`:   - The `signal` cannot be `trace`.  Default: `v2`
+    The OpenTelemetry signal of the stream integration. When using `trace`:   - `dataModelVersion` must be `v2`.  Default: `metric`
     """
 
     """
     allowed enum values
     """
-    V1 = 'v1'
-    V2 = 'v2'
+    METRIC = 'metric'
+    TRACE = 'trace'
     UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of DataModelVersion from a JSON string"""
+        """Create an instance of Signal from a JSON string"""
         return cls(json.loads(json_str))
 
     @classmethod

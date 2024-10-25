@@ -22,6 +22,7 @@ from thousandeyes_sdk.streaming.models.data_model_version import DataModelVersio
 from thousandeyes_sdk.streaming.models.endpoint_type import EndpointType
 from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
 from thousandeyes_sdk.streaming.models.filters import Filters
+from thousandeyes_sdk.streaming.models.signal import Signal
 from thousandeyes_sdk.streaming.models.stream_type import StreamType
 from thousandeyes_sdk.streaming.models.tag_match import TagMatch
 from thousandeyes_sdk.streaming.models.test_match import TestMatch
@@ -39,10 +40,11 @@ class Stream(BaseModel):
     filters: Optional[Filters] = None
     exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
     type: Optional[StreamType] = None
+    signal: Optional[Signal] = None
     endpoint_type: Optional[EndpointType] = Field(default=None, alias="endpointType")
     stream_endpoint_url: Optional[StrictStr] = Field(default=None, description="The URL ThousandEyes sends data stream to. For a URL to be valid, it needs to: - Be syntactically correct. - Be reachable. - Use the HTTPS protocol. - When using the `grpc` endpointType, streamEndpointUrl cannot contain paths:     - Valid . `grpc` - `https://example.com`     - Invalid . `grpc` - `https://example.com/collector`.     - Valid . `http` - `https://example.com/collector`.      - When using the `http` endpointType, the operation must match the exact final full URL (including the path if there is one) to which the metrics will be sent. Examples below:     - `https://api.honeycomb.io:443/v1/metrics`     - `https://ingest.eu0.signalfx.com/v2/datapoint/otlp`", alias="streamEndpointUrl")
     data_model_version: Optional[DataModelVersion] = Field(default=None, alias="dataModelVersion")
-    __properties: ClassVar[List[str]] = ["customHeaders", "tagMatch", "testMatch", "enabled", "filters", "exporterConfig", "type", "endpointType", "streamEndpointUrl", "dataModelVersion"]
+    __properties: ClassVar[List[str]] = ["customHeaders", "tagMatch", "testMatch", "enabled", "filters", "exporterConfig", "type", "signal", "endpointType", "streamEndpointUrl", "dataModelVersion"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -123,6 +125,7 @@ class Stream(BaseModel):
             "filters": Filters.from_dict(obj["filters"]) if obj.get("filters") is not None else None,
             "exporterConfig": ExporterConfig.from_dict(obj["exporterConfig"]) if obj.get("exporterConfig") is not None else None,
             "type": obj.get("type"),
+            "signal": obj.get("signal"),
             "endpointType": obj.get("endpointType"),
             "streamEndpointUrl": obj.get("streamEndpointUrl"),
             "dataModelVersion": obj.get("dataModelVersion")

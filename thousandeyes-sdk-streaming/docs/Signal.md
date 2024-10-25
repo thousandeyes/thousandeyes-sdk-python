@@ -1,6 +1,6 @@
-# DataModelVersion
+# Signal
 
-The version of the data model used in the data stream. When using `v1`:   - The `signal` cannot be `trace`.  Default: `v2`
+The OpenTelemetry signal of the stream integration. When using `trace`:   - `dataModelVersion` must be `v2`.  Default: `metric`
 
 ## Properties
 

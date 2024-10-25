@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **filters** | [**Filters**](Filters.md) |  | [optional] 
 **exporter_config** | [**ExporterConfig**](ExporterConfig.md) |  | [optional] 
 **type** | [**StreamType**](StreamType.md) |  | [optional] 
+**signal** | [**Signal**](Signal.md) |  | [optional] 
 **endpoint_type** | [**EndpointType**](EndpointType.md) |  | [optional] 
 **stream_endpoint_url** | **str** | The URL ThousandEyes sends data stream to. For a URL to be valid, it needs to: - Be syntactically correct. - Be reachable. - Use the HTTPS protocol. - When using the &#x60;grpc&#x60; endpointType, streamEndpointUrl cannot contain paths:     - Valid . &#x60;grpc&#x60; - &#x60;https://example.com&#x60;     - Invalid . &#x60;grpc&#x60; - &#x60;https://example.com/collector&#x60;.     - Valid . &#x60;http&#x60; - &#x60;https://example.com/collector&#x60;.      - When using the &#x60;http&#x60; endpointType, the operation must match the exact final full URL (including the path if there is one) to which the metrics will be sent. Examples below:     - &#x60;https://api.honeycomb.io:443/v1/metrics&#x60;     - &#x60;https://ingest.eu0.signalfx.com/v2/datapoint/otlp&#x60; | [optional] 
 **data_model_version** | [**DataModelVersion**](DataModelVersion.md) |  | [optional] 

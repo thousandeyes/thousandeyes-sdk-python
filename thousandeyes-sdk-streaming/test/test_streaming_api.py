@@ -62,6 +62,7 @@ class TestStreamingApi(unittest.TestCase):
                     }
                   },
                   "type" : "opentelemetry",
+                  "signal" : "metric",
                   "dataModelVersion" : "v2",
                   "customHeaders" : {
                     "Authorization" : "*****",
@@ -114,6 +115,7 @@ class TestStreamingApi(unittest.TestCase):
                     "value" : "valueB"
                   } ],
                   "id" : "342ieu09",
+                  "signal" : "metric",
                   "auditOperation" : {
                     "createdDate" : 1679677853573,
                     "createdBy" : 3962
@@ -175,6 +177,7 @@ class TestStreamingApi(unittest.TestCase):
                     "value" : "valueB"
                   } ],
                   "id" : "342ieu09",
+                  "signal" : "metric",
                   "auditOperation" : {
                     "createdDate" : 1679677853573,
                     "updatedBy" : 3962,
@@ -234,6 +237,7 @@ class TestStreamingApi(unittest.TestCase):
                     "value" : "valueB"
                   } ],
                   "id" : "342ieu09",
+                  "signal" : "metric",
                   "auditOperation" : {
                     "createdDate" : 1679677853573,
                     "updatedBy" : 3962,
@@ -283,6 +287,7 @@ class TestStreamingApi(unittest.TestCase):
                     "value" : "valueB"
                   } ],
                   "id" : "342ieu09",
+                  "signal" : "metric",
                   "auditOperation" : {
                     "createdDate" : 1679677853573,
                     "updatedBy" : 3962,
@@ -384,6 +389,7 @@ class TestStreamingApi(unittest.TestCase):
                     "value" : "valueB"
                   } ],
                   "id" : "342ieu09",
+                  "signal" : "metric",
                   "auditOperation" : {
                     "createdDate" : 1679677853573,
                     "updatedBy" : 3962,

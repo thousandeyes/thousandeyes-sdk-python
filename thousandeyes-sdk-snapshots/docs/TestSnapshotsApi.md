@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Create test snapshot
 
-This operation creates a test snapshot based on the properties provided in the POST data.  * To use this endpoint, you need the `Create snapshot shares` permission. * You can create a maximum of 5 snapshots per organization within a 5-minute interval. * Snapshots generated through this operation have a 30-day expiration period. * The time range specified with the `from` and `to` parameters must adhere to one of the following intervals: 1, 2, 4, 6, 12, 24, or 48 hours. * The `endDate` field of the snapshot must be set to the present or a past date.  **Note**: This operation does not support the creation of operation Agent snapshots. 
+This operation creates a test snapshot based on the properties provided in the POST data.  * To use this endpoint, you need the `Create snapshot shares` permission. * You can create a maximum of 5 snapshots per organization within a 5-minute interval. * Snapshots generated through this operation have a 30-day expiration period. * The time range specified with the `from` and `to` parameters must adhere to one of the following intervals: 1, 2, 4, 6, 12, 24, or 48 hours. * The `endDate` field of the snapshot must be set to the present or a past date. * Certain regions may not have public snapshots enabled for compliance reasons. In that case you will get a 403 Forbidden as a response.  **Note**: This operation does not support the creation of operation Agent snapshots. 
 
 ### Example
 
