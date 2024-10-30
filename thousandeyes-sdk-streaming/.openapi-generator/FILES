@@ -15,6 +15,7 @@ docs/Filters.md
 docs/FiltersTestTypes.md
 docs/GetStreamResponse.md
 docs/PutStream.md
+docs/Signal.md
 docs/Stream.md
 docs/StreamLinks.md
 docs/StreamResponse.md
@@ -47,6 +48,7 @@ src/thousandeyes_sdk/streaming/models/filters.py
 src/thousandeyes_sdk/streaming/models/filters_test_types.py
 src/thousandeyes_sdk/streaming/models/get_stream_response.py
 src/thousandeyes_sdk/streaming/models/put_stream.py
+src/thousandeyes_sdk/streaming/models/signal.py
 src/thousandeyes_sdk/streaming/models/stream.py
 src/thousandeyes_sdk/streaming/models/stream_links.py
 src/thousandeyes_sdk/streaming/models/stream_response.py
