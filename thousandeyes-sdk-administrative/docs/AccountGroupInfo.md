@@ -9,7 +9,8 @@ Name | Type | Description | Notes
 **account_group_name** | **str** | Account group name | [optional] 
 **is_current_account_group** | **bool** | Indicates whether the requested aid is the context of the current account. | [optional] 
 **is_default_account_group** | **bool** | Indicates whether the aid is the default one for the requesting user. | [optional] 
-**organization_name** | **str** | (Optional) Indicates whether the aid is the default one for the requesting user. | [optional] 
+**organization_name** | **str** | (Optional) The name of the organization associated with the account group. | [optional] 
+**org_id** | **str** | (Optional) The ID for the organization associated with the account group. | [optional] 
 
 ## Example
 

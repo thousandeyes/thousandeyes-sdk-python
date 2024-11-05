@@ -1,6 +1,6 @@
 # TestMatchDomain
 
-The domain of the test to match.
+The domain of the test to match.  `cea` - Cloud and Enterprise Agent  `endpoint` - Endpoint Agent
 
 ## Properties
 

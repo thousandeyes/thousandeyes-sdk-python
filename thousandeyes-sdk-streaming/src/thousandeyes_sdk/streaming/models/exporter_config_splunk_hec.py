@@ -26,8 +26,8 @@ class ExporterConfigSplunkHec(BaseModel):
     Splunk HEC configuration. This can only be configured when the `type` is `splunk-hec`.
     """ # noqa: E501
     token: Optional[StrictStr] = Field(default=None, description="The Splunk HEC `token`. This is a required field.")
-    source: Optional[StrictStr] = Field(default='ThousandEyesOTel', description="The Splunk HEC `source`. This field is optional. Default: `ThousandEyesOTel`")
-    source_type: Optional[StrictStr] = Field(default='ThousandEyesOTel', description="The Splunk HEC `sourceType`. This field is optional. Default: `ThousandEyesOTel`", alias="sourceType")
+    source: Optional[StrictStr] = Field(default='ThousandEyesOTel', description="The Splunk HEC `source`. This field is optional.")
+    source_type: Optional[StrictStr] = Field(default='ThousandEyesOTel', description="The Splunk HEC `sourceType`. This field is optional.", alias="sourceType")
     index: Optional[StrictStr] = Field(default=None, description="The name of the Splunk HEC index where the event data will be stored.  This field is optional.")
     __properties: ClassVar[List[str]] = ["token", "source", "sourceType", "index"]
 
