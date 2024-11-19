@@ -29,8 +29,9 @@ class AccountGroupInfo(BaseModel):
     account_group_name: Optional[StrictStr] = Field(default=None, description="Account group name", alias="accountGroupName")
     is_current_account_group: Optional[StrictBool] = Field(default=None, description="Indicates whether the requested aid is the context of the current account.", alias="isCurrentAccountGroup")
     is_default_account_group: Optional[StrictBool] = Field(default=None, description="Indicates whether the aid is the default one for the requesting user.", alias="isDefaultAccountGroup")
-    organization_name: Optional[StrictStr] = Field(default=None, description="(Optional) Indicates whether the aid is the default one for the requesting user.", alias="organizationName")
-    __properties: ClassVar[List[str]] = ["aid", "accountGroupName", "isCurrentAccountGroup", "isDefaultAccountGroup", "organizationName"]
+    organization_name: Optional[StrictStr] = Field(default=None, description="(Optional) The name of the organization associated with the account group.", alias="organizationName")
+    org_id: Optional[StrictStr] = Field(default=None, description="(Optional) The ID for the organization associated with the account group.", alias="orgId")
+    __properties: ClassVar[List[str]] = ["aid", "accountGroupName", "isCurrentAccountGroup", "isDefaultAccountGroup", "organizationName", "orgId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,7 +89,8 @@ class AccountGroupInfo(BaseModel):
             "accountGroupName": obj.get("accountGroupName"),
             "isCurrentAccountGroup": obj.get("isCurrentAccountGroup"),
             "isDefaultAccountGroup": obj.get("isDefaultAccountGroup"),
-            "organizationName": obj.get("organizationName")
+            "organizationName": obj.get("organizationName"),
+            "orgId": obj.get("orgId")
         })
         return _obj
 

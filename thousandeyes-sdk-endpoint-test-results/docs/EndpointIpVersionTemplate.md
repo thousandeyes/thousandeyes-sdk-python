@@ -1,6 +1,6 @@
-# EndpointType
+# EndpointIpVersionTemplate
 
-The type of connection used to send data to the endpoint. **Note**: When using the `splunk-hec` 'type', the `EndpointType` must be `http`.
+IP version the test should use for network tests.
 
 ## Properties
 

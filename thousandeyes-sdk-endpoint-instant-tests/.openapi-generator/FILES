@@ -11,6 +11,7 @@ docs/EndpointHttpServerBaseTest.md
 docs/EndpointHttpServerInstantTest.md
 docs/EndpointHttpServerTest.md
 docs/EndpointInstantTest.md
+docs/EndpointIpVersionTemplate.md
 docs/EndpointRunScheduledInstantTestResult.md
 docs/EndpointScheduledTestType.md
 docs/EndpointSpecificAgentsSelectorConfig.md
@@ -48,6 +49,7 @@ src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_http_server_base_tes
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_http_server_instant_test.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_http_server_test.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_instant_test.py
+src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_ip_version_template.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_run_scheduled_instant_test_result.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_scheduled_test_type.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_specific_agents_selector_config.py

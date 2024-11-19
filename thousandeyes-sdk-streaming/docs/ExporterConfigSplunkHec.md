@@ -7,8 +7,8 @@ Splunk HEC configuration. This can only be configured when the `type` is `splunk
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **token** | **str** | The Splunk HEC &#x60;token&#x60;. This is a required field. | [optional] 
-**source** | **str** | The Splunk HEC &#x60;source&#x60;. This field is optional. Default: &#x60;ThousandEyesOTel&#x60; | [optional] [default to 'ThousandEyesOTel']
-**source_type** | **str** | The Splunk HEC &#x60;sourceType&#x60;. This field is optional. Default: &#x60;ThousandEyesOTel&#x60; | [optional] [default to 'ThousandEyesOTel']
+**source** | **str** | The Splunk HEC &#x60;source&#x60;. This field is optional. | [optional] [default to 'ThousandEyesOTel']
+**source_type** | **str** | The Splunk HEC &#x60;sourceType&#x60;. This field is optional. | [optional] [default to 'ThousandEyesOTel']
 **index** | **str** | The name of the Splunk HEC index where the event data will be stored.  This field is optional. | [optional] 
 
 ## Example

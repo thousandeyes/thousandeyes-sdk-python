@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class DataModelVersion(str, Enum):
     """
-    The version of the data model used in the data stream. When using `v1`:   - The `signal` cannot be `trace`.  Default: `v2`
+    The version of the data model used in the data stream. When using `v1`:   - The `signal` cannot be `trace`.
     """
 
     """

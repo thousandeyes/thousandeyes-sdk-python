@@ -23,6 +23,7 @@ docs/EndpointHttpServerTestRequest.md
 docs/EndpointHttpServerTests.md
 docs/EndpointHttpTestUpdate.md
 docs/EndpointInstantTest.md
+docs/EndpointIpVersionTemplate.md
 docs/EndpointNetworkTestUpdate.md
 docs/EndpointScheduledTestType.md
 docs/EndpointScheduledTestsApi.md
@@ -76,6 +77,7 @@ src/thousandeyes_sdk/endpoint_tests/models/endpoint_http_server_test_request.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_http_server_tests.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_http_test_update.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_instant_test.py
+src/thousandeyes_sdk/endpoint_tests/models/endpoint_ip_version_template.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_network_test_update.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_scheduled_test_type.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_specific_agents_selector_config.py

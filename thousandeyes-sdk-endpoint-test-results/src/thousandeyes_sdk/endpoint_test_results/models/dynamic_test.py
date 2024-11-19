@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.endpoint_test_results.models.dynamic_test_links import DynamicTestLinks
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_agent_selector_config import EndpointAgentSelectorConfig
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_ip_version_template import EndpointIpVersionTemplate
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_test_protocol import EndpointTestProtocol
 from thousandeyes_sdk.endpoint_test_results.models.test_interval import TestInterval
 from thousandeyes_sdk.endpoint_test_results.models.test_label import TestLabel
@@ -45,11 +46,12 @@ class DynamicTest(BaseModel):
     modified_date: Optional[datetime] = Field(default=None, description="UTC last modification date (ISO date-time format).", alias="modifiedDate")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
     protocol: Optional[EndpointTestProtocol] = None
+    ip_version: Optional[EndpointIpVersionTemplate] = Field(default=None, alias="ipVersion")
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
     test_id: Optional[StrictStr] = Field(default=None, description="Each test is assigned a unique ID; this is used to access test information and results from other endpoints.", alias="testId")
     test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")
     labels: Optional[List[TestLabel]] = None
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "application", "createdDate", "interval", "isEnabled", "hasPathTraceInSession", "hasPing", "hasTraceroute", "modifiedDate", "networkMeasurements", "protocol", "tcpProbeMode", "testId", "testName", "labels"]
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "application", "createdDate", "interval", "isEnabled", "hasPathTraceInSession", "hasPing", "hasTraceroute", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "tcpProbeMode", "testId", "testName", "labels"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -137,6 +139,7 @@ class DynamicTest(BaseModel):
             "modifiedDate": obj.get("modifiedDate"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
             "protocol": obj.get("protocol"),
+            "ipVersion": obj.get("ipVersion"),
             "tcpProbeMode": obj.get("tcpProbeMode"),
             "testId": obj.get("testId"),
             "testName": obj.get("testName"),
