@@ -20,6 +20,7 @@ docs/EndpointBrowser.md
 docs/EndpointHttpDataPointScore.md
 docs/EndpointHttpServerBaseTest.md
 docs/EndpointHttpServerTest.md
+docs/EndpointIpVersionTemplate.md
 docs/EndpointNetworkTopologyResultRequest.md
 docs/EndpointNetworkTopologyResultRequestFilter.md
 docs/EndpointPathTrace.md
@@ -173,6 +174,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/endpoint_browser.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_http_data_point_score.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_http_server_base_test.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_http_server_test.py
+src/thousandeyes_sdk/endpoint_test_results/models/endpoint_ip_version_template.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_network_topology_result_request.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_network_topology_result_request_filter.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_path_trace.py

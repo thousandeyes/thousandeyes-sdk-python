@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_agent_selector_config import EndpointAgentSelectorConfig
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_ip_version_template import EndpointIpVersionTemplate
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_test_links import EndpointTestLinks
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_test_protocol import EndpointTestProtocol
 from thousandeyes_sdk.endpoint_test_results.models.test_interval import TestInterval
@@ -44,6 +45,7 @@ class EndpointAgentToServerTest(BaseModel):
     modified_date: Optional[datetime] = Field(default=None, description="UTC last modification date (ISO date-time format).", alias="modifiedDate")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
     protocol: Optional[EndpointTestProtocol] = None
+    ip_version: Optional[EndpointIpVersionTemplate] = Field(default=None, alias="ipVersion")
     server: Optional[StrictStr] = Field(default=None, description="Target domain name or IP address.")
     test_id: Optional[StrictStr] = Field(default=None, description="Each test is assigned a unique ID to access test data from other endpoints.", alias="testId")
     test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")
@@ -51,7 +53,7 @@ class EndpointAgentToServerTest(BaseModel):
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
     port: Optional[StrictInt] = Field(default=443, description="Port number.")
     labels: Optional[List[TestLabel]] = None
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "protocol", "server", "testId", "testName", "type", "tcpProbeMode", "port", "labels"]
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "port", "labels"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
@@ -148,6 +150,7 @@ class EndpointAgentToServerTest(BaseModel):
             "modifiedDate": obj.get("modifiedDate"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
             "protocol": obj.get("protocol"),
+            "ipVersion": obj.get("ipVersion"),
             "server": obj.get("server"),
             "testId": obj.get("testId"),
             "testName": obj.get("testName"),
