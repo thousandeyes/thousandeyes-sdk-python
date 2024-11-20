@@ -59,6 +59,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                   "accountGroupName" : "Account A",
                   "isDefaultAccountGroup" : true,
                   "aid" : "1234",
+                  "orgId" : "12345",
                   "users" : [ {
                     "uid" : "235",
                     "lastLogin" : "2022-07-17T22:00:54Z",
@@ -127,6 +128,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                   "isDefaultAccountGroup" : true,
                   "accountToken" : "6j052y4vfgyuhefghue",
                   "aid" : "1234",
+                  "orgId" : "12345",
                   "users" : [ {
                     "uid" : "235",
                     "lastLogin" : "2022-07-17T22:00:54Z",
@@ -345,13 +347,15 @@ class TestAccountGroupsApi(unittest.TestCase):
                     "organizationName" : "organizationName",
                     "accountGroupName" : "Account A",
                     "isDefaultAccountGroup" : true,
-                    "aid" : "1234"
+                    "aid" : "1234",
+                    "orgId" : "12345"
                   }, {
                     "isCurrentAccountGroup" : true,
                     "organizationName" : "organizationName",
                     "accountGroupName" : "Account A",
                     "isDefaultAccountGroup" : true,
-                    "aid" : "1234"
+                    "aid" : "1234",
+                    "orgId" : "12345"
                   } ]
                 }"""
 
@@ -391,6 +395,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                   "isDefaultAccountGroup" : true,
                   "accountToken" : "6j052y4vfgyuhefghue",
                   "aid" : "1234",
+                  "orgId" : "12345",
                   "users" : [ {
                     "uid" : "235",
                     "lastLogin" : "2022-07-17T22:00:54Z",

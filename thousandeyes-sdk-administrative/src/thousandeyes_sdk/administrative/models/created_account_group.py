@@ -31,10 +31,11 @@ class CreatedAccountGroup(BaseModel):
     account_group_name: Optional[StrictStr] = Field(default=None, description="Account group name", alias="accountGroupName")
     is_current_account_group: Optional[StrictBool] = Field(default=None, description="Indicates whether the requested aid is the context of the current account.", alias="isCurrentAccountGroup")
     is_default_account_group: Optional[StrictBool] = Field(default=None, description="Indicates whether the aid is the default one for the requesting user.", alias="isDefaultAccountGroup")
-    organization_name: Optional[StrictStr] = Field(default=None, description="(Optional) Indicates whether the aid is the default one for the requesting user.", alias="organizationName")
+    organization_name: Optional[StrictStr] = Field(default=None, description="(Optional) The name of the organization associated with the account group.", alias="organizationName")
+    org_id: Optional[StrictStr] = Field(default=None, description="(Optional) The ID for the organization associated with the account group.", alias="orgId")
     users: Optional[List[UserAccountGroup]] = None
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["aid", "accountGroupName", "isCurrentAccountGroup", "isDefaultAccountGroup", "organizationName", "users", "_links"]
+    __properties: ClassVar[List[str]] = ["aid", "accountGroupName", "isCurrentAccountGroup", "isDefaultAccountGroup", "organizationName", "orgId", "users", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -103,6 +104,7 @@ class CreatedAccountGroup(BaseModel):
             "isCurrentAccountGroup": obj.get("isCurrentAccountGroup"),
             "isDefaultAccountGroup": obj.get("isDefaultAccountGroup"),
             "organizationName": obj.get("organizationName"),
+            "orgId": obj.get("orgId"),
             "users": [UserAccountGroup.from_dict(_item) for _item in obj["users"]] if obj.get("users") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

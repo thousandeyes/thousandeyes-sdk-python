@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class TestMatchDomain(str, Enum):
     """
-    The domain of the test to match.
+    The domain of the test to match.  `cea` - Cloud and Enterprise Agent  `endpoint` - Endpoint Agent
     """
 
     """
