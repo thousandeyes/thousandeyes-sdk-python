@@ -49,8 +49,9 @@ class DnsSecTestRequest(BaseModel):
     shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="Contains list of account group IDs. Test is shared with the listed account groups (get `aid` from `/account-groups` endpoint)", alias="sharedWithAccounts")
     domain: StrictStr = Field(description="The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record.")
     dns_query_class: Optional[DnsQueryClass] = Field(default=None, alias="dnsQueryClass")
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     agents: List[TestAgentRequest] = Field(description="Contains list of Agent IDs (get `agentId` from `/agents` endpoint).")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "domain", "dnsQueryClass", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "domain", "dnsQueryClass", "randomizedStartTime", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -149,6 +150,7 @@ class DnsSecTestRequest(BaseModel):
             "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "domain": obj.get("domain"),
             "dnsQueryClass": obj.get("dnsQueryClass"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "agents": [TestAgentRequest.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj

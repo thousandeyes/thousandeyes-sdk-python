@@ -51,9 +51,10 @@ class VoiceInstantTestRequest(BaseModel):
     jitter_buffer: Optional[Annotated[int, Field(le=150, strict=True, ge=0)]] = Field(default=40, description="De-jitter buffer size in seconds.", alias="jitterBuffer")
     num_path_traces: Optional[Annotated[int, Field(le=10, strict=True, ge=1)]] = Field(default=3, description="Number of path traces executed by the agent.", alias="numPathTraces")
     port: Optional[Annotated[int, Field(le=65535, strict=True, ge=1024)]] = Field(default=None, description="Port number for the chosen protocol.")
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     target_agent_id: StrictStr = Field(description="Agent ID of the target agent for the test.", alias="targetAgentId")
     agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "codec", "codecId", "dscp", "dscpId", "duration", "jitterBuffer", "numPathTraces", "port", "targetAgentId", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "codec", "codecId", "dscp", "dscpId", "duration", "jitterBuffer", "numPathTraces", "port", "randomizedStartTime", "targetAgentId", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -158,6 +159,7 @@ class VoiceInstantTestRequest(BaseModel):
             "jitterBuffer": obj.get("jitterBuffer") if obj.get("jitterBuffer") is not None else 40,
             "numPathTraces": obj.get("numPathTraces") if obj.get("numPathTraces") is not None else 3,
             "port": obj.get("port"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "targetAgentId": obj.get("targetAgentId"),
             "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })

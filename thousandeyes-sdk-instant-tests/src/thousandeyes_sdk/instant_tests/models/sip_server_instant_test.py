@@ -52,12 +52,13 @@ class SipServerInstantTest(BaseModel):
     options_regex: Optional[StrictStr] = Field(default=None, description="Options regex, this field does not require escaping.", alias="optionsRegex")
     path_trace_mode: Optional[TestPathTraceMode] = Field(default=None, alias="pathTraceMode")
     probe_mode: Optional[TestProbeMode] = Field(default=None, alias="probeMode")
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     register_enabled: Optional[StrictBool] = Field(default=False, description="Set to true to perform SIP registration on the test target with the SIP REGISTER command.", alias="registerEnabled")
     sip_target_time: Optional[Annotated[int, Field(le=5000, strict=True, ge=100)]] = Field(default=None, description="Target time for test completion in milliseconds.", alias="sipTargetTime")
     sip_time_limit: Optional[Annotated[int, Field(le=10, strict=True, ge=5)]] = Field(default=5, description="Time limit in milliseconds.", alias="sipTimeLimit")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "randomizedStartTime", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -167,6 +168,7 @@ class SipServerInstantTest(BaseModel):
             "optionsRegex": obj.get("optionsRegex"),
             "pathTraceMode": obj.get("pathTraceMode"),
             "probeMode": obj.get("probeMode"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "registerEnabled": obj.get("registerEnabled") if obj.get("registerEnabled") is not None else False,
             "sipTargetTime": obj.get("sipTargetTime"),
             "sipTimeLimit": obj.get("sipTimeLimit") if obj.get("sipTimeLimit") is not None else 5,

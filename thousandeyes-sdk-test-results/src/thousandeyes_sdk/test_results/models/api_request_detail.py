@@ -19,6 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from thousandeyes_sdk.test_results.models.api_request_detail_assertion import ApiRequestDetailAssertion
+from thousandeyes_sdk.test_results.models.api_request_step_type import ApiRequestStepType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -39,10 +40,11 @@ class ApiRequestDetail(BaseModel):
     send_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Time to send the request.", alias="sendTime")
     step_number: Optional[StrictInt] = Field(default=None, description="Index of the API step within requests, starting at 1.", alias="stepNumber")
     step_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Total time for an API step, including API call time and processing time.", alias="stepTime")
+    step_type: Optional[ApiRequestStepType] = Field(default=None, alias="stepType")
     url: Optional[StrictStr] = Field(default=None, description="URL of request")
     wait_time: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Total time between when the agent completes sending the HTTP request to the web server and when the agent receives the first byte of the response from the web server.", alias="waitTime")
     assertions: Optional[List[ApiRequestDetailAssertion]] = None
-    __properties: ClassVar[List[str]] = ["apiCallTime", "assertErrorCount", "blockedTime", "connectTime", "completion", "dnsTime", "name", "processingTime", "receiveTime", "responseTime", "sendTime", "stepNumber", "stepTime", "url", "waitTime", "assertions"]
+    __properties: ClassVar[List[str]] = ["apiCallTime", "assertErrorCount", "blockedTime", "connectTime", "completion", "dnsTime", "name", "processingTime", "receiveTime", "responseTime", "sendTime", "stepNumber", "stepTime", "stepType", "url", "waitTime", "assertions"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,6 +118,7 @@ class ApiRequestDetail(BaseModel):
             "sendTime": obj.get("sendTime"),
             "stepNumber": obj.get("stepNumber"),
             "stepTime": obj.get("stepTime"),
+            "stepType": obj.get("stepType"),
             "url": obj.get("url"),
             "waitTime": obj.get("waitTime"),
             "assertions": [ApiRequestDetailAssertion.from_dict(_item) for _item in obj["assertions"]] if obj.get("assertions") is not None else None

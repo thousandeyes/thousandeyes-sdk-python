@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **predefined_variables** | [**List[ApiPredefinedVariable]**](ApiPredefinedVariable.md) |  | [optional] 
 **probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
 **protocol** | [**TestProtocol**](TestProtocol.md) |  | [optional] 
+**randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **requests** | [**List[ApiRequest]**](ApiRequest.md) |  | 
 **ssl_version_id** | [**TestSslVersionId**](TestSslVersionId.md) |  | [optional] 
 **target_time** | **int** | Target time for completion metric, defaults to 50% of time limit specified in seconds. (0 means default behavior) | [optional] 

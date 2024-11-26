@@ -59,6 +59,7 @@ class UnexpandedFtpServerTest(BaseModel):
     path_trace_mode: Optional[TestPathTraceMode] = Field(default=None, alias="pathTraceMode")
     probe_mode: Optional[TestProbeMode] = Field(default=None, alias="probeMode")
     protocol: Optional[TestProtocol] = None
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     request_type: FtpServerRequestType = Field(alias="requestType")
     url: StrictStr = Field(description="Target for the test.")
     use_active_ftp: Optional[StrictBool] = Field(default=False, description="Explicitly set the flag to use active FTP.", alias="useActiveFtp")
@@ -68,7 +69,7 @@ class UnexpandedFtpServerTest(BaseModel):
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
     bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "bandwidthMeasurements", "downloadLimit", "ftpTargetTime", "ftpTimeLimit", "mtuMeasurements", "networkMeasurements", "numPathTraces", "password", "pathTraceMode", "probeMode", "protocol", "requestType", "url", "useActiveFtp", "useExplicitFtps", "username", "fixedPacketRate", "ipv6Policy", "bgpMeasurements", "usePublicBgp"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "bandwidthMeasurements", "downloadLimit", "ftpTargetTime", "ftpTimeLimit", "mtuMeasurements", "networkMeasurements", "numPathTraces", "password", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "requestType", "url", "useActiveFtp", "useExplicitFtps", "username", "fixedPacketRate", "ipv6Policy", "bgpMeasurements", "usePublicBgp"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -166,6 +167,7 @@ class UnexpandedFtpServerTest(BaseModel):
             "pathTraceMode": obj.get("pathTraceMode"),
             "probeMode": obj.get("probeMode"),
             "protocol": obj.get("protocol"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "requestType": obj.get("requestType"),
             "url": obj.get("url"),
             "useActiveFtp": obj.get("useActiveFtp") if obj.get("useActiveFtp") is not None else False,

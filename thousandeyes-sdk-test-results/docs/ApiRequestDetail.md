@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **send_time** | **float** | Time to send the request. | [optional] 
 **step_number** | **int** | Index of the API step within requests, starting at 1. | [optional] 
 **step_time** | **float** | Total time for an API step, including API call time and processing time. | [optional] 
+**step_type** | [**ApiRequestStepType**](ApiRequestStepType.md) |  | [optional] 
 **url** | **str** | URL of request | [optional] 
 **wait_time** | **float** | Total time between when the agent completes sending the HTTP request to the web server and when the agent receives the first byte of the response from the web server. | [optional] 
 **assertions** | [**List[ApiRequestDetailAssertion]**](ApiRequestDetailAssertion.md) |  | [optional] 

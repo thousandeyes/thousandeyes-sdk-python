@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **path_trace_mode** | [**TestPathTraceMode**](TestPathTraceMode.md) |  | [optional] 
 **probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
 **protocol** | [**TestProtocol**](TestProtocol.md) |  | [optional] 
+**randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **recursive_queries** | **bool** | Set true to run query with RD (recursion desired) flag enabled. | [optional] 
 **ipv6_policy** | [**TestIpv6Policy**](TestIpv6Policy.md) |  | [optional] 
 **fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 

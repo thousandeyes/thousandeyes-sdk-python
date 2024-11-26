@@ -62,6 +62,7 @@ Name | Type | Description | Notes
 **allow_geolocation** | **bool** | Set true to use the agent’s geolocation by the web page. | [optional] [default to False]
 **browser_language** | **str** | Set one of the available browser language that you want to use to configure the browser. | [optional] 
 **page_loading_strategy** | [**TestPageLoadingStrategy**](TestPageLoadingStrategy.md) |  | [optional] 
+**randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **http_interval** | [**TestHttpInterval**](TestHttpInterval.md) |  | [optional] 
 **subinterval** | [**TestSubInterval**](TestSubInterval.md) |  | [optional] 
 **bgp_measurements** | **bool** | Set to &#x60;true&#x60; to enable bgp measurements. | [optional] [default to True]

@@ -16,6 +16,7 @@ docs/AgentToServerInstantTestRequest.md
 docs/AgentToServerInstantTestResponse.md
 docs/AgentToServerInstantTestsApi.md
 docs/AgentToServerProperties.md
+docs/ApiClientAuthentication.md
 docs/ApiInstantTest.md
 docs/ApiInstantTestRequest.md
 docs/ApiInstantTestResponse.md
@@ -142,6 +143,7 @@ src/thousandeyes_sdk/instant_tests/models/agent_to_server_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/agent_to_server_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/agent_to_server_instant_test_response.py
 src/thousandeyes_sdk/instant_tests/models/agent_to_server_properties.py
+src/thousandeyes_sdk/instant_tests/models/api_client_authentication.py
 src/thousandeyes_sdk/instant_tests/models/api_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/api_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/api_instant_test_response.py

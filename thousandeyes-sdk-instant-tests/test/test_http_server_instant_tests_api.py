@@ -79,6 +79,7 @@ class TestHTTPServerInstantTestsApi(unittest.TestCase):
                     "ipAddress" : "192.1.1.0"
                   },
                   "labels" : [ "9842", "1283" ],
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "overrideProxyId" : "281474976710706",
@@ -192,6 +193,7 @@ class TestHTTPServerInstantTestsApi(unittest.TestCase):
                     "name" : "Artem label",
                     "isBuiltin" : false
                   } ],
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "sharedWithAccounts" : [ {
                     "name" : "Account name",

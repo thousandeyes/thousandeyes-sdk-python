@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **path_trace_mode** | [**TestPathTraceMode**](TestPathTraceMode.md) |  | [optional] 
 **port** | **int** | Target port. | [optional] [default to 49153]
 **protocol** | [**AgentToAgentTestProtocol**](AgentToAgentTestProtocol.md) |  | [optional] 
+**randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **target_agent_id** | **str** | &#x60;agentId&#x60; of the target agent for the test. | 
 **throughput_measurements** | **bool** | Enable or disable throughput measurements. Throughput measurements cannot be enabled when the source or target of the test is a cloud agent. | [optional] [default to False]
 **throughput_duration** | **int** | The throughput duration. | [optional] [default to 10000]

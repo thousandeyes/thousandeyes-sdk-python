@@ -59,6 +59,7 @@ class AgentToAgentTestRequest(BaseModel):
     path_trace_mode: Optional[TestPathTraceMode] = Field(default=None, alias="pathTraceMode")
     port: Optional[Annotated[int, Field(le=65535, strict=True, ge=1)]] = Field(default=49153, description="Target port.")
     protocol: Optional[AgentToAgentTestProtocol] = None
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     target_agent_id: StrictStr = Field(description="`agentId` of the target agent for the test.", alias="targetAgentId")
     throughput_measurements: Optional[StrictBool] = Field(default=False, description="Enable or disable throughput measurements. Throughput measurements cannot be enabled when the source or target of the test is a cloud agent.", alias="throughputMeasurements")
     throughput_duration: Optional[Annotated[int, Field(le=30000, strict=True, ge=5000)]] = Field(default=10000, description="The throughput duration.", alias="throughputDuration")
@@ -68,7 +69,7 @@ class AgentToAgentTestRequest(BaseModel):
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
     monitors: Optional[List[StrictStr]] = Field(default=None, description="Contains list of BGP monitor IDs (get `monitorId` from `/monitors` endpoint)")
     agents: List[TestAgentRequest] = Field(description="Contains list of Agent IDs (get `agentId` from `/agents` endpoint).")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "direction", "dscp", "dscpId", "mss", "numPathTraces", "pathTraceMode", "port", "protocol", "targetAgentId", "throughputMeasurements", "throughputDuration", "throughputRate", "fixedPacketRate", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "direction", "dscp", "dscpId", "mss", "numPathTraces", "pathTraceMode", "port", "protocol", "randomizedStartTime", "targetAgentId", "throughputMeasurements", "throughputDuration", "throughputRate", "fixedPacketRate", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -175,6 +176,7 @@ class AgentToAgentTestRequest(BaseModel):
             "pathTraceMode": obj.get("pathTraceMode"),
             "port": obj.get("port") if obj.get("port") is not None else 49153,
             "protocol": obj.get("protocol"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "targetAgentId": obj.get("targetAgentId"),
             "throughputMeasurements": obj.get("throughputMeasurements") if obj.get("throughputMeasurements") is not None else False,
             "throughputDuration": obj.get("throughputDuration") if obj.get("throughputDuration") is not None else 10000,

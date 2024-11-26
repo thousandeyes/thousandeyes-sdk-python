@@ -17,6 +17,7 @@ from thousandeyes_sdk.test_results.models.api_detail_test_result import ApiDetai
 from thousandeyes_sdk.test_results.models.api_detail_test_results import ApiDetailTestResults
 from thousandeyes_sdk.test_results.models.api_request_detail import ApiRequestDetail
 from thousandeyes_sdk.test_results.models.api_request_detail_assertion import ApiRequestDetailAssertion
+from thousandeyes_sdk.test_results.models.api_request_step_type import ApiRequestStepType
 from thousandeyes_sdk.test_results.models.api_test_result import ApiTestResult
 from thousandeyes_sdk.test_results.models.api_test_results import ApiTestResults
 from thousandeyes_sdk.test_results.models.app_links import AppLinks

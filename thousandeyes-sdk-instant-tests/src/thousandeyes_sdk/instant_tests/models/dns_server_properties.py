@@ -43,12 +43,13 @@ class DnsServerProperties(BaseModel):
     path_trace_mode: Optional[TestPathTraceMode] = Field(default=None, alias="pathTraceMode")
     probe_mode: Optional[TestProbeMode] = Field(default=None, alias="probeMode")
     protocol: Optional[TestProtocol] = None
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     recursive_queries: Optional[StrictBool] = Field(default=None, description="Set true to run query with RD (recursion desired) flag enabled.", alias="recursiveQueries")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     dns_query_class: Optional[DnsQueryClass] = Field(default=None, alias="dnsQueryClass")
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["bandwidthMeasurements", "dnsServers", "dnsTransportProtocol", "domain", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "recursiveQueries", "ipv6Policy", "fixedPacketRate", "dnsQueryClass", "type"]
+    __properties: ClassVar[List[str]] = ["bandwidthMeasurements", "dnsServers", "dnsTransportProtocol", "domain", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "recursiveQueries", "ipv6Policy", "fixedPacketRate", "dnsQueryClass", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -121,6 +122,7 @@ class DnsServerProperties(BaseModel):
             "pathTraceMode": obj.get("pathTraceMode"),
             "probeMode": obj.get("probeMode"),
             "protocol": obj.get("protocol"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "recursiveQueries": obj.get("recursiveQueries"),
             "ipv6Policy": obj.get("ipv6Policy"),
             "fixedPacketRate": obj.get("fixedPacketRate"),

@@ -53,7 +53,8 @@ class DnsTraceTest(BaseModel):
     dns_transport_protocol: Optional[TestDnsTransportProtocol] = Field(default=None, alias="dnsTransportProtocol")
     domain: StrictStr = Field(description="The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record.")
     dns_query_class: Optional[DnsQueryClass] = Field(default=None, alias="dnsQueryClass")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "dnsTransportProtocol", "domain", "dnsQueryClass"]
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "dnsTransportProtocol", "domain", "dnsQueryClass", "randomizedStartTime"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -170,7 +171,8 @@ class DnsTraceTest(BaseModel):
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None,
             "dnsTransportProtocol": obj.get("dnsTransportProtocol"),
             "domain": obj.get("domain"),
-            "dnsQueryClass": obj.get("dnsQueryClass")
+            "dnsQueryClass": obj.get("dnsQueryClass"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False
         })
         return _obj
 

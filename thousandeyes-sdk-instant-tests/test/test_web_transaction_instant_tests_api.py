@@ -82,6 +82,7 @@ class TestWebTransactionInstantTestsApi(unittest.TestCase):
                     "ipAddress" : "192.1.1.0"
                   },
                   "labels" : [ "9842", "1283" ],
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "emulatedDeviceId" : "2",
                   "sharedWithAccounts" : [ "1234", "12345" ],
@@ -203,6 +204,7 @@ class TestWebTransactionInstantTestsApi(unittest.TestCase):
                     "name" : "Artem label",
                     "isBuiltin" : false
                   } ],
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "emulatedDeviceId" : "2",
                   "sharedWithAccounts" : [ {

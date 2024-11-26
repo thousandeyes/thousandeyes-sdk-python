@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.tests.models.api_client_authentication import ApiClientAuthentication
 from thousandeyes_sdk.tests.models.api_request_assertion import ApiRequestAssertion
 from thousandeyes_sdk.tests.models.api_request_auth_type import ApiRequestAuthType
 from thousandeyes_sdk.tests.models.api_request_header import ApiRequestHeader
@@ -34,16 +35,21 @@ class ApiRequest(BaseModel):
     auth_type: Optional[ApiRequestAuthType] = Field(default=None, alias="authType")
     bearer_token: Optional[StrictStr] = Field(default=None, description="The bearer token if `authType = bearer-token`.", alias="bearerToken")
     body: Optional[StrictStr] = Field(default=None, description="POST/PUT request body. Must be in JSON format.")
+    client_authentication: Optional[ApiClientAuthentication] = Field(default=None, alias="clientAuthentication")
+    client_id: Optional[StrictStr] = Field(default=None, description="The application ID used when `authType` is set to \"oauth2\".", alias="clientId")
+    client_secret: Optional[StrictStr] = Field(default=None, description="The private client secret used when `authType` is set to \"oauth2\".", alias="clientSecret")
     collect_api_response: Optional[StrictBool] = Field(default=True, description="Set to `true` if API response body should be collected and saved. Set to `false` if API response body should not be saved.", alias="collectApiResponse")
     headers: Optional[List[ApiRequestHeader]] = Field(default=None, description="Array of API Request Header objects.")
     method: Optional[ApiRequestMethod] = None
     name: StrictStr = Field(description="API step name, must be unique.")
     password: Optional[StrictStr] = Field(default=None, description="The password if `authType = basic`.")
+    scope: Optional[StrictStr] = Field(default=None, description="Application-specific scope values for the access token when `authType` is \"oauth2\".")
+    token_url: Optional[StrictStr] = Field(default=None, description="The endpoint used to request the access token when `authType` is \"oauth2\".", alias="tokenUrl")
     url: StrictStr = Field(description="Request url. Supports variables in the format `{{variableName}}`.")
     username: Optional[StrictStr] = Field(default=None, description="The username if `authType = basic`.")
     variables: Optional[List[ApiRequestVariable]] = Field(default=None, description="Array of API post request variable objects.")
     wait_time_ms: Optional[StrictInt] = Field(default=None, description="Post request delay before executing the next API requests, in milliseconds.", alias="waitTimeMs")
-    __properties: ClassVar[List[str]] = ["assertions", "authType", "bearerToken", "body", "collectApiResponse", "headers", "method", "name", "password", "url", "username", "variables", "waitTimeMs"]
+    __properties: ClassVar[List[str]] = ["assertions", "authType", "bearerToken", "body", "clientAuthentication", "clientId", "clientSecret", "collectApiResponse", "headers", "method", "name", "password", "scope", "tokenUrl", "url", "username", "variables", "waitTimeMs"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -122,11 +128,16 @@ class ApiRequest(BaseModel):
             "authType": obj.get("authType"),
             "bearerToken": obj.get("bearerToken"),
             "body": obj.get("body"),
+            "clientAuthentication": obj.get("clientAuthentication"),
+            "clientId": obj.get("clientId"),
+            "clientSecret": obj.get("clientSecret"),
             "collectApiResponse": obj.get("collectApiResponse") if obj.get("collectApiResponse") is not None else True,
             "headers": [ApiRequestHeader.from_dict(_item) for _item in obj["headers"]] if obj.get("headers") is not None else None,
             "method": obj.get("method"),
             "name": obj.get("name"),
             "password": obj.get("password"),
+            "scope": obj.get("scope"),
+            "tokenUrl": obj.get("tokenUrl"),
             "url": obj.get("url"),
             "username": obj.get("username"),
             "variables": [ApiRequestVariable.from_dict(_item) for _item in obj["variables"]] if obj.get("variables") is not None else None,

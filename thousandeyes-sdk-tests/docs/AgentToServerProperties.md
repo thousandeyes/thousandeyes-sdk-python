@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **port** | **int** | Target port. | [optional] [default to 49153]
 **probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
 **protocol** | [**TestProtocol**](TestProtocol.md) |  | [optional] 
+**randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **server** | **str** | Target name or IP address. | 
 **dscp** | **str** | DSCP label. | [optional] [readonly] 
 **dscp_id** | [**TestDscpId**](TestDscpId.md) |  | [optional] 

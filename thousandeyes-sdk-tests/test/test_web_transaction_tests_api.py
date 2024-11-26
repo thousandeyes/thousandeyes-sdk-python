@@ -82,6 +82,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                     "ipAddress" : "192.1.1.0"
                   },
                   "labels" : [ "9842", "1283" ],
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",
@@ -211,6 +212,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                     "name" : "Artem label",
                     "isBuiltin" : false
                   } ],
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",
@@ -413,6 +415,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                     "name" : "Artem label",
                     "isBuiltin" : false
                   } ],
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",
@@ -603,6 +606,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                       "agentId" : "2954",
                       "ipAddress" : "192.1.1.0"
                     },
+                    "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
                     "emulatedDeviceId" : "2",
@@ -705,6 +709,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                       "agentId" : "2954",
                       "ipAddress" : "192.1.1.0"
                     },
+                    "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
                     "emulatedDeviceId" : "2",
@@ -830,6 +835,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                     "ipAddress" : "192.1.1.0"
                   },
                   "labels" : [ "9842", "1283" ],
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",
@@ -959,6 +965,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                     "name" : "Artem label",
                     "isBuiltin" : false
                   } ],
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",
