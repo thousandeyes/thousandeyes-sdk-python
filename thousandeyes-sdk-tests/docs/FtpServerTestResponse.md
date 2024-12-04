@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **path_trace_mode** | [**TestPathTraceMode**](TestPathTraceMode.md) |  | [optional] 
 **probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
 **protocol** | [**TestProtocol**](TestProtocol.md) |  | [optional] 
+**randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **request_type** | [**FtpServerRequestType**](FtpServerRequestType.md) |  | 
 **url** | **str** | Target for the test. | 
 **use_active_ftp** | **bool** | Explicitly set the flag to use active FTP. | [optional] [default to False]

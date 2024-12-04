@@ -6,6 +6,7 @@ docs/ApiDetailTestResult.md
 docs/ApiDetailTestResults.md
 docs/ApiRequestDetail.md
 docs/ApiRequestDetailAssertion.md
+docs/ApiRequestStepType.md
 docs/ApiTestResult.md
 docs/ApiTestResults.md
 docs/AppLinks.md
@@ -106,6 +107,7 @@ src/thousandeyes_sdk/test_results/models/api_detail_test_result.py
 src/thousandeyes_sdk/test_results/models/api_detail_test_results.py
 src/thousandeyes_sdk/test_results/models/api_request_detail.py
 src/thousandeyes_sdk/test_results/models/api_request_detail_assertion.py
+src/thousandeyes_sdk/test_results/models/api_request_step_type.py
 src/thousandeyes_sdk/test_results/models/api_test_result.py
 src/thousandeyes_sdk/test_results/models/api_test_results.py
 src/thousandeyes_sdk/test_results/models/app_links.py

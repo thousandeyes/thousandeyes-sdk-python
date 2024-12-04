@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.tests.models.dns_query_class import DnsQueryClass
 from thousandeyes_sdk.tests.models.test_dns_transport_protocol import TestDnsTransportProtocol
@@ -30,8 +30,9 @@ class DnsTraceProperties(BaseModel):
     dns_transport_protocol: Optional[TestDnsTransportProtocol] = Field(default=None, alias="dnsTransportProtocol")
     domain: StrictStr = Field(description="The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record.")
     dns_query_class: Optional[DnsQueryClass] = Field(default=None, alias="dnsQueryClass")
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["dnsTransportProtocol", "domain", "dnsQueryClass", "type"]
+    __properties: ClassVar[List[str]] = ["dnsTransportProtocol", "domain", "dnsQueryClass", "randomizedStartTime", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -90,6 +91,7 @@ class DnsTraceProperties(BaseModel):
             "dnsTransportProtocol": obj.get("dnsTransportProtocol"),
             "domain": obj.get("domain"),
             "dnsQueryClass": obj.get("dnsQueryClass"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "type": obj.get("type")
         })
         return _obj

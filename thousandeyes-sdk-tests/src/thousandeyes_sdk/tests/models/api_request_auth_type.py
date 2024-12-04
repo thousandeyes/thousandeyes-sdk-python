@@ -28,6 +28,7 @@ class ApiRequestAuthType(str, Enum):
     NONE = 'none'
     BASIC = 'basic'
     BEARER_MINUS_TOKEN = 'bearer-token'
+    OAUTH2 = 'oauth2'
     UNKNOWN = 'unknown'
 
     @classmethod

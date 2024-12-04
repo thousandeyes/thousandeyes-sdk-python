@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **jitter_buffer** | **int** | De-jitter buffer size in seconds. | [optional] [default to 40]
 **num_path_traces** | **int** | Number of path traces executed by the agent. | [optional] [default to 3]
 **port** | **int** | Port number for the chosen protocol. | [optional] 
+**randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **target_agent_id** | **str** | Agent ID of the target agent for the test. | 
 
 ## Example

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **notify_on_clear** | **bool** | Send notification when alert clears. | [optional] 
 **is_default** | **bool** | If set to &#x60;true&#x60;, this alert rule becomes the default for its test type and is automatically applied to newly created tests with relevant metrics. Only one default alert rule is allowed per test type. | [optional] 
 **alert_type** | [**AlertType**](AlertType.md) |  | 
+**alert_group_type** | [**AlertGroupType**](AlertGroupType.md) |  | [optional] 
 **minimum_sources** | **int** | The minimum number of agents or monitors that must meet the specified criteria to trigger the alert. | [optional] 
 **minimum_sources_pct** | **int** | The minimum percentage of all assigned agents or monitors that must meet the specified criteria to trigger the alert. | [optional] 
 **rounds_violating_mode** | [**AlertRoundsViolationMode**](AlertRoundsViolationMode.md) |  | [optional] 

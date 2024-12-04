@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **options_regex** | **str** | Options regex, this field does not require escaping. | [optional] 
 **path_trace_mode** | [**TestPathTraceMode**](TestPathTraceMode.md) |  | [optional] 
 **probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
+**randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **register_enabled** | **bool** | Set to true to perform SIP registration on the test target with the SIP REGISTER command. | [optional] [default to False]
 **sip_target_time** | **int** | Target time for test completion in milliseconds. | [optional] 
 **sip_time_limit** | **int** | Time limit in milliseconds. | [optional] [default to 5]

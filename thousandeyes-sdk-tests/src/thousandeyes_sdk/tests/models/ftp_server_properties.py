@@ -42,6 +42,7 @@ class FtpServerProperties(BaseModel):
     path_trace_mode: Optional[TestPathTraceMode] = Field(default=None, alias="pathTraceMode")
     probe_mode: Optional[TestProbeMode] = Field(default=None, alias="probeMode")
     protocol: Optional[TestProtocol] = None
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     request_type: FtpServerRequestType = Field(alias="requestType")
     url: StrictStr = Field(description="Target for the test.")
     use_active_ftp: Optional[StrictBool] = Field(default=False, description="Explicitly set the flag to use active FTP.", alias="useActiveFtp")
@@ -50,7 +51,7 @@ class FtpServerProperties(BaseModel):
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["bandwidthMeasurements", "downloadLimit", "ftpTargetTime", "ftpTimeLimit", "mtuMeasurements", "networkMeasurements", "numPathTraces", "password", "pathTraceMode", "probeMode", "protocol", "requestType", "url", "useActiveFtp", "useExplicitFtps", "username", "fixedPacketRate", "ipv6Policy", "type"]
+    __properties: ClassVar[List[str]] = ["bandwidthMeasurements", "downloadLimit", "ftpTargetTime", "ftpTimeLimit", "mtuMeasurements", "networkMeasurements", "numPathTraces", "password", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "requestType", "url", "useActiveFtp", "useExplicitFtps", "username", "fixedPacketRate", "ipv6Policy", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -117,6 +118,7 @@ class FtpServerProperties(BaseModel):
             "pathTraceMode": obj.get("pathTraceMode"),
             "probeMode": obj.get("probeMode"),
             "protocol": obj.get("protocol"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "requestType": obj.get("requestType"),
             "url": obj.get("url"),
             "useActiveFtp": obj.get("useActiveFtp") if obj.get("useActiveFtp") is not None else False,

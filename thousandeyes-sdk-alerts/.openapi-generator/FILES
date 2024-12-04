@@ -4,6 +4,7 @@ README.md
 docs/Alert.md
 docs/AlertDetail.md
 docs/AlertDirection.md
+docs/AlertGroupType.md
 docs/AlertLinks.md
 docs/AlertMeta.md
 docs/AlertMetricDetail.md
@@ -69,6 +70,7 @@ src/thousandeyes_sdk/alerts/models/__init__.py
 src/thousandeyes_sdk/alerts/models/alert.py
 src/thousandeyes_sdk/alerts/models/alert_detail.py
 src/thousandeyes_sdk/alerts/models/alert_direction.py
+src/thousandeyes_sdk/alerts/models/alert_group_type.py
 src/thousandeyes_sdk/alerts/models/alert_links.py
 src/thousandeyes_sdk/alerts/models/alert_meta.py
 src/thousandeyes_sdk/alerts/models/alert_metric_detail.py

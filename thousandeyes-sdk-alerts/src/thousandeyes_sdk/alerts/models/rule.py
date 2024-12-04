@@ -19,6 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.alerts.models.alert_direction import AlertDirection
+from thousandeyes_sdk.alerts.models.alert_group_type import AlertGroupType
 from thousandeyes_sdk.alerts.models.alert_notification import AlertNotification
 from thousandeyes_sdk.alerts.models.alert_rounds_violation_mode import AlertRoundsViolationMode
 from thousandeyes_sdk.alerts.models.alert_type import AlertType
@@ -39,6 +40,7 @@ class Rule(BaseModel):
     notify_on_clear: Optional[StrictBool] = Field(default=None, description="Send notification when alert clears.", alias="notifyOnClear")
     is_default: Optional[StrictBool] = Field(default=None, description="If set to `true`, this alert rule becomes the default for its test type and is automatically applied to newly created tests with relevant metrics. Only one default alert rule is allowed per test type.", alias="isDefault")
     alert_type: AlertType = Field(alias="alertType")
+    alert_group_type: Optional[AlertGroupType] = Field(default=None, alias="alertGroupType")
     minimum_sources: Optional[StrictInt] = Field(default=None, description="The minimum number of agents or monitors that must meet the specified criteria to trigger the alert.", alias="minimumSources")
     minimum_sources_pct: Optional[StrictInt] = Field(default=None, description="The minimum percentage of all assigned agents or monitors that must meet the specified criteria to trigger the alert.", alias="minimumSourcesPct")
     rounds_violating_mode: Optional[AlertRoundsViolationMode] = Field(default=None, alias="roundsViolatingMode")
@@ -50,7 +52,7 @@ class Rule(BaseModel):
     notifications: Optional[AlertNotification] = None
     test_ids: Optional[List[StrictStr]] = Field(default=None, description="Array of test IDs to link to alert rule (get `testId` from `/tests` endpoint).", alias="testIds")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "notifyOnClear", "isDefault", "alertType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "notifications", "testIds", "_links"]
+    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "notifications", "testIds", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,6 +121,7 @@ class Rule(BaseModel):
             "notifyOnClear": obj.get("notifyOnClear"),
             "isDefault": obj.get("isDefault"),
             "alertType": obj.get("alertType"),
+            "alertGroupType": obj.get("alertGroupType"),
             "minimumSources": obj.get("minimumSources"),
             "minimumSourcesPct": obj.get("minimumSourcesPct"),
             "roundsViolatingMode": obj.get("roundsViolatingMode"),

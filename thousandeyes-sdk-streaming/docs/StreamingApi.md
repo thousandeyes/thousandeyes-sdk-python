@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **409** | An existing item already exists |  -  |
-**412** | Reached limit on number of streams (maximum 1 data stream per account group) |  -  |
+**412** | Reached limit on number of streams (maximum 5 data streams per account group) |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)

@@ -78,6 +78,7 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
                   "port" : 49153,
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ "1234", "12345" ],
@@ -163,6 +164,7 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
                   "port" : 49153,
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ {

@@ -124,6 +124,7 @@ class TestAPITestResultsApi(unittest.TestCase):
                     "endTime" : 1384309800,
                     "requests" : [ {
                       "completion" : 100.0,
+                      "stepType" : "default",
                       "responseTime" : 440.8,
                       "apiCallTime" : 900.9,
                       "processingTime" : 59.9,
@@ -147,6 +148,7 @@ class TestAPITestResultsApi(unittest.TestCase):
                       "waitTime" : 18.1
                     }, {
                       "completion" : 100.0,
+                      "stepType" : "default",
                       "responseTime" : 440.8,
                       "apiCallTime" : 900.9,
                       "processingTime" : 59.9,
@@ -198,6 +200,7 @@ class TestAPITestResultsApi(unittest.TestCase):
                     "endTime" : 1384309800,
                     "requests" : [ {
                       "completion" : 100.0,
+                      "stepType" : "default",
                       "responseTime" : 440.8,
                       "apiCallTime" : 900.9,
                       "processingTime" : 59.9,
@@ -221,6 +224,7 @@ class TestAPITestResultsApi(unittest.TestCase):
                       "waitTime" : 18.1
                     }, {
                       "completion" : 100.0,
+                      "stepType" : "default",
                       "responseTime" : 440.8,
                       "apiCallTime" : 900.9,
                       "processingTime" : 59.9,

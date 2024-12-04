@@ -52,6 +52,7 @@ from thousandeyes_sdk.tests.models.alert_direction import AlertDirection
 from thousandeyes_sdk.tests.models.alert_rounds_violation_mode import AlertRoundsViolationMode
 from thousandeyes_sdk.tests.models.alert_rule import AlertRule
 from thousandeyes_sdk.tests.models.alert_type import AlertType
+from thousandeyes_sdk.tests.models.api_client_authentication import ApiClientAuthentication
 from thousandeyes_sdk.tests.models.api_instant_test import ApiInstantTest
 from thousandeyes_sdk.tests.models.api_predefined_variable import ApiPredefinedVariable
 from thousandeyes_sdk.tests.models.api_properties import ApiProperties

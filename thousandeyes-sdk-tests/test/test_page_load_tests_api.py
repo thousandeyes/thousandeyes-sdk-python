@@ -83,6 +83,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                   },
                   "labels" : [ "9842", "1283" ],
                   "httpInterval" : 120,
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",
@@ -211,6 +212,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                     "isBuiltin" : false
                   } ],
                   "httpInterval" : 120,
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",
@@ -412,6 +414,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                     "isBuiltin" : false
                   } ],
                   "httpInterval" : 120,
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",
@@ -601,6 +604,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                       "ipAddress" : "192.1.1.0"
                     },
                     "httpInterval" : 120,
+                    "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
                     "emulatedDeviceId" : "2",
@@ -703,6 +707,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                       "ipAddress" : "192.1.1.0"
                     },
                     "httpInterval" : 120,
+                    "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
                     "emulatedDeviceId" : "2",
@@ -828,6 +833,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                   },
                   "labels" : [ "9842", "1283" ],
                   "httpInterval" : 120,
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",
@@ -956,6 +962,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                     "isBuiltin" : false
                   } ],
                   "httpInterval" : 120,
+                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "interval" : 60,
                   "emulatedDeviceId" : "2",

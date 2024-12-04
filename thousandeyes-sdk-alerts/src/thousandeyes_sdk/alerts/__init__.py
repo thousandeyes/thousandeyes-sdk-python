@@ -23,6 +23,7 @@ from thousandeyes_sdk.alerts.api.alerts_api import AlertsApi
 from thousandeyes_sdk.alerts.models.alert import Alert
 from thousandeyes_sdk.alerts.models.alert_detail import AlertDetail
 from thousandeyes_sdk.alerts.models.alert_direction import AlertDirection
+from thousandeyes_sdk.alerts.models.alert_group_type import AlertGroupType
 from thousandeyes_sdk.alerts.models.alert_links import AlertLinks
 from thousandeyes_sdk.alerts.models.alert_meta import AlertMeta
 from thousandeyes_sdk.alerts.models.alert_metric_detail import AlertMetricDetail

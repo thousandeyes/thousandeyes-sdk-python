@@ -63,6 +63,7 @@ class SipServerTest(BaseModel):
     options_regex: Optional[StrictStr] = Field(default=None, description="Options regex, this field does not require escaping.", alias="optionsRegex")
     path_trace_mode: Optional[TestPathTraceMode] = Field(default=None, alias="pathTraceMode")
     probe_mode: Optional[TestProbeMode] = Field(default=None, alias="probeMode")
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     register_enabled: Optional[StrictBool] = Field(default=False, description="Set to true to perform SIP registration on the test target with the SIP REGISTER command.", alias="registerEnabled")
     sip_target_time: Optional[Annotated[int, Field(le=5000, strict=True, ge=100)]] = Field(default=None, description="Target time for test completion in milliseconds.", alias="sipTargetTime")
     sip_time_limit: Optional[Annotated[int, Field(le=10, strict=True, ge=5)]] = Field(default=5, description="Time limit in milliseconds.", alias="sipTimeLimit")
@@ -74,7 +75,7 @@ class SipServerTest(BaseModel):
     protocol: Optional[SipTestProtocol] = None
     sip_registrar: Optional[StrictStr] = Field(default=None, description="SIP server to be tested, specified by domain name or IP address.", alias="sipRegistrar")
     user: Optional[StrictStr] = Field(default=None, description="Username for SIP registration, should be unique within a ThousandEyes account group.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "bgpMeasurements", "usePublicBgp", "monitors", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "authUser", "password", "port", "protocol", "sipRegistrar", "user"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "bgpMeasurements", "usePublicBgp", "monitors", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "randomizedStartTime", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "authUser", "password", "port", "protocol", "sipRegistrar", "user"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -207,6 +208,7 @@ class SipServerTest(BaseModel):
             "optionsRegex": obj.get("optionsRegex"),
             "pathTraceMode": obj.get("pathTraceMode"),
             "probeMode": obj.get("probeMode"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "registerEnabled": obj.get("registerEnabled") if obj.get("registerEnabled") is not None else False,
             "sipTargetTime": obj.get("sipTargetTime"),
             "sipTimeLimit": obj.get("sipTimeLimit") if obj.get("sipTimeLimit") is not None else 5,

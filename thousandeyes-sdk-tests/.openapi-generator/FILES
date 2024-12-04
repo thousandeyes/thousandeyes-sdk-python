@@ -24,6 +24,7 @@ docs/AlertDirection.md
 docs/AlertRoundsViolationMode.md
 docs/AlertRule.md
 docs/AlertType.md
+docs/ApiClientAuthentication.md
 docs/ApiInstantTest.md
 docs/ApiPredefinedVariable.md
 docs/ApiProperties.md
@@ -220,6 +221,7 @@ src/thousandeyes_sdk/tests/models/alert_direction.py
 src/thousandeyes_sdk/tests/models/alert_rounds_violation_mode.py
 src/thousandeyes_sdk/tests/models/alert_rule.py
 src/thousandeyes_sdk/tests/models/alert_type.py
+src/thousandeyes_sdk/tests/models/api_client_authentication.py
 src/thousandeyes_sdk/tests/models/api_instant_test.py
 src/thousandeyes_sdk/tests/models/api_predefined_variable.py
 src/thousandeyes_sdk/tests/models/api_properties.py

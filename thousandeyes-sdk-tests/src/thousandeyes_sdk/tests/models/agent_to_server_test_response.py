@@ -65,6 +65,7 @@ class AgentToServerTestResponse(BaseModel):
     port: Optional[Annotated[int, Field(le=65535, strict=True, ge=1)]] = Field(default=49153, description="Target port.")
     probe_mode: Optional[TestProbeMode] = Field(default=None, alias="probeMode")
     protocol: Optional[TestProtocol] = None
+    randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     server: StrictStr = Field(description="Target name or IP address.")
     dscp: Optional[StrictStr] = Field(default=None, description="DSCP label.")
     dscp_id: Optional[TestDscpId] = Field(default=None, alias="dscpId")
@@ -75,7 +76,7 @@ class AgentToServerTestResponse(BaseModel):
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
     monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
     agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "bandwidthMeasurements", "continuousMode", "fixedPacketRate", "mtuMeasurements", "numPathTraces", "pathTraceMode", "port", "probeMode", "protocol", "server", "dscp", "dscpId", "ipv6Policy", "pingPayloadSize", "networkMeasurements", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "bandwidthMeasurements", "continuousMode", "fixedPacketRate", "mtuMeasurements", "numPathTraces", "pathTraceMode", "port", "probeMode", "protocol", "randomizedStartTime", "server", "dscp", "dscpId", "ipv6Policy", "pingPayloadSize", "networkMeasurements", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -217,6 +218,7 @@ class AgentToServerTestResponse(BaseModel):
             "port": obj.get("port") if obj.get("port") is not None else 49153,
             "probeMode": obj.get("probeMode"),
             "protocol": obj.get("protocol"),
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "server": obj.get("server"),
             "dscp": obj.get("dscp"),
             "dscpId": obj.get("dscpId"),
