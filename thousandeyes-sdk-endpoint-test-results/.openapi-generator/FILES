@@ -1,6 +1,7 @@
 .openapi-generator-ignore
 MANIFEST.in
 README.md
+docs/ApplicationMetrics.md
 docs/ApplicationScoreQuality.md
 docs/AsnDetails.md
 docs/ConditionalOperator.md
@@ -47,6 +48,7 @@ docs/EndpointTestsDataThresholdFilter.md
 docs/EndpointTestsDataThresholdFilters.md
 docs/Error.md
 docs/ExpandEndpointHttpServerOptions.md
+docs/ExpandLocalNetworkTopologyOptions.md
 docs/GatewayNetworkPing.md
 docs/HTTPServerEndpointScheduledTestResultsApi.md
 docs/Hop.md
@@ -101,6 +103,7 @@ docs/PathVisEndpointTestResult.md
 docs/PathVisEndpointTestResults.md
 docs/PhysicalMemoryUsedBytes.md
 docs/Platform.md
+docs/ProcessMetrics.md
 docs/RealUserEndpointTest.md
 docs/RealUserEndpointTestBase.md
 docs/RealUserEndpointTestCoordinates.md
@@ -120,6 +123,7 @@ docs/RealUserEndpointTestResultsApi.md
 docs/RealUserEndpointTestResultsRequest.md
 docs/SelfLinks.md
 docs/SortOrder.md
+docs/SystemMetricDetails.md
 docs/SystemMetrics.md
 docs/TargetNetworkPing.md
 docs/TargetProfile.md
@@ -155,6 +159,7 @@ src/thousandeyes_sdk/endpoint_test_results/api/network_dynamic_endpoint_test_res
 src/thousandeyes_sdk/endpoint_test_results/api/network_endpoint_scheduled_test_results_api.py
 src/thousandeyes_sdk/endpoint_test_results/api/real_user_endpoint_test_results_api.py
 src/thousandeyes_sdk/endpoint_test_results/models/__init__.py
+src/thousandeyes_sdk/endpoint_test_results/models/application_metrics.py
 src/thousandeyes_sdk/endpoint_test_results/models/application_score_quality.py
 src/thousandeyes_sdk/endpoint_test_results/models/asn_details.py
 src/thousandeyes_sdk/endpoint_test_results/models/conditional_operator.py
@@ -201,6 +206,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/endpoint_tests_data_threshold_
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_tests_data_threshold_filters.py
 src/thousandeyes_sdk/endpoint_test_results/models/error.py
 src/thousandeyes_sdk/endpoint_test_results/models/expand_endpoint_http_server_options.py
+src/thousandeyes_sdk/endpoint_test_results/models/expand_local_network_topology_options.py
 src/thousandeyes_sdk/endpoint_test_results/models/gateway_network_ping.py
 src/thousandeyes_sdk/endpoint_test_results/models/hop.py
 src/thousandeyes_sdk/endpoint_test_results/models/http_endpoint_test_result.py
@@ -251,6 +257,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/path_vis_endpoint_test_result.
 src/thousandeyes_sdk/endpoint_test_results/models/path_vis_endpoint_test_results.py
 src/thousandeyes_sdk/endpoint_test_results/models/physical_memory_used_bytes.py
 src/thousandeyes_sdk/endpoint_test_results/models/platform.py
+src/thousandeyes_sdk/endpoint_test_results/models/process_metrics.py
 src/thousandeyes_sdk/endpoint_test_results/models/real_user_endpoint_test.py
 src/thousandeyes_sdk/endpoint_test_results/models/real_user_endpoint_test_base.py
 src/thousandeyes_sdk/endpoint_test_results/models/real_user_endpoint_test_coordinates.py
@@ -269,6 +276,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/real_user_endpoint_test_result
 src/thousandeyes_sdk/endpoint_test_results/models/real_user_endpoint_test_results_request.py
 src/thousandeyes_sdk/endpoint_test_results/models/self_links.py
 src/thousandeyes_sdk/endpoint_test_results/models/sort_order.py
+src/thousandeyes_sdk/endpoint_test_results/models/system_metric_details.py
 src/thousandeyes_sdk/endpoint_test_results/models/system_metrics.py
 src/thousandeyes_sdk/endpoint_test_results/models/target_network_ping.py
 src/thousandeyes_sdk/endpoint_test_results/models/target_profile.py
