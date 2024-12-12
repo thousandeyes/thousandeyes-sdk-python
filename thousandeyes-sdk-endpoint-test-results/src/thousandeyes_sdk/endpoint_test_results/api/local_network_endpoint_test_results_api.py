@@ -20,9 +20,10 @@ import thousandeyes_sdk.endpoint_test_results.models
 
 from datetime import datetime
 from pydantic import Field, StrictStr, field_validator
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_network_topology_result_request import EndpointNetworkTopologyResultRequest
+from thousandeyes_sdk.endpoint_test_results.models.expand_local_network_topology_options import ExpandLocalNetworkTopologyOptions
 from thousandeyes_sdk.endpoint_test_results.models.local_network_results import LocalNetworkResults
 from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_detail_results import LocalNetworkTopologyDetailResults
 from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_results import LocalNetworkTopologyResults
@@ -54,6 +55,7 @@ class LocalNetworkEndpointTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandLocalNetworkTopologyOptions]], Field(description="This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.")] = None,
         endpoint_network_topology_result_request: Optional[EndpointNetworkTopologyResultRequest] = None,
         _request_timeout: Union[
             None,
@@ -82,6 +84,8 @@ class LocalNetworkEndpointTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.
+        :type expand: List[ExpandLocalNetworkTopologyOptions]
         :param endpoint_network_topology_result_request:
         :type endpoint_network_topology_result_request: EndpointNetworkTopologyResultRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -112,6 +116,7 @@ class LocalNetworkEndpointTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            expand=expand,
             endpoint_network_topology_result_request=endpoint_network_topology_result_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -149,6 +154,7 @@ class LocalNetworkEndpointTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandLocalNetworkTopologyOptions]], Field(description="This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.")] = None,
         endpoint_network_topology_result_request: Optional[EndpointNetworkTopologyResultRequest] = None,
         _request_timeout: Union[
             None,
@@ -177,6 +183,8 @@ class LocalNetworkEndpointTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.
+        :type expand: List[ExpandLocalNetworkTopologyOptions]
         :param endpoint_network_topology_result_request:
         :type endpoint_network_topology_result_request: EndpointNetworkTopologyResultRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -207,6 +215,7 @@ class LocalNetworkEndpointTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            expand=expand,
             endpoint_network_topology_result_request=endpoint_network_topology_result_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -244,6 +253,7 @@ class LocalNetworkEndpointTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandLocalNetworkTopologyOptions]], Field(description="This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.")] = None,
         endpoint_network_topology_result_request: Optional[EndpointNetworkTopologyResultRequest] = None,
         _request_timeout: Union[
             None,
@@ -272,6 +282,8 @@ class LocalNetworkEndpointTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.
+        :type expand: List[ExpandLocalNetworkTopologyOptions]
         :param endpoint_network_topology_result_request:
         :type endpoint_network_topology_result_request: EndpointNetworkTopologyResultRequest
         :param _request_timeout: timeout setting for this request. If one
@@ -302,6 +314,7 @@ class LocalNetworkEndpointTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            expand=expand,
             endpoint_network_topology_result_request=endpoint_network_topology_result_request,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -333,6 +346,7 @@ class LocalNetworkEndpointTestResultsApi:
         start_date,
         end_date,
         cursor,
+        expand,
         endpoint_network_topology_result_request,
         _request_auth,
         _content_type,
@@ -343,6 +357,7 @@ class LocalNetworkEndpointTestResultsApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'expand': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -391,6 +406,10 @@ class LocalNetworkEndpointTestResultsApi:
         if cursor is not None:
             
             _query_params.append(('cursor', cursor))
+            
+        if expand is not None:
+            
+            _query_params.append(('expand', expand))
             
         # process the header parameters
         # process the form parameters
@@ -732,6 +751,7 @@ class LocalNetworkEndpointTestResultsApi:
         self,
         network_topology_id: Annotated[StrictStr, Field(description="The network topology ID.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        expand: Annotated[Optional[List[ExpandLocalNetworkTopologyOptions]], Field(description="This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -753,6 +773,8 @@ class LocalNetworkEndpointTestResultsApi:
         :type network_topology_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
+        :param expand: This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.
+        :type expand: List[ExpandLocalNetworkTopologyOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -778,6 +800,7 @@ class LocalNetworkEndpointTestResultsApi:
         _param = self._get_local_networks_test_results_topology_serialize(
             network_topology_id=network_topology_id,
             aid=aid,
+            expand=expand,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -810,6 +833,7 @@ class LocalNetworkEndpointTestResultsApi:
         self,
         network_topology_id: Annotated[StrictStr, Field(description="The network topology ID.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        expand: Annotated[Optional[List[ExpandLocalNetworkTopologyOptions]], Field(description="This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -831,6 +855,8 @@ class LocalNetworkEndpointTestResultsApi:
         :type network_topology_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
+        :param expand: This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.
+        :type expand: List[ExpandLocalNetworkTopologyOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -856,6 +882,7 @@ class LocalNetworkEndpointTestResultsApi:
         _param = self._get_local_networks_test_results_topology_serialize(
             network_topology_id=network_topology_id,
             aid=aid,
+            expand=expand,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -888,6 +915,7 @@ class LocalNetworkEndpointTestResultsApi:
         self,
         network_topology_id: Annotated[StrictStr, Field(description="The network topology ID.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        expand: Annotated[Optional[List[ExpandLocalNetworkTopologyOptions]], Field(description="This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -909,6 +937,8 @@ class LocalNetworkEndpointTestResultsApi:
         :type network_topology_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
+        :param expand: This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.
+        :type expand: List[ExpandLocalNetworkTopologyOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -934,6 +964,7 @@ class LocalNetworkEndpointTestResultsApi:
         _param = self._get_local_networks_test_results_topology_serialize(
             network_topology_id=network_topology_id,
             aid=aid,
+            expand=expand,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -960,6 +991,7 @@ class LocalNetworkEndpointTestResultsApi:
         self,
         network_topology_id,
         aid,
+        expand,
         _request_auth,
         _content_type,
         _headers,
@@ -969,6 +1001,7 @@ class LocalNetworkEndpointTestResultsApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'expand': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -985,6 +1018,10 @@ class LocalNetworkEndpointTestResultsApi:
         if aid is not None:
             
             _query_params.append(('aid', aid))
+            
+        if expand is not None:
+            
+            _query_params.append(('expand', expand))
             
         # process the header parameters
         # process the form parameters

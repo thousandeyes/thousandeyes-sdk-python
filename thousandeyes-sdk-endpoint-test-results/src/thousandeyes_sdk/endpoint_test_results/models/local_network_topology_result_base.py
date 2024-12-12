@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.endpoint_test_results.models.network_ping import NetworkPing
 from thousandeyes_sdk.endpoint_test_results.models.network_topology_type import NetworkTopologyType
+from thousandeyes_sdk.endpoint_test_results.models.system_metric_details import SystemMetricDetails
 from thousandeyes_sdk.endpoint_test_results.models.system_metrics import SystemMetrics
 from thousandeyes_sdk.endpoint_test_results.models.tcp_connect import TcpConnect
 from typing import Optional, Set
@@ -41,7 +42,8 @@ class LocalNetworkTopologyResultBase(BaseModel):
     is_icmp_blocked: Optional[StrictBool] = Field(default=None, description="Set to `true` if network target is blocking ICMP echo (ping) queries.", alias="isIcmpBlocked")
     tcp_connect: Optional[TcpConnect] = Field(default=None, alias="tcpConnect")
     system_metrics: Optional[SystemMetrics] = Field(default=None, alias="systemMetrics")
-    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics"]
+    system_metric_details: Optional[SystemMetricDetails] = Field(default=None, alias="systemMetricDetails")
+    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +108,9 @@ class LocalNetworkTopologyResultBase(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of system_metrics
         if self.system_metrics:
             _dict['systemMetrics'] = self.system_metrics.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of system_metric_details
+        if self.system_metric_details:
+            _dict['systemMetricDetails'] = self.system_metric_details.to_dict()
         return _dict
 
     @classmethod
@@ -128,7 +133,8 @@ class LocalNetworkTopologyResultBase(BaseModel):
             "icmpPing": NetworkPing.from_dict(obj["icmpPing"]) if obj.get("icmpPing") is not None else None,
             "isIcmpBlocked": obj.get("isIcmpBlocked"),
             "tcpConnect": TcpConnect.from_dict(obj["tcpConnect"]) if obj.get("tcpConnect") is not None else None,
-            "systemMetrics": SystemMetrics.from_dict(obj["systemMetrics"]) if obj.get("systemMetrics") is not None else None
+            "systemMetrics": SystemMetrics.from_dict(obj["systemMetrics"]) if obj.get("systemMetrics") is not None else None,
+            "systemMetricDetails": SystemMetricDetails.from_dict(obj["systemMetricDetails"]) if obj.get("systemMetricDetails") is not None else None
         })
         return _obj
 

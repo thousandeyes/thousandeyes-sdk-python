@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **filter_local_networks_test_results_topologies**
-> LocalNetworkTopologyResults filter_local_networks_test_results_topologies(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_network_topology_result_request=endpoint_network_topology_result_request)
+> LocalNetworkTopologyResults filter_local_networks_test_results_topologies(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand, endpoint_network_topology_result_request=endpoint_network_topology_result_request)
 
 List endpoint network topologies probes
 
@@ -23,6 +23,7 @@ Returns a list of all endpoint local network topologies probes.  Results from th
 ```python
 import thousandeyes_sdk.endpoint_test_results
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_network_topology_result_request import EndpointNetworkTopologyResultRequest
+from thousandeyes_sdk.endpoint_test_results.models.expand_local_network_topology_options import ExpandLocalNetworkTopologyOptions
 from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_results import LocalNetworkTopologyResults
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
@@ -52,11 +53,12 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     start_date = '2022-07-17T22:00:54Z' # datetime | Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
+    expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()] # List[ExpandLocalNetworkTopologyOptions] | This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query. (optional)
     endpoint_network_topology_result_request = thousandeyes_sdk.endpoint_test_results.EndpointNetworkTopologyResultRequest() # EndpointNetworkTopologyResultRequest |  (optional)
 
     try:
         # List endpoint network topologies probes
-        api_response = api_instance.filter_local_networks_test_results_topologies(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_network_topology_result_request=endpoint_network_topology_result_request)
+        api_response = api_instance.filter_local_networks_test_results_topologies(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand, endpoint_network_topology_result_request=endpoint_network_topology_result_request)
         print("The response of LocalNetworkEndpointTestResultsApi->filter_local_networks_test_results_topologies:\n")
         pprint(api_response)
     except Exception as e:
@@ -75,6 +77,7 @@ Name | Type | Description  | Notes
  **start_date** | **datetime**| Use with the &#x60;endDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
+ **expand** | [**List[ExpandLocalNetworkTopologyOptions]**](ExpandLocalNetworkTopologyOptions.md)| This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as &#x60;systemMetricDetails&#x60;, append  &#x60;?expand&#x3D;system-metric-detail&#x60; to the query. | [optional] 
  **endpoint_network_topology_result_request** | [**EndpointNetworkTopologyResultRequest**](EndpointNetworkTopologyResultRequest.md)|  | [optional] 
 
 ### Return type
@@ -190,7 +193,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_local_networks_test_results_topology**
-> LocalNetworkTopologyDetailResults get_local_networks_test_results_topology(network_topology_id, aid=aid)
+> LocalNetworkTopologyDetailResults get_local_networks_test_results_topology(network_topology_id, aid=aid, expand=expand)
 
 Retrieve endpoint local network topology
 
@@ -202,6 +205,7 @@ Returns detailed data of a local network topology.
 
 ```python
 import thousandeyes_sdk.endpoint_test_results
+from thousandeyes_sdk.endpoint_test_results.models.expand_local_network_topology_options import ExpandLocalNetworkTopologyOptions
 from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_detail_results import LocalNetworkTopologyDetailResults
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
@@ -228,10 +232,11 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.endpoint_test_results.LocalNetworkEndpointTestResultsApi(api_client)
     network_topology_id = '00160:39c518560de9:1491651900:236e6f18' # str | The network topology ID.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+    expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()] # List[ExpandLocalNetworkTopologyOptions] | This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query. (optional)
 
     try:
         # Retrieve endpoint local network topology
-        api_response = api_instance.get_local_networks_test_results_topology(network_topology_id, aid=aid)
+        api_response = api_instance.get_local_networks_test_results_topology(network_topology_id, aid=aid, expand=expand)
         print("The response of LocalNetworkEndpointTestResultsApi->get_local_networks_test_results_topology:\n")
         pprint(api_response)
     except Exception as e:
@@ -247,6 +252,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **network_topology_id** | **str**| The network topology ID. | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+ **expand** | [**List[ExpandLocalNetworkTopologyOptions]**](ExpandLocalNetworkTopologyOptions.md)| This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as &#x60;systemMetricDetails&#x60;, append  &#x60;?expand&#x3D;system-metric-detail&#x60; to the query. | [optional] 
 
 ### Return type
 

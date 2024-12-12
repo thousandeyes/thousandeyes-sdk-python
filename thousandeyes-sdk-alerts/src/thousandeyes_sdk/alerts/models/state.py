@@ -25,7 +25,6 @@ class State(str, Enum):
     """
     allowed enum values
     """
-    ACTIVE = 'active'
     CLEAR = 'clear'
     TRIGGER = 'trigger'
     UNKNOWN = 'unknown'

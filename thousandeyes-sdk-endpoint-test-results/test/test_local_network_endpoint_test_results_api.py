@@ -90,6 +90,82 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       },
                       "endTimeMs" : 1581508867333
                     },
+                    "systemMetricDetails" : {
+                      "topCpuApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      }, {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      } ],
+                      "topMemoryApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      }, {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      } ]
+                    },
                     "isIcmpBlocked" : true,
                     "tcpConnect" : {
                       "rtt" : 77.777,
@@ -135,6 +211,82 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                         "stdDev" : 0.25
                       },
                       "endTimeMs" : 1581508867333
+                    },
+                    "systemMetricDetails" : {
+                      "topCpuApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      }, {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      } ],
+                      "topMemoryApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      }, {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      } ]
                     },
                     "isIcmpBlocked" : true,
                     "tcpConnect" : {
@@ -301,6 +453,82 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       },
                       "endTimeMs" : 1581508867333
                     },
+                    "systemMetricDetails" : {
+                      "topCpuApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      }, {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      } ],
+                      "topMemoryApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      }, {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      } ]
+                    },
                     "icmpTraceroute" : {
                       "destination" : "13.32.22.232",
                       "hops" : [ {
@@ -465,6 +693,82 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                         "stdDev" : 0.25
                       },
                       "endTimeMs" : 1581508867333
+                    },
+                    "systemMetricDetails" : {
+                      "topCpuApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      }, {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      } ],
+                      "topMemoryApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      }, {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        }, {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
+                        } ],
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
+                      } ]
                     },
                     "icmpTraceroute" : {
                       "destination" : "13.32.22.232",

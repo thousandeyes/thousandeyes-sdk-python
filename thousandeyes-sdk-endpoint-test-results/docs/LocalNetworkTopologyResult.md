@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **is_icmp_blocked** | **bool** | Set to &#x60;true&#x60; if network target is blocking ICMP echo (ping) queries. | [optional] [readonly] 
 **tcp_connect** | [**TcpConnect**](TcpConnect.md) |  | [optional] 
 **system_metrics** | [**SystemMetrics**](SystemMetrics.md) |  | [optional] 
+**system_metric_details** | [**SystemMetricDetails**](SystemMetricDetails.md) |  | [optional] 
 **coordinates** | [**RealUserEndpointTestCoordinates**](RealUserEndpointTestCoordinates.md) |  | [optional] 
 **network_profile** | [**NetworkProfile**](NetworkProfile.md) |  | [optional] 
 **icmp_traceroute** | [**Traceroute**](Traceroute.md) |  | [optional] 
