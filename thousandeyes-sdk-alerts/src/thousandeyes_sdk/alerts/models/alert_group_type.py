@@ -25,6 +25,7 @@ class AlertGroupType(str, Enum):
     """
     allowed enum values
     """
+    BGP = 'bgp'
     BROWSER_MINUS_SESSION = 'browser-session'
     CLOUD_MINUS_ENTERPRISE = 'cloud-enterprise'
     ENDPOINT = 'endpoint'
