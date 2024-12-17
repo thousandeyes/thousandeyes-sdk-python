@@ -23,6 +23,7 @@ from thousandeyes_sdk.endpoint_test_results.models.network_ping import NetworkPi
 from thousandeyes_sdk.endpoint_test_results.models.network_profile import NetworkProfile
 from thousandeyes_sdk.endpoint_test_results.models.network_topology_type import NetworkTopologyType
 from thousandeyes_sdk.endpoint_test_results.models.real_user_endpoint_test_coordinates import RealUserEndpointTestCoordinates
+from thousandeyes_sdk.endpoint_test_results.models.system_metric_details import SystemMetricDetails
 from thousandeyes_sdk.endpoint_test_results.models.system_metrics import SystemMetrics
 from thousandeyes_sdk.endpoint_test_results.models.tcp_connect import TcpConnect
 from thousandeyes_sdk.endpoint_test_results.models.traceroute import Traceroute
@@ -44,11 +45,12 @@ class LocalNetworkTopologyResult(BaseModel):
     is_icmp_blocked: Optional[StrictBool] = Field(default=None, description="Set to `true` if network target is blocking ICMP echo (ping) queries.", alias="isIcmpBlocked")
     tcp_connect: Optional[TcpConnect] = Field(default=None, alias="tcpConnect")
     system_metrics: Optional[SystemMetrics] = Field(default=None, alias="systemMetrics")
+    system_metric_details: Optional[SystemMetricDetails] = Field(default=None, alias="systemMetricDetails")
     coordinates: Optional[RealUserEndpointTestCoordinates] = None
     network_profile: Optional[NetworkProfile] = Field(default=None, alias="networkProfile")
     icmp_traceroute: Optional[Traceroute] = Field(default=None, alias="icmpTraceroute")
     icmp_traceroutes: Optional[List[Traceroute]] = Field(default=None, alias="icmpTraceroutes")
-    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "coordinates", "networkProfile", "icmpTraceroute", "icmpTraceroutes"]
+    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails", "coordinates", "networkProfile", "icmpTraceroute", "icmpTraceroutes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -113,6 +115,9 @@ class LocalNetworkTopologyResult(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of system_metrics
         if self.system_metrics:
             _dict['systemMetrics'] = self.system_metrics.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of system_metric_details
+        if self.system_metric_details:
+            _dict['systemMetricDetails'] = self.system_metric_details.to_dict()
         # override the default output from pydantic by calling `to_dict()` of coordinates
         if self.coordinates:
             _dict['coordinates'] = self.coordinates.to_dict()
@@ -152,6 +157,7 @@ class LocalNetworkTopologyResult(BaseModel):
             "isIcmpBlocked": obj.get("isIcmpBlocked"),
             "tcpConnect": TcpConnect.from_dict(obj["tcpConnect"]) if obj.get("tcpConnect") is not None else None,
             "systemMetrics": SystemMetrics.from_dict(obj["systemMetrics"]) if obj.get("systemMetrics") is not None else None,
+            "systemMetricDetails": SystemMetricDetails.from_dict(obj["systemMetricDetails"]) if obj.get("systemMetricDetails") is not None else None,
             "coordinates": RealUserEndpointTestCoordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
             "networkProfile": NetworkProfile.from_dict(obj["networkProfile"]) if obj.get("networkProfile") is not None else None,
             "icmpTraceroute": Traceroute.from_dict(obj["icmpTraceroute"]) if obj.get("icmpTraceroute") is not None else None,

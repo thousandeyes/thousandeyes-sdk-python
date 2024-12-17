@@ -29,7 +29,7 @@ class MultiTestIdNetworkEndpointTestResults(BaseModel):
     MultiTestIdNetworkEndpointTestResults
     """ # noqa: E501
     results: Optional[List[NetworkEndpointTestResult]] = None
-    total_hits: Optional[StrictInt] = Field(default=None, description="Total number of measurements that match the search criteria", alias="totalHits")
+    total_hits: Optional[StrictInt] = Field(default=None, description="Total number of measurements that match the search criteria.", alias="totalHits")
     start_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `startDate` parameter,  the client will also receive the `startDate` field indicating the UTC start date of the data's time range being retrieved  (ISO date-time format).", alias="startDate")
     end_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `endDate` parameter,  the client will also receive the `endDate` field indicating the UTC end date of the data's time range being retrieved  (ISO date-time format).", alias="endDate")
     links: Optional[PaginationNextLink] = Field(default=None, alias="_links")
