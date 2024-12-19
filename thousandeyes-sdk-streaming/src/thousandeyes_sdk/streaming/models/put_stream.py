@@ -30,12 +30,13 @@ class PutStream(BaseModel):
     PutStream
     """ # noqa: E501
     custom_headers: Optional[Dict[str, StrictStr]] = Field(default=None, description="Custom headers. **Note**: When using the `splunk-hec` `type`, the `customHeaders` must contain just one element with the key `token` and the value of the *Splunk HEC Token*.", alias="customHeaders")
+    stream_endpoint_url: Optional[StrictStr] = Field(default=None, description="The URL ThousandEyes sends data stream to. For a URL to be valid, it needs to: - Be syntactically correct. - Be reachable. - Use the HTTPS protocol. - When using the `grpc` endpointType, streamEndpointUrl cannot contain paths:     - Valid . `grpc` - `https://example.com`     - Invalid . `grpc` - `https://example.com/collector`.     - Valid . `http` - `https://example.com/collector`.  - When using the `http` endpointType, the operation must match the exact final full URL (including the path if there is one) to which the data will be sent. Examples below:     - `https://api.honeycomb.io:443/v1/metrics`     - `https://ingest.eu0.signalfx.com/v2/datapoint/otlp`", alias="streamEndpointUrl")
     tag_match: Optional[List[TagMatch]] = Field(default=None, description="A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics.", alias="tagMatch")
     test_match: Optional[List[TestMatch]] = Field(default=None, description="A collection of tests to be included in the data stream.", alias="testMatch")
     enabled: Optional[StrictBool] = Field(default=None, description="Flag to enable or disable the stream integration.")
     filters: Optional[Filters] = None
     exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
-    __properties: ClassVar[List[str]] = ["customHeaders", "tagMatch", "testMatch", "enabled", "filters", "exporterConfig"]
+    __properties: ClassVar[List[str]] = ["customHeaders", "streamEndpointUrl", "tagMatch", "testMatch", "enabled", "filters", "exporterConfig"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,6 +111,7 @@ class PutStream(BaseModel):
 
         _obj = cls.model_validate({
             "customHeaders": obj.get("customHeaders"),
+            "streamEndpointUrl": obj.get("streamEndpointUrl"),
             "tagMatch": [TagMatch.from_dict(_item) for _item in obj["tagMatch"]] if obj.get("tagMatch") is not None else None,
             "testMatch": [TestMatch.from_dict(_item) for _item in obj["testMatch"]] if obj.get("testMatch") is not None else None,
             "enabled": obj.get("enabled"),
