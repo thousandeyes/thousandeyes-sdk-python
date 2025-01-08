@@ -17,23 +17,35 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class AlertGroupType(str, Enum):
+class AlertTestType(str, Enum):
     """
-    Category of alert type based on the application or network layer and source of the test.
+    Valid Alert Types for which to return test links.
     """
 
     """
     allowed enum values
     """
+    API = 'api'
+    AGENT_MINUS_TO_MINUS_AGENT = 'agent-to-agent'
+    AGENT_MINUS_TO_MINUS_SERVER = 'agent-to-server'
     BGP = 'bgp'
-    BROWSER_MINUS_SESSION = 'browser-session'
-    CLOUD_MINUS_ENTERPRISE = 'cloud-enterprise'
-    ENDPOINT = 'endpoint'
+    HTTP_MINUS_SERVER = 'http-server'
+    PAGE_MINUS_LOAD = 'page-load'
+    WEB_MINUS_TRANSACTIONS = 'web-transactions'
+    FTP_MINUS_SERVER = 'ftp-server'
+    DNS_MINUS_TRACE = 'dns-trace'
+    DNS_MINUS_SERVER = 'dns-server'
+    DNSSEC = 'dnssec'
+    SIP_MINUS_SERVER = 'sip-server'
+    VOICE = 'voice'
+    ENDPOINT_MINUS_HTTP_MINUS_SERVER = 'endpoint-http-server'
+    ENDPOINT_MINUS_NETWORK_MINUS_SERVER = 'endpoint-network-server'
+    ENDPOINT_MINUS_PATH_MINUS_TRACE = 'endpoint-path-trace'
     UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of AlertGroupType from a JSON string"""
+        """Create an instance of AlertTestType from a JSON string"""
         return cls(json.loads(json_str))
 
     @classmethod

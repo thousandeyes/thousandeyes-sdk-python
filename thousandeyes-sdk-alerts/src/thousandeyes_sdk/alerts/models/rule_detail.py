@@ -22,11 +22,11 @@ from thousandeyes_sdk.alerts.models.alert_direction import AlertDirection
 from thousandeyes_sdk.alerts.models.alert_group_type import AlertGroupType
 from thousandeyes_sdk.alerts.models.alert_notification import AlertNotification
 from thousandeyes_sdk.alerts.models.alert_rounds_violation_mode import AlertRoundsViolationMode
+from thousandeyes_sdk.alerts.models.alert_simple_test import AlertSimpleTest
 from thousandeyes_sdk.alerts.models.alert_type import AlertType
 from thousandeyes_sdk.alerts.models.self_links import SelfLinks
 from thousandeyes_sdk.alerts.models.sensitivity_level import SensitivityLevel
 from thousandeyes_sdk.alerts.models.severity import Severity
-from thousandeyes_sdk.alerts.models.simple_test import SimpleTest
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -51,7 +51,7 @@ class RuleDetail(BaseModel):
     sensitivity_level: Optional[SensitivityLevel] = Field(default=None, alias="sensitivityLevel")
     severity: Optional[Severity] = None
     notifications: Optional[AlertNotification] = None
-    tests: Optional[List[SimpleTest]] = None
+    tests: Optional[List[AlertSimpleTest]] = None
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
     __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "notifications", "tests", "_links"]
 
@@ -141,7 +141,7 @@ class RuleDetail(BaseModel):
             "sensitivityLevel": obj.get("sensitivityLevel"),
             "severity": obj.get("severity"),
             "notifications": AlertNotification.from_dict(obj["notifications"]) if obj.get("notifications") is not None else None,
-            "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
+            "tests": [AlertSimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj
