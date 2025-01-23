@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **integration_id** | **str** | Integration ID. | [optional] 
 **integration_type** | [**WebhookIntegrationType**](WebhookIntegrationType.md) |  | [optional] 
+**integration_name** | **str** | Name of the integration, configured by the user. | [optional] 
+**target** | **str** | Webhook target URL. | [optional] 
 
 ## Example
 

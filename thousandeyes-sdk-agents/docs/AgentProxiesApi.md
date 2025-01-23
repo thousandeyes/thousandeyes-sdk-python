@@ -4,15 +4,15 @@ All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**get_agents_proxies**](AgentProxiesApi.md#get_agents_proxies) | **GET** /agents/proxies | List agent proxies
+[**get_agents_proxies**](AgentProxiesApi.md#get_agents_proxies) | **GET** /agents/proxies | List Enterprise Agent Proxies
 
 
 # **get_agents_proxies**
 > AgentProxies get_agents_proxies(aid=aid)
 
-List agent proxies
+List Enterprise Agent Proxies
 
-List all agent proxies available under the account group. 
+List all enterprise agent proxies available under the account group. 
 
 ### Example
 
@@ -47,7 +47,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
-        # List agent proxies
+        # List Enterprise Agent Proxies
         api_response = api_instance.get_agents_proxies(aid=aid)
         print("The response of AgentProxiesApi->get_agents_proxies:\n")
         pprint(api_response)
