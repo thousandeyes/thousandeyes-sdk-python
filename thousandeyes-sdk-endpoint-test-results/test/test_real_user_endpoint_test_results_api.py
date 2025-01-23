@@ -380,11 +380,11 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                     "log" : {
                       "browser" : {
                         "name" : "Google Chrome",
-                        "version" : "7.0.34.98"
+                        "version" : "57.0.2987.98"
                       },
                       "creator" : {
                         "name" : "ThousandEyes Endpoint Agent",
-                        "version" : "7.0.34"
+                        "version" : "0.47.0"
                       },
                       "entries" : [ {
                         "pageref" : "page_1",

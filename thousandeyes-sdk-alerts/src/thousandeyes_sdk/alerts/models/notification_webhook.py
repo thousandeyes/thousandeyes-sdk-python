@@ -28,7 +28,9 @@ class NotificationWebhook(BaseModel):
     """ # noqa: E501
     integration_id: Optional[StrictStr] = Field(default=None, description="Integration ID.", alias="integrationId")
     integration_type: Optional[WebhookIntegrationType] = Field(default=None, alias="integrationType")
-    __properties: ClassVar[List[str]] = ["integrationId", "integrationType"]
+    integration_name: Optional[StrictStr] = Field(default=None, description="Name of the integration, configured by the user.", alias="integrationName")
+    target: Optional[StrictStr] = Field(default=None, description="Webhook target URL.")
+    __properties: ClassVar[List[str]] = ["integrationId", "integrationType", "integrationName", "target"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,7 +85,9 @@ class NotificationWebhook(BaseModel):
 
         _obj = cls.model_validate({
             "integrationId": obj.get("integrationId"),
-            "integrationType": obj.get("integrationType")
+            "integrationType": obj.get("integrationType"),
+            "integrationName": obj.get("integrationName"),
+            "target": obj.get("target")
         })
         return _obj
 
