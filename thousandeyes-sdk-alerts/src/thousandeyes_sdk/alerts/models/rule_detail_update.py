@@ -48,9 +48,12 @@ class RuleDetailUpdate(BaseModel):
     include_covered_prefixes: Optional[StrictBool] = Field(default=None, description="Set true to include covered prefixes in the BGP alert rule. Only applicable to BGP alert rules.", alias="includeCoveredPrefixes")
     sensitivity_level: Optional[SensitivityLevel] = Field(default=None, alias="sensitivityLevel")
     severity: Optional[Severity] = None
+    endpoint_agent_ids: Optional[List[StrictStr]] = Field(default=None, description="An array of endpoint agent IDs associated with the rule (get `id` from `/endpoint/agents` API). This is applicable when `alertGroupType` is `browser-session`.", alias="endpointAgentIds")
+    endpoint_label_ids: Optional[List[StrictStr]] = Field(default=None, description="An array of label IDs used to assign specific Endpoint Agents to the test (get `id` from `/endpoint/labels`). This is applicable when `alertGroupType` is `browser-session`.", alias="endpointLabelIds")
+    visited_sites_filter: Optional[List[StrictStr]] = Field(default=None, description="A list of website domains visited during the session. This is applicable when `alertGroupType` is `browser-session`.", alias="visitedSitesFilter")
     notifications: Optional[AlertNotification] = None
     test_ids: Optional[List[StrictStr]] = Field(default=None, description="Array of test IDs to link to alert rule (get `testId` from `/tests` endpoint).", alias="testIds")
-    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "notifications", "testIds"]
+    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "endpointAgentIds", "endpointLabelIds", "visitedSitesFilter", "notifications", "testIds"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -125,6 +128,9 @@ class RuleDetailUpdate(BaseModel):
             "includeCoveredPrefixes": obj.get("includeCoveredPrefixes"),
             "sensitivityLevel": obj.get("sensitivityLevel"),
             "severity": obj.get("severity"),
+            "endpointAgentIds": obj.get("endpointAgentIds"),
+            "endpointLabelIds": obj.get("endpointLabelIds"),
+            "visitedSitesFilter": obj.get("visitedSitesFilter"),
             "notifications": AlertNotification.from_dict(obj["notifications"]) if obj.get("notifications") is not None else None,
             "testIds": obj.get("testIds")
         })
