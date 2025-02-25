@@ -36,6 +36,7 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                   "hasPing" : true,
                   "agentSelectorType" : "all-agents",
                   "maxMachines" : 25,
+                  "isPrioritized" : false,
                   "httpTimeLimit" : 5000,
                   "networkMeasurements" : true,
                   "endpointAgentLabels" : [ "567", "214" ],
@@ -81,6 +82,7 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "isPrioritized" : false,
                   "httpTimeLimit" : 5000,
                   "type" : "http-server",
                   "protocol" : "icmp",
@@ -153,6 +155,7 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "isPrioritized" : false,
                   "httpTimeLimit" : 5000,
                   "type" : "http-server",
                   "protocol" : "icmp",
@@ -222,6 +225,7 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "httpTimeLimit" : 5000,
                     "type" : "http-server",
                     "protocol" : "icmp",
@@ -280,6 +284,7 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "httpTimeLimit" : 5000,
                     "type" : "http-server",
                     "protocol" : "icmp",
@@ -374,6 +379,7 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "isPrioritized" : false,
                   "httpTimeLimit" : 5000,
                   "type" : "http-server",
                   "protocol" : "icmp",

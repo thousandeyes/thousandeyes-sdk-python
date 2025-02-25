@@ -66,6 +66,7 @@ class TestAgentToServerEndpointInstantScheduledTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "isPrioritized" : false,
                   "networkMeasurements" : true,
                   "type" : "agent-to-server",
                   "tcpProbeMode" : "auto",

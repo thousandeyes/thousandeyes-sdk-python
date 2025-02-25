@@ -32,6 +32,7 @@ class DynamicTestRequest(BaseModel):
     agent_selector_type: Optional[EndpointTestAgentSelectorType] = Field(default=None, alias="agentSelectorType")
     agents: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent IDs (obtained from `/endpoint/agents` endpoint). Required when `agentSelectorType` is set to `specific-agent`.")
     endpoint_agent_labels: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent label IDs (obtained from `/endpoint/labels` endpoint), required when `agentSelectorType` is set to `agent-labels`.", alias="endpointAgentLabels")
+    is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
     interval: Optional[TestInterval] = None
     max_machines: Optional[StrictInt] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
     application: StrictStr = Field(description="Which supported application to monitor, can be one of `webex`, `zoom`, `microsoft-teams`.")
@@ -39,7 +40,7 @@ class DynamicTestRequest(BaseModel):
     tcp_probe_mode: Optional[TestProbeMode] = Field(default=None, alias="tcpProbeMode")
     test_name: StrictStr = Field(description="Name of the test.", alias="testName")
     has_path_trace_in_session: Optional[StrictBool] = Field(default=None, description="Enables \"in session\" path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session.", alias="hasPathTraceInSession")
-    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "interval", "maxMachines", "application", "protocol", "tcpProbeMode", "testName", "hasPathTraceInSession"]
+    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "isPrioritized", "interval", "maxMachines", "application", "protocol", "tcpProbeMode", "testName", "hasPathTraceInSession"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +97,7 @@ class DynamicTestRequest(BaseModel):
             "agentSelectorType": obj.get("agentSelectorType"),
             "agents": obj.get("agents"),
             "endpointAgentLabels": obj.get("endpointAgentLabels"),
+            "isPrioritized": obj.get("isPrioritized") if obj.get("isPrioritized") is not None else False,
             "interval": obj.get("interval"),
             "maxMachines": obj.get("maxMachines") if obj.get("maxMachines") is not None else 25,
             "application": obj.get("application"),

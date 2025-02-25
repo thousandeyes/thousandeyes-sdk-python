@@ -80,6 +80,7 @@ class TestHTTPServerEndpointInstantScheduledTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "isPrioritized" : false,
                   "httpTimeLimit" : 5000,
                   "type" : "http-server",
                   "protocol" : "icmp",

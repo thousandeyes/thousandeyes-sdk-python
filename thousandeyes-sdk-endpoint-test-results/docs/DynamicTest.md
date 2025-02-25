@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **agent_selector_config** | [**EndpointAgentSelectorConfig**](EndpointAgentSelectorConfig.md) |  | [optional] 
 **application** | **str** | Which supported application to monitor, can be one of &#x60;webex&#x60;, &#x60;zoom&#x60;, &#x60;microsoft-teams&#x60;. | [optional] 
 **created_date** | **datetime** | UTC created date (ISO date-time format). | [optional] [readonly] 
+**is_prioritized** | **bool** | Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit. | [optional] [default to False]
 **interval** | [**TestInterval**](TestInterval.md) |  | [optional] 
 **is_enabled** | **bool** | Indicates if test is enabled. | [optional] [default to True]
 **has_path_trace_in_session** | **bool** | Enables \&quot;in session\&quot; path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session. | [optional] 

@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **links** | [**EndpointTestLinks**](EndpointTestLinks.md) |  | [optional] 
 **agent_selector_config** | [**EndpointAgentSelectorConfig**](EndpointAgentSelectorConfig.md) |  | [optional] 
 **created_date** | **datetime** | UTC created date (ISO date-time format). | [optional] [readonly] 
+**is_prioritized** | **bool** | Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit. | [optional] [default to False]
 **interval** | [**TestInterval**](TestInterval.md) |  | [optional] 
 **is_enabled** | **bool** | Indicates if test is enabled. | [optional] [default to True]
 **is_saved_event** | **bool** | Indicates if the test is a saved event. | [optional] [readonly] 

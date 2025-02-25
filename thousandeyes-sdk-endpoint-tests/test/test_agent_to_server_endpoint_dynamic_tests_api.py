@@ -35,6 +35,7 @@ class TestAgentToServerEndpointDynamicTestsApi(unittest.TestCase):
                   "protocol" : "icmp",
                   "application" : "webex",
                   "agentSelectorType" : "all-agents",
+                  "isPrioritized" : false,
                   "maxMachines" : 25,
                   "interval" : 60,
                   "hasPathTraceInSession" : true,
@@ -68,6 +69,7 @@ class TestAgentToServerEndpointDynamicTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "isPrioritized" : false,
                   "networkMeasurements" : true,
                   "tcpProbeMode" : "auto",
                   "labels" : [ {
@@ -128,6 +130,7 @@ class TestAgentToServerEndpointDynamicTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "isPrioritized" : false,
                   "networkMeasurements" : true,
                   "tcpProbeMode" : "auto",
                   "labels" : [ {
@@ -185,6 +188,7 @@ class TestAgentToServerEndpointDynamicTestsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "networkMeasurements" : true,
                     "tcpProbeMode" : "auto",
                     "labels" : [ {
@@ -231,6 +235,7 @@ class TestAgentToServerEndpointDynamicTestsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "networkMeasurements" : true,
                     "tcpProbeMode" : "auto",
                     "labels" : [ {
@@ -313,6 +318,7 @@ class TestAgentToServerEndpointDynamicTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "isPrioritized" : false,
                   "networkMeasurements" : true,
                   "tcpProbeMode" : "auto",
                   "labels" : [ {

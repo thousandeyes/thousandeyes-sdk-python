@@ -82,6 +82,7 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "networkMeasurements" : true,
                     "type" : "agent-to-server",
                     "tcpProbeMode" : "auto",
@@ -578,6 +579,7 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "networkMeasurements" : true,
                     "type" : "agent-to-server",
                     "tcpProbeMode" : "auto",
@@ -1012,6 +1014,7 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "networkMeasurements" : true,
                     "type" : "agent-to-server",
                     "tcpProbeMode" : "auto",

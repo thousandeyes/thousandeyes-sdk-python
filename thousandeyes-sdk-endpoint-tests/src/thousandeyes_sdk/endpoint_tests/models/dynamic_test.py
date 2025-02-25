@@ -38,6 +38,7 @@ class DynamicTest(BaseModel):
     agent_selector_config: Optional[EndpointAgentSelectorConfig] = Field(default=None, alias="agentSelectorConfig")
     application: Optional[StrictStr] = Field(default=None, description="Which supported application to monitor, can be one of `webex`, `zoom`, `microsoft-teams`.")
     created_date: Optional[datetime] = Field(default=None, description="UTC created date (ISO date-time format).", alias="createdDate")
+    is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
     interval: Optional[TestInterval] = None
     is_enabled: Optional[StrictBool] = Field(default=True, description="Indicates if test is enabled.", alias="isEnabled")
     has_path_trace_in_session: Optional[StrictBool] = Field(default=None, description="Enables \"in session\" path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session.", alias="hasPathTraceInSession")
@@ -51,7 +52,7 @@ class DynamicTest(BaseModel):
     test_id: Optional[StrictStr] = Field(default=None, description="Each test is assigned a unique ID; this is used to access test information and results from other endpoints.", alias="testId")
     test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")
     labels: Optional[List[TestLabel]] = None
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "application", "createdDate", "interval", "isEnabled", "hasPathTraceInSession", "hasPing", "hasTraceroute", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "tcpProbeMode", "testId", "testName", "labels"]
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "application", "createdDate", "isPrioritized", "interval", "isEnabled", "hasPathTraceInSession", "hasPing", "hasTraceroute", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "tcpProbeMode", "testId", "testName", "labels"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -131,6 +132,7 @@ class DynamicTest(BaseModel):
             "agentSelectorConfig": EndpointAgentSelectorConfig.from_dict(obj["agentSelectorConfig"]) if obj.get("agentSelectorConfig") is not None else None,
             "application": obj.get("application"),
             "createdDate": obj.get("createdDate"),
+            "isPrioritized": obj.get("isPrioritized") if obj.get("isPrioritized") is not None else False,
             "interval": obj.get("interval"),
             "isEnabled": obj.get("isEnabled") if obj.get("isEnabled") is not None else True,
             "hasPathTraceInSession": obj.get("hasPathTraceInSession"),
