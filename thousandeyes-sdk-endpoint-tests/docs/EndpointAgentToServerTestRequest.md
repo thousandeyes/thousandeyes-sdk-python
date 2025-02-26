@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **test_name** | **str** | Name of the test. | 
 **server_name** | **str** | A server address without a protocol or IP address. | 
 **port** | **int** | Port number. | [optional] [default to 443]
+**is_prioritized** | **bool** | Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit. | [optional] [default to False]
 **interval** | [**TestInterval**](TestInterval.md) |  | [optional] 
 **protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
 

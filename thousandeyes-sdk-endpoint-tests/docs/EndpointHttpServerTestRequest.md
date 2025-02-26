@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
 **target_response_time** | **int** | Response time target in milliseconds. Affects the colors of agents and legends on the view page. The value is compared with actual response time in order to determine the color scale (from green to red). | [optional] [default to 1000]
 **password** | **str** | Password for Basic/NTLM authentication. | [optional] 
+**is_prioritized** | **bool** | Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit. | [optional] [default to False]
 **interval** | [**TestInterval**](TestInterval.md) |  | [optional] 
 
 ## Example

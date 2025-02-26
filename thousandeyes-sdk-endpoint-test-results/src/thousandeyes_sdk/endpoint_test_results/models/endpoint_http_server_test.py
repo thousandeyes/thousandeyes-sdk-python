@@ -40,6 +40,7 @@ class EndpointHttpServerTest(BaseModel):
     links: Optional[EndpointTestLinks] = Field(default=None, alias="_links")
     agent_selector_config: Optional[EndpointAgentSelectorConfig] = Field(default=None, alias="agentSelectorConfig")
     created_date: Optional[datetime] = Field(default=None, description="UTC created date (ISO date-time format).", alias="createdDate")
+    is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
     interval: Optional[TestInterval] = None
     is_enabled: Optional[StrictBool] = Field(default=True, description="Indicates if test is enabled.", alias="isEnabled")
     is_saved_event: Optional[StrictBool] = Field(default=None, description="Indicates if the test is a saved event.", alias="isSavedEvent")
@@ -66,7 +67,7 @@ class EndpointHttpServerTest(BaseModel):
     ssl_version: Optional[StrictStr] = Field(default=None, description="Reflects the verbose SSL protocol version used by a test.", alias="sslVersion")
     use_ntlm: Optional[StrictBool] = Field(default=None, description="Set to true to use NTLM, false to use Basic Authentication. Requires username and password to be set.", alias="useNtlm")
     labels: Optional[List[TestLabel]] = None
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "port", "authType", "httpTimeLimit", "username", "sslVersionId", "verifyCertificate", "url", "followRedirects", "httpTargetTime", "httpVersion", "sslVersion", "useNtlm", "labels"]
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "isPrioritized", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "port", "authType", "httpTimeLimit", "username", "sslVersionId", "verifyCertificate", "url", "followRedirects", "httpTargetTime", "httpVersion", "sslVersion", "useNtlm", "labels"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
@@ -158,6 +159,7 @@ class EndpointHttpServerTest(BaseModel):
             "_links": EndpointTestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "agentSelectorConfig": EndpointAgentSelectorConfig.from_dict(obj["agentSelectorConfig"]) if obj.get("agentSelectorConfig") is not None else None,
             "createdDate": obj.get("createdDate"),
+            "isPrioritized": obj.get("isPrioritized") if obj.get("isPrioritized") is not None else False,
             "interval": obj.get("interval"),
             "isEnabled": obj.get("isEnabled") if obj.get("isEnabled") is not None else True,
             "isSavedEvent": obj.get("isSavedEvent"),

@@ -50,8 +50,9 @@ class EndpointHttpServerTestRequest(BaseModel):
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
     target_response_time: Optional[StrictInt] = Field(default=1000, description="Response time target in milliseconds. Affects the colors of agents and legends on the view page. The value is compared with actual response time in order to determine the color scale (from green to red).", alias="targetResponseTime")
     password: Optional[StrictStr] = Field(default=None, description="Password for Basic/NTLM authentication.")
+    is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
     interval: Optional[TestInterval] = None
-    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName", "authType", "hasPathTraceInSession", "httpTimeLimit", "protocol", "username", "sslVersionId", "tcpProbeMode", "verifyCertificate", "url", "hasPing", "hasTraceroute", "networkMeasurements", "targetResponseTime", "password", "interval"]
+    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName", "authType", "hasPathTraceInSession", "httpTimeLimit", "protocol", "username", "sslVersionId", "tcpProbeMode", "verifyCertificate", "url", "hasPing", "hasTraceroute", "networkMeasurements", "targetResponseTime", "password", "isPrioritized", "interval"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -124,6 +125,7 @@ class EndpointHttpServerTestRequest(BaseModel):
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
             "targetResponseTime": obj.get("targetResponseTime") if obj.get("targetResponseTime") is not None else 1000,
             "password": obj.get("password"),
+            "isPrioritized": obj.get("isPrioritized") if obj.get("isPrioritized") is not None else False,
             "interval": obj.get("interval")
         })
         return _obj

@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_agent_selector_type import EndpointTestAgentSelectorType
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_protocol import EndpointTestProtocol
@@ -35,9 +35,10 @@ class EndpointAgentToServerTestRequest(BaseModel):
     test_name: StrictStr = Field(description="Name of the test.", alias="testName")
     server_name: StrictStr = Field(description="A server address without a protocol or IP address.", alias="serverName")
     port: Optional[StrictInt] = Field(default=443, description="Port number.")
+    is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
     interval: Optional[TestInterval] = None
     protocol: Optional[EndpointTestProtocol] = None
-    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName", "serverName", "port", "interval", "protocol"]
+    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName", "serverName", "port", "isPrioritized", "interval", "protocol"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +99,7 @@ class EndpointAgentToServerTestRequest(BaseModel):
             "testName": obj.get("testName"),
             "serverName": obj.get("serverName"),
             "port": obj.get("port") if obj.get("port") is not None else 443,
+            "isPrioritized": obj.get("isPrioritized") if obj.get("isPrioritized") is not None else False,
             "interval": obj.get("interval"),
             "protocol": obj.get("protocol")
         })

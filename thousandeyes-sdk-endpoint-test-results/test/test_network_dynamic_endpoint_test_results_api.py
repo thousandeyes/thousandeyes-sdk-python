@@ -82,6 +82,7 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "networkMeasurements" : true,
                     "tcpProbeMode" : "auto",
                     "labels" : [ {
@@ -358,6 +359,7 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "networkMeasurements" : true,
                     "tcpProbeMode" : "auto",
                     "labels" : [ {
@@ -811,6 +813,7 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "isPrioritized" : false,
                     "networkMeasurements" : true,
                     "tcpProbeMode" : "auto",
                     "labels" : [ {
