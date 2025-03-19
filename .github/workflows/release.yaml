@@ -5,6 +5,7 @@ on:
       releaseVersion:
         description: 'The target version you want to update and release'
         required: true
+        type: string
 
 jobs:
   set-package-matrix:
