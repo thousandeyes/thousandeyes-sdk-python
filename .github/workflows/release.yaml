@@ -1,8 +1,11 @@
 name: Release
 on:
-  push:
-    tags:
-      - '*'
+  workflow_dispatch:
+    inputs:
+      releaseVersion:
+        description: 'The target version you want to update and release'
+        required: true
+        type: string
 
 jobs:
   set-package-matrix:
@@ -44,11 +47,25 @@ jobs:
           pip install setuptools wheel build
       - name: Build
         run: |
-          echo $GITHUB_REF_NAME >> ${{ matrix.package-name }}/.version
+          echo ${{ inputs.releaseVersion }} >> ${{ matrix.package-name }}/.version
           cp LICENSE NOTICE ${{ matrix.package-name }}/  
           python -m build ${{ matrix.package-name }} --outdir dist/
       - name: Publish
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           skip-existing: true
+  add-tag:
+    runs-on: ubuntu-latest
+    needs: deployment
+    steps:
+      - name: Checkout latest code
+        uses: actions/checkout@v4
+
+      - name: Add tag and push to the repository
+        run: |
+          git config user.name "API Team"
+          git config user.email "api-team@thousandeyes.com"
+
+          git tag ${{ inputs.releaseVersion }}
+          git push origin ${{ inputs.releaseVersion }}
 
