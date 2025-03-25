@@ -2,6 +2,7 @@
 MANIFEST.in
 README.md
 docs/AccountGroupQuota.md
+docs/AllocationUnitUsageBreakdown.md
 docs/EndpointAgentsEmbedded.md
 docs/EndpointAgentsEssentials.md
 docs/EndpointAgentsUsage.md
@@ -28,6 +29,7 @@ docs/SelfLinks.md
 docs/TestUsage.md
 docs/TestsUsage.md
 docs/UnauthorizedError.md
+docs/UnitAllocationSummary.md
 docs/UnitsByTests.md
 docs/Usage.md
 docs/UsageApi.md
@@ -43,6 +45,7 @@ src/thousandeyes_sdk/usage/api/quotas_api.py
 src/thousandeyes_sdk/usage/api/usage_api.py
 src/thousandeyes_sdk/usage/models/__init__.py
 src/thousandeyes_sdk/usage/models/account_group_quota.py
+src/thousandeyes_sdk/usage/models/allocation_unit_usage_breakdown.py
 src/thousandeyes_sdk/usage/models/endpoint_agents_embedded.py
 src/thousandeyes_sdk/usage/models/endpoint_agents_essentials.py
 src/thousandeyes_sdk/usage/models/endpoint_agents_usage.py
@@ -68,6 +71,7 @@ src/thousandeyes_sdk/usage/models/self_links.py
 src/thousandeyes_sdk/usage/models/test_usage.py
 src/thousandeyes_sdk/usage/models/tests_usage.py
 src/thousandeyes_sdk/usage/models/unauthorized_error.py
+src/thousandeyes_sdk/usage/models/unit_allocation_summary.py
 src/thousandeyes_sdk/usage/models/units_by_tests.py
 src/thousandeyes_sdk/usage/models/usage.py
 src/thousandeyes_sdk/usage/models/usage_details.py

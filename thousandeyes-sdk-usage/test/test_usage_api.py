@@ -215,6 +215,14 @@ class TestUsageApi(unittest.TestCase):
                       "accountGroupName" : "Documentation",
                       "endpointAgentsEmbeddedUsed" : 3
                     } ],
+                    "allocations" : {
+                      "used" : 1000,
+                      "projected" : 1000,
+                      "allocations" : [ {
+                        "productName" : "Some Product Name",
+                        "allocatedUnits" : "600"
+                      } ]
+                    },
                     "endpointAgentsEssentialsUsed" : 5,
                     "quota" : {
                       "monthEnd" : "2020-02-05T08:00:00Z",

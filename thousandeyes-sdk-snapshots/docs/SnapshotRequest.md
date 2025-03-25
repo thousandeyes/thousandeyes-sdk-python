@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **display_name** | **str** | Snapshot title. | 
 **start_date** | **datetime** | The start date for the snapshot in UTC time, formatted in ISO date-time. | 
 **end_date** | **datetime** | The end date for the snapshot in UTC time, formatted in ISO date-time. | 
-**is_public** | **bool** | Set to &#x60;true&#x60; for saved events and &#x60;false&#x60; for share links. Its default value is &#x60;false&#x60;. | [optional] 
+**is_public** | **bool** | Set to &#x60;true&#x60; for saved events and &#x60;false&#x60; for share links. Its default value is &#x60;false&#x60;. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. | [optional] 
 
 ## Example
 

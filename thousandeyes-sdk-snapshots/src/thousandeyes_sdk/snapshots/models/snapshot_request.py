@@ -29,7 +29,7 @@ class SnapshotRequest(BaseModel):
     display_name: StrictStr = Field(description="Snapshot title.", alias="displayName")
     start_date: datetime = Field(description="The start date for the snapshot in UTC time, formatted in ISO date-time.", alias="startDate")
     end_date: datetime = Field(description="The end date for the snapshot in UTC time, formatted in ISO date-time.", alias="endDate")
-    is_public: Optional[StrictBool] = Field(default=None, description="Set to `true` for saved events and `false` for share links. Its default value is `false`.", alias="isPublic")
+    is_public: Optional[StrictBool] = Field(default=None, description="Set to `true` for saved events and `false` for share links. Its default value is `false`. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.", alias="isPublic")
     __properties: ClassVar[List[str]] = ["displayName", "startDate", "endDate", "isPublic"]
 
     model_config = ConfigDict(

@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **is_prioritized** | **bool** | Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit. | [optional] [default to False]
 **interval** | [**TestInterval**](TestInterval.md) |  | [optional] 
 **is_enabled** | **bool** | Indicates if test is enabled. | [optional] [default to True]
-**is_saved_event** | **bool** | Indicates if the test is a saved event. | [optional] [readonly] 
+**is_saved_event** | **bool** | Indicates if the test is a saved event.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.  | [optional] [readonly] 
 **has_path_trace_in_session** | **bool** | Enables \&quot;in session\&quot; path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session. | [optional] 
 **modified_date** | **datetime** | UTC last modification date (ISO date-time format). | [optional] [readonly] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
