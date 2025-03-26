@@ -973,7 +973,7 @@ class AgentToServerEndpointDynamicTestsApi:
     ) -> DynamicTests:
         """List endpoint dynamic tests
 
-        Returns a list of all endpoint dynamic tests configured in ThousandEyes. This list does not contain saved events.
+        Returns a list of all endpoint dynamic tests configured in ThousandEyes. This list does not contain saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1046,7 +1046,7 @@ class AgentToServerEndpointDynamicTestsApi:
     ) -> ApiResponse[DynamicTests]:
         """List endpoint dynamic tests
 
-        Returns a list of all endpoint dynamic tests configured in ThousandEyes. This list does not contain saved events.
+        Returns a list of all endpoint dynamic tests configured in ThousandEyes. This list does not contain saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1119,7 +1119,7 @@ class AgentToServerEndpointDynamicTestsApi:
     ) -> RESTResponseType:
         """List endpoint dynamic tests
 
-        Returns a list of all endpoint dynamic tests configured in ThousandEyes. This list does not contain saved events.
+        Returns a list of all endpoint dynamic tests configured in ThousandEyes. This list does not contain saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str

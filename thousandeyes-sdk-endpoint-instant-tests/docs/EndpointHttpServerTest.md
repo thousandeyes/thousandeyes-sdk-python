@@ -12,8 +12,9 @@ Name | Type | Description | Notes
 **is_prioritized** | **bool** | Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit. | [optional] [default to False]
 **interval** | [**TestInterval**](TestInterval.md) |  | [optional] 
 **is_enabled** | **bool** | Indicates if test is enabled. | [optional] [default to True]
-**is_saved_event** | **bool** | Indicates if the test is a saved event. | [optional] [readonly] 
+**is_saved_event** | **bool** | Indicates if the test is a saved event.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.  | [optional] [readonly] 
 **has_path_trace_in_session** | **bool** | Enables \&quot;in session\&quot; path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session. | [optional] 
+**labels** | [**List[TestLabel]**](TestLabel.md) | Labels to which the test is assigned. This field is not returned for Instant Tests. | [optional] [readonly] 
 **modified_date** | **datetime** | UTC last modification date (ISO date-time format). | [optional] [readonly] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
 **protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
@@ -35,7 +36,6 @@ Name | Type | Description | Notes
 **http_version** | **int** | HTTP protocol version. Set to &#39;2&#39; to prefer HTTP/2, or &#39;1&#39; to use only HTTP/1.1. | [optional] [default to 2]
 **ssl_version** | **str** | Reflects the verbose SSL protocol version used by a test. | [optional] [readonly] 
 **use_ntlm** | **bool** | Set to true to use NTLM, false to use Basic Authentication. Requires username and password to be set. | [optional] 
-**labels** | [**List[TestLabel]**](TestLabel.md) |  | [optional] [readonly] 
 
 ## Example
 

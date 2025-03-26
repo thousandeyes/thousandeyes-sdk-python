@@ -25,6 +25,7 @@ from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_scheduled_test_type
 from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_test_links import EndpointTestLinks
 from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_test_protocol import EndpointTestProtocol
 from thousandeyes_sdk.endpoint_instant_tests.models.test_interval import TestInterval
+from thousandeyes_sdk.endpoint_instant_tests.models.test_label import TestLabel
 from thousandeyes_sdk.endpoint_instant_tests.models.test_probe_mode_response import TestProbeModeResponse
 from typing import Optional, Set
 from typing_extensions import Self
@@ -40,8 +41,9 @@ class EndpointTest(BaseModel):
     is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
     interval: Optional[TestInterval] = None
     is_enabled: Optional[StrictBool] = Field(default=True, description="Indicates if test is enabled.", alias="isEnabled")
-    is_saved_event: Optional[StrictBool] = Field(default=None, description="Indicates if the test is a saved event.", alias="isSavedEvent")
+    is_saved_event: Optional[StrictBool] = Field(default=None, description="Indicates if the test is a saved event.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. ", alias="isSavedEvent")
     has_path_trace_in_session: Optional[StrictBool] = Field(default=None, description="Enables \"in session\" path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session.", alias="hasPathTraceInSession")
+    labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
     modified_date: Optional[datetime] = Field(default=None, description="UTC last modification date (ISO date-time format).", alias="modifiedDate")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
     protocol: Optional[EndpointTestProtocol] = None
@@ -52,7 +54,7 @@ class EndpointTest(BaseModel):
     type: EndpointScheduledTestType
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
     port: Optional[StrictInt] = Field(default=443, description="Port number.")
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "isPrioritized", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "port"]
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "isPrioritized", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "labels", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "port"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,10 +91,12 @@ class EndpointTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_date",
             "is_saved_event",
+            "labels",
             "modified_date",
             "test_id",
         ])
@@ -108,6 +112,13 @@ class EndpointTest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of agent_selector_config
         if self.agent_selector_config:
             _dict['agentSelectorConfig'] = self.agent_selector_config.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in labels (list)
+        _items = []
+        if self.labels:
+            for _item in self.labels:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['labels'] = _items
         return _dict
 
     @classmethod
@@ -129,6 +140,7 @@ class EndpointTest(BaseModel):
             "isEnabled": obj.get("isEnabled") if obj.get("isEnabled") is not None else True,
             "isSavedEvent": obj.get("isSavedEvent"),
             "hasPathTraceInSession": obj.get("hasPathTraceInSession"),
+            "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
             "modifiedDate": obj.get("modifiedDate"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
             "protocol": obj.get("protocol"),

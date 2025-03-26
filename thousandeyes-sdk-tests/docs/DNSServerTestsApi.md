@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 List DNS Server tests
 
-Returns a list of all DNS Server tests and saved events.
+Returns a list of all DNS Server tests and saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
 ### Example
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 Update DNS Server test
 
-Updates a DNS Server test. The target test cannot be a live share or saved event. This method requires Account Admin permissions.
+Updates a DNS Server test. The target test cannot be a live share or saved event. This method requires Account Admin permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
 
 ### Example
 

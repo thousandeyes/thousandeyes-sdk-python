@@ -51,7 +51,7 @@ class DynamicTest(BaseModel):
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
     test_id: Optional[StrictStr] = Field(default=None, description="Each test is assigned a unique ID; this is used to access test information and results from other endpoints.", alias="testId")
     test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")
-    labels: Optional[List[TestLabel]] = None
+    labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
     __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "application", "createdDate", "isPrioritized", "interval", "isEnabled", "hasPathTraceInSession", "hasPing", "hasTraceroute", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "tcpProbeMode", "testId", "testName", "labels"]
 
     model_config = ConfigDict(

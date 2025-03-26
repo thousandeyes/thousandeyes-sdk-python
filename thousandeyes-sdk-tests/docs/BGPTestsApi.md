@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 List BGP tests
 
-Returns a list of BGP tests and saved events.
+Returns a list of BGP tests and saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
 ### Example
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 Update BGP test
 
-Updates a BGP test. This method requires Account Admin permissions. The target test cannot be a live share or saved event.
+Updates a BGP test. This method requires Account Admin permissions. The target test cannot be a live share or saved event. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
 
 ### Example
 

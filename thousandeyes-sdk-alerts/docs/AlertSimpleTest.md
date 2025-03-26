@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **live_share** | **bool** | Indicates if the test is shared with the account group. | [optional] [readonly] 
 **modified_by** | **str** | User that modified the test. | [optional] [readonly] 
 **modified_date** | **datetime** | UTC last modification date (ISO date-time format). | [optional] [readonly] 
-**saved_event** | **bool** | Indicates if the test is a saved event. | [optional] [readonly] 
+**saved_event** | **bool** | Indicates if the test is a saved event. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. | [optional] [readonly] 
 **test_id** | **str** | Each test is assigned an unique ID; this is used to access test information and results from other endpoints. | [optional] [readonly] 
 **test_name** | **str** | The name of the test. Test name must be unique. | [optional] 
 **type** | [**AlertTestType**](AlertTestType.md) |  | [optional] 

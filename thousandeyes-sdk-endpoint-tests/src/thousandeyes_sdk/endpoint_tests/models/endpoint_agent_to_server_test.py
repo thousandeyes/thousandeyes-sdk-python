@@ -41,8 +41,9 @@ class EndpointAgentToServerTest(BaseModel):
     is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
     interval: Optional[TestInterval] = None
     is_enabled: Optional[StrictBool] = Field(default=True, description="Indicates if test is enabled.", alias="isEnabled")
-    is_saved_event: Optional[StrictBool] = Field(default=None, description="Indicates if the test is a saved event.", alias="isSavedEvent")
+    is_saved_event: Optional[StrictBool] = Field(default=None, description="Indicates if the test is a saved event.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. ", alias="isSavedEvent")
     has_path_trace_in_session: Optional[StrictBool] = Field(default=None, description="Enables \"in session\" path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session.", alias="hasPathTraceInSession")
+    labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
     modified_date: Optional[datetime] = Field(default=None, description="UTC last modification date (ISO date-time format).", alias="modifiedDate")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
     protocol: Optional[EndpointTestProtocol] = None
@@ -53,8 +54,7 @@ class EndpointAgentToServerTest(BaseModel):
     type: Annotated[str, Field(strict=True)] = Field(description="Type of test being queried.")
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
     port: Optional[StrictInt] = Field(default=443, description="Port number.")
-    labels: Optional[List[TestLabel]] = None
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "isPrioritized", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "port", "labels"]
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "isPrioritized", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "labels", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "port"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
@@ -104,10 +104,10 @@ class EndpointAgentToServerTest(BaseModel):
         excluded_fields: Set[str] = set([
             "created_date",
             "is_saved_event",
+            "labels",
             "modified_date",
             "test_id",
             "type",
-            "labels",
         ])
 
         _dict = self.model_dump(
@@ -149,6 +149,7 @@ class EndpointAgentToServerTest(BaseModel):
             "isEnabled": obj.get("isEnabled") if obj.get("isEnabled") is not None else True,
             "isSavedEvent": obj.get("isSavedEvent"),
             "hasPathTraceInSession": obj.get("hasPathTraceInSession"),
+            "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
             "modifiedDate": obj.get("modifiedDate"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
             "protocol": obj.get("protocol"),
@@ -158,8 +159,7 @@ class EndpointAgentToServerTest(BaseModel):
             "testName": obj.get("testName"),
             "type": obj.get("type"),
             "tcpProbeMode": obj.get("tcpProbeMode"),
-            "port": obj.get("port") if obj.get("port") is not None else 443,
-            "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None
+            "port": obj.get("port") if obj.get("port") is not None else 443
         })
         return _obj
 

@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 List API tests
 
-Returns a list of all API tests and saved events.
+Returns a list of all API tests and saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
 ### Example
 
@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 Update API test
 
-Updates an API test. The target test cannot be a live share or saved event. This method requires write permissions.
+Updates an API test. The target test cannot be a live share or saved event. This method requires write permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
 
 ### Example
 

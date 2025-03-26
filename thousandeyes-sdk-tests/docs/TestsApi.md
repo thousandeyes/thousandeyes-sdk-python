@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 List configured tests
 
-Returns configured tests and saved events.
+Returns configured tests and saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
 ### Example
 
