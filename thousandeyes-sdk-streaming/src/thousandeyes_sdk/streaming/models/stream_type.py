@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class StreamType(str, Enum):
     """
-    The type of data stream to configure. When using `splunk-hec`:   - `endpointType` must be `http`.   - `customHeaders` must contain just one element with the key `token` and the value of the *Splunk HEC Token*.
+    The type of data stream to configure. When using `splunk-hec`:   - `endpointType` must be `http`.   - `exporterConfig.splunkHec.token` must contain the *Splunk HEC Token*.
     """
 
     """

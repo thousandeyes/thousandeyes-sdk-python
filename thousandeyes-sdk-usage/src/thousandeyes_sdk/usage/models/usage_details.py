@@ -24,6 +24,7 @@ from thousandeyes_sdk.usage.models.endpoint_agents_usage import EndpointAgentsUs
 from thousandeyes_sdk.usage.models.enterprise_agent_units import EnterpriseAgentUnits
 from thousandeyes_sdk.usage.models.enterprise_agents import EnterpriseAgents
 from thousandeyes_sdk.usage.models.test_usage import TestUsage
+from thousandeyes_sdk.usage.models.unit_allocation_summary import UnitAllocationSummary
 from thousandeyes_sdk.usage.models.usage_quota import UsageQuota
 from typing import Optional, Set
 from typing_extensions import Self
@@ -52,7 +53,8 @@ class UsageDetails(BaseModel):
     endpoint_agents_essentials: Optional[List[EndpointAgentsEssentials]] = Field(default=None, description="Endpoint agents essentials used by account group.", alias="endpointAgentsEssentials")
     endpoint_agents_embedded: Optional[List[EndpointAgentsEmbedded]] = Field(default=None, description="Endpoint agents embedded used by account group.", alias="endpointAgentsEmbedded")
     enterprise_agents: Optional[List[EnterpriseAgents]] = Field(default=None, description="Enterprise agents used by account group.", alias="enterpriseAgents")
-    __properties: ClassVar[List[str]] = ["quota", "cloudUnitsUsed", "cloudUnitsProjected", "cloudUnitsNextBillingPeriod", "enterpriseUnitsUsed", "enterpriseUnitsProjected", "enterpriseUnitsNextBillingPeriod", "connectedDevicesUnitsUsed", "connectedDevicesUnitsProjected", "connectedDevicesUnitsNextBillingPeriod", "endpointAgentsUsed", "endpointAgentsEssentialsUsed", "endpointAgentsEmbeddedUsed", "enterpriseAgentsUsed", "enterpriseAgentUnits", "tests", "endpointAgents", "endpointAgentsEssentials", "endpointAgentsEmbedded", "enterpriseAgents"]
+    allocations: Optional[UnitAllocationSummary] = None
+    __properties: ClassVar[List[str]] = ["quota", "cloudUnitsUsed", "cloudUnitsProjected", "cloudUnitsNextBillingPeriod", "enterpriseUnitsUsed", "enterpriseUnitsProjected", "enterpriseUnitsNextBillingPeriod", "connectedDevicesUnitsUsed", "connectedDevicesUnitsProjected", "connectedDevicesUnitsNextBillingPeriod", "endpointAgentsUsed", "endpointAgentsEssentialsUsed", "endpointAgentsEmbeddedUsed", "enterpriseAgentsUsed", "enterpriseAgentUnits", "tests", "endpointAgents", "endpointAgentsEssentials", "endpointAgentsEmbedded", "enterpriseAgents", "allocations"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -139,6 +141,9 @@ class UsageDetails(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['enterpriseAgents'] = _items
+        # override the default output from pydantic by calling `to_dict()` of allocations
+        if self.allocations:
+            _dict['allocations'] = self.allocations.to_dict()
         return _dict
 
     @classmethod
@@ -170,7 +175,8 @@ class UsageDetails(BaseModel):
             "endpointAgents": [EndpointAgentsUsage.from_dict(_item) for _item in obj["endpointAgents"]] if obj.get("endpointAgents") is not None else None,
             "endpointAgentsEssentials": [EndpointAgentsEssentials.from_dict(_item) for _item in obj["endpointAgentsEssentials"]] if obj.get("endpointAgentsEssentials") is not None else None,
             "endpointAgentsEmbedded": [EndpointAgentsEmbedded.from_dict(_item) for _item in obj["endpointAgentsEmbedded"]] if obj.get("endpointAgentsEmbedded") is not None else None,
-            "enterpriseAgents": [EnterpriseAgents.from_dict(_item) for _item in obj["enterpriseAgents"]] if obj.get("enterpriseAgents") is not None else None
+            "enterpriseAgents": [EnterpriseAgents.from_dict(_item) for _item in obj["enterpriseAgents"]] if obj.get("enterpriseAgents") is not None else None,
+            "allocations": UnitAllocationSummary.from_dict(obj["allocations"]) if obj.get("allocations") is not None else None
         })
         return _obj
 

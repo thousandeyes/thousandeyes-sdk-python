@@ -280,7 +280,7 @@ Name | Type | Description  | Notes
 
 List FTP Server tests
 
-Returns a list of FTP Server tests and saved events.
+Returns a list of FTP Server tests and saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
 ### Example
 
@@ -365,7 +365,7 @@ Name | Type | Description  | Notes
 
 Update FTP Server test
 
-Updates a FTP Server test. The target test cannot be a live share or saved event. This method requires Account Admin permissions.
+Updates a FTP Server test. The target test cannot be a live share or saved event. This method requires Account Admin permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
 
 ### Example
 

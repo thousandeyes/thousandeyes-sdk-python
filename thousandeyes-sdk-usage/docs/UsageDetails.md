@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **endpoint_agents_essentials** | [**List[EndpointAgentsEssentials]**](EndpointAgentsEssentials.md) | Endpoint agents essentials used by account group. | [optional] 
 **endpoint_agents_embedded** | [**List[EndpointAgentsEmbedded]**](EndpointAgentsEmbedded.md) | Endpoint agents embedded used by account group. | [optional] 
 **enterprise_agents** | [**List[EnterpriseAgents]**](EnterpriseAgents.md) | Enterprise agents used by account group. | [optional] 
+**allocations** | [**UnitAllocationSummary**](UnitAllocationSummary.md) |  | [optional] 
 
 ## Example
 

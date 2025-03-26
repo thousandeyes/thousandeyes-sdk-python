@@ -277,7 +277,7 @@ Name | Type | Description  | Notes
 
 List endpoint dynamic tests
 
-Returns a list of all endpoint dynamic tests configured in ThousandEyes. This list does not contain saved events.
+Returns a list of all endpoint dynamic tests configured in ThousandEyes. This list does not contain saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
 ### Example
 
