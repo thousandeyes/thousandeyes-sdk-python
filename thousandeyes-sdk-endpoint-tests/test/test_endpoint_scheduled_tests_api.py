@@ -57,6 +57,15 @@ class TestEndpointScheduledTestsApi(unittest.TestCase):
                     "networkMeasurements" : true,
                     "type" : "agent-to-server",
                     "tcpProbeMode" : "auto",
+                    "labels" : [ {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
+                    }, {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
+                    } ],
                     "protocol" : "icmp",
                     "createdDate" : "2022-07-17T22:00:54Z",
                     "ipVersion" : "V4_ONLY",
@@ -96,6 +105,15 @@ class TestEndpointScheduledTestsApi(unittest.TestCase):
                     "networkMeasurements" : true,
                     "type" : "agent-to-server",
                     "tcpProbeMode" : "auto",
+                    "labels" : [ {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
+                    }, {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
+                    } ],
                     "protocol" : "icmp",
                     "createdDate" : "2022-07-17T22:00:54Z",
                     "ipVersion" : "V4_ONLY",

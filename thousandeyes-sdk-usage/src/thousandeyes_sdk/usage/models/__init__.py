@@ -14,6 +14,7 @@
 
 # import models into model package
 from thousandeyes_sdk.usage.models.account_group_quota import AccountGroupQuota
+from thousandeyes_sdk.usage.models.allocation_unit_usage_breakdown import AllocationUnitUsageBreakdown
 from thousandeyes_sdk.usage.models.endpoint_agents_embedded import EndpointAgentsEmbedded
 from thousandeyes_sdk.usage.models.endpoint_agents_essentials import EndpointAgentsEssentials
 from thousandeyes_sdk.usage.models.endpoint_agents_usage import EndpointAgentsUsage
@@ -39,6 +40,7 @@ from thousandeyes_sdk.usage.models.self_links import SelfLinks
 from thousandeyes_sdk.usage.models.test_usage import TestUsage
 from thousandeyes_sdk.usage.models.tests_usage import TestsUsage
 from thousandeyes_sdk.usage.models.unauthorized_error import UnauthorizedError
+from thousandeyes_sdk.usage.models.unit_allocation_summary import UnitAllocationSummary
 from thousandeyes_sdk.usage.models.units_by_tests import UnitsByTests
 from thousandeyes_sdk.usage.models.usage import Usage
 from thousandeyes_sdk.usage.models.usage_details import UsageDetails

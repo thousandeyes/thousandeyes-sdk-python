@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 List Agent to Agent tests
 
-Returns a list of Agent to Agent tests and saved events.
+Returns a list of Agent to Agent tests and saved events.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. 
 
 ### Example
 

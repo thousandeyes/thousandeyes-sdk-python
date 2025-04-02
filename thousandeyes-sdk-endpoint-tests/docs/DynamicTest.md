@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
 **test_id** | **str** | Each test is assigned a unique ID; this is used to access test information and results from other endpoints. | [optional] [readonly] 
 **test_name** | **str** | Name of the test. | [optional] 
-**labels** | [**List[TestLabel]**](TestLabel.md) |  | [optional] [readonly] 
+**labels** | [**List[TestLabel]**](TestLabel.md) | Labels to which the test is assigned. This field is not returned for Instant Tests. | [optional] [readonly] 
 
 ## Example
 
