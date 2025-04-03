@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **mtu_measurements** | **bool** | Set &#x60;true&#x60; to measure MTU sizes on network from agents to the target. | [optional] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
 **num_path_traces** | **int** | Number of path traces executed by the agent. | [optional] [default to 3]
-**password** | **str** | Password for Basic/NTLM authentication. | 
+**password** | **str** | Password for Basic/NTLM authentication. | [optional] 
 **path_trace_mode** | [**TestPathTraceMode**](TestPathTraceMode.md) |  | [optional] 
 **probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
 **protocol** | [**TestProtocol**](TestProtocol.md) |  | [optional] 

@@ -11,11 +11,10 @@ Name | Type | Description | Notes
 **mtu_measurements** | **bool** | Set &#x60;true&#x60; to measure MTU sizes on network from agents to the target. | [optional] 
 **num_path_traces** | **int** | Number of path traces executed by the agent. | [optional] [default to 3]
 **path_trace_mode** | [**TestPathTraceMode**](TestPathTraceMode.md) |  | [optional] 
-**port** | **int** | Target port. | [optional] [default to 49153]
 **probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
 **protocol** | [**TestProtocol**](TestProtocol.md) |  | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
-**server** | **str** | Target name or IP address. | 
+**server** | **str** | The target name or IP address. If a port is set for the test, it is appended to the target name or IP address using a colon. | 
 **dscp** | **str** | DSCP label. | [optional] [readonly] 
 **dscp_id** | [**TestDscpId**](TestDscpId.md) |  | [optional] 
 **ipv6_policy** | [**TestIpv6Policy**](TestIpv6Policy.md) |  | [optional] 
