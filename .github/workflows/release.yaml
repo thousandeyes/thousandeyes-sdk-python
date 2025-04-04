@@ -64,3 +64,4 @@ jobs:
           tag_name: ${{ inputs.releaseVersion }}
           prerelease: false
           draft: false
+          generate_release_notes: true
