@@ -58,14 +58,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: deployment
     steps:
-      - name: Checkout latest code
-        uses: actions/checkout@v4
-
-      - name: Add tag and push to the repository
-        run: |
-          git config user.name "API Team"
-          git config user.email "api-team@thousandeyes.com"
-
-          git tag ${{ inputs.releaseVersion }}
-          git push origin ${{ inputs.releaseVersion }}
-
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.releaseVersion }}
+          prerelease: false
+          draft: false
+          generate_release_notes: true
