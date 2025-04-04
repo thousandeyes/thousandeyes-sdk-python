@@ -32,7 +32,7 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
         """Test case for create_agent_to_server_instant_test request and response models"""
         request_body_json = """
                 {
-                  "server" : "www.thousandeyes.com",
+                  "server" : "www.thousandeyes.com:80",
                   "mtuMeasurements" : false,
                   "ipv6Policy" : "use-agent-policy",
                   "_links" : {
@@ -77,7 +77,6 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
-                  "port" : 49153,
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
@@ -92,7 +91,7 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
 
         response_body_json = """
                 {
-                  "server" : "www.thousandeyes.com",
+                  "server" : "www.thousandeyes.com:80",
                   "mtuMeasurements" : false,
                   "ipv6Policy" : "use-agent-policy",
                   "_links" : {
@@ -163,7 +162,6 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
-                  "port" : 49153,
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
