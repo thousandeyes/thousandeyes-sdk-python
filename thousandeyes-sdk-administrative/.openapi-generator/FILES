@@ -39,6 +39,11 @@ docs/Roles.md
 docs/RolesApi.md
 docs/SelfLinks.md
 docs/SimpleAgent.md
+docs/SimpleTest.md
+docs/TestInterval.md
+docs/TestLinks.md
+docs/TestSelfLink.md
+docs/TestType.md
 docs/UnauthorizedError.md
 docs/User.md
 docs/UserAccountGroup.md
@@ -96,6 +101,11 @@ src/thousandeyes_sdk/administrative/models/role_request_body.py
 src/thousandeyes_sdk/administrative/models/roles.py
 src/thousandeyes_sdk/administrative/models/self_links.py
 src/thousandeyes_sdk/administrative/models/simple_agent.py
+src/thousandeyes_sdk/administrative/models/simple_test.py
+src/thousandeyes_sdk/administrative/models/test_interval.py
+src/thousandeyes_sdk/administrative/models/test_links.py
+src/thousandeyes_sdk/administrative/models/test_self_link.py
+src/thousandeyes_sdk/administrative/models/test_type.py
 src/thousandeyes_sdk/administrative/models/unauthorized_error.py
 src/thousandeyes_sdk/administrative/models/user.py
 src/thousandeyes_sdk/administrative/models/user_account_group.py

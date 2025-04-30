@@ -20,6 +20,8 @@ docs/Stream.md
 docs/StreamLinks.md
 docs/StreamResponse.md
 docs/StreamSelfLink.md
+docs/StreamStatus.md
+docs/StreamStatusType.md
 docs/StreamType.md
 docs/StreamingApi.md
 docs/TagMatch.md
@@ -53,6 +55,8 @@ src/thousandeyes_sdk/streaming/models/stream.py
 src/thousandeyes_sdk/streaming/models/stream_links.py
 src/thousandeyes_sdk/streaming/models/stream_response.py
 src/thousandeyes_sdk/streaming/models/stream_self_link.py
+src/thousandeyes_sdk/streaming/models/stream_status.py
+src/thousandeyes_sdk/streaming/models/stream_status_type.py
 src/thousandeyes_sdk/streaming/models/stream_type.py
 src/thousandeyes_sdk/streaming/models/tag_match.py
 src/thousandeyes_sdk/streaming/models/tag_match_object_type.py

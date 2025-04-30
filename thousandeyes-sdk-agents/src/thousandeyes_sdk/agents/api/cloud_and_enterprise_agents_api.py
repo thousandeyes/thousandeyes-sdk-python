@@ -664,6 +664,7 @@ class CloudAndEnterpriseAgentsApi:
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         expand: Annotated[Optional[List[AgentListExpand]], Field(description="Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query.")] = None,
         agent_types: Annotated[Optional[List[CloudEnterpriseAgentType]], Field(description="Specifies the type of agent to request.")] = None,
+        labels: Annotated[Optional[List[StrictStr]], Field(description="Specifies the labels of the agents to request.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -687,6 +688,8 @@ class CloudAndEnterpriseAgentsApi:
         :type expand: List[AgentListExpand]
         :param agent_types: Specifies the type of agent to request.
         :type agent_types: List[CloudEnterpriseAgentType]
+        :param labels: Specifies the labels of the agents to request.
+        :type labels: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -713,6 +716,7 @@ class CloudAndEnterpriseAgentsApi:
             aid=aid,
             expand=expand,
             agent_types=agent_types,
+            labels=labels,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -746,6 +750,7 @@ class CloudAndEnterpriseAgentsApi:
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         expand: Annotated[Optional[List[AgentListExpand]], Field(description="Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query.")] = None,
         agent_types: Annotated[Optional[List[CloudEnterpriseAgentType]], Field(description="Specifies the type of agent to request.")] = None,
+        labels: Annotated[Optional[List[StrictStr]], Field(description="Specifies the labels of the agents to request.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -769,6 +774,8 @@ class CloudAndEnterpriseAgentsApi:
         :type expand: List[AgentListExpand]
         :param agent_types: Specifies the type of agent to request.
         :type agent_types: List[CloudEnterpriseAgentType]
+        :param labels: Specifies the labels of the agents to request.
+        :type labels: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -795,6 +802,7 @@ class CloudAndEnterpriseAgentsApi:
             aid=aid,
             expand=expand,
             agent_types=agent_types,
+            labels=labels,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -828,6 +836,7 @@ class CloudAndEnterpriseAgentsApi:
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         expand: Annotated[Optional[List[AgentListExpand]], Field(description="Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query.")] = None,
         agent_types: Annotated[Optional[List[CloudEnterpriseAgentType]], Field(description="Specifies the type of agent to request.")] = None,
+        labels: Annotated[Optional[List[StrictStr]], Field(description="Specifies the labels of the agents to request.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -851,6 +860,8 @@ class CloudAndEnterpriseAgentsApi:
         :type expand: List[AgentListExpand]
         :param agent_types: Specifies the type of agent to request.
         :type agent_types: List[CloudEnterpriseAgentType]
+        :param labels: Specifies the labels of the agents to request.
+        :type labels: List[str]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -877,6 +888,7 @@ class CloudAndEnterpriseAgentsApi:
             aid=aid,
             expand=expand,
             agent_types=agent_types,
+            labels=labels,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -904,6 +916,7 @@ class CloudAndEnterpriseAgentsApi:
         aid,
         expand,
         agent_types,
+        labels,
         _request_auth,
         _content_type,
         _headers,
@@ -915,6 +928,7 @@ class CloudAndEnterpriseAgentsApi:
         _collection_formats: Dict[str, str] = {
             'expand': 'csv',
             'agentTypes': 'csv',
+            'labels': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -937,6 +951,10 @@ class CloudAndEnterpriseAgentsApi:
         if agent_types is not None:
             
             _query_params.append(('agentTypes', agent_types))
+            
+        if labels is not None:
+            
+            _query_params.append(('labels', labels))
             
         # process the header parameters
         # process the form parameters

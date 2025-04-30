@@ -48,6 +48,11 @@ from thousandeyes_sdk.administrative.models.role_request_body import RoleRequest
 from thousandeyes_sdk.administrative.models.roles import Roles
 from thousandeyes_sdk.administrative.models.self_links import SelfLinks
 from thousandeyes_sdk.administrative.models.simple_agent import SimpleAgent
+from thousandeyes_sdk.administrative.models.simple_test import SimpleTest
+from thousandeyes_sdk.administrative.models.test_interval import TestInterval
+from thousandeyes_sdk.administrative.models.test_links import TestLinks
+from thousandeyes_sdk.administrative.models.test_self_link import TestSelfLink
+from thousandeyes_sdk.administrative.models.test_type import TestType
 from thousandeyes_sdk.administrative.models.unauthorized_error import UnauthorizedError
 from thousandeyes_sdk.administrative.models.user import User
 from thousandeyes_sdk.administrative.models.user_account_group import UserAccountGroup

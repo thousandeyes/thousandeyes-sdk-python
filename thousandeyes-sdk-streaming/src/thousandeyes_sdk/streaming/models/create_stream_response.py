@@ -25,6 +25,7 @@ from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
 from thousandeyes_sdk.streaming.models.filters import Filters
 from thousandeyes_sdk.streaming.models.signal import Signal
 from thousandeyes_sdk.streaming.models.stream_links import StreamLinks
+from thousandeyes_sdk.streaming.models.stream_status import StreamStatus
 from thousandeyes_sdk.streaming.models.stream_type import StreamType
 from thousandeyes_sdk.streaming.models.tag_match import TagMatch
 from thousandeyes_sdk.streaming.models.test_match import TestMatch
@@ -49,7 +50,8 @@ class CreateStreamResponse(BaseModel):
     filters: Optional[Filters] = None
     exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
     audit_operation: Optional[AuditOperation] = Field(default=None, alias="auditOperation")
-    __properties: ClassVar[List[str]] = ["id", "enabled", "_links", "type", "signal", "endpointType", "streamEndpointUrl", "dataModelVersion", "customHeaders", "tagMatch", "testMatch", "filters", "exporterConfig", "auditOperation"]
+    stream_status: Optional[StreamStatus] = Field(default=None, alias="streamStatus")
+    __properties: ClassVar[List[str]] = ["id", "enabled", "_links", "type", "signal", "endpointType", "streamEndpointUrl", "dataModelVersion", "customHeaders", "tagMatch", "testMatch", "filters", "exporterConfig", "auditOperation", "streamStatus"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -119,6 +121,9 @@ class CreateStreamResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of audit_operation
         if self.audit_operation:
             _dict['auditOperation'] = self.audit_operation.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of stream_status
+        if self.stream_status:
+            _dict['streamStatus'] = self.stream_status.to_dict()
         return _dict
 
     @classmethod
@@ -144,7 +149,8 @@ class CreateStreamResponse(BaseModel):
             "testMatch": [TestMatch.from_dict(_item) for _item in obj["testMatch"]] if obj.get("testMatch") is not None else None,
             "filters": Filters.from_dict(obj["filters"]) if obj.get("filters") is not None else None,
             "exporterConfig": ExporterConfig.from_dict(obj["exporterConfig"]) if obj.get("exporterConfig") is not None else None,
-            "auditOperation": AuditOperation.from_dict(obj["auditOperation"]) if obj.get("auditOperation") is not None else None
+            "auditOperation": AuditOperation.from_dict(obj["auditOperation"]) if obj.get("auditOperation") is not None else None,
+            "streamStatus": StreamStatus.from_dict(obj["streamStatus"]) if obj.get("streamStatus") is not None else None
         })
         return _obj
 

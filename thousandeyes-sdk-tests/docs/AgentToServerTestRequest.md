@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**port** | **int** | Port number to use for the test. The default port is 80. | [optional] 
 **interval** | [**TestInterval**](TestInterval.md) |  | 
 **alerts_enabled** | **bool** | Indicates if alerts are enabled. | [optional] 
 **enabled** | **bool** | Test is enabled. | [optional] [default to True]

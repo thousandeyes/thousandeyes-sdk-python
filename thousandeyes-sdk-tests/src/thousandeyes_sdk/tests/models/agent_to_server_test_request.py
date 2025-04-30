@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.tests.models.test_agent_request import TestAgentRequest
@@ -35,6 +35,7 @@ class AgentToServerTestRequest(BaseModel):
     """
     AgentToServerTestRequest
     """ # noqa: E501
+    port: Optional[StrictInt] = Field(default=None, description="Port number to use for the test. The default port is 80.")
     interval: TestInterval
     alerts_enabled: Optional[StrictBool] = Field(default=None, description="Indicates if alerts are enabled.", alias="alertsEnabled")
     enabled: Optional[StrictBool] = Field(default=True, description="Test is enabled.")

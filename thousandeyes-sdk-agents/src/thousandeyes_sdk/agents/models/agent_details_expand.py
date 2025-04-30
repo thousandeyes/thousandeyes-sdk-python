@@ -27,6 +27,7 @@ class AgentDetailsExpand(str, Enum):
     """
     CLUSTER_MINUS_MEMBER = 'cluster-member'
     TEST = 'test'
+    TEST_MINUS_IDS = 'test-ids'
     NOTIFICATION_MINUS_RULE = 'notification-rule'
     UNKNOWN = 'unknown'
 
