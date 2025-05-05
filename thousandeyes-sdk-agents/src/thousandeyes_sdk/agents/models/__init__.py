@@ -27,6 +27,7 @@ from thousandeyes_sdk.agents.models.agent_proxies import AgentProxies
 from thousandeyes_sdk.agents.models.agent_proxy import AgentProxy
 from thousandeyes_sdk.agents.models.agent_request import AgentRequest
 from thousandeyes_sdk.agents.models.agent_response import AgentResponse
+from thousandeyes_sdk.agents.models.agent_tests_assign_request import AgentTestsAssignRequest
 from thousandeyes_sdk.agents.models.alert_email import AlertEmail
 from thousandeyes_sdk.agents.models.alert_integration_base import AlertIntegrationBase
 from thousandeyes_sdk.agents.models.alert_integration_type import AlertIntegrationType

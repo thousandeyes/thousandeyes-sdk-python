@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.agents.models.agent_label import AgentLabel
 from thousandeyes_sdk.agents.models.notification_rules import NotificationRules
@@ -28,10 +28,11 @@ class EnterpriseAgentResponseExpands(BaseModel):
     """
     EnterpriseAgentResponseExpands
     """ # noqa: E501
+    test_ids: Optional[List[StrictInt]] = Field(default=None, description="List of test IDs assigned to the agent.", alias="testIds")
     tests: Optional[List[SimpleTest]] = Field(default=None, description="List of tests. See `/tests` for more information.")
     notification_rules: Optional[List[NotificationRules]] = Field(default=None, description="List of notification rule objects configured on agent", alias="notificationRules")
     labels: Optional[List[AgentLabel]] = Field(default=None, description="List of labels. See `/labels` for more information.")
-    __properties: ClassVar[List[str]] = ["tests", "notificationRules", "labels"]
+    __properties: ClassVar[List[str]] = ["testIds", "tests", "notificationRules", "labels"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -65,8 +66,10 @@ class EnterpriseAgentResponseExpands(BaseModel):
           were set at model initialization. Other fields with value `None`
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
+            "test_ids",
             "labels",
         ])
 
@@ -108,6 +111,7 @@ class EnterpriseAgentResponseExpands(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "testIds": obj.get("testIds"),
             "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "notificationRules": [NotificationRules.from_dict(_item) for _item in obj["notificationRules"]] if obj.get("notificationRules") is not None else None,
             "labels": [AgentLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None

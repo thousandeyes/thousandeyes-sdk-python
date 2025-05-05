@@ -26,6 +26,8 @@ class AgentListExpand(str, Enum):
     allowed enum values
     """
     CLUSTER_MINUS_MEMBER = 'cluster-member'
+    TEST = 'test'
+    TEST_MINUS_IDS = 'test-ids'
     UNKNOWN = 'unknown'
 
     @classmethod

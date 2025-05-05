@@ -37,6 +37,8 @@ from thousandeyes_sdk.streaming.models.stream import Stream
 from thousandeyes_sdk.streaming.models.stream_links import StreamLinks
 from thousandeyes_sdk.streaming.models.stream_response import StreamResponse
 from thousandeyes_sdk.streaming.models.stream_self_link import StreamSelfLink
+from thousandeyes_sdk.streaming.models.stream_status import StreamStatus
+from thousandeyes_sdk.streaming.models.stream_status_type import StreamStatusType
 from thousandeyes_sdk.streaming.models.stream_type import StreamType
 from thousandeyes_sdk.streaming.models.tag_match import TagMatch
 from thousandeyes_sdk.streaming.models.tag_match_object_type import TagMatchObjectType

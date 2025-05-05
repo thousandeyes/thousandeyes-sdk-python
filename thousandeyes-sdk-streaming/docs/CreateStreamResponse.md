@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **filters** | [**Filters**](Filters.md) |  | [optional] 
 **exporter_config** | [**ExporterConfig**](ExporterConfig.md) |  | [optional] 
 **audit_operation** | [**AuditOperation**](AuditOperation.md) |  | [optional] 
+**stream_status** | [**StreamStatus**](StreamStatus.md) |  | [optional] 
 
 ## Example
 

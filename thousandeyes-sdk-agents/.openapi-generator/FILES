@@ -16,6 +16,7 @@ docs/AgentProxiesApi.md
 docs/AgentProxy.md
 docs/AgentRequest.md
 docs/AgentResponse.md
+docs/AgentTestsAssignRequest.md
 docs/AlertEmail.md
 docs/AlertIntegrationBase.md
 docs/AlertIntegrationType.md
@@ -53,6 +54,7 @@ docs/TestInterval.md
 docs/TestLinks.md
 docs/TestSelfLink.md
 docs/TestType.md
+docs/TestsAssignmentOnAgentsApi.md
 docs/UnauthorizedError.md
 docs/ValidationError.md
 docs/ValidationErrorItem.md
@@ -64,6 +66,7 @@ src/thousandeyes_sdk/agents/api/agent_proxies_api.py
 src/thousandeyes_sdk/agents/api/cloud_and_enterprise_agent_notification_rules_api.py
 src/thousandeyes_sdk/agents/api/cloud_and_enterprise_agents_api.py
 src/thousandeyes_sdk/agents/api/enterprise_agent_cluster_api.py
+src/thousandeyes_sdk/agents/api/tests_assignment_on_agents_api.py
 src/thousandeyes_sdk/agents/models/__init__.py
 src/thousandeyes_sdk/agents/models/account_group.py
 src/thousandeyes_sdk/agents/models/agent_base.py
@@ -79,6 +82,7 @@ src/thousandeyes_sdk/agents/models/agent_proxies.py
 src/thousandeyes_sdk/agents/models/agent_proxy.py
 src/thousandeyes_sdk/agents/models/agent_request.py
 src/thousandeyes_sdk/agents/models/agent_response.py
+src/thousandeyes_sdk/agents/models/agent_tests_assign_request.py
 src/thousandeyes_sdk/agents/models/alert_email.py
 src/thousandeyes_sdk/agents/models/alert_integration_base.py
 src/thousandeyes_sdk/agents/models/alert_integration_type.py
@@ -122,4 +126,5 @@ test/test_agent_proxies_api.py
 test/test_cloud_and_enterprise_agent_notification_rules_api.py
 test/test_cloud_and_enterprise_agents_api.py
 test/test_enterprise_agent_cluster_api.py
+test/test_tests_assignment_on_agents_api.py
 test/test_utils.py

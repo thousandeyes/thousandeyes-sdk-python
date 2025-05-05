@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **enabled** | **bool** | Flag indicating if the agent is enabled. | [optional] 
 **prefix** | **str** | Prefix containing agents public IP address. | [optional] [readonly] 
 **verify_ssl_certificates** | **bool** | Flag indicating if has normal SSL operations or  if instead it&#39;s set to ignore SSL errors on browserbot-based tests. | [optional] [readonly] 
+**test_ids** | **List[int]** | List of test IDs assigned to the agent. | [optional] [readonly] 
+**tests** | [**List[SimpleTest]**](SimpleTest.md) | List of tests. See &#x60;/tests&#x60; for more information. | [optional] 
 **cluster_members** | [**List[ClusterMember]**](ClusterMember.md) | If an enterprise agent is clustered, detailed information about each cluster member will be shown as array entries in the clusterMembers field. This field is not shown for Enterprise Agents in standalone mode, or for Cloud Agents. | [optional] [readonly] 
 **utilization** | **int** | Shows overall utilization percentage (online Enterprise Agents and Enterprise Clusters only). | [optional] [readonly] 
 **account_groups** | [**List[AccountGroup]**](AccountGroup.md) | List of account groups. See /accounts-groups to pull a list of account IDs | [optional] 
@@ -27,8 +29,7 @@ Name | Type | Description | Notes
 **created_date** | **datetime** | UTC Agent creation date (ISO date-time format). | [optional] [readonly] 
 **target_for_tests** | **str** | Test target IP address. | [optional] 
 **local_resolution_prefixes** | **List[str]** | To perform rDNS lookups for public IP ranges, this field represents the public IP ranges. The range must be in CIDR notation; for example, 10.1.1.0/24. Maximum of 5 prefixes allowed (Enterprise Agents and Enterprise Agent clusters only). | [optional] 
-**interface_ip_mappings** | [**List[InterfaceIpMapping]**](InterfaceIpMapping.md) |  | [optional] [readonly] 
-**tests** | [**List[SimpleTest]**](SimpleTest.md) | List of tests. See &#x60;/tests&#x60; for more information. | [optional] 
+**interface_ip_mapping** | [**List[InterfaceIpMapping]**](InterfaceIpMapping.md) |  | [optional] [readonly] 
 **notification_rules** | [**List[NotificationRules]**](NotificationRules.md) | List of notification rule objects configured on agent | [optional] 
 **labels** | [**List[AgentLabel]**](AgentLabel.md) | List of labels. See &#x60;/labels&#x60; for more information. | [optional] [readonly] 
 **agent_type** | **str** | Enterprise agent type. | 

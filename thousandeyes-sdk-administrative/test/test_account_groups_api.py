@@ -165,16 +165,20 @@ class TestAccountGroupsApi(unittest.TestCase):
                     "dateRegistered" : "2022-07-17T22:00:54Z"
                   } ],
                   "agents" : [ {
-                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
                     "ipv6Policy" : "force-ipv4",
                     "prefix" : "99.128.0.0/11",
-                    "agentName" : "thousandeyes-stg-va-254",
-                    "utilization" : 25,
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "hostname" : "thousandeyes.com",
+                    "keepBrowserCache" : true,
+                    "agentState" : "online",
+                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "utilization" : 25,
+                    "testIds" : [ 281474976710706 ],
                     "clusterMembers" : [ {
                       "lastSeen" : "2022-07-17T22:00:54Z",
                       "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
@@ -210,19 +214,79 @@ class TestAccountGroupsApi(unittest.TestCase):
                         "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     } ],
-                    "hostname" : "thousandeyes.com",
+                    "tests" : [ {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
+                        }, {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
+                        } ],
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
+                    }, {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
+                        }, {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
+                        } ],
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
+                    } ],
                     "lastSeen" : "2022-07-17T22:00:54Z",
                     "createdDate" : "2022-07-17T22:00:54Z",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
-                    "keepBrowserCache" : true,
-                    "interfaceIpMappings" : [ {
+                    "interfaceIpMapping" : [ {
                       "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
                       "interfaceName" : "wlp4s0"
                     }, {
                       "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
                       "interfaceName" : "wlp4s0"
                     } ],
-                    "agentState" : "online",
                     "targetForTests" : "1.1.1.1",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",
@@ -242,16 +306,20 @@ class TestAccountGroupsApi(unittest.TestCase):
                       "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     } ]
                   }, {
-                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
                     "ipv6Policy" : "force-ipv4",
                     "prefix" : "99.128.0.0/11",
-                    "agentName" : "thousandeyes-stg-va-254",
-                    "utilization" : 25,
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "hostname" : "thousandeyes.com",
+                    "keepBrowserCache" : true,
+                    "agentState" : "online",
+                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "utilization" : 25,
+                    "testIds" : [ 281474976710706 ],
                     "clusterMembers" : [ {
                       "lastSeen" : "2022-07-17T22:00:54Z",
                       "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
@@ -287,19 +355,79 @@ class TestAccountGroupsApi(unittest.TestCase):
                         "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     } ],
-                    "hostname" : "thousandeyes.com",
+                    "tests" : [ {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
+                        }, {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
+                        } ],
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
+                    }, {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
+                        }, {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
+                        } ],
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
+                    } ],
                     "lastSeen" : "2022-07-17T22:00:54Z",
                     "createdDate" : "2022-07-17T22:00:54Z",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
-                    "keepBrowserCache" : true,
-                    "interfaceIpMappings" : [ {
+                    "interfaceIpMapping" : [ {
                       "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
                       "interfaceName" : "wlp4s0"
                     }, {
                       "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
                       "interfaceName" : "wlp4s0"
                     } ],
-                    "agentState" : "online",
                     "targetForTests" : "1.1.1.1",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",
@@ -432,16 +560,20 @@ class TestAccountGroupsApi(unittest.TestCase):
                     "dateRegistered" : "2022-07-17T22:00:54Z"
                   } ],
                   "agents" : [ {
-                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
                     "ipv6Policy" : "force-ipv4",
                     "prefix" : "99.128.0.0/11",
-                    "agentName" : "thousandeyes-stg-va-254",
-                    "utilization" : 25,
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "hostname" : "thousandeyes.com",
+                    "keepBrowserCache" : true,
+                    "agentState" : "online",
+                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "utilization" : 25,
+                    "testIds" : [ 281474976710706 ],
                     "clusterMembers" : [ {
                       "lastSeen" : "2022-07-17T22:00:54Z",
                       "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
@@ -477,19 +609,79 @@ class TestAccountGroupsApi(unittest.TestCase):
                         "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     } ],
-                    "hostname" : "thousandeyes.com",
+                    "tests" : [ {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
+                        }, {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
+                        } ],
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
+                    }, {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
+                        }, {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
+                        } ],
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
+                    } ],
                     "lastSeen" : "2022-07-17T22:00:54Z",
                     "createdDate" : "2022-07-17T22:00:54Z",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
-                    "keepBrowserCache" : true,
-                    "interfaceIpMappings" : [ {
+                    "interfaceIpMapping" : [ {
                       "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
                       "interfaceName" : "wlp4s0"
                     }, {
                       "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
                       "interfaceName" : "wlp4s0"
                     } ],
-                    "agentState" : "online",
                     "targetForTests" : "1.1.1.1",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",
@@ -509,16 +701,20 @@ class TestAccountGroupsApi(unittest.TestCase):
                       "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     } ]
                   }, {
-                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
                     "ipv6Policy" : "force-ipv4",
                     "prefix" : "99.128.0.0/11",
-                    "agentName" : "thousandeyes-stg-va-254",
-                    "utilization" : 25,
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "hostname" : "thousandeyes.com",
+                    "keepBrowserCache" : true,
+                    "agentState" : "online",
+                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "utilization" : 25,
+                    "testIds" : [ 281474976710706 ],
                     "clusterMembers" : [ {
                       "lastSeen" : "2022-07-17T22:00:54Z",
                       "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
@@ -554,19 +750,79 @@ class TestAccountGroupsApi(unittest.TestCase):
                         "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     } ],
-                    "hostname" : "thousandeyes.com",
+                    "tests" : [ {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
+                        }, {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
+                        } ],
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
+                    }, {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
+                        }, {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
+                        } ],
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
+                    } ],
                     "lastSeen" : "2022-07-17T22:00:54Z",
                     "createdDate" : "2022-07-17T22:00:54Z",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
-                    "keepBrowserCache" : true,
-                    "interfaceIpMappings" : [ {
+                    "interfaceIpMapping" : [ {
                       "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
                       "interfaceName" : "wlp4s0"
                     }, {
                       "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
                       "interfaceName" : "wlp4s0"
                     } ],
-                    "agentState" : "online",
                     "targetForTests" : "1.1.1.1",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",
