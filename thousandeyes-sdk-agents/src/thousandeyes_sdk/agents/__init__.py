@@ -18,6 +18,7 @@ from thousandeyes_sdk.agents.api.agent_proxies_api import AgentProxiesApi
 from thousandeyes_sdk.agents.api.cloud_and_enterprise_agent_notification_rules_api import CloudAndEnterpriseAgentNotificationRulesApi
 from thousandeyes_sdk.agents.api.cloud_and_enterprise_agents_api import CloudAndEnterpriseAgentsApi
 from thousandeyes_sdk.agents.api.enterprise_agent_cluster_api import EnterpriseAgentClusterApi
+from thousandeyes_sdk.agents.api.tests_assignment_on_agents_api import TestsAssignmentOnAgentsApi
 
 
 # import models into sdk package
@@ -35,6 +36,7 @@ from thousandeyes_sdk.agents.models.agent_proxies import AgentProxies
 from thousandeyes_sdk.agents.models.agent_proxy import AgentProxy
 from thousandeyes_sdk.agents.models.agent_request import AgentRequest
 from thousandeyes_sdk.agents.models.agent_response import AgentResponse
+from thousandeyes_sdk.agents.models.agent_tests_assign_request import AgentTestsAssignRequest
 from thousandeyes_sdk.agents.models.alert_email import AlertEmail
 from thousandeyes_sdk.agents.models.alert_integration_base import AlertIntegrationBase
 from thousandeyes_sdk.agents.models.alert_integration_type import AlertIntegrationType

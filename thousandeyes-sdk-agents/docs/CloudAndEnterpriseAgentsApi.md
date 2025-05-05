@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_agents**
-> CloudEnterpriseAgents get_agents(aid=aid, expand=expand, agent_types=agent_types)
+> CloudEnterpriseAgents get_agents(aid=aid, expand=expand, agent_types=agent_types, labels=labels)
 
 List Cloud and Enterprise Agents
 
@@ -226,10 +226,11 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
     expand = [thousandeyes_sdk.agents.AgentListExpand()] # List[AgentListExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
     agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()] # List[CloudEnterpriseAgentType] | Specifies the type of agent to request. (optional)
+    labels = ['[\"myCustomLabeledAgent\"]'] # List[str] | Specifies the labels of the agents to request. (optional)
 
     try:
         # List Cloud and Enterprise Agents
-        api_response = api_instance.get_agents(aid=aid, expand=expand, agent_types=agent_types)
+        api_response = api_instance.get_agents(aid=aid, expand=expand, agent_types=agent_types, labels=labels)
         print("The response of CloudAndEnterpriseAgentsApi->get_agents:\n")
         pprint(api_response)
     except Exception as e:
@@ -246,6 +247,7 @@ Name | Type | Description  | Notes
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
  **expand** | [**List[AgentListExpand]**](AgentListExpand.md)| Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the &#x60;clusterMembers&#x60; sub-resource, pass the &#x60;?expand&#x3D;cluster-member&#x60; query. | [optional] 
  **agent_types** | [**List[CloudEnterpriseAgentType]**](CloudEnterpriseAgentType.md)| Specifies the type of agent to request. | [optional] 
+ **labels** | [**List[str]**](str.md)| Specifies the labels of the agents to request. | [optional] 
 
 ### Return type
 
