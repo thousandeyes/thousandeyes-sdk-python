@@ -145,6 +145,8 @@ from thousandeyes_sdk.tests.models.test_sip_credentials import TestSipCredential
 from thousandeyes_sdk.tests.models.test_ssl_version_id import TestSslVersionId
 from thousandeyes_sdk.tests.models.test_sub_interval import TestSubInterval
 from thousandeyes_sdk.tests.models.test_type import TestType
+from thousandeyes_sdk.tests.models.test_version_history import TestVersionHistory
+from thousandeyes_sdk.tests.models.test_version_history_response import TestVersionHistoryResponse
 from thousandeyes_sdk.tests.models.tests import Tests
 from thousandeyes_sdk.tests.models.unauthorized_error import UnauthorizedError
 from thousandeyes_sdk.tests.models.unexpanded_agent_to_agent_test import UnexpandedAgentToAgentTest

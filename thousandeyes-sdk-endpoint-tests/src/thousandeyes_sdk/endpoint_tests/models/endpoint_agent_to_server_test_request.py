@@ -33,12 +33,13 @@ class EndpointAgentToServerTestRequest(BaseModel):
     endpoint_agent_labels: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent label IDs (obtained from `/endpoint/labels` endpoint), required when `agentSelectorType` is set to `agent-labels`.", alias="endpointAgentLabels")
     max_machines: Optional[StrictInt] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
     test_name: StrictStr = Field(description="Name of the test.", alias="testName")
-    server_name: StrictStr = Field(description="A server address without a protocol or IP address.", alias="serverName")
+    server_name: Optional[StrictStr] = Field(default=None, description="A server address without a protocol or IP address. **Deprecated, use `server` instead**.", alias="serverName")
+    server: Optional[StrictStr] = Field(default=None, description="Target domain name or IP address.")
     port: Optional[StrictInt] = Field(default=443, description="Port number.")
     is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
     interval: Optional[TestInterval] = None
     protocol: Optional[EndpointTestProtocol] = None
-    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName", "serverName", "port", "isPrioritized", "interval", "protocol"]
+    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName", "serverName", "server", "port", "isPrioritized", "interval", "protocol"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +99,7 @@ class EndpointAgentToServerTestRequest(BaseModel):
             "maxMachines": obj.get("maxMachines") if obj.get("maxMachines") is not None else 25,
             "testName": obj.get("testName"),
             "serverName": obj.get("serverName"),
+            "server": obj.get("server"),
             "port": obj.get("port") if obj.get("port") is not None else 443,
             "isPrioritized": obj.get("isPrioritized") if obj.get("isPrioritized") is not None else False,
             "interval": obj.get("interval"),

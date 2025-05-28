@@ -149,6 +149,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                     "value" : "ThousandEyesAccountUserName"
                   } ],
                   "liveShare" : false,
+                  "distributedTracing" : false,
                   "savedEvent" : true,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
@@ -295,6 +296,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                     "value" : "ThousandEyesAccountUserName"
                   } ],
                   "liveShare" : false,
+                  "distributedTracing" : false,
                   "savedEvent" : true,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
