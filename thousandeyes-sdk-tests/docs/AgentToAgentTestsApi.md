@@ -188,7 +188,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_agent_to_agent_test**
-> AgentToAgentTestResponse get_agent_to_agent_test(test_id, aid=aid, expand=expand)
+> AgentToAgentTestResponse get_agent_to_agent_test(test_id, aid=aid, version_id=version_id, expand=expand)
 
 Get Agent to Agent test
 
@@ -227,11 +227,12 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.tests.AgentToAgentTestsApi(api_client)
     test_id = '202701' # str | Test ID
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+    version_id = '1234' # str | The unique identifier for a specific version of the test settings. If provided, returns the test configuration as it existed at that version. To retrieve available version IDs, use the `/tests/{testId}/history` endpoint. If not specified, the current version of the test settings is returned. (optional)
     expand = [thousandeyes_sdk.tests.ExpandTestOptions()] # List[ExpandTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query. (optional)
 
     try:
         # Get Agent to Agent test
-        api_response = api_instance.get_agent_to_agent_test(test_id, aid=aid, expand=expand)
+        api_response = api_instance.get_agent_to_agent_test(test_id, aid=aid, version_id=version_id, expand=expand)
         print("The response of AgentToAgentTestsApi->get_agent_to_agent_test:\n")
         pprint(api_response)
     except Exception as e:
@@ -247,6 +248,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **test_id** | **str**| Test ID | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+ **version_id** | **str**| The unique identifier for a specific version of the test settings. If provided, returns the test configuration as it existed at that version. To retrieve available version IDs, use the &#x60;/tests/{testId}/history&#x60; endpoint. If not specified, the current version of the test settings is returned. | [optional] 
  **expand** | [**List[ExpandTestOptions]**](ExpandTestOptions.md)| Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the &#x60;agents&#x60; sub-resource, they need to pass the &#x60;?expand&#x3D;agent&#x60; query. | [optional] 
 
 ### Return type

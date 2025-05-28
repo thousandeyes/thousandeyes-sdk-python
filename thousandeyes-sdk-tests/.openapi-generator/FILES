@@ -145,6 +145,8 @@ docs/TestSipCredentials.md
 docs/TestSslVersionId.md
 docs/TestSubInterval.md
 docs/TestType.md
+docs/TestVersionHistory.md
+docs/TestVersionHistoryResponse.md
 docs/Tests.md
 docs/TestsApi.md
 docs/UnauthorizedError.md
@@ -333,6 +335,8 @@ src/thousandeyes_sdk/tests/models/test_sip_credentials.py
 src/thousandeyes_sdk/tests/models/test_ssl_version_id.py
 src/thousandeyes_sdk/tests/models/test_sub_interval.py
 src/thousandeyes_sdk/tests/models/test_type.py
+src/thousandeyes_sdk/tests/models/test_version_history.py
+src/thousandeyes_sdk/tests/models/test_version_history_response.py
 src/thousandeyes_sdk/tests/models/tests.py
 src/thousandeyes_sdk/tests/models/unauthorized_error.py
 src/thousandeyes_sdk/tests/models/unexpanded_agent_to_agent_test.py
