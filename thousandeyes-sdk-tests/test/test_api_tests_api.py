@@ -154,6 +154,7 @@ class TestAPITestsApi(unittest.TestCase):
                     "value" : "ThousandEyesAccountUserName"
                   } ],
                   "liveShare" : false,
+                  "distributedTracing" : false,
                   "savedEvent" : true,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
@@ -349,6 +350,7 @@ class TestAPITestsApi(unittest.TestCase):
                     "value" : "ThousandEyesAccountUserName"
                   } ],
                   "liveShare" : false,
+                  "distributedTracing" : false,
                   "savedEvent" : true,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
@@ -583,6 +585,7 @@ class TestAPITestsApi(unittest.TestCase):
                     "value" : "ThousandEyesAccountUserName"
                   } ],
                   "liveShare" : false,
+                  "distributedTracing" : false,
                   "savedEvent" : true,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
@@ -784,6 +787,7 @@ class TestAPITestsApi(unittest.TestCase):
                       "value" : "ThousandEyesAccountUserName"
                     } ],
                     "liveShare" : false,
+                    "distributedTracing" : false,
                     "savedEvent" : true,
                     "networkMeasurements" : true,
                     "url" : "www.thousandeyes.com",
@@ -918,6 +922,7 @@ class TestAPITestsApi(unittest.TestCase):
                       "value" : "ThousandEyesAccountUserName"
                     } ],
                     "liveShare" : false,
+                    "distributedTracing" : false,
                     "savedEvent" : true,
                     "networkMeasurements" : true,
                     "url" : "www.thousandeyes.com",
@@ -1076,6 +1081,7 @@ class TestAPITestsApi(unittest.TestCase):
                     "value" : "ThousandEyesAccountUserName"
                   } ],
                   "liveShare" : false,
+                  "distributedTracing" : false,
                   "savedEvent" : true,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
@@ -1271,6 +1277,7 @@ class TestAPITestsApi(unittest.TestCase):
                     "value" : "ThousandEyesAccountUserName"
                   } ],
                   "liveShare" : false,
+                  "distributedTracing" : false,
                   "savedEvent" : true,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",

@@ -37,8 +37,8 @@ class AlertSuppressionWindowRequest(BaseModel):
     duration: Optional[StrictInt] = Field(default=None, description="Duration in seconds the suppression window is active.")
     repeat: Optional[Repeat] = None
     end_repeat: Optional[EndRepeat] = Field(default=None, alias="endRepeat")
-    tests: Optional[List[StrictStr]] = Field(default=None, description="List of tests to assign to the alert suppression window.")
-    __properties: ClassVar[List[str]] = ["alertSuppressionWindowId", "name", "isEnabled", "status", "startDate", "duration", "repeat", "endRepeat", "tests"]
+    test_ids: Optional[List[StrictStr]] = Field(default=None, description="List of test IDs to assign to the alert suppression window.", alias="testIds")
+    __properties: ClassVar[List[str]] = ["alertSuppressionWindowId", "name", "isEnabled", "status", "startDate", "duration", "repeat", "endRepeat", "testIds"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,7 +108,7 @@ class AlertSuppressionWindowRequest(BaseModel):
             "duration": obj.get("duration"),
             "repeat": Repeat.from_dict(obj["repeat"]) if obj.get("repeat") is not None else None,
             "endRepeat": EndRepeat.from_dict(obj["endRepeat"]) if obj.get("endRepeat") is not None else None,
-            "tests": obj.get("tests")
+            "testIds": obj.get("testIds")
         })
         return _obj
 

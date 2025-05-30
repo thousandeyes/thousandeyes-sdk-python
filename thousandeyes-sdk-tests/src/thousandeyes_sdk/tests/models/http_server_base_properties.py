@@ -41,6 +41,7 @@ class HttpServerBaseProperties(BaseModel):
     content_regex: Optional[StrictStr] = Field(default=None, description="Content regex, this field does not require escaping.", alias="contentRegex")
     custom_headers: Optional[TestCustomHeaders] = Field(default=None, alias="customHeaders")
     desired_status_code: Optional[StrictStr] = Field(default='default', description="Specify the HTTP status code value that indicates a successful response. The default value accepts any 2xx or 3xx status code.", alias="desiredStatusCode")
+    distributed_tracing: Optional[StrictBool] = Field(default=None, description="Adds distributed tracing headers to API requests using B3 and W3C standards.", alias="distributedTracing")
     download_limit: Optional[StrictInt] = Field(default=None, description="Specifies maximum number of bytes to download from the target object.", alias="downloadLimit")
     dns_override: Optional[StrictStr] = Field(default=None, description="IP address to use for DNS override.", alias="dnsOverride")
     http_target_time: Optional[Annotated[int, Field(le=5000, strict=True, ge=100)]] = Field(default=None, description="Target time for HTTP server completion, specified in milliseconds.", alias="httpTargetTime")
@@ -68,7 +69,7 @@ class HttpServerBaseProperties(BaseModel):
     override_agent_proxy: Optional[StrictBool] = Field(default=False, description="Flag indicating if a proxy other than the default should be used. To override the default proxy for agents, set to `true` and specify a value for `overrideProxyId`.", alias="overrideAgentProxy")
     override_proxy_id: Optional[StrictStr] = Field(default=None, description="ID of the proxy to be used if the default proxy is overridden.", alias="overrideProxyId")
     collect_proxy_network_data: Optional[StrictBool] = Field(default=False, description="Indicates whether network data to the proxy should be collected.", alias="collectProxyNetworkData")
-    __properties: ClassVar[List[str]] = ["authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData"]
+    __properties: ClassVar[List[str]] = ["authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -140,6 +141,7 @@ class HttpServerBaseProperties(BaseModel):
             "contentRegex": obj.get("contentRegex"),
             "customHeaders": TestCustomHeaders.from_dict(obj["customHeaders"]) if obj.get("customHeaders") is not None else None,
             "desiredStatusCode": obj.get("desiredStatusCode") if obj.get("desiredStatusCode") is not None else 'default',
+            "distributedTracing": obj.get("distributedTracing"),
             "downloadLimit": obj.get("downloadLimit"),
             "dnsOverride": obj.get("dnsOverride"),
             "httpTargetTime": obj.get("httpTargetTime"),
