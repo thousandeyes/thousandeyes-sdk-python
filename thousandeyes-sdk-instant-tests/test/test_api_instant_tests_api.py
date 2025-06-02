@@ -32,6 +32,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
         """Test case for create_api_instant_test request and response models"""
         request_body_json = """
                 {
+                  "clientCertificate" : "-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n",
                   "mtuMeasurements" : false,
                   "_links" : {
                     "testResults" : [ {
@@ -71,6 +72,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                     "clientId" : "client-id",
                     "tokenUrl" : "https://id.cisco.com/oauth2/default/v1/token",
                     "method" : "get",
+                    "verifyCertificate" : false,
                     "body" : "body",
                     "url" : "https://api.thousandeyes.com/v7/status",
                     "password" : "basic_pw123",
@@ -110,6 +112,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                     "clientId" : "client-id",
                     "tokenUrl" : "https://id.cisco.com/oauth2/default/v1/token",
                     "method" : "get",
+                    "verifyCertificate" : false,
                     "body" : "body",
                     "url" : "https://api.thousandeyes.com/v7/status",
                     "password" : "basic_pw123",
@@ -138,6 +141,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                   "followRedirects" : true,
                   "pathTraceMode" : "classic",
                   "modifiedBy" : "user@user.com",
+                  "clientCertDomainsAllowList" : "www.thousandeyes.com",
                   "testName" : "ThousandEyes Test",
                   "numPathTraces" : 3,
                   "overrideAgentProxy" : false,
@@ -149,6 +153,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                     "value" : "ThousandEyesAccountUserName"
                   } ],
                   "liveShare" : false,
+                  "distributedTracing" : false,
                   "savedEvent" : true,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
@@ -178,6 +183,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
 
         response_body_json = """
                 {
+                  "clientCertificate" : "-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n",
                   "mtuMeasurements" : false,
                   "_links" : {
                     "testResults" : [ {
@@ -217,6 +223,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                     "clientId" : "client-id",
                     "tokenUrl" : "https://id.cisco.com/oauth2/default/v1/token",
                     "method" : "get",
+                    "verifyCertificate" : false,
                     "body" : "body",
                     "url" : "https://api.thousandeyes.com/v7/status",
                     "password" : "basic_pw123",
@@ -256,6 +263,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                     "clientId" : "client-id",
                     "tokenUrl" : "https://id.cisco.com/oauth2/default/v1/token",
                     "method" : "get",
+                    "verifyCertificate" : false,
                     "body" : "body",
                     "url" : "https://api.thousandeyes.com/v7/status",
                     "password" : "basic_pw123",
@@ -284,6 +292,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                   "followRedirects" : true,
                   "pathTraceMode" : "classic",
                   "modifiedBy" : "user@user.com",
+                  "clientCertDomainsAllowList" : "www.thousandeyes.com",
                   "testName" : "ThousandEyes Test",
                   "numPathTraces" : 3,
                   "overrideAgentProxy" : false,
@@ -295,6 +304,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                     "value" : "ThousandEyesAccountUserName"
                   } ],
                   "liveShare" : false,
+                  "distributedTracing" : false,
                   "savedEvent" : true,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",

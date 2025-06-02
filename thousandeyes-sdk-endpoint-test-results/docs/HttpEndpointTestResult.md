@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **system_metrics** | [**SystemMetrics**](SystemMetrics.md) |  | [optional] 
 **original_target_profile** | [**TargetProfile**](TargetProfile.md) |  | [optional] 
 **vpn_profile** | [**VpnProfile**](VpnProfile.md) |  | [optional] 
+**score** | [**EndpointHttpDataPointScore**](EndpointHttpDataPointScore.md) |  | [optional] 
 **connect_time** | **int** | Time required to establish a TCP connection to the server in milliseconds. | [optional] [readonly] 
 **dns_time** | **int** | Time required to resolve DNS in milliseconds. | [optional] [readonly] 
 **error_type** | [**HttpErrorType**](HttpErrorType.md) |  | [optional] 

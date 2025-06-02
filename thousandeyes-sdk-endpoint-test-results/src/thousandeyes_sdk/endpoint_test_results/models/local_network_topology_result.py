@@ -19,6 +19,11 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_agent_score import EndpointProbeAgentScore
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_connection_score import EndpointProbeConnectionScore
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_gateway_score import EndpointProbeGatewayScore
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_proxy_score import EndpointProbeProxyScore
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_vpn_score import EndpointProbeVpnScore
 from thousandeyes_sdk.endpoint_test_results.models.network_ping import NetworkPing
 from thousandeyes_sdk.endpoint_test_results.models.network_profile import NetworkProfile
 from thousandeyes_sdk.endpoint_test_results.models.network_topology_type import NetworkTopologyType
@@ -46,11 +51,16 @@ class LocalNetworkTopologyResult(BaseModel):
     tcp_connect: Optional[TcpConnect] = Field(default=None, alias="tcpConnect")
     system_metrics: Optional[SystemMetrics] = Field(default=None, alias="systemMetrics")
     system_metric_details: Optional[SystemMetricDetails] = Field(default=None, alias="systemMetricDetails")
+    vpn_score: Optional[EndpointProbeVpnScore] = Field(default=None, alias="vpnScore")
+    gateway_score: Optional[EndpointProbeGatewayScore] = Field(default=None, alias="gatewayScore")
+    proxy_score: Optional[EndpointProbeProxyScore] = Field(default=None, alias="proxyScore")
+    connection_score: Optional[EndpointProbeConnectionScore] = Field(default=None, alias="connectionScore")
+    agent_score: Optional[EndpointProbeAgentScore] = Field(default=None, alias="agentScore")
     coordinates: Optional[RealUserEndpointTestCoordinates] = None
     network_profile: Optional[NetworkProfile] = Field(default=None, alias="networkProfile")
     icmp_traceroute: Optional[Traceroute] = Field(default=None, alias="icmpTraceroute")
     icmp_traceroutes: Optional[List[Traceroute]] = Field(default=None, alias="icmpTraceroutes")
-    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails", "coordinates", "networkProfile", "icmpTraceroute", "icmpTraceroutes"]
+    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails", "vpnScore", "gatewayScore", "proxyScore", "connectionScore", "agentScore", "coordinates", "networkProfile", "icmpTraceroute", "icmpTraceroutes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,6 +128,21 @@ class LocalNetworkTopologyResult(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of system_metric_details
         if self.system_metric_details:
             _dict['systemMetricDetails'] = self.system_metric_details.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of vpn_score
+        if self.vpn_score:
+            _dict['vpnScore'] = self.vpn_score.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of gateway_score
+        if self.gateway_score:
+            _dict['gatewayScore'] = self.gateway_score.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of proxy_score
+        if self.proxy_score:
+            _dict['proxyScore'] = self.proxy_score.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of connection_score
+        if self.connection_score:
+            _dict['connectionScore'] = self.connection_score.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of agent_score
+        if self.agent_score:
+            _dict['agentScore'] = self.agent_score.to_dict()
         # override the default output from pydantic by calling `to_dict()` of coordinates
         if self.coordinates:
             _dict['coordinates'] = self.coordinates.to_dict()
@@ -158,6 +183,11 @@ class LocalNetworkTopologyResult(BaseModel):
             "tcpConnect": TcpConnect.from_dict(obj["tcpConnect"]) if obj.get("tcpConnect") is not None else None,
             "systemMetrics": SystemMetrics.from_dict(obj["systemMetrics"]) if obj.get("systemMetrics") is not None else None,
             "systemMetricDetails": SystemMetricDetails.from_dict(obj["systemMetricDetails"]) if obj.get("systemMetricDetails") is not None else None,
+            "vpnScore": EndpointProbeVpnScore.from_dict(obj["vpnScore"]) if obj.get("vpnScore") is not None else None,
+            "gatewayScore": EndpointProbeGatewayScore.from_dict(obj["gatewayScore"]) if obj.get("gatewayScore") is not None else None,
+            "proxyScore": EndpointProbeProxyScore.from_dict(obj["proxyScore"]) if obj.get("proxyScore") is not None else None,
+            "connectionScore": EndpointProbeConnectionScore.from_dict(obj["connectionScore"]) if obj.get("connectionScore") is not None else None,
+            "agentScore": EndpointProbeAgentScore.from_dict(obj["agentScore"]) if obj.get("agentScore") is not None else None,
             "coordinates": RealUserEndpointTestCoordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
             "networkProfile": NetworkProfile.from_dict(obj["networkProfile"]) if obj.get("networkProfile") is not None else None,
             "icmpTraceroute": Traceroute.from_dict(obj["icmpTraceroute"]) if obj.get("icmpTraceroute") is not None else None,

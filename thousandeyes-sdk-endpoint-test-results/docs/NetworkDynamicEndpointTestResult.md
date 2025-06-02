@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **avg_latency** | **float** | Average RTT for packets sent to destination. | [optional] [readonly] 
 **error_details** | **str** | Error details, if an error was encountered. | [optional] [readonly] 
 **jitter** | **float** | Standard deviation of latency. | [optional] [readonly] 
+**score** | [**EndpointPingDataPointScore**](EndpointPingDataPointScore.md) |  | [optional] 
+**zta_metrics** | [**List[EndpointZtaMetrics]**](EndpointZtaMetrics.md) |  | [optional] 
 **is_icmp_blocked** | **bool** | Set to &#x60;true&#x60; if network target is blocking ICMP echo (ping) queries. | [optional] [readonly] 
 **loss** | **float** | Percentage of packets not reaching destination. | [optional] [readonly] 
 **max_latency** | **float** | Maximum RTT for packets sent to destination. | [optional] [readonly] 
