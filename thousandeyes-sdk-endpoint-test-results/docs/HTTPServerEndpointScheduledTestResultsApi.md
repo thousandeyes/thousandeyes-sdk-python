@@ -106,7 +106,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_multi_test_filtered_http_server_scheduled_test_results**
-> HttpMultiEndpointTestResults get_multi_test_filtered_http_server_scheduled_test_results(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand, http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search)
+> HttpMultiEndpointTestResults get_multi_test_filtered_http_server_scheduled_test_results(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, use_all_permitted_aids=use_all_permitted_aids, expand=expand, http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search)
 
 Filter HTTP server scheduled test results
 
@@ -149,12 +149,13 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     start_date = '2022-07-17T22:00:54Z' # datetime | Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
+    use_all_permitted_aids = False # bool | Set to `true` to load data from all accounts the user has access to. (optional) (default to False)
     expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()] # List[ExpandEndpointHttpServerOptions] | This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query. (optional)
     http_endpoint_tests_data_rounds_search = thousandeyes_sdk.endpoint_test_results.HttpEndpointTestsDataRoundsSearch() # HttpEndpointTestsDataRoundsSearch | Test data search filters. (optional)
 
     try:
         # Filter HTTP server scheduled test results
-        api_response = api_instance.get_multi_test_filtered_http_server_scheduled_test_results(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand, http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search)
+        api_response = api_instance.get_multi_test_filtered_http_server_scheduled_test_results(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, use_all_permitted_aids=use_all_permitted_aids, expand=expand, http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search)
         print("The response of HTTPServerEndpointScheduledTestResultsApi->get_multi_test_filtered_http_server_scheduled_test_results:\n")
         pprint(api_response)
     except Exception as e:
@@ -173,6 +174,7 @@ Name | Type | Description  | Notes
  **start_date** | **datetime**| Use with the &#x60;endDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
+ **use_all_permitted_aids** | **bool**| Set to &#x60;true&#x60; to load data from all accounts the user has access to. | [optional] [default to False]
  **expand** | [**List[ExpandEndpointHttpServerOptions]**](ExpandEndpointHttpServerOptions.md)| This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \&quot;header,\&quot; append &#x60;?expand&#x3D;header&#x60; to the query. | [optional] 
  **http_endpoint_tests_data_rounds_search** | [**HttpEndpointTestsDataRoundsSearch**](HttpEndpointTestsDataRoundsSearch.md)| Test data search filters. | [optional] 
 

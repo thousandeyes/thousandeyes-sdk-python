@@ -108,7 +108,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filter_scheduled_tests_network_results**
-> MultiTestIdNetworkEndpointTestResults filter_scheduled_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search)
+> MultiTestIdNetworkEndpointTestResults filter_scheduled_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, use_all_permitted_aids=use_all_permitted_aids, multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search)
 
 Retrieve network scheduled test results from multiple tests
 
@@ -151,11 +151,12 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     max = 5 # int | (Optional) Maximum number of objects to return. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
+    use_all_permitted_aids = False # bool | Set to `true` to load data from all accounts the user has access to. (optional) (default to False)
     multi_test_id_endpoint_tests_data_rounds_search = thousandeyes_sdk.endpoint_test_results.MultiTestIdEndpointTestsDataRoundsSearch() # MultiTestIdEndpointTestsDataRoundsSearch | Test data search filters. (optional)
 
     try:
         # Retrieve network scheduled test results from multiple tests
-        api_response = api_instance.filter_scheduled_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search)
+        api_response = api_instance.filter_scheduled_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, use_all_permitted_aids=use_all_permitted_aids, multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search)
         print("The response of NetworkEndpointScheduledTestResultsApi->filter_scheduled_tests_network_results:\n")
         pprint(api_response)
     except Exception as e:
@@ -175,6 +176,7 @@ Name | Type | Description  | Notes
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **max** | **int**| (Optional) Maximum number of objects to return. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
+ **use_all_permitted_aids** | **bool**| Set to &#x60;true&#x60; to load data from all accounts the user has access to. | [optional] [default to False]
  **multi_test_id_endpoint_tests_data_rounds_search** | [**MultiTestIdEndpointTestsDataRoundsSearch**](MultiTestIdEndpointTestsDataRoundsSearch.md)| Test data search filters. | [optional] 
 
 ### Return type

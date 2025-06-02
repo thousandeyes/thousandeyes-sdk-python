@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **status** | [**Status**](Status.md) |  | [optional] 
 **deleted** | **bool** |  | [optional] [readonly] 
 **version** | **str** | Version of the agent software running. | [optional] [readonly] 
+**target_version** | **str** | The latest available version of the agent. This field is populated only if expand includes &#x60;targetVersion&#x60;. | [optional] [readonly] 
 **created_at** | **datetime** |  | [optional] [readonly] 
 **number_of_clients** | **int** |  | [optional] [readonly] 
 **public_ip** | **str** |  | [optional] [readonly] 

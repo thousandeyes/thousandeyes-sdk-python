@@ -18,6 +18,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_ping_data_point_score import EndpointPingDataPointScore
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_zta_metrics import EndpointZtaMetrics
 from thousandeyes_sdk.endpoint_test_results.models.network_profile import NetworkProfile
 from thousandeyes_sdk.endpoint_test_results.models.system_metrics import SystemMetrics
 from thousandeyes_sdk.endpoint_test_results.models.target_profile import TargetProfile
@@ -41,11 +43,13 @@ class NetworkEndpointTestResult(BaseModel):
     avg_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Average RTT for packets sent to destination.", alias="avgLatency")
     error_details: Optional[StrictStr] = Field(default=None, description="Error details, if an error was encountered.", alias="errorDetails")
     jitter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Standard deviation of latency.")
+    score: Optional[EndpointPingDataPointScore] = None
+    zta_metrics: Optional[List[EndpointZtaMetrics]] = Field(default=None, alias="ztaMetrics")
     is_icmp_blocked: Optional[StrictBool] = Field(default=None, description="Set to `true` if network target is blocking ICMP echo (ping) queries.", alias="isIcmpBlocked")
     loss: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Percentage of packets not reaching destination.")
     max_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Maximum RTT for packets sent to destination.", alias="maxLatency")
     min_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Minimum RTT for packets sent to destination.", alias="minLatency")
-    __properties: ClassVar[List[str]] = ["aid", "testId", "agentId", "roundId", "serverIp", "networkProfile", "systemMetrics", "originalTargetProfile", "vpnProfile", "avgLatency", "errorDetails", "jitter", "isIcmpBlocked", "loss", "maxLatency", "minLatency"]
+    __properties: ClassVar[List[str]] = ["aid", "testId", "agentId", "roundId", "serverIp", "networkProfile", "systemMetrics", "originalTargetProfile", "vpnProfile", "avgLatency", "errorDetails", "jitter", "score", "ztaMetrics", "isIcmpBlocked", "loss", "maxLatency", "minLatency"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -121,6 +125,16 @@ class NetworkEndpointTestResult(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of vpn_profile
         if self.vpn_profile:
             _dict['vpnProfile'] = self.vpn_profile.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of score
+        if self.score:
+            _dict['score'] = self.score.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in zta_metrics (list)
+        _items = []
+        if self.zta_metrics:
+            for _item in self.zta_metrics:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['ztaMetrics'] = _items
         return _dict
 
     @classmethod
@@ -145,6 +159,8 @@ class NetworkEndpointTestResult(BaseModel):
             "avgLatency": obj.get("avgLatency"),
             "errorDetails": obj.get("errorDetails"),
             "jitter": obj.get("jitter"),
+            "score": EndpointPingDataPointScore.from_dict(obj["score"]) if obj.get("score") is not None else None,
+            "ztaMetrics": [EndpointZtaMetrics.from_dict(_item) for _item in obj["ztaMetrics"]] if obj.get("ztaMetrics") is not None else None,
             "isIcmpBlocked": obj.get("isIcmpBlocked"),
             "loss": obj.get("loss"),
             "maxLatency": obj.get("maxLatency"),

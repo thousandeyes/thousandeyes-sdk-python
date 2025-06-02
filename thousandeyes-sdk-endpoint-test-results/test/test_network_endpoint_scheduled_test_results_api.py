@@ -142,6 +142,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "loss" : 0.0,
                     "systemMetrics" : {
                       "cpuUtilization" : {
@@ -212,6 +216,19 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "ztaMetrics" : [ {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    }, {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    } ],
                     "testId" : "584739201",
                     "aid" : "1234",
                     "roundId" : 1384309800,
@@ -233,6 +250,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "loss" : 0.0,
                     "systemMetrics" : {
                       "cpuUtilization" : {
@@ -303,6 +324,19 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "ztaMetrics" : [ {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    }, {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    } ],
                     "testId" : "584739201",
                     "aid" : "1234",
                     "roundId" : 1384309800,
@@ -381,6 +415,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "loss" : 0.0,
                     "systemMetrics" : {
                       "cpuUtilization" : {
@@ -451,6 +489,19 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "ztaMetrics" : [ {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    }, {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    } ],
                     "testId" : "584739201",
                     "aid" : "1234",
                     "roundId" : 1384309800,
@@ -472,6 +523,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "loss" : 0.0,
                     "systemMetrics" : {
                       "cpuUtilization" : {
@@ -542,6 +597,19 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "ztaMetrics" : [ {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    }, {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    } ],
                     "testId" : "584739201",
                     "aid" : "1234",
                     "roundId" : 1384309800,

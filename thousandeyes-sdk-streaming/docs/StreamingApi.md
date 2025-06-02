@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 List data streams
 
-Retrieves a list of configured data streams.
+Retrieves a list of configured data streams. Empty list is returned if no streams are configured.
 
 ### Example
 
@@ -348,7 +348,6 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Forbidden |  -  |
-**404** | Not Found |  -  |
 **429** | Too Many Requests |  -  |
 **500** | Internal Server Error |  -  |
 

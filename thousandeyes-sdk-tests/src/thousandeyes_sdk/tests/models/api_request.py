@@ -48,8 +48,9 @@ class ApiRequest(BaseModel):
     url: StrictStr = Field(description="Request url. Supports variables in the format `{{variableName}}`.")
     username: Optional[StrictStr] = Field(default=None, description="The username if `authType = basic`.")
     variables: Optional[List[ApiRequestVariable]] = Field(default=None, description="Array of API post request variable objects.")
+    verify_certificate: Optional[StrictBool] = Field(default=False, description="Ignore or acknowledge certificate errors. Set to false to ignore certificate errors.", alias="verifyCertificate")
     wait_time_ms: Optional[StrictInt] = Field(default=None, description="Post request delay before executing the next API requests, in milliseconds.", alias="waitTimeMs")
-    __properties: ClassVar[List[str]] = ["assertions", "authType", "bearerToken", "body", "clientAuthentication", "clientId", "clientSecret", "collectApiResponse", "headers", "method", "name", "password", "scope", "tokenUrl", "url", "username", "variables", "waitTimeMs"]
+    __properties: ClassVar[List[str]] = ["assertions", "authType", "bearerToken", "body", "clientAuthentication", "clientId", "clientSecret", "collectApiResponse", "headers", "method", "name", "password", "scope", "tokenUrl", "url", "username", "variables", "verifyCertificate", "waitTimeMs"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -141,6 +142,7 @@ class ApiRequest(BaseModel):
             "url": obj.get("url"),
             "username": obj.get("username"),
             "variables": [ApiRequestVariable.from_dict(_item) for _item in obj["variables"]] if obj.get("variables") is not None else None,
+            "verifyCertificate": obj.get("verifyCertificate") if obj.get("verifyCertificate") is not None else False,
             "waitTimeMs": obj.get("waitTimeMs")
         })
         return _obj

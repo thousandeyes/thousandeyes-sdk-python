@@ -140,6 +140,10 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     "totalTime" : 15,
                     "responseCode" : 200,
                     "receiveTime" : 1,
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -241,6 +245,10 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     "totalTime" : 15,
                     "responseCode" : 200,
                     "receiveTime" : 1,
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -409,6 +417,10 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     "totalTime" : 15,
                     "responseCode" : 200,
                     "receiveTime" : 1,
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -510,6 +522,10 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     "totalTime" : 15,
                     "responseCode" : 200,
                     "receiveTime" : 1,
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,

@@ -14,8 +14,10 @@ Name | Type | Description | Notes
 **suppressed** | **bool** | Indicates whether the alert is currently suppressed by a real-time ASW. | [optional] 
 **meta** | [**AlertMeta**](AlertMeta.md) |  | [optional] 
 **links** | [**AlertLinks**](AlertLinks.md) |  | [optional] 
-**state** | [**State**](State.md) |  | [optional] 
-**severity** | [**Severity**](Severity.md) |  | [optional] 
+**state** | [**LegacyState**](LegacyState.md) |  | [optional] 
+**severity** | [**LegacySeverity**](LegacySeverity.md) |  | [optional] 
+**alert_state** | [**State**](State.md) |  | [optional] 
+**alert_severity** | [**Severity**](Severity.md) |  | [optional] 
 **details** | [**List[AlertMetricDetail]**](AlertMetricDetail.md) |  | [optional] 
 
 ## Example
