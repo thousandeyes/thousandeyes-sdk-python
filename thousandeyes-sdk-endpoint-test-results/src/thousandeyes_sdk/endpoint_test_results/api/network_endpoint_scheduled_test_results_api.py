@@ -19,7 +19,7 @@ from importlib.metadata import version
 import thousandeyes_sdk.endpoint_test_results.models
 
 from datetime import datetime
-from pydantic import Field, StrictInt, StrictStr, field_validator
+from pydantic import Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_tests_data_rounds_search import EndpointTestsDataRoundsSearch
@@ -468,6 +468,7 @@ class NetworkEndpointScheduledTestResultsApi:
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
         multi_test_id_endpoint_tests_data_rounds_search: Annotated[Optional[MultiTestIdEndpointTestsDataRoundsSearch], Field(description="Test data search filters.")] = None,
         _request_timeout: Union[
             None,
@@ -498,6 +499,8 @@ class NetworkEndpointScheduledTestResultsApi:
         :type max: int
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
         :param multi_test_id_endpoint_tests_data_rounds_search: Test data search filters.
         :type multi_test_id_endpoint_tests_data_rounds_search: MultiTestIdEndpointTestsDataRoundsSearch
         :param _request_timeout: timeout setting for this request. If one
@@ -529,6 +532,7 @@ class NetworkEndpointScheduledTestResultsApi:
             end_date=end_date,
             max=max,
             cursor=cursor,
+            use_all_permitted_aids=use_all_permitted_aids,
             multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -566,6 +570,7 @@ class NetworkEndpointScheduledTestResultsApi:
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
         multi_test_id_endpoint_tests_data_rounds_search: Annotated[Optional[MultiTestIdEndpointTestsDataRoundsSearch], Field(description="Test data search filters.")] = None,
         _request_timeout: Union[
             None,
@@ -596,6 +601,8 @@ class NetworkEndpointScheduledTestResultsApi:
         :type max: int
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
         :param multi_test_id_endpoint_tests_data_rounds_search: Test data search filters.
         :type multi_test_id_endpoint_tests_data_rounds_search: MultiTestIdEndpointTestsDataRoundsSearch
         :param _request_timeout: timeout setting for this request. If one
@@ -627,6 +634,7 @@ class NetworkEndpointScheduledTestResultsApi:
             end_date=end_date,
             max=max,
             cursor=cursor,
+            use_all_permitted_aids=use_all_permitted_aids,
             multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -664,6 +672,7 @@ class NetworkEndpointScheduledTestResultsApi:
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
         multi_test_id_endpoint_tests_data_rounds_search: Annotated[Optional[MultiTestIdEndpointTestsDataRoundsSearch], Field(description="Test data search filters.")] = None,
         _request_timeout: Union[
             None,
@@ -694,6 +703,8 @@ class NetworkEndpointScheduledTestResultsApi:
         :type max: int
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
         :param multi_test_id_endpoint_tests_data_rounds_search: Test data search filters.
         :type multi_test_id_endpoint_tests_data_rounds_search: MultiTestIdEndpointTestsDataRoundsSearch
         :param _request_timeout: timeout setting for this request. If one
@@ -725,6 +736,7 @@ class NetworkEndpointScheduledTestResultsApi:
             end_date=end_date,
             max=max,
             cursor=cursor,
+            use_all_permitted_aids=use_all_permitted_aids,
             multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -756,6 +768,7 @@ class NetworkEndpointScheduledTestResultsApi:
         end_date,
         max,
         cursor,
+        use_all_permitted_aids,
         multi_test_id_endpoint_tests_data_rounds_search,
         _request_auth,
         _content_type,
@@ -818,6 +831,10 @@ class NetworkEndpointScheduledTestResultsApi:
         if cursor is not None:
             
             _query_params.append(('cursor', cursor))
+            
+        if use_all_permitted_aids is not None:
+            
+            _query_params.append(('useAllPermittedAids', use_all_permitted_aids))
             
         # process the header parameters
         # process the form parameters

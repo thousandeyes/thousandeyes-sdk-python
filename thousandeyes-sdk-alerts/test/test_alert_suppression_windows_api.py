@@ -33,8 +33,8 @@ class TestAlertSuppressionWindowsApi(unittest.TestCase):
         request_body_json = """
                 {
                   "duration" : 0,
+                  "testIds" : [ "71687", "71687" ],
                   "alertSuppressionWindowId" : "2411",
-                  "tests" : [ "71687", "71687" ],
                   "isEnabled" : false,
                   "repeat" : {
                     "intervalType" : "day",
@@ -352,8 +352,8 @@ class TestAlertSuppressionWindowsApi(unittest.TestCase):
         request_body_json = """
                 {
                   "duration" : 0,
+                  "testIds" : [ "71687", "71687" ],
                   "alertSuppressionWindowId" : "2411",
-                  "tests" : [ "71687", "71687" ],
                   "isEnabled" : false,
                   "repeat" : {
                     "intervalType" : "day",

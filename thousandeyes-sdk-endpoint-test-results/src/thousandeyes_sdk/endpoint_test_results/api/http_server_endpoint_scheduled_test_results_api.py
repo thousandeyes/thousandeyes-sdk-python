@@ -19,7 +19,7 @@ from importlib.metadata import version
 import thousandeyes_sdk.endpoint_test_results.models
 
 from datetime import datetime
-from pydantic import Field, StrictStr, field_validator
+from pydantic import Field, StrictBool, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_test_results.models.expand_endpoint_http_server_options import ExpandEndpointHttpServerOptions
@@ -455,6 +455,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
         expand: Annotated[Optional[List[ExpandEndpointHttpServerOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.")] = None,
         http_endpoint_tests_data_rounds_search: Annotated[Optional[HttpEndpointTestsDataRoundsSearch], Field(description="Test data search filters.")] = None,
         _request_timeout: Union[
@@ -484,6 +485,8 @@ class HTTPServerEndpointScheduledTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
         :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.
         :type expand: List[ExpandEndpointHttpServerOptions]
         :param http_endpoint_tests_data_rounds_search: Test data search filters.
@@ -516,6 +519,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            use_all_permitted_aids=use_all_permitted_aids,
             expand=expand,
             http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
             _request_auth=_request_auth,
@@ -554,6 +558,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
         expand: Annotated[Optional[List[ExpandEndpointHttpServerOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.")] = None,
         http_endpoint_tests_data_rounds_search: Annotated[Optional[HttpEndpointTestsDataRoundsSearch], Field(description="Test data search filters.")] = None,
         _request_timeout: Union[
@@ -583,6 +588,8 @@ class HTTPServerEndpointScheduledTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
         :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.
         :type expand: List[ExpandEndpointHttpServerOptions]
         :param http_endpoint_tests_data_rounds_search: Test data search filters.
@@ -615,6 +622,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            use_all_permitted_aids=use_all_permitted_aids,
             expand=expand,
             http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
             _request_auth=_request_auth,
@@ -653,6 +661,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
         expand: Annotated[Optional[List[ExpandEndpointHttpServerOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.")] = None,
         http_endpoint_tests_data_rounds_search: Annotated[Optional[HttpEndpointTestsDataRoundsSearch], Field(description="Test data search filters.")] = None,
         _request_timeout: Union[
@@ -682,6 +691,8 @@ class HTTPServerEndpointScheduledTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
         :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.
         :type expand: List[ExpandEndpointHttpServerOptions]
         :param http_endpoint_tests_data_rounds_search: Test data search filters.
@@ -714,6 +725,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            use_all_permitted_aids=use_all_permitted_aids,
             expand=expand,
             http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
             _request_auth=_request_auth,
@@ -746,6 +758,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
         start_date,
         end_date,
         cursor,
+        use_all_permitted_aids,
         expand,
         http_endpoint_tests_data_rounds_search,
         _request_auth,
@@ -806,6 +819,10 @@ class HTTPServerEndpointScheduledTestResultsApi:
         if cursor is not None:
             
             _query_params.append(('cursor', cursor))
+            
+        if use_all_permitted_aids is not None:
+            
+            _query_params.append(('useAllPermittedAids', use_all_permitted_aids))
             
         if expand is not None:
             

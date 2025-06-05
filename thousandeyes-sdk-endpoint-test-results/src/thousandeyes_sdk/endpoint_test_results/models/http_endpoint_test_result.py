@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_http_data_point_score import EndpointHttpDataPointScore
 from thousandeyes_sdk.endpoint_test_results.models.http_endpoint_test_result_headers import HttpEndpointTestResultHeaders
 from thousandeyes_sdk.endpoint_test_results.models.http_error_type import HttpErrorType
 from thousandeyes_sdk.endpoint_test_results.models.network_profile import NetworkProfile
@@ -40,6 +41,7 @@ class HttpEndpointTestResult(BaseModel):
     system_metrics: Optional[SystemMetrics] = Field(default=None, alias="systemMetrics")
     original_target_profile: Optional[TargetProfile] = Field(default=None, alias="originalTargetProfile")
     vpn_profile: Optional[VpnProfile] = Field(default=None, alias="vpnProfile")
+    score: Optional[EndpointHttpDataPointScore] = None
     connect_time: Optional[StrictInt] = Field(default=None, description="Time required to establish a TCP connection to the server in milliseconds.", alias="connectTime")
     dns_time: Optional[StrictInt] = Field(default=None, description="Time required to resolve DNS in milliseconds.", alias="dnsTime")
     error_type: Optional[HttpErrorType] = Field(default=None, alias="errorType")
@@ -54,7 +56,7 @@ class HttpEndpointTestResult(BaseModel):
     total_time: Optional[StrictInt] = Field(default=None, description="Total time is the response time + receive time.", alias="totalTime")
     wait_time: Optional[StrictInt] = Field(default=None, description="Time elapsed between completion of request and first byte of response in milliseconds.", alias="waitTime")
     wire_size: Optional[StrictInt] = Field(default=None, description="Size of content in bytes.", alias="wireSize")
-    __properties: ClassVar[List[str]] = ["aid", "testId", "agentId", "roundId", "serverIp", "networkProfile", "systemMetrics", "originalTargetProfile", "vpnProfile", "connectTime", "dnsTime", "errorType", "errorDetails", "headers", "numRedirects", "receiveTime", "redirectTime", "responseCode", "responseTime", "sslTime", "totalTime", "waitTime", "wireSize"]
+    __properties: ClassVar[List[str]] = ["aid", "testId", "agentId", "roundId", "serverIp", "networkProfile", "systemMetrics", "originalTargetProfile", "vpnProfile", "score", "connectTime", "dnsTime", "errorType", "errorDetails", "headers", "numRedirects", "receiveTime", "redirectTime", "responseCode", "responseTime", "sslTime", "totalTime", "waitTime", "wireSize"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -140,6 +142,9 @@ class HttpEndpointTestResult(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of vpn_profile
         if self.vpn_profile:
             _dict['vpnProfile'] = self.vpn_profile.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of score
+        if self.score:
+            _dict['score'] = self.score.to_dict()
         # override the default output from pydantic by calling `to_dict()` of headers
         if self.headers:
             _dict['headers'] = self.headers.to_dict()
@@ -164,6 +169,7 @@ class HttpEndpointTestResult(BaseModel):
             "systemMetrics": SystemMetrics.from_dict(obj["systemMetrics"]) if obj.get("systemMetrics") is not None else None,
             "originalTargetProfile": TargetProfile.from_dict(obj["originalTargetProfile"]) if obj.get("originalTargetProfile") is not None else None,
             "vpnProfile": VpnProfile.from_dict(obj["vpnProfile"]) if obj.get("vpnProfile") is not None else None,
+            "score": EndpointHttpDataPointScore.from_dict(obj["score"]) if obj.get("score") is not None else None,
             "connectTime": obj.get("connectTime"),
             "dnsTime": obj.get("dnsTime"),
             "errorType": obj.get("errorType"),

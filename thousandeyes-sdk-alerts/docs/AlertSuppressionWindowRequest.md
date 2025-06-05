@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **duration** | **int** | Duration in seconds the suppression window is active. | [optional] 
 **repeat** | [**Repeat**](Repeat.md) |  | [optional] 
 **end_repeat** | [**EndRepeat**](EndRepeat.md) |  | [optional] 
-**tests** | **List[str]** | List of tests to assign to the alert suppression window. | [optional] 
+**test_ids** | **List[str]** | List of test IDs to assign to the alert suppression window. | [optional] 
 
 ## Example
 

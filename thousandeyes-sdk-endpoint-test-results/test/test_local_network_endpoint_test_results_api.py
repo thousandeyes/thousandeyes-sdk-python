@@ -69,6 +69,28 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                   "results" : [ {
                     "date" : "2022-07-17T22:00:54Z",
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "isIcmpBlocked" : true,
+                    "gatewayScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "tcpConnect" : {
+                      "rtt" : 77.777,
+                      "errorCode" : "ERR_TIMED_OUT",
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
+                    },
+                    "vpnScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "proxyScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "type" : "vpn",
+                    "targetPort" : 80,
+                    "target" : "10.0.2.2",
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -166,12 +188,9 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                         "totalMemoryPercentage" : 0.22
                       } ]
                     },
-                    "isIcmpBlocked" : true,
-                    "tcpConnect" : {
-                      "rtt" : 77.777,
-                      "errorCode" : "ERR_TIMED_OUT",
-                      "error" : "An operation timed out.",
-                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
+                    "connectionScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
@@ -183,14 +202,37 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "pktsSent" : 10
                     },
-                    "type" : "vpn",
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
                     "roundId" : 1384309800,
-                    "targetPort" : 80,
-                    "target" : "10.0.2.2"
+                    "agentScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    }
                   }, {
                     "date" : "2022-07-17T22:00:54Z",
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "isIcmpBlocked" : true,
+                    "gatewayScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "tcpConnect" : {
+                      "rtt" : 77.777,
+                      "errorCode" : "ERR_TIMED_OUT",
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
+                    },
+                    "vpnScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "proxyScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "type" : "vpn",
+                    "targetPort" : 80,
+                    "target" : "10.0.2.2",
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -288,12 +330,9 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                         "totalMemoryPercentage" : 0.22
                       } ]
                     },
-                    "isIcmpBlocked" : true,
-                    "tcpConnect" : {
-                      "rtt" : 77.777,
-                      "errorCode" : "ERR_TIMED_OUT",
-                      "error" : "An operation timed out.",
-                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
+                    "connectionScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
@@ -305,11 +344,12 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "pktsSent" : 10
                     },
-                    "type" : "vpn",
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
                     "roundId" : 1384309800,
-                    "targetPort" : 80,
-                    "target" : "10.0.2.2"
+                    "agentScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    }
                   } ],
                   "startDate" : "2022-07-17T22:00:54Z"
                 }"""
@@ -373,11 +413,23 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     "date" : "2022-07-17T22:00:54Z",
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
                     "isIcmpBlocked" : true,
+                    "gatewayScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
                     "tcpConnect" : {
                       "rtt" : 77.777,
                       "errorCode" : "ERR_TIMED_OUT",
                       "error" : "An operation timed out.",
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
+                    },
+                    "vpnScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "proxyScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
                     },
                     "coordinates" : {
                       "latitude" : 46.0552778,
@@ -598,6 +650,10 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "connectionScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
                     "icmpPing" : {
                       "maxRtt" : 66,
                       "pktsReceived" : 10,
@@ -609,16 +665,32 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "pktsSent" : 10
                     },
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
-                    "roundId" : 1384309800
+                    "roundId" : 1384309800,
+                    "agentScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    }
                   }, {
                     "date" : "2022-07-17T22:00:54Z",
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
                     "isIcmpBlocked" : true,
+                    "gatewayScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
                     "tcpConnect" : {
                       "rtt" : 77.777,
                       "errorCode" : "ERR_TIMED_OUT",
                       "error" : "An operation timed out.",
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
+                    },
+                    "vpnScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "proxyScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
                     },
                     "coordinates" : {
                       "latitude" : 46.0552778,
@@ -839,6 +911,10 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "connectionScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
                     "icmpPing" : {
                       "maxRtt" : 66,
                       "pktsReceived" : 10,
@@ -850,7 +926,11 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "pktsSent" : 10
                     },
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
-                    "roundId" : 1384309800
+                    "roundId" : 1384309800,
+                    "agentScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    }
                   } ]
                 }"""
 

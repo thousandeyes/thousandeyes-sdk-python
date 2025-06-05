@@ -28,6 +28,40 @@ class TestTestsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_get_test_version_history_models_validation(self) -> None:
+        """Test case for get_test_version_history request and response models"""
+
+        response_body_json = """
+                {
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "testVersionHistory" : [ {
+                    "versionId" : "1234",
+                    "versionTimestamp" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user (user@user.com)",
+                    "testId" : "474276"
+                  }, {
+                    "versionId" : "1234",
+                    "versionTimestamp" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user (user@user.com)",
+                    "testId" : "474276"
+                  } ]
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.tests.models.TestVersionHistoryResponse.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+
     def test_get_tests_models_validation(self) -> None:
         """Test case for get_tests request and response models"""
 
