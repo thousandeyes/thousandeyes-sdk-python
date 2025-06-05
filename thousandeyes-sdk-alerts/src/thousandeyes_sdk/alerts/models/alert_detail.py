@@ -23,6 +23,8 @@ from thousandeyes_sdk.alerts.models.alert_links import AlertLinks
 from thousandeyes_sdk.alerts.models.alert_meta import AlertMeta
 from thousandeyes_sdk.alerts.models.alert_metric_detail import AlertMetricDetail
 from thousandeyes_sdk.alerts.models.alert_type import AlertType
+from thousandeyes_sdk.alerts.models.legacy_severity import LegacySeverity
+from thousandeyes_sdk.alerts.models.legacy_state import LegacyState
 from thousandeyes_sdk.alerts.models.severity import Severity
 from thousandeyes_sdk.alerts.models.state import State
 from typing import Optional, Set
@@ -41,10 +43,12 @@ class AlertDetail(BaseModel):
     suppressed: Optional[StrictBool] = Field(default=None, description="Indicates whether the alert is currently suppressed by a real-time ASW.")
     meta: Optional[AlertMeta] = None
     links: Optional[AlertLinks] = Field(default=None, alias="_links")
-    state: Optional[State] = None
-    severity: Optional[Severity] = None
+    state: Optional[LegacyState] = None
+    severity: Optional[LegacySeverity] = None
+    alert_state: Optional[State] = Field(default=None, alias="alertState")
+    alert_severity: Optional[Severity] = Field(default=None, alias="alertSeverity")
     details: Optional[List[AlertMetricDetail]] = None
-    __properties: ClassVar[List[str]] = ["id", "alertType", "startDate", "endDate", "violationCount", "duration", "suppressed", "meta", "_links", "state", "severity", "details"]
+    __properties: ClassVar[List[str]] = ["id", "alertType", "startDate", "endDate", "violationCount", "duration", "suppressed", "meta", "_links", "state", "severity", "alertState", "alertSeverity", "details"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +102,12 @@ class AlertDetail(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of state
+        if self.state:
+            _dict['state'] = self.state.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of severity
+        if self.severity:
+            _dict['severity'] = self.severity.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in details (list)
         _items = []
         if self.details:
@@ -126,8 +136,10 @@ class AlertDetail(BaseModel):
             "suppressed": obj.get("suppressed"),
             "meta": AlertMeta.from_dict(obj["meta"]) if obj.get("meta") is not None else None,
             "_links": AlertLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "state": obj.get("state"),
-            "severity": obj.get("severity"),
+            "state": LegacyState.from_dict(obj["state"]) if obj.get("state") is not None else None,
+            "severity": LegacySeverity.from_dict(obj["severity"]) if obj.get("severity") is not None else None,
+            "alertState": obj.get("alertState"),
+            "alertSeverity": obj.get("alertSeverity"),
             "details": [AlertMetricDetail.from_dict(_item) for _item in obj["details"]] if obj.get("details") is not None else None
         })
         return _obj

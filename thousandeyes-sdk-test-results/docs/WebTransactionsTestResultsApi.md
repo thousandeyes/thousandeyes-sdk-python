@@ -200,7 +200,7 @@ Name | Type | Description  | Notes
 
 Get web transactions test results
 
-Returns test results for web transactions. If you do not specify a window or a start and end date, data is displayed for the most recent testing round. 
+Returns test results for web transactions. If no window, start time, or end time is specified, data for the most recent round is returned. If a window or start time is specified, the results might include a round that started just before the specified start time. 
 
 ### Example
 

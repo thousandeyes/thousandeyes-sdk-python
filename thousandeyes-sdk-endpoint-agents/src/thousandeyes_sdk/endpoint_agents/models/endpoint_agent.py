@@ -48,6 +48,7 @@ class EndpointAgent(BaseModel):
     status: Optional[Status] = None
     deleted: Optional[StrictBool] = None
     version: Optional[StrictStr] = Field(default=None, description="Version of the agent software running.")
+    target_version: Optional[StrictStr] = Field(default=None, description="The latest available version of the agent. This field is populated only if expand includes `targetVersion`.", alias="targetVersion")
     created_at: Optional[datetime] = Field(default=None, alias="createdAt")
     number_of_clients: Optional[StrictInt] = Field(default=None, alias="numberOfClients")
     public_ip: Optional[StrictStr] = Field(default=None, alias="publicIP")
@@ -62,7 +63,7 @@ class EndpointAgent(BaseModel):
     tcp_driver_available: Optional[StrictBool] = Field(default=None, description="Status of TCP test support on the agent.", alias="tcpDriverAvailable")
     npcap_version: Optional[StrictStr] = Field(default=None, description="For Windows agents, the version of the NPCAP driver that the agent has loaded.", alias="npcapVersion")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "lastSeen", "status", "deleted", "version", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "_links"]
+    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -114,6 +115,7 @@ class EndpointAgent(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "id",
@@ -125,6 +127,7 @@ class EndpointAgent(BaseModel):
             "last_seen",
             "deleted",
             "version",
+            "target_version",
             "created_at",
             "number_of_clients",
             "public_ip",
@@ -197,6 +200,7 @@ class EndpointAgent(BaseModel):
             "status": obj.get("status"),
             "deleted": obj.get("deleted"),
             "version": obj.get("version"),
+            "targetVersion": obj.get("targetVersion"),
             "createdAt": obj.get("createdAt"),
             "numberOfClients": obj.get("numberOfClients"),
             "publicIP": obj.get("publicIP"),

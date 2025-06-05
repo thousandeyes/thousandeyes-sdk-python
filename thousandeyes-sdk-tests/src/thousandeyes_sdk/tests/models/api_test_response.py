@@ -57,7 +57,10 @@ class ApiTestResponse(BaseModel):
     links: Optional[TestLinks] = Field(default=None, alias="_links")
     labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
     shared_with_accounts: Optional[List[SharedWithAccount]] = Field(default=None, alias="sharedWithAccounts")
+    client_certificate: Optional[StrictStr] = Field(default=None, description="String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate.", alias="clientCertificate")
+    client_cert_domains_allow_list: Optional[StrictStr] = Field(default=None, description="Comma separated list of domains to send the client certificate.", alias="clientCertDomainsAllowList")
     collect_proxy_network_data: Optional[StrictBool] = Field(default=False, description="Indicates whether network data to the proxy should be collected.", alias="collectProxyNetworkData")
+    distributed_tracing: Optional[StrictBool] = Field(default=None, description="Adds distributed tracing headers to API requests using B3 and W3C standards.", alias="distributedTracing")
     follow_redirects: Optional[StrictBool] = Field(default=True, description="To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to `false`.", alias="followRedirects")
     mtu_measurements: Optional[StrictBool] = Field(default=None, description="Set `true` to measure MTU sizes on network from agents to the target.", alias="mtuMeasurements")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
@@ -79,7 +82,7 @@ class ApiTestResponse(BaseModel):
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
     monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
     agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "collectProxyNetworkData", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "randomizedStartTime", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "clientCertificate", "clientCertDomainsAllowList", "collectProxyNetworkData", "distributedTracing", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "randomizedStartTime", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -224,7 +227,10 @@ class ApiTestResponse(BaseModel):
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None,
+            "clientCertificate": obj.get("clientCertificate"),
+            "clientCertDomainsAllowList": obj.get("clientCertDomainsAllowList"),
             "collectProxyNetworkData": obj.get("collectProxyNetworkData") if obj.get("collectProxyNetworkData") is not None else False,
+            "distributedTracing": obj.get("distributedTracing"),
             "followRedirects": obj.get("followRedirects") if obj.get("followRedirects") is not None else True,
             "mtuMeasurements": obj.get("mtuMeasurements"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
