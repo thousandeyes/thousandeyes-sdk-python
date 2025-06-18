@@ -22,10 +22,10 @@ from thousandeyes_sdk.alerts.models.alert_direction import AlertDirection
 from thousandeyes_sdk.alerts.models.alert_group_type import AlertGroupType
 from thousandeyes_sdk.alerts.models.alert_notification import AlertNotification
 from thousandeyes_sdk.alerts.models.alert_rounds_violation_mode import AlertRoundsViolationMode
+from thousandeyes_sdk.alerts.models.alert_severity import AlertSeverity
 from thousandeyes_sdk.alerts.models.alert_type import AlertType
 from thousandeyes_sdk.alerts.models.self_links import SelfLinks
 from thousandeyes_sdk.alerts.models.sensitivity_level import SensitivityLevel
-from thousandeyes_sdk.alerts.models.severity import Severity
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -48,7 +48,7 @@ class Rule(BaseModel):
     rounds_violating_required: StrictInt = Field(description="Specifies the numerator (x value) in the “X of Y times” condition.", alias="roundsViolatingRequired")
     include_covered_prefixes: Optional[StrictBool] = Field(default=None, description="Set true to include covered prefixes in the BGP alert rule. Only applicable to BGP alert rules.", alias="includeCoveredPrefixes")
     sensitivity_level: Optional[SensitivityLevel] = Field(default=None, alias="sensitivityLevel")
-    severity: Optional[Severity] = None
+    severity: Optional[AlertSeverity] = None
     endpoint_agent_ids: Optional[List[StrictStr]] = Field(default=None, description="An array of endpoint agent IDs associated with the rule (get `id` from `/endpoint/agents` API). This is applicable when `alertGroupType` is `browser-session`.", alias="endpointAgentIds")
     endpoint_label_ids: Optional[List[StrictStr]] = Field(default=None, description="An array of label IDs used to assign specific Endpoint Agents to the test (get `id` from `/endpoint/labels`). This is applicable when `alertGroupType` is `browser-session`.", alias="endpointLabelIds")
     visited_sites_filter: Optional[List[StrictStr]] = Field(default=None, description="A list of website domains visited during the session. This is applicable when `alertGroupType` is `browser-session`.", alias="visitedSitesFilter")

@@ -18,9 +18,9 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.alerts.models.alert_state import AlertState
 from thousandeyes_sdk.alerts.models.end_alert_metrics import EndAlertMetrics
 from thousandeyes_sdk.alerts.models.start_alert_metrics import StartAlertMetrics
-from thousandeyes_sdk.alerts.models.state import State
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +32,7 @@ class AlertMetricDetail(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="Unique metric detail id.")
     name: Optional[StrictStr] = Field(default=None, description="Geolocation of the alert.")
     start: Optional[StartAlertMetrics] = None
-    state: Optional[State] = None
+    state: Optional[AlertState] = None
     type: Optional[StrictStr] = Field(default=None, description="Type of the alert metric.")
     __properties: ClassVar[List[str]] = ["end", "id", "name", "start", "state", "type"]
 

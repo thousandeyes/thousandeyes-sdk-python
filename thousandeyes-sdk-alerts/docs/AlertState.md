@@ -1,6 +1,6 @@
-# Severity
+# AlertState
 
-The severity of the alert.
+Current state of the alert. Possible values: clear or trigger.
 
 ## Properties
 

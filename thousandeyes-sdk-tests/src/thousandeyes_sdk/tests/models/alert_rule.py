@@ -20,9 +20,9 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.tests.models.alert_direction import AlertDirection
 from thousandeyes_sdk.tests.models.alert_rounds_violation_mode import AlertRoundsViolationMode
+from thousandeyes_sdk.tests.models.alert_severity import AlertSeverity
 from thousandeyes_sdk.tests.models.alert_type import AlertType
 from thousandeyes_sdk.tests.models.sensitivity_level import SensitivityLevel
-from thousandeyes_sdk.tests.models.severity import Severity
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -42,7 +42,7 @@ class AlertRule(BaseModel):
     rounds_violating_out_of: Optional[StrictInt] = Field(default=None, description="Specifies the divisor (y value) for the “X of Y times” condition.", alias="roundsViolatingOutOf")
     rounds_violating_required: Optional[StrictInt] = Field(default=None, description="Specifies the numerator (x value) for the “X of Y times” condition", alias="roundsViolatingRequired")
     sensitivity_level: Optional[SensitivityLevel] = Field(default=None, alias="sensitivityLevel")
-    severity: Optional[Severity] = None
+    severity: Optional[AlertSeverity] = None
     __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "isDefault", "alertType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "sensitivityLevel", "severity"]
 
     model_config = ConfigDict(

@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **rounds_violating_out_of** | **int** | Specifies the divisor (y value) for the “X of Y times” condition. | [optional] [readonly] 
 **rounds_violating_required** | **int** | Specifies the numerator (x value) for the “X of Y times” condition | [optional] [readonly] 
 **sensitivity_level** | [**SensitivityLevel**](SensitivityLevel.md) |  | [optional] 
-**severity** | [**Severity**](Severity.md) |  | [optional] 
+**severity** | [**AlertSeverity**](AlertSeverity.md) |  | [optional] 
 
 ## Example
 

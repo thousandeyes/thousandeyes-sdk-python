@@ -17,6 +17,11 @@ Name | Type | Description | Notes
 **tcp_connect** | [**TcpConnect**](TcpConnect.md) |  | [optional] 
 **system_metrics** | [**SystemMetrics**](SystemMetrics.md) |  | [optional] 
 **system_metric_details** | [**SystemMetricDetails**](SystemMetricDetails.md) |  | [optional] 
+**vpn_score** | [**EndpointProbeVpnScore**](EndpointProbeVpnScore.md) |  | [optional] 
+**gateway_score** | [**EndpointProbeGatewayScore**](EndpointProbeGatewayScore.md) |  | [optional] 
+**proxy_score** | [**EndpointProbeProxyScore**](EndpointProbeProxyScore.md) |  | [optional] 
+**connection_score** | [**EndpointProbeConnectionScore**](EndpointProbeConnectionScore.md) |  | [optional] 
+**agent_score** | [**EndpointProbeAgentScore**](EndpointProbeAgentScore.md) |  | [optional] 
 
 ## Example
 

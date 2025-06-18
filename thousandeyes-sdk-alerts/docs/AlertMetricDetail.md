@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **id** | **str** | Unique metric detail id. | [optional] 
 **name** | **str** | Geolocation of the alert. | [optional] 
 **start** | [**StartAlertMetrics**](StartAlertMetrics.md) |  | [optional] 
-**state** | [**State**](State.md) |  | [optional] 
+**state** | [**AlertState**](AlertState.md) |  | [optional] 
 **type** | **str** | Type of the alert metric. | [optional] 
 
 ## Example

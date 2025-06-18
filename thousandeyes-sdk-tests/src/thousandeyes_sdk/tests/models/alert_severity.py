@@ -17,7 +17,7 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class Severity(str, Enum):
+class AlertSeverity(str, Enum):
     """
     The severity of the alert.
     """
@@ -33,7 +33,7 @@ class Severity(str, Enum):
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of Severity from a JSON string"""
+        """Create an instance of AlertSeverity from a JSON string"""
         return cls(json.loads(json_str))
 
     @classmethod

@@ -677,6 +677,7 @@ class VoiceTestsApi:
         self,
         test_id: Annotated[StrictStr, Field(description="Test ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        version_id: Annotated[Optional[StrictStr], Field(description="The unique identifier for a specific version of the test settings. If provided, returns the test configuration as it existed at that version. To retrieve available version IDs, use the `/tests/{testId}/history` endpoint. If not specified, the current version of the test settings is returned.")] = None,
         expand: Annotated[Optional[List[ExpandTestOptions]], Field(description="Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query.")] = None,
         _request_timeout: Union[
             None,
@@ -699,6 +700,8 @@ class VoiceTestsApi:
         :type test_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
+        :param version_id: The unique identifier for a specific version of the test settings. If provided, returns the test configuration as it existed at that version. To retrieve available version IDs, use the `/tests/{testId}/history` endpoint. If not specified, the current version of the test settings is returned.
+        :type version_id: str
         :param expand: Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query.
         :type expand: List[ExpandTestOptions]
         :param _request_timeout: timeout setting for this request. If one
@@ -726,6 +729,7 @@ class VoiceTestsApi:
         _param = self._get_voice_test_serialize(
             test_id=test_id,
             aid=aid,
+            version_id=version_id,
             expand=expand,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -759,6 +763,7 @@ class VoiceTestsApi:
         self,
         test_id: Annotated[StrictStr, Field(description="Test ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        version_id: Annotated[Optional[StrictStr], Field(description="The unique identifier for a specific version of the test settings. If provided, returns the test configuration as it existed at that version. To retrieve available version IDs, use the `/tests/{testId}/history` endpoint. If not specified, the current version of the test settings is returned.")] = None,
         expand: Annotated[Optional[List[ExpandTestOptions]], Field(description="Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query.")] = None,
         _request_timeout: Union[
             None,
@@ -781,6 +786,8 @@ class VoiceTestsApi:
         :type test_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
+        :param version_id: The unique identifier for a specific version of the test settings. If provided, returns the test configuration as it existed at that version. To retrieve available version IDs, use the `/tests/{testId}/history` endpoint. If not specified, the current version of the test settings is returned.
+        :type version_id: str
         :param expand: Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query.
         :type expand: List[ExpandTestOptions]
         :param _request_timeout: timeout setting for this request. If one
@@ -808,6 +815,7 @@ class VoiceTestsApi:
         _param = self._get_voice_test_serialize(
             test_id=test_id,
             aid=aid,
+            version_id=version_id,
             expand=expand,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -841,6 +849,7 @@ class VoiceTestsApi:
         self,
         test_id: Annotated[StrictStr, Field(description="Test ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        version_id: Annotated[Optional[StrictStr], Field(description="The unique identifier for a specific version of the test settings. If provided, returns the test configuration as it existed at that version. To retrieve available version IDs, use the `/tests/{testId}/history` endpoint. If not specified, the current version of the test settings is returned.")] = None,
         expand: Annotated[Optional[List[ExpandTestOptions]], Field(description="Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query.")] = None,
         _request_timeout: Union[
             None,
@@ -863,6 +872,8 @@ class VoiceTestsApi:
         :type test_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
+        :param version_id: The unique identifier for a specific version of the test settings. If provided, returns the test configuration as it existed at that version. To retrieve available version IDs, use the `/tests/{testId}/history` endpoint. If not specified, the current version of the test settings is returned.
+        :type version_id: str
         :param expand: Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query.
         :type expand: List[ExpandTestOptions]
         :param _request_timeout: timeout setting for this request. If one
@@ -890,6 +901,7 @@ class VoiceTestsApi:
         _param = self._get_voice_test_serialize(
             test_id=test_id,
             aid=aid,
+            version_id=version_id,
             expand=expand,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -917,6 +929,7 @@ class VoiceTestsApi:
         self,
         test_id,
         aid,
+        version_id,
         expand,
         _request_auth,
         _content_type,
@@ -944,6 +957,10 @@ class VoiceTestsApi:
         if aid is not None:
             
             _query_params.append(('aid', aid))
+            
+        if version_id is not None:
+            
+            _query_params.append(('versionId', version_id))
             
         if expand is not None:
             

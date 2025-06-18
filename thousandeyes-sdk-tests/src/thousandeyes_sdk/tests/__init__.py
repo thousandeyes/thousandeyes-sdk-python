@@ -51,6 +51,7 @@ from thousandeyes_sdk.tests.models.agent_to_server_tests import AgentToServerTes
 from thousandeyes_sdk.tests.models.alert_direction import AlertDirection
 from thousandeyes_sdk.tests.models.alert_rounds_violation_mode import AlertRoundsViolationMode
 from thousandeyes_sdk.tests.models.alert_rule import AlertRule
+from thousandeyes_sdk.tests.models.alert_severity import AlertSeverity
 from thousandeyes_sdk.tests.models.alert_type import AlertType
 from thousandeyes_sdk.tests.models.api_client_authentication import ApiClientAuthentication
 from thousandeyes_sdk.tests.models.api_instant_test import ApiInstantTest
@@ -130,7 +131,6 @@ from thousandeyes_sdk.tests.models.page_load_tests import PageLoadTests
 from thousandeyes_sdk.tests.models.request_method import RequestMethod
 from thousandeyes_sdk.tests.models.self_links import SelfLinks
 from thousandeyes_sdk.tests.models.sensitivity_level import SensitivityLevel
-from thousandeyes_sdk.tests.models.severity import Severity
 from thousandeyes_sdk.tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.tests.models.simple_agent import SimpleAgent
 from thousandeyes_sdk.tests.models.simple_test import SimpleTest
@@ -164,6 +164,8 @@ from thousandeyes_sdk.tests.models.test_sip_credentials import TestSipCredential
 from thousandeyes_sdk.tests.models.test_ssl_version_id import TestSslVersionId
 from thousandeyes_sdk.tests.models.test_sub_interval import TestSubInterval
 from thousandeyes_sdk.tests.models.test_type import TestType
+from thousandeyes_sdk.tests.models.test_version_history import TestVersionHistory
+from thousandeyes_sdk.tests.models.test_version_history_response import TestVersionHistoryResponse
 from thousandeyes_sdk.tests.models.tests import Tests
 from thousandeyes_sdk.tests.models.unauthorized_error import UnauthorizedError
 from thousandeyes_sdk.tests.models.unexpanded_agent_to_agent_test import UnexpandedAgentToAgentTest

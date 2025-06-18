@@ -378,7 +378,7 @@ class AlertsApi:
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
         :param state: Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`.
-        :type state: State
+        :type state: AlertState
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -475,7 +475,7 @@ class AlertsApi:
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
         :param state: Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`.
-        :type state: State
+        :type state: AlertState
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -572,7 +572,7 @@ class AlertsApi:
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
         :param state: Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`.
-        :type state: State
+        :type state: AlertState
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of

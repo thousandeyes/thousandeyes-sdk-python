@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**application_score** | **float** | Fine grained score between 0-100 based on &#x60;time to first byte&#x60; metric | [optional] 
+**application_score** | **float** | A fine-grained score between 0 and 100. | [optional] 
 **quality** | [**ApplicationScoreQuality**](ApplicationScoreQuality.md) |  | [optional] 
 
 ## Example

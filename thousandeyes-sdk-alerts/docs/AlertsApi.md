@@ -136,7 +136,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     max = 5 # int | (Optional) Maximum number of objects to return. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
-    state = thousandeyes_sdk.alerts.State() # State | Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`. (optional)
+    state = thousandeyes_sdk.alerts.AlertState() # AlertState | Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`. (optional)
 
     try:
         # List active alerts
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **max** | **int**| (Optional) Maximum number of objects to return. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
- **state** | [**State**](.md)| Optional parameter to match a specific alert state. If not specified, it defaults to &#x60;trigger&#x60;. | [optional] 
+ **state** | [**AlertState**](.md)| Optional parameter to match a specific alert state. If not specified, it defaults to &#x60;trigger&#x60;. | [optional] 
 
 ### Return type
 

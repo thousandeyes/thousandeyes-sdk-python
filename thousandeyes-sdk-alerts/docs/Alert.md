@@ -23,8 +23,8 @@ Name | Type | Description | Notes
 **permalink** | **str** | Hyperlink to alerts list, with row expanded | [optional] 
 **api_links** | **List[Dict[str, object]]** | List of hyperlinks to other areas of the API | [optional] 
 **alert_rule_id** | **str** | Unique ID of the rule. | [optional] [readonly] 
-**alert_state** | [**State**](State.md) |  | [optional] 
-**alert_severity** | [**Severity**](Severity.md) |  | [optional] 
+**alert_state** | [**AlertState**](AlertState.md) |  | [optional] 
+**alert_severity** | [**AlertSeverity**](AlertSeverity.md) |  | [optional] 
 
 ## Example
 

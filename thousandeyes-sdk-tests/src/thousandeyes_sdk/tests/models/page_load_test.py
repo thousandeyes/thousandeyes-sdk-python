@@ -68,6 +68,7 @@ class PageLoadTest(BaseModel):
     content_regex: Optional[StrictStr] = Field(default=None, description="Content regex, this field does not require escaping.", alias="contentRegex")
     custom_headers: Optional[TestCustomHeaders] = Field(default=None, alias="customHeaders")
     desired_status_code: Optional[StrictStr] = Field(default='default', description="Specify the HTTP status code value that indicates a successful response. The default value accepts any 2xx or 3xx status code.", alias="desiredStatusCode")
+    distributed_tracing: Optional[StrictBool] = Field(default=None, description="Adds distributed tracing headers to API requests using B3 and W3C standards.", alias="distributedTracing")
     download_limit: Optional[StrictInt] = Field(default=None, description="Specifies maximum number of bytes to download from the target object.", alias="downloadLimit")
     dns_override: Optional[StrictStr] = Field(default=None, description="IP address to use for DNS override.", alias="dnsOverride")
     http_target_time: Optional[Annotated[int, Field(le=5000, strict=True, ge=100)]] = Field(default=None, description="Target time for HTTP server completion, specified in milliseconds.", alias="httpTargetTime")
@@ -110,7 +111,7 @@ class PageLoadTest(BaseModel):
     monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
     http_interval: Optional[TestHttpInterval] = Field(default=None, alias="httpInterval")
     subinterval: Optional[TestSubInterval] = None
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "pageLoadingStrategy", "randomizedStartTime", "bgpMeasurements", "usePublicBgp", "monitors", "httpInterval", "subinterval"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "pageLoadingStrategy", "randomizedStartTime", "bgpMeasurements", "usePublicBgp", "monitors", "httpInterval", "subinterval"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -252,6 +253,7 @@ class PageLoadTest(BaseModel):
             "contentRegex": obj.get("contentRegex"),
             "customHeaders": TestCustomHeaders.from_dict(obj["customHeaders"]) if obj.get("customHeaders") is not None else None,
             "desiredStatusCode": obj.get("desiredStatusCode") if obj.get("desiredStatusCode") is not None else 'default',
+            "distributedTracing": obj.get("distributedTracing"),
             "downloadLimit": obj.get("downloadLimit"),
             "dnsOverride": obj.get("dnsOverride"),
             "httpTargetTime": obj.get("httpTargetTime"),

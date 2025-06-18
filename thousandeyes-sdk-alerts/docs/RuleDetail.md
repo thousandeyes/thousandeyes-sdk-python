@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 **rounds_violating_required** | **int** | Specifies the numerator (x value) in the “X of Y times” condition. | 
 **include_covered_prefixes** | **bool** | Set true to include covered prefixes in the BGP alert rule. Only applicable to BGP alert rules. | [optional] 
 **sensitivity_level** | [**SensitivityLevel**](SensitivityLevel.md) |  | [optional] 
-**severity** | [**Severity**](Severity.md) |  | [optional] 
+**severity** | [**AlertSeverity**](AlertSeverity.md) |  | [optional] 
 **endpoint_agent_ids** | **List[str]** | An array of endpoint agent IDs associated with the rule (get &#x60;id&#x60; from &#x60;/endpoint/agents&#x60; API). This is applicable when &#x60;alertGroupType&#x60; is &#x60;browser-session&#x60;. | [optional] 
 **endpoint_label_ids** | **List[str]** | An array of label IDs used to assign specific Endpoint Agents to the test (get &#x60;id&#x60; from &#x60;/endpoint/labels&#x60;). This is applicable when &#x60;alertGroupType&#x60; is &#x60;browser-session&#x60;. | [optional] 
 **visited_sites_filter** | **List[str]** | A list of website domains visited during the session. This is applicable when &#x60;alertGroupType&#x60; is &#x60;browser-session&#x60;. | [optional] 

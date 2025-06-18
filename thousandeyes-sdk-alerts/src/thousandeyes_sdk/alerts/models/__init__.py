@@ -22,7 +22,9 @@ from thousandeyes_sdk.alerts.models.alert_meta import AlertMeta
 from thousandeyes_sdk.alerts.models.alert_metric_detail import AlertMetricDetail
 from thousandeyes_sdk.alerts.models.alert_notification import AlertNotification
 from thousandeyes_sdk.alerts.models.alert_rounds_violation_mode import AlertRoundsViolationMode
+from thousandeyes_sdk.alerts.models.alert_severity import AlertSeverity
 from thousandeyes_sdk.alerts.models.alert_simple_test import AlertSimpleTest
+from thousandeyes_sdk.alerts.models.alert_state import AlertState
 from thousandeyes_sdk.alerts.models.alert_suppression_window import AlertSuppressionWindow
 from thousandeyes_sdk.alerts.models.alert_suppression_window_detail import AlertSuppressionWindowDetail
 from thousandeyes_sdk.alerts.models.alert_suppression_window_request import AlertSuppressionWindowRequest
