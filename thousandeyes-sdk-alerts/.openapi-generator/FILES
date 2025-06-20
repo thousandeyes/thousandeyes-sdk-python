@@ -34,6 +34,7 @@ docs/Error.md
 docs/ExpandAlertTestOptions.md
 docs/IntervalType.md
 docs/LegacyAlert.md
+docs/LegacyAlertDetail.md
 docs/Link.md
 docs/NotificationCustomWebhook.md
 docs/NotificationEmail.md
@@ -99,6 +100,7 @@ src/thousandeyes_sdk/alerts/models/error.py
 src/thousandeyes_sdk/alerts/models/expand_alert_test_options.py
 src/thousandeyes_sdk/alerts/models/interval_type.py
 src/thousandeyes_sdk/alerts/models/legacy_alert.py
+src/thousandeyes_sdk/alerts/models/legacy_alert_detail.py
 src/thousandeyes_sdk/alerts/models/link.py
 src/thousandeyes_sdk/alerts/models/notification_custom_webhook.py
 src/thousandeyes_sdk/alerts/models/notification_email.py

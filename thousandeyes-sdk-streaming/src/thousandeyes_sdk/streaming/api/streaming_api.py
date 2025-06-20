@@ -977,7 +977,7 @@ class StreamingApi:
     ) -> List[GetStreamResponse]:
         """List data streams
 
-        Retrieves a list of configured data streams.
+        Retrieves a list of configured data streams. Empty list is returned if no streams are configured.
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1019,7 +1019,6 @@ class StreamingApi:
             '400': "BadRequestError",
             '401': "UnauthorizedError",
             '403': None,
-            '404': None,
             '429': None,
             '500': "ApiError",
         }
@@ -1055,7 +1054,7 @@ class StreamingApi:
     ) -> ApiResponse[List[GetStreamResponse]]:
         """List data streams
 
-        Retrieves a list of configured data streams.
+        Retrieves a list of configured data streams. Empty list is returned if no streams are configured.
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1097,7 +1096,6 @@ class StreamingApi:
             '400': "BadRequestError",
             '401': "UnauthorizedError",
             '403': None,
-            '404': None,
             '429': None,
             '500': "ApiError",
         }
@@ -1133,7 +1131,7 @@ class StreamingApi:
     ) -> RESTResponseType:
         """List data streams
 
-        Retrieves a list of configured data streams.
+        Retrieves a list of configured data streams. Empty list is returned if no streams are configured.
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1175,7 +1173,6 @@ class StreamingApi:
             '400': "BadRequestError",
             '401': "UnauthorizedError",
             '403': None,
-            '404': None,
             '429': None,
             '500': "ApiError",
         }

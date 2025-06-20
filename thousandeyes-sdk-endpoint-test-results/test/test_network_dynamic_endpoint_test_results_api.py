@@ -144,6 +144,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     },
                     "maxLatency" : 168.0,
                     "tcpProbeMode" : "auto",
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "loss" : 0.0,
                     "protocol" : "tcp",
                     "systemMetrics" : {
@@ -216,6 +220,19 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "ztaMetrics" : [ {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    }, {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    } ],
                     "testId" : "584739201",
                     "webex" : {
                       "remoteSipSessionId" : "22581707460321454",
@@ -245,6 +262,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     },
                     "maxLatency" : 168.0,
                     "tcpProbeMode" : "auto",
+                    "score" : {
+                      "applicationScore" : 100.0,
+                      "quality" : "great"
+                    },
                     "loss" : 0.0,
                     "protocol" : "tcp",
                     "systemMetrics" : {
@@ -317,6 +338,19 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "ztaMetrics" : [ {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    }, {
+                      "loss" : 50.0,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
+                    } ],
                     "testId" : "584739201",
                     "webex" : {
                       "remoteSipSessionId" : "22581707460321454",

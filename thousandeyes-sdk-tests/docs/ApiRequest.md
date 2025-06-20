@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **url** | **str** | Request url. Supports variables in the format &#x60;{{variableName}}&#x60;. | 
 **username** | **str** | The username if &#x60;authType &#x3D; basic&#x60;. | [optional] 
 **variables** | [**List[ApiRequestVariable]**](ApiRequestVariable.md) | Array of API post request variable objects. | [optional] 
+**verify_certificate** | **bool** | Ignore or acknowledge certificate errors. Set to false to ignore certificate errors. | [optional] [default to False]
 **wait_time_ms** | **int** | Post request delay before executing the next API requests, in milliseconds. | [optional] 
 
 ## Example

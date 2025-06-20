@@ -43,8 +43,10 @@ class AlertDetail(BaseModel):
     links: Optional[AlertLinks] = Field(default=None, alias="_links")
     state: Optional[State] = None
     severity: Optional[Severity] = None
+    alert_state: Optional[State] = Field(default=None, alias="alertState")
+    alert_severity: Optional[Severity] = Field(default=None, alias="alertSeverity")
     details: Optional[List[AlertMetricDetail]] = None
-    __properties: ClassVar[List[str]] = ["id", "alertType", "startDate", "endDate", "violationCount", "duration", "suppressed", "meta", "_links", "state", "severity", "details"]
+    __properties: ClassVar[List[str]] = ["id", "alertType", "startDate", "endDate", "violationCount", "duration", "suppressed", "meta", "_links", "state", "severity", "alertState", "alertSeverity", "details"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -128,6 +130,8 @@ class AlertDetail(BaseModel):
             "_links": AlertLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "state": obj.get("state"),
             "severity": obj.get("severity"),
+            "alertState": obj.get("alertState"),
+            "alertSeverity": obj.get("alertSeverity"),
             "details": [AlertMetricDetail.from_dict(_item) for _item in obj["details"]] if obj.get("details") is not None else None
         })
         return _obj

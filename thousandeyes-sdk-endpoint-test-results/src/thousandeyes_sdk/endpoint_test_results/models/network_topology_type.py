@@ -28,6 +28,7 @@ class NetworkTopologyType(str, Enum):
     VPN = 'vpn'
     PROXY = 'proxy'
     GATEWAY = 'gateway'
+    DNS = 'dns'
     UNKNOWN = 'unknown'
 
     @classmethod

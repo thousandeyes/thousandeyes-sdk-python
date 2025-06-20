@@ -19,7 +19,7 @@ from importlib.metadata import version
 import thousandeyes_sdk.endpoint_test_results.models
 
 from datetime import datetime
-from pydantic import Field, StrictStr, field_validator
+from pydantic import Field, StrictBool, StrictStr, field_validator
 from typing import List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_test_results.models.expand_endpoint_http_server_options import ExpandEndpointHttpServerOptions
@@ -455,6 +455,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
         expand: Annotated[Optional[List[ExpandEndpointHttpServerOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.")] = None,
         http_endpoint_tests_data_rounds_search: Annotated[Optional[HttpEndpointTestsDataRoundsSearch], Field(description="Test data search filters.")] = None,
         _request_timeout: Union[
@@ -484,6 +485,8 @@ class HTTPServerEndpointScheduledTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
         :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.
         :type expand: List[ExpandEndpointHttpServerOptions]
         :param http_endpoint_tests_data_rounds_search: Test data search filters.
@@ -516,6 +519,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            use_all_permitted_aids=use_all_permitted_aids,
             expand=expand,
             http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
             _request_auth=_request_auth,
@@ -554,6 +558,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
         expand: Annotated[Optional[List[ExpandEndpointHttpServerOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.")] = None,
         http_endpoint_tests_data_rounds_search: Annotated[Optional[HttpEndpointTestsDataRoundsSearch], Field(description="Test data search filters.")] = None,
         _request_timeout: Union[
@@ -583,6 +588,8 @@ class HTTPServerEndpointScheduledTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
         :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.
         :type expand: List[ExpandEndpointHttpServerOptions]
         :param http_endpoint_tests_data_rounds_search: Test data search filters.
@@ -615,6 +622,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            use_all_permitted_aids=use_all_permitted_aids,
             expand=expand,
             http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
             _request_auth=_request_auth,
@@ -653,6 +661,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
         expand: Annotated[Optional[List[ExpandEndpointHttpServerOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.")] = None,
         http_endpoint_tests_data_rounds_search: Annotated[Optional[HttpEndpointTestsDataRoundsSearch], Field(description="Test data search filters.")] = None,
         _request_timeout: Union[
@@ -682,6 +691,8 @@ class HTTPServerEndpointScheduledTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
         :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.
         :type expand: List[ExpandEndpointHttpServerOptions]
         :param http_endpoint_tests_data_rounds_search: Test data search filters.
@@ -714,6 +725,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            use_all_permitted_aids=use_all_permitted_aids,
             expand=expand,
             http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
             _request_auth=_request_auth,
@@ -746,6 +758,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
         start_date,
         end_date,
         cursor,
+        use_all_permitted_aids,
         expand,
         http_endpoint_tests_data_rounds_search,
         _request_auth,
@@ -768,6 +781,442 @@ class HTTPServerEndpointScheduledTestResultsApi:
         _body_params: Optional[bytes] = None
 
         # process the path parameters
+        # process the query parameters
+        if aid is not None:
+            
+            _query_params.append(('aid', aid))
+            
+        if window is not None:
+            
+            _query_params.append(('window', window))
+            
+        if start_date is not None:
+            if isinstance(start_date, datetime):
+                _query_params.append(
+                    (
+                        'startDate',
+                        start_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('startDate', start_date))
+            
+        if end_date is not None:
+            if isinstance(end_date, datetime):
+                _query_params.append(
+                    (
+                        'endDate',
+                        end_date.strftime(
+                            self.api_client.configuration.datetime_format
+                        )
+                    )
+                )
+            else:
+                _query_params.append(('endDate', end_date))
+            
+        if cursor is not None:
+            
+            _query_params.append(('cursor', cursor))
+            
+        if use_all_permitted_aids is not None:
+            
+            _query_params.append(('useAllPermittedAids', use_all_permitted_aids))
+            
+        if expand is not None:
+            
+            _query_params.append(('expand', expand))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if http_endpoint_tests_data_rounds_search is not None:
+            _body_params = http_endpoint_tests_data_rounds_search
+
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/hal+json', 
+                'application/json', 
+                'application/problem+json'
+            ]
+        )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/endpoint/test-results/scheduled-tests/http-server/filter',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def get_single_test_filtered_http_server_scheduled_test_results(
+        self,
+        test_id: Annotated[StrictStr, Field(description="Test ID")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandEndpointHttpServerOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.")] = None,
+        http_endpoint_tests_data_rounds_search: Annotated[Optional[HttpEndpointTestsDataRoundsSearch], Field(description="Test result search filters.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> HttpMultiEndpointTestResults:
+        """Filter HTTP server result for a scheduled test
+
+        Returns component-level timings for an object load over HTTP. These include DNS, connect, wait, and receive times for a single scheduled test. 
+
+        :param test_id: Test ID (required)
+        :type test_id: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :type window: str
+        :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type start_date: datetime
+        :param end_date: Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type end_date: datetime
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.
+        :type expand: List[ExpandEndpointHttpServerOptions]
+        :param http_endpoint_tests_data_rounds_search: Test result search filters.
+        :type http_endpoint_tests_data_rounds_search: HttpEndpointTestsDataRoundsSearch
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_single_test_filtered_http_server_scheduled_test_results_serialize(
+            test_id=test_id,
+            aid=aid,
+            window=window,
+            start_date=start_date,
+            end_date=end_date,
+            cursor=cursor,
+            expand=expand,
+            http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "HttpMultiEndpointTestResults",
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '429': "Error",
+            '500': "Error",
+            '502': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+            models=thousandeyes_sdk.endpoint_test_results.models,
+        ).data
+
+
+    @validate_call
+    def get_single_test_filtered_http_server_scheduled_test_results_with_http_info(
+        self,
+        test_id: Annotated[StrictStr, Field(description="Test ID")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandEndpointHttpServerOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.")] = None,
+        http_endpoint_tests_data_rounds_search: Annotated[Optional[HttpEndpointTestsDataRoundsSearch], Field(description="Test result search filters.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[HttpMultiEndpointTestResults]:
+        """Filter HTTP server result for a scheduled test
+
+        Returns component-level timings for an object load over HTTP. These include DNS, connect, wait, and receive times for a single scheduled test. 
+
+        :param test_id: Test ID (required)
+        :type test_id: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :type window: str
+        :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type start_date: datetime
+        :param end_date: Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type end_date: datetime
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.
+        :type expand: List[ExpandEndpointHttpServerOptions]
+        :param http_endpoint_tests_data_rounds_search: Test result search filters.
+        :type http_endpoint_tests_data_rounds_search: HttpEndpointTestsDataRoundsSearch
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_single_test_filtered_http_server_scheduled_test_results_serialize(
+            test_id=test_id,
+            aid=aid,
+            window=window,
+            start_date=start_date,
+            end_date=end_date,
+            cursor=cursor,
+            expand=expand,
+            http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "HttpMultiEndpointTestResults",
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '429': "Error",
+            '500': "Error",
+            '502': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+            models=thousandeyes_sdk.endpoint_test_results.models,
+        )
+
+
+    @validate_call
+    def get_single_test_filtered_http_server_scheduled_test_results_without_preload_content(
+        self,
+        test_id: Annotated[StrictStr, Field(description="Test ID")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandEndpointHttpServerOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.")] = None,
+        http_endpoint_tests_data_rounds_search: Annotated[Optional[HttpEndpointTestsDataRoundsSearch], Field(description="Test result search filters.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Filter HTTP server result for a scheduled test
+
+        Returns component-level timings for an object load over HTTP. These include DNS, connect, wait, and receive times for a single scheduled test. 
+
+        :param test_id: Test ID (required)
+        :type test_id: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :type window: str
+        :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type start_date: datetime
+        :param end_date: Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type end_date: datetime
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"header,\" append `?expand=header` to the query.
+        :type expand: List[ExpandEndpointHttpServerOptions]
+        :param http_endpoint_tests_data_rounds_search: Test result search filters.
+        :type http_endpoint_tests_data_rounds_search: HttpEndpointTestsDataRoundsSearch
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._get_single_test_filtered_http_server_scheduled_test_results_serialize(
+            test_id=test_id,
+            aid=aid,
+            window=window,
+            start_date=start_date,
+            end_date=end_date,
+            cursor=cursor,
+            expand=expand,
+            http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "HttpMultiEndpointTestResults",
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '429': "Error",
+            '500': "Error",
+            '502': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _get_single_test_filtered_http_server_scheduled_test_results_serialize(
+        self,
+        test_id,
+        aid,
+        window,
+        start_date,
+        end_date,
+        cursor,
+        expand,
+        http_endpoint_tests_data_rounds_search,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+            'expand': 'csv',
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if test_id is not None:
+            _path_params['testId'] = test_id
         # process the query parameters
         if aid is not None:
             
@@ -848,7 +1297,7 @@ class HTTPServerEndpointScheduledTestResultsApi:
 
         return self.api_client.param_serialize(
             method='POST',
-            resource_path='/endpoint/test-results/scheduled-tests/http-server/filter',
+            resource_path='/endpoint/test-results/scheduled-tests/{testId}/http-server/filter',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
