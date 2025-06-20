@@ -43,6 +43,7 @@ from thousandeyes_sdk.alerts.models.error import Error
 from thousandeyes_sdk.alerts.models.expand_alert_test_options import ExpandAlertTestOptions
 from thousandeyes_sdk.alerts.models.interval_type import IntervalType
 from thousandeyes_sdk.alerts.models.legacy_alert import LegacyAlert
+from thousandeyes_sdk.alerts.models.legacy_alert_detail import LegacyAlertDetail
 from thousandeyes_sdk.alerts.models.link import Link
 from thousandeyes_sdk.alerts.models.notification_custom_webhook import NotificationCustomWebhook
 from thousandeyes_sdk.alerts.models.notification_email import NotificationEmail

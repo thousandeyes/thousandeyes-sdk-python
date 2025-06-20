@@ -26,7 +26,7 @@ class EndpointHttpDataPointScore(BaseModel):
     """
     EndpointHttpDataPointScore
     """ # noqa: E501
-    application_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Fine grained score between 0-100 based on `time to first byte` metric", alias="applicationScore")
+    application_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A fine-grained score between 0 and 100.", alias="applicationScore")
     quality: Optional[ApplicationScoreQuality] = None
     __properties: ClassVar[List[str]] = ["applicationScore", "quality"]
 

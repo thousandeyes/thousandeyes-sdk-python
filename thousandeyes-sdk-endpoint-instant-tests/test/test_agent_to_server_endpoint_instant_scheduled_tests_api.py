@@ -32,6 +32,7 @@ class TestAgentToServerEndpointInstantScheduledTestsApi(unittest.TestCase):
         """Test case for create_agent_to_server_scheduled_instant_test request and response models"""
         request_body_json = """
                 {
+                  "server" : "www.example.com",
                   "port" : 443,
                   "agentSelectorType" : "all-agents",
                   "maxMachines" : 25,
