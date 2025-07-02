@@ -1,6 +1,6 @@
-# ApiRequestAssertionOperator
+# LocalNetworksThresholdFilterName
 
-If `name = status-code``, accepted values are [is, is-not]. If `name = response-body``, accepted values are [includes, not-includes, matches, not-matches]`.
+Metric on which the threshold filter is applied.
 
 ## Properties
 

@@ -44,6 +44,18 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     "platform" : [ "mac", "mac" ],
                     "gateway" : [ "78.153.54.204", "78.153.54.206" ],
                     "proxyTarget" : [ "78.153.54.204", "78.153.54.206" ]
+                  },
+                  "thresholdFilter" : {
+                    "conditionalOperator" : "and",
+                    "filters" : [ {
+                      "name" : "loss",
+                      "value" : 10.0,
+                      "operator" : "gte"
+                    }, {
+                      "name" : "loss",
+                      "value" : 10.0,
+                      "operator" : "gte"
+                    } ]
                   }
                 }"""
 
@@ -194,6 +206,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
+                      "loss" : 1.0,
                       "pktsReceived" : 10,
                       "avgRtt" : 7,
                       "meanDevRtt" : 11,
@@ -336,6 +349,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
+                      "loss" : 1.0,
                       "pktsReceived" : 10,
                       "avgRtt" : 7,
                       "meanDevRtt" : 11,
@@ -656,6 +670,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
+                      "loss" : 1.0,
                       "pktsReceived" : 10,
                       "avgRtt" : 7,
                       "meanDevRtt" : 11,
@@ -917,6 +932,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
+                      "loss" : 1.0,
                       "pktsReceived" : 10,
                       "avgRtt" : 7,
                       "meanDevRtt" : 11,

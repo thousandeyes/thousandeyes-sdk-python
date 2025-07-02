@@ -122,12 +122,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "remotePort" : 80,
                       "remoteIpAddress" : "120.98.134.7"
                     },
-                    "headers" : {
-                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
-                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
-                    },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "redirectTime" : 10,
                     "numRedirects" : 0,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
@@ -136,38 +131,12 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
-                    "responseTime" : 14,
-                    "totalTime" : 15,
                     "responseCode" : 200,
-                    "receiveTime" : 1,
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
                     },
-                    "systemMetrics" : {
-                      "cpuUtilization" : {
-                        "min" : 0.22,
-                        "median" : 0.61,
-                        "max" : 0.75,
-                        "mean" : 0.55,
-                        "count" : 150,
-                        "stdDev" : 0.01
-                      },
-                      "physicalMemoryTotalBytes" : 1024,
-                      "startTimeMs" : 1581508857327,
-                      "physicalMemoryUsedBytes" : {
-                        "min" : 1.2,
-                        "median" : 1.85,
-                        "max" : 2.5,
-                        "mean" : 1.77,
-                        "count" : 155,
-                        "stdDev" : 0.25
-                      },
-                      "endTimeMs" : 1581508867333
-                    },
                     "connectTime" : 2,
-                    "dnsTime" : 0,
-                    "serverIp" : "193.2.1.88",
                     "networkProfile" : {
                       "previousInterface" : {
                         "publicIpAddress" : "84.255.241.1",
@@ -214,10 +183,42 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
+                    },
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
+                      },
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
+                      },
+                      "endTimeMs" : 1581508867333
+                    },
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
                     "testId" : "584739201",
                     "sslTime" : 9,
                     "aid" : "1234",
-                    "roundId" : 1384309800,
                     "waitTime" : 3,
                     "errorDetails" : "errorDetails",
                     "wireSize" : 9993
@@ -227,12 +228,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "remotePort" : 80,
                       "remoteIpAddress" : "120.98.134.7"
                     },
-                    "headers" : {
-                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
-                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
-                    },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "redirectTime" : 10,
                     "numRedirects" : 0,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
@@ -241,38 +237,12 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
-                    "responseTime" : 14,
-                    "totalTime" : 15,
                     "responseCode" : 200,
-                    "receiveTime" : 1,
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
                     },
-                    "systemMetrics" : {
-                      "cpuUtilization" : {
-                        "min" : 0.22,
-                        "median" : 0.61,
-                        "max" : 0.75,
-                        "mean" : 0.55,
-                        "count" : 150,
-                        "stdDev" : 0.01
-                      },
-                      "physicalMemoryTotalBytes" : 1024,
-                      "startTimeMs" : 1581508857327,
-                      "physicalMemoryUsedBytes" : {
-                        "min" : 1.2,
-                        "median" : 1.85,
-                        "max" : 2.5,
-                        "mean" : 1.77,
-                        "count" : 155,
-                        "stdDev" : 0.25
-                      },
-                      "endTimeMs" : 1581508867333
-                    },
                     "connectTime" : 2,
-                    "dnsTime" : 0,
-                    "serverIp" : "193.2.1.88",
                     "networkProfile" : {
                       "previousInterface" : {
                         "publicIpAddress" : "84.255.241.1",
@@ -319,10 +289,42 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
+                    },
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
+                      },
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
+                      },
+                      "endTimeMs" : 1581508867333
+                    },
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
                     "testId" : "584739201",
                     "sslTime" : 9,
                     "aid" : "1234",
-                    "roundId" : 1384309800,
                     "waitTime" : 3,
                     "errorDetails" : "errorDetails",
                     "wireSize" : 9993
@@ -399,12 +401,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "remotePort" : 80,
                       "remoteIpAddress" : "120.98.134.7"
                     },
-                    "headers" : {
-                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
-                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
-                    },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "redirectTime" : 10,
                     "numRedirects" : 0,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
@@ -413,38 +410,12 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
-                    "responseTime" : 14,
-                    "totalTime" : 15,
                     "responseCode" : 200,
-                    "receiveTime" : 1,
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
                     },
-                    "systemMetrics" : {
-                      "cpuUtilization" : {
-                        "min" : 0.22,
-                        "median" : 0.61,
-                        "max" : 0.75,
-                        "mean" : 0.55,
-                        "count" : 150,
-                        "stdDev" : 0.01
-                      },
-                      "physicalMemoryTotalBytes" : 1024,
-                      "startTimeMs" : 1581508857327,
-                      "physicalMemoryUsedBytes" : {
-                        "min" : 1.2,
-                        "median" : 1.85,
-                        "max" : 2.5,
-                        "mean" : 1.77,
-                        "count" : 155,
-                        "stdDev" : 0.25
-                      },
-                      "endTimeMs" : 1581508867333
-                    },
                     "connectTime" : 2,
-                    "dnsTime" : 0,
-                    "serverIp" : "193.2.1.88",
                     "networkProfile" : {
                       "previousInterface" : {
                         "publicIpAddress" : "84.255.241.1",
@@ -491,10 +462,42 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
+                    },
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
+                      },
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
+                      },
+                      "endTimeMs" : 1581508867333
+                    },
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
                     "testId" : "584739201",
                     "sslTime" : 9,
                     "aid" : "1234",
-                    "roundId" : 1384309800,
                     "waitTime" : 3,
                     "errorDetails" : "errorDetails",
                     "wireSize" : 9993
@@ -504,12 +507,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "remotePort" : 80,
                       "remoteIpAddress" : "120.98.134.7"
                     },
-                    "headers" : {
-                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
-                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
-                    },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "redirectTime" : 10,
                     "numRedirects" : 0,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
@@ -518,38 +516,12 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
-                    "responseTime" : 14,
-                    "totalTime" : 15,
                     "responseCode" : 200,
-                    "receiveTime" : 1,
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
                     },
-                    "systemMetrics" : {
-                      "cpuUtilization" : {
-                        "min" : 0.22,
-                        "median" : 0.61,
-                        "max" : 0.75,
-                        "mean" : 0.55,
-                        "count" : 150,
-                        "stdDev" : 0.01
-                      },
-                      "physicalMemoryTotalBytes" : 1024,
-                      "startTimeMs" : 1581508857327,
-                      "physicalMemoryUsedBytes" : {
-                        "min" : 1.2,
-                        "median" : 1.85,
-                        "max" : 2.5,
-                        "mean" : 1.77,
-                        "count" : 155,
-                        "stdDev" : 0.25
-                      },
-                      "endTimeMs" : 1581508867333
-                    },
                     "connectTime" : 2,
-                    "dnsTime" : 0,
-                    "serverIp" : "193.2.1.88",
                     "networkProfile" : {
                       "previousInterface" : {
                         "publicIpAddress" : "84.255.241.1",
@@ -596,10 +568,42 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
+                    },
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
+                      },
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
+                      },
+                      "endTimeMs" : 1581508867333
+                    },
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
                     "testId" : "584739201",
                     "sslTime" : 9,
                     "aid" : "1234",
-                    "roundId" : 1384309800,
                     "waitTime" : 3,
                     "errorDetails" : "errorDetails",
                     "wireSize" : 9993
@@ -676,12 +680,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "remotePort" : 80,
                       "remoteIpAddress" : "120.98.134.7"
                     },
-                    "headers" : {
-                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
-                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
-                    },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "redirectTime" : 10,
                     "numRedirects" : 0,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
@@ -690,38 +689,12 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
-                    "responseTime" : 14,
-                    "totalTime" : 15,
                     "responseCode" : 200,
-                    "receiveTime" : 1,
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
                     },
-                    "systemMetrics" : {
-                      "cpuUtilization" : {
-                        "min" : 0.22,
-                        "median" : 0.61,
-                        "max" : 0.75,
-                        "mean" : 0.55,
-                        "count" : 150,
-                        "stdDev" : 0.01
-                      },
-                      "physicalMemoryTotalBytes" : 1024,
-                      "startTimeMs" : 1581508857327,
-                      "physicalMemoryUsedBytes" : {
-                        "min" : 1.2,
-                        "median" : 1.85,
-                        "max" : 2.5,
-                        "mean" : 1.77,
-                        "count" : 155,
-                        "stdDev" : 0.25
-                      },
-                      "endTimeMs" : 1581508867333
-                    },
                     "connectTime" : 2,
-                    "dnsTime" : 0,
-                    "serverIp" : "193.2.1.88",
                     "networkProfile" : {
                       "previousInterface" : {
                         "publicIpAddress" : "84.255.241.1",
@@ -768,10 +741,42 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
+                    },
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
+                      },
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
+                      },
+                      "endTimeMs" : 1581508867333
+                    },
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
                     "testId" : "584739201",
                     "sslTime" : 9,
                     "aid" : "1234",
-                    "roundId" : 1384309800,
                     "waitTime" : 3,
                     "errorDetails" : "errorDetails",
                     "wireSize" : 9993
@@ -781,12 +786,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "remotePort" : 80,
                       "remoteIpAddress" : "120.98.134.7"
                     },
-                    "headers" : {
-                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
-                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
-                    },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "redirectTime" : 10,
                     "numRedirects" : 0,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
@@ -795,38 +795,12 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
-                    "responseTime" : 14,
-                    "totalTime" : 15,
                     "responseCode" : 200,
-                    "receiveTime" : 1,
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
                     },
-                    "systemMetrics" : {
-                      "cpuUtilization" : {
-                        "min" : 0.22,
-                        "median" : 0.61,
-                        "max" : 0.75,
-                        "mean" : 0.55,
-                        "count" : 150,
-                        "stdDev" : 0.01
-                      },
-                      "physicalMemoryTotalBytes" : 1024,
-                      "startTimeMs" : 1581508857327,
-                      "physicalMemoryUsedBytes" : {
-                        "min" : 1.2,
-                        "median" : 1.85,
-                        "max" : 2.5,
-                        "mean" : 1.77,
-                        "count" : 155,
-                        "stdDev" : 0.25
-                      },
-                      "endTimeMs" : 1581508867333
-                    },
                     "connectTime" : 2,
-                    "dnsTime" : 0,
-                    "serverIp" : "193.2.1.88",
                     "networkProfile" : {
                       "previousInterface" : {
                         "publicIpAddress" : "84.255.241.1",
@@ -873,10 +847,42 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
                       "gateway" : "10.0.0.1"
                     },
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
+                    },
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
+                      },
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
+                      },
+                      "endTimeMs" : 1581508867333
+                    },
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
                     "testId" : "584739201",
                     "sslTime" : 9,
                     "aid" : "1234",
-                    "roundId" : 1384309800,
                     "waitTime" : 3,
                     "errorDetails" : "errorDetails",
                     "wireSize" : 9993

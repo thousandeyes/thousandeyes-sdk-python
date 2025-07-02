@@ -5,6 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**threshold_filter** | [**EndpointNetworkTopologyThresholdFilter**](EndpointNetworkTopologyThresholdFilter.md) |  | [optional] 
 **search_filters** | [**EndpointNetworkTopologyResultRequestFilter**](EndpointNetworkTopologyResultRequestFilter.md) |  | [optional] 
 
 ## Example
