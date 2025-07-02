@@ -24,6 +24,7 @@ docs/EndpointHttpServerTest.md
 docs/EndpointIpVersionTemplate.md
 docs/EndpointNetworkTopologyResultRequest.md
 docs/EndpointNetworkTopologyResultRequestFilter.md
+docs/EndpointNetworkTopologyThresholdFilter.md
 docs/EndpointPathTrace.md
 docs/EndpointPathVisHop.md
 docs/EndpointPathVisRoute.md
@@ -80,6 +81,8 @@ docs/LocalNetworkTopologyDetailResults.md
 docs/LocalNetworkTopologyResult.md
 docs/LocalNetworkTopologyResultBase.md
 docs/LocalNetworkTopologyResults.md
+docs/LocalNetworksThresholdFilter.md
+docs/LocalNetworksThresholdFilterName.md
 docs/MultiTestIdEndpointTestsDataRoundsSearch.md
 docs/MultiTestIdEndpointTestsDataSearchFilter.md
 docs/MultiTestIdNetworkEndpointTestResults.md
@@ -189,6 +192,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/endpoint_http_server_test.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_ip_version_template.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_network_topology_result_request.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_network_topology_result_request_filter.py
+src/thousandeyes_sdk/endpoint_test_results/models/endpoint_network_topology_threshold_filter.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_path_trace.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_path_vis_hop.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_path_vis_route.py
@@ -243,6 +247,8 @@ src/thousandeyes_sdk/endpoint_test_results/models/local_network_topology_detail_
 src/thousandeyes_sdk/endpoint_test_results/models/local_network_topology_result.py
 src/thousandeyes_sdk/endpoint_test_results/models/local_network_topology_result_base.py
 src/thousandeyes_sdk/endpoint_test_results/models/local_network_topology_results.py
+src/thousandeyes_sdk/endpoint_test_results/models/local_networks_threshold_filter.py
+src/thousandeyes_sdk/endpoint_test_results/models/local_networks_threshold_filter_name.py
 src/thousandeyes_sdk/endpoint_test_results/models/multi_test_id_endpoint_tests_data_rounds_search.py
 src/thousandeyes_sdk/endpoint_test_results/models/multi_test_id_endpoint_tests_data_search_filter.py
 src/thousandeyes_sdk/endpoint_test_results/models/multi_test_id_network_endpoint_test_results.py

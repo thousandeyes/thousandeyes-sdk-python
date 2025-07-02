@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class ApiRequestAssertionOperator(str, Enum):
     """
-    If `name = status-code``, accepted values are [is, is-not]. If `name = response-body``, accepted values are [includes, not-includes]`.
+    If `name = status-code``, accepted values are [is, is-not]. If `name = response-body``, accepted values are [includes, not-includes, matches, not-matches]`.
     """
 
     """
@@ -29,6 +29,8 @@ class ApiRequestAssertionOperator(str, Enum):
     IS_MINUS_NOT = 'is-not'
     INCLUDES = 'includes'
     NOT_MINUS_INCLUDES = 'not-includes'
+    MATCHES = 'matches'
+    NOT_MINUS_MATCHES = 'not-matches'
     UNKNOWN = 'unknown'
 
     @classmethod

@@ -1,6 +1,6 @@
 # ApiRequestAssertionOperator
 
-If `name = status-code``, accepted values are [is, is-not]. If `name = response-body``, accepted values are [includes, not-includes]`.
+If `name = status-code``, accepted values are [is, is-not]. If `name = response-body``, accepted values are [includes, not-includes, matches, not-matches]`.
 
 ## Properties
 

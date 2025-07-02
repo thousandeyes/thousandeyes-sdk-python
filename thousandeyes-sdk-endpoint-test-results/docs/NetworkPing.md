@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **avg_rtt** | **int** | Ping average response time. | [optional] [readonly] 
 **max_rtt** | **int** | Ping maximum response time. | [optional] [readonly] 
+**loss** | **float** | Network loss. | [optional] [readonly] 
 **mean_dev_rtt** | **int** | Ping mean standard deviation response time. | [optional] [readonly] 
 **min_rtt** | **int** | Ping minimum response time. | [optional] [readonly] 
 **pkts_received** | **int** | Ping packets received. | [optional] [readonly] 

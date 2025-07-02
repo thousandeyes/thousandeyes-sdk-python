@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **total_time** | **int** | Total time is the response time + receive time. | [optional] [readonly] 
 **wait_time** | **int** | Time elapsed between completion of request and first byte of response in milliseconds. | [optional] [readonly] 
 **wire_size** | **int** | Size of content in bytes. | [optional] [readonly] 
+**throughput** | **int** | Amount of data transmitted, in bytes. | [optional] [readonly] 
 
 ## Example
 

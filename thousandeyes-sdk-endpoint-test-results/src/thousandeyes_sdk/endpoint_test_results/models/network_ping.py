@@ -16,8 +16,8 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,13 +27,14 @@ class NetworkPing(BaseModel):
     """ # noqa: E501
     avg_rtt: Optional[StrictInt] = Field(default=None, description="Ping average response time.", alias="avgRtt")
     max_rtt: Optional[StrictInt] = Field(default=None, description="Ping maximum response time.", alias="maxRtt")
+    loss: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Network loss.")
     mean_dev_rtt: Optional[StrictInt] = Field(default=None, description="Ping mean standard deviation response time.", alias="meanDevRtt")
     min_rtt: Optional[StrictInt] = Field(default=None, description="Ping minimum response time.", alias="minRtt")
     pkts_received: Optional[StrictInt] = Field(default=None, description="Ping packets received.", alias="pktsReceived")
     pkts_sent: Optional[StrictInt] = Field(default=None, description="Ping packets sent.", alias="pktsSent")
     error: Optional[StrictStr] = Field(default=None, description="Only present when there is an error.")
     info_flags: Optional[List[StrictStr]] = Field(default=None, alias="infoFlags")
-    __properties: ClassVar[List[str]] = ["avgRtt", "maxRtt", "meanDevRtt", "minRtt", "pktsReceived", "pktsSent", "error", "infoFlags"]
+    __properties: ClassVar[List[str]] = ["avgRtt", "maxRtt", "loss", "meanDevRtt", "minRtt", "pktsReceived", "pktsSent", "error", "infoFlags"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -74,10 +75,12 @@ class NetworkPing(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "avg_rtt",
             "max_rtt",
+            "loss",
             "mean_dev_rtt",
             "min_rtt",
             "pkts_received",
@@ -105,6 +108,7 @@ class NetworkPing(BaseModel):
         _obj = cls.model_validate({
             "avgRtt": obj.get("avgRtt"),
             "maxRtt": obj.get("maxRtt"),
+            "loss": obj.get("loss"),
             "meanDevRtt": obj.get("meanDevRtt"),
             "minRtt": obj.get("minRtt"),
             "pktsReceived": obj.get("pktsReceived"),
