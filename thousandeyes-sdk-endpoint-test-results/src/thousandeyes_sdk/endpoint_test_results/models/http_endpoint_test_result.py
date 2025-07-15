@@ -56,7 +56,8 @@ class HttpEndpointTestResult(BaseModel):
     total_time: Optional[StrictInt] = Field(default=None, description="Total time is the response time + receive time.", alias="totalTime")
     wait_time: Optional[StrictInt] = Field(default=None, description="Time elapsed between completion of request and first byte of response in milliseconds.", alias="waitTime")
     wire_size: Optional[StrictInt] = Field(default=None, description="Size of content in bytes.", alias="wireSize")
-    __properties: ClassVar[List[str]] = ["aid", "testId", "agentId", "roundId", "serverIp", "networkProfile", "systemMetrics", "originalTargetProfile", "vpnProfile", "score", "connectTime", "dnsTime", "errorType", "errorDetails", "headers", "numRedirects", "receiveTime", "redirectTime", "responseCode", "responseTime", "sslTime", "totalTime", "waitTime", "wireSize"]
+    throughput: Optional[StrictInt] = Field(default=None, description="Amount of data transmitted, in bytes.")
+    __properties: ClassVar[List[str]] = ["aid", "testId", "agentId", "roundId", "serverIp", "networkProfile", "systemMetrics", "originalTargetProfile", "vpnProfile", "score", "connectTime", "dnsTime", "errorType", "errorDetails", "headers", "numRedirects", "receiveTime", "redirectTime", "responseCode", "responseTime", "sslTime", "totalTime", "waitTime", "wireSize", "throughput"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -105,6 +106,7 @@ class HttpEndpointTestResult(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "test_id",
@@ -123,6 +125,7 @@ class HttpEndpointTestResult(BaseModel):
             "total_time",
             "wait_time",
             "wire_size",
+            "throughput",
         ])
 
         _dict = self.model_dump(
@@ -183,7 +186,8 @@ class HttpEndpointTestResult(BaseModel):
             "sslTime": obj.get("sslTime"),
             "totalTime": obj.get("totalTime"),
             "waitTime": obj.get("waitTime"),
-            "wireSize": obj.get("wireSize")
+            "wireSize": obj.get("wireSize"),
+            "throughput": obj.get("throughput")
         })
         return _obj
 

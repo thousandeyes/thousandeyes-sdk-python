@@ -16,20 +16,21 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field
-from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.endpoint_test_results.models.endpoint_network_topology_result_request_filter import EndpointNetworkTopologyResultRequestFilter
-from thousandeyes_sdk.endpoint_test_results.models.endpoint_network_topology_threshold_filter import EndpointNetworkTopologyThresholdFilter
+from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from thousandeyes_sdk.endpoint_test_results.models.local_networks_threshold_filter_name import LocalNetworksThresholdFilterName
+from thousandeyes_sdk.endpoint_test_results.models.threshold_filter_operator import ThresholdFilterOperator
 from typing import Optional, Set
 from typing_extensions import Self
 
-class EndpointNetworkTopologyResultRequest(BaseModel):
+class LocalNetworksThresholdFilter(BaseModel):
     """
-    EndpointNetworkTopologyResultRequest
+    Filters the metric using the specified operator and threshold value.
     """ # noqa: E501
-    threshold_filter: Optional[EndpointNetworkTopologyThresholdFilter] = Field(default=None, alias="thresholdFilter")
-    search_filters: Optional[EndpointNetworkTopologyResultRequestFilter] = Field(default=None, alias="searchFilters")
-    __properties: ClassVar[List[str]] = ["thresholdFilter", "searchFilters"]
+    name: Optional[LocalNetworksThresholdFilterName] = None
+    value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The threshold value.")
+    operator: Optional[ThresholdFilterOperator] = None
+    __properties: ClassVar[List[str]] = ["name", "value", "operator"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -50,7 +51,7 @@ class EndpointNetworkTopologyResultRequest(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of EndpointNetworkTopologyResultRequest from a JSON string"""
+        """Create an instance of LocalNetworksThresholdFilter from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -71,17 +72,11 @@ class EndpointNetworkTopologyResultRequest(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of threshold_filter
-        if self.threshold_filter:
-            _dict['thresholdFilter'] = self.threshold_filter.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of search_filters
-        if self.search_filters:
-            _dict['searchFilters'] = self.search_filters.to_dict()
         return _dict
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of EndpointNetworkTopologyResultRequest from a dict"""
+        """Create an instance of LocalNetworksThresholdFilter from a dict"""
         if obj is None:
             return None
 
@@ -89,8 +84,9 @@ class EndpointNetworkTopologyResultRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "thresholdFilter": EndpointNetworkTopologyThresholdFilter.from_dict(obj["thresholdFilter"]) if obj.get("thresholdFilter") is not None else None,
-            "searchFilters": EndpointNetworkTopologyResultRequestFilter.from_dict(obj["searchFilters"]) if obj.get("searchFilters") is not None else None
+            "name": obj.get("name"),
+            "value": obj.get("value"),
+            "operator": obj.get("operator")
         })
         return _obj
 

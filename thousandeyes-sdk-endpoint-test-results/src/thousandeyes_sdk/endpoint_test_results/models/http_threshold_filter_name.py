@@ -28,8 +28,10 @@ class HttpThresholdFilterName(str, Enum):
     RESPONSE_MINUS_TIME = 'response-time'
     DNS_MINUS_TIME = 'dns-time'
     CONNECT_MINUS_TIME = 'connect-time'
+    THROUGHPUT = 'throughput'
     SSL_MINUS_TIME = 'ssl-time'
     WAIT_MINUS_TIME = 'wait-time'
+    APPLICATION_MINUS_SCORE = 'application-score'
     UNKNOWN = 'unknown'
 
     @classmethod

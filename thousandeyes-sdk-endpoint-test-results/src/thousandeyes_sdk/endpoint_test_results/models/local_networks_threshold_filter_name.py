@@ -17,7 +17,7 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class ThresholdFilterName(str, Enum):
+class LocalNetworksThresholdFilterName(str, Enum):
     """
     Metric on which the threshold filter is applied.
     """
@@ -25,24 +25,15 @@ class ThresholdFilterName(str, Enum):
     """
     allowed enum values
     """
+    VPN_MINUS_SCORE = 'vpn-score'
+    AVG_MINUS_RTT = 'avg-rtt'
+    MEAN_MINUS_DEV_MINUS_RTT = 'mean-dev-rtt'
     LOSS = 'loss'
-    LATENCY = 'latency'
-    JITTER = 'jitter'
-    CPU = 'cpu'
-    MEMORY = 'memory'
-    SIGNAL_MINUS_QUALITY = 'signal-quality'
-    APPLICATION_MINUS_SCORE = 'application-score'
-    ZTA_MINUS_INGRESS_MINUS_LOSS = 'zta-ingress-loss'
-    ZTA_MINUS_SERVICE_MINUS_LOSS = 'zta-service-loss'
-    ZTA_MINUS_INGRESS_MINUS_AVG_MINUS_LATENCY = 'zta-ingress-avg-latency'
-    ZTA_MINUS_SERVICE_MINUS_AVG_MINUS_LATENCY = 'zta-service-avg-latency'
-    ZTA_MINUS_INGRESS_MINUS_JITTER = 'zta-ingress-jitter'
-    ZTA_MINUS_SERVICE_MINUS_JITTER = 'zta-service-jitter'
     UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of ThresholdFilterName from a JSON string"""
+        """Create an instance of LocalNetworksThresholdFilterName from a JSON string"""
         return cls(json.loads(json_str))
 
     @classmethod
