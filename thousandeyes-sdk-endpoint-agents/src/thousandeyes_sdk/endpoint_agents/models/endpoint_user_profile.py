@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List
+from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,7 +26,8 @@ class EndpointUserProfile(BaseModel):
     EndpointUserProfile
     """ # noqa: E501
     user_name: StrictStr = Field(alias="userName")
-    __properties: ClassVar[List[str]] = ["userName"]
+    user_principal_name: Optional[StrictStr] = Field(default=None, alias="userPrincipalName")
+    __properties: ClassVar[List[str]] = ["userName", "userPrincipalName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -80,7 +81,8 @@ class EndpointUserProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "userName": obj.get("userName")
+            "userName": obj.get("userName"),
+            "userPrincipalName": obj.get("userPrincipalName")
         })
         return _obj
 

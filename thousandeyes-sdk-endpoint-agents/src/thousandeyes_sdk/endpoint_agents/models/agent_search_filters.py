@@ -31,13 +31,14 @@ class AgentSearchFilters(BaseModel):
     agent_name: Optional[List[StrictStr]] = Field(default=None, description="Returns only agents with the given name.  This is an exact match only. ", alias="agentName")
     computer_name: Optional[List[StrictStr]] = Field(default=None, description="Returns only agents with the given computer name. This is an exact match only. ", alias="computerName")
     username: Optional[List[StrictStr]] = Field(default=None, description="Returns only agents that have at least one user with a name. starting with the provided string. This is a case-insensitive prefix match. ")
+    user_principal_name: Optional[List[StrictStr]] = Field(default=None, description="Returns only agents that have at least one user principal name, starting with one of the provided strings. This is a case-insensitive prefix match. User principle name is the user login name in an Internet-style format, typically used in Active Directory environments. ", alias="userPrincipalName")
     platform: Optional[List[Platform]] = Field(default=None, description="Filter on the platform on which the agent is running. ")
     os_version: Optional[List[StrictStr]] = Field(default=None, description="Case-insensitive prefix filter on the OS version.", alias="osVersion")
     location_country_iso: Optional[List[StrictStr]] = Field(default=None, description="Filter using the ISO country code of the location. ", alias="locationCountryISO")
     location_subdivision1_code: Optional[List[StrictStr]] = Field(default=None, description="Filter using the code for the first level administrative division within  the country. In US/Canada this is the State, in UK it's the country e.g. `ENG` ", alias="locationSubdivision1Code")
     location_city: Optional[List[StrictStr]] = Field(default=None, description="This is a prefix match on the city name field. The endpoint expects this to contain the  name of the city in English. e.g. 'Paris' or '' ", alias="locationCity")
     license_type: Optional[List[AgentLicenseType]] = Field(default=None, description="Filter on the agent's license type ", alias="licenseType")
-    __properties: ClassVar[List[str]] = ["id", "agentName", "computerName", "username", "platform", "osVersion", "locationCountryISO", "locationSubdivision1Code", "locationCity", "licenseType"]
+    __properties: ClassVar[List[str]] = ["id", "agentName", "computerName", "username", "userPrincipalName", "platform", "osVersion", "locationCountryISO", "locationSubdivision1Code", "locationCity", "licenseType"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +96,7 @@ class AgentSearchFilters(BaseModel):
             "agentName": obj.get("agentName"),
             "computerName": obj.get("computerName"),
             "username": obj.get("username"),
+            "userPrincipalName": obj.get("userPrincipalName"),
             "platform": obj.get("platform"),
             "osVersion": obj.get("osVersion"),
             "locationCountryISO": obj.get("locationCountryISO"),

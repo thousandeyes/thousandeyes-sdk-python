@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **user_name** | **str** |  | 
+**user_principal_name** | **str** |  | [optional] 
 
 ## Example
 
