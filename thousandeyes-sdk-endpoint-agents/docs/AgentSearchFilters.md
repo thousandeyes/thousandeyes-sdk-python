@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **agent_name** | **List[str]** | Returns only agents with the given name.  This is an exact match only.  | [optional] 
 **computer_name** | **List[str]** | Returns only agents with the given computer name. This is an exact match only.  | [optional] 
 **username** | **List[str]** | Returns only agents that have at least one user with a name. starting with the provided string. This is a case-insensitive prefix match.  | [optional] 
+**user_principal_name** | **List[str]** | Returns only agents that have at least one user principal name, starting with one of the provided strings. This is a case-insensitive prefix match. User principle name is the user login name in an Internet-style format, typically used in Active Directory environments.  | [optional] 
 **platform** | [**List[Platform]**](Platform.md) | Filter on the platform on which the agent is running.  | [optional] 
 **os_version** | **List[str]** | Case-insensitive prefix filter on the OS version. | [optional] 
 **location_country_iso** | **List[str]** | Filter using the ISO country code of the location.  | [optional] 
