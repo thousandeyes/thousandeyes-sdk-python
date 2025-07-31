@@ -24,6 +24,7 @@ from thousandeyes_sdk.endpoint_agents.models.endpoint_agent_location import Endp
 from thousandeyes_sdk.endpoint_agents.models.endpoint_asn_details import EndpointAsnDetails
 from thousandeyes_sdk.endpoint_agents.models.endpoint_client import EndpointClient
 from thousandeyes_sdk.endpoint_agents.models.endpoint_vpn_profile import EndpointVpnProfile
+from thousandeyes_sdk.endpoint_agents.models.external_metadata_item import ExternalMetadataItem
 from thousandeyes_sdk.endpoint_agents.models.interface_profile import InterfaceProfile
 from thousandeyes_sdk.endpoint_agents.models.platform import Platform
 from thousandeyes_sdk.endpoint_agents.models.self_links import SelfLinks
@@ -57,13 +58,14 @@ class EndpointAgent(BaseModel):
     total_memory: Optional[StrictStr] = Field(default=None, alias="totalMemory")
     agent_type: Optional[StrictStr] = Field(default=None, alias="agentType")
     vpn_profiles: Optional[List[EndpointVpnProfile]] = Field(default=None, description="List of VPN connections on the agent. Not populated by default. ", alias="vpnProfiles")
+    external_metadata: Optional[List[ExternalMetadataItem]] = Field(default=None, description="List of external metadata assigned to the endpoint agent.  Visible only if the `expandAgent=externalMetadata` query parameter is included. ", alias="externalMetadata")
     network_interface_profiles: Optional[List[InterfaceProfile]] = Field(default=None, description="List of network interfaces on the agent. Not populated by default. ", alias="networkInterfaceProfiles")
     asn_details: Optional[EndpointAsnDetails] = Field(default=None, alias="asnDetails")
     license_type: Optional[AgentLicenseType] = Field(default=None, alias="licenseType")
     tcp_driver_available: Optional[StrictBool] = Field(default=None, description="Status of TCP test support on the agent.", alias="tcpDriverAvailable")
     npcap_version: Optional[StrictStr] = Field(default=None, description="For Windows agents, the version of the NPCAP driver that the agent has loaded.", alias="npcapVersion")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "_links"]
+    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "externalMetadata", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -162,6 +164,13 @@ class EndpointAgent(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['vpnProfiles'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in external_metadata (list)
+        _items = []
+        if self.external_metadata:
+            for _item in self.external_metadata:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['externalMetadata'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in network_interface_profiles (list)
         _items = []
         if self.network_interface_profiles:
@@ -209,6 +218,7 @@ class EndpointAgent(BaseModel):
             "totalMemory": obj.get("totalMemory"),
             "agentType": obj.get("agentType"),
             "vpnProfiles": [EndpointVpnProfile.from_dict(_item) for _item in obj["vpnProfiles"]] if obj.get("vpnProfiles") is not None else None,
+            "externalMetadata": [ExternalMetadataItem.from_dict(_item) for _item in obj["externalMetadata"]] if obj.get("externalMetadata") is not None else None,
             "networkInterfaceProfiles": [InterfaceProfile.from_dict(_item) for _item in obj["networkInterfaceProfiles"]] if obj.get("networkInterfaceProfiles") is not None else None,
             "asnDetails": EndpointAsnDetails.from_dict(obj["asnDetails"]) if obj.get("asnDetails") is not None else None,
             "licenseType": obj.get("licenseType"),
