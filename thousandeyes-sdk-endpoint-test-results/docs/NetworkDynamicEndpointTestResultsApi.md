@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 
 # **filter_dynamic_test_network_results**
-> NetworkDynamicEndpointTestResults filter_dynamic_test_network_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, dynamic_endpoint_tests_data_round_search=dynamic_endpoint_tests_data_round_search)
+> NetworkDynamicEndpointTestResults filter_dynamic_test_network_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand, dynamic_endpoint_tests_data_round_search=dynamic_endpoint_tests_data_round_search)
 
 Retrieve network dynamic test results
 
@@ -23,6 +23,7 @@ Returns network metrics (`loss`, `latency`, `jitter` and `bandwidth`) from each 
 ```python
 import thousandeyes_sdk.endpoint_test_results
 from thousandeyes_sdk.endpoint_test_results.models.dynamic_endpoint_tests_data_round_search import DynamicEndpointTestsDataRoundSearch
+from thousandeyes_sdk.endpoint_test_results.models.expand_endpoint_dynamic_network_options import ExpandEndpointDynamicNetworkOptions
 from thousandeyes_sdk.endpoint_test_results.models.network_dynamic_endpoint_test_results import NetworkDynamicEndpointTestResults
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
@@ -53,11 +54,12 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     start_date = '2022-07-17T22:00:54Z' # datetime | Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
+    expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointDynamicNetworkOptions()] # List[ExpandEndpointDynamicNetworkOptions] | This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query. (optional)
     dynamic_endpoint_tests_data_round_search = thousandeyes_sdk.endpoint_test_results.DynamicEndpointTestsDataRoundSearch() # DynamicEndpointTestsDataRoundSearch | Tests data search filters. (optional)
 
     try:
         # Retrieve network dynamic test results
-        api_response = api_instance.filter_dynamic_test_network_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, dynamic_endpoint_tests_data_round_search=dynamic_endpoint_tests_data_round_search)
+        api_response = api_instance.filter_dynamic_test_network_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand, dynamic_endpoint_tests_data_round_search=dynamic_endpoint_tests_data_round_search)
         print("The response of NetworkDynamicEndpointTestResultsApi->filter_dynamic_test_network_results:\n")
         pprint(api_response)
     except Exception as e:
@@ -77,6 +79,7 @@ Name | Type | Description  | Notes
  **start_date** | **datetime**| Use with the &#x60;endDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
+ **expand** | [**List[ExpandEndpointDynamicNetworkOptions]**](ExpandEndpointDynamicNetworkOptions.md)| This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \&quot;user-profile,\&quot; append &#x60;?expand&#x3D;user-profile&#x60; to the query. | [optional] 
  **dynamic_endpoint_tests_data_round_search** | [**DynamicEndpointTestsDataRoundSearch**](DynamicEndpointTestsDataRoundSearch.md)| Tests data search filters. | [optional] 
 
 ### Return type

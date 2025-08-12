@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **filter_scheduled_test_network_results**
-> NetworkEndpointTestResults filter_scheduled_test_network_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search)
+> NetworkEndpointTestResults filter_scheduled_test_network_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand, endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search)
 
 Retrieve network scheduled test results
 
@@ -24,6 +24,7 @@ Returns network metrics (loss, latency, and jitter) from each endpoint agent, fo
 ```python
 import thousandeyes_sdk.endpoint_test_results
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_tests_data_rounds_search import EndpointTestsDataRoundsSearch
+from thousandeyes_sdk.endpoint_test_results.models.expand_endpoint_network_options import ExpandEndpointNetworkOptions
 from thousandeyes_sdk.endpoint_test_results.models.network_endpoint_test_results import NetworkEndpointTestResults
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
 from pprint import pprint
@@ -54,11 +55,12 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     start_date = '2022-07-17T22:00:54Z' # datetime | Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
+    expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()] # List[ExpandEndpointNetworkOptions] | This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query. (optional)
     endpoint_tests_data_rounds_search = thousandeyes_sdk.endpoint_test_results.EndpointTestsDataRoundsSearch() # EndpointTestsDataRoundsSearch | Tests data search filters. (optional)
 
     try:
         # Retrieve network scheduled test results
-        api_response = api_instance.filter_scheduled_test_network_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search)
+        api_response = api_instance.filter_scheduled_test_network_results(test_id, aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, expand=expand, endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search)
         print("The response of NetworkEndpointScheduledTestResultsApi->filter_scheduled_test_network_results:\n")
         pprint(api_response)
     except Exception as e:
@@ -78,6 +80,7 @@ Name | Type | Description  | Notes
  **start_date** | **datetime**| Use with the &#x60;endDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
+ **expand** | [**List[ExpandEndpointNetworkOptions]**](ExpandEndpointNetworkOptions.md)| This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \&quot;user-profile,\&quot; append &#x60;?expand&#x3D;user-profile&#x60; to the query. | [optional] 
  **endpoint_tests_data_rounds_search** | [**EndpointTestsDataRoundsSearch**](EndpointTestsDataRoundsSearch.md)| Tests data search filters. | [optional] 
 
 ### Return type
@@ -108,7 +111,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **filter_scheduled_tests_network_results**
-> MultiTestIdNetworkEndpointTestResults filter_scheduled_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, use_all_permitted_aids=use_all_permitted_aids, multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search)
+> MultiTestIdNetworkEndpointTestResults filter_scheduled_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, use_all_permitted_aids=use_all_permitted_aids, expand=expand, multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search)
 
 Retrieve network scheduled test results from multiple tests
 
@@ -120,6 +123,7 @@ Returns network metrics, including loss, latency, and jitter, for multiple test 
 
 ```python
 import thousandeyes_sdk.endpoint_test_results
+from thousandeyes_sdk.endpoint_test_results.models.expand_endpoint_network_options import ExpandEndpointNetworkOptions
 from thousandeyes_sdk.endpoint_test_results.models.multi_test_id_endpoint_tests_data_rounds_search import MultiTestIdEndpointTestsDataRoundsSearch
 from thousandeyes_sdk.endpoint_test_results.models.multi_test_id_network_endpoint_test_results import MultiTestIdNetworkEndpointTestResults
 from thousandeyes_sdk.endpoint_test_results.rest import ApiException
@@ -152,11 +156,12 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     max = 5 # int | (Optional) Maximum number of objects to return. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
     use_all_permitted_aids = False # bool | Set to `true` to load data from all accounts the user has access to. (optional) (default to False)
+    expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()] # List[ExpandEndpointNetworkOptions] | This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query. (optional)
     multi_test_id_endpoint_tests_data_rounds_search = thousandeyes_sdk.endpoint_test_results.MultiTestIdEndpointTestsDataRoundsSearch() # MultiTestIdEndpointTestsDataRoundsSearch | Test data search filters. (optional)
 
     try:
         # Retrieve network scheduled test results from multiple tests
-        api_response = api_instance.filter_scheduled_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, use_all_permitted_aids=use_all_permitted_aids, multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search)
+        api_response = api_instance.filter_scheduled_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, use_all_permitted_aids=use_all_permitted_aids, expand=expand, multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search)
         print("The response of NetworkEndpointScheduledTestResultsApi->filter_scheduled_tests_network_results:\n")
         pprint(api_response)
     except Exception as e:
@@ -177,6 +182,7 @@ Name | Type | Description  | Notes
  **max** | **int**| (Optional) Maximum number of objects to return. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
  **use_all_permitted_aids** | **bool**| Set to &#x60;true&#x60; to load data from all accounts the user has access to. | [optional] [default to False]
+ **expand** | [**List[ExpandEndpointNetworkOptions]**](ExpandEndpointNetworkOptions.md)| This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \&quot;user-profile,\&quot; append &#x60;?expand&#x3D;user-profile&#x60; to the query. | [optional] 
  **multi_test_id_endpoint_tests_data_rounds_search** | [**MultiTestIdEndpointTestsDataRoundsSearch**](MultiTestIdEndpointTestsDataRoundsSearch.md)| Test data search filters. | [optional] 
 
 ### Return type

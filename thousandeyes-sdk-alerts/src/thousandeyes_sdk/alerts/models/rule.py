@@ -36,6 +36,7 @@ class Rule(BaseModel):
     rule_id: Optional[StrictStr] = Field(default=None, description="Unique ID of the rule.", alias="ruleId")
     rule_name: StrictStr = Field(description="Name of the alert rule.", alias="ruleName")
     expression: StrictStr = Field(description="The expression of the alert rule.")
+    description: Optional[StrictStr] = Field(default=None, description="A description of the alert rule.")
     direction: Optional[AlertDirection] = None
     notify_on_clear: Optional[StrictBool] = Field(default=None, description="Send notification when alert clears.", alias="notifyOnClear")
     is_default: Optional[StrictBool] = Field(default=None, description="If set to `true`, this alert rule becomes the default for its test type and is automatically applied to newly created tests with relevant metrics. Only one default alert rule is allowed per test type.", alias="isDefault")
@@ -55,7 +56,7 @@ class Rule(BaseModel):
     notifications: Optional[AlertNotification] = None
     test_ids: Optional[List[StrictStr]] = Field(default=None, description="Array of test IDs to link to alert rule (get `testId` from `/tests` endpoint).", alias="testIds")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "endpointAgentIds", "endpointLabelIds", "visitedSitesFilter", "notifications", "testIds", "_links"]
+    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "description", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "endpointAgentIds", "endpointLabelIds", "visitedSitesFilter", "notifications", "testIds", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -120,6 +121,7 @@ class Rule(BaseModel):
             "ruleId": obj.get("ruleId"),
             "ruleName": obj.get("ruleName"),
             "expression": obj.get("expression"),
+            "description": obj.get("description"),
             "direction": obj.get("direction"),
             "notifyOnClear": obj.get("notifyOnClear"),
             "isDefault": obj.get("isDefault"),

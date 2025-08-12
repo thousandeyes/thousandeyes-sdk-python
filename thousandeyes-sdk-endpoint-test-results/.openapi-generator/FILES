@@ -55,7 +55,9 @@ docs/EndpointTestsDataThresholdFilters.md
 docs/EndpointZtaMetrics.md
 docs/EndpointZtaSegmentType.md
 docs/Error.md
+docs/ExpandEndpointDynamicNetworkOptions.md
 docs/ExpandEndpointHttpServerOptions.md
+docs/ExpandEndpointNetworkOptions.md
 docs/ExpandLocalNetworkTopologyOptions.md
 docs/GatewayNetworkPing.md
 docs/HTTPServerEndpointScheduledTestResultsApi.md
@@ -153,6 +155,7 @@ docs/Trigger.md
 docs/UdpPathTraceModeResponse.md
 docs/UdpProbeModeResponse.md
 docs/UnauthorizedError.md
+docs/UserProfile.md
 docs/ValidationError.md
 docs/ValidationErrorItem.md
 docs/VpnNetworkPing.md
@@ -223,7 +226,9 @@ src/thousandeyes_sdk/endpoint_test_results/models/endpoint_tests_data_threshold_
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_zta_metrics.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_zta_segment_type.py
 src/thousandeyes_sdk/endpoint_test_results/models/error.py
+src/thousandeyes_sdk/endpoint_test_results/models/expand_endpoint_dynamic_network_options.py
 src/thousandeyes_sdk/endpoint_test_results/models/expand_endpoint_http_server_options.py
+src/thousandeyes_sdk/endpoint_test_results/models/expand_endpoint_network_options.py
 src/thousandeyes_sdk/endpoint_test_results/models/expand_local_network_topology_options.py
 src/thousandeyes_sdk/endpoint_test_results/models/gateway_network_ping.py
 src/thousandeyes_sdk/endpoint_test_results/models/hop.py
@@ -316,6 +321,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/trigger.py
 src/thousandeyes_sdk/endpoint_test_results/models/udp_path_trace_mode_response.py
 src/thousandeyes_sdk/endpoint_test_results/models/udp_probe_mode_response.py
 src/thousandeyes_sdk/endpoint_test_results/models/unauthorized_error.py
+src/thousandeyes_sdk/endpoint_test_results/models/user_profile.py
 src/thousandeyes_sdk/endpoint_test_results/models/validation_error.py
 src/thousandeyes_sdk/endpoint_test_results/models/validation_error_item.py
 src/thousandeyes_sdk/endpoint_test_results/models/vpn_network_ping.py

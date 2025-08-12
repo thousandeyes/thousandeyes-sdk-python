@@ -21,6 +21,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.endpoint_test_results.models.network_profile import NetworkProfile
 from thousandeyes_sdk.endpoint_test_results.models.system_metrics import SystemMetrics
 from thousandeyes_sdk.endpoint_test_results.models.target_profile import TargetProfile
+from thousandeyes_sdk.endpoint_test_results.models.user_profile import UserProfile
 from thousandeyes_sdk.endpoint_test_results.models.vpn_profile import VpnProfile
 from typing import Optional, Set
 from typing_extensions import Self
@@ -37,8 +38,9 @@ class EndpointTestResult(BaseModel):
     network_profile: Optional[NetworkProfile] = Field(default=None, alias="networkProfile")
     system_metrics: Optional[SystemMetrics] = Field(default=None, alias="systemMetrics")
     original_target_profile: Optional[TargetProfile] = Field(default=None, alias="originalTargetProfile")
+    user_profile: Optional[UserProfile] = Field(default=None, alias="userProfile")
     vpn_profile: Optional[VpnProfile] = Field(default=None, alias="vpnProfile")
-    __properties: ClassVar[List[str]] = ["aid", "testId", "agentId", "roundId", "serverIp", "networkProfile", "systemMetrics", "originalTargetProfile", "vpnProfile"]
+    __properties: ClassVar[List[str]] = ["aid", "testId", "agentId", "roundId", "serverIp", "networkProfile", "systemMetrics", "originalTargetProfile", "userProfile", "vpnProfile"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -97,6 +99,9 @@ class EndpointTestResult(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of original_target_profile
         if self.original_target_profile:
             _dict['originalTargetProfile'] = self.original_target_profile.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of user_profile
+        if self.user_profile:
+            _dict['userProfile'] = self.user_profile.to_dict()
         # override the default output from pydantic by calling `to_dict()` of vpn_profile
         if self.vpn_profile:
             _dict['vpnProfile'] = self.vpn_profile.to_dict()
@@ -120,6 +125,7 @@ class EndpointTestResult(BaseModel):
             "networkProfile": NetworkProfile.from_dict(obj["networkProfile"]) if obj.get("networkProfile") is not None else None,
             "systemMetrics": SystemMetrics.from_dict(obj["systemMetrics"]) if obj.get("systemMetrics") is not None else None,
             "originalTargetProfile": TargetProfile.from_dict(obj["originalTargetProfile"]) if obj.get("originalTargetProfile") is not None else None,
+            "userProfile": UserProfile.from_dict(obj["userProfile"]) if obj.get("userProfile") is not None else None,
             "vpnProfile": VpnProfile.from_dict(obj["vpnProfile"]) if obj.get("vpnProfile") is not None else None
         })
         return _obj

@@ -41,7 +41,8 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                   } ],
                   "searchFilters" : {
                     "agentId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ],
-                    "webexConferenceId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ]
+                    "webexConferenceId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ],
+                    "userPrincipalName" : [ "joeblogs32@c.com", "joeblogs32@c.com" ]
                   },
                   "thresholdFilter" : {
                     "conditionalOperator" : "and",
@@ -143,6 +144,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "tcpProbeMode" : "auto",
                     "score" : {
                       "applicationScore" : 100.0,
@@ -261,6 +266,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "tcpProbeMode" : "auto",
                     "score" : {
                       "applicationScore" : 100.0,
@@ -454,6 +463,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "tcpProbeMode" : "auto",
                     "protocol" : "tcp",
                     "systemMetrics" : {
@@ -645,6 +658,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "tcpProbeMode" : "auto",
                     "protocol" : "tcp",
                     "systemMetrics" : {
@@ -920,6 +937,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "tcpProbeMode" : "auto",
                     "protocol" : "tcp",
                     "systemMetrics" : {
@@ -1039,6 +1060,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "tcpProbeMode" : "auto",
                     "protocol" : "tcp",
                     "systemMetrics" : {

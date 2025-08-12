@@ -40,7 +40,8 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                     "order" : "desc"
                   } ],
                   "searchFilters" : {
-                    "agentId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ]
+                    "agentId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ],
+                    "userPrincipalName" : [ "joeblogs32@c.com", "joeblogs32@c.com" ]
                   },
                   "thresholdFilter" : {
                     "conditionalOperator" : "and",
@@ -142,6 +143,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
@@ -250,6 +255,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
@@ -415,6 +424,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
@@ -523,6 +536,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
@@ -707,6 +724,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -888,6 +909,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -1153,6 +1178,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -1262,6 +1291,10 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
+                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,

@@ -26,8 +26,9 @@ class DynamicEndpointTestsDataSearchFilter(BaseModel):
     DynamicEndpointTestsDataSearchFilter
     """ # noqa: E501
     agent_id: Optional[List[StrictStr]] = Field(default=None, description="Filter using the `agent-id`.", alias="agentId")
+    user_principal_name: Optional[List[StrictStr]] = Field(default=None, description="Filters results based on an array of `userPrincipalName` values.", alias="userPrincipalName")
     webex_conference_id: Optional[List[StrictStr]] = Field(default=None, description="Filter using the `conference-id` of the webex call.", alias="webexConferenceId")
-    __properties: ClassVar[List[str]] = ["agentId", "webexConferenceId"]
+    __properties: ClassVar[List[str]] = ["agentId", "userPrincipalName", "webexConferenceId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +83,7 @@ class DynamicEndpointTestsDataSearchFilter(BaseModel):
 
         _obj = cls.model_validate({
             "agentId": obj.get("agentId"),
+            "userPrincipalName": obj.get("userPrincipalName"),
             "webexConferenceId": obj.get("webexConferenceId")
         })
         return _obj

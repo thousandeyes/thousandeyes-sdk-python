@@ -128,6 +128,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                   "savedEvent" : true,
                   "userAgent" : "curl",
                   "pageLoadTimeLimit" : 10,
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -306,6 +307,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                   "savedEvent" : true,
                   "userAgent" : "curl",
                   "pageLoadTimeLimit" : 10,
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -509,6 +511,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                   "savedEvent" : true,
                   "userAgent" : "curl",
                   "pageLoadTimeLimit" : 10,
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -649,6 +652,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                     "savedEvent" : true,
                     "userAgent" : "curl",
                     "pageLoadTimeLimit" : 10,
+                    "identifyAgentTrafficWithUserAgent" : false,
                     "networkMeasurements" : true,
                     "url" : "www.thousandeyes.com",
                     "createdDate" : "2022-07-17T22:00:54Z",
@@ -753,6 +757,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                     "savedEvent" : true,
                     "userAgent" : "curl",
                     "pageLoadTimeLimit" : 10,
+                    "identifyAgentTrafficWithUserAgent" : false,
                     "networkMeasurements" : true,
                     "url" : "www.thousandeyes.com",
                     "createdDate" : "2022-07-17T22:00:54Z",
@@ -883,6 +888,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                   "savedEvent" : true,
                   "userAgent" : "curl",
                   "pageLoadTimeLimit" : 10,
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -1061,6 +1067,7 @@ class TestPageLoadTestsApi(unittest.TestCase):
                   "savedEvent" : true,
                   "userAgent" : "curl",
                   "pageLoadTimeLimit" : 10,
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
