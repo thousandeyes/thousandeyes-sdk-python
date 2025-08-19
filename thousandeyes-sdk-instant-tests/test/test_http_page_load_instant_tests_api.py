@@ -120,6 +120,7 @@ class TestHTTPPageLoadInstantTestsApi(unittest.TestCase):
                   "savedEvent" : true,
                   "userAgent" : "curl",
                   "pageLoadTimeLimit" : 10,
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -247,6 +248,7 @@ class TestHTTPPageLoadInstantTestsApi(unittest.TestCase):
                   "savedEvent" : true,
                   "userAgent" : "curl",
                   "pageLoadTimeLimit" : 10,
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {

@@ -97,7 +97,8 @@ class PageLoadInstantTest(BaseModel):
     browser_language: Optional[StrictStr] = Field(default=None, description="Set one of the available browser language that you want to use to configure the browser.", alias="browserLanguage")
     page_loading_strategy: Optional[TestPageLoadingStrategy] = Field(default=None, alias="pageLoadingStrategy")
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "pageLoadingStrategy", "randomizedStartTime"]
+    identify_agent_traffic_with_user_agent: Optional[StrictBool] = Field(default=False, description="Determines how agent traffic is identified:  * `false`: Adds the `x-thousandeyes-agent: yes` header. * `true`: Appends `(ThousandEyes Agent)` to the `user-agent` header.  For more information, see [Notes on Agent ID Strategy](https://docs.thousandeyes.com/product-documentation/browser-synthetics/test-settings-page-load-transaction#notes-on-agent-id-strategy). ", alias="identifyAgentTrafficWithUserAgent")
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -256,7 +257,8 @@ class PageLoadInstantTest(BaseModel):
             "allowGeolocation": obj.get("allowGeolocation") if obj.get("allowGeolocation") is not None else False,
             "browserLanguage": obj.get("browserLanguage"),
             "pageLoadingStrategy": obj.get("pageLoadingStrategy"),
-            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False
+            "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
+            "identifyAgentTrafficWithUserAgent": obj.get("identifyAgentTrafficWithUserAgent") if obj.get("identifyAgentTrafficWithUserAgent") is not None else False
         })
         return _obj
 

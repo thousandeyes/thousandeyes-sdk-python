@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **total_memory** | **str** |  | [optional] [readonly] 
 **agent_type** | **str** |  | [optional] [readonly] 
 **vpn_profiles** | [**List[EndpointVpnProfile]**](EndpointVpnProfile.md) | List of VPN connections on the agent. Not populated by default.  | [optional] [readonly] 
+**external_metadata** | [**List[ExternalMetadataItem]**](ExternalMetadataItem.md) | List of external metadata assigned to the endpoint agent.  Visible only if the &#x60;expandAgent&#x3D;externalMetadata&#x60; query parameter is included.  | [optional] 
 **network_interface_profiles** | [**List[InterfaceProfile]**](InterfaceProfile.md) | List of network interfaces on the agent. Not populated by default.  | [optional] [readonly] 
 **asn_details** | [**EndpointAsnDetails**](EndpointAsnDetails.md) |  | [optional] 
 **license_type** | [**AgentLicenseType**](AgentLicenseType.md) |  | [optional] 

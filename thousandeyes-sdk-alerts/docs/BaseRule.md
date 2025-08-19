@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **rule_id** | **str** | Unique ID of the rule. | [optional] [readonly] 
 **rule_name** | **str** | Name of the alert rule. | 
 **expression** | **str** | The expression of the alert rule. | 
+**description** | **str** | A description of the alert rule. | [optional] 
 **direction** | [**AlertDirection**](AlertDirection.md) |  | [optional] 
 **notify_on_clear** | **bool** | Send notification when alert clears. | [optional] 
 **is_default** | **bool** | If set to &#x60;true&#x60;, this alert rule becomes the default for its test type and is automatically applied to newly created tests with relevant metrics. Only one default alert rule is allowed per test type. | [optional] 

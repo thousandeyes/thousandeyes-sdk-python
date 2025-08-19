@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **List[str]** | Filter using the &#x60;agent-id&#x60;. | [optional] 
+**user_principal_name** | **List[str]** | Filters results based on an array of &#x60;userPrincipalName&#x60; values. | [optional] 
 **webex_conference_id** | **List[str]** | Filter using the &#x60;conference-id&#x60; of the webex call. | [optional] 
 
 ## Example

@@ -27,7 +27,8 @@ class HttpEndpointTestsDataSearchFilter(BaseModel):
     """ # noqa: E501
     test_id: Optional[List[StrictStr]] = Field(default=None, description="Filter by test", alias="testId")
     agent_id: Optional[List[StrictStr]] = Field(default=None, description="Filter using the `agent-id`.", alias="agentId")
-    __properties: ClassVar[List[str]] = ["testId", "agentId"]
+    user_principal_name: Optional[List[StrictStr]] = Field(default=None, description="Filters results based on an array of `userPrincipalName` values.", alias="userPrincipalName")
+    __properties: ClassVar[List[str]] = ["testId", "agentId", "userPrincipalName"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +83,8 @@ class HttpEndpointTestsDataSearchFilter(BaseModel):
 
         _obj = cls.model_validate({
             "testId": obj.get("testId"),
-            "agentId": obj.get("agentId")
+            "agentId": obj.get("agentId"),
+            "userPrincipalName": obj.get("userPrincipalName")
         })
         return _obj
 

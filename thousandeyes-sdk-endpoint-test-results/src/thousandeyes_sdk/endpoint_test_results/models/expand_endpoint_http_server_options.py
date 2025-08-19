@@ -26,6 +26,7 @@ class ExpandEndpointHttpServerOptions(str, Enum):
     allowed enum values
     """
     HEADER = 'header'
+    USER_MINUS_PROFILE = 'user-profile'
     UNKNOWN = 'unknown'
 
     @classmethod

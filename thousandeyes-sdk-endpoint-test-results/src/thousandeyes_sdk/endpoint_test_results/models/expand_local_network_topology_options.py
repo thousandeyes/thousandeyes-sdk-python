@@ -26,6 +26,7 @@ class ExpandLocalNetworkTopologyOptions(str, Enum):
     allowed enum values
     """
     SYSTEM_MINUS_METRIC_MINUS_DETAIL = 'system-metric-detail'
+    USER_MINUS_PROFILE = 'user-profile'
     UNKNOWN = 'unknown'
 
     @classmethod

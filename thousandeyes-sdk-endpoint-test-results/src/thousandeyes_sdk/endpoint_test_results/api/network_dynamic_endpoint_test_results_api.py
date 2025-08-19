@@ -20,9 +20,10 @@ import thousandeyes_sdk.endpoint_test_results.models
 
 from datetime import datetime
 from pydantic import Field, StrictStr, field_validator
-from typing import Optional
+from typing import List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_test_results.models.dynamic_endpoint_tests_data_round_search import DynamicEndpointTestsDataRoundSearch
+from thousandeyes_sdk.endpoint_test_results.models.expand_endpoint_dynamic_network_options import ExpandEndpointDynamicNetworkOptions
 from thousandeyes_sdk.endpoint_test_results.models.network_dynamic_endpoint_test_results import NetworkDynamicEndpointTestResults
 from thousandeyes_sdk.endpoint_test_results.models.path_vis_detail_dynamic_endpoint_test_results import PathVisDetailDynamicEndpointTestResults
 from thousandeyes_sdk.endpoint_test_results.models.path_vis_dynamic_endpoint_test_results import PathVisDynamicEndpointTestResults
@@ -55,6 +56,7 @@ class NetworkDynamicEndpointTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandEndpointDynamicNetworkOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query.")] = None,
         dynamic_endpoint_tests_data_round_search: Annotated[Optional[DynamicEndpointTestsDataRoundSearch], Field(description="Tests data search filters.")] = None,
         _request_timeout: Union[
             None,
@@ -85,6 +87,8 @@ class NetworkDynamicEndpointTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query.
+        :type expand: List[ExpandEndpointDynamicNetworkOptions]
         :param dynamic_endpoint_tests_data_round_search: Tests data search filters.
         :type dynamic_endpoint_tests_data_round_search: DynamicEndpointTestsDataRoundSearch
         :param _request_timeout: timeout setting for this request. If one
@@ -116,6 +120,7 @@ class NetworkDynamicEndpointTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            expand=expand,
             dynamic_endpoint_tests_data_round_search=dynamic_endpoint_tests_data_round_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -153,6 +158,7 @@ class NetworkDynamicEndpointTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandEndpointDynamicNetworkOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query.")] = None,
         dynamic_endpoint_tests_data_round_search: Annotated[Optional[DynamicEndpointTestsDataRoundSearch], Field(description="Tests data search filters.")] = None,
         _request_timeout: Union[
             None,
@@ -183,6 +189,8 @@ class NetworkDynamicEndpointTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query.
+        :type expand: List[ExpandEndpointDynamicNetworkOptions]
         :param dynamic_endpoint_tests_data_round_search: Tests data search filters.
         :type dynamic_endpoint_tests_data_round_search: DynamicEndpointTestsDataRoundSearch
         :param _request_timeout: timeout setting for this request. If one
@@ -214,6 +222,7 @@ class NetworkDynamicEndpointTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            expand=expand,
             dynamic_endpoint_tests_data_round_search=dynamic_endpoint_tests_data_round_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -251,6 +260,7 @@ class NetworkDynamicEndpointTestResultsApi:
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandEndpointDynamicNetworkOptions]], Field(description="This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query.")] = None,
         dynamic_endpoint_tests_data_round_search: Annotated[Optional[DynamicEndpointTestsDataRoundSearch], Field(description="Tests data search filters.")] = None,
         _request_timeout: Union[
             None,
@@ -281,6 +291,8 @@ class NetworkDynamicEndpointTestResultsApi:
         :type end_date: datetime
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query.
+        :type expand: List[ExpandEndpointDynamicNetworkOptions]
         :param dynamic_endpoint_tests_data_round_search: Tests data search filters.
         :type dynamic_endpoint_tests_data_round_search: DynamicEndpointTestsDataRoundSearch
         :param _request_timeout: timeout setting for this request. If one
@@ -312,6 +324,7 @@ class NetworkDynamicEndpointTestResultsApi:
             start_date=start_date,
             end_date=end_date,
             cursor=cursor,
+            expand=expand,
             dynamic_endpoint_tests_data_round_search=dynamic_endpoint_tests_data_round_search,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -343,6 +356,7 @@ class NetworkDynamicEndpointTestResultsApi:
         start_date,
         end_date,
         cursor,
+        expand,
         dynamic_endpoint_tests_data_round_search,
         _request_auth,
         _content_type,
@@ -353,6 +367,7 @@ class NetworkDynamicEndpointTestResultsApi:
         _host = None
 
         _collection_formats: Dict[str, str] = {
+            'expand': 'csv',
         }
 
         _path_params: Dict[str, str] = {}
@@ -403,6 +418,10 @@ class NetworkDynamicEndpointTestResultsApi:
         if cursor is not None:
             
             _query_params.append(('cursor', cursor))
+            
+        if expand is not None:
+            
+            _query_params.append(('expand', expand))
             
         # process the header parameters
         # process the form parameters

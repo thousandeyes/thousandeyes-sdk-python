@@ -127,6 +127,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                   "distributedTracing" : false,
                   "savedEvent" : true,
                   "userAgent" : "curl",
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -306,6 +307,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                   "distributedTracing" : false,
                   "savedEvent" : true,
                   "userAgent" : "curl",
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -510,6 +512,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                   "distributedTracing" : false,
                   "savedEvent" : true,
                   "userAgent" : "curl",
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -650,6 +653,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                     "distributedTracing" : false,
                     "savedEvent" : true,
                     "userAgent" : "curl",
+                    "identifyAgentTrafficWithUserAgent" : false,
                     "networkMeasurements" : true,
                     "url" : "www.thousandeyes.com",
                     "timeLimit" : 30,
@@ -754,6 +758,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                     "distributedTracing" : false,
                     "savedEvent" : true,
                     "userAgent" : "curl",
+                    "identifyAgentTrafficWithUserAgent" : false,
                     "networkMeasurements" : true,
                     "url" : "www.thousandeyes.com",
                     "timeLimit" : 30,
@@ -885,6 +890,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                   "distributedTracing" : false,
                   "savedEvent" : true,
                   "userAgent" : "curl",
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -1064,6 +1070,7 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                   "distributedTracing" : false,
                   "savedEvent" : true,
                   "userAgent" : "curl",
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {

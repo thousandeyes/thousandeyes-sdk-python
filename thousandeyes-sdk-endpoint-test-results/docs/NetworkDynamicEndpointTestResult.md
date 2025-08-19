@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **network_profile** | [**NetworkProfile**](NetworkProfile.md) |  | [optional] 
 **system_metrics** | [**SystemMetrics**](SystemMetrics.md) |  | [optional] 
 **original_target_profile** | [**TargetProfile**](TargetProfile.md) |  | [optional] 
+**user_profile** | [**UserProfile**](UserProfile.md) |  | [optional] 
 **vpn_profile** | [**VpnProfile**](VpnProfile.md) |  | [optional] 
 **avg_latency** | **float** | Average RTT for packets sent to destination. | [optional] [readonly] 
 **error_details** | **str** | Error details, if an error was encountered. | [optional] [readonly] 

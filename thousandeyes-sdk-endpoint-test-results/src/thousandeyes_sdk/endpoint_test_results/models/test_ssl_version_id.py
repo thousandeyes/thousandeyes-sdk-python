@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class TestSslVersionId(str, Enum):
     """
-    SSL version options:  * Use '0' for automatic selection. * Use '3' for SSLv3. * Use '4' for TLS v1.0. * Use '5' for TLS v1.1. * Use '6' for TLS v1.2. 
+    SSL version options:  * Use '0' for automatic selection. * Use '3' for SSLv3. * Use '4' for TLS v1.0. * Use '5' for TLS v1.1. * Use '6' for TLS v1.2. * Use '7' for TLS v1.3. 
     """
 
     """
@@ -30,6 +30,7 @@ class TestSslVersionId(str, Enum):
     ENUM_4 = '4'
     ENUM_5 = '5'
     ENUM_6 = '6'
+    ENUM_7 = '7'
     UNKNOWN = 'unknown'
 
     @classmethod

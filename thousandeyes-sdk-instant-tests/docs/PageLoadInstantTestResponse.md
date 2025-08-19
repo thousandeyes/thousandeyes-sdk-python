@@ -63,6 +63,7 @@ Name | Type | Description | Notes
 **browser_language** | **str** | Set one of the available browser language that you want to use to configure the browser. | [optional] 
 **page_loading_strategy** | [**TestPageLoadingStrategy**](TestPageLoadingStrategy.md) |  | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
+**identify_agent_traffic_with_user_agent** | **bool** | Determines how agent traffic is identified:  * &#x60;false&#x60;: Adds the &#x60;x-thousandeyes-agent: yes&#x60; header. * &#x60;true&#x60;: Appends &#x60;(ThousandEyes Agent)&#x60; to the &#x60;user-agent&#x60; header.  For more information, see [Notes on Agent ID Strategy](https://docs.thousandeyes.com/product-documentation/browser-synthetics/test-settings-page-load-transaction#notes-on-agent-id-strategy).  | [optional] [default to False]
 **agents** | [**List[AgentResponse]**](AgentResponse.md) | Contains list of agents. | [optional] 
 
 ## Example

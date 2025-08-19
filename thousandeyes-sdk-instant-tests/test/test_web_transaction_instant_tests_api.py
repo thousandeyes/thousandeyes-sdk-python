@@ -120,6 +120,7 @@ class TestWebTransactionInstantTestsApi(unittest.TestCase):
                   "distributedTracing" : false,
                   "savedEvent" : true,
                   "userAgent" : "curl",
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
@@ -249,6 +250,7 @@ class TestWebTransactionInstantTestsApi(unittest.TestCase):
                   "distributedTracing" : false,
                   "savedEvent" : true,
                   "userAgent" : "curl",
+                  "identifyAgentTrafficWithUserAgent" : false,
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
