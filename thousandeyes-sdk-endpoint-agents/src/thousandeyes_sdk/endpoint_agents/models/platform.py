@@ -31,6 +31,7 @@ class Platform(str, Enum):
     ELUX = 'elux'
     LINUX = 'linux'
     MAC = 'mac'
+    ANDROID = 'android'
     UNKNOWN = 'unknown'
 
     @classmethod
