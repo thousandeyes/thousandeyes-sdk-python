@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | Name or identifier of the external metadata property. | [optional] 
+**key** | **str** | ID of the device that has the Cisco Secure Client deployed with the Internet Security module. | [optional] 
 **value** | **str** | Value of the external metadata property. | [optional] 
 
 ## Example

@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**key** | **str** | The name of the tag key to match | [optional] 
+**key** | **str** | The name of the tag key to match. The key is invalid if it includes characters that are not allowed by the [OpenTelemetry naming recommendations for attributes](https://opentelemetry.io/docs/specs/semconv/general/naming/#recommendations-for-application-developers). | [optional] 
 **value** | **str** | The value of the tag to match | [optional] 
 
 ## Example

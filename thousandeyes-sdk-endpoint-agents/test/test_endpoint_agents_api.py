@@ -383,6 +383,7 @@ class TestEndpointAgentsApi(unittest.TestCase):
                     "licenseType" : [ "essentials", "essentials" ],
                     "osVersion" : [ "Version 10.15.2", "Version 10.15.2" ],
                     "computerName" : [ "DESKTOP-45AE8", "DESKTOP-45AE8" ],
+                    "anyConnectDeviceId" : [ "JDLKSLFEIJER004334F" ],
                     "locationCountryISO" : [ "FR", "FR" ],
                     "agentName" : [ "myagent-1234", "myagent-1234" ],
                     "locationSubdivision1Code" : [ "ENG", "ENG" ],

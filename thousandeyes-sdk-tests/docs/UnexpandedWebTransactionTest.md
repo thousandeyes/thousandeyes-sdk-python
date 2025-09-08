@@ -55,7 +55,7 @@ Name | Type | Description | Notes
 **override_proxy_id** | **str** | ID of the proxy to be used if the default proxy is overridden. | [optional] 
 **collect_proxy_network_data** | **bool** | Indicates whether network data to the proxy should be collected. | [optional] [default to False]
 **emulated_device_id** | **str** | ID of the emulated device, if specified when the test was created. | [optional] 
-**target_time** | **int** | Target completion time. The default is 50% of the specified time limit in seconds. (Set to 0 to use the default behavior). | [optional] 
+**target_time** | **int** | Target completion time, in seconds. Defaults to 10. Cannot exceed the &#x60;timeLimit&#x60; value. | [optional] [default to 10]
 **time_limit** | **int** | Time limit for transaction in seconds. | [optional] [default to 30]
 **transaction_script** | **str** | JavaScript of a web transaction test. Quotes must be escaped (precede \&quot; characters with \\ ). | 
 **block_domains** | **str** | Domains or full object URLs to be excluded from metrics and waterfall data for transaction tests. | [optional] 

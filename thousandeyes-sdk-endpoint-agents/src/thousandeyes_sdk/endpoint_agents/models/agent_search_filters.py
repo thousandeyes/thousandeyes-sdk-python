@@ -38,7 +38,8 @@ class AgentSearchFilters(BaseModel):
     location_subdivision1_code: Optional[List[StrictStr]] = Field(default=None, description="Filter using the code for the first level administrative division within  the country. In US/Canada this is the State, in UK it's the country e.g. `ENG` ", alias="locationSubdivision1Code")
     location_city: Optional[List[StrictStr]] = Field(default=None, description="This is a prefix match on the city name field. The endpoint expects this to contain the  name of the city in English. e.g. 'Paris' or '' ", alias="locationCity")
     license_type: Optional[List[AgentLicenseType]] = Field(default=None, description="Filter on the agent's license type ", alias="licenseType")
-    __properties: ClassVar[List[str]] = ["id", "agentName", "computerName", "username", "userPrincipalName", "platform", "osVersion", "locationCountryISO", "locationSubdivision1Code", "locationCity", "licenseType"]
+    any_connect_device_id: Optional[List[StrictStr]] = Field(default=None, description="IDs of devices that has the Cisco Secure Client deployed with the Internet Security module. Returns only agents that have at least one matching `anyConnectDeviceId`. ", alias="anyConnectDeviceId")
+    __properties: ClassVar[List[str]] = ["id", "agentName", "computerName", "username", "userPrincipalName", "platform", "osVersion", "locationCountryISO", "locationSubdivision1Code", "locationCity", "licenseType", "anyConnectDeviceId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -102,7 +103,8 @@ class AgentSearchFilters(BaseModel):
             "locationCountryISO": obj.get("locationCountryISO"),
             "locationSubdivision1Code": obj.get("locationSubdivision1Code"),
             "locationCity": obj.get("locationCity"),
-            "licenseType": obj.get("licenseType")
+            "licenseType": obj.get("licenseType"),
+            "anyConnectDeviceId": obj.get("anyConnectDeviceId")
         })
         return _obj
 
