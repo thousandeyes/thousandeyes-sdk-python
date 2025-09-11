@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.alerts.models.alert_embedded import AlertEmbedded
 from thousandeyes_sdk.alerts.models.alert_links import AlertLinks
 from thousandeyes_sdk.alerts.models.alert_meta import AlertMeta
 from thousandeyes_sdk.alerts.models.alert_metric_detail import AlertMetricDetail
@@ -46,7 +47,8 @@ class AlertDetail(BaseModel):
     alert_state: Optional[State] = Field(default=None, alias="alertState")
     alert_severity: Optional[Severity] = Field(default=None, alias="alertSeverity")
     details: Optional[List[AlertMetricDetail]] = None
-    __properties: ClassVar[List[str]] = ["id", "alertType", "startDate", "endDate", "violationCount", "duration", "suppressed", "meta", "_links", "state", "severity", "alertState", "alertSeverity", "details"]
+    embedded: Optional[AlertEmbedded] = Field(default=None, alias="_embedded")
+    __properties: ClassVar[List[str]] = ["id", "alertType", "startDate", "endDate", "violationCount", "duration", "suppressed", "meta", "_links", "state", "severity", "alertState", "alertSeverity", "details", "_embedded"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,6 +109,9 @@ class AlertDetail(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['details'] = _items
+        # override the default output from pydantic by calling `to_dict()` of embedded
+        if self.embedded:
+            _dict['_embedded'] = self.embedded.to_dict()
         return _dict
 
     @classmethod
@@ -132,7 +137,8 @@ class AlertDetail(BaseModel):
             "severity": obj.get("severity"),
             "alertState": obj.get("alertState"),
             "alertSeverity": obj.get("alertSeverity"),
-            "details": [AlertMetricDetail.from_dict(_item) for _item in obj["details"]] if obj.get("details") is not None else None
+            "details": [AlertMetricDetail.from_dict(_item) for _item in obj["details"]] if obj.get("details") is not None else None,
+            "_embedded": AlertEmbedded.from_dict(obj["_embedded"]) if obj.get("_embedded") is not None else None
         })
         return _obj
 

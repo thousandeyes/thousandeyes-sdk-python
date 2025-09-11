@@ -4,6 +4,7 @@ README.md
 docs/Alert.md
 docs/AlertDetail.md
 docs/AlertDirection.md
+docs/AlertEmbedded.md
 docs/AlertGroupType.md
 docs/AlertLinks.md
 docs/AlertMeta.md
@@ -22,6 +23,7 @@ docs/AlertTestType.md
 docs/AlertType.md
 docs/Alerts.md
 docs/AlertsApi.md
+docs/Asn.md
 docs/BaseAlert.md
 docs/BaseAlertSuppressionWindow.md
 docs/BaseRule.md
@@ -73,6 +75,7 @@ src/thousandeyes_sdk/alerts/models/__init__.py
 src/thousandeyes_sdk/alerts/models/alert.py
 src/thousandeyes_sdk/alerts/models/alert_detail.py
 src/thousandeyes_sdk/alerts/models/alert_direction.py
+src/thousandeyes_sdk/alerts/models/alert_embedded.py
 src/thousandeyes_sdk/alerts/models/alert_group_type.py
 src/thousandeyes_sdk/alerts/models/alert_links.py
 src/thousandeyes_sdk/alerts/models/alert_meta.py
@@ -88,6 +91,7 @@ src/thousandeyes_sdk/alerts/models/alert_suppression_windows.py
 src/thousandeyes_sdk/alerts/models/alert_test_type.py
 src/thousandeyes_sdk/alerts/models/alert_type.py
 src/thousandeyes_sdk/alerts/models/alerts.py
+src/thousandeyes_sdk/alerts/models/asn.py
 src/thousandeyes_sdk/alerts/models/base_alert.py
 src/thousandeyes_sdk/alerts/models/base_alert_suppression_window.py
 src/thousandeyes_sdk/alerts/models/base_rule.py

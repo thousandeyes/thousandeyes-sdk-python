@@ -23,6 +23,7 @@ from thousandeyes_sdk.alerts.api.alerts_api import AlertsApi
 from thousandeyes_sdk.alerts.models.alert import Alert
 from thousandeyes_sdk.alerts.models.alert_detail import AlertDetail
 from thousandeyes_sdk.alerts.models.alert_direction import AlertDirection
+from thousandeyes_sdk.alerts.models.alert_embedded import AlertEmbedded
 from thousandeyes_sdk.alerts.models.alert_group_type import AlertGroupType
 from thousandeyes_sdk.alerts.models.alert_links import AlertLinks
 from thousandeyes_sdk.alerts.models.alert_meta import AlertMeta
@@ -38,6 +39,7 @@ from thousandeyes_sdk.alerts.models.alert_suppression_windows import AlertSuppre
 from thousandeyes_sdk.alerts.models.alert_test_type import AlertTestType
 from thousandeyes_sdk.alerts.models.alert_type import AlertType
 from thousandeyes_sdk.alerts.models.alerts import Alerts
+from thousandeyes_sdk.alerts.models.asn import Asn
 from thousandeyes_sdk.alerts.models.base_alert import BaseAlert
 from thousandeyes_sdk.alerts.models.base_alert_suppression_window import BaseAlertSuppressionWindow
 from thousandeyes_sdk.alerts.models.base_rule import BaseRule

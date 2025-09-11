@@ -89,7 +89,7 @@ class WebTransactionInstantTestResponse(BaseModel):
     override_proxy_id: Optional[StrictStr] = Field(default=None, description="ID of the proxy to be used if the default proxy is overridden.", alias="overrideProxyId")
     collect_proxy_network_data: Optional[StrictBool] = Field(default=False, description="Indicates whether network data to the proxy should be collected.", alias="collectProxyNetworkData")
     emulated_device_id: Optional[StrictStr] = Field(default=None, description="ID of the emulated device, if specified when the test was created.", alias="emulatedDeviceId")
-    target_time: Optional[Annotated[int, Field(le=60, strict=True, ge=0)]] = Field(default=None, description="Target completion time. The default is 50% of the specified time limit in seconds. (Set to 0 to use the default behavior).", alias="targetTime")
+    target_time: Optional[Annotated[int, Field(le=180, strict=True, ge=0)]] = Field(default=10, description="Target completion time, in seconds. Defaults to 10. Cannot exceed the `timeLimit` value.", alias="targetTime")
     time_limit: Optional[Annotated[int, Field(le=180, strict=True, ge=5)]] = Field(default=30, description="Time limit for transaction in seconds.", alias="timeLimit")
     transaction_script: StrictStr = Field(description="JavaScript of a web transaction test. Quotes must be escaped (precede \" characters with \\ ).", alias="transactionScript")
     block_domains: Optional[StrictStr] = Field(default=None, description="Domains or full object URLs to be excluded from metrics and waterfall data for transaction tests.", alias="blockDomains")
@@ -260,7 +260,7 @@ class WebTransactionInstantTestResponse(BaseModel):
             "overrideProxyId": obj.get("overrideProxyId"),
             "collectProxyNetworkData": obj.get("collectProxyNetworkData") if obj.get("collectProxyNetworkData") is not None else False,
             "emulatedDeviceId": obj.get("emulatedDeviceId"),
-            "targetTime": obj.get("targetTime"),
+            "targetTime": obj.get("targetTime") if obj.get("targetTime") is not None else 10,
             "timeLimit": obj.get("timeLimit") if obj.get("timeLimit") is not None else 30,
             "transactionScript": obj.get("transactionScript"),
             "blockDomains": obj.get("blockDomains"),

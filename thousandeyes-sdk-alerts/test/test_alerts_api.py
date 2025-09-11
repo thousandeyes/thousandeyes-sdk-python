@@ -81,6 +81,13 @@ class TestAlertsApi(unittest.TestCase):
                   "alertSeverity" : "major",
                   "duration" : 60,
                   "violationCount" : 2,
+                  "_embedded" : {
+                    "asn" : {
+                      "name" : "Cisco Webex LLC",
+                      "id" : "13445",
+                      "type" : "asn"
+                    }
+                  },
                   "meta" : {
                     "version" : 1
                   },

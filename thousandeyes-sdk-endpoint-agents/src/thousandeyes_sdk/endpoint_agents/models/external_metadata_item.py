@@ -25,7 +25,7 @@ class ExternalMetadataItem(BaseModel):
     """
     ExternalMetadataItem
     """ # noqa: E501
-    key: Optional[StrictStr] = Field(default=None, description="Name or identifier of the external metadata property.")
+    key: Optional[StrictStr] = Field(default=None, description="ID of the device that has the Cisco Secure Client deployed with the Internet Security module.")
     value: Optional[StrictStr] = Field(default=None, description="Value of the external metadata property.")
     __properties: ClassVar[List[str]] = ["key", "value"]
 
