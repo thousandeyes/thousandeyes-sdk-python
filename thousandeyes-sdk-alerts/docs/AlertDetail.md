@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **alert_state** | [**State**](State.md) |  | [optional] 
 **alert_severity** | [**Severity**](Severity.md) |  | [optional] 
 **details** | [**List[AlertMetricDetail]**](AlertMetricDetail.md) |  | [optional] 
+**embedded** | [**AlertEmbedded**](AlertEmbedded.md) |  | [optional] 
 
 ## Example
 

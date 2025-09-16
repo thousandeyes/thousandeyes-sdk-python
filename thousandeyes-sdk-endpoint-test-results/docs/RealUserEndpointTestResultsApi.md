@@ -4,7 +4,7 @@ All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**filter_real_user_tests_network_results**](RealUserEndpointTestResultsApi.md#filter_real_user_tests_network_results) | **POST** /endpoint/test-results/real-user-tests/networks/filter | List endpoint real user tests
+[**filter_real_user_tests_network_results**](RealUserEndpointTestResultsApi.md#filter_real_user_tests_network_results) | **POST** /endpoint/test-results/real-user-tests/networks/filter | List endpoint real user tests networks
 [**filter_real_user_tests_results**](RealUserEndpointTestResultsApi.md#filter_real_user_tests_results) | **POST** /endpoint/test-results/real-user-tests/filter | List endpoint real user tests
 [**filter_real_user_tests_visited_pages_results**](RealUserEndpointTestResultsApi.md#filter_real_user_tests_visited_pages_results) | **POST** /endpoint/test-results/real-user-tests/pages/filter | List endpoint real user tests visited pages
 [**get_real_user_test_page_results**](RealUserEndpointTestResultsApi.md#get_real_user_test_page_results) | **GET** /endpoint/test-results/real-user-tests/{id}/pages/{pageId} | Retrieve endpoint real user test page
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 # **filter_real_user_tests_network_results**
 > RealUserEndpointTestNetworkResults filter_real_user_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, real_user_endpoint_test_results_request=real_user_endpoint_test_results_request)
 
-List endpoint real user tests
+List endpoint real user tests networks
 
 Returns a list of all endpoint real user tests.  Sessions from the last round are provided unless an explicit start and end is provided with `startDate`, `endDate` or `window` optional parameters.  ## Request body filters This endpoint supports complex filtering using the request body. It is important these filters remain unaltered when making use of pagination, otherwise the results will not be coherent with the original request.  ### Multiple filter fields When multiple filter fields are provided, a logical `AND` is applied between the filters.  ``` curl --location --request POST 'https://api.thousandeyes.com/v7/endpoint/test-results/real-user-tests/networks/filter' --header 'Authorization: Bearer $token' --header 'Content-Type: application/json' --data-raw '{    \"searchFilters\": {     \"platform\": [ \"mac\" ],     \"domain\": [ \"thousandeyes.com\" ]   }}' ```  ### Filter field with multiple values When a filter field contains multiple values, a logical `OR` is applied between the filter values.  ``` curl --location --request POST 'https://api.thousandeyes.com/v7/endpoint/test-results/real-user-tests/networks/filter' --header 'Authorization: Bearer $token' --header 'Content-Type: application/json' --data-raw '{   \"searchFilters\": {     \"networkId\": [ \"660b34109d12\", \"660b34109d15\" ]   }}' ```  ### Combination of request parameters and body filters ``` curl --location --request POST 'https://api.thousandeyes.com/v7/endpoint/test-results/real-user-tests/networks/filter?window=1w' --header 'Authorization: Bearer $token' --header 'Content-Type: application/json' --data-raw '{   \"searchFilters\": {     \"platform\": [ \"mac\" ],     \"domain\": [ \"thousandeyes.com\" ],     \"networkId\": [ \"660b34109d12\", \"660b34109d15\" ]   }}' ```  Returns a `results` array of endpoint real user tests.  Network sessions shown are from the latest round, or based on the time range specified. 
 
@@ -57,7 +57,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     real_user_endpoint_test_results_request = thousandeyes_sdk.endpoint_test_results.RealUserEndpointTestResultsRequest() # RealUserEndpointTestResultsRequest |  (optional)
 
     try:
-        # List endpoint real user tests
+        # List endpoint real user tests networks
         api_response = api_instance.filter_real_user_tests_network_results(aid=aid, window=window, start_date=start_date, end_date=end_date, cursor=cursor, real_user_endpoint_test_results_request=real_user_endpoint_test_results_request)
         print("The response of RealUserEndpointTestResultsApi->filter_real_user_tests_network_results:\n")
         pprint(api_response)

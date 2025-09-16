@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **location_subdivision1_code** | **List[str]** | Filter using the code for the first level administrative division within  the country. In US/Canada this is the State, in UK it&#39;s the country e.g. &#x60;ENG&#x60;  | [optional] 
 **location_city** | **List[str]** | This is a prefix match on the city name field. The endpoint expects this to contain the  name of the city in English. e.g. &#39;Paris&#39; or &#39;&#39;  | [optional] 
 **license_type** | [**List[AgentLicenseType]**](AgentLicenseType.md) | Filter on the agent&#39;s license type  | [optional] 
+**any_connect_device_id** | **List[str]** | IDs of devices that has the Cisco Secure Client deployed with the Internet Security module. Returns only agents that have at least one matching &#x60;anyConnectDeviceId&#x60;.  | [optional] 
 
 ## Example
 
