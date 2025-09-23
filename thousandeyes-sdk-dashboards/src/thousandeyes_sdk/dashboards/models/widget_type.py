@@ -36,6 +36,7 @@ class WidgetType(str, Enum):
     AGENT_STATUS = 'Agent Status'
     COLOR_GRID = 'Color Grid'
     ALERT_LIST = 'Alert List'
+    LIST = 'List'
     TEST_TABLE = 'Test Table'
     MAP = 'Map'
     BOX_AND_WHISKERS = 'Box and Whiskers'

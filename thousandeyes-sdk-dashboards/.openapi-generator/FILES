@@ -32,6 +32,7 @@ docs/ApiDuration.md
 docs/ApiGeoMapWidget.md
 docs/ApiGraphletPoint.md
 docs/ApiGroupedBarchartWidget.md
+docs/ApiListWidget.md
 docs/ApiMultiMetricColumn.md
 docs/ApiMultiMetricColumnData.md
 docs/ApiMultiMetricTableWidget.md
@@ -93,6 +94,7 @@ docs/LegacyDurationUnit.md
 docs/LegacyWidgetSortDirection.md
 docs/LegacyWidgetSortProperty.md
 docs/Link.md
+docs/ListDatasource.md
 docs/MetricGroup.md
 docs/MultiMetricsTableDatasource.md
 docs/NumbersCardDatasource.md
@@ -154,6 +156,7 @@ src/thousandeyes_sdk/dashboards/models/api_duration.py
 src/thousandeyes_sdk/dashboards/models/api_geo_map_widget.py
 src/thousandeyes_sdk/dashboards/models/api_graphlet_point.py
 src/thousandeyes_sdk/dashboards/models/api_grouped_barchart_widget.py
+src/thousandeyes_sdk/dashboards/models/api_list_widget.py
 src/thousandeyes_sdk/dashboards/models/api_multi_metric_column.py
 src/thousandeyes_sdk/dashboards/models/api_multi_metric_column_data.py
 src/thousandeyes_sdk/dashboards/models/api_multi_metric_table_widget.py
@@ -212,6 +215,7 @@ src/thousandeyes_sdk/dashboards/models/legacy_duration_unit.py
 src/thousandeyes_sdk/dashboards/models/legacy_widget_sort_direction.py
 src/thousandeyes_sdk/dashboards/models/legacy_widget_sort_property.py
 src/thousandeyes_sdk/dashboards/models/link.py
+src/thousandeyes_sdk/dashboards/models/list_datasource.py
 src/thousandeyes_sdk/dashboards/models/metric_group.py
 src/thousandeyes_sdk/dashboards/models/multi_metrics_table_datasource.py
 src/thousandeyes_sdk/dashboards/models/numbers_card_datasource.py

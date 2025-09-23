@@ -16,25 +16,25 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr, field_validator
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_validator
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.dashboards.models.active_within import ActiveWithin
-from thousandeyes_sdk.dashboards.models.alert_list_datasource import AlertListDatasource
 from thousandeyes_sdk.dashboards.models.api_duration import ApiDuration
 from thousandeyes_sdk.dashboards.models.api_widget_measure import ApiWidgetMeasure
 from thousandeyes_sdk.dashboards.models.dashboard_metric import DashboardMetric
 from thousandeyes_sdk.dashboards.models.dashboard_metric_direction import DashboardMetricDirection
-from thousandeyes_sdk.dashboards.models.legacy_alert_list_alert_type import LegacyAlertListAlertType
+from thousandeyes_sdk.dashboards.models.legacy_widget_sort_direction import LegacyWidgetSortDirection
+from thousandeyes_sdk.dashboards.models.list_datasource import ListDatasource
 from thousandeyes_sdk.dashboards.models.metric_group import MetricGroup
 from thousandeyes_sdk.dashboards.models.self_links import SelfLinks
 from thousandeyes_sdk.dashboards.models.visual_mode import VisualMode
 from typing import Optional, Set
 from typing_extensions import Self
 
-class ApiAlertListWidget(BaseModel):
+class ApiListWidget(BaseModel):
     """
-    A widget that displays a list of alerts based on specified criteria, such as alert type and time frame.
+    A widget that displays a list of items, such as events. It can use a time range to limit the items shown.
     """ # noqa: E501
     id: Optional[StrictStr] = Field(default=None, description="Identifier of the widget.")
     title: Optional[StrictStr] = Field(default=None, description="Title of the widget")
@@ -50,18 +50,17 @@ class ApiAlertListWidget(BaseModel):
     api_link: Optional[StrictStr] = Field(default=None, alias="apiLink")
     should_exclude_alert_suppression_windows: Optional[StrictBool] = Field(default=None, description="Excludes alert suppression window data if set to `true`.", alias="shouldExcludeAlertSuppressionWindows")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    type: Annotated[str, Field(strict=True)] = Field(description="Alert List widget type.")
-    alert_types: Optional[List[LegacyAlertListAlertType]] = Field(default=None, description="List of alert types configured in the widget, an empty list means all alert types.", alias="alertTypes")
-    limit_to: Optional[StrictInt] = Field(default=None, description="Limit the number of alerts displayed in the widget.", alias="limitTo")
+    type: Annotated[str, Field(strict=True)] = Field(description="List widget type. Currently supports only `List`.")
+    sort_direction: Optional[LegacyWidgetSortDirection] = Field(default=None, alias="sortDirection")
     active_within: Optional[ActiveWithin] = Field(default=None, alias="activeWithin")
-    data_source: Optional[AlertListDatasource] = Field(default=None, alias="dataSource")
-    __properties: ClassVar[List[str]] = ["id", "title", "visualMode", "embedUrl", "isEmbedded", "metricGroup", "direction", "metric", "filters", "measure", "fixedTimespan", "apiLink", "shouldExcludeAlertSuppressionWindows", "_links", "type", "alertTypes", "limitTo", "activeWithin", "dataSource"]
+    data_source: Optional[ListDatasource] = Field(default=None, alias="dataSource")
+    __properties: ClassVar[List[str]] = ["id", "title", "visualMode", "embedUrl", "isEmbedded", "metricGroup", "direction", "metric", "filters", "measure", "fixedTimespan", "apiLink", "shouldExcludeAlertSuppressionWindows", "_links", "type", "sortDirection", "activeWithin", "dataSource"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
         """Validates the regular expression"""
-        if not re.match(r"^Alert List$", value):
-            raise ValueError(r"must validate the regular expression /^Alert List$/")
+        if not re.match(r"^List$", value):
+            raise ValueError(r"must validate the regular expression /^List$/")
         return value
 
     model_config = ConfigDict(
@@ -83,7 +82,7 @@ class ApiAlertListWidget(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of ApiAlertListWidget from a JSON string"""
+        """Create an instance of ApiListWidget from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -126,7 +125,7 @@ class ApiAlertListWidget(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of ApiAlertListWidget from a dict"""
+        """Create an instance of ApiListWidget from a dict"""
         if obj is None:
             return None
 
@@ -149,8 +148,7 @@ class ApiAlertListWidget(BaseModel):
             "shouldExcludeAlertSuppressionWindows": obj.get("shouldExcludeAlertSuppressionWindows"),
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "type": obj.get("type"),
-            "alertTypes": obj.get("alertTypes"),
-            "limitTo": obj.get("limitTo"),
+            "sortDirection": obj.get("sortDirection"),
             "activeWithin": ActiveWithin.from_dict(obj["activeWithin"]) if obj.get("activeWithin") is not None else None,
             "dataSource": obj.get("dataSource")
         })

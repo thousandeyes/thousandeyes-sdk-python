@@ -22,6 +22,7 @@ from thousandeyes_sdk.dashboards.models.api_box_and_whiskers_widget import ApiBo
 from thousandeyes_sdk.dashboards.models.api_color_grid_widget import ApiColorGridWidget
 from thousandeyes_sdk.dashboards.models.api_geo_map_widget import ApiGeoMapWidget
 from thousandeyes_sdk.dashboards.models.api_grouped_barchart_widget import ApiGroupedBarchartWidget
+from thousandeyes_sdk.dashboards.models.api_list_widget import ApiListWidget
 from thousandeyes_sdk.dashboards.models.api_multi_metric_table_widget import ApiMultiMetricTableWidget
 from thousandeyes_sdk.dashboards.models.api_numbers_card_widget import ApiNumbersCardWidget
 from thousandeyes_sdk.dashboards.models.api_pie_chart_widget import ApiPieChartWidget
@@ -34,7 +35,7 @@ from pydantic import StrictStr, Field, model_serializer
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-APIWIDGET_ONE_OF_SCHEMAS = ["ApiAgentStatusWidget", "ApiAlertListWidget", "ApiBoxAndWhiskersWidget", "ApiColorGridWidget", "ApiGeoMapWidget", "ApiGroupedBarchartWidget", "ApiMultiMetricTableWidget", "ApiNumbersCardWidget", "ApiPieChartWidget", "ApiStackedAreaChartWidget", "ApiStackedBarchartWidget", "ApiTableWidget", "ApiTestTableWidget", "ApiTimeseriesWidget"]
+APIWIDGET_ONE_OF_SCHEMAS = ["ApiAgentStatusWidget", "ApiAlertListWidget", "ApiBoxAndWhiskersWidget", "ApiColorGridWidget", "ApiGeoMapWidget", "ApiGroupedBarchartWidget", "ApiListWidget", "ApiMultiMetricTableWidget", "ApiNumbersCardWidget", "ApiPieChartWidget", "ApiStackedAreaChartWidget", "ApiStackedBarchartWidget", "ApiTableWidget", "ApiTestTableWidget", "ApiTimeseriesWidget"]
 
 class ApiWidget(BaseModel):
     """
@@ -52,24 +53,26 @@ class ApiWidget(BaseModel):
     oneof_schema_5_validator: Optional[ApiGeoMapWidget] = None
     # data type: ApiGroupedBarchartWidget
     oneof_schema_6_validator: Optional[ApiGroupedBarchartWidget] = None
+    # data type: ApiListWidget
+    oneof_schema_7_validator: Optional[ApiListWidget] = None
     # data type: ApiMultiMetricTableWidget
-    oneof_schema_7_validator: Optional[ApiMultiMetricTableWidget] = None
+    oneof_schema_8_validator: Optional[ApiMultiMetricTableWidget] = None
     # data type: ApiNumbersCardWidget
-    oneof_schema_8_validator: Optional[ApiNumbersCardWidget] = None
+    oneof_schema_9_validator: Optional[ApiNumbersCardWidget] = None
     # data type: ApiPieChartWidget
-    oneof_schema_9_validator: Optional[ApiPieChartWidget] = None
+    oneof_schema_10_validator: Optional[ApiPieChartWidget] = None
     # data type: ApiStackedAreaChartWidget
-    oneof_schema_10_validator: Optional[ApiStackedAreaChartWidget] = None
+    oneof_schema_11_validator: Optional[ApiStackedAreaChartWidget] = None
     # data type: ApiStackedBarchartWidget
-    oneof_schema_11_validator: Optional[ApiStackedBarchartWidget] = None
+    oneof_schema_12_validator: Optional[ApiStackedBarchartWidget] = None
     # data type: ApiTableWidget
-    oneof_schema_12_validator: Optional[ApiTableWidget] = None
+    oneof_schema_13_validator: Optional[ApiTableWidget] = None
     # data type: ApiTestTableWidget
-    oneof_schema_13_validator: Optional[ApiTestTableWidget] = None
+    oneof_schema_14_validator: Optional[ApiTestTableWidget] = None
     # data type: ApiTimeseriesWidget
-    oneof_schema_14_validator: Optional[ApiTimeseriesWidget] = None
-    actual_instance: Optional[Union[ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget]] = None
-    one_of_schemas: Set[str] = { "ApiAgentStatusWidget", "ApiAlertListWidget", "ApiBoxAndWhiskersWidget", "ApiColorGridWidget", "ApiGeoMapWidget", "ApiGroupedBarchartWidget", "ApiMultiMetricTableWidget", "ApiNumbersCardWidget", "ApiPieChartWidget", "ApiStackedAreaChartWidget", "ApiStackedBarchartWidget", "ApiTableWidget", "ApiTestTableWidget", "ApiTimeseriesWidget" }
+    oneof_schema_15_validator: Optional[ApiTimeseriesWidget] = None
+    actual_instance: Optional[Union[ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiListWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget]] = None
+    one_of_schemas: Set[str] = { "ApiAgentStatusWidget", "ApiAlertListWidget", "ApiBoxAndWhiskersWidget", "ApiColorGridWidget", "ApiGeoMapWidget", "ApiGroupedBarchartWidget", "ApiListWidget", "ApiMultiMetricTableWidget", "ApiNumbersCardWidget", "ApiPieChartWidget", "ApiStackedAreaChartWidget", "ApiStackedBarchartWidget", "ApiTableWidget", "ApiTestTableWidget", "ApiTimeseriesWidget" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -125,6 +128,11 @@ class ApiWidget(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `ApiGroupedBarchartWidget`")
         else:
             match += 1
+        # validate data type: ApiListWidget
+        if not isinstance(v, ApiListWidget):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ApiListWidget`")
+        else:
+            match += 1
         # validate data type: ApiMultiMetricTableWidget
         if not isinstance(v, ApiMultiMetricTableWidget):
             error_messages.append(f"Error! Input type `{type(v)}` is not `ApiMultiMetricTableWidget`")
@@ -167,10 +175,10 @@ class ApiWidget(BaseModel):
             match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in ApiWidget with oneOf schemas: ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in ApiWidget with oneOf schemas: ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiListWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in ApiWidget with oneOf schemas: ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in ApiWidget with oneOf schemas: ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiListWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -218,6 +226,12 @@ class ApiWidget(BaseModel):
         # deserialize data into ApiGroupedBarchartWidget
         try:
             instance.actual_instance = ApiGroupedBarchartWidget.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into ApiListWidget
+        try:
+            instance.actual_instance = ApiListWidget.from_json(json_str)
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
@@ -272,10 +286,10 @@ class ApiWidget(BaseModel):
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into ApiWidget with oneOf schemas: ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into ApiWidget with oneOf schemas: ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiListWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into ApiWidget with oneOf schemas: ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into ApiWidget with oneOf schemas: ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiListWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -293,7 +307,7 @@ class ApiWidget(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], ApiAgentStatusWidget, ApiAlertListWidget, ApiBoxAndWhiskersWidget, ApiColorGridWidget, ApiGeoMapWidget, ApiGroupedBarchartWidget, ApiListWidget, ApiMultiMetricTableWidget, ApiNumbersCardWidget, ApiPieChartWidget, ApiStackedAreaChartWidget, ApiStackedBarchartWidget, ApiTableWidget, ApiTestTableWidget, ApiTimeseriesWidget]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None
