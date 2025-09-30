@@ -44,6 +44,7 @@ from thousandeyes_sdk.dashboards.models.api_duration import ApiDuration
 from thousandeyes_sdk.dashboards.models.api_geo_map_widget import ApiGeoMapWidget
 from thousandeyes_sdk.dashboards.models.api_graphlet_point import ApiGraphletPoint
 from thousandeyes_sdk.dashboards.models.api_grouped_barchart_widget import ApiGroupedBarchartWidget
+from thousandeyes_sdk.dashboards.models.api_list_widget import ApiListWidget
 from thousandeyes_sdk.dashboards.models.api_multi_metric_column import ApiMultiMetricColumn
 from thousandeyes_sdk.dashboards.models.api_multi_metric_column_data import ApiMultiMetricColumnData
 from thousandeyes_sdk.dashboards.models.api_multi_metric_table_widget import ApiMultiMetricTableWidget
@@ -102,6 +103,7 @@ from thousandeyes_sdk.dashboards.models.legacy_duration_unit import LegacyDurati
 from thousandeyes_sdk.dashboards.models.legacy_widget_sort_direction import LegacyWidgetSortDirection
 from thousandeyes_sdk.dashboards.models.legacy_widget_sort_property import LegacyWidgetSortProperty
 from thousandeyes_sdk.dashboards.models.link import Link
+from thousandeyes_sdk.dashboards.models.list_datasource import ListDatasource
 from thousandeyes_sdk.dashboards.models.metric_group import MetricGroup
 from thousandeyes_sdk.dashboards.models.multi_metrics_table_datasource import MultiMetricsTableDatasource
 from thousandeyes_sdk.dashboards.models.numbers_card_datasource import NumbersCardDatasource

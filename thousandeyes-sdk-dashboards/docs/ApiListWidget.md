@@ -1,6 +1,6 @@
-# ApiAlertListWidget
+# ApiListWidget
 
-A widget that displays a list of alerts based on specified criteria, such as alert type and time frame.
+A widget that displays a list of items, such as events. It can use a time range to limit the items shown.
 
 ## Properties
 
@@ -20,28 +20,27 @@ Name | Type | Description | Notes
 **api_link** | **str** |  | [optional] [readonly] 
 **should_exclude_alert_suppression_windows** | **bool** | Excludes alert suppression window data if set to &#x60;true&#x60;. | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
-**type** | **str** | Alert List widget type. | 
-**alert_types** | [**List[LegacyAlertListAlertType]**](LegacyAlertListAlertType.md) | List of alert types configured in the widget, an empty list means all alert types. | [optional] 
-**limit_to** | **int** | Limit the number of alerts displayed in the widget. | [optional] 
+**type** | **str** | List widget type. Currently supports only &#x60;List&#x60;. | 
+**sort_direction** | [**LegacyWidgetSortDirection**](LegacyWidgetSortDirection.md) |  | [optional] 
 **active_within** | [**ActiveWithin**](ActiveWithin.md) |  | [optional] 
-**data_source** | [**AlertListDatasource**](AlertListDatasource.md) |  | [optional] 
+**data_source** | [**ListDatasource**](ListDatasource.md) |  | [optional] 
 
 ## Example
 
 ```python
-from thousandeyes_sdk.dashboards.models.api_alert_list_widget import ApiAlertListWidget
+from thousandeyes_sdk.dashboards.models.api_list_widget import ApiListWidget
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of ApiAlertListWidget from a JSON string
-api_alert_list_widget_instance = ApiAlertListWidget.from_json(json)
+# create an instance of ApiListWidget from a JSON string
+api_list_widget_instance = ApiListWidget.from_json(json)
 # print the JSON string representation of the object
-print(ApiAlertListWidget.to_json())
+print(ApiListWidget.to_json())
 
 # convert the object into a dict
-api_alert_list_widget_dict = api_alert_list_widget_instance.to_dict()
-# create an instance of ApiAlertListWidget from a dict
-api_alert_list_widget_from_dict = ApiAlertListWidget.from_dict(api_alert_list_widget_dict)
+api_list_widget_dict = api_list_widget_instance.to_dict()
+# create an instance of ApiListWidget from a dict
+api_list_widget_from_dict = ApiListWidget.from_dict(api_list_widget_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
