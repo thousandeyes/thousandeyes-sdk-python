@@ -20,6 +20,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.dashboards.models.api_dashboard_asw import ApiDashboardAsw
 from thousandeyes_sdk.dashboards.models.api_widget_data_point import ApiWidgetDataPoint
+from thousandeyes_sdk.dashboards.models.self_links import SelfLinks
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,7 +33,8 @@ class ApiMultiMetricColumnData(BaseModel):
     points: Optional[List[ApiWidgetDataPoint]] = None
     status: Optional[StrictStr] = Field(default=None, description="Message for not fully configured card or no data.")
     alert_suppression_windows: Optional[List[ApiDashboardAsw]] = Field(default=None, alias="alertSuppressionWindows")
-    __properties: ClassVar[List[str]] = ["columnId", "binSize", "points", "status", "alertSuppressionWindows"]
+    links: Optional[SelfLinks] = Field(default=None, alias="_links")
+    __properties: ClassVar[List[str]] = ["columnId", "binSize", "points", "status", "alertSuppressionWindows", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -88,6 +90,9 @@ class ApiMultiMetricColumnData(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['alertSuppressionWindows'] = _items
+        # override the default output from pydantic by calling `to_dict()` of links
+        if self.links:
+            _dict['_links'] = self.links.to_dict()
         return _dict
 
     @classmethod
@@ -104,7 +109,8 @@ class ApiMultiMetricColumnData(BaseModel):
             "binSize": obj.get("binSize"),
             "points": [ApiWidgetDataPoint.from_dict(_item) for _item in obj["points"]] if obj.get("points") is not None else None,
             "status": obj.get("status"),
-            "alertSuppressionWindows": [ApiDashboardAsw.from_dict(_item) for _item in obj["alertSuppressionWindows"]] if obj.get("alertSuppressionWindows") is not None else None
+            "alertSuppressionWindows": [ApiDashboardAsw.from_dict(_item) for _item in obj["alertSuppressionWindows"]] if obj.get("alertSuppressionWindows") is not None else None,
+            "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj
 

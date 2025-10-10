@@ -62,8 +62,10 @@ class ApiColorGridWidget(BaseModel):
     limit: Optional[StrictInt] = Field(default=None, description="Limit configured in the widget.")
     sort_by: Optional[LegacyWidgetSortProperty] = Field(default=None, alias="sortBy")
     sort_direction: Optional[LegacyWidgetSortDirection] = Field(default=None, alias="sortDirection")
+    sort_group_by: Optional[LegacyWidgetSortProperty] = Field(default=None, alias="sortGroupBy")
+    sort_group_direction: Optional[LegacyWidgetSortDirection] = Field(default=None, alias="sortGroupDirection")
     data_source: Optional[ColorGridDatasource] = Field(default=None, alias="dataSource")
-    __properties: ClassVar[List[str]] = ["id", "title", "visualMode", "embedUrl", "isEmbedded", "metricGroup", "direction", "metric", "filters", "measure", "fixedTimespan", "apiLink", "shouldExcludeAlertSuppressionWindows", "_links", "minScale", "maxScale", "unit", "type", "cards", "groupCardsBy", "columns", "limit", "sortBy", "sortDirection", "dataSource"]
+    __properties: ClassVar[List[str]] = ["id", "title", "visualMode", "embedUrl", "isEmbedded", "metricGroup", "direction", "metric", "filters", "measure", "fixedTimespan", "apiLink", "shouldExcludeAlertSuppressionWindows", "_links", "minScale", "maxScale", "unit", "type", "cards", "groupCardsBy", "columns", "limit", "sortBy", "sortDirection", "sortGroupBy", "sortGroupDirection", "dataSource"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
@@ -163,6 +165,8 @@ class ApiColorGridWidget(BaseModel):
             "limit": obj.get("limit"),
             "sortBy": obj.get("sortBy"),
             "sortDirection": obj.get("sortDirection"),
+            "sortGroupBy": obj.get("sortGroupBy"),
+            "sortGroupDirection": obj.get("sortGroupDirection"),
             "dataSource": obj.get("dataSource")
         })
         return _obj

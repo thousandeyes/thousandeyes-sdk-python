@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **points** | [**List[ApiWidgetDataPoint]**](ApiWidgetDataPoint.md) |  | [optional] 
 **status** | **str** | Message for not fully configured card or no data. | [optional] 
 **alert_suppression_windows** | [**List[ApiDashboardAsw]**](ApiDashboardAsw.md) |  | [optional] 
+**links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
 
