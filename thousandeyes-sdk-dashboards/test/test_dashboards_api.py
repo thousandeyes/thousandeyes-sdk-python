@@ -484,6 +484,18 @@ class TestDashboardsApi(unittest.TestCase):
                     "cards" : [ {
                       "numberOfDataPoints" : 24192,
                       "endDate" : "2023-05-16T10:14:28Z",
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
                       "cardId" : "lrxxr",
                       "alertSuppressionWindows" : [ {
                         "testIds" : [ "281474976710661" ],
@@ -513,6 +525,18 @@ class TestDashboardsApi(unittest.TestCase):
                     }, {
                       "numberOfDataPoints" : 24192,
                       "endDate" : "2023-05-16T10:14:28Z",
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
                       "cardId" : "lrxxr",
                       "alertSuppressionWindows" : [ {
                         "testIds" : [ "281474976710661" ],
@@ -598,6 +622,18 @@ class TestDashboardsApi(unittest.TestCase):
                       "target" : "www.google.com"
                     } ],
                     "columns" : [ {
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
                       "columnId" : "938to",
                       "alertSuppressionWindows" : [ {
                         "testIds" : [ "281474976710661" ],
@@ -644,6 +680,18 @@ class TestDashboardsApi(unittest.TestCase):
                       } ],
                       "status" : "No data"
                     }, {
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
+                        }
+                      },
                       "columnId" : "938to",
                       "alertSuppressionWindows" : [ {
                         "testIds" : [ "281474976710661" ],
@@ -1082,6 +1130,125 @@ class TestDashboardsApi(unittest.TestCase):
         for index, element in enumerate(response_from_dict):
             self.assertIsNotNone(element)
             assert_constructed_model_matches_example_json(element, response_loaded_json[index])
+
+    def test_get_individual_card_data_models_validation(self) -> None:
+        """Test case for get_individual_card_data request and response models"""
+
+        response_body_json = """
+                {
+                  "numberOfDataPoints" : 24192,
+                  "endDate" : "2023-05-16T10:14:28Z",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "cardId" : "lrxxr",
+                  "alertSuppressionWindows" : [ {
+                    "testIds" : [ "281474976710661" ],
+                    "repeatUnit" : "week",
+                    "durationInSeconds" : 7200,
+                    "repeat" : "custom",
+                    "name" : "Test dashboards",
+                    "repeatEvery" : 5,
+                    "id" : "281474976710662",
+                    "startTimes" : [ "2023-05-16T10:14:28Z" ]
+                  }, {
+                    "testIds" : [ "281474976710661" ],
+                    "repeatUnit" : "week",
+                    "durationInSeconds" : 7200,
+                    "repeat" : "custom",
+                    "name" : "Test dashboards",
+                    "repeatEvery" : 5,
+                    "id" : "281474976710662",
+                    "startTimes" : [ "2023-05-16T10:14:28Z" ]
+                  } ],
+                  "binSize" : 3600,
+                  "previousValue" : 500.0,
+                  "value" : 100.0,
+                  "startDate" : "2023-05-16T10:14:28Z",
+                  "timestamp" : 1567620000,
+                  "status" : "No data"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.dashboards.models.ApiNumbersCardData.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+
+    def test_get_individual_column_data_models_validation(self) -> None:
+        """Test case for get_individual_column_data request and response models"""
+
+        response_body_json = """
+                {
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "columnId" : "938to",
+                  "alertSuppressionWindows" : [ {
+                    "testIds" : [ "281474976710661" ],
+                    "repeatUnit" : "week",
+                    "durationInSeconds" : 7200,
+                    "repeat" : "custom",
+                    "name" : "Test dashboards",
+                    "repeatEvery" : 5,
+                    "id" : "281474976710662",
+                    "startTimes" : [ "2023-05-16T10:14:28Z" ]
+                  }, {
+                    "testIds" : [ "281474976710661" ],
+                    "repeatUnit" : "week",
+                    "durationInSeconds" : 7200,
+                    "repeat" : "custom",
+                    "name" : "Test dashboards",
+                    "repeatEvery" : 5,
+                    "id" : "281474976710662",
+                    "startTimes" : [ "2023-05-16T10:14:28Z" ]
+                  } ],
+                  "binSize" : 3600,
+                  "points" : [ {
+                    "numberOfDataPoints" : 23304,
+                    "groups" : [ {
+                      "groupProperty" : "COUNTRY",
+                      "groupValue" : "US"
+                    }, {
+                      "groupProperty" : "COUNTRY",
+                      "groupValue" : "US"
+                    } ],
+                    "value" : 100.0,
+                    "timestamp" : 1567620000
+                  }, {
+                    "numberOfDataPoints" : 23304,
+                    "groups" : [ {
+                      "groupProperty" : "COUNTRY",
+                      "groupValue" : "US"
+                    }, {
+                      "groupProperty" : "COUNTRY",
+                      "groupValue" : "US"
+                    } ],
+                    "value" : 100.0,
+                    "timestamp" : 1567620000
+                  } ],
+                  "status" : "No data"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.dashboards.models.ApiMultiMetricColumnData.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
     def test_update_dashboard_models_validation(self) -> None:
         """Test case for update_dashboard request and response models"""

@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **minimum_sources_pct** | **int** | The minimum percentage of all assigned agents or monitors that must meet the specified criteria to trigger the alert. | [optional] 
 **rounds_violating_mode** | [**AlertRoundsViolationMode**](AlertRoundsViolationMode.md) |  | [optional] 
 **rounds_violating_out_of** | **int** | Specifies the divisor (y value) in the “X of Y times” condition. | 
-**rounds_violating_required** | **int** | Specifies the numerator (x value) in the “X of Y times” condition. | 
+**rounds_violating_required** | **int** | Specifies the numerator (x value) in the “X of Y times” condition. | [optional] 
 **include_covered_prefixes** | **bool** | Set true to include covered prefixes in the BGP alert rule. Only applicable to BGP alert rules. | [optional] 
 **sensitivity_level** | [**SensitivityLevel**](SensitivityLevel.md) |  | [optional] 
 **severity** | [**Severity**](Severity.md) |  | [optional] 

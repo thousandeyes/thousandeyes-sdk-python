@@ -45,7 +45,7 @@ class RuleDetailUpdate(BaseModel):
     minimum_sources_pct: Optional[StrictInt] = Field(default=None, description="The minimum percentage of all assigned agents or monitors that must meet the specified criteria to trigger the alert.", alias="minimumSourcesPct")
     rounds_violating_mode: Optional[AlertRoundsViolationMode] = Field(default=None, alias="roundsViolatingMode")
     rounds_violating_out_of: StrictInt = Field(description="Specifies the divisor (y value) in the “X of Y times” condition.", alias="roundsViolatingOutOf")
-    rounds_violating_required: StrictInt = Field(description="Specifies the numerator (x value) in the “X of Y times” condition.", alias="roundsViolatingRequired")
+    rounds_violating_required: Optional[StrictInt] = Field(default=None, description="Specifies the numerator (x value) in the “X of Y times” condition.", alias="roundsViolatingRequired")
     include_covered_prefixes: Optional[StrictBool] = Field(default=None, description="Set true to include covered prefixes in the BGP alert rule. Only applicable to BGP alert rules.", alias="includeCoveredPrefixes")
     sensitivity_level: Optional[SensitivityLevel] = Field(default=None, alias="sensitivityLevel")
     severity: Optional[Severity] = None
