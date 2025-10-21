@@ -37,6 +37,7 @@ class LegacyAlertListAlertType(str, Enum):
     WEB_MINUS__PAGE_LOAD = 'Web - Page Load'
     WEB_MINUS__TRANSACTION_LEFT_PARENTHESIS_CLASSIC_RIGHT_PARENTHESIS = 'Web - Transaction (Classic)'
     WEB_MINUS__TRANSACTION = 'Web - Transaction'
+    API = 'API'
     WEB_MINUS__FTP_SERVER = 'Web - FTP Server'
     VOICE_MINUS__SIP_SERVER = 'Voice - SIP Server'
     VOICE_MINUS__RTP_STREAM = 'Voice - RTP Stream'

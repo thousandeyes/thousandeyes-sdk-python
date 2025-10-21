@@ -36,6 +36,8 @@ Name | Type | Description | Notes
 **limit** | **int** | Limit configured in the widget. | [optional] 
 **sort_by** | [**LegacyWidgetSortProperty**](LegacyWidgetSortProperty.md) |  | [optional] 
 **sort_direction** | [**LegacyWidgetSortDirection**](LegacyWidgetSortDirection.md) |  | [optional] 
+**sort_group_by** | [**LegacyWidgetSortProperty**](LegacyWidgetSortProperty.md) |  | [optional] 
+**sort_group_direction** | [**LegacyWidgetSortDirection**](LegacyWidgetSortDirection.md) |  | [optional] 
 **is_geo_map_per_test** | **bool** | Indicates whether a separate map is displayed for each test within the widget. When set to true, individual maps are generated. | [optional] 
 **axis_group_by** | [**ApiAggregateProperty**](ApiAggregateProperty.md) |  | [optional] 
 **show_labels** | **bool** |  | [optional] 

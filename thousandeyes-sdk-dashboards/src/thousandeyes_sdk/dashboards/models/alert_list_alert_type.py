@@ -37,6 +37,7 @@ class AlertListAlertType(str, Enum):
     WEB_MINUS_PAGE_MINUS_LOAD = 'web-page-load'
     WEB_MINUS_TRANSACTION_MINUS_CLASSIC = 'web-transaction-classic'
     WEB_MINUS_TRANSACTION = 'web-transaction'
+    API = 'api'
     WEB_MINUS_FTP_MINUS_SERVER = 'web-ftp-server'
     VOICE_MINUS_SIP_MINUS_SERVER = 'voice-sip-server'
     VOICE_MINUS_RTP_MINUS_STREAM = 'voice-rtp-stream'

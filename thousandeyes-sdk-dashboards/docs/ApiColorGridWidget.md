@@ -30,6 +30,8 @@ Name | Type | Description | Notes
 **limit** | **int** | Limit configured in the widget. | [optional] 
 **sort_by** | [**LegacyWidgetSortProperty**](LegacyWidgetSortProperty.md) |  | [optional] 
 **sort_direction** | [**LegacyWidgetSortDirection**](LegacyWidgetSortDirection.md) |  | [optional] 
+**sort_group_by** | [**LegacyWidgetSortProperty**](LegacyWidgetSortProperty.md) |  | [optional] 
+**sort_group_direction** | [**LegacyWidgetSortDirection**](LegacyWidgetSortDirection.md) |  | [optional] 
 **data_source** | [**ColorGridDatasource**](ColorGridDatasource.md) |  | [optional] 
 
 ## Example
