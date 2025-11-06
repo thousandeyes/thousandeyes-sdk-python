@@ -71,7 +71,7 @@ class PageLoadProperties(BaseModel):
     override_proxy_id: Optional[StrictStr] = Field(default=None, description="ID of the proxy to be used if the default proxy is overridden.", alias="overrideProxyId")
     collect_proxy_network_data: Optional[StrictBool] = Field(default=False, description="Indicates whether network data to the proxy should be collected.", alias="collectProxyNetworkData")
     emulated_device_id: Optional[StrictStr] = Field(default=None, description="ID of the emulated device, if one was given when the test was created.", alias="emulatedDeviceId")
-    page_load_target_time: Optional[Annotated[int, Field(le=30, strict=True, ge=1)]] = Field(default=None, description="Target time for page load completion, specified in seconds and cannot exceed the `pageLoadTimeLimit`.", alias="pageLoadTargetTime")
+    page_load_target_time: Optional[Annotated[int, Field(le=60, strict=True, ge=1)]] = Field(default=None, description="Target time for page load completion, specified in seconds and cannot exceed the `pageLoadTimeLimit`.", alias="pageLoadTargetTime")
     page_load_time_limit: Optional[Annotated[int, Field(le=60, strict=True, ge=5)]] = Field(default=10, description="Page load time limit. Must be larger than the `httpTimeLimit`.", alias="pageLoadTimeLimit")
     block_domains: Optional[StrictStr] = Field(default=None, description="Domains or full object URLs to be excluded from metrics and waterfall data for transaction tests.", alias="blockDomains")
     disable_screenshot: Optional[StrictBool] = Field(default=False, description="Enables or disables screenshots on error. Set true to not capture", alias="disableScreenshot")

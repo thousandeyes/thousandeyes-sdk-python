@@ -25,6 +25,7 @@ from thousandeyes_sdk.dashboards.models.dashboard_metric import DashboardMetric
 from thousandeyes_sdk.dashboards.models.dashboard_metric_direction import DashboardMetricDirection
 from thousandeyes_sdk.dashboards.models.metric_group import MetricGroup
 from thousandeyes_sdk.dashboards.models.numbers_card_datasource import NumbersCardDatasource
+from thousandeyes_sdk.dashboards.models.self_links import SelfLinks
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -46,7 +47,8 @@ class ApiNumbersCard(BaseModel):
     direction: Optional[DashboardMetricDirection] = None
     metric: Optional[DashboardMetric] = None
     filters: Optional[Dict[str, List[Any]]] = Field(default=None, description="(Optional) Specifies the filters applied to the widget. When present, the `filters` property displays. Each filter object has two properties: `filterProperty` and `filterValue`. The `filterProperty` can be values like `AGENT`, `ENDPOINT_MACHINE_ID`, `TEST`, `MONITOR`, etc.  The `filterValue` represents an identifier array of the selected property.")
-    __properties: ClassVar[List[str]] = ["minScale", "maxScale", "unit", "id", "description", "measure", "compareToPreviousValue", "fixedTimespan", "shouldExcludeAlertSuppressionWindows", "dataSource", "metricGroup", "direction", "metric", "filters"]
+    links: Optional[SelfLinks] = Field(default=None, alias="_links")
+    __properties: ClassVar[List[str]] = ["minScale", "maxScale", "unit", "id", "description", "measure", "compareToPreviousValue", "fixedTimespan", "shouldExcludeAlertSuppressionWindows", "dataSource", "metricGroup", "direction", "metric", "filters", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -94,6 +96,9 @@ class ApiNumbersCard(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of fixed_timespan
         if self.fixed_timespan:
             _dict['fixedTimespan'] = self.fixed_timespan.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of links
+        if self.links:
+            _dict['_links'] = self.links.to_dict()
         return _dict
 
     @classmethod
@@ -119,7 +124,8 @@ class ApiNumbersCard(BaseModel):
             "metricGroup": obj.get("metricGroup"),
             "direction": obj.get("direction"),
             "metric": obj.get("metric"),
-            "filters": obj.get("filters")
+            "filters": obj.get("filters"),
+            "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj
 

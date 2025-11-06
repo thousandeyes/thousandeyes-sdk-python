@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **metric** | [**DashboardMetric**](DashboardMetric.md) |  | [optional] 
 **filters** | **Dict[str, List[object]]** | (Optional) Specifies the filters applied to the widget. When present, the &#x60;filters&#x60; property displays. Each filter object has two properties: &#x60;filterProperty&#x60; and &#x60;filterValue&#x60;. The &#x60;filterProperty&#x60; can be values like &#x60;AGENT&#x60;, &#x60;ENDPOINT_MACHINE_ID&#x60;, &#x60;TEST&#x60;, &#x60;MONITOR&#x60;, etc.  The &#x60;filterValue&#x60; represents an identifier array of the selected property. | [optional] 
 **measure** | [**ApiWidgetMeasure**](ApiWidgetMeasure.md) |  | [optional] 
+**links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
 
