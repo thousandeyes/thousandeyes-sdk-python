@@ -96,7 +96,7 @@ class WebTransactionTest(BaseModel):
     override_proxy_id: Optional[StrictStr] = Field(default=None, description="ID of the proxy to be used if the default proxy is overridden.", alias="overrideProxyId")
     collect_proxy_network_data: Optional[StrictBool] = Field(default=False, description="Indicates whether network data to the proxy should be collected.", alias="collectProxyNetworkData")
     emulated_device_id: Optional[StrictStr] = Field(default=None, description="ID of the emulated device, if specified when the test was created.", alias="emulatedDeviceId")
-    target_time: Optional[Annotated[int, Field(le=180, strict=True, ge=0)]] = Field(default=10, description="Target completion time, in seconds. Defaults to 10. Cannot exceed the `timeLimit` value.", alias="targetTime")
+    target_time: Optional[Annotated[int, Field(le=180, strict=True, ge=1)]] = Field(default=10, description="Target completion time, in seconds. Defaults to 10. Cannot exceed the `timeLimit` value.", alias="targetTime")
     time_limit: Optional[Annotated[int, Field(le=180, strict=True, ge=5)]] = Field(default=30, description="Time limit for transaction in seconds.", alias="timeLimit")
     transaction_script: StrictStr = Field(description="JavaScript of a web transaction test. Quotes must be escaped (precede \" characters with \\ ).", alias="transactionScript")
     block_domains: Optional[StrictStr] = Field(default=None, description="Domains or full object URLs to be excluded from metrics and waterfall data for transaction tests.", alias="blockDomains")

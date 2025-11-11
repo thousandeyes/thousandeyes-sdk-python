@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class Signal(str, Enum):
     """
-    The OpenTelemetry signal of the stream integration. When using `trace`:   - `dataModelVersion` must be `v2`.
+    The OpenTelemetry signal of the stream integration. When using `trace` or `log`:   - `dataModelVersion` must be `v2`.
     """
 
     """
@@ -27,6 +27,7 @@ class Signal(str, Enum):
     """
     METRIC = 'metric'
     TRACE = 'trace'
+    LOG = 'log'
     UNKNOWN = 'unknown'
 
     @classmethod

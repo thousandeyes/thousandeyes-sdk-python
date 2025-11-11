@@ -23,6 +23,7 @@ from thousandeyes_sdk.dashboards.models.dashboard_metric import DashboardMetric
 from thousandeyes_sdk.dashboards.models.dashboard_metric_direction import DashboardMetricDirection
 from thousandeyes_sdk.dashboards.models.metric_group import MetricGroup
 from thousandeyes_sdk.dashboards.models.multi_metrics_table_datasource import MultiMetricsTableDatasource
+from thousandeyes_sdk.dashboards.models.self_links import SelfLinks
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -37,7 +38,8 @@ class ApiMultiMetricColumn(BaseModel):
     metric: Optional[DashboardMetric] = None
     filters: Optional[Dict[str, List[Any]]] = Field(default=None, description="(Optional) Specifies the filters applied to the widget. When present, the `filters` property displays. Each filter object has two properties: `filterProperty` and `filterValue`. The `filterProperty` can be values like `AGENT`, `ENDPOINT_MACHINE_ID`, `TEST`, `MONITOR`, etc.  The `filterValue` represents an identifier array of the selected property.")
     measure: Optional[ApiWidgetMeasure] = None
-    __properties: ClassVar[List[str]] = ["id", "dataSource", "metricGroup", "direction", "metric", "filters", "measure"]
+    links: Optional[SelfLinks] = Field(default=None, alias="_links")
+    __properties: ClassVar[List[str]] = ["id", "dataSource", "metricGroup", "direction", "metric", "filters", "measure", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,6 +84,9 @@ class ApiMultiMetricColumn(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of measure
         if self.measure:
             _dict['measure'] = self.measure.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of links
+        if self.links:
+            _dict['_links'] = self.links.to_dict()
         return _dict
 
     @classmethod
@@ -100,7 +105,8 @@ class ApiMultiMetricColumn(BaseModel):
             "direction": obj.get("direction"),
             "metric": obj.get("metric"),
             "filters": obj.get("filters"),
-            "measure": ApiWidgetMeasure.from_dict(obj["measure"]) if obj.get("measure") is not None else None
+            "measure": ApiWidgetMeasure.from_dict(obj["measure"]) if obj.get("measure") is not None else None,
+            "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj
 
