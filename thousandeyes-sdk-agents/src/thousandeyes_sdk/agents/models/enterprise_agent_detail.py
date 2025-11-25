@@ -23,6 +23,7 @@ from typing_extensions import Annotated
 from thousandeyes_sdk.agents.models.account_group import AccountGroup
 from thousandeyes_sdk.agents.models.agent_label import AgentLabel
 from thousandeyes_sdk.agents.models.cluster_member import ClusterMember
+from thousandeyes_sdk.agents.models.coordinates import Coordinates
 from thousandeyes_sdk.agents.models.enterprise_agent_ipv6_policy import EnterpriseAgentIpv6Policy
 from thousandeyes_sdk.agents.models.enterprise_agent_state import EnterpriseAgentState
 from thousandeyes_sdk.agents.models.error_detail import ErrorDetail
@@ -44,6 +45,7 @@ class EnterpriseAgentDetail(BaseModel):
     agent_name: Optional[StrictStr] = Field(default=None, description="Name of the agent.", alias="agentName")
     location: Optional[StrictStr] = Field(default=None, description="Location of the agent.")
     country_id: Optional[StrictStr] = Field(default=None, description="2-digit ISO country code", alias="countryId")
+    coordinates: Optional[Coordinates] = None
     enabled: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent is enabled.")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     verify_ssl_certificates: Optional[StrictBool] = Field(default=None, description="Flag indicating if has normal SSL operations or  if instead it's set to ignore SSL errors on browserbot-based tests.", alias="verifySslCertificates")
@@ -66,7 +68,7 @@ class EnterpriseAgentDetail(BaseModel):
     labels: Optional[List[AgentLabel]] = Field(default=None, description="List of labels. See `/labels` for more information.")
     agent_type: Annotated[str, Field(strict=True)] = Field(description="Enterprise agent type.", alias="agentType")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "enabled", "prefix", "verifySslCertificates", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping", "notificationRules", "labels", "agentType", "_links"]
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping", "notificationRules", "labels", "agentType", "_links"]
 
     @field_validator('agent_type')
     def agent_type_validate_regular_expression(cls, value):
@@ -149,6 +151,9 @@ class EnterpriseAgentDetail(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of coordinates
+        if self.coordinates:
+            _dict['coordinates'] = self.coordinates.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in tests (list)
         _items = []
         if self.tests:
@@ -220,6 +225,7 @@ class EnterpriseAgentDetail(BaseModel):
             "agentName": obj.get("agentName"),
             "location": obj.get("location"),
             "countryId": obj.get("countryId"),
+            "coordinates": Coordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
             "enabled": obj.get("enabled"),
             "prefix": obj.get("prefix"),
             "verifySslCertificates": obj.get("verifySslCertificates"),

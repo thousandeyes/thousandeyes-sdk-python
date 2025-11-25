@@ -19,6 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.instant_tests.models.cloud_enterprise_agent_type import CloudEnterpriseAgentType
+from thousandeyes_sdk.instant_tests.models.coordinates import Coordinates
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -33,11 +34,12 @@ class AgentResponse(BaseModel):
     agent_name: Optional[StrictStr] = Field(default=None, description="Name of the agent.", alias="agentName")
     location: Optional[StrictStr] = Field(default=None, description="Location of the agent.")
     country_id: Optional[StrictStr] = Field(default=None, description="2-digit ISO country code", alias="countryId")
+    coordinates: Optional[Coordinates] = None
     enabled: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent is enabled.")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     verify_ssl_certificates: Optional[StrictBool] = Field(default=None, description="Flag indicating if has normal SSL operations or  if instead it's set to ignore SSL errors on browserbot-based tests.", alias="verifySslCertificates")
     agent_type: CloudEnterpriseAgentType = Field(alias="agentType")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "enabled", "prefix", "verifySslCertificates", "agentType"]
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "agentType"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -95,6 +97,9 @@ class AgentResponse(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of coordinates
+        if self.coordinates:
+            _dict['coordinates'] = self.coordinates.to_dict()
         return _dict
 
     @classmethod
@@ -114,6 +119,7 @@ class AgentResponse(BaseModel):
             "agentName": obj.get("agentName"),
             "location": obj.get("location"),
             "countryId": obj.get("countryId"),
+            "coordinates": Coordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
             "enabled": obj.get("enabled"),
             "prefix": obj.get("prefix"),
             "verifySslCertificates": obj.get("verifySslCertificates"),

@@ -14,6 +14,7 @@ docs/AuditUserEvents.md
 docs/BaseRole.md
 docs/CloudEnterpriseAgentType.md
 docs/ClusterMember.md
+docs/Coordinates.md
 docs/CreatedAccountGroup.md
 docs/CreatedUser.md
 docs/EnterpriseAgent.md
@@ -78,6 +79,7 @@ src/thousandeyes_sdk/administrative/models/audit_user_events.py
 src/thousandeyes_sdk/administrative/models/base_role.py
 src/thousandeyes_sdk/administrative/models/cloud_enterprise_agent_type.py
 src/thousandeyes_sdk/administrative/models/cluster_member.py
+src/thousandeyes_sdk/administrative/models/coordinates.py
 src/thousandeyes_sdk/administrative/models/created_account_group.py
 src/thousandeyes_sdk/administrative/models/created_user.py
 src/thousandeyes_sdk/administrative/models/enterprise_agent.py

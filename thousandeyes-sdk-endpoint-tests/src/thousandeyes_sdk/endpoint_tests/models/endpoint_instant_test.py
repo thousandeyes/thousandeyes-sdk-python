@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.endpoint_tests.models.endpoint_ip_version_in import EndpointIpVersionIn
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_agent_selector_type import EndpointTestAgentSelectorType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -31,7 +32,8 @@ class EndpointInstantTest(BaseModel):
     endpoint_agent_labels: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent label IDs (obtained from `/endpoint/labels` endpoint), required when `agentSelectorType` is set to `agent-labels`.", alias="endpointAgentLabels")
     max_machines: Optional[StrictInt] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
     test_name: StrictStr = Field(description="Name of the test.", alias="testName")
-    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName"]
+    ip_version: Optional[EndpointIpVersionIn] = Field(default=None, alias="ipVersion")
+    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName", "ipVersion"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,7 +91,8 @@ class EndpointInstantTest(BaseModel):
             "agents": obj.get("agents"),
             "endpointAgentLabels": obj.get("endpointAgentLabels"),
             "maxMachines": obj.get("maxMachines") if obj.get("maxMachines") is not None else 25,
-            "testName": obj.get("testName")
+            "testName": obj.get("testName"),
+            "ipVersion": obj.get("ipVersion")
         })
         return _obj
 

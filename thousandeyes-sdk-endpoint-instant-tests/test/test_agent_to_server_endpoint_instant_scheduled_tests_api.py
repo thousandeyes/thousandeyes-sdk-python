@@ -33,6 +33,7 @@ class TestAgentToServerEndpointInstantScheduledTestsApi(unittest.TestCase):
         request_body_json = """
                 {
                   "server" : "www.example.com",
+                  "ipVersion" : "V4_ONLY",
                   "port" : 443,
                   "agentSelectorType" : "all-agents",
                   "maxMachines" : 25,

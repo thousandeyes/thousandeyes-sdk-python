@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **modified_date** | **datetime** | UTC last modification date (ISO date-time format). | [optional] [readonly] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
 **protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
-**ip_version** | [**EndpointIpVersionTemplate**](EndpointIpVersionTemplate.md) |  | [optional] 
+**ip_version** | **str** | For reading current network test configurations, the IP version of the test. Values include V4_ONLY, V6_ONLY, V6_PREFER, and OS_DEFAULT. | [optional] 
 **server** | **str** | Target domain name or IP address. | [optional] 
 **test_id** | **str** | Each test is assigned a unique ID to access test data from other endpoints. | [optional] [readonly] 
 **test_name** | **str** | Name of the test. | [optional] 

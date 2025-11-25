@@ -21,6 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.agents.models.account_group import AccountGroup
 from thousandeyes_sdk.agents.models.cluster_member import ClusterMember
+from thousandeyes_sdk.agents.models.coordinates import Coordinates
 from thousandeyes_sdk.agents.models.enterprise_agent_ipv6_policy import EnterpriseAgentIpv6Policy
 from thousandeyes_sdk.agents.models.enterprise_agent_state import EnterpriseAgentState
 from thousandeyes_sdk.agents.models.error_detail import ErrorDetail
@@ -40,6 +41,7 @@ class SimpleEnterpriseAgent(BaseModel):
     agent_name: Optional[StrictStr] = Field(default=None, description="Name of the agent.", alias="agentName")
     location: Optional[StrictStr] = Field(default=None, description="Location of the agent.")
     country_id: Optional[StrictStr] = Field(default=None, description="2-digit ISO country code", alias="countryId")
+    coordinates: Optional[Coordinates] = None
     enabled: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent is enabled.")
     prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     verify_ssl_certificates: Optional[StrictBool] = Field(default=None, description="Flag indicating if has normal SSL operations or  if instead it's set to ignore SSL errors on browserbot-based tests.", alias="verifySslCertificates")
@@ -58,7 +60,7 @@ class SimpleEnterpriseAgent(BaseModel):
     target_for_tests: Optional[StrictStr] = Field(default=None, description="Test target IP address.", alias="targetForTests")
     local_resolution_prefixes: Optional[List[StrictStr]] = Field(default=None, description="To perform rDNS lookups for public IP ranges, this field represents the public IP ranges. The range must be in CIDR notation; for example, 10.1.1.0/24. Maximum of 5 prefixes allowed (Enterprise Agents and Enterprise Agent clusters only).", alias="localResolutionPrefixes")
     interface_ip_mapping: Optional[List[InterfaceIpMapping]] = Field(default=None, alias="interfaceIpMapping")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "enabled", "prefix", "verifySslCertificates", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping"]
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -132,6 +134,9 @@ class SimpleEnterpriseAgent(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of coordinates
+        if self.coordinates:
+            _dict['coordinates'] = self.coordinates.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in tests (list)
         _items = []
         if self.tests:
@@ -186,6 +191,7 @@ class SimpleEnterpriseAgent(BaseModel):
             "agentName": obj.get("agentName"),
             "location": obj.get("location"),
             "countryId": obj.get("countryId"),
+            "coordinates": Coordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
             "enabled": obj.get("enabled"),
             "prefix": obj.get("prefix"),
             "verifySslCertificates": obj.get("verifySslCertificates"),

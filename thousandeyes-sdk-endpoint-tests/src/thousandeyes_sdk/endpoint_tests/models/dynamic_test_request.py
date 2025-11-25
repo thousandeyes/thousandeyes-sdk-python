@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.endpoint_tests.models.endpoint_ip_version_in import EndpointIpVersionIn
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_agent_selector_type import EndpointTestAgentSelectorType
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_protocol import EndpointTestProtocol
 from thousandeyes_sdk.endpoint_tests.models.test_interval import TestInterval
@@ -40,7 +41,8 @@ class DynamicTestRequest(BaseModel):
     tcp_probe_mode: Optional[TestProbeMode] = Field(default=None, alias="tcpProbeMode")
     test_name: StrictStr = Field(description="Name of the test.", alias="testName")
     has_path_trace_in_session: Optional[StrictBool] = Field(default=None, description="Enables \"in session\" path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session.", alias="hasPathTraceInSession")
-    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "isPrioritized", "interval", "maxMachines", "application", "protocol", "tcpProbeMode", "testName", "hasPathTraceInSession"]
+    ip_version: Optional[EndpointIpVersionIn] = Field(default=None, alias="ipVersion")
+    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "isPrioritized", "interval", "maxMachines", "application", "protocol", "tcpProbeMode", "testName", "hasPathTraceInSession", "ipVersion"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,7 +106,8 @@ class DynamicTestRequest(BaseModel):
             "protocol": obj.get("protocol"),
             "tcpProbeMode": obj.get("tcpProbeMode"),
             "testName": obj.get("testName"),
-            "hasPathTraceInSession": obj.get("hasPathTraceInSession")
+            "hasPathTraceInSession": obj.get("hasPathTraceInSession"),
+            "ipVersion": obj.get("ipVersion")
         })
         return _obj
 

@@ -33,6 +33,7 @@ class TestAgentToServerEndpointDynamicTestsApi(unittest.TestCase):
         request_body_json = """
                 {
                   "protocol" : "icmp",
+                  "ipVersion" : "V4_ONLY",
                   "application" : "webex",
                   "agentSelectorType" : "all-agents",
                   "isPrioritized" : false,
