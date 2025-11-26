@@ -36,6 +36,7 @@ from thousandeyes_sdk.agents.models.cloud_enterprise_agent import CloudEnterpris
 from thousandeyes_sdk.agents.models.cloud_enterprise_agent_type import CloudEnterpriseAgentType
 from thousandeyes_sdk.agents.models.cloud_enterprise_agents import CloudEnterpriseAgents
 from thousandeyes_sdk.agents.models.cluster_member import ClusterMember
+from thousandeyes_sdk.agents.models.coordinates import Coordinates
 from thousandeyes_sdk.agents.models.enterprise_agent import EnterpriseAgent
 from thousandeyes_sdk.agents.models.enterprise_agent_cluster_detail import EnterpriseAgentClusterDetail
 from thousandeyes_sdk.agents.models.enterprise_agent_data import EnterpriseAgentData

@@ -1,6 +1,6 @@
-# EndpointIpVersionTemplate
+# EndpointIpVersionIn
 
-IP version the test should use for network tests.
+For configuring network tests, the IP version of the test.
 
 ## Properties
 

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **tcp_probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
 **test_name** | **str** | Name of the test. | 
 **has_path_trace_in_session** | **bool** | Enables \&quot;in session\&quot; path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session. | [optional] 
+**ip_version** | [**EndpointIpVersionIn**](EndpointIpVersionIn.md) |  | [optional] 
 
 ## Example
 

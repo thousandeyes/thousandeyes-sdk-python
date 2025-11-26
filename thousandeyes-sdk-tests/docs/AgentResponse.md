@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **agent_name** | **str** | Name of the agent. | [optional] 
 **location** | **str** | Location of the agent. | [optional] [readonly] 
 **country_id** | **str** | 2-digit ISO country code | [optional] [readonly] 
+**coordinates** | [**Coordinates**](Coordinates.md) |  | [optional] 
 **enabled** | **bool** | Flag indicating if the agent is enabled. | [optional] 
 **prefix** | **str** | Prefix containing agents public IP address. | [optional] [readonly] 
 **verify_ssl_certificates** | **bool** | Flag indicating if has normal SSL operations or  if instead it&#39;s set to ignore SSL errors on browserbot-based tests. | [optional] [readonly] 

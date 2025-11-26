@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **enabled** | **bool** | Flag to enable or disable the stream integration. | [optional] 
 **filters** | [**Filters**](Filters.md) |  | [optional] 
 **exporter_config** | [**ExporterConfig**](ExporterConfig.md) |  | [optional] 
+**endpoint_agent_label** | [**List[EndpointAgentLabel]**](EndpointAgentLabel.md) | A collection of Endpoint Agent label IDs that determines what local network data is included in the data stream. | [optional] 
 
 ## Example
 

@@ -17,9 +17,9 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class EndpointIpVersionTemplate(str, Enum):
+class EndpointIpVersionIn(str, Enum):
     """
-    IP version the test should use for network tests.
+    For configuring network tests, the IP version of the test.
     """
 
     """
@@ -33,7 +33,7 @@ class EndpointIpVersionTemplate(str, Enum):
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of EndpointIpVersionTemplate from a JSON string"""
+        """Create an instance of EndpointIpVersionIn from a JSON string"""
         return cls(json.loads(json_str))
 
     @classmethod

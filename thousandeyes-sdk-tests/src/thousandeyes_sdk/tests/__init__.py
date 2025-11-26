@@ -76,6 +76,7 @@ from thousandeyes_sdk.tests.models.bgp_test_request import BgpTestRequest
 from thousandeyes_sdk.tests.models.bgp_test_response import BgpTestResponse
 from thousandeyes_sdk.tests.models.bgp_tests import BgpTests
 from thousandeyes_sdk.tests.models.cloud_enterprise_agent_type import CloudEnterpriseAgentType
+from thousandeyes_sdk.tests.models.coordinates import Coordinates
 from thousandeyes_sdk.tests.models.dns_query_class import DnsQueryClass
 from thousandeyes_sdk.tests.models.dns_sec_instant_test import DnsSecInstantTest
 from thousandeyes_sdk.tests.models.dns_sec_properties import DnsSecProperties

@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.streaming.models.endpoint_agent_label import EndpointAgentLabel
 from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
 from thousandeyes_sdk.streaming.models.filters import Filters
 from thousandeyes_sdk.streaming.models.tag_match import TagMatch
@@ -36,7 +37,8 @@ class PutStream(BaseModel):
     enabled: Optional[StrictBool] = Field(default=None, description="Flag to enable or disable the stream integration.")
     filters: Optional[Filters] = None
     exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
-    __properties: ClassVar[List[str]] = ["customHeaders", "streamEndpointUrl", "tagMatch", "testMatch", "enabled", "filters", "exporterConfig"]
+    endpoint_agent_label: Optional[List[EndpointAgentLabel]] = Field(default=None, description="A collection of Endpoint Agent label IDs that determines what local network data is included in the data stream.", alias="endpointAgentLabel")
+    __properties: ClassVar[List[str]] = ["customHeaders", "streamEndpointUrl", "tagMatch", "testMatch", "enabled", "filters", "exporterConfig", "endpointAgentLabel"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +100,13 @@ class PutStream(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of exporter_config
         if self.exporter_config:
             _dict['exporterConfig'] = self.exporter_config.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in endpoint_agent_label (list)
+        _items = []
+        if self.endpoint_agent_label:
+            for _item in self.endpoint_agent_label:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['endpointAgentLabel'] = _items
         return _dict
 
     @classmethod
@@ -116,7 +125,8 @@ class PutStream(BaseModel):
             "testMatch": [TestMatch.from_dict(_item) for _item in obj["testMatch"]] if obj.get("testMatch") is not None else None,
             "enabled": obj.get("enabled"),
             "filters": Filters.from_dict(obj["filters"]) if obj.get("filters") is not None else None,
-            "exporterConfig": ExporterConfig.from_dict(obj["exporterConfig"]) if obj.get("exporterConfig") is not None else None
+            "exporterConfig": ExporterConfig.from_dict(obj["exporterConfig"]) if obj.get("exporterConfig") is not None else None,
+            "endpointAgentLabel": [EndpointAgentLabel.from_dict(_item) for _item in obj["endpointAgentLabel"]] if obj.get("endpointAgentLabel") is not None else None
         })
         return _obj
 

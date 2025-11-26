@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **endpoint_agent_labels** | **List[str]** | List of endpoint agent label IDs (obtained from &#x60;/endpoint/labels&#x60; endpoint), required when &#x60;agentSelectorType&#x60; is set to &#x60;agent-labels&#x60;. | [optional] 
 **max_machines** | **int** | Maximum number of agents which can execute the test. | [optional] [default to 25]
 **test_name** | **str** | Name of the test. | 
+**ip_version** | [**EndpointIpVersionIn**](EndpointIpVersionIn.md) |  | [optional] 
 
 ## Example
 

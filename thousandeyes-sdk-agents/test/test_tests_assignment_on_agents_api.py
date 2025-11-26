@@ -56,6 +56,10 @@ class TestTestsAssignmentOnAgentsApi(unittest.TestCase):
                     }
                   },
                   "prefix" : "99.128.0.0/11",
+                  "coordinates" : {
+                    "latitude" : 37.77493,
+                    "longitude" : -122.41942
+                  },
                   "agentName" : "thousandeyes-stg-va-254",
                   "countryId" : "US",
                   "enabled" : true,
@@ -168,6 +172,10 @@ class TestTestsAssignmentOnAgentsApi(unittest.TestCase):
                     }
                   },
                   "prefix" : "99.128.0.0/11",
+                  "coordinates" : {
+                    "latitude" : 37.77493,
+                    "longitude" : -122.41942
+                  },
                   "agentName" : "thousandeyes-stg-va-254",
                   "countryId" : "US",
                   "enabled" : true,
@@ -280,6 +288,10 @@ class TestTestsAssignmentOnAgentsApi(unittest.TestCase):
                     }
                   },
                   "prefix" : "99.128.0.0/11",
+                  "coordinates" : {
+                    "latitude" : 37.77493,
+                    "longitude" : -122.41942
+                  },
                   "agentName" : "thousandeyes-stg-va-254",
                   "countryId" : "US",
                   "enabled" : true,

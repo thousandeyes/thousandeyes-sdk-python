@@ -7,6 +7,7 @@ Capability to set exporter configuration.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **splunk_hec** | [**ExporterConfigSplunkHec**](ExporterConfigSplunkHec.md) |  | [optional] 
+**authorization** | [**ExporterConfigAuthorization**](ExporterConfigAuthorization.md) |  | [optional] 
 
 ## Example
 

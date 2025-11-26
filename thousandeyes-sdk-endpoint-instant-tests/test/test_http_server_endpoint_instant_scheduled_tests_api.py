@@ -44,6 +44,7 @@ class TestHTTPServerEndpointInstantScheduledTestsApi(unittest.TestCase):
                   "agents" : [ "0a3b9998-dc3a-4ff2-b50d-ac4a7cd986e1", "66eec0f1-72b4-4755-aa83-3aed61d17f3c" ],
                   "protocol" : "icmp",
                   "password" : "password",
+                  "ipVersion" : "V4_ONLY",
                   "hasTraceroute" : true,
                   "targetResponseTime" : 1000,
                   "authType" : "none",
