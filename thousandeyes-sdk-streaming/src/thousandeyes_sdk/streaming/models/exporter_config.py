@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.streaming.models.exporter_config_authorization import ExporterConfigAuthorization
 from thousandeyes_sdk.streaming.models.exporter_config_splunk_hec import ExporterConfigSplunkHec
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +28,8 @@ class ExporterConfig(BaseModel):
     Capability to set exporter configuration.
     """ # noqa: E501
     splunk_hec: Optional[ExporterConfigSplunkHec] = Field(default=None, alias="splunkHec")
-    __properties: ClassVar[List[str]] = ["splunkHec"]
+    authorization: Optional[ExporterConfigAuthorization] = None
+    __properties: ClassVar[List[str]] = ["splunkHec", "authorization"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +74,9 @@ class ExporterConfig(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of splunk_hec
         if self.splunk_hec:
             _dict['splunkHec'] = self.splunk_hec.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of authorization
+        if self.authorization:
+            _dict['authorization'] = self.authorization.to_dict()
         return _dict
 
     @classmethod
@@ -84,7 +89,8 @@ class ExporterConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "splunkHec": ExporterConfigSplunkHec.from_dict(obj["splunkHec"]) if obj.get("splunkHec") is not None else None
+            "splunkHec": ExporterConfigSplunkHec.from_dict(obj["splunkHec"]) if obj.get("splunkHec") is not None else None,
+            "authorization": ExporterConfigAuthorization.from_dict(obj["authorization"]) if obj.get("authorization") is not None else None
         })
         return _obj
 

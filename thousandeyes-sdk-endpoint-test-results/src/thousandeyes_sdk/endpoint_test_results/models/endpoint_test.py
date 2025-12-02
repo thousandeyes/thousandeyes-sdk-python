@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_agent_selector_config import EndpointAgentSelectorConfig
-from thousandeyes_sdk.endpoint_test_results.models.endpoint_ip_version_template import EndpointIpVersionTemplate
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_scheduled_test_type import EndpointScheduledTestType
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_test_links import EndpointTestLinks
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_test_protocol import EndpointTestProtocol
@@ -47,7 +46,7 @@ class EndpointTest(BaseModel):
     modified_date: Optional[datetime] = Field(default=None, description="UTC last modification date (ISO date-time format).", alias="modifiedDate")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
     protocol: Optional[EndpointTestProtocol] = None
-    ip_version: Optional[EndpointIpVersionTemplate] = Field(default=None, alias="ipVersion")
+    ip_version: Optional[StrictStr] = Field(default=None, description="For reading current network test configurations, the IP version of the test. Values include V4_ONLY, V6_ONLY, V6_PREFER, and OS_DEFAULT.", alias="ipVersion")
     server: Optional[StrictStr] = Field(default=None, description="Target domain name or IP address.")
     test_id: Optional[StrictStr] = Field(default=None, description="Each test is assigned a unique ID to access test data from other endpoints.", alias="testId")
     test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")

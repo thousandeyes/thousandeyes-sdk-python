@@ -149,6 +149,10 @@ class TestDNSSECTestsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
+                    },
                     "agentName" : "thousandeyes-stg-va-254",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",
@@ -161,6 +165,10 @@ class TestDNSSECTestsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
+                    },
                     "agentName" : "thousandeyes-stg-va-254",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",
@@ -267,6 +275,10 @@ class TestDNSSECTestsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
+                    },
                     "agentName" : "thousandeyes-stg-va-254",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",
@@ -279,6 +291,10 @@ class TestDNSSECTestsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
+                    },
                     "agentName" : "thousandeyes-stg-va-254",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",
@@ -523,6 +539,10 @@ class TestDNSSECTestsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
+                    },
                     "agentName" : "thousandeyes-stg-va-254",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",
@@ -535,6 +555,10 @@ class TestDNSSECTestsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
+                    },
                     "agentName" : "thousandeyes-stg-va-254",
                     "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
                     "location" : "San Francisco Bay Area",

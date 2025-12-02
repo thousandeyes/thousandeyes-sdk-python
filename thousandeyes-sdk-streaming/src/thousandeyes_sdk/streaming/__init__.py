@@ -25,8 +25,11 @@ from thousandeyes_sdk.streaming.models.audit_operation_with_update import AuditO
 from thousandeyes_sdk.streaming.models.bad_request_error import BadRequestError
 from thousandeyes_sdk.streaming.models.create_stream_response import CreateStreamResponse
 from thousandeyes_sdk.streaming.models.data_model_version import DataModelVersion
+from thousandeyes_sdk.streaming.models.endpoint_agent_label import EndpointAgentLabel
 from thousandeyes_sdk.streaming.models.endpoint_type import EndpointType
 from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
+from thousandeyes_sdk.streaming.models.exporter_config_authorization import ExporterConfigAuthorization
+from thousandeyes_sdk.streaming.models.exporter_config_o_auth2 import ExporterConfigOAuth2
 from thousandeyes_sdk.streaming.models.exporter_config_splunk_hec import ExporterConfigSplunkHec
 from thousandeyes_sdk.streaming.models.filters import Filters
 from thousandeyes_sdk.streaming.models.filters_test_types import FiltersTestTypes

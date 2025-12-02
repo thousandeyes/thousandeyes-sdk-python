@@ -57,6 +57,7 @@ from thousandeyes_sdk.instant_tests.models.api_request_header import ApiRequestH
 from thousandeyes_sdk.instant_tests.models.api_request_method import ApiRequestMethod
 from thousandeyes_sdk.instant_tests.models.api_request_variable import ApiRequestVariable
 from thousandeyes_sdk.instant_tests.models.cloud_enterprise_agent_type import CloudEnterpriseAgentType
+from thousandeyes_sdk.instant_tests.models.coordinates import Coordinates
 from thousandeyes_sdk.instant_tests.models.dns_query_class import DnsQueryClass
 from thousandeyes_sdk.instant_tests.models.dns_sec_instant_test import DnsSecInstantTest
 from thousandeyes_sdk.instant_tests.models.dns_sec_instant_test_request import DnsSecInstantTestRequest

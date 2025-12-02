@@ -34,6 +34,7 @@ from thousandeyes_sdk.administrative.models.audit_user_events import AuditUserEv
 from thousandeyes_sdk.administrative.models.base_role import BaseRole
 from thousandeyes_sdk.administrative.models.cloud_enterprise_agent_type import CloudEnterpriseAgentType
 from thousandeyes_sdk.administrative.models.cluster_member import ClusterMember
+from thousandeyes_sdk.administrative.models.coordinates import Coordinates
 from thousandeyes_sdk.administrative.models.created_account_group import CreatedAccountGroup
 from thousandeyes_sdk.administrative.models.created_user import CreatedUser
 from thousandeyes_sdk.administrative.models.enterprise_agent import EnterpriseAgent

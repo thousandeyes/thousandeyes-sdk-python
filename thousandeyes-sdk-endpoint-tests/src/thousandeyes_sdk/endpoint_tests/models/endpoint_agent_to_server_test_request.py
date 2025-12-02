@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.endpoint_tests.models.endpoint_ip_version_in import EndpointIpVersionIn
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_agent_selector_type import EndpointTestAgentSelectorType
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_protocol import EndpointTestProtocol
 from thousandeyes_sdk.endpoint_tests.models.test_interval import TestInterval
@@ -33,13 +34,14 @@ class EndpointAgentToServerTestRequest(BaseModel):
     endpoint_agent_labels: Optional[List[StrictStr]] = Field(default=None, description="List of endpoint agent label IDs (obtained from `/endpoint/labels` endpoint), required when `agentSelectorType` is set to `agent-labels`.", alias="endpointAgentLabels")
     max_machines: Optional[StrictInt] = Field(default=25, description="Maximum number of agents which can execute the test.", alias="maxMachines")
     test_name: StrictStr = Field(description="Name of the test.", alias="testName")
+    ip_version: Optional[EndpointIpVersionIn] = Field(default=None, alias="ipVersion")
     server_name: Optional[StrictStr] = Field(default=None, description="A server address without a protocol or IP address. **Deprecated, use `server` instead**.", alias="serverName")
     server: StrictStr = Field(description="Target domain name or IP address.")
     port: Optional[StrictInt] = Field(default=443, description="Port number.")
     is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
     interval: Optional[TestInterval] = None
     protocol: Optional[EndpointTestProtocol] = None
-    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName", "serverName", "server", "port", "isPrioritized", "interval", "protocol"]
+    __properties: ClassVar[List[str]] = ["agentSelectorType", "agents", "endpointAgentLabels", "maxMachines", "testName", "ipVersion", "serverName", "server", "port", "isPrioritized", "interval", "protocol"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -98,6 +100,7 @@ class EndpointAgentToServerTestRequest(BaseModel):
             "endpointAgentLabels": obj.get("endpointAgentLabels"),
             "maxMachines": obj.get("maxMachines") if obj.get("maxMachines") is not None else 25,
             "testName": obj.get("testName"),
+            "ipVersion": obj.get("ipVersion"),
             "serverName": obj.get("serverName"),
             "server": obj.get("server"),
             "port": obj.get("port") if obj.get("port") is not None else 443,
