@@ -29,6 +29,7 @@ class Platform(str, Enum):
     ROOMOS = 'roomos'
     PHONEOS = 'phoneos'
     ELUX = 'elux'
+    CISCO_MINUS_WIRELESS = 'cisco-wireless'
     LINUX = 'linux'
     MAC = 'mac'
     ANDROID = 'android'
