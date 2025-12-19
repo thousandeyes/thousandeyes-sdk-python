@@ -32,7 +32,6 @@ class TestTagsApi(unittest.TestCase):
         """Test case for create_tag request and response models"""
         request_body_json = """
                 {
-                  "accessType" : "all",
                   "assignments" : [ {
                     "id" : "123",
                     "type" : "test"
@@ -41,15 +40,19 @@ class TestTagsApi(unittest.TestCase):
                     "type" : "test"
                   } ],
                   "color" : "#FF0000",
+                  "builtIn" : true,
                   "icon" : "icon",
                   "description" : "To tag assets in San Francisco",
+                  "type" : "static",
+                  "objectType" : "test",
+                  "accessType" : "all",
+                  "modifiedDate" : "2022-03-01T23:31:11Z",
                   "legacyId" : 0.8008281904610115,
                   "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                   "aid" : 1234,
                   "value" : "sfo",
                   "key" : "branch",
-                  "createDate" : "2022-03-01T23:31:11Z",
-                  "objectType" : "test"
+                  "createDate" : "2022-03-01T23:31:11Z"
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
@@ -58,7 +61,6 @@ class TestTagsApi(unittest.TestCase):
 
         response_body_json = """
                 {
-                  "accessType" : "all",
                   "assignments" : [ {
                     "id" : "123",
                     "type" : "test"
@@ -67,15 +69,19 @@ class TestTagsApi(unittest.TestCase):
                     "type" : "test"
                   } ],
                   "color" : "#FF0000",
+                  "builtIn" : true,
                   "icon" : "icon",
                   "description" : "To tag assets in San Francisco",
+                  "type" : "static",
+                  "objectType" : "test",
+                  "accessType" : "all",
+                  "modifiedDate" : "2022-03-01T23:31:11Z",
                   "legacyId" : 0.8008281904610115,
                   "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                   "aid" : 1234,
                   "value" : "sfo",
                   "key" : "branch",
-                  "createDate" : "2022-03-01T23:31:11Z",
-                  "objectType" : "test"
+                  "createDate" : "2022-03-01T23:31:11Z"
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
@@ -89,7 +95,6 @@ class TestTagsApi(unittest.TestCase):
                   "errors" : [ {
                     "tag" : {
                       "key" : {
-                        "accessType" : "all",
                         "assignments" : [ {
                           "id" : "123",
                           "type" : "test"
@@ -98,15 +103,19 @@ class TestTagsApi(unittest.TestCase):
                           "type" : "test"
                         } ],
                         "color" : "#FF0000",
+                        "builtIn" : true,
                         "icon" : "icon",
                         "description" : "To tag assets in San Francisco",
+                        "type" : "static",
+                        "objectType" : "test",
+                        "accessType" : "all",
+                        "modifiedDate" : "2022-03-01T23:31:11Z",
                         "legacyId" : 0.8008281904610115,
                         "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                         "aid" : 1234,
                         "value" : "sfo",
                         "key" : "branch",
-                        "createDate" : "2022-03-01T23:31:11Z",
-                        "objectType" : "test"
+                        "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
                     "message" : "Object successfully created",
@@ -114,7 +123,6 @@ class TestTagsApi(unittest.TestCase):
                   }, {
                     "tag" : {
                       "key" : {
-                        "accessType" : "all",
                         "assignments" : [ {
                           "id" : "123",
                           "type" : "test"
@@ -123,15 +131,19 @@ class TestTagsApi(unittest.TestCase):
                           "type" : "test"
                         } ],
                         "color" : "#FF0000",
+                        "builtIn" : true,
                         "icon" : "icon",
                         "description" : "To tag assets in San Francisco",
+                        "type" : "static",
+                        "objectType" : "test",
+                        "accessType" : "all",
+                        "modifiedDate" : "2022-03-01T23:31:11Z",
                         "legacyId" : 0.8008281904610115,
                         "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                         "aid" : 1234,
                         "value" : "sfo",
                         "key" : "branch",
-                        "createDate" : "2022-03-01T23:31:11Z",
-                        "objectType" : "test"
+                        "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
                     "message" : "Object successfully created",
@@ -158,10 +170,13 @@ class TestTagsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "builtIn" : true,
                     "icon" : "icon",
                     "description" : "To tag assets in San Francisco",
+                    "type" : "static",
                     "objectType" : "test",
                     "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
                     "legacyId" : 0.8008281904610115,
                     "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                     "aid" : 1234,
@@ -189,10 +204,13 @@ class TestTagsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "builtIn" : true,
                     "icon" : "icon",
                     "description" : "To tag assets in San Francisco",
+                    "type" : "static",
                     "objectType" : "test",
                     "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
                     "legacyId" : 0.8008281904610115,
                     "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                     "aid" : 1234,
@@ -211,7 +229,6 @@ class TestTagsApi(unittest.TestCase):
                   "errors" : [ {
                     "tag" : {
                       "key" : {
-                        "accessType" : "all",
                         "assignments" : [ {
                           "id" : "123",
                           "type" : "test"
@@ -220,15 +237,19 @@ class TestTagsApi(unittest.TestCase):
                           "type" : "test"
                         } ],
                         "color" : "#FF0000",
+                        "builtIn" : true,
                         "icon" : "icon",
                         "description" : "To tag assets in San Francisco",
+                        "type" : "static",
+                        "objectType" : "test",
+                        "accessType" : "all",
+                        "modifiedDate" : "2022-03-01T23:31:11Z",
                         "legacyId" : 0.8008281904610115,
                         "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                         "aid" : 1234,
                         "value" : "sfo",
                         "key" : "branch",
-                        "createDate" : "2022-03-01T23:31:11Z",
-                        "objectType" : "test"
+                        "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
                     "message" : "Object successfully created",
@@ -236,7 +257,6 @@ class TestTagsApi(unittest.TestCase):
                   }, {
                     "tag" : {
                       "key" : {
-                        "accessType" : "all",
                         "assignments" : [ {
                           "id" : "123",
                           "type" : "test"
@@ -245,15 +265,19 @@ class TestTagsApi(unittest.TestCase):
                           "type" : "test"
                         } ],
                         "color" : "#FF0000",
+                        "builtIn" : true,
                         "icon" : "icon",
                         "description" : "To tag assets in San Francisco",
+                        "type" : "static",
+                        "objectType" : "test",
+                        "accessType" : "all",
+                        "modifiedDate" : "2022-03-01T23:31:11Z",
                         "legacyId" : 0.8008281904610115,
                         "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                         "aid" : 1234,
                         "value" : "sfo",
                         "key" : "branch",
-                        "createDate" : "2022-03-01T23:31:11Z",
-                        "objectType" : "test"
+                        "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
                     "message" : "Object successfully created",
@@ -280,10 +304,13 @@ class TestTagsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "builtIn" : true,
                     "icon" : "icon",
                     "description" : "To tag assets in San Francisco",
+                    "type" : "static",
                     "objectType" : "test",
                     "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
                     "legacyId" : 0.8008281904610115,
                     "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                     "aid" : 1234,
@@ -311,10 +338,13 @@ class TestTagsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "builtIn" : true,
                     "icon" : "icon",
                     "description" : "To tag assets in San Francisco",
+                    "type" : "static",
                     "objectType" : "test",
                     "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
                     "legacyId" : 0.8008281904610115,
                     "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                     "aid" : 1234,
@@ -357,10 +387,13 @@ class TestTagsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "builtIn" : true,
                   "icon" : "icon",
                   "description" : "To tag assets in San Francisco",
+                  "type" : "static",
                   "objectType" : "test",
                   "accessType" : "all",
+                  "modifiedDate" : "2022-03-01T23:31:11Z",
                   "legacyId" : 0.8008281904610115,
                   "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                   "aid" : 1234,
@@ -411,10 +444,13 @@ class TestTagsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "builtIn" : true,
                     "icon" : "icon",
                     "description" : "To tag assets in San Francisco",
+                    "type" : "static",
                     "objectType" : "test",
                     "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
                     "legacyId" : 0.8008281904610115,
                     "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                     "aid" : 1234,
@@ -442,10 +478,13 @@ class TestTagsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "builtIn" : true,
                     "icon" : "icon",
                     "description" : "To tag assets in San Francisco",
+                    "type" : "static",
                     "objectType" : "test",
                     "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
                     "legacyId" : 0.8008281904610115,
                     "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                     "aid" : 1234,
@@ -463,7 +502,6 @@ class TestTagsApi(unittest.TestCase):
         """Test case for update_tag request and response models"""
         request_body_json = """
                 {
-                  "accessType" : "all",
                   "assignments" : [ {
                     "id" : "123",
                     "type" : "test"
@@ -472,15 +510,19 @@ class TestTagsApi(unittest.TestCase):
                     "type" : "test"
                   } ],
                   "color" : "#FF0000",
+                  "builtIn" : true,
                   "icon" : "icon",
                   "description" : "To tag assets in San Francisco",
+                  "type" : "static",
+                  "objectType" : "test",
+                  "accessType" : "all",
+                  "modifiedDate" : "2022-03-01T23:31:11Z",
                   "legacyId" : 0.8008281904610115,
                   "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                   "aid" : 1234,
                   "value" : "sfo",
                   "key" : "branch",
-                  "createDate" : "2022-03-01T23:31:11Z",
-                  "objectType" : "test"
+                  "createDate" : "2022-03-01T23:31:11Z"
                 }"""
 
         request_loaded_json = json.loads(request_body_json)
@@ -489,7 +531,6 @@ class TestTagsApi(unittest.TestCase):
 
         response_body_json = """
                 {
-                  "accessType" : "all",
                   "assignments" : [ {
                     "id" : "123",
                     "type" : "test"
@@ -498,15 +539,19 @@ class TestTagsApi(unittest.TestCase):
                     "type" : "test"
                   } ],
                   "color" : "#FF0000",
+                  "builtIn" : true,
                   "icon" : "icon",
                   "description" : "To tag assets in San Francisco",
+                  "type" : "static",
+                  "objectType" : "test",
+                  "accessType" : "all",
+                  "modifiedDate" : "2022-03-01T23:31:11Z",
                   "legacyId" : 0.8008281904610115,
                   "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
                   "aid" : 1234,
                   "value" : "sfo",
                   "key" : "branch",
-                  "createDate" : "2022-03-01T23:31:11Z",
-                  "objectType" : "test"
+                  "createDate" : "2022-03-01T23:31:11Z"
                 }"""
 
         response_loaded_json = json.loads(response_body_json)

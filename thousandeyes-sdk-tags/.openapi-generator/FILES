@@ -20,6 +20,7 @@ docs/TagBulkCreateError.md
 docs/TagInfo.md
 docs/Tags.md
 docs/TagsApi.md
+docs/Type.md
 docs/UnauthorizedError.md
 docs/ValidationError.md
 docs/ValidationErrorItem.md
@@ -47,6 +48,7 @@ src/thousandeyes_sdk/tags/models/tag_assignment.py
 src/thousandeyes_sdk/tags/models/tag_bulk_create_error.py
 src/thousandeyes_sdk/tags/models/tag_info.py
 src/thousandeyes_sdk/tags/models/tags.py
+src/thousandeyes_sdk/tags/models/type.py
 src/thousandeyes_sdk/tags/models/unauthorized_error.py
 src/thousandeyes_sdk/tags/models/validation_error.py
 src/thousandeyes_sdk/tags/models/validation_error_item.py

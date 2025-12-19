@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **assignments** | [**List[Assignment]**](Assignment.md) |  | [optional] [readonly] 
 **access_type** | [**AccessType**](AccessType.md) |  | [optional] 
 **aid** | **int** | The account group ID | [optional] [readonly] 
+**built_in** | **bool** | Indicates whether it is a built-in tag or a user-created (custom) tag. | [optional] [readonly] 
 **color** | **str** | Tag color | [optional] 
 **create_date** | **str** | Tag creation date | [optional] [readonly] 
 **icon** | **str** |  | [optional] 
@@ -15,7 +16,9 @@ Name | Type | Description | Notes
 **id** | **str** | The tag ID | [optional] [readonly] 
 **key** | **str** | The tags&#39;s key | [optional] 
 **legacy_id** | **float** |  | [optional] [readonly] 
+**modified_date** | **datetime** | The date and time the tag was last modified. | [optional] [readonly] 
 **object_type** | [**ObjectType**](ObjectType.md) |  | [optional] 
+**type** | [**Type**](Type.md) |  | [optional] 
 **value** | **str** | The tag&#39;s value | [optional] 
 
 ## Example
