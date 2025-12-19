@@ -36,6 +36,7 @@ from thousandeyes_sdk.tags.models.tag_assignment import TagAssignment
 from thousandeyes_sdk.tags.models.tag_bulk_create_error import TagBulkCreateError
 from thousandeyes_sdk.tags.models.tag_info import TagInfo
 from thousandeyes_sdk.tags.models.tags import Tags
+from thousandeyes_sdk.tags.models.type import Type
 from thousandeyes_sdk.tags.models.unauthorized_error import UnauthorizedError
 from thousandeyes_sdk.tags.models.validation_error import ValidationError
 from thousandeyes_sdk.tags.models.validation_error_item import ValidationErrorItem

@@ -16,11 +16,13 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
+from datetime import datetime
+from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from thousandeyes_sdk.tags.models.access_type import AccessType
 from thousandeyes_sdk.tags.models.assignment import Assignment
 from thousandeyes_sdk.tags.models.object_type import ObjectType
+from thousandeyes_sdk.tags.models.type import Type
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -31,6 +33,7 @@ class TagInfo(BaseModel):
     assignments: Optional[List[Assignment]] = None
     access_type: Optional[AccessType] = Field(default=None, alias="accessType")
     aid: Optional[StrictInt] = Field(default=None, description="The account group ID")
+    built_in: Optional[StrictBool] = Field(default=None, description="Indicates whether it is a built-in tag or a user-created (custom) tag.", alias="builtIn")
     color: Optional[StrictStr] = Field(default=None, description="Tag color")
     create_date: Optional[StrictStr] = Field(default=None, description="Tag creation date", alias="createDate")
     icon: Optional[StrictStr] = None
@@ -38,9 +41,11 @@ class TagInfo(BaseModel):
     id: Optional[StrictStr] = Field(default=None, description="The tag ID")
     key: Optional[StrictStr] = Field(default=None, description="The tags's key")
     legacy_id: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, alias="legacyId")
+    modified_date: Optional[datetime] = Field(default=None, description="The date and time the tag was last modified.", alias="modifiedDate")
     object_type: Optional[ObjectType] = Field(default=None, alias="objectType")
+    type: Optional[Type] = None
     value: Optional[StrictStr] = Field(default=None, description="The tag's value")
-    __properties: ClassVar[List[str]] = ["assignments", "accessType", "aid", "color", "createDate", "icon", "description", "id", "key", "legacyId", "objectType", "value"]
+    __properties: ClassVar[List[str]] = ["assignments", "accessType", "aid", "builtIn", "color", "createDate", "icon", "description", "id", "key", "legacyId", "modifiedDate", "objectType", "type", "value"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,13 +83,17 @@ class TagInfo(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "assignments",
             "aid",
+            "built_in",
             "create_date",
             "id",
             "legacy_id",
+            "modified_date",
         ])
 
         _dict = self.model_dump(
@@ -114,6 +123,11 @@ class TagInfo(BaseModel):
         if self.legacy_id is None and "legacy_id" in self.model_fields_set:
             _dict['legacyId'] = None
 
+        # set to None if modified_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.modified_date is None and "modified_date" in self.model_fields_set:
+            _dict['modifiedDate'] = None
+
         return _dict
 
     @classmethod
@@ -129,6 +143,7 @@ class TagInfo(BaseModel):
             "assignments": [Assignment.from_dict(_item) for _item in obj["assignments"]] if obj.get("assignments") is not None else None,
             "accessType": obj.get("accessType"),
             "aid": obj.get("aid"),
+            "builtIn": obj.get("builtIn"),
             "color": obj.get("color"),
             "createDate": obj.get("createDate"),
             "icon": obj.get("icon"),
@@ -136,7 +151,9 @@ class TagInfo(BaseModel):
             "id": obj.get("id"),
             "key": obj.get("key"),
             "legacyId": obj.get("legacyId"),
+            "modifiedDate": obj.get("modifiedDate"),
             "objectType": obj.get("objectType"),
+            "type": obj.get("type"),
             "value": obj.get("value")
         })
         return _obj
