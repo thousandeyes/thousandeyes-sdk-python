@@ -65,7 +65,7 @@ class AlertRulesApi:
     ) -> Rule:
         """Create alert rule
 
-        Creates a new alert rule in your account, using the provided POST data. The `Edit alert rules` permission is required to create an alert rule. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+        Creates a new alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to create an alert rule. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
         :param rule_detail_update: (required)
         :type rule_detail_update: RuleDetailUpdate
@@ -143,7 +143,7 @@ class AlertRulesApi:
     ) -> ApiResponse[Rule]:
         """Create alert rule
 
-        Creates a new alert rule in your account, using the provided POST data. The `Edit alert rules` permission is required to create an alert rule. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+        Creates a new alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to create an alert rule. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
         :param rule_detail_update: (required)
         :type rule_detail_update: RuleDetailUpdate
@@ -221,7 +221,7 @@ class AlertRulesApi:
     ) -> RESTResponseType:
         """Create alert rule
 
-        Creates a new alert rule in your account, using the provided POST data. The `Edit alert rules` permission is required to create an alert rule. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+        Creates a new alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to create an alert rule. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
         :param rule_detail_update: (required)
         :type rule_detail_update: RuleDetailUpdate
@@ -375,7 +375,7 @@ class AlertRulesApi:
     ) -> None:
         """Delete alert rule
 
-        Deletes an alert rule from your account. Users must have both `Edit alert rules` and `Edit tests` permissions,  especially if the rule is linked to any tests. Without these permissions, an error occurs.
+        Deletes an alert rule from your account. Users must have both `Edit alert rules` and `Edit tests` permissions, especially if the rule is linked to any tests. Without these permissions, an error occurs. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests.
 
         :param rule_id: Unique alert rule ID. (required)
         :type rule_id: str
@@ -453,7 +453,7 @@ class AlertRulesApi:
     ) -> ApiResponse[None]:
         """Delete alert rule
 
-        Deletes an alert rule from your account. Users must have both `Edit alert rules` and `Edit tests` permissions,  especially if the rule is linked to any tests. Without these permissions, an error occurs.
+        Deletes an alert rule from your account. Users must have both `Edit alert rules` and `Edit tests` permissions, especially if the rule is linked to any tests. Without these permissions, an error occurs. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests.
 
         :param rule_id: Unique alert rule ID. (required)
         :type rule_id: str
@@ -531,7 +531,7 @@ class AlertRulesApi:
     ) -> RESTResponseType:
         """Delete alert rule
 
-        Deletes an alert rule from your account. Users must have both `Edit alert rules` and `Edit tests` permissions,  especially if the rule is linked to any tests. Without these permissions, an error occurs.
+        Deletes an alert rule from your account. Users must have both `Edit alert rules` and `Edit tests` permissions, especially if the rule is linked to any tests. Without these permissions, an error occurs. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests.
 
         :param rule_id: Unique alert rule ID. (required)
         :type rule_id: str
@@ -671,7 +671,7 @@ class AlertRulesApi:
     ) -> RuleDetail:
         """Retrieve alert rule
 
-        Returns detailed information about an alert rule using the `ruleId`. If the `ruleId` doesn’t exist or is inaccessible by your account, an empty response is returned.
+        Returns detailed information about an alert rule using the `ruleId`. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. If the `ruleId` doesn’t exist or is inaccessible by your account, an empty response is returned.
 
         :param rule_id: Unique alert rule ID. (required)
         :type rule_id: str
@@ -748,7 +748,7 @@ class AlertRulesApi:
     ) -> ApiResponse[RuleDetail]:
         """Retrieve alert rule
 
-        Returns detailed information about an alert rule using the `ruleId`. If the `ruleId` doesn’t exist or is inaccessible by your account, an empty response is returned.
+        Returns detailed information about an alert rule using the `ruleId`. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. If the `ruleId` doesn’t exist or is inaccessible by your account, an empty response is returned.
 
         :param rule_id: Unique alert rule ID. (required)
         :type rule_id: str
@@ -825,7 +825,7 @@ class AlertRulesApi:
     ) -> RESTResponseType:
         """Retrieve alert rule
 
-        Returns detailed information about an alert rule using the `ruleId`. If the `ruleId` doesn’t exist or is inaccessible by your account, an empty response is returned.
+        Returns detailed information about an alert rule using the `ruleId`. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. If the `ruleId` doesn’t exist or is inaccessible by your account, an empty response is returned.
 
         :param rule_id: Unique alert rule ID. (required)
         :type rule_id: str
@@ -964,7 +964,7 @@ class AlertRulesApi:
     ) -> Rules:
         """List alert rules
 
-        Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types.
+        Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests.
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1037,7 +1037,7 @@ class AlertRulesApi:
     ) -> ApiResponse[Rules]:
         """List alert rules
 
-        Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types.
+        Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests.
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1110,7 +1110,7 @@ class AlertRulesApi:
     ) -> RESTResponseType:
         """List alert rules
 
-        Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types.
+        Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests.
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -1245,7 +1245,7 @@ class AlertRulesApi:
     ) -> Rule:
         """Update alert rule
 
-        Modifies an existing alert rule in your account, using the provided POST data. The `Edit alert rules` permission is required to modify an alert rule.  Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+        Modifies an existing alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to modify an alert rule.  Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
         :param rule_id: Unique alert rule ID. (required)
         :type rule_id: str
@@ -1327,7 +1327,7 @@ class AlertRulesApi:
     ) -> ApiResponse[Rule]:
         """Update alert rule
 
-        Modifies an existing alert rule in your account, using the provided POST data. The `Edit alert rules` permission is required to modify an alert rule.  Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+        Modifies an existing alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to modify an alert rule.  Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
         :param rule_id: Unique alert rule ID. (required)
         :type rule_id: str
@@ -1409,7 +1409,7 @@ class AlertRulesApi:
     ) -> RESTResponseType:
         """Update alert rule
 
-        Modifies an existing alert rule in your account, using the provided POST data. The `Edit alert rules` permission is required to modify an alert rule.  Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+        Modifies an existing alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to modify an alert rule.  Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
         :param rule_id: Unique alert rule ID. (required)
         :type rule_id: str
