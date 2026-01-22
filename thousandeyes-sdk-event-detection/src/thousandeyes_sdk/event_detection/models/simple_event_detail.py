@@ -84,6 +84,11 @@ class SimpleEventDetail(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # set to None if end_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.end_date is None and "end_date" in self.model_fields_set:
+            _dict['endDate'] = None
+
         return _dict
 
     @classmethod

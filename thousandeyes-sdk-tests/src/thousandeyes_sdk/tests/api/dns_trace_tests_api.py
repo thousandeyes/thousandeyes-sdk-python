@@ -1308,7 +1308,7 @@ class DNSTraceTestsApi:
     ) -> DnsTraceTestResponse:
         """Update DNS Trace test
 
-        Updates a DNS Trace test. The target test cannot be a live share or saved event. This method requires Account Admin permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
+        Updates a DNS Trace test. Shared tests have limited updating capabilities. Only account-specific configurations may be updated, namely: Alert rules, Alert suppression windows, Labels. This method requires Account Admin permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
 
         :param test_id: Test ID (required)
         :type test_id: str
@@ -1395,7 +1395,7 @@ class DNSTraceTestsApi:
     ) -> ApiResponse[DnsTraceTestResponse]:
         """Update DNS Trace test
 
-        Updates a DNS Trace test. The target test cannot be a live share or saved event. This method requires Account Admin permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
+        Updates a DNS Trace test. Shared tests have limited updating capabilities. Only account-specific configurations may be updated, namely: Alert rules, Alert suppression windows, Labels. This method requires Account Admin permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
 
         :param test_id: Test ID (required)
         :type test_id: str
@@ -1482,7 +1482,7 @@ class DNSTraceTestsApi:
     ) -> RESTResponseType:
         """Update DNS Trace test
 
-        Updates a DNS Trace test. The target test cannot be a live share or saved event. This method requires Account Admin permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
+        Updates a DNS Trace test. Shared tests have limited updating capabilities. Only account-specific configurations may be updated, namely: Alert rules, Alert suppression windows, Labels. This method requires Account Admin permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
 
         :param test_id: Test ID (required)
         :type test_id: str

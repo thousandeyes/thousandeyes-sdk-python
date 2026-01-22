@@ -1308,7 +1308,7 @@ class AgentToServerTestsApi:
     ) -> AgentToServerTestResponse:
         """Update Agent to Server test
 
-        Updates an Agent to Server test. This method requires Account Admin permissions.
+        Updates an Agent to Server test. Shared tests have limited updating capabilities. Only account-specific configurations may be updated, namely: Alert rules, Alert suppression windows, Labels. This method requires Account Admin permissions.
 
         :param test_id: Test ID (required)
         :type test_id: str
@@ -1395,7 +1395,7 @@ class AgentToServerTestsApi:
     ) -> ApiResponse[AgentToServerTestResponse]:
         """Update Agent to Server test
 
-        Updates an Agent to Server test. This method requires Account Admin permissions.
+        Updates an Agent to Server test. Shared tests have limited updating capabilities. Only account-specific configurations may be updated, namely: Alert rules, Alert suppression windows, Labels. This method requires Account Admin permissions.
 
         :param test_id: Test ID (required)
         :type test_id: str
@@ -1482,7 +1482,7 @@ class AgentToServerTestsApi:
     ) -> RESTResponseType:
         """Update Agent to Server test
 
-        Updates an Agent to Server test. This method requires Account Admin permissions.
+        Updates an Agent to Server test. Shared tests have limited updating capabilities. Only account-specific configurations may be updated, namely: Alert rules, Alert suppression windows, Labels. This method requires Account Admin permissions.
 
         :param test_id: Test ID (required)
         :type test_id: str
