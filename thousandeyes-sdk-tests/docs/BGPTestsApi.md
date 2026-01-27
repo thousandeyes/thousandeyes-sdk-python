@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 Update BGP test
 
-Updates a BGP test. This method requires Account Admin permissions. The target test cannot be a live share or saved event. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
+Updates a BGP test. Shared tests have limited updating capabilities. Only account-specific configurations may be updated, namely: alert rules, alert suppression windows, labels. This method requires Account Admin permissions. **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.
 
 ### Example
 

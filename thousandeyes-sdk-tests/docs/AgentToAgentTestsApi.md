@@ -369,7 +369,7 @@ Name | Type | Description  | Notes
 
 Update Agent to Agent test
 
-Updates a Agent to Agent test. This method requires Account Admin permissions.
+Updates a Agent to Agent test. Shared tests have limited updating capabilities. Only account-specific configurations may be updated, namely: Alert rules, Alert suppression windows, Labels. This method requires Account Admin permissions.
 
 ### Example
 

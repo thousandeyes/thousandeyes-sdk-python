@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create alert rule
 
-Creates a new alert rule in your account, using the provided POST data. The `Edit alert rules` permission is required to create an alert rule. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+Creates a new alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to create an alert rule. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
 ### Example
 
@@ -103,7 +103,7 @@ Name | Type | Description  | Notes
 
 Delete alert rule
 
-Deletes an alert rule from your account. Users must have both `Edit alert rules` and `Edit tests` permissions,  especially if the rule is linked to any tests. Without these permissions, an error occurs.
+Deletes an alert rule from your account. Users must have both `Edit alert rules` and `Edit tests` permissions, especially if the rule is linked to any tests. Without these permissions, an error occurs. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests.
 
 ### Example
 
@@ -186,7 +186,7 @@ void (empty response body)
 
 Retrieve alert rule
 
-Returns detailed information about an alert rule using the `ruleId`. If the `ruleId` doesn’t exist or is inaccessible by your account, an empty response is returned.
+Returns detailed information about an alert rule using the `ruleId`. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. If the `ruleId` doesn’t exist or is inaccessible by your account, an empty response is returned.
 
 ### Example
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 List alert rules
 
-Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types.
+Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests.
 
 ### Example
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 Update alert rule
 
-Modifies an existing alert rule in your account, using the provided POST data. The `Edit alert rules` permission is required to modify an alert rule.  Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+Modifies an existing alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to modify an alert rule.  Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
 ### Example
 

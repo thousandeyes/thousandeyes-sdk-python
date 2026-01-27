@@ -123,6 +123,11 @@ class TargetNetworkEventDetail(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of grouping
         if self.grouping:
             _dict['grouping'] = self.grouping.to_dict()
+        # set to None if end_date (nullable) is None
+        # and model_fields_set contains the field
+        if self.end_date is None and "end_date" in self.model_fields_set:
+            _dict['endDate'] = None
+
         return _dict
 
     @classmethod
