@@ -28,6 +28,7 @@ from thousandeyes_sdk.tests.models.web_transaction_tests import WebTransactionTe
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 
