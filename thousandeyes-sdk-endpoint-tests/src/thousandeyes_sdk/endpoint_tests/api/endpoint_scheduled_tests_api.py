@@ -25,6 +25,7 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_tests import EndpointTests
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 

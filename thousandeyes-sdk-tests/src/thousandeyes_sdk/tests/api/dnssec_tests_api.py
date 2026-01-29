@@ -28,6 +28,7 @@ from thousandeyes_sdk.tests.models.expand_test_options import ExpandTestOptions
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 
