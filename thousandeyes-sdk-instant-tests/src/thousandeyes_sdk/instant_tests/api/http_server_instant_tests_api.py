@@ -27,6 +27,7 @@ from thousandeyes_sdk.instant_tests.models.http_server_instant_test_response imp
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 

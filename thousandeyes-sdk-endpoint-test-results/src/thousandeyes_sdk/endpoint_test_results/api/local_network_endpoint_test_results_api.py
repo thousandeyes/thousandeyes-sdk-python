@@ -30,6 +30,7 @@ from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_result
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+from thousandeyes_sdk.core.pagination_iterable import PaginationIterable
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 
@@ -45,6 +46,79 @@ class LocalNetworkEndpointTestResultsApi:
             api_client = ApiClient.get_default()
         api_client.user_agent = "ThousandEyesSDK-Python/{0}".format(version("thousandeyes-sdk-endpoint-test-results"))
         self.api_client = api_client
+
+    @validate_call
+    def filter_local_networks_test_results_topologies_paginated(
+        self,
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        expand: Annotated[Optional[List[ExpandLocalNetworkTopologyOptions]], Field(description="This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.")] = None,
+        endpoint_network_topology_result_request: Optional[EndpointNetworkTopologyResultRequest] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> PaginationIterable:
+        """List endpoint network topologies probes
+
+        Returns a list of all endpoint local network topologies probes.  All results are provided, oldest to newest (according to a specified page index and size) unless an explicit start and end is provided with `startDate`, `endDate` or `window` optional parameters.  ## Request body filters This endpoint supports complex filtering using the request body. It is important these filters remain unaltered when making use of pagination, otherwise the results will not be coherent with the original request.  ### Multiple filter fields When multiple filter fields are provided, a logical `AND` is applied between the filters.  ``` curl --location --request POST 'https://api.thousandeyes.com/v7/endpoint/test-results/local-networks/topologies/filter' --header 'Authorization: Bearer $token' --header 'Content-Type: application/json' --data-raw '{   \"searchFilters\": {     \"platform\": [ \"mac\" ],     \"domain\": [ \"thousandeyes.com\" ]   }}' ```  ### Filter field with multiple values When a filter field contains multiple values, a logical `OR` is applied between the filter values.  ``` curl --location --request POST 'https://api.thousandeyes.com/v7/endpoint/test-results/local-networks/topologies/filter' --header 'Authorization: Bearer $token' --header 'Content-Type: application/json' --data-raw '{   \"searchFilters\": {     \"networkId\": [ \"660b34109d12\", \"660b34109d15\" ]   }}' ```  ### Combination of request parameters and body filters ``` curl --location --request POST 'https://api.thousandeyes.com/v7/endpoint/test-results/local-networks/topologies/filter?window=12h' --header 'Authorization: Bearer $token' --header 'Content-Type: application/json' --data-raw '{   \"searchFilters\": {     \"platform\": [ \"mac\" ],     \"domain\": [ \"thousandeyes.com\" ],     \"networkId\": [ \"660b34109d12\", \"660b34109d15\" ]   }}' ```  ### Warning Note that a maximum of 12h worth of data can be retrieved at once.  If you need more, you need to make multiple requests.  Returns a `results` array of network topology probes.  Network topology probes shown are from the latest round, or based on the time range specified. 
+
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :type window: str
+        :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type start_date: datetime
+        :param end_date: Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type end_date: datetime
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
+        :param expand: This parameter is optional and determines whether to expand resources related to local network topologies. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as `systemMetricDetails`, append  `?expand=system-metric-detail` to the query.
+        :type expand: List[ExpandLocalNetworkTopologyOptions]
+        :param endpoint_network_topology_result_request:
+        :type endpoint_network_topology_result_request: EndpointNetworkTopologyResultRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+        return PaginationIterable(
+            self.filter_local_networks_test_results_topologies,
+            lambda data: data.results if data and data.results else [],
+            aid = aid, window = window, start_date = start_date, end_date = end_date, cursor = cursor, expand = expand, endpoint_network_topology_result_request = endpoint_network_topology_result_request,
+            _request_timeout=_request_timeout
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
 
 
     @validate_call

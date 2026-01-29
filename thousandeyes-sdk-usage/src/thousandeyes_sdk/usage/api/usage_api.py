@@ -29,6 +29,7 @@ from thousandeyes_sdk.usage.models.usage import Usage
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+from thousandeyes_sdk.core.pagination_iterable import PaginationIterable
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 
@@ -44,6 +45,67 @@ class UsageApi:
             api_client = ApiClient.get_default()
         api_client.user_agent = "ThousandEyesSDK-Python/{0}".format(version("thousandeyes-sdk-usage"))
         self.api_client = api_client
+
+    @validate_call
+    def get_enterprise_agents_units_usage_paginated(
+        self,
+        start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> PaginationIterable:
+        """Get enterprise agent usage
+
+        This operation returns the organization's enterprise agents usage for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, a shared enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the shared agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
+
+        :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type start_date: datetime
+        :param end_date: Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type end_date: datetime
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+        return PaginationIterable(
+            self.get_enterprise_agents_units_usage,
+            lambda data: data.breakdowns if data and data.breakdowns else [],
+            start_date = start_date, end_date = end_date, cursor = cursor,
+            _request_timeout=_request_timeout
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
 
 
     @validate_call
@@ -378,6 +440,70 @@ class UsageApi:
         )
 
 
+
+    @validate_call
+    def get_tests_units_usage_paginated(
+        self,
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> PaginationIterable:
+        """Get cloud and enterprise agents units usage
+
+        This operation returns the cloud and enterprise agents usage for all the tests for a specific time period, or the curent billing cycle if no time period is specified. In the `/v7/usage` API, an enterprise agent's usage is reported in the account group where the agent was created (i.e Primary Account Group).  However in this API, the agent's usage is distributed among all the account groups where the tests are running on the particular agent. This API is also only available to customers on usage based pricing model.
+
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type start_date: datetime
+        :param end_date: Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
+        :type end_date: datetime
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+        return PaginationIterable(
+            self.get_tests_units_usage,
+            lambda data: data.breakdowns if data and data.breakdowns else [],
+            aid = aid, start_date = start_date, end_date = end_date, cursor = cursor,
+            _request_timeout=_request_timeout
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
 
 
     @validate_call

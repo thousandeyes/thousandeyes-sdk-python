@@ -28,6 +28,7 @@ from thousandeyes_sdk.tests.models.http_server_tests import HttpServerTests
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 

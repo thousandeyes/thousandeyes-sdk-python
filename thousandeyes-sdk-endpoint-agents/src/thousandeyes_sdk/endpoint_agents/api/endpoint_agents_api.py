@@ -31,6 +31,7 @@ from thousandeyes_sdk.endpoint_agents.models.list_endpoint_agents_response impor
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+from thousandeyes_sdk.core.pagination_iterable import PaginationIterable
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 
@@ -937,6 +938,76 @@ class EndpointAgentsApi:
 
 
 
+    @validate_call
+    def filter_endpoint_agents_paginated(
+        self,
+        agent_search_request: Annotated[AgentSearchRequest, Field(description="The filter options for advanced search filtering for agents.")],
+        max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        expand: Annotated[Optional[List[ExpandEndpointAgentOptions]], Field(description="This optional parameter allows you to control the expansion of test resources associated with the agent. By default, no expansion occurs when this query parameter is omitted. To expand the \"clients\" resource, include the query parameter `?expand=clients`.  For multiple expansions, you have two options:    * Separate the values with commas. For example, `?expandAgent=clients,tasks`. * Specify the parameter multiple times. For example, `?expandAgent=clients&expandAgent=tasks`.  This parameter offers flexibility for users to customize the expansion of specific resources related to the agent. ")] = None,
+        include_deleted: Annotated[Optional[StrictBool], Field(description="When requesting entities, set to `true` if you want to see deleted entities.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> PaginationIterable:
+        """Filter endpoint agents
+
+        Retrieves a list of endpoint agents within the specified account group that match the specified filters.  If no agents meet the filter criteria, the API returns an empty array. 
+
+        :param agent_search_request: The filter options for advanced search filtering for agents. (required)
+        :type agent_search_request: AgentSearchRequest
+        :param max: (Optional) Maximum number of objects to return.
+        :type max: int
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param expand: This optional parameter allows you to control the expansion of test resources associated with the agent. By default, no expansion occurs when this query parameter is omitted. To expand the \"clients\" resource, include the query parameter `?expand=clients`.  For multiple expansions, you have two options:    * Separate the values with commas. For example, `?expandAgent=clients,tasks`. * Specify the parameter multiple times. For example, `?expandAgent=clients&expandAgent=tasks`.  This parameter offers flexibility for users to customize the expansion of specific resources related to the agent. 
+        :type expand: List[ExpandEndpointAgentOptions]
+        :param include_deleted: When requesting entities, set to `true` if you want to see deleted entities.
+        :type include_deleted: bool
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+        return PaginationIterable(
+            self.filter_endpoint_agents,
+            lambda data: data.agents if data and data.agents else [],
+            agent_search_request = agent_search_request, max = max, cursor = cursor, aid = aid, expand = expand, include_deleted = include_deleted,
+            _request_timeout=_request_timeout
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
 
     @validate_call
     def filter_endpoint_agents(
@@ -1635,6 +1706,82 @@ class EndpointAgentsApi:
         )
 
 
+
+    @validate_call
+    def get_endpoint_agents_paginated(
+        self,
+        max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
+        cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        expand: Annotated[Optional[List[ExpandEndpointAgentOptions]], Field(description="This optional parameter allows you to control the expansion of test resources associated with the agent. By default, no expansion occurs when this query parameter is omitted. To expand the \"clients\" resource, include the query parameter `?expand=clients`.  For multiple expansions, you have two options:    * Separate the values with commas. For example, `?expandAgent=clients,tasks`. * Specify the parameter multiple times. For example, `?expandAgent=clients&expandAgent=tasks`.  This parameter offers flexibility for users to customize the expansion of specific resources related to the agent. ")] = None,
+        include_deleted: Annotated[Optional[StrictBool], Field(description="When requesting entities, set to `true` if you want to see deleted entities.")] = None,
+        use_all_permitted_aids: Annotated[Optional[StrictBool], Field(description="Set to `true` to load data from all accounts the user has access to.")] = None,
+        agent_name: Annotated[Optional[StrictStr], Field(description="Returns only agents with the specified name.  This is an exact match only. ")] = None,
+        computer_name: Annotated[Optional[StrictStr], Field(description="Returns only agents with the specified computer name. This is an exact match only. ")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> PaginationIterable:
+        """List endpoint agents
+
+        Retrieves a list of endpoint agents in a given account group.  If there are no agents in the specified account group, it returns an empty array. 
+
+        :param max: (Optional) Maximum number of objects to return.
+        :type max: int
+        :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
+        :type cursor: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param expand: This optional parameter allows you to control the expansion of test resources associated with the agent. By default, no expansion occurs when this query parameter is omitted. To expand the \"clients\" resource, include the query parameter `?expand=clients`.  For multiple expansions, you have two options:    * Separate the values with commas. For example, `?expandAgent=clients,tasks`. * Specify the parameter multiple times. For example, `?expandAgent=clients&expandAgent=tasks`.  This parameter offers flexibility for users to customize the expansion of specific resources related to the agent. 
+        :type expand: List[ExpandEndpointAgentOptions]
+        :param include_deleted: When requesting entities, set to `true` if you want to see deleted entities.
+        :type include_deleted: bool
+        :param use_all_permitted_aids: Set to `true` to load data from all accounts the user has access to.
+        :type use_all_permitted_aids: bool
+        :param agent_name: Returns only agents with the specified name.  This is an exact match only. 
+        :type agent_name: str
+        :param computer_name: Returns only agents with the specified computer name. This is an exact match only. 
+        :type computer_name: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+        return PaginationIterable(
+            self.get_endpoint_agents,
+            lambda data: data.agents if data and data.agents else [],
+            max = max, cursor = cursor, aid = aid, expand = expand, include_deleted = include_deleted, use_all_permitted_aids = use_all_permitted_aids, agent_name = agent_name, computer_name = computer_name,
+            _request_timeout=_request_timeout
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
 
 
     @validate_call

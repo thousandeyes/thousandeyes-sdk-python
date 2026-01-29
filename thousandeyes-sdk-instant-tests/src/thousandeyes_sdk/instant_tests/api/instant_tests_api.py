@@ -24,6 +24,7 @@ from typing_extensions import Annotated
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 

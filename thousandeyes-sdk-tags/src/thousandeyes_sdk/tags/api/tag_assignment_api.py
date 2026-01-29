@@ -27,6 +27,7 @@ from thousandeyes_sdk.tags.models.tag_assignment import TagAssignment
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 
