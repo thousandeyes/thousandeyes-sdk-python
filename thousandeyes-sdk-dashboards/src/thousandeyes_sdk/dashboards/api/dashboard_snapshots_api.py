@@ -30,6 +30,7 @@ from thousandeyes_sdk.dashboards.models.update_snapshot_expiration_date_api_requ
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+from thousandeyes_sdk.core.pagination_iterable import PaginationIterable
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 

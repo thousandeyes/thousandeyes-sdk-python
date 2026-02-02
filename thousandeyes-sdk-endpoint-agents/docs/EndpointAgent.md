@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **kernel_version** | **str** |  | [optional] [readonly] 
 **manufacturer** | **str** |  | [optional] [readonly] 
 **model** | **str** |  | [optional] [readonly] 
+**serial_number** | **str** |  | [optional] [readonly] 
 **last_seen** | **datetime** | The last time the agent checked-in. | [optional] [readonly] 
 **status** | [**Status**](Status.md) |  | [optional] 
 **deleted** | **bool** |  | [optional] [readonly] 

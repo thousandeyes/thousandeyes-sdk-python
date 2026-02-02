@@ -28,6 +28,7 @@ from thousandeyes_sdk.internet_insights.models.api_outages_response import ApiOu
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 
