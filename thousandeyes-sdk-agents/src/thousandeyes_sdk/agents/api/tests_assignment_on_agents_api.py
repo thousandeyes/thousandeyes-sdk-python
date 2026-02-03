@@ -26,6 +26,7 @@ from thousandeyes_sdk.agents.models.agent_tests_assign_request import AgentTests
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 

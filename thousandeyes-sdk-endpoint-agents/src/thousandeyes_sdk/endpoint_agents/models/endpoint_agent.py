@@ -45,6 +45,7 @@ class EndpointAgent(BaseModel):
     kernel_version: Optional[StrictStr] = Field(default=None, alias="kernelVersion")
     manufacturer: Optional[StrictStr] = None
     model: Optional[StrictStr] = None
+    serial_number: Optional[StrictStr] = Field(default=None, alias="serialNumber")
     last_seen: Optional[datetime] = Field(default=None, description="The last time the agent checked-in.", alias="lastSeen")
     status: Optional[Status] = None
     deleted: Optional[StrictBool] = None
@@ -65,7 +66,7 @@ class EndpointAgent(BaseModel):
     tcp_driver_available: Optional[StrictBool] = Field(default=None, description="Status of TCP test support on the agent.", alias="tcpDriverAvailable")
     npcap_version: Optional[StrictStr] = Field(default=None, description="For Windows agents, the version of the NPCAP driver that the agent has loaded.", alias="npcapVersion")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "externalMetadata", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "_links"]
+    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "serialNumber", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "externalMetadata", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,6 +119,7 @@ class EndpointAgent(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "id",
@@ -126,6 +128,7 @@ class EndpointAgent(BaseModel):
             "kernel_version",
             "manufacturer",
             "model",
+            "serial_number",
             "last_seen",
             "deleted",
             "version",
@@ -205,6 +208,7 @@ class EndpointAgent(BaseModel):
             "kernelVersion": obj.get("kernelVersion"),
             "manufacturer": obj.get("manufacturer"),
             "model": obj.get("model"),
+            "serialNumber": obj.get("serialNumber"),
             "lastSeen": obj.get("lastSeen"),
             "status": obj.get("status"),
             "deleted": obj.get("deleted"),

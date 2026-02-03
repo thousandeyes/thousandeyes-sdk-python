@@ -29,6 +29,7 @@ from thousandeyes_sdk.emulation.models.user_agents import UserAgents
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 
