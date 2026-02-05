@@ -26,6 +26,7 @@ from thousandeyes_sdk.agents.models.notification_rule_detail import Notification
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
+
 from thousandeyes_sdk.core.rest import RESTResponseType
 
 
