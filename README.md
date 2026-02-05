@@ -40,10 +40,13 @@ Additionally, these are good places to start to see if your question is already 
 
 For more info regarding the API, please check the [Developer support](https://developer.cisco.com/docs/thousandeyes/v7/developer-support/#developer-support) page.
 
+## Support
+
+For bug reports, feature requests, or questions about this SDK, please contact [ThousandEyes Support](https://docs.thousandeyes.com/product-documentation/getting-started/getting-support-from-thousandeyes#contacting-support).
+
 ## Roadmap and maintenance
 
 This library will be continuously updated alongside the [Thousandeyes v7 API](https://developer.cisco.com/docs/thousandeyes/v7/).
-If you have any questions about the roadmap or future plans, feel free to post them in the [issues](https://github.com/thousandeyes/thousandeyes-sdk-python/issues) panel.
 
 ## Contributing
 

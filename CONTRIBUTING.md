@@ -15,6 +15,6 @@ In case you'd like to submit your contribution, the following steps must be foll
 
 # How to report a bug
 
-If you run into problems using the SDK, you can post [issues](https://github.com/thousandeyes/thousandeyes-sdk-python/issues) here on GitHub.
+If you run into problems using the SDK, please contact [ThousandEyes Support](https://docs.thousandeyes.com/product-documentation/getting-started/getting-support-from-thousandeyes#contacting-support).
 
 If you discover a security bug, please do not report it through GitHub. Instead, please see security procedures in [SECURITY.md](/SECURITY.md).
