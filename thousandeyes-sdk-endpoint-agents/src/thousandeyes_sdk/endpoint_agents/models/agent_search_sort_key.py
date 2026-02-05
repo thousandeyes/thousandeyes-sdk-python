@@ -30,6 +30,7 @@ class AgentSearchSortKey(str, Enum):
     NAME = 'name'
     USERNAME = 'userName'
     CITY = 'city'
+    SERIALNUMBER = 'serialNumber'
     UNKNOWN = 'unknown'
 
     @classmethod

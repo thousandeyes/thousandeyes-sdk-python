@@ -382,16 +382,17 @@ class TestEndpointAgentsApi(unittest.TestCase):
                     "order" : "desc"
                   } ],
                   "searchFilters" : {
+                    "serialNumber" : [ "xaab2ba4-d40f-4e80-9363-7e4826556055", "xaab2ba4-d40f-4e80-9363-7e4826556055", "xaab2ba4-d40f-4e80-9363-7e4826556055", "xaab2ba4-d40f-4e80-9363-7e4826556055", "xaab2ba4-d40f-4e80-9363-7e4826556055" ],
+                    "anyConnectDeviceId" : [ "JDLKSLFEIJER004334F" ],
+                    "agentName" : [ "myagent-1234", "myagent-1234" ],
+                    "locationSubdivision1Code" : [ "ENG", "ENG" ],
+                    "platform" : [ "mac", "mac" ],
                     "licenseType" : [ "essentials", "essentials" ],
                     "osVersion" : [ "Version 10.15.2", "Version 10.15.2" ],
                     "computerName" : [ "DESKTOP-45AE8", "DESKTOP-45AE8" ],
-                    "anyConnectDeviceId" : [ "JDLKSLFEIJER004334F" ],
                     "locationCountryISO" : [ "FR", "FR" ],
-                    "agentName" : [ "myagent-1234", "myagent-1234" ],
-                    "locationSubdivision1Code" : [ "ENG", "ENG" ],
                     "id" : [ "861b7557-cd57-4bbb-b648-00bddf88ef49", "861b7557-cd57-4bbb-b648-00bddf88ef49" ],
                     "userPrincipalName" : [ "picard@c.com" ],
-                    "platform" : [ "mac", "mac" ],
                     "locationCity" : [ "Paris", "Paris" ],
                     "username" : [ "picard" ]
                   },

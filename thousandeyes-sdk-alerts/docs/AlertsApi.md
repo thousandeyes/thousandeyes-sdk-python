@@ -5,7 +5,7 @@ All URIs are relative to *https://api.thousandeyes.com/v7*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_alert**](AlertsApi.md#get_alert) | **GET** /alerts/{alertId} | Retrieve alert details
-[**get_alerts**](AlertsApi.md#get_alerts) | **GET** /alerts | List active alerts
+[**get_alerts**](AlertsApi.md#get_alerts) | **GET** /alerts | List alerts
 
 
 # **get_alert**
@@ -96,9 +96,9 @@ Name | Type | Description  | Notes
 # **get_alerts**
 > Alerts get_alerts(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, state=state)
 
-List active alerts
+List alerts
 
-Returns a list of active alerts. If no alerts are active within the  specified time range, an empty response is returned.  Note that time filters (`window`, `startDate`, or `endDate`) are only applied to cleared alerts.
+Returns a list of alerts. Only active (triggered) alerts are returned by default.  To retrieve cleared alerts, specify `clear` in the optional `state` parameter. Note that the `state` parameter only accepts a single value, so to get both active and cleared alerts within a time range, two separate requests are needed. Time filters (`window`, `startDate`, `endDate`) are applied differently depending on state: - For `state=trigger`: filters by when the alert started. - For `state=clear`: filters by when the alert cleared. - When state is not specified: returns cleared alerts within the time range plus any currently active alerts that started before the end of the range.
 
 ### Example
 
@@ -139,7 +139,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     state = thousandeyes_sdk.alerts.State() # State | Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`. (optional)
 
     try:
-        # List active alerts
+        # List alerts
         api_response = api_instance.get_alerts(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, state=state)
         print("The response of AlertsApi->get_alerts:\n")
         pprint(api_response)

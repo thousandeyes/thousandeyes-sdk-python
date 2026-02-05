@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **user_principal_name** | **List[str]** | Returns only agents that have at least one user principal name, starting with one of the provided strings. This is a case-insensitive prefix match. User principle name is the user login name in an Internet-style format, typically used in Active Directory environments.  | [optional] 
 **platform** | [**List[Platform]**](Platform.md) | Filter on the platform on which the agent is running.  | [optional] 
 **os_version** | **List[str]** | Case-insensitive prefix filter on the OS version. | [optional] 
+**serial_number** | **List[str]** | Case-insensitive prefix filter on the serial number. | [optional] 
 **location_country_iso** | **List[str]** | Filter using the ISO country code of the location.  | [optional] 
 **location_subdivision1_code** | **List[str]** | Filter using the code for the first level administrative division within  the country. In US/Canada this is the State, in UK it&#39;s the country e.g. &#x60;ENG&#x60;  | [optional] 
 **location_city** | **List[str]** | This is a prefix match on the city name field. The endpoint expects this to contain the  name of the city in English. e.g. &#39;Paris&#39; or &#39;&#39;  | [optional] 

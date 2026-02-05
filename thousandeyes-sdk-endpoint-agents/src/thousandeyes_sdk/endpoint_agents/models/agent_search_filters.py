@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_agents.models.agent_license_type import AgentLicenseType
 from thousandeyes_sdk.endpoint_agents.models.platform import Platform
 from typing import Optional, Set
@@ -34,12 +35,13 @@ class AgentSearchFilters(BaseModel):
     user_principal_name: Optional[List[StrictStr]] = Field(default=None, description="Returns only agents that have at least one user principal name, starting with one of the provided strings. This is a case-insensitive prefix match. User principle name is the user login name in an Internet-style format, typically used in Active Directory environments. ", alias="userPrincipalName")
     platform: Optional[List[Platform]] = Field(default=None, description="Filter on the platform on which the agent is running. ")
     os_version: Optional[List[StrictStr]] = Field(default=None, description="Case-insensitive prefix filter on the OS version.", alias="osVersion")
+    serial_number: Optional[Annotated[List[StrictStr], Field(max_length=50)]] = Field(default=None, description="Case-insensitive prefix filter on the serial number.", alias="serialNumber")
     location_country_iso: Optional[List[StrictStr]] = Field(default=None, description="Filter using the ISO country code of the location. ", alias="locationCountryISO")
     location_subdivision1_code: Optional[List[StrictStr]] = Field(default=None, description="Filter using the code for the first level administrative division within  the country. In US/Canada this is the State, in UK it's the country e.g. `ENG` ", alias="locationSubdivision1Code")
     location_city: Optional[List[StrictStr]] = Field(default=None, description="This is a prefix match on the city name field. The endpoint expects this to contain the  name of the city in English. e.g. 'Paris' or '' ", alias="locationCity")
     license_type: Optional[List[AgentLicenseType]] = Field(default=None, description="Filter on the agent's license type ", alias="licenseType")
     any_connect_device_id: Optional[List[StrictStr]] = Field(default=None, description="IDs of devices that has the Cisco Secure Client deployed with the Internet Security module. Returns only agents that have at least one matching `anyConnectDeviceId`. ", alias="anyConnectDeviceId")
-    __properties: ClassVar[List[str]] = ["id", "agentName", "computerName", "username", "userPrincipalName", "platform", "osVersion", "locationCountryISO", "locationSubdivision1Code", "locationCity", "licenseType", "anyConnectDeviceId"]
+    __properties: ClassVar[List[str]] = ["id", "agentName", "computerName", "username", "userPrincipalName", "platform", "osVersion", "serialNumber", "locationCountryISO", "locationSubdivision1Code", "locationCity", "licenseType", "anyConnectDeviceId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -100,6 +102,7 @@ class AgentSearchFilters(BaseModel):
             "userPrincipalName": obj.get("userPrincipalName"),
             "platform": obj.get("platform"),
             "osVersion": obj.get("osVersion"),
+            "serialNumber": obj.get("serialNumber"),
             "locationCountryISO": obj.get("locationCountryISO"),
             "locationSubdivision1Code": obj.get("locationSubdivision1Code"),
             "locationCity": obj.get("locationCity"),
