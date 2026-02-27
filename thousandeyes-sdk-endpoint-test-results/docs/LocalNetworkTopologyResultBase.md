@@ -22,6 +22,9 @@ Name | Type | Description | Notes
 **proxy_score** | [**EndpointProbeProxyScore**](EndpointProbeProxyScore.md) |  | [optional] 
 **connection_score** | [**EndpointProbeConnectionScore**](EndpointProbeConnectionScore.md) |  | [optional] 
 **agent_score** | [**EndpointProbeAgentScore**](EndpointProbeAgentScore.md) |  | [optional] 
+**battery_metrics** | [**BatteryMetrics**](BatteryMetrics.md) |  | [optional] 
+**cellular_profile** | [**CellularProfile**](CellularProfile.md) |  | [optional] 
+**platform** | [**Platform**](Platform.md) |  | [optional] 
 
 ## Example
 

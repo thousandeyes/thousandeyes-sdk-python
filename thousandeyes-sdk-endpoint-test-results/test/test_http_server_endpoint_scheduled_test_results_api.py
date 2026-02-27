@@ -131,11 +131,28 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
                     },
+                    "platform" : "mac",
                     "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
@@ -241,11 +258,28 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
                     },
+                    "platform" : "mac",
                     "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
@@ -419,11 +453,28 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
                     },
+                    "platform" : "mac",
                     "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
@@ -529,11 +580,28 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
                     },
+                    "platform" : "mac",
                     "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
@@ -707,11 +775,28 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
                     },
+                    "platform" : "mac",
                     "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
@@ -817,11 +902,28 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
                     },
+                    "platform" : "mac",
                     "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "score" : {
                       "applicationScore" : 100.0,
                       "quality" : "great"
