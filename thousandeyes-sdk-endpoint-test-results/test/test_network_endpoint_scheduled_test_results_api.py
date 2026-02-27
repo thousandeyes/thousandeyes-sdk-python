@@ -143,9 +143,26 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
+                    },
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
                     "score" : {
                       "applicationScore" : 100.0,
@@ -255,9 +272,26 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
+                    },
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
                     "score" : {
                       "applicationScore" : 100.0,
@@ -424,9 +458,26 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
+                    },
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
                     "score" : {
                       "applicationScore" : 100.0,
@@ -536,9 +587,26 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "maxLatency" : 168.0,
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
+                    },
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
                     "score" : {
                       "applicationScore" : 100.0,
@@ -723,10 +791,27 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnType" : "cisco-anyconnect",
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "sourcePrefix" : "196.40.96.0/20",
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
+                    },
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
                     "systemMetrics" : {
                       "cpuUtilization" : {
@@ -908,10 +993,27 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnType" : "cisco-anyconnect",
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "sourcePrefix" : "196.40.96.0/20",
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
+                    },
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
                     "systemMetrics" : {
                       "cpuUtilization" : {
@@ -1177,10 +1279,27 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnType" : "cisco-anyconnect",
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "sourcePrefix" : "196.40.96.0/20",
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
+                    },
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
                     "systemMetrics" : {
                       "cpuUtilization" : {
@@ -1290,10 +1409,27 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
                       "vpnType" : "cisco-anyconnect",
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "sourcePrefix" : "196.40.96.0/20",
                     "userProfile" : {
                       "userName" : "joeblogs32",
                       "userPrincipalName" : "joeblogs32@c.com"
+                    },
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
                     "systemMetrics" : {
                       "cpuUtilization" : {

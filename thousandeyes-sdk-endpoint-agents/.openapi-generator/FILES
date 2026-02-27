@@ -13,9 +13,12 @@ docs/AgentThresholdFilters.md
 docs/AgentTransfer.md
 docs/AgentTransferRequest.md
 docs/AgentTransferStatus.md
+docs/BatteryLevel.md
+docs/BatteryMetrics.md
 docs/BrowserType.md
 docs/BulkAgentTransferRequest.md
 docs/BulkAgentTransferResponse.md
+docs/CellularProfile.md
 docs/ConditionalOperator.md
 docs/ConnectionString.md
 docs/EndpointAgent.md
@@ -69,9 +72,12 @@ src/thousandeyes_sdk/endpoint_agents/models/agent_threshold_filters.py
 src/thousandeyes_sdk/endpoint_agents/models/agent_transfer.py
 src/thousandeyes_sdk/endpoint_agents/models/agent_transfer_request.py
 src/thousandeyes_sdk/endpoint_agents/models/agent_transfer_status.py
+src/thousandeyes_sdk/endpoint_agents/models/battery_level.py
+src/thousandeyes_sdk/endpoint_agents/models/battery_metrics.py
 src/thousandeyes_sdk/endpoint_agents/models/browser_type.py
 src/thousandeyes_sdk/endpoint_agents/models/bulk_agent_transfer_request.py
 src/thousandeyes_sdk/endpoint_agents/models/bulk_agent_transfer_response.py
+src/thousandeyes_sdk/endpoint_agents/models/cellular_profile.py
 src/thousandeyes_sdk/endpoint_agents/models/conditional_operator.py
 src/thousandeyes_sdk/endpoint_agents/models/connection_string.py
 src/thousandeyes_sdk/endpoint_agents/models/endpoint_agent.py

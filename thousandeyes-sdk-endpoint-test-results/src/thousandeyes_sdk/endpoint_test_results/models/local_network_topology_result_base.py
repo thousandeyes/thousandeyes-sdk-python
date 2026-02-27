@@ -19,6 +19,8 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.endpoint_test_results.models.battery_metrics import BatteryMetrics
+from thousandeyes_sdk.endpoint_test_results.models.cellular_profile import CellularProfile
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_agent_score import EndpointProbeAgentScore
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_connection_score import EndpointProbeConnectionScore
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_gateway_score import EndpointProbeGatewayScore
@@ -26,6 +28,7 @@ from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_proxy_score im
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_vpn_score import EndpointProbeVpnScore
 from thousandeyes_sdk.endpoint_test_results.models.network_ping import NetworkPing
 from thousandeyes_sdk.endpoint_test_results.models.network_topology_type import NetworkTopologyType
+from thousandeyes_sdk.endpoint_test_results.models.platform import Platform
 from thousandeyes_sdk.endpoint_test_results.models.system_metric_details import SystemMetricDetails
 from thousandeyes_sdk.endpoint_test_results.models.system_metrics import SystemMetrics
 from thousandeyes_sdk.endpoint_test_results.models.tcp_connect import TcpConnect
@@ -53,7 +56,10 @@ class LocalNetworkTopologyResultBase(BaseModel):
     proxy_score: Optional[EndpointProbeProxyScore] = Field(default=None, alias="proxyScore")
     connection_score: Optional[EndpointProbeConnectionScore] = Field(default=None, alias="connectionScore")
     agent_score: Optional[EndpointProbeAgentScore] = Field(default=None, alias="agentScore")
-    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails", "vpnScore", "gatewayScore", "proxyScore", "connectionScore", "agentScore"]
+    battery_metrics: Optional[BatteryMetrics] = Field(default=None, alias="batteryMetrics")
+    cellular_profile: Optional[CellularProfile] = Field(default=None, alias="cellularProfile")
+    platform: Optional[Platform] = None
+    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails", "vpnScore", "gatewayScore", "proxyScore", "connectionScore", "agentScore", "batteryMetrics", "cellularProfile", "platform"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -136,6 +142,12 @@ class LocalNetworkTopologyResultBase(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of agent_score
         if self.agent_score:
             _dict['agentScore'] = self.agent_score.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of battery_metrics
+        if self.battery_metrics:
+            _dict['batteryMetrics'] = self.battery_metrics.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of cellular_profile
+        if self.cellular_profile:
+            _dict['cellularProfile'] = self.cellular_profile.to_dict()
         return _dict
 
     @classmethod
@@ -164,7 +176,10 @@ class LocalNetworkTopologyResultBase(BaseModel):
             "gatewayScore": EndpointProbeGatewayScore.from_dict(obj["gatewayScore"]) if obj.get("gatewayScore") is not None else None,
             "proxyScore": EndpointProbeProxyScore.from_dict(obj["proxyScore"]) if obj.get("proxyScore") is not None else None,
             "connectionScore": EndpointProbeConnectionScore.from_dict(obj["connectionScore"]) if obj.get("connectionScore") is not None else None,
-            "agentScore": EndpointProbeAgentScore.from_dict(obj["agentScore"]) if obj.get("agentScore") is not None else None
+            "agentScore": EndpointProbeAgentScore.from_dict(obj["agentScore"]) if obj.get("agentScore") is not None else None,
+            "batteryMetrics": BatteryMetrics.from_dict(obj["batteryMetrics"]) if obj.get("batteryMetrics") is not None else None,
+            "cellularProfile": CellularProfile.from_dict(obj["cellularProfile"]) if obj.get("cellularProfile") is not None else None,
+            "platform": obj.get("platform")
         })
         return _obj
 
