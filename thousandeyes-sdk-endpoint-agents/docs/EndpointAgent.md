@@ -35,6 +35,8 @@ Name | Type | Description | Notes
 **license_type** | [**AgentLicenseType**](AgentLicenseType.md) |  | [optional] 
 **tcp_driver_available** | **bool** | Status of TCP test support on the agent. | [optional] [readonly] 
 **npcap_version** | **str** | For Windows agents, the version of the NPCAP driver that the agent has loaded. | [optional] [readonly] 
+**battery_metrics** | [**BatteryMetrics**](BatteryMetrics.md) |  | [optional] 
+**cellular_profile** | [**CellularProfile**](CellularProfile.md) |  | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
