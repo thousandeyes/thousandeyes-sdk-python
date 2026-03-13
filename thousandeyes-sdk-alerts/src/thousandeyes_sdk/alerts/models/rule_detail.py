@@ -56,8 +56,9 @@ class RuleDetail(BaseModel):
     visited_sites_filter: Optional[List[StrictStr]] = Field(default=None, description="A list of website domains visited during the session. This is applicable when `alertGroupType` is `browser-session`.", alias="visitedSitesFilter")
     notifications: Optional[AlertNotification] = None
     tests: Optional[List[AlertSimpleTest]] = None
+    test_ids: Optional[List[StrictStr]] = Field(default=None, description="Array of test IDs to link to alert rule (get `testId` from `/tests` endpoint).", alias="testIds")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "description", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "endpointAgentIds", "endpointLabelIds", "visitedSitesFilter", "notifications", "tests", "_links"]
+    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "description", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "endpointAgentIds", "endpointLabelIds", "visitedSitesFilter", "notifications", "tests", "testIds", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -92,10 +93,12 @@ class RuleDetail(BaseModel):
           are ignored.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "rule_id",
             "tests",
+            "test_ids",
         ])
 
         _dict = self.model_dump(
@@ -150,6 +153,7 @@ class RuleDetail(BaseModel):
             "visitedSitesFilter": obj.get("visitedSitesFilter"),
             "notifications": AlertNotification.from_dict(obj["notifications"]) if obj.get("notifications") is not None else None,
             "tests": [AlertSimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
+            "testIds": obj.get("testIds"),
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj

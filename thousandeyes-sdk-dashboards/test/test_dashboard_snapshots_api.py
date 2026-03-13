@@ -385,6 +385,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
                     "totalAlerts" : 500,
                     "cards" : [ {
                       "numberOfDataPoints" : 24192,
+                      "cardName" : "Card Name",
                       "endDate" : "2023-05-16T10:14:28Z",
                       "_links" : {
                         "self" : {
@@ -426,6 +427,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
                       "status" : "No data"
                     }, {
                       "numberOfDataPoints" : 24192,
+                      "cardName" : "Card Name",
                       "endDate" : "2023-05-16T10:14:28Z",
                       "_links" : {
                         "self" : {

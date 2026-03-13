@@ -97,7 +97,7 @@ void (empty response body)
 
 Bulk transfer agents
 
-Initiates the transfer of multiple agents between accounts. The following conditions apply:  * The requester must possess 'write' permissions for both the 'from' and 'to' accounts involved in each transfer.  * Multiple transfers may involve a mix of different source and destination accounts. * For each transfer request, the 'from' account must match the current account of the respective agent. * Transfers are executed asynchronously. * Progress tracking is not intended, but users can monitor the progress by periodically polling the 'get agent' endpoint. * Each transfer request is individually validated and completed; this operation is not atomic, meaning transfers can succeed or fail individually. * The API response provides the status of each transfer request. 
+Initiates the transfer of multiple agents between accounts. The following conditions apply:  * The requester must possess 'write' permissions for both the 'from' and 'to' accounts involved in each transfer.  * Multiple transfers may involve a mix of different source and destination accounts. * For each transfer request, the 'from' account must match the current account of the respective agent. * Transfers are executed asynchronously. * Progress tracking is not intended, but users can monitor the progress by periodically polling the 'get agent' endpoint. * Each transfer request is individually validated and completed; this operation is not atomic, meaning transfers can succeed or fail individually. * The API response provides the status of each transfer request. * There are no performance concerns for this API; any number of agents can be transferred in bulk. 
 
 ### Example
 

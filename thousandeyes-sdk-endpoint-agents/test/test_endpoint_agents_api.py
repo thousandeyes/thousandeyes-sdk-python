@@ -96,11 +96,27 @@ class TestEndpointAgentsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "batteryMetrics" : {
+                    "batteryLevel" : "medium",
+                    "batteryLevelNormalizedPercent" : 0.3
+                  },
                   "publicIP" : "88.45.2.123",
                   "tcpDriverAvailable" : true,
                   "platform" : "mac",
                   "manufacturer" : "Apple, Inc.",
                   "targetVersion" : "0.123.4",
+                  "cellularProfile" : {
+                    "rssi" : -10,
+                    "advertisedNetworkSubtype" : "LTE/HSPA",
+                    "carrierName" : "T-Mobile",
+                    "rsrq" : -30,
+                    "rsrp" : -30,
+                    "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                    "rscp" : -30,
+                    "networkGen" : "2g, 3g, 4g, 5g",
+                    "networkSubtype" : "LTE/HSPA",
+                    "sinr" : 20
+                  },
                   "createdAt" : "2022-05-26T23:37:16Z",
                   "numberOfClients" : 3,
                   "licenseType" : "essentials",
@@ -265,11 +281,27 @@ class TestEndpointAgentsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "batteryMetrics" : {
+                    "batteryLevel" : "medium",
+                    "batteryLevelNormalizedPercent" : 0.3
+                  },
                   "publicIP" : "88.45.2.123",
                   "tcpDriverAvailable" : true,
                   "platform" : "mac",
                   "manufacturer" : "Apple, Inc.",
                   "targetVersion" : "0.123.4",
+                  "cellularProfile" : {
+                    "rssi" : -10,
+                    "advertisedNetworkSubtype" : "LTE/HSPA",
+                    "carrierName" : "T-Mobile",
+                    "rsrq" : -30,
+                    "rsrp" : -30,
+                    "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                    "rscp" : -30,
+                    "networkGen" : "2g, 3g, 4g, 5g",
+                    "networkSubtype" : "LTE/HSPA",
+                    "sinr" : 20
+                  },
                   "createdAt" : "2022-05-26T23:37:16Z",
                   "numberOfClients" : 3,
                   "licenseType" : "essentials",
@@ -489,11 +521,27 @@ class TestEndpointAgentsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "publicIP" : "88.45.2.123",
                     "tcpDriverAvailable" : true,
                     "platform" : "mac",
                     "manufacturer" : "Apple, Inc.",
                     "targetVersion" : "0.123.4",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "createdAt" : "2022-05-26T23:37:16Z",
                     "numberOfClients" : 3,
                     "licenseType" : "essentials",
@@ -648,11 +696,27 @@ class TestEndpointAgentsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "publicIP" : "88.45.2.123",
                     "tcpDriverAvailable" : true,
                     "platform" : "mac",
                     "manufacturer" : "Apple, Inc.",
                     "targetVersion" : "0.123.4",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "createdAt" : "2022-05-26T23:37:16Z",
                     "numberOfClients" : 3,
                     "licenseType" : "essentials",
@@ -818,11 +882,27 @@ class TestEndpointAgentsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "batteryMetrics" : {
+                    "batteryLevel" : "medium",
+                    "batteryLevelNormalizedPercent" : 0.3
+                  },
                   "publicIP" : "88.45.2.123",
                   "tcpDriverAvailable" : true,
                   "platform" : "mac",
                   "manufacturer" : "Apple, Inc.",
                   "targetVersion" : "0.123.4",
+                  "cellularProfile" : {
+                    "rssi" : -10,
+                    "advertisedNetworkSubtype" : "LTE/HSPA",
+                    "carrierName" : "T-Mobile",
+                    "rsrq" : -30,
+                    "rsrp" : -30,
+                    "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                    "rscp" : -30,
+                    "networkGen" : "2g, 3g, 4g, 5g",
+                    "networkSubtype" : "LTE/HSPA",
+                    "sinr" : 20
+                  },
                   "createdAt" : "2022-05-26T23:37:16Z",
                   "numberOfClients" : 3,
                   "licenseType" : "essentials",
@@ -1011,11 +1091,27 @@ class TestEndpointAgentsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "publicIP" : "88.45.2.123",
                     "tcpDriverAvailable" : true,
                     "platform" : "mac",
                     "manufacturer" : "Apple, Inc.",
                     "targetVersion" : "0.123.4",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "createdAt" : "2022-05-26T23:37:16Z",
                     "numberOfClients" : 3,
                     "licenseType" : "essentials",
@@ -1170,11 +1266,27 @@ class TestEndpointAgentsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
                     "publicIP" : "88.45.2.123",
                     "tcpDriverAvailable" : true,
                     "platform" : "mac",
                     "manufacturer" : "Apple, Inc.",
                     "targetVersion" : "0.123.4",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
                     "createdAt" : "2022-05-26T23:37:16Z",
                     "numberOfClients" : 3,
                     "licenseType" : "essentials",
@@ -1373,11 +1485,27 @@ class TestEndpointAgentsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
+                  "batteryMetrics" : {
+                    "batteryLevel" : "medium",
+                    "batteryLevelNormalizedPercent" : 0.3
+                  },
                   "publicIP" : "88.45.2.123",
                   "tcpDriverAvailable" : true,
                   "platform" : "mac",
                   "manufacturer" : "Apple, Inc.",
                   "targetVersion" : "0.123.4",
+                  "cellularProfile" : {
+                    "rssi" : -10,
+                    "advertisedNetworkSubtype" : "LTE/HSPA",
+                    "carrierName" : "T-Mobile",
+                    "rsrq" : -30,
+                    "rsrp" : -30,
+                    "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                    "rscp" : -30,
+                    "networkGen" : "2g, 3g, 4g, 5g",
+                    "networkSubtype" : "LTE/HSPA",
+                    "sinr" : 20
+                  },
                   "createdAt" : "2022-05-26T23:37:16Z",
                   "numberOfClients" : 3,
                   "licenseType" : "essentials",

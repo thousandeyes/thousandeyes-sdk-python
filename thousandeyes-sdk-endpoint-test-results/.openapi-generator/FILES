@@ -4,6 +4,9 @@ README.md
 docs/ApplicationMetrics.md
 docs/ApplicationScoreQuality.md
 docs/AsnDetails.md
+docs/BatteryLevel.md
+docs/BatteryMetrics.md
+docs/CellularProfile.md
 docs/ConditionalOperator.md
 docs/CpuUtilization.md
 docs/DynamicBaseEndpointTestResult.md
@@ -174,6 +177,9 @@ src/thousandeyes_sdk/endpoint_test_results/models/__init__.py
 src/thousandeyes_sdk/endpoint_test_results/models/application_metrics.py
 src/thousandeyes_sdk/endpoint_test_results/models/application_score_quality.py
 src/thousandeyes_sdk/endpoint_test_results/models/asn_details.py
+src/thousandeyes_sdk/endpoint_test_results/models/battery_level.py
+src/thousandeyes_sdk/endpoint_test_results/models/battery_metrics.py
+src/thousandeyes_sdk/endpoint_test_results/models/cellular_profile.py
 src/thousandeyes_sdk/endpoint_test_results/models/conditional_operator.py
 src/thousandeyes_sdk/endpoint_test_results/models/cpu_utilization.py
 src/thousandeyes_sdk/endpoint_test_results/models/dynamic_base_endpoint_test_result.py
