@@ -45,7 +45,8 @@ class TestEndpointAgentLabelsApi(unittest.TestCase):
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
                     "key" : "vpn-client-network"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_labels.models.LabelRequest.from_json(request_body_json)
@@ -227,7 +228,8 @@ class TestEndpointAgentLabelsApi(unittest.TestCase):
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
                     "key" : "vpn-client-network"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_labels.models.Label.from_json(request_body_json)

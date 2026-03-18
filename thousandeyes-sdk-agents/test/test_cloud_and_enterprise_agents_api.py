@@ -208,7 +208,8 @@ class TestCloudAndEnterpriseAgentsApi(unittest.TestCase):
                   "agentName" : "thousandeyes-stg-va-254",
                   "enabled" : true,
                   "accountGroups" : [ "1234", "1" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.agents.models.AgentRequest.from_json(request_body_json)

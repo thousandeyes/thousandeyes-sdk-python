@@ -48,7 +48,8 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                     "networkId" : [ "660b34109d12", "660b34109d15" ],
                     "gateway" : [ "78.153.54.204", "78.153.54.206" ]
                   }
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestResultsRequest.from_json(request_body_json)
@@ -185,7 +186,8 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                     "networkId" : [ "660b34109d12", "660b34109d15" ],
                     "gateway" : [ "78.153.54.204", "78.153.54.206" ]
                   }
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestResultsRequest.from_json(request_body_json)
@@ -260,7 +262,8 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                   "vpnTarget" : [ "78.153.54.204", "78.153.54.206" ],
                   "networkId" : [ "660b34109d12", "660b34109d15" ],
                   "gateway" : [ "78.153.54.204", "78.153.54.206" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestResultRequestFilter.from_json(request_body_json)

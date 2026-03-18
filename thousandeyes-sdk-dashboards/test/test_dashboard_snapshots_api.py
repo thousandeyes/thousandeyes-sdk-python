@@ -39,7 +39,8 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
                   "timezone" : "PST",
                   "startDate" : "2023-05-16T10:14:28Z",
                   "expirationDate" : "2023-05-16T10:14:28Z"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.dashboards.models.GenerateDashboardSnapshotRequest.from_json(request_body_json)
@@ -385,6 +386,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
                     "totalAlerts" : 500,
                     "cards" : [ {
                       "numberOfDataPoints" : 24192,
+                      "cardName" : "Card Name",
                       "endDate" : "2023-05-16T10:14:28Z",
                       "_links" : {
                         "self" : {
@@ -426,6 +428,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
                       "status" : "No data"
                     }, {
                       "numberOfDataPoints" : 24192,
+                      "cardName" : "Card Name",
                       "endDate" : "2023-05-16T10:14:28Z",
                       "_links" : {
                         "self" : {
@@ -1293,7 +1296,8 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
                 {
                   "snapshotExpirationDate" : "2023-05-16T10:14:28Z",
                   "expirationDate" : "2023-05-16 10:14:28"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.dashboards.models.UpdateSnapshotExpirationDateApiRequest.from_json(request_body_json)

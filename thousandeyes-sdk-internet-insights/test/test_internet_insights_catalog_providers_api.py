@@ -38,7 +38,8 @@ class TestInternetInsightsCatalogProvidersApi(unittest.TestCase):
                   "location" : "San Jose, US",
                   "asn" : "Amazon.com, Inc.",
                   "included" : true
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.internet_insights.models.ApiCatalogProviderFilter.from_json(request_body_json)

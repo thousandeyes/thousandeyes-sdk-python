@@ -34,7 +34,8 @@ class TestAccountGroupsApi(unittest.TestCase):
                 {
                   "accountGroupName" : "My testing account group",
                   "agents" : [ "105", "719" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
@@ -505,7 +506,8 @@ class TestAccountGroupsApi(unittest.TestCase):
                 {
                   "accountGroupName" : "My testing account group",
                   "agents" : [ "105", "719" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)

@@ -41,7 +41,8 @@ class TestAgentToServerEndpointInstantScheduledTestsApi(unittest.TestCase):
                   "endpointAgentLabels" : [ "567", "214" ],
                   "agents" : [ "0a3b9998-dc3a-4ff2-b50d-ac4a7cd986e1", "66eec0f1-72b4-4755-aa83-3aed61d17f3c" ],
                   "testName" : "Test name"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_instant_tests.models.EndpointAgentToServerInstantTest.from_json(request_body_json)

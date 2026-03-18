@@ -20,6 +20,8 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.endpoint_agents.models.agent_license_type import AgentLicenseType
+from thousandeyes_sdk.endpoint_agents.models.battery_metrics import BatteryMetrics
+from thousandeyes_sdk.endpoint_agents.models.cellular_profile import CellularProfile
 from thousandeyes_sdk.endpoint_agents.models.endpoint_agent_location import EndpointAgentLocation
 from thousandeyes_sdk.endpoint_agents.models.endpoint_asn_details import EndpointAsnDetails
 from thousandeyes_sdk.endpoint_agents.models.endpoint_client import EndpointClient
@@ -65,8 +67,10 @@ class EndpointAgent(BaseModel):
     license_type: Optional[AgentLicenseType] = Field(default=None, alias="licenseType")
     tcp_driver_available: Optional[StrictBool] = Field(default=None, description="Status of TCP test support on the agent.", alias="tcpDriverAvailable")
     npcap_version: Optional[StrictStr] = Field(default=None, description="For Windows agents, the version of the NPCAP driver that the agent has loaded.", alias="npcapVersion")
+    battery_metrics: Optional[BatteryMetrics] = Field(default=None, alias="batteryMetrics")
+    cellular_profile: Optional[CellularProfile] = Field(default=None, alias="cellularProfile")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "serialNumber", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "externalMetadata", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "_links"]
+    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "serialNumber", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "externalMetadata", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "batteryMetrics", "cellularProfile", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -184,6 +188,12 @@ class EndpointAgent(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of asn_details
         if self.asn_details:
             _dict['asnDetails'] = self.asn_details.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of battery_metrics
+        if self.battery_metrics:
+            _dict['batteryMetrics'] = self.battery_metrics.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of cellular_profile
+        if self.cellular_profile:
+            _dict['cellularProfile'] = self.cellular_profile.to_dict()
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
@@ -228,6 +238,8 @@ class EndpointAgent(BaseModel):
             "licenseType": obj.get("licenseType"),
             "tcpDriverAvailable": obj.get("tcpDriverAvailable"),
             "npcapVersion": obj.get("npcapVersion"),
+            "batteryMetrics": BatteryMetrics.from_dict(obj["batteryMetrics"]) if obj.get("batteryMetrics") is not None else None,
+            "cellularProfile": CellularProfile.from_dict(obj["cellularProfile"]) if obj.get("cellularProfile") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj

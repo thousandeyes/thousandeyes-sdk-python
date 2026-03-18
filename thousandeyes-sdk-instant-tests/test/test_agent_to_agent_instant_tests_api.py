@@ -82,7 +82,8 @@ class TestAgentToAgentInstantTestsApi(unittest.TestCase):
                   "targetAgentId" : "2954",
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ "1234", "12345" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.instant_tests.models.AgentToAgentInstantTestRequest.from_json(request_body_json)

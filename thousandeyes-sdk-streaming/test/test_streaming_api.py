@@ -82,7 +82,8 @@ class TestStreamingApi(unittest.TestCase):
                     "Content-Type" : "*****"
                   },
                   "enabled" : true
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.streaming.models.Stream.from_json(request_body_json)
@@ -442,7 +443,8 @@ class TestStreamingApi(unittest.TestCase):
                     "Content-Type" : "*****"
                   },
                   "enabled" : true
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.streaming.models.PutStream.from_json(request_body_json)

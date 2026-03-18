@@ -53,7 +53,8 @@ class TestTagsApi(unittest.TestCase):
                   "value" : "sfo",
                   "key" : "branch",
                   "createDate" : "2022-03-01T23:31:11Z"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tags.models.TagInfo.from_json(request_body_json)
@@ -218,7 +219,8 @@ class TestTagsApi(unittest.TestCase):
                     "key" : "branch",
                     "createDate" : "2022-03-01T23:31:11Z"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tags.models.BulkTagResponse.from_json(request_body_json)
@@ -523,7 +525,8 @@ class TestTagsApi(unittest.TestCase):
                   "value" : "sfo",
                   "key" : "branch",
                   "createDate" : "2022-03-01T23:31:11Z"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tags.models.TagInfo.from_json(request_body_json)

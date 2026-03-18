@@ -29,6 +29,7 @@ class ApiNumbersCardData(BaseModel):
     The data displayed on a numbers card.
     """ # noqa: E501
     card_id: Optional[StrictStr] = Field(default=None, description="Identifier of the card.", alias="cardId")
+    card_name: Optional[StrictStr] = Field(default=None, description="Name of the card.", alias="cardName")
     start_date: Optional[datetime] = Field(default=None, description="UTC start date of the data shown in the API output (ISO date-time format).", alias="startDate")
     end_date: Optional[datetime] = Field(default=None, description="UTC end date of the data shown in the API output (ISO date-time format).", alias="endDate")
     previous_value: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Previous value if `compareToPreviousValue == true` in configuration.", alias="previousValue")
@@ -39,7 +40,7 @@ class ApiNumbersCardData(BaseModel):
     status: Optional[StrictStr] = Field(default=None, description="Message for not fully configured card or no data.")
     alert_suppression_windows: Optional[List[ApiDashboardAsw]] = Field(default=None, alias="alertSuppressionWindows")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["cardId", "startDate", "endDate", "previousValue", "binSize", "timestamp", "numberOfDataPoints", "value", "status", "alertSuppressionWindows", "_links"]
+    __properties: ClassVar[List[str]] = ["cardId", "cardName", "startDate", "endDate", "previousValue", "binSize", "timestamp", "numberOfDataPoints", "value", "status", "alertSuppressionWindows", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,6 +105,7 @@ class ApiNumbersCardData(BaseModel):
 
         _obj = cls.model_validate({
             "cardId": obj.get("cardId"),
+            "cardName": obj.get("cardName"),
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),
             "previousValue": obj.get("previousValue"),
