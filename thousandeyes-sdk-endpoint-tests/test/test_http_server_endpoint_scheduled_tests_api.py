@@ -54,7 +54,8 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                   "testName" : "Test name",
                   "username" : "username",
                   "sslVersionId" : "0"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_tests.models.EndpointHttpServerTestRequest.from_json(request_body_json)
@@ -351,7 +352,8 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
                   "tcpProbeMode" : "auto",
                   "url" : "https://example.com:443",
                   "testName" : "Test name"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_tests.models.EndpointHttpTestUpdate.from_json(request_body_json)

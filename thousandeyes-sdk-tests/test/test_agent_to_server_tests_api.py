@@ -91,7 +91,8 @@ class TestAgentToServerTestsApi(unittest.TestCase):
                   "pingPayloadSize" : 112,
                   "continuousMode" : false,
                   "monitors" : [ "17410", "5" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.AgentToServerTestRequest.from_json(request_body_json)
@@ -583,7 +584,8 @@ class TestAgentToServerTestsApi(unittest.TestCase):
                   "pingPayloadSize" : 112,
                   "continuousMode" : false,
                   "monitors" : [ "17410", "5" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.AgentToServerTestRequest.from_json(request_body_json)

@@ -88,7 +88,8 @@ class TestAlertRulesApi(unittest.TestCase):
                     } ]
                   },
                   "direction" : "to-target"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.alerts.models.RuleDetailUpdate.from_json(request_body_json)
@@ -201,6 +202,7 @@ class TestAlertRulesApi(unittest.TestCase):
                   "sensitivityLevel" : "medium",
                   "alertGroupType" : "endpoint",
                   "notifyOnClear" : true,
+                  "testIds" : [ "281474976710706", "271659" ],
                   "roundsViolatingOutOf" : 5,
                   "roundsViolatingRequired" : 2,
                   "isDefault" : true,
@@ -441,7 +443,8 @@ class TestAlertRulesApi(unittest.TestCase):
                     } ]
                   },
                   "direction" : "to-target"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.alerts.models.RuleDetailUpdate.from_json(request_body_json)

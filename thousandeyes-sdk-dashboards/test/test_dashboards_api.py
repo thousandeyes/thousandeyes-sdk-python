@@ -151,7 +151,8 @@ class TestDashboardsApi(unittest.TestCase):
                   "modifiedBy" : "1",
                   "isGlobalOverride" : true,
                   "aid" : "1234"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.dashboards.models.Dashboard.from_json(request_body_json)
@@ -483,6 +484,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "totalAlerts" : 500,
                     "cards" : [ {
                       "numberOfDataPoints" : 24192,
+                      "cardName" : "Card Name",
                       "endDate" : "2023-05-16T10:14:28Z",
                       "_links" : {
                         "self" : {
@@ -524,6 +526,7 @@ class TestDashboardsApi(unittest.TestCase):
                       "status" : "No data"
                     }, {
                       "numberOfDataPoints" : 24192,
+                      "cardName" : "Card Name",
                       "endDate" : "2023-05-16T10:14:28Z",
                       "_links" : {
                         "self" : {
@@ -1137,6 +1140,7 @@ class TestDashboardsApi(unittest.TestCase):
         response_body_json = """
                 {
                   "numberOfDataPoints" : 24192,
+                  "cardName" : "Card Name",
                   "endDate" : "2023-05-16T10:14:28Z",
                   "_links" : {
                     "self" : {
@@ -1373,7 +1377,8 @@ class TestDashboardsApi(unittest.TestCase):
                   "modifiedBy" : "1",
                   "isGlobalOverride" : true,
                   "aid" : "1234"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.dashboards.models.Dashboard.from_json(request_body_json)

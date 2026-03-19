@@ -43,7 +43,8 @@ class TestUsersApi(unittest.TestCase):
                   "name" : "User X",
                   "allAccountGroupRoleIds" : [ "57", "1140" ],
                   "email" : "userx@thousandeyes.com"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.administrative.models.UserRequest.from_json(request_body_json)
@@ -336,7 +337,8 @@ class TestUsersApi(unittest.TestCase):
                   "name" : "User X",
                   "allAccountGroupRoleIds" : [ "57", "1140" ],
                   "email" : "userx@thousandeyes.com"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.administrative.models.UserRequest.from_json(request_body_json)

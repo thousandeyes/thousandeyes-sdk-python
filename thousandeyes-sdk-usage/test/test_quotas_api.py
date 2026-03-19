@@ -51,7 +51,8 @@ class TestQuotasApi(unittest.TestCase):
                       "aid" : "1234"
                     } ]
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.usage.models.OrganizationsQuotasAssign.from_json(request_body_json)
@@ -94,7 +95,8 @@ class TestQuotasApi(unittest.TestCase):
                     "orgId" : "1234",
                     "value" : 10000
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.usage.models.QuotasAssignRequest.from_json(request_body_json)
@@ -174,7 +176,8 @@ class TestQuotasApi(unittest.TestCase):
                     "orgId" : "1234",
                     "accountGroups" : [ "1234", "12345" ]
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.usage.models.OrganizationsQuotasUnassign.from_json(request_body_json)
@@ -186,7 +189,8 @@ class TestQuotasApi(unittest.TestCase):
         request_body_json = """
                 {
                   "organizations" : [ "1234", "12345" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.usage.models.QuotasUnassign.from_json(request_body_json)

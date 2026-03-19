@@ -148,7 +148,8 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                   "sslVersionId" : "0",
                   "username" : "username",
                   "targetTime" : 1
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.WebTransactionTestRequest.from_json(request_body_json)
@@ -927,7 +928,8 @@ class TestWebTransactionTestsApi(unittest.TestCase):
                   "sslVersionId" : "0",
                   "username" : "username",
                   "targetTime" : 1
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.WebTransactionTestRequest.from_json(request_body_json)

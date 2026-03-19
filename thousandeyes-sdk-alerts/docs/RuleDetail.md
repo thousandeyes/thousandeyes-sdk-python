@@ -27,6 +27,7 @@ Name | Type | Description | Notes
 **visited_sites_filter** | **List[str]** | A list of website domains visited during the session. This is applicable when &#x60;alertGroupType&#x60; is &#x60;browser-session&#x60;. | [optional] 
 **notifications** | [**AlertNotification**](AlertNotification.md) |  | [optional] 
 **tests** | [**List[AlertSimpleTest]**](AlertSimpleTest.md) |  | [optional] [readonly] 
+**test_ids** | **List[str]** | Array of test IDs to link to alert rule (get &#x60;testId&#x60; from &#x60;/tests&#x60; endpoint). | [optional] [readonly] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example

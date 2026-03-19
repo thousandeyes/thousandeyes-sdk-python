@@ -87,7 +87,8 @@ class TestFTPServerInstantTestsApi(unittest.TestCase):
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "useActiveFtp" : false,
                   "username" : "username"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.instant_tests.models.FtpServerInstantTestRequest.from_json(request_body_json)

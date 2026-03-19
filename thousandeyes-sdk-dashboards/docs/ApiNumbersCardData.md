@@ -7,6 +7,7 @@ The data displayed on a numbers card.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **card_id** | **str** | Identifier of the card. | [optional] 
+**card_name** | **str** | Name of the card. | [optional] 
 **start_date** | **datetime** | UTC start date of the data shown in the API output (ISO date-time format). | [optional] 
 **end_date** | **datetime** | UTC end date of the data shown in the API output (ISO date-time format). | [optional] 
 **previous_value** | **float** | Previous value if &#x60;compareToPreviousValue &#x3D;&#x3D; true&#x60; in configuration. | [optional] 

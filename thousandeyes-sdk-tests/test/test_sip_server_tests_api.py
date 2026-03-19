@@ -109,7 +109,8 @@ class TestSIPServerTestsApi(unittest.TestCase):
                     "countryId" : "GB",
                     "network" : "Level 3 Communications, Inc. (AS 3356)"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.SipServerTestRequest.from_json(request_body_json)
@@ -631,7 +632,8 @@ class TestSIPServerTestsApi(unittest.TestCase):
                     "countryId" : "GB",
                     "network" : "Level 3 Communications, Inc. (AS 3356)"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.SipServerTestRequest.from_json(request_body_json)

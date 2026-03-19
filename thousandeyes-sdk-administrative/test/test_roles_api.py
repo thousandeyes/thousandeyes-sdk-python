@@ -34,7 +34,8 @@ class TestRolesApi(unittest.TestCase):
                 {
                   "permissions" : [ "56", "315" ],
                   "name" : "Organization Admin"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.administrative.models.RoleRequestBody.from_json(request_body_json)
@@ -155,7 +156,8 @@ class TestRolesApi(unittest.TestCase):
                 {
                   "permissions" : [ "56", "315" ],
                   "name" : "Organization Admin"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.administrative.models.RoleRequestBody.from_json(request_body_json)

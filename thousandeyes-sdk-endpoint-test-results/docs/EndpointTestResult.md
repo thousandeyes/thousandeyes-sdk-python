@@ -15,6 +15,9 @@ Name | Type | Description | Notes
 **original_target_profile** | [**TargetProfile**](TargetProfile.md) |  | [optional] 
 **user_profile** | [**UserProfile**](UserProfile.md) |  | [optional] 
 **vpn_profile** | [**VpnProfile**](VpnProfile.md) |  | [optional] 
+**battery_metrics** | [**BatteryMetrics**](BatteryMetrics.md) |  | [optional] 
+**cellular_profile** | [**CellularProfile**](CellularProfile.md) |  | [optional] 
+**platform** | [**Platform**](Platform.md) |  | [optional] 
 
 ## Example
 

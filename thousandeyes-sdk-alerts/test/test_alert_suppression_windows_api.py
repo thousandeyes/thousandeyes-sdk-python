@@ -50,7 +50,8 @@ class TestAlertSuppressionWindowsApi(unittest.TestCase):
                   "name" : "Monthly maintenance",
                   "startDate" : "2017-07-01T05:00:00Z",
                   "status" : "ended"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
@@ -369,7 +370,8 @@ class TestAlertSuppressionWindowsApi(unittest.TestCase):
                   "name" : "Monthly maintenance",
                   "startDate" : "2017-07-01T05:00:00Z",
                   "status" : "ended"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)

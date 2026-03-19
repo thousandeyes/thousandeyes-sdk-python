@@ -76,7 +76,8 @@ class TestDNSTraceTestsApi(unittest.TestCase):
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "alertsEnabled" : true,
                   "testName" : "ThousandEyes Test"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.DnsTraceTestRequest.from_json(request_body_json)
@@ -471,7 +472,8 @@ class TestDNSTraceTestsApi(unittest.TestCase):
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "alertsEnabled" : true,
                   "testName" : "ThousandEyes Test"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.DnsTraceTestRequest.from_json(request_body_json)

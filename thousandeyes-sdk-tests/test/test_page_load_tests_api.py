@@ -147,7 +147,8 @@ class TestPageLoadTestsApi(unittest.TestCase):
                   "httpTargetTime" : 100,
                   "sslVersionId" : "0",
                   "username" : "username"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.PageLoadTestRequest.from_json(request_body_json)
@@ -923,7 +924,8 @@ class TestPageLoadTestsApi(unittest.TestCase):
                   "httpTargetTime" : 100,
                   "sslVersionId" : "0",
                   "username" : "username"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.PageLoadTestRequest.from_json(request_body_json)
