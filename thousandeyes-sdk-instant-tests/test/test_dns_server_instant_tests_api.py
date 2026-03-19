@@ -83,7 +83,8 @@ class TestDNSServerInstantTestsApi(unittest.TestCase):
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ "1234", "12345" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.instant_tests.models.DnsServerInstantTestRequest.from_json(request_body_json)

@@ -39,7 +39,8 @@ class TestTagAssignmentApi(unittest.TestCase):
                     "id" : "123",
                     "type" : "test"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tags.models.TagAssignment.from_json(request_body_json)
@@ -84,7 +85,8 @@ class TestTagAssignmentApi(unittest.TestCase):
                     } ],
                     "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(request_body_json)
@@ -128,7 +130,8 @@ class TestTagAssignmentApi(unittest.TestCase):
                     "id" : "123",
                     "type" : "test"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tags.models.TagAssignment.from_json(request_body_json)
@@ -158,7 +161,8 @@ class TestTagAssignmentApi(unittest.TestCase):
                     } ],
                     "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(request_body_json)

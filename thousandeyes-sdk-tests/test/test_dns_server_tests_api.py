@@ -90,7 +90,8 @@ class TestDNSServerTestsApi(unittest.TestCase):
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "monitors" : [ "17410", "5" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.DnsServerTestRequest.from_json(request_body_json)
@@ -605,7 +606,8 @@ class TestDNSServerTestsApi(unittest.TestCase):
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "monitors" : [ "17410", "5" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.DnsServerTestRequest.from_json(request_body_json)

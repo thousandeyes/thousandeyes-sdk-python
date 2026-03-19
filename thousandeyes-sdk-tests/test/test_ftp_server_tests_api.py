@@ -94,7 +94,8 @@ class TestFTPServerTestsApi(unittest.TestCase):
                   "useActiveFtp" : false,
                   "username" : "username",
                   "monitors" : [ "17410", "5" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.FtpServerTestRequest.from_json(request_body_json)
@@ -605,7 +606,8 @@ class TestFTPServerTestsApi(unittest.TestCase):
                   "useActiveFtp" : false,
                   "username" : "username",
                   "monitors" : [ "17410", "5" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.FtpServerTestRequest.from_json(request_body_json)

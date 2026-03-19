@@ -33,7 +33,8 @@ class TestEnterpriseAgentClusterApi(unittest.TestCase):
         request_body_json = """
                 {
                   "agents" : [ "281474976710706" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.agents.models.AgentClusterAssignRequest.from_json(request_body_json)
@@ -149,7 +150,8 @@ class TestEnterpriseAgentClusterApi(unittest.TestCase):
         request_body_json = """
                 {
                   "members" : [ "281474976710706" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.agents.models.AgentClusterUnassignRequest.from_json(request_body_json)

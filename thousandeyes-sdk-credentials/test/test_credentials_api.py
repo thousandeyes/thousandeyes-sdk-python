@@ -34,7 +34,8 @@ class TestCredentialsApi(unittest.TestCase):
                 {
                   "name" : "Example Credential 1",
                   "value" : "Example Credential 1 Password"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.credentials.models.CredentialRequest.from_json(request_body_json)
@@ -154,7 +155,8 @@ class TestCredentialsApi(unittest.TestCase):
                 {
                   "name" : "Example Credential 1",
                   "value" : "Example Credential 1 Password"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.credentials.models.CredentialRequest.from_json(request_body_json)

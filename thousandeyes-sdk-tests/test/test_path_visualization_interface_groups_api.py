@@ -37,7 +37,8 @@ class TestPathVisualizationInterfaceGroupsApi(unittest.TestCase):
                   "groupId" : "281474976710706",
                   "ipAddresses" : [ "1.1.1.1", "8.8.8.8" ],
                   "aid" : "1234"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.InterfaceGroup.from_json(request_body_json)
@@ -105,7 +106,8 @@ class TestPathVisualizationInterfaceGroupsApi(unittest.TestCase):
                   "groupId" : "281474976710706",
                   "ipAddresses" : [ "1.1.1.1", "8.8.8.8" ],
                   "aid" : "1234"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.InterfaceGroup.from_json(request_body_json)

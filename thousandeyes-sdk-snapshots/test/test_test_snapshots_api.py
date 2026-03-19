@@ -36,7 +36,8 @@ class TestTestSnapshotsApi(unittest.TestCase):
                   "displayName" : "Snapshot created through API",
                   "isPublic" : false,
                   "startDate" : "2023-06-06T00:00:00Z"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.snapshots.models.SnapshotRequest.from_json(request_body_json)

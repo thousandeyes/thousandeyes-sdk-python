@@ -33,7 +33,8 @@ class TestEndpointAgentsTransferApi(unittest.TestCase):
         request_body_json = """
                 {
                   "toAid" : "1234"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_agents.models.AgentTransferRequest.from_json(request_body_json)
@@ -53,7 +54,8 @@ class TestEndpointAgentsTransferApi(unittest.TestCase):
                     "fromAid" : "1234",
                     "toAid" : "12345"
                   } ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.endpoint_agents.models.BulkAgentTransferRequest.from_json(request_body_json)

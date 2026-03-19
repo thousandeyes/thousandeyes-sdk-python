@@ -57,7 +57,8 @@ class TestDashboardsFiltersApi(unittest.TestCase):
                   } ],
                   "name" : "cea-filter",
                   "description" : "Global filter for CEA widgets"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.dashboards.models.ApiContextFilterRequest.from_json(request_body_json)
@@ -325,7 +326,8 @@ class TestDashboardsFiltersApi(unittest.TestCase):
                   } ],
                   "name" : "cea-filter",
                   "description" : "Global filter for CEA widgets"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.dashboards.models.ApiContextFilterRequest.from_json(request_body_json)

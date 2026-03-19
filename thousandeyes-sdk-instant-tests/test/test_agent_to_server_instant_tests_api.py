@@ -83,7 +83,8 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "pingPayloadSize" : 112,
                   "continuousMode" : false
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.instant_tests.models.AgentToServerInstantTestRequest.from_json(request_body_json)

@@ -68,7 +68,8 @@ class TestBGPTestsApi(unittest.TestCase):
                   "alertsEnabled" : true,
                   "testName" : "ThousandEyes Test",
                   "monitors" : [ "17410", "5" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.BgpTestRequest.from_json(request_body_json)
@@ -410,7 +411,8 @@ class TestBGPTestsApi(unittest.TestCase):
                   "alertsEnabled" : true,
                   "testName" : "ThousandEyes Test",
                   "monitors" : [ "17410", "5" ]
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.tests.models.UpdateBgpTestRequest.from_json(request_body_json)

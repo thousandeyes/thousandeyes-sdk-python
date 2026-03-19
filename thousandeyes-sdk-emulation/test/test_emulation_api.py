@@ -35,7 +35,8 @@ class TestEmulationApi(unittest.TestCase):
                   "width" : 1024,
                   "category" : "desktop",
                   "height" : 768
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.emulation.models.EmulatedDevice.from_json(request_body_json)

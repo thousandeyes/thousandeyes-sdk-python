@@ -138,7 +138,8 @@ class TestHTTPPageLoadInstantTestsApi(unittest.TestCase):
                   "httpTargetTime" : 100,
                   "sslVersionId" : "0",
                   "username" : "username"
-                }"""
+                }
+                """
 
         request_loaded_json = json.loads(request_body_json)
         request_from_json = thousandeyes_sdk.instant_tests.models.PageLoadInstantTestRequest.from_json(request_body_json)
