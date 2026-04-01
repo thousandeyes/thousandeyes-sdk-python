@@ -42,6 +42,7 @@ For more info regarding the API, please check the [Developer support](https://de
 
 ## Support
 
+Join the discussion in the [ThousandEyes Community](https://community.cisco.com/t5/thousandeyes/bd-p/disc-thousandeyes).
 For bug reports, feature requests, or questions about this SDK, please contact [ThousandEyes Support](https://docs.thousandeyes.com/product-documentation/getting-started/getting-support-from-thousandeyes#contacting-support).
 
 ## Roadmap and maintenance
