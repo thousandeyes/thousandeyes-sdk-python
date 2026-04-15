@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_agents**
-> CloudEnterpriseAgents get_agents(aid=aid, expand=expand, agent_types=agent_types, labels=labels)
+> CloudEnterpriseAgents get_agents(aid=aid, expand=expand, agent_types=agent_types, labels=labels, tag_keys=tag_keys)
 
 List Cloud and Enterprise Agents
 
@@ -227,10 +227,11 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     expand = [thousandeyes_sdk.agents.AgentListExpand()] # List[AgentListExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
     agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()] # List[CloudEnterpriseAgentType] | Specifies the type of agent to request. (optional)
     labels = ['[\"myCustomLabeledAgent\"]'] # List[str] | Specifies the labels of the agents to request. (optional)
+    tag_keys = ['tag_keys_example'] # List[str] | Specifies which tag keys to request from the agents. (optional)
 
     try:
         # List Cloud and Enterprise Agents
-        api_response = api_instance.get_agents(aid=aid, expand=expand, agent_types=agent_types, labels=labels)
+        api_response = api_instance.get_agents(aid=aid, expand=expand, agent_types=agent_types, labels=labels, tag_keys=tag_keys)
         print("The response of CloudAndEnterpriseAgentsApi->get_agents:\n")
         pprint(api_response)
     except Exception as e:
@@ -248,6 +249,7 @@ Name | Type | Description  | Notes
  **expand** | [**List[AgentListExpand]**](AgentListExpand.md)| Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the &#x60;clusterMembers&#x60; sub-resource, pass the &#x60;?expand&#x3D;cluster-member&#x60; query. | [optional] 
  **agent_types** | [**List[CloudEnterpriseAgentType]**](CloudEnterpriseAgentType.md)| Specifies the type of agent to request. | [optional] 
  **labels** | [**List[str]**](str.md)| Specifies the labels of the agents to request. | [optional] 
+ **tag_keys** | [**List[str]**](str.md)| Specifies which tag keys to request from the agents. | [optional] 
 
 ### Return type
 

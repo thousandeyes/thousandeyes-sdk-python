@@ -64,7 +64,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> TagInfo:
+    ) -> Tag:
         """Create tag
 
         Creates a new tag.
@@ -105,7 +105,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "TagInfo",
+            '201': "Tag",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '409': None,
@@ -140,7 +140,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[TagInfo]:
+    ) -> ApiResponse[Tag]:
         """Create tag
 
         Creates a new tag.
@@ -181,7 +181,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "TagInfo",
+            '201': "Tag",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '409': None,
@@ -257,7 +257,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '201': "TagInfo",
+            '201': "Tag",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '409': None,
@@ -948,7 +948,7 @@ class TagsApi:
         self,
         id: Annotated[StrictStr, Field(description="Tag ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments. Only static tags will return object assignments.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -970,7 +970,7 @@ class TagsApi:
         :type id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param expand: Optional, to retrieve associated assignments
+        :param expand: Optional, to retrieve associated assignments. Only static tags will return object assignments.
         :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1029,7 +1029,7 @@ class TagsApi:
         self,
         id: Annotated[StrictStr, Field(description="Tag ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments. Only static tags will return object assignments.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1051,7 +1051,7 @@ class TagsApi:
         :type id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param expand: Optional, to retrieve associated assignments
+        :param expand: Optional, to retrieve associated assignments. Only static tags will return object assignments.
         :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1110,7 +1110,7 @@ class TagsApi:
         self,
         id: Annotated[StrictStr, Field(description="Tag ID")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments. Only static tags will return object assignments.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1132,7 +1132,7 @@ class TagsApi:
         :type id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param expand: Optional, to retrieve associated assignments
+        :param expand: Optional, to retrieve associated assignments. Only static tags will return object assignments.
         :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1258,7 +1258,7 @@ class TagsApi:
     def get_tags(
         self,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments. Only static tags will return object assignments.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1278,7 +1278,7 @@ class TagsApi:
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param expand: Optional, to retrieve associated assignments
+        :param expand: Optional, to retrieve associated assignments. Only static tags will return object assignments.
         :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1335,7 +1335,7 @@ class TagsApi:
     def get_tags_with_http_info(
         self,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments. Only static tags will return object assignments.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1355,7 +1355,7 @@ class TagsApi:
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param expand: Optional, to retrieve associated assignments
+        :param expand: Optional, to retrieve associated assignments. Only static tags will return object assignments.
         :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1412,7 +1412,7 @@ class TagsApi:
     def get_tags_without_preload_content(
         self,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments")] = None,
+        expand: Annotated[Optional[List[ExpandTagsOptions]], Field(description="Optional, to retrieve associated assignments. Only static tags will return object assignments.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -1432,7 +1432,7 @@ class TagsApi:
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param expand: Optional, to retrieve associated assignments
+        :param expand: Optional, to retrieve associated assignments. Only static tags will return object assignments.
         :type expand: List[ExpandTagsOptions]
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
@@ -1568,7 +1568,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> TagInfo:
+    ) -> Tag:
         """Update tag
 
         Updates a tag.
@@ -1612,7 +1612,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TagInfo",
+            '200': "Tag",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1649,7 +1649,7 @@ class TagsApi:
         _content_type: Optional[StrictStr] = None,
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
-    ) -> ApiResponse[TagInfo]:
+    ) -> ApiResponse[Tag]:
         """Update tag
 
         Updates a tag.
@@ -1693,7 +1693,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TagInfo",
+            '200': "Tag",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",
@@ -1774,7 +1774,7 @@ class TagsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '200': "TagInfo",
+            '200': "Tag",
             '401': "UnauthorizedError",
             '403': "Error",
             '404': "Error",

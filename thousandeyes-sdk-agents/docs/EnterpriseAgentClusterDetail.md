@@ -33,6 +33,7 @@ Name | Type | Description | Notes
 **interface_ip_mapping** | [**List[InterfaceIpMapping]**](InterfaceIpMapping.md) |  | [optional] [readonly] 
 **notification_rules** | [**List[NotificationRules]**](NotificationRules.md) | List of notification rule objects configured on agent | [optional] 
 **labels** | [**List[AgentLabel]**](AgentLabel.md) | List of labels. See &#x60;/labels&#x60; for more information. | [optional] [readonly] 
+**tags** | [**List[AgentTag]**](AgentTag.md) | List of tags. See &#x60;/tags&#x60; for more information. | [optional] [readonly] 
 **agent_type** | **str** | Enterprise Cluster agent type. | 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 

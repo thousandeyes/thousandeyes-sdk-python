@@ -79,6 +79,7 @@ class TestHTTPServerInstantTestsApi(unittest.TestCase):
                     "ipAddress" : "192.1.1.0"
                   },
                   "labels" : [ "9842", "1283" ],
+                  "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "sharedWithAccounts" : [ "1234", "12345" ],

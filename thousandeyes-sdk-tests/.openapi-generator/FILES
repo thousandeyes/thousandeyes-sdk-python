@@ -20,6 +20,7 @@ docs/AgentToServerTestRequest.md
 docs/AgentToServerTestResponse.md
 docs/AgentToServerTests.md
 docs/AgentToServerTestsApi.md
+docs/AgentToServerWritablePropertyFields.md
 docs/AlertDirection.md
 docs/AlertRoundsViolationMode.md
 docs/AlertRule.md
@@ -166,6 +167,7 @@ docs/UnexpandedSipServerTest.md
 docs/UnexpandedTest.md
 docs/UnexpandedVoiceTest.md
 docs/UnexpandedWebTransactionTest.md
+docs/UpdateAgentToServerTestRequest.md
 docs/UpdateBgpTestRequest.md
 docs/UpdateSipServerTest.md
 docs/ValidationError.md
@@ -220,6 +222,7 @@ src/thousandeyes_sdk/tests/models/agent_to_server_test.py
 src/thousandeyes_sdk/tests/models/agent_to_server_test_request.py
 src/thousandeyes_sdk/tests/models/agent_to_server_test_response.py
 src/thousandeyes_sdk/tests/models/agent_to_server_tests.py
+src/thousandeyes_sdk/tests/models/agent_to_server_writable_property_fields.py
 src/thousandeyes_sdk/tests/models/alert_direction.py
 src/thousandeyes_sdk/tests/models/alert_rounds_violation_mode.py
 src/thousandeyes_sdk/tests/models/alert_rule.py
@@ -356,6 +359,7 @@ src/thousandeyes_sdk/tests/models/unexpanded_sip_server_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_voice_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_web_transaction_test.py
+src/thousandeyes_sdk/tests/models/update_agent_to_server_test_request.py
 src/thousandeyes_sdk/tests/models/update_bgp_test_request.py
 src/thousandeyes_sdk/tests/models/update_sip_server_test.py
 src/thousandeyes_sdk/tests/models/validation_error.py

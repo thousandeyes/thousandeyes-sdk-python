@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **domain** | **str** | The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record. | 
 **dns_query_class** | [**DnsQueryClass**](DnsQueryClass.md) |  | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
+**tags** | **List[str]** | Contains list of test tag IDs (get &#x60;id&#x60; from &#x60;/tags&#x60; endpoint). | [optional] 
 **agents** | [**List[TestAgentRequest]**](TestAgentRequest.md) | Contains list of Agent IDs (get &#x60;agentId&#x60; from &#x60;/agents&#x60; endpoint). | 
 
 ## Example

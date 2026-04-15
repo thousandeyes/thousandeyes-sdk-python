@@ -6,6 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tags** | [**List[BulkTagAssignment]**](BulkTagAssignment.md) |  | [optional] 
+**links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
 

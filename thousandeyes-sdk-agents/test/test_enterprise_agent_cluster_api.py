@@ -72,6 +72,15 @@ class TestEnterpriseAgentClusterApi(unittest.TestCase):
                     "labelId" : "11",
                     "name" : "Label name"
                   } ],
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
+                  }, {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
+                  } ],
                   "tests" : [ {
                     "_links" : {
                       "testResults" : [ {

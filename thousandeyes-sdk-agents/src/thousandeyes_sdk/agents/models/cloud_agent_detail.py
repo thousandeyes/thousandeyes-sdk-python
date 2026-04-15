@@ -20,6 +20,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr, field_
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.agents.models.agent_label import AgentLabel
+from thousandeyes_sdk.agents.models.agent_tag import AgentTag
 from thousandeyes_sdk.agents.models.coordinates import Coordinates
 from thousandeyes_sdk.agents.models.self_links import SelfLinks
 from thousandeyes_sdk.agents.models.simple_test import SimpleTest
@@ -44,8 +45,9 @@ class CloudAgentDetail(BaseModel):
     agent_type: Annotated[str, Field(strict=True)] = Field(description="Cloud agent type.", alias="agentType")
     tests: Optional[List[SimpleTest]] = Field(default=None, description="List of tests. See `/tests` for more information.")
     labels: Optional[List[AgentLabel]] = Field(default=None, description="List of labels - see `/labels` for more information.")
+    tags: Optional[List[AgentTag]] = Field(default=None, description="List of tags. See `/tags` for more information.")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "agentType", "tests", "labels", "_links"]
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "agentType", "tests", "labels", "tags", "_links"]
 
     @field_validator('agent_type')
     def agent_type_validate_regular_expression(cls, value):
@@ -94,6 +96,7 @@ class CloudAgentDetail(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "ip_addresses",
@@ -105,6 +108,7 @@ class CloudAgentDetail(BaseModel):
             "prefix",
             "verify_ssl_certificates",
             "labels",
+            "tags",
         ])
 
         _dict = self.model_dump(
@@ -129,6 +133,13 @@ class CloudAgentDetail(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['labels'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
+        _items = []
+        if self.tags:
+            for _item in self.tags:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['tags'] = _items
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
@@ -158,6 +169,7 @@ class CloudAgentDetail(BaseModel):
             "agentType": obj.get("agentType"),
             "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "labels": [AgentLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
+            "tags": [AgentTag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj

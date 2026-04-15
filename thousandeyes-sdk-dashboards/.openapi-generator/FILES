@@ -69,6 +69,9 @@ docs/BoxAndWhiskersDatasource.md
 docs/ColorGridDatasource.md
 docs/Dashboard.md
 docs/DashboardGlobalFilterId.md
+docs/DashboardLayout.md
+docs/DashboardLayoutDetails.md
+docs/DashboardLayoutType.md
 docs/DashboardLinks.md
 docs/DashboardMetric.md
 docs/DashboardMetricDirection.md
@@ -116,6 +119,7 @@ docs/ValidationErrorItem.md
 docs/VisualMode.md
 docs/Widget.md
 docs/WidgetMeasureType.md
+docs/WidgetPosition.md
 docs/WidgetType.md
 pyproject.toml
 setup.cfg
@@ -193,6 +197,9 @@ src/thousandeyes_sdk/dashboards/models/box_and_whiskers_datasource.py
 src/thousandeyes_sdk/dashboards/models/color_grid_datasource.py
 src/thousandeyes_sdk/dashboards/models/dashboard.py
 src/thousandeyes_sdk/dashboards/models/dashboard_global_filter_id.py
+src/thousandeyes_sdk/dashboards/models/dashboard_layout.py
+src/thousandeyes_sdk/dashboards/models/dashboard_layout_details.py
+src/thousandeyes_sdk/dashboards/models/dashboard_layout_type.py
 src/thousandeyes_sdk/dashboards/models/dashboard_links.py
 src/thousandeyes_sdk/dashboards/models/dashboard_metric.py
 src/thousandeyes_sdk/dashboards/models/dashboard_metric_direction.py
@@ -237,6 +244,7 @@ src/thousandeyes_sdk/dashboards/models/validation_error_item.py
 src/thousandeyes_sdk/dashboards/models/visual_mode.py
 src/thousandeyes_sdk/dashboards/models/widget.py
 src/thousandeyes_sdk/dashboards/models/widget_measure_type.py
+src/thousandeyes_sdk/dashboards/models/widget_position.py
 src/thousandeyes_sdk/dashboards/models/widget_type.py
 src/thousandeyes_sdk/dashboards/py.typed
 test/__init__.py

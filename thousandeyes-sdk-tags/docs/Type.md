@@ -1,6 +1,6 @@
 # Type
 
-The nature of the tag - whether the tag is dynamically assigned to products based on a filter rule or statically assigned to specified products.
+The nature of the tag - whether the tag is dynamically assigned to objects based on a filter rule or statically assigned to specified objects. Currently only `endpoint-agent` object types support dynamic assignment; all other object types (for example, `test`, `agent`) support only static assignment.
 
 ## Properties
 
