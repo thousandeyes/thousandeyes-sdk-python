@@ -144,7 +144,6 @@ Class | Method | HTTP request | Description
  - [StreamStatusType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamStatusType.md)
  - [StreamType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/StreamType.md)
  - [TagMatch](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/TagMatch.md)
- - [TagMatchObjectType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/TagMatchObjectType.md)
  - [TestMatch](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/TestMatch.md)
  - [TestMatchDomain](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/TestMatchDomain.md)
  - [TestType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-streaming/docs/TestType.md)

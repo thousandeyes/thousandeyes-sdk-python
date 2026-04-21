@@ -22,8 +22,6 @@ from thousandeyes_sdk.dashboards.models.api_agent_status_agent import ApiAgentSt
 from thousandeyes_sdk.dashboards.models.api_agent_status_ip_info import ApiAgentStatusIpInfo
 from thousandeyes_sdk.dashboards.models.api_agent_status_summary import ApiAgentStatusSummary
 from thousandeyes_sdk.dashboards.models.api_agent_status_widget import ApiAgentStatusWidget
-from thousandeyes_sdk.dashboards.models.api_agent_widget_show import ApiAgentWidgetShow
-from thousandeyes_sdk.dashboards.models.api_agent_widget_type import ApiAgentWidgetType
 from thousandeyes_sdk.dashboards.models.api_aggregate_property import ApiAggregateProperty
 from thousandeyes_sdk.dashboards.models.api_alert_list_alert import ApiAlertListAlert
 from thousandeyes_sdk.dashboards.models.api_alert_list_widget import ApiAlertListWidget
@@ -71,8 +69,6 @@ from thousandeyes_sdk.dashboards.models.api_widget_data_snapshot_response import
 from thousandeyes_sdk.dashboards.models.api_widget_filter_api_test_table_filter_key import ApiWidgetFilterApiTestTableFilterKey
 from thousandeyes_sdk.dashboards.models.api_widget_fixed_y_scale_prefix import ApiWidgetFixedYScalePrefix
 from thousandeyes_sdk.dashboards.models.api_widget_measure import ApiWidgetMeasure
-from thousandeyes_sdk.dashboards.models.api_widget_sort_direction import ApiWidgetSortDirection
-from thousandeyes_sdk.dashboards.models.api_widget_sort_property import ApiWidgetSortProperty
 from thousandeyes_sdk.dashboards.models.api_widgets_data_v2 import ApiWidgetsDataV2
 from thousandeyes_sdk.dashboards.models.app_and_self_links import AppAndSelfLinks
 from thousandeyes_sdk.dashboards.models.asw_repeat import AswRepeat
@@ -129,4 +125,3 @@ from thousandeyes_sdk.dashboards.models.visual_mode import VisualMode
 from thousandeyes_sdk.dashboards.models.widget import Widget
 from thousandeyes_sdk.dashboards.models.widget_measure_type import WidgetMeasureType
 from thousandeyes_sdk.dashboards.models.widget_position import WidgetPosition
-from thousandeyes_sdk.dashboards.models.widget_type import WidgetType

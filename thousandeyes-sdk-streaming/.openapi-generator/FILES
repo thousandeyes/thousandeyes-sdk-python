@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 MANIFEST.in
 README.md
 docs/ApiError.md
@@ -28,7 +27,6 @@ docs/StreamStatusType.md
 docs/StreamType.md
 docs/StreamingApi.md
 docs/TagMatch.md
-docs/TagMatchObjectType.md
 docs/TestMatch.md
 docs/TestMatchDomain.md
 docs/TestType.md
@@ -65,7 +63,6 @@ src/thousandeyes_sdk/streaming/models/stream_status.py
 src/thousandeyes_sdk/streaming/models/stream_status_type.py
 src/thousandeyes_sdk/streaming/models/stream_type.py
 src/thousandeyes_sdk/streaming/models/tag_match.py
-src/thousandeyes_sdk/streaming/models/tag_match_object_type.py
 src/thousandeyes_sdk/streaming/models/test_match.py
 src/thousandeyes_sdk/streaming/models/test_match_domain.py
 src/thousandeyes_sdk/streaming/models/test_type.py

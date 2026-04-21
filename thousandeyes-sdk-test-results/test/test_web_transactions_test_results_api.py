@@ -352,10 +352,10 @@ class TestWebTransactionsTestResultsApi(unittest.TestCase):
                     "startTime" : 1384309800,
                     "endTime" : 1384309800,
                     "markers" : [ {
-                      "duration" : 0,
+                      "duration" : 1360,
                       "name" : "SearchForWebdriver"
                     }, {
-                      "duration" : 0,
+                      "duration" : 1360,
                       "name" : "SearchForWebdriver"
                     } ],
                     "roundId" : 1384309800,
@@ -615,10 +615,10 @@ class TestWebTransactionsTestResultsApi(unittest.TestCase):
                     "startTime" : 1384309800,
                     "endTime" : 1384309800,
                     "markers" : [ {
-                      "duration" : 0,
+                      "duration" : 1360,
                       "name" : "SearchForWebdriver"
                     }, {
-                      "duration" : 0,
+                      "duration" : 1360,
                       "name" : "SearchForWebdriver"
                     } ],
                     "roundId" : 1384309800,
@@ -738,10 +738,10 @@ class TestWebTransactionsTestResultsApi(unittest.TestCase):
                     "endTime" : 1384309800,
                     "transactionTime" : 2379,
                     "markers" : [ {
-                      "duration" : 0,
+                      "duration" : 1360,
                       "name" : "SearchForWebdriver"
                     }, {
-                      "duration" : 0,
+                      "duration" : 1360,
                       "name" : "SearchForWebdriver"
                     } ],
                     "roundId" : 1384309800,
@@ -785,10 +785,10 @@ class TestWebTransactionsTestResultsApi(unittest.TestCase):
                     "endTime" : 1384309800,
                     "transactionTime" : 2379,
                     "markers" : [ {
-                      "duration" : 0,
+                      "duration" : 1360,
                       "name" : "SearchForWebdriver"
                     }, {
-                      "duration" : 0,
+                      "duration" : 1360,
                       "name" : "SearchForWebdriver"
                     } ],
                     "roundId" : 1384309800,

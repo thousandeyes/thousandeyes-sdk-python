@@ -127,8 +127,6 @@ Class | Method | HTTP request | Description
  - [ApiAgentStatusIpInfo](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentStatusIpInfo.md)
  - [ApiAgentStatusSummary](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentStatusSummary.md)
  - [ApiAgentStatusWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentStatusWidget.md)
- - [ApiAgentWidgetShow](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentWidgetShow.md)
- - [ApiAgentWidgetType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAgentWidgetType.md)
  - [ApiAggregateProperty](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAggregateProperty.md)
  - [ApiAlertListAlert](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAlertListAlert.md)
  - [ApiAlertListWidget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiAlertListWidget.md)
@@ -176,8 +174,6 @@ Class | Method | HTTP request | Description
  - [ApiWidgetFilterApiTestTableFilterKey](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetFilterApiTestTableFilterKey.md)
  - [ApiWidgetFixedYScalePrefix](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetFixedYScalePrefix.md)
  - [ApiWidgetMeasure](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetMeasure.md)
- - [ApiWidgetSortDirection](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetSortDirection.md)
- - [ApiWidgetSortProperty](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetSortProperty.md)
  - [ApiWidgetsDataV2](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/ApiWidgetsDataV2.md)
  - [AppAndSelfLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/AppAndSelfLinks.md)
  - [AswRepeat](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/AswRepeat.md)
@@ -234,7 +230,6 @@ Class | Method | HTTP request | Description
  - [Widget](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/Widget.md)
  - [WidgetMeasureType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/WidgetMeasureType.md)
  - [WidgetPosition](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/WidgetPosition.md)
- - [WidgetType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-dashboards/docs/WidgetType.md)
 
 
 <a id="documentation-for-authorization"></a>

@@ -1,5 +1,4 @@
 # thousandeyes-sdk-endpoint-instant-tests
-
 You can create and execute a new endpoint instant scheduled test within ThousandEyes using this API. The test parameters are specified in the `POST` data.
 
 The following applies to the Endpoint Instant Scheduled Tests API:

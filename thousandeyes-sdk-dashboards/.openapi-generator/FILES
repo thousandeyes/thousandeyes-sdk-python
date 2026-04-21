@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 MANIFEST.in
 README.md
 docs/ActiveWithin.md
@@ -10,8 +9,6 @@ docs/ApiAgentStatusAgent.md
 docs/ApiAgentStatusIpInfo.md
 docs/ApiAgentStatusSummary.md
 docs/ApiAgentStatusWidget.md
-docs/ApiAgentWidgetShow.md
-docs/ApiAgentWidgetType.md
 docs/ApiAggregateProperty.md
 docs/ApiAlertListAlert.md
 docs/ApiAlertListWidget.md
@@ -59,8 +56,6 @@ docs/ApiWidgetDataSnapshotResponse.md
 docs/ApiWidgetFilterApiTestTableFilterKey.md
 docs/ApiWidgetFixedYScalePrefix.md
 docs/ApiWidgetMeasure.md
-docs/ApiWidgetSortDirection.md
-docs/ApiWidgetSortProperty.md
 docs/ApiWidgetsDataV2.md
 docs/AppAndSelfLinks.md
 docs/AswRepeat.md
@@ -120,7 +115,6 @@ docs/VisualMode.md
 docs/Widget.md
 docs/WidgetMeasureType.md
 docs/WidgetPosition.md
-docs/WidgetType.md
 pyproject.toml
 setup.cfg
 src/thousandeyes_sdk/dashboards/__init__.py
@@ -138,8 +132,6 @@ src/thousandeyes_sdk/dashboards/models/api_agent_status_agent.py
 src/thousandeyes_sdk/dashboards/models/api_agent_status_ip_info.py
 src/thousandeyes_sdk/dashboards/models/api_agent_status_summary.py
 src/thousandeyes_sdk/dashboards/models/api_agent_status_widget.py
-src/thousandeyes_sdk/dashboards/models/api_agent_widget_show.py
-src/thousandeyes_sdk/dashboards/models/api_agent_widget_type.py
 src/thousandeyes_sdk/dashboards/models/api_aggregate_property.py
 src/thousandeyes_sdk/dashboards/models/api_alert_list_alert.py
 src/thousandeyes_sdk/dashboards/models/api_alert_list_widget.py
@@ -187,8 +179,6 @@ src/thousandeyes_sdk/dashboards/models/api_widget_data_snapshot_response.py
 src/thousandeyes_sdk/dashboards/models/api_widget_filter_api_test_table_filter_key.py
 src/thousandeyes_sdk/dashboards/models/api_widget_fixed_y_scale_prefix.py
 src/thousandeyes_sdk/dashboards/models/api_widget_measure.py
-src/thousandeyes_sdk/dashboards/models/api_widget_sort_direction.py
-src/thousandeyes_sdk/dashboards/models/api_widget_sort_property.py
 src/thousandeyes_sdk/dashboards/models/api_widgets_data_v2.py
 src/thousandeyes_sdk/dashboards/models/app_and_self_links.py
 src/thousandeyes_sdk/dashboards/models/asw_repeat.py
@@ -245,7 +235,6 @@ src/thousandeyes_sdk/dashboards/models/visual_mode.py
 src/thousandeyes_sdk/dashboards/models/widget.py
 src/thousandeyes_sdk/dashboards/models/widget_measure_type.py
 src/thousandeyes_sdk/dashboards/models/widget_position.py
-src/thousandeyes_sdk/dashboards/models/widget_type.py
 src/thousandeyes_sdk/dashboards/py.typed
 test/__init__.py
 test/test_dashboard_snapshots_api.py
