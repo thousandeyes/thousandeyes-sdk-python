@@ -32,7 +32,6 @@ class TestVoiceInstantTestsApi(unittest.TestCase):
         """Test case for create_voice_instant_test request and response models"""
         request_body_json = """
                 {
-                  "numPathTraces" : 3,
                   "_links" : {
                     "testResults" : [ {
                       "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
@@ -50,12 +49,19 @@ class TestVoiceInstantTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
-                  "liveShare" : false,
-                  "savedEvent" : true,
                   "description" : "ThousandEyes Test",
                   "type" : "voice",
                   "jitterBuffer" : 40,
+                  "dscpId" : "0",
+                  "duration" : 5,
+                  "dscp" : "Best Effort (DSCP 0)",
+                  "modifiedBy" : "user@user.com",
+                  "testName" : "ThousandEyes Test",
+                  "numPathTraces" : 3,
+                  "liveShare" : false,
+                  "savedEvent" : true,
                   "labels" : [ "9842", "1283" ],
+                  "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
@@ -63,21 +69,16 @@ class TestVoiceInstantTestsApi(unittest.TestCase):
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
-                  "dscpId" : "0",
-                  "duration" : 5,
                   "codec" : "G.711 @ 64 Kbps",
                   "codecId" : "0",
                   "createdDate" : "2022-07-17T22:00:54Z",
-                  "dscp" : "Best Effort (DSCP 0)",
                   "createdBy" : "user@user.com",
                   "port" : 1024,
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "targetAgentId" : "281474976710706",
-                  "modifiedBy" : "user@user.com",
                   "testId" : "281474976710706",
-                  "sharedWithAccounts" : [ "1234", "12345" ],
-                  "testName" : "ThousandEyes Test"
+                  "sharedWithAccounts" : [ "1234", "12345" ]
                 }
                 """
 

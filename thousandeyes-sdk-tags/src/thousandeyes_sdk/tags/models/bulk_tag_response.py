@@ -16,8 +16,9 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.tags.models.self_links import SelfLinks
 from thousandeyes_sdk.tags.models.tag import Tag
 from thousandeyes_sdk.tags.models.tag_bulk_create_error import TagBulkCreateError
 from typing import Optional, Set
@@ -29,7 +30,8 @@ class BulkTagResponse(BaseModel):
     """ # noqa: E501
     tags: Optional[List[Tag]] = None
     errors: Optional[List[TagBulkCreateError]] = None
-    __properties: ClassVar[List[str]] = ["tags", "errors"]
+    links: Optional[SelfLinks] = Field(default=None, alias="_links")
+    __properties: ClassVar[List[str]] = ["tags", "errors", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -87,6 +89,9 @@ class BulkTagResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['errors'] = _items
+        # override the default output from pydantic by calling `to_dict()` of links
+        if self.links:
+            _dict['_links'] = self.links.to_dict()
         return _dict
 
     @classmethod
@@ -100,7 +105,8 @@ class BulkTagResponse(BaseModel):
 
         _obj = cls.model_validate({
             "tags": [Tag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
-            "errors": [TagBulkCreateError.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None
+            "errors": [TagBulkCreateError.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None,
+            "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj
 

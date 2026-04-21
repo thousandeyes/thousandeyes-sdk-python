@@ -60,8 +60,9 @@ class AgentToAgentInstantTestRequest(BaseModel):
     throughput_duration: Optional[Annotated[int, Field(le=30000, strict=True, ge=5000)]] = Field(default=10000, description="The throughput duration.", alias="throughputDuration")
     throughput_rate: Optional[Annotated[int, Field(le=1000, strict=True, ge=8)]] = Field(default=None, description="The throughput rate, only applicable for UDP protocol.", alias="throughputRate")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
+    tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
     agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "direction", "dscp", "dscpId", "mss", "numPathTraces", "pathTraceMode", "port", "protocol", "randomizedStartTime", "targetAgentId", "throughputMeasurements", "throughputDuration", "throughputRate", "fixedPacketRate", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "direction", "dscp", "dscpId", "mss", "numPathTraces", "pathTraceMode", "port", "protocol", "randomizedStartTime", "targetAgentId", "throughputMeasurements", "throughputDuration", "throughputRate", "fixedPacketRate", "tags", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -170,6 +171,7 @@ class AgentToAgentInstantTestRequest(BaseModel):
             "throughputDuration": obj.get("throughputDuration") if obj.get("throughputDuration") is not None else 10000,
             "throughputRate": obj.get("throughputRate"),
             "fixedPacketRate": obj.get("fixedPacketRate"),
+            "tags": obj.get("tags"),
             "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj

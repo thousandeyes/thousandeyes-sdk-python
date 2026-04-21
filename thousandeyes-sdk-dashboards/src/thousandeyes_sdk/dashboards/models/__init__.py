@@ -81,6 +81,9 @@ from thousandeyes_sdk.dashboards.models.box_and_whiskers_datasource import BoxAn
 from thousandeyes_sdk.dashboards.models.color_grid_datasource import ColorGridDatasource
 from thousandeyes_sdk.dashboards.models.dashboard import Dashboard
 from thousandeyes_sdk.dashboards.models.dashboard_global_filter_id import DashboardGlobalFilterId
+from thousandeyes_sdk.dashboards.models.dashboard_layout import DashboardLayout
+from thousandeyes_sdk.dashboards.models.dashboard_layout_details import DashboardLayoutDetails
+from thousandeyes_sdk.dashboards.models.dashboard_layout_type import DashboardLayoutType
 from thousandeyes_sdk.dashboards.models.dashboard_links import DashboardLinks
 from thousandeyes_sdk.dashboards.models.dashboard_metric import DashboardMetric
 from thousandeyes_sdk.dashboards.models.dashboard_metric_direction import DashboardMetricDirection
@@ -125,4 +128,5 @@ from thousandeyes_sdk.dashboards.models.validation_error_item import ValidationE
 from thousandeyes_sdk.dashboards.models.visual_mode import VisualMode
 from thousandeyes_sdk.dashboards.models.widget import Widget
 from thousandeyes_sdk.dashboards.models.widget_measure_type import WidgetMeasureType
+from thousandeyes_sdk.dashboards.models.widget_position import WidgetPosition
 from thousandeyes_sdk.dashboards.models.widget_type import WidgetType

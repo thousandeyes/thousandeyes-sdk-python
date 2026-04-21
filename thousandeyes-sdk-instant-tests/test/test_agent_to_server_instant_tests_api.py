@@ -32,9 +32,6 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
         """Test case for create_agent_to_server_instant_test request and response models"""
         request_body_json = """
                 {
-                  "server" : "www.thousandeyes.com:80",
-                  "mtuMeasurements" : false,
-                  "ipv6Policy" : "use-agent-policy",
                   "_links" : {
                     "testResults" : [ {
                       "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
@@ -52,22 +49,12 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
-                  "bandwidthMeasurements" : true,
-                  "description" : "ThousandEyes Test",
-                  "probeMode" : "auto",
-                  "type" : "agent-to-server",
-                  "dscpId" : "0",
-                  "fixedPacketRate" : 25,
-                  "protocol" : "tcp",
-                  "dscp" : "Best Effort (DSCP 0)",
-                  "pathTraceMode" : "classic",
-                  "modifiedBy" : "user@user.com",
-                  "testName" : "ThousandEyes Test",
-                  "numPathTraces" : 3,
                   "liveShare" : false,
                   "savedEvent" : true,
-                  "networkMeasurements" : false,
+                  "description" : "ThousandEyes Test",
+                  "type" : "agent-to-server",
                   "labels" : [ "9842", "1283" ],
+                  "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
@@ -77,12 +64,11 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
-                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "modifiedBy" : "user@user.com",
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ "1234", "12345" ],
-                  "pingPayloadSize" : 112,
-                  "continuousMode" : false
+                  "testName" : "ThousandEyes Test"
                 }
                 """
 
@@ -92,9 +78,6 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
 
         response_body_json = """
                 {
-                  "server" : "www.thousandeyes.com:80",
-                  "mtuMeasurements" : false,
-                  "ipv6Policy" : "use-agent-policy",
                   "_links" : {
                     "testResults" : [ {
                       "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
@@ -112,21 +95,10 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
-                  "bandwidthMeasurements" : true,
-                  "description" : "ThousandEyes Test",
-                  "probeMode" : "auto",
-                  "type" : "agent-to-server",
-                  "dscpId" : "0",
-                  "fixedPacketRate" : 25,
-                  "protocol" : "tcp",
-                  "dscp" : "Best Effort (DSCP 0)",
-                  "pathTraceMode" : "classic",
-                  "modifiedBy" : "user@user.com",
-                  "testName" : "ThousandEyes Test",
-                  "numPathTraces" : 3,
                   "liveShare" : false,
                   "savedEvent" : true,
-                  "networkMeasurements" : false,
+                  "description" : "ThousandEyes Test",
+                  "type" : "agent-to-server",
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -171,8 +143,8 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
-                  "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "modifiedBy" : "user@user.com",
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ {
                     "name" : "Account name",
@@ -181,8 +153,7 @@ class TestAgentToServerInstantTestsApi(unittest.TestCase):
                     "name" : "Account name",
                     "aid" : "1234"
                   } ],
-                  "pingPayloadSize" : 112,
-                  "continuousMode" : false
+                  "testName" : "ThousandEyes Test"
                 }"""
 
         response_loaded_json = json.loads(response_body_json)

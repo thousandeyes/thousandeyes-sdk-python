@@ -1,6 +1,6 @@
-# RequestMethod
+# OAuthAuthType
 
-HTTP request method.
+HTTP authentication type used for the OAuth request.
 
 ## Properties
 

@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **agent_id** | **str** | Unique ID of endpoint agent, from &#x60;/endpoint/agents&#x60; endpoint. | [optional] [readonly] 
 **var_date** | **datetime** | UTC date when endpoint network topology took place (ISO date-time format). | [optional] [readonly] 
 **network_topology_id** | **str** | Network topology ID. Each network topology occurrence has a unique ID. | [optional] [readonly] 
+**dns_server_test** | [**LocalNetworkTopologyDnsServerTest**](LocalNetworkTopologyDnsServerTest.md) |  | [optional] 
 **round_id** | **int** | Epoch time (seconds) indicating the start time of the round. | [optional] [readonly] 
 **target** | **str** | IP of the target the network topology was performed against. This is typically a default gateway, proxy or VPN endpoint. | [optional] [readonly] 
 **target_port** | **int** | Port of the target the network topology was performed against. | [optional] [readonly] 

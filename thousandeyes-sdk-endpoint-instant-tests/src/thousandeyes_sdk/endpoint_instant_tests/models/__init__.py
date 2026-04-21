@@ -36,6 +36,7 @@ from thousandeyes_sdk.endpoint_instant_tests.models.error import Error
 from thousandeyes_sdk.endpoint_instant_tests.models.link import Link
 from thousandeyes_sdk.endpoint_instant_tests.models.test_interval import TestInterval
 from thousandeyes_sdk.endpoint_instant_tests.models.test_label import TestLabel
+from thousandeyes_sdk.endpoint_instant_tests.models.test_probe_mode import TestProbeMode
 from thousandeyes_sdk.endpoint_instant_tests.models.test_probe_mode_response import TestProbeModeResponse
 from thousandeyes_sdk.endpoint_instant_tests.models.test_ssl_version_id import TestSslVersionId
 from thousandeyes_sdk.endpoint_instant_tests.models.unauthorized_error import UnauthorizedError

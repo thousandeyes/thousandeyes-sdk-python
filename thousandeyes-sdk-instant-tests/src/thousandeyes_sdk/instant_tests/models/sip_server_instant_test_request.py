@@ -58,9 +58,10 @@ class SipServerInstantTestRequest(BaseModel):
     sip_time_limit: Optional[Annotated[int, Field(le=10, strict=True, ge=5)]] = Field(default=5, description="Time limit in milliseconds.", alias="sipTimeLimit")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
+    tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
     agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
     target_sip_credentials: TestSipCredentials = Field(alias="targetSipCredentials")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "randomizedStartTime", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "agents", "targetSipCredentials"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "randomizedStartTime", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "tags", "agents", "targetSipCredentials"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -168,6 +169,7 @@ class SipServerInstantTestRequest(BaseModel):
             "sipTimeLimit": obj.get("sipTimeLimit") if obj.get("sipTimeLimit") is not None else 5,
             "fixedPacketRate": obj.get("fixedPacketRate"),
             "ipv6Policy": obj.get("ipv6Policy"),
+            "tags": obj.get("tags"),
             "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
             "targetSipCredentials": TestSipCredentials.from_dict(obj["targetSipCredentials"]) if obj.get("targetSipCredentials") is not None else None
         })

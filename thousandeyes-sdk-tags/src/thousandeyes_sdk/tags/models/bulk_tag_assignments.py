@@ -16,9 +16,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.tags.models.bulk_tag_assignment import BulkTagAssignment
+from thousandeyes_sdk.tags.models.self_links import SelfLinks
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,7 +28,8 @@ class BulkTagAssignments(BaseModel):
     BulkTagAssignments
     """ # noqa: E501
     tags: Optional[List[BulkTagAssignment]] = None
-    __properties: ClassVar[List[str]] = ["tags"]
+    links: Optional[SelfLinks] = Field(default=None, alias="_links")
+    __properties: ClassVar[List[str]] = ["tags", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +78,9 @@ class BulkTagAssignments(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['tags'] = _items
+        # override the default output from pydantic by calling `to_dict()` of links
+        if self.links:
+            _dict['_links'] = self.links.to_dict()
         return _dict
 
     @classmethod
@@ -88,7 +93,8 @@ class BulkTagAssignments(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "tags": [BulkTagAssignment.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None
+            "tags": [BulkTagAssignment.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
+            "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj
 
