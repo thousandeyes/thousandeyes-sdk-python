@@ -27,6 +27,7 @@ class TcpPathTraceModeResponse(str, Enum):
     """
     AUTO = 'auto'
     SYN = 'syn'
+    SYN_MINUS_PCAP = 'syn-pcap'
     UNKNOWN = 'unknown'
     DATA_MINUS_IN_MINUS_SESSION_MINUS_WITH_MINUS_DECREMENTING_MINUS_TTL = 'data-in-session-with-decrementing-ttl'
     DATA_MINUS_IN_MINUS_SESSION = 'data-in-session'

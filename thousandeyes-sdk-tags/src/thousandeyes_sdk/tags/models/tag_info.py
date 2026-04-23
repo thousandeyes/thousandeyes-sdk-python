@@ -22,6 +22,8 @@ from typing import Any, ClassVar, Dict, List, Optional, Union
 from thousandeyes_sdk.tags.models.access_type import AccessType
 from thousandeyes_sdk.tags.models.assignment import Assignment
 from thousandeyes_sdk.tags.models.object_type import ObjectType
+from thousandeyes_sdk.tags.models.tag_filter import TagFilter
+from thousandeyes_sdk.tags.models.tag_match_type import TagMatchType
 from thousandeyes_sdk.tags.models.type import Type
 from typing import Optional, Set
 from typing_extensions import Self
@@ -45,7 +47,9 @@ class TagInfo(BaseModel):
     object_type: Optional[ObjectType] = Field(default=None, alias="objectType")
     type: Optional[Type] = None
     value: Optional[StrictStr] = Field(default=None, description="The tag's value")
-    __properties: ClassVar[List[str]] = ["assignments", "accessType", "aid", "builtIn", "color", "createDate", "icon", "description", "id", "key", "legacyId", "modifiedDate", "objectType", "type", "value"]
+    match_type: Optional[TagMatchType] = Field(default=None, alias="matchType")
+    filters: Optional[List[TagFilter]] = Field(default=None, description="The combination of filters (filter keys) dynamically assigned to an `endpoint-agent` as determined by the matching logic (`and` or `or`). For example, if you filter on `bssid` and `ssid` with a matching logic of `and`, both filters are assigned as tags to the `endpoint-agent`; `or` means either filter can be assigned. **Note:** filters currently only apply to `endpoint-agent` object types.")
+    __properties: ClassVar[List[str]] = ["assignments", "accessType", "aid", "builtIn", "color", "createDate", "icon", "description", "id", "key", "legacyId", "modifiedDate", "objectType", "type", "value", "matchType", "filters"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -108,6 +112,13 @@ class TagInfo(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['assignments'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in filters (list)
+        _items = []
+        if self.filters:
+            for _item in self.filters:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['filters'] = _items
         # set to None if icon (nullable) is None
         # and model_fields_set contains the field
         if self.icon is None and "icon" in self.model_fields_set:
@@ -154,7 +165,9 @@ class TagInfo(BaseModel):
             "modifiedDate": obj.get("modifiedDate"),
             "objectType": obj.get("objectType"),
             "type": obj.get("type"),
-            "value": obj.get("value")
+            "value": obj.get("value"),
+            "matchType": obj.get("matchType"),
+            "filters": [TagFilter.from_dict(_item) for _item in obj["filters"]] if obj.get("filters") is not None else None
         })
         return _obj
 

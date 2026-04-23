@@ -144,6 +144,19 @@ class TestDashboardsApi(unittest.TestCase):
                     "timespanStart" : "2023-05-16 10:14:28",
                     "timespanEnd" : "2023-05-16 11:14:28"
                   },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
@@ -272,6 +285,19 @@ class TestDashboardsApi(unittest.TestCase):
                     "timespanStart" : "2023-05-16 10:14:28",
                     "timespanEnd" : "2023-05-16 11:14:28"
                   },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
@@ -318,9 +344,6 @@ class TestDashboardsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
-                  "dashboardModifiedBy" : "1",
-                  "migratedReport" : false,
-                  "isDefaultForAccount" : false,
                   "isDefaultForUser" : true,
                   "description" : "HTTP Server Widgets",
                   "isPrivate" : true,
@@ -401,6 +424,11 @@ class TestDashboardsApi(unittest.TestCase):
                     "dataSource" : "ENDPOINT_AGENTS",
                     "direction" : "FROM_TARGET"
                   } ],
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "modifiedBy" : 1,
+                  "dashboardModifiedBy" : "1",
+                  "migratedReport" : false,
+                  "isDefaultForAccount" : false,
                   "defaultTimespan" : {
                     "duration" : 7200,
                     "timespanDuration" : 7200,
@@ -409,7 +437,19 @@ class TestDashboardsApi(unittest.TestCase):
                     "timespanStart" : "2023-05-16 10:14:28",
                     "timespanEnd" : "2023-05-16 11:14:28"
                   },
-                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
                   "accountId" : 1234,
                   "apiLink" : [ {
                     "key" : ""
@@ -420,7 +460,6 @@ class TestDashboardsApi(unittest.TestCase):
                   "createdBy" : 1,
                   "globalOverride" : true,
                   "modifiedDate" : "2023-05-16 10:14:28",
-                  "modifiedBy" : 1,
                   "isGlobalOverride" : true,
                   "aid" : "1234",
                   "dashboardModifiedDate" : "2023-05-16T10:14:28Z"
@@ -888,9 +927,6 @@ class TestDashboardsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
-                  "dashboardModifiedBy" : "1",
-                  "migratedReport" : false,
-                  "isDefaultForAccount" : false,
                   "isDefaultForUser" : true,
                   "description" : "HTTP Server Widgets",
                   "isPrivate" : true,
@@ -971,6 +1007,11 @@ class TestDashboardsApi(unittest.TestCase):
                     "dataSource" : "ENDPOINT_AGENTS",
                     "direction" : "FROM_TARGET"
                   } ],
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "modifiedBy" : 1,
+                  "dashboardModifiedBy" : "1",
+                  "migratedReport" : false,
+                  "isDefaultForAccount" : false,
                   "defaultTimespan" : {
                     "duration" : 7200,
                     "timespanDuration" : 7200,
@@ -979,7 +1020,19 @@ class TestDashboardsApi(unittest.TestCase):
                     "timespanStart" : "2023-05-16 10:14:28",
                     "timespanEnd" : "2023-05-16 11:14:28"
                   },
-                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
                   "accountId" : 1234,
                   "apiLink" : [ {
                     "key" : ""
@@ -990,7 +1043,6 @@ class TestDashboardsApi(unittest.TestCase):
                   "createdBy" : 1,
                   "globalOverride" : true,
                   "modifiedDate" : "2023-05-16 10:14:28",
-                  "modifiedBy" : 1,
                   "isGlobalOverride" : true,
                   "aid" : "1234",
                   "dashboardModifiedDate" : "2023-05-16T10:14:28Z"
@@ -1019,9 +1071,6 @@ class TestDashboardsApi(unittest.TestCase):
                       "title" : "title"
                     }
                   },
-                  "dashboardModifiedBy" : "1",
-                  "migratedReport" : false,
-                  "isDefaultForAccount" : false,
                   "isDefaultForUser" : true,
                   "description" : "HTTP Server Widgets",
                   "isPrivate" : true,
@@ -1102,6 +1151,11 @@ class TestDashboardsApi(unittest.TestCase):
                     "dataSource" : "ENDPOINT_AGENTS",
                     "direction" : "FROM_TARGET"
                   } ],
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "modifiedBy" : 1,
+                  "dashboardModifiedBy" : "1",
+                  "migratedReport" : false,
+                  "isDefaultForAccount" : false,
                   "defaultTimespan" : {
                     "duration" : 7200,
                     "timespanDuration" : 7200,
@@ -1110,7 +1164,19 @@ class TestDashboardsApi(unittest.TestCase):
                     "timespanStart" : "2023-05-16 10:14:28",
                     "timespanEnd" : "2023-05-16 11:14:28"
                   },
-                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
                   "accountId" : 1234,
                   "apiLink" : [ {
                     "key" : ""
@@ -1121,7 +1187,6 @@ class TestDashboardsApi(unittest.TestCase):
                   "createdBy" : 1,
                   "globalOverride" : true,
                   "modifiedDate" : "2023-05-16 10:14:28",
-                  "modifiedBy" : 1,
                   "isGlobalOverride" : true,
                   "aid" : "1234",
                   "dashboardModifiedDate" : "2023-05-16T10:14:28Z"
@@ -1370,6 +1435,19 @@ class TestDashboardsApi(unittest.TestCase):
                     "timespanStart" : "2023-05-16 10:14:28",
                     "timespanEnd" : "2023-05-16 11:14:28"
                   },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
@@ -1497,6 +1575,19 @@ class TestDashboardsApi(unittest.TestCase):
                     "end" : "2023-05-16T11:14:28Z",
                     "timespanStart" : "2023-05-16 10:14:28",
                     "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",

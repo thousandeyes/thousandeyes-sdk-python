@@ -19,13 +19,14 @@ from typing_extensions import Self
 
 class Type(str, Enum):
     """
-    The nature of the tag - whether the tag is dynamically assigned to products based on a filter rule or statically assigned to specified products.
+    The nature of the tag - whether the tag is dynamically assigned to objects based on a filter rule or statically assigned to specified objects. Currently only `endpoint-agent` object types support dynamic assignment; all other object types (for example, `test`, `agent`) support only static assignment.
     """
 
     """
     allowed enum values
     """
     STATIC = 'static'
+    DYNAMIC = 'dynamic'
     UNKNOWN = 'unknown'
 
     @classmethod

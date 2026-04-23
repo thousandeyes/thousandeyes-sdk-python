@@ -19,6 +19,7 @@ Name | Type | Description | Notes
 **agent_type** | **str** | Enterprise Cluster agent type. | 
 **tests** | [**List[SimpleTest]**](SimpleTest.md) | List of tests. See &#x60;/tests&#x60; for more information. | [optional] 
 **labels** | [**List[AgentLabel]**](AgentLabel.md) | List of labels. See &#x60;/labels&#x60; for more information. | [optional] [readonly] 
+**tags** | [**List[AgentTag]**](AgentTag.md) | List of tags. See &#x60;/tags&#x60; for more information. | [optional] [readonly] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 **test_ids** | **List[int]** | List of test IDs assigned to the agent. | [optional] [readonly] 
 **cluster_members** | [**List[ClusterMember]**](ClusterMember.md) | If an enterprise agent is clustered, detailed information about each cluster member will be shown as array entries in the clusterMembers field. This field is not shown for Enterprise Agents in standalone mode, or for Cloud Agents. | [optional] [readonly] 

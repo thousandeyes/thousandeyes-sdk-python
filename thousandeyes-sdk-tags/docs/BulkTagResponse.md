@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tags** | [**List[Tag]**](Tag.md) |  | [optional] 
 **errors** | [**List[TagBulkCreateError]**](TagBulkCreateError.md) |  | [optional] [readonly] 
+**links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
 

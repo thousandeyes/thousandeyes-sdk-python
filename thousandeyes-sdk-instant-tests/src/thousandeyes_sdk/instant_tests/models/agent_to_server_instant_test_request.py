@@ -62,8 +62,9 @@ class AgentToServerInstantTestRequest(BaseModel):
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
     ping_payload_size: Optional[Annotated[int, Field(le=1400, strict=True, ge=0)]] = Field(default=None, description="Payload size (not total packet size) for the end-to-end metric's probes, ping payload size allows values from 0 to 1400 bytes. When set to null, payload sizes are 0 bytes for ICMP-based tests and 1 byte for TCP-based tests.", alias="pingPayloadSize")
     network_measurements: Optional[StrictBool] = Field(default=False, description="View packet loss in 1-second intervals. This is only available for 1-minute interval tests. Set to `true` to enable network measurements.", alias="networkMeasurements")
+    tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
     agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "bandwidthMeasurements", "continuousMode", "fixedPacketRate", "mtuMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "server", "dscp", "dscpId", "ipv6Policy", "pingPayloadSize", "networkMeasurements", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "bandwidthMeasurements", "continuousMode", "fixedPacketRate", "mtuMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "server", "dscp", "dscpId", "ipv6Policy", "pingPayloadSize", "networkMeasurements", "tags", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -173,6 +174,7 @@ class AgentToServerInstantTestRequest(BaseModel):
             "ipv6Policy": obj.get("ipv6Policy"),
             "pingPayloadSize": obj.get("pingPayloadSize"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else False,
+            "tags": obj.get("tags"),
             "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj

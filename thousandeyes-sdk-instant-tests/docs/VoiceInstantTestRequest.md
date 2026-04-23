@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **port** | **int** | Port number for the chosen protocol. | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **target_agent_id** | **str** | Agent ID of the target agent for the test. | 
+**tags** | **List[str]** | A list of test tag identifiers (get &#x60;id&#x60; from &#x60;/tags&#x60; endpoint). | [optional] 
 **agents** | [**List[TestAgent]**](TestAgent.md) | A list of objects with &#x60;agentId&#x60; (required) and &#x60;sourceIpAddress&#x60; (optional). | 
 
 ## Example

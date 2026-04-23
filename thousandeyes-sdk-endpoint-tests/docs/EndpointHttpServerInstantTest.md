@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
 **username** | **str** | Username for Basic/NTLM authentication. | [optional] 
 **ssl_version_id** | [**TestSslVersionId**](TestSslVersionId.md) |  | [optional] 
-**tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
+**tcp_probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
 **verify_certificate** | **bool** | Flag indicating if a certificate should be verified. | [optional] [default to True]
 **url** | **str** | The test target URL. You can optionally specify the protocol (&#x60;http&#x60; or &#x60;https&#x60;).   - **Default Protocol:** If no protocol is specified, &#x60;https&#x60; is used by default.  - **Port Number:** To specify a port, append it to the URL with a colon after the hostname or IP address (e.g., &#x60;https://example.com:443&#x60;).      - If no port is specified in the URL, the &#x60;port&#x60; is determined by the default for protocol (HTTP: 80, HTTPS: 443).  | 
 **has_ping** | **bool** | Optional flag indicating if the test should run ping. | [optional] [default to True]

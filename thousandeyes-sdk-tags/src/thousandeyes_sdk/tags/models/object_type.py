@@ -29,6 +29,8 @@ class ObjectType(str, Enum):
     DASHBOARD = 'dashboard'
     ENDPOINT_MINUS_TEST = 'endpoint-test'
     V_MINUS_AGENT = 'v-agent'
+    CONNECTED_MINUS_DEVICES_MINUS_TEST = 'connected-devices-test'
+    ENDPOINT_MINUS_AGENT = 'endpoint-agent'
     UNKNOWN = 'unknown'
 
     @classmethod

@@ -16,6 +16,7 @@ docs/AgentProxiesApi.md
 docs/AgentProxy.md
 docs/AgentRequest.md
 docs/AgentResponse.md
+docs/AgentTag.md
 docs/AgentTestsAssignRequest.md
 docs/AlertEmail.md
 docs/AlertIntegrationBase.md
@@ -83,6 +84,7 @@ src/thousandeyes_sdk/agents/models/agent_proxies.py
 src/thousandeyes_sdk/agents/models/agent_proxy.py
 src/thousandeyes_sdk/agents/models/agent_request.py
 src/thousandeyes_sdk/agents/models/agent_response.py
+src/thousandeyes_sdk/agents/models/agent_tag.py
 src/thousandeyes_sdk/agents/models/agent_tests_assign_request.py
 src/thousandeyes_sdk/agents/models/alert_email.py
 src/thousandeyes_sdk/agents/models/alert_integration_base.py

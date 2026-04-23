@@ -26,6 +26,7 @@ from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_connection_sco
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_gateway_score import EndpointProbeGatewayScore
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_proxy_score import EndpointProbeProxyScore
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_probe_vpn_score import EndpointProbeVpnScore
+from thousandeyes_sdk.endpoint_test_results.models.local_network_topology_dns_server_test import LocalNetworkTopologyDnsServerTest
 from thousandeyes_sdk.endpoint_test_results.models.network_ping import NetworkPing
 from thousandeyes_sdk.endpoint_test_results.models.network_profile import NetworkProfile
 from thousandeyes_sdk.endpoint_test_results.models.network_topology_type import NetworkTopologyType
@@ -45,6 +46,7 @@ class LocalNetworkTopologyResult(BaseModel):
     agent_id: Optional[StrictStr] = Field(default=None, description="Unique ID of endpoint agent, from `/endpoint/agents` endpoint.", alias="agentId")
     var_date: Optional[datetime] = Field(default=None, description="UTC date when endpoint network topology took place (ISO date-time format).", alias="date")
     network_topology_id: Optional[StrictStr] = Field(default=None, description="Network topology ID. Each network topology occurrence has a unique ID.", alias="networkTopologyId")
+    dns_server_test: Optional[LocalNetworkTopologyDnsServerTest] = Field(default=None, alias="dnsServerTest")
     round_id: Optional[StrictInt] = Field(default=None, description="Epoch time (seconds) indicating the start time of the round.", alias="roundId")
     target: Optional[StrictStr] = Field(default=None, description="IP of the target the network topology was performed against. This is typically a default gateway, proxy or VPN endpoint.")
     target_port: Optional[StrictInt] = Field(default=None, description="Port of the target the network topology was performed against.", alias="targetPort")
@@ -66,7 +68,7 @@ class LocalNetworkTopologyResult(BaseModel):
     network_profile: Optional[NetworkProfile] = Field(default=None, alias="networkProfile")
     icmp_traceroute: Optional[Traceroute] = Field(default=None, alias="icmpTraceroute")
     icmp_traceroutes: Optional[List[Traceroute]] = Field(default=None, alias="icmpTraceroutes")
-    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails", "vpnScore", "gatewayScore", "proxyScore", "connectionScore", "agentScore", "batteryMetrics", "cellularProfile", "platform", "coordinates", "networkProfile", "icmpTraceroute", "icmpTraceroutes"]
+    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "dnsServerTest", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails", "vpnScore", "gatewayScore", "proxyScore", "connectionScore", "agentScore", "batteryMetrics", "cellularProfile", "platform", "coordinates", "networkProfile", "icmpTraceroute", "icmpTraceroutes"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -122,6 +124,9 @@ class LocalNetworkTopologyResult(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
+        # override the default output from pydantic by calling `to_dict()` of dns_server_test
+        if self.dns_server_test:
+            _dict['dnsServerTest'] = self.dns_server_test.to_dict()
         # override the default output from pydantic by calling `to_dict()` of icmp_ping
         if self.icmp_ping:
             _dict['icmpPing'] = self.icmp_ping.to_dict()
@@ -186,6 +191,7 @@ class LocalNetworkTopologyResult(BaseModel):
             "agentId": obj.get("agentId"),
             "date": obj.get("date"),
             "networkTopologyId": obj.get("networkTopologyId"),
+            "dnsServerTest": LocalNetworkTopologyDnsServerTest.from_dict(obj["dnsServerTest"]) if obj.get("dnsServerTest") is not None else None,
             "roundId": obj.get("roundId"),
             "target": obj.get("target"),
             "targetPort": obj.get("targetPort"),
