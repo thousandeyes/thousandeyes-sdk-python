@@ -22,6 +22,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.agents.models.account_group import AccountGroup
 from thousandeyes_sdk.agents.models.agent_label import AgentLabel
+from thousandeyes_sdk.agents.models.agent_tag import AgentTag
 from thousandeyes_sdk.agents.models.cluster_member import ClusterMember
 from thousandeyes_sdk.agents.models.coordinates import Coordinates
 from thousandeyes_sdk.agents.models.enterprise_agent_ipv6_policy import EnterpriseAgentIpv6Policy
@@ -66,9 +67,10 @@ class EnterpriseAgentDetail(BaseModel):
     interface_ip_mapping: Optional[List[InterfaceIpMapping]] = Field(default=None, alias="interfaceIpMapping")
     notification_rules: Optional[List[NotificationRules]] = Field(default=None, description="List of notification rule objects configured on agent", alias="notificationRules")
     labels: Optional[List[AgentLabel]] = Field(default=None, description="List of labels. See `/labels` for more information.")
+    tags: Optional[List[AgentTag]] = Field(default=None, description="List of tags. See `/tags` for more information.")
     agent_type: Annotated[str, Field(strict=True)] = Field(description="Enterprise agent type.", alias="agentType")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping", "notificationRules", "labels", "agentType", "_links"]
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping", "notificationRules", "labels", "tags", "agentType", "_links"]
 
     @field_validator('agent_type')
     def agent_type_validate_regular_expression(cls, value):
@@ -125,6 +127,7 @@ class EnterpriseAgentDetail(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "ip_addresses",
@@ -144,6 +147,7 @@ class EnterpriseAgentDetail(BaseModel):
             "created_date",
             "interface_ip_mapping",
             "labels",
+            "tags",
         ])
 
         _dict = self.model_dump(
@@ -203,6 +207,13 @@ class EnterpriseAgentDetail(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['labels'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
+        _items = []
+        if self.tags:
+            for _item in self.tags:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['tags'] = _items
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
@@ -246,6 +257,7 @@ class EnterpriseAgentDetail(BaseModel):
             "interfaceIpMapping": [InterfaceIpMapping.from_dict(_item) for _item in obj["interfaceIpMapping"]] if obj.get("interfaceIpMapping") is not None else None,
             "notificationRules": [NotificationRules.from_dict(_item) for _item in obj["notificationRules"]] if obj.get("notificationRules") is not None else None,
             "labels": [AgentLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
+            "tags": [AgentTag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "agentType": obj.get("agentType"),
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

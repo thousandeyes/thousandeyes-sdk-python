@@ -82,6 +82,9 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                   "results" : [ {
                     "date" : "2022-07-17T22:00:54Z",
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "dnsServerTest" : {
+                      "resolutionTime" : 3
+                    },
                     "isIcmpBlocked" : true,
                     "gatewayScore" : {
                       "score" : 100.0,
@@ -242,6 +245,9 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                   }, {
                     "date" : "2022-07-17T22:00:54Z",
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "dnsServerTest" : {
+                      "resolutionTime" : 3
+                    },
                     "isIcmpBlocked" : true,
                     "gatewayScore" : {
                       "score" : 100.0,
@@ -461,6 +467,106 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                   "results" : [ {
                     "date" : "2022-07-17T22:00:54Z",
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "dnsServerTest" : {
+                      "resolutionTime" : 3
+                    },
+                    "vpnScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
+                    "type" : "vpn",
+                    "targetPort" : 80,
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
+                    "icmpTraceroute" : {
+                      "destination" : "13.32.22.232",
+                      "hops" : [ {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
+                      }, {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
+                      } ],
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
+                    },
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
+                      },
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
+                      },
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
+                        }, {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
+                        } ]
+                      },
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
+                      },
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
+                    },
+                    "roundId" : 1384309800,
+                    "agentScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
                     "isIcmpBlocked" : true,
                     "gatewayScore" : {
                       "score" : 100.0,
@@ -472,10 +578,6 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "error" : "An operation timed out.",
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
-                    "vpnScore" : {
-                      "score" : 100.0,
-                      "quality" : "great"
-                    },
                     "proxyScore" : {
                       "score" : 100.0,
                       "quality" : "great"
@@ -484,10 +586,6 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "latitude" : 46.0552778,
                       "location" : "Slovenia",
                       "longitude" : 14.5144444
-                    },
-                    "batteryMetrics" : {
-                      "batteryLevel" : "medium",
-                      "batteryLevelNormalizedPercent" : 0.3
                     },
                     "icmpTraceroutes" : [ {
                       "destination" : "13.32.22.232",
@@ -534,22 +632,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     } ],
-                    "type" : "vpn",
-                    "targetPort" : 80,
-                    "platform" : "mac",
                     "target" : "10.0.2.2",
-                    "cellularProfile" : {
-                      "rssi" : -10,
-                      "advertisedNetworkSubtype" : "LTE/HSPA",
-                      "carrierName" : "T-Mobile",
-                      "rsrq" : -30,
-                      "rsrp" : -30,
-                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
-                      "rscp" : -30,
-                      "networkGen" : "2g, 3g, 4g, 5g",
-                      "networkSubtype" : "LTE/HSPA",
-                      "sinr" : 20
-                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -647,75 +730,6 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                         "totalMemoryPercentage" : 0.22
                       } ]
                     },
-                    "icmpTraceroute" : {
-                      "destination" : "13.32.22.232",
-                      "hops" : [ {
-                        "delay" : 5,
-                        "prefix" : "196.40.96.0/20",
-                        "hop" : 1,
-                        "ipAddress" : "196.40.106.237",
-                        "name" : "89-210-88-65.access.t-2.net",
-                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
-                        "asn" : 34779
-                      }, {
-                        "delay" : 5,
-                        "prefix" : "196.40.96.0/20",
-                        "hop" : 1,
-                        "ipAddress" : "196.40.106.237",
-                        "name" : "89-210-88-65.access.t-2.net",
-                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
-                        "asn" : 34779
-                      } ],
-                      "error" : "An operation timed out.",
-                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
-                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
-                    },
-                    "networkProfile" : {
-                      "previousInterface" : {
-                        "publicIpAddress" : "84.255.241.1",
-                        "publicIpRange" : "84.255.241.0-84.255.241.255",
-                        "ipAddress" : "10.0.0.13",
-                        "hardwareType" : "wireless",
-                        "localPrefix" : "10.0.0.0",
-                        "interfaceName" : "en0",
-                        "subnetMask" : "255.255.255.0",
-                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
-                      },
-                      "ethernetProfile" : {
-                        "linkSpeed" : 860
-                      },
-                      "publicIpAddress" : "84.255.241.1",
-                      "publicIpRange" : "84.255.241.0-84.255.241.255",
-                      "ipAddress" : "10.0.0.13",
-                      "hardwareType" : "wireless",
-                      "localPrefix" : "10.0.0.0",
-                      "proxyProfile" : {
-                        "method" : "System",
-                        "proxies" : [ {
-                          "bypass" : "*.local;169.254/16",
-                          "proxy" : "<direct>"
-                        }, {
-                          "bypass" : "*.local;169.254/16",
-                          "proxy" : "<direct>"
-                        } ]
-                      },
-                      "subnetMask" : "255.255.255.0",
-                      "error" : "An operation timed out.",
-                      "wirelessProfile" : {
-                        "rssi" : -38,
-                        "bssid" : "4c:ba:ba:f4:fa:fa",
-                        "vendor" : "Cisco",
-                        "txRate" : 130,
-                        "channel" : 1,
-                        "noise" : -95,
-                        "phyMode" : "802.11n",
-                        "ssid" : "Internet for the masses",
-                        "quality" : 100
-                      },
-                      "interfaceName" : "en0",
-                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
-                      "gateway" : "10.0.0.1"
-                    },
                     "connectionScore" : {
                       "score" : 100.0,
                       "quality" : "great"
@@ -731,15 +745,110 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "pktsSent" : 10
                     },
-                    "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
-                    "roundId" : 1384309800,
-                    "agentScore" : {
-                      "score" : 100.0,
-                      "quality" : "great"
-                    }
+                    "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49"
                   }, {
                     "date" : "2022-07-17T22:00:54Z",
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "dnsServerTest" : {
+                      "resolutionTime" : 3
+                    },
+                    "vpnScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
+                    "batteryMetrics" : {
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
+                    },
+                    "type" : "vpn",
+                    "targetPort" : 80,
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
+                    },
+                    "icmpTraceroute" : {
+                      "destination" : "13.32.22.232",
+                      "hops" : [ {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
+                      }, {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
+                      } ],
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
+                    },
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
+                      },
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
+                      },
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
+                        }, {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
+                        } ]
+                      },
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
+                      },
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
+                    },
+                    "roundId" : 1384309800,
+                    "agentScore" : {
+                      "score" : 100.0,
+                      "quality" : "great"
+                    },
                     "isIcmpBlocked" : true,
                     "gatewayScore" : {
                       "score" : 100.0,
@@ -751,10 +860,6 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "error" : "An operation timed out.",
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
-                    "vpnScore" : {
-                      "score" : 100.0,
-                      "quality" : "great"
-                    },
                     "proxyScore" : {
                       "score" : 100.0,
                       "quality" : "great"
@@ -763,10 +868,6 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "latitude" : 46.0552778,
                       "location" : "Slovenia",
                       "longitude" : 14.5144444
-                    },
-                    "batteryMetrics" : {
-                      "batteryLevel" : "medium",
-                      "batteryLevelNormalizedPercent" : 0.3
                     },
                     "icmpTraceroutes" : [ {
                       "destination" : "13.32.22.232",
@@ -813,22 +914,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     } ],
-                    "type" : "vpn",
-                    "targetPort" : 80,
-                    "platform" : "mac",
                     "target" : "10.0.2.2",
-                    "cellularProfile" : {
-                      "rssi" : -10,
-                      "advertisedNetworkSubtype" : "LTE/HSPA",
-                      "carrierName" : "T-Mobile",
-                      "rsrq" : -30,
-                      "rsrp" : -30,
-                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
-                      "rscp" : -30,
-                      "networkGen" : "2g, 3g, 4g, 5g",
-                      "networkSubtype" : "LTE/HSPA",
-                      "sinr" : 20
-                    },
                     "systemMetrics" : {
                       "cpuUtilization" : {
                         "min" : 0.22,
@@ -926,75 +1012,6 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                         "totalMemoryPercentage" : 0.22
                       } ]
                     },
-                    "icmpTraceroute" : {
-                      "destination" : "13.32.22.232",
-                      "hops" : [ {
-                        "delay" : 5,
-                        "prefix" : "196.40.96.0/20",
-                        "hop" : 1,
-                        "ipAddress" : "196.40.106.237",
-                        "name" : "89-210-88-65.access.t-2.net",
-                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
-                        "asn" : 34779
-                      }, {
-                        "delay" : 5,
-                        "prefix" : "196.40.96.0/20",
-                        "hop" : 1,
-                        "ipAddress" : "196.40.106.237",
-                        "name" : "89-210-88-65.access.t-2.net",
-                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
-                        "asn" : 34779
-                      } ],
-                      "error" : "An operation timed out.",
-                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
-                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
-                    },
-                    "networkProfile" : {
-                      "previousInterface" : {
-                        "publicIpAddress" : "84.255.241.1",
-                        "publicIpRange" : "84.255.241.0-84.255.241.255",
-                        "ipAddress" : "10.0.0.13",
-                        "hardwareType" : "wireless",
-                        "localPrefix" : "10.0.0.0",
-                        "interfaceName" : "en0",
-                        "subnetMask" : "255.255.255.0",
-                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
-                      },
-                      "ethernetProfile" : {
-                        "linkSpeed" : 860
-                      },
-                      "publicIpAddress" : "84.255.241.1",
-                      "publicIpRange" : "84.255.241.0-84.255.241.255",
-                      "ipAddress" : "10.0.0.13",
-                      "hardwareType" : "wireless",
-                      "localPrefix" : "10.0.0.0",
-                      "proxyProfile" : {
-                        "method" : "System",
-                        "proxies" : [ {
-                          "bypass" : "*.local;169.254/16",
-                          "proxy" : "<direct>"
-                        }, {
-                          "bypass" : "*.local;169.254/16",
-                          "proxy" : "<direct>"
-                        } ]
-                      },
-                      "subnetMask" : "255.255.255.0",
-                      "error" : "An operation timed out.",
-                      "wirelessProfile" : {
-                        "rssi" : -38,
-                        "bssid" : "4c:ba:ba:f4:fa:fa",
-                        "vendor" : "Cisco",
-                        "txRate" : 130,
-                        "channel" : 1,
-                        "noise" : -95,
-                        "phyMode" : "802.11n",
-                        "ssid" : "Internet for the masses",
-                        "quality" : 100
-                      },
-                      "interfaceName" : "en0",
-                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
-                      "gateway" : "10.0.0.1"
-                    },
                     "connectionScore" : {
                       "score" : 100.0,
                       "quality" : "great"
@@ -1010,12 +1027,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "pktsSent" : 10
                     },
-                    "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
-                    "roundId" : 1384309800,
-                    "agentScore" : {
-                      "score" : 100.0,
-                      "quality" : "great"
-                    }
+                    "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49"
                   } ]
                 }"""
 

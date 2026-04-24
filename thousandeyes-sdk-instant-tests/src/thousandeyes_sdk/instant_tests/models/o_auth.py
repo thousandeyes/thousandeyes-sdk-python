@@ -18,8 +18,8 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.instant_tests.models.request_method import RequestMethod
-from thousandeyes_sdk.instant_tests.models.test_auth_type import TestAuthType
+from thousandeyes_sdk.instant_tests.models.o_auth_auth_type import OAuthAuthType
+from thousandeyes_sdk.instant_tests.models.o_auth_request_method import OAuthRequestMethod
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,15 +27,14 @@ class OAuth(BaseModel):
     """
     Use this only if you want to use OAuth as the authentication mechanism.
     """ # noqa: E501
-    config_id: Optional[StrictStr] = Field(default=None, description="The ID of the OAuth configuration.", alias="configId")
     test_url: Optional[StrictStr] = Field(default=None, description="Target for the test.", alias="testUrl")
-    request_method: Optional[RequestMethod] = Field(default=None, alias="requestMethod")
-    post_body: Optional[StrictStr] = Field(default=None, description="Enter the OAuth body for the HTTP POST request in this field when using OAuth as the authentication mechanism. No special escaping is required. If content is provided in the post body, the `requestMethod` is automatically set to POST.", alias="postBody")
+    request_method: Optional[OAuthRequestMethod] = Field(default=None, alias="requestMethod")
+    post_body: Optional[StrictStr] = Field(default=None, description="Enter the OAuth body for the HTTP POST request in this field when using OAuth as the authentication mechanism. No special escaping is required. The value is saved only when `requestMethod` is set to `post`.", alias="postBody")
     headers: Optional[StrictStr] = Field(default=None, description="Request headers used for OAuth.")
-    auth_type: Optional[TestAuthType] = Field(default=None, alias="authType")
+    auth_type: Optional[OAuthAuthType] = Field(default=None, alias="authType")
     username: Optional[StrictStr] = Field(default=None, description="OAuth username")
     password: Optional[StrictStr] = Field(default=None, description="OAuth password")
-    __properties: ClassVar[List[str]] = ["configId", "testUrl", "requestMethod", "postBody", "headers", "authType", "username", "password"]
+    __properties: ClassVar[List[str]] = ["testUrl", "requestMethod", "postBody", "headers", "authType", "username", "password"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,7 +88,6 @@ class OAuth(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "configId": obj.get("configId"),
             "testUrl": obj.get("testUrl"),
             "requestMethod": obj.get("requestMethod"),
             "postBody": obj.get("postBody"),

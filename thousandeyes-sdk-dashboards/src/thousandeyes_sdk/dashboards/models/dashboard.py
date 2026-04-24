@@ -20,6 +20,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.dashboards.models.api_widget import ApiWidget
+from thousandeyes_sdk.dashboards.models.dashboard_layout import DashboardLayout
 from thousandeyes_sdk.dashboards.models.dashboard_links import DashboardLinks
 from thousandeyes_sdk.dashboards.models.default_timespan import DefaultTimespan
 from typing import Optional, Set
@@ -45,8 +46,9 @@ class Dashboard(BaseModel):
     default_timespan: Optional[DefaultTimespan] = Field(default=None, alias="defaultTimespan")
     is_global_override: Optional[StrictBool] = Field(default=None, description="When set to `true`, the defaultTimespan is used and overrides the widget's timespan. If set to `false`, the the widget's timespan is used.", alias="isGlobalOverride")
     is_migrated_report: Optional[StrictBool] = Field(default=None, description="True if this dashboard was previously a report.", alias="isMigratedReport")
+    layout: Optional[DashboardLayout] = None
     links: Optional[DashboardLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["globalFilterId", "dashboardId", "title", "isBuiltIn", "aid", "createdBy", "modifiedBy", "modifiedDate", "isPrivate", "isDefaultForUser", "isDefaultForAccount", "widgets", "description", "defaultTimespan", "isGlobalOverride", "isMigratedReport", "_links"]
+    __properties: ClassVar[List[str]] = ["globalFilterId", "dashboardId", "title", "isBuiltIn", "aid", "createdBy", "modifiedBy", "modifiedDate", "isPrivate", "isDefaultForUser", "isDefaultForAccount", "widgets", "description", "defaultTimespan", "isGlobalOverride", "isMigratedReport", "layout", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,6 +118,9 @@ class Dashboard(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of default_timespan
         if self.default_timespan:
             _dict['defaultTimespan'] = self.default_timespan.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of layout
+        if self.layout:
+            _dict['layout'] = self.layout.to_dict()
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
@@ -147,6 +152,7 @@ class Dashboard(BaseModel):
             "defaultTimespan": DefaultTimespan.from_dict(obj["defaultTimespan"]) if obj.get("defaultTimespan") is not None else None,
             "isGlobalOverride": obj.get("isGlobalOverride"),
             "isMigratedReport": obj.get("isMigratedReport"),
+            "layout": DashboardLayout.from_dict(obj["layout"]) if obj.get("layout") is not None else None,
             "_links": DashboardLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj

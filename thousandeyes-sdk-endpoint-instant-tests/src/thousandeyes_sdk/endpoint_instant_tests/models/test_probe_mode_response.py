@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class TestProbeModeResponse(str, Enum):
     """
-    Probe mode used by network test, only valid when the protocol is set to TCP.
+    Probe mode returned by network test APIs, only valid when the protocol is set to TCP. Configuration responses return user-selectable values, while result responses may also return resolved driver values.
     """
 
     """
@@ -28,6 +28,8 @@ class TestProbeModeResponse(str, Enum):
     AUTO = 'auto'
     SACK = 'sack'
     SYN = 'syn'
+    SYN_MINUS_PCAP = 'syn-pcap'
+    SYN_MINUS_SOCKET = 'syn-socket'
     UNKNOWN = 'unknown'
 
     @classmethod

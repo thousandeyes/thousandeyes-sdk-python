@@ -158,6 +158,7 @@ class TestAPIInstantTestsApi(unittest.TestCase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "labels" : [ "9842", "1283" ],
+                  "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"

@@ -17,7 +17,11 @@ docs/Tag.md
 docs/TagAssignment.md
 docs/TagAssignmentApi.md
 docs/TagBulkCreateError.md
+docs/TagFilter.md
+docs/TagFilterMode.md
+docs/TagFilterType.md
 docs/TagInfo.md
+docs/TagMatchType.md
 docs/Tags.md
 docs/TagsApi.md
 docs/Type.md
@@ -46,7 +50,11 @@ src/thousandeyes_sdk/tags/models/self_links.py
 src/thousandeyes_sdk/tags/models/tag.py
 src/thousandeyes_sdk/tags/models/tag_assignment.py
 src/thousandeyes_sdk/tags/models/tag_bulk_create_error.py
+src/thousandeyes_sdk/tags/models/tag_filter.py
+src/thousandeyes_sdk/tags/models/tag_filter_mode.py
+src/thousandeyes_sdk/tags/models/tag_filter_type.py
 src/thousandeyes_sdk/tags/models/tag_info.py
+src/thousandeyes_sdk/tags/models/tag_match_type.py
 src/thousandeyes_sdk/tags/models/tags.py
 src/thousandeyes_sdk/tags/models/type.py
 src/thousandeyes_sdk/tags/models/unauthorized_error.py

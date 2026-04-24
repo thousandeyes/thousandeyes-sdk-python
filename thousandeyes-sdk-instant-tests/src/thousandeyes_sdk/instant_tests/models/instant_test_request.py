@@ -27,9 +27,10 @@ class InstantTestRequest(BaseModel):
     InstantTestRequest
     """ # noqa: E501
     labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
+    tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
     shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
     agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
-    __properties: ClassVar[List[str]] = ["labels", "sharedWithAccounts", "agents"]
+    __properties: ClassVar[List[str]] = ["labels", "tags", "sharedWithAccounts", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +92,7 @@ class InstantTestRequest(BaseModel):
 
         _obj = cls.model_validate({
             "labels": obj.get("labels"),
+            "tags": obj.get("tags"),
             "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })

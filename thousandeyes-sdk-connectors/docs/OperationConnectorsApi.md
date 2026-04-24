@@ -17,6 +17,7 @@ Returns a list of connectors assigned to a specific operation.
 
 ### Example
 
+* Bearer Authentication (BearerAuth):
 
 ```python
 import thousandeyes_sdk.connectors
@@ -30,6 +31,15 @@ configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com/v7"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.core.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
@@ -65,7 +75,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 
@@ -94,6 +104,7 @@ Assigns one or more connectors to an operation. This replaces any existing assig
 
 ### Example
 
+* Bearer Authentication (BearerAuth):
 
 ```python
 import thousandeyes_sdk.connectors
@@ -107,6 +118,15 @@ configuration = thousandeyes_sdk.core.Configuration(
     host = "https://api.thousandeyes.com/v7"
 )
 
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.core.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
 
 # Enter a context with an instance of the API client
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
@@ -144,7 +164,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BearerAuth](../README.md#BearerAuth)
 
 ### HTTP request headers
 

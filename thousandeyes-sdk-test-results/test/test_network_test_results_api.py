@@ -125,13 +125,18 @@ class TestNetworkTestResultsApi(unittest.TestCase):
                       }
                     },
                     "maxLatency" : 168.0,
+                    "proxyJitter" : 1.2,
+                    "proxyAverageLatency" : 45.0,
+                    "proxyLoss" : 2.5,
                     "healthScore" : 0.98,
                     "capacity" : 210.10854,
                     "loss" : 0.0,
+                    "proxyMinLatency" : 40.0,
                     "jitter" : 0.076808,
                     "serverIp" : "50.18.127.223",
                     "startTime" : 1384309800,
                     "endTime" : 1384309800,
+                    "proxyMaxLatency" : 50.0,
                     "roundId" : 1384309800,
                     "direction" : "to-target"
                   }, {
@@ -161,13 +166,18 @@ class TestNetworkTestResultsApi(unittest.TestCase):
                       }
                     },
                     "maxLatency" : 168.0,
+                    "proxyJitter" : 1.2,
+                    "proxyAverageLatency" : 45.0,
+                    "proxyLoss" : 2.5,
                     "healthScore" : 0.98,
                     "capacity" : 210.10854,
                     "loss" : 0.0,
+                    "proxyMinLatency" : 40.0,
                     "jitter" : 0.076808,
                     "serverIp" : "50.18.127.223",
                     "startTime" : 1384309800,
                     "endTime" : 1384309800,
+                    "proxyMaxLatency" : 50.0,
                     "roundId" : 1384309800,
                     "direction" : "to-target"
                   } ],
