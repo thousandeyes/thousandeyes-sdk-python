@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** |  | 
-**value** | **str** | The value of the header. Note that this value is obfuscated in the response, even when overwritten. | 
+**value** | **str** |  | 
 
 ## Example
 

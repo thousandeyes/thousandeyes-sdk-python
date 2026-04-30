@@ -1,4 +1,4 @@
-# UpdateSipServerTest
+# UnexpandedDnsServerRequestTest
 
 
 ## Properties
@@ -8,7 +8,6 @@ Name | Type | Description | Notes
 **interval** | [**TestInterval**](TestInterval.md) |  | 
 **alerts_enabled** | **bool** | Indicates if alerts are enabled. | [optional] 
 **enabled** | **bool** | Test is enabled. | [optional] [default to True]
-**alert_rules** | [**List[AlertRule]**](AlertRule.md) | Contains list of enabled alert rule objects. | [optional] 
 **created_by** | **str** | User that created the test. | [optional] [readonly] 
 **created_date** | **datetime** | UTC created date (ISO date-time format). | [optional] [readonly] 
 **description** | **str** | A description of the test. | [optional] 
@@ -20,41 +19,40 @@ Name | Type | Description | Notes
 **test_name** | **str** | The name of the test. Test name must be unique. | [optional] 
 **type** | **str** |  | [optional] [readonly] 
 **links** | [**TestLinks**](TestLinks.md) |  | [optional] 
-**labels** | [**List[TestLabel]**](TestLabel.md) | Labels to which the test is assigned. This field is not returned for Instant Tests. | [optional] [readonly] 
-**shared_with_accounts** | [**List[SharedWithAccount]**](SharedWithAccount.md) |  | [optional] [readonly] 
+**bandwidth_measurements** | **bool** | Set to &#x60;true&#x60; to enable bandwidth measurements, only applies to Enterprise agents assigned to the test. | [optional] 
+**dns_servers** | **List[str]** | A list of DNS server FQDN. | 
+**dns_transport_protocol** | [**TestDnsTransportProtocol**](TestDnsTransportProtocol.md) |  | [optional] 
+**domain** | **str** | The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record. | 
 **mtu_measurements** | **bool** | Set &#x60;true&#x60; to measure MTU sizes on network from agents to the target. | [optional] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
 **num_path_traces** | **int** | Number of path traces executed by the agent. | [optional] [default to 3]
-**options_regex** | **str** | Options regex, this field does not require escaping. | [optional] 
 **path_trace_mode** | [**TestPathTraceMode**](TestPathTraceMode.md) |  | [optional] 
 **probe_mode** | [**TestProbeMode**](TestProbeMode.md) |  | [optional] 
+**protocol** | [**TestProtocol**](TestProtocol.md) |  | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
-**register_enabled** | **bool** | Set to true to perform SIP registration on the test target with the SIP REGISTER command. | [optional] [default to False]
-**sip_target_time** | **int** | Target time for test completion in milliseconds. | [optional] 
-**sip_time_limit** | **int** | Time limit in milliseconds. | [optional] [default to 5]
-**fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
+**recursive_queries** | **bool** | Set true to run query with RD (recursion desired) flag enabled. | [optional] 
 **ipv6_policy** | [**TestIpv6Policy**](TestIpv6Policy.md) |  | [optional] 
+**fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
+**dns_query_class** | [**DnsQueryClass**](DnsQueryClass.md) |  | [optional] 
 **bgp_measurements** | **bool** | Set to &#x60;true&#x60; to enable bgp measurements. | [optional] [default to True]
 **use_public_bgp** | **bool** | Indicate if all available public BGP monitors should be used, when ommited defaults to &#x60;bgpMeasurements&#x60; value. | [optional] [default to True]
-**monitors** | [**List[Monitor]**](Monitor.md) | Contains list of enabled BGP monitors. | [optional] [readonly] 
-**target_sip_credentials** | [**TestSipCredentials**](TestSipCredentials.md) |  | 
 
 ## Example
 
 ```python
-from thousandeyes_sdk.tests.models.update_sip_server_test import UpdateSipServerTest
+from thousandeyes_sdk.tests.models.unexpanded_dns_server_request_test import UnexpandedDnsServerRequestTest
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of UpdateSipServerTest from a JSON string
-update_sip_server_test_instance = UpdateSipServerTest.from_json(json)
+# create an instance of UnexpandedDnsServerRequestTest from a JSON string
+unexpanded_dns_server_request_test_instance = UnexpandedDnsServerRequestTest.from_json(json)
 # print the JSON string representation of the object
-print(UpdateSipServerTest.to_json())
+print(UnexpandedDnsServerRequestTest.to_json())
 
 # convert the object into a dict
-update_sip_server_test_dict = update_sip_server_test_instance.to_dict()
-# create an instance of UpdateSipServerTest from a dict
-update_sip_server_test_from_dict = UpdateSipServerTest.from_dict(update_sip_server_test_dict)
+unexpanded_dns_server_request_test_dict = unexpanded_dns_server_request_test_instance.to_dict()
+# create an instance of UnexpandedDnsServerRequestTest from a dict
+unexpanded_dns_server_request_test_from_dict = UnexpandedDnsServerRequestTest.from_dict(unexpanded_dns_server_request_test_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

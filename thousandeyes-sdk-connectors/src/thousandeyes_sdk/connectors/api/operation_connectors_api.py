@@ -105,11 +105,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -186,11 +186,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -267,11 +267,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -322,9 +322,9 @@ class OperationConnectorsApi:
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             [
-                'application/problem+json', 
                 'application/hal+json', 
-                'application/json'
+                'application/json', 
+                'application/problem+json'
             ]
         )
 
@@ -418,11 +418,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -503,11 +503,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -588,11 +588,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -647,9 +647,9 @@ class OperationConnectorsApi:
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             [
-                'application/problem+json', 
                 'application/hal+json', 
-                'application/json'
+                'application/json', 
+                'application/problem+json'
             ]
         )
 

@@ -69,6 +69,7 @@ from thousandeyes_sdk.tests.models.api_test import ApiTest
 from thousandeyes_sdk.tests.models.api_test_request import ApiTestRequest
 from thousandeyes_sdk.tests.models.api_test_response import ApiTestResponse
 from thousandeyes_sdk.tests.models.api_tests import ApiTests
+from thousandeyes_sdk.tests.models.base_bgp_request import BaseBgpRequest
 from thousandeyes_sdk.tests.models.base_bgp_test import BaseBgpTest
 from thousandeyes_sdk.tests.models.base_request import BaseRequest
 from thousandeyes_sdk.tests.models.base_test import BaseTest
@@ -87,11 +88,11 @@ from thousandeyes_sdk.tests.models.dns_sec_test_response import DnsSecTestRespon
 from thousandeyes_sdk.tests.models.dns_sec_tests import DnsSecTests
 from thousandeyes_sdk.tests.models.dns_server_instant_test import DnsServerInstantTest
 from thousandeyes_sdk.tests.models.dns_server_properties import DnsServerProperties
+from thousandeyes_sdk.tests.models.dns_server_request_properties import DnsServerRequestProperties
 from thousandeyes_sdk.tests.models.dns_server_test import DnsServerTest
 from thousandeyes_sdk.tests.models.dns_server_test_request import DnsServerTestRequest
 from thousandeyes_sdk.tests.models.dns_server_test_response import DnsServerTestResponse
 from thousandeyes_sdk.tests.models.dns_server_tests import DnsServerTests
-from thousandeyes_sdk.tests.models.dns_servers_request import DnsServersRequest
 from thousandeyes_sdk.tests.models.dns_trace_instant_test import DnsTraceInstantTest
 from thousandeyes_sdk.tests.models.dns_trace_properties import DnsTraceProperties
 from thousandeyes_sdk.tests.models.dns_trace_test import DnsTraceTest
@@ -176,6 +177,7 @@ from thousandeyes_sdk.tests.models.unexpanded_agent_to_server_test import Unexpa
 from thousandeyes_sdk.tests.models.unexpanded_api_test import UnexpandedApiTest
 from thousandeyes_sdk.tests.models.unexpanded_bgp_test import UnexpandedBgpTest
 from thousandeyes_sdk.tests.models.unexpanded_dns_sec_test import UnexpandedDnsSecTest
+from thousandeyes_sdk.tests.models.unexpanded_dns_server_request_test import UnexpandedDnsServerRequestTest
 from thousandeyes_sdk.tests.models.unexpanded_dns_server_test import UnexpandedDnsServerTest
 from thousandeyes_sdk.tests.models.unexpanded_dns_trace_test import UnexpandedDnsTraceTest
 from thousandeyes_sdk.tests.models.unexpanded_ftp_server_test import UnexpandedFtpServerTest
@@ -188,7 +190,6 @@ from thousandeyes_sdk.tests.models.unexpanded_voice_test import UnexpandedVoiceT
 from thousandeyes_sdk.tests.models.unexpanded_web_transaction_test import UnexpandedWebTransactionTest
 from thousandeyes_sdk.tests.models.update_agent_to_server_test_request import UpdateAgentToServerTestRequest
 from thousandeyes_sdk.tests.models.update_bgp_test_request import UpdateBgpTestRequest
-from thousandeyes_sdk.tests.models.update_sip_server_test import UpdateSipServerTest
 from thousandeyes_sdk.tests.models.validation_error import ValidationError
 from thousandeyes_sdk.tests.models.validation_error_item import ValidationErrorItem
 from thousandeyes_sdk.tests.models.voice_instant_test import VoiceInstantTest

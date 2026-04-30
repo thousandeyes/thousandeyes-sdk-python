@@ -16,8 +16,6 @@ Name | Type | Description | Notes
 **test_name** | **str** | The name of the test. Test name must be unique. | [optional] 
 **type** | **str** |  | [optional] [readonly] 
 **links** | [**TestLinks**](TestLinks.md) |  | [optional] 
-**labels** | **List[str]** | A list of test label identifiers (get &#x60;labelId&#x60; from &#x60;/labels&#x60; endpoint). | [optional] 
-**shared_with_accounts** | **List[str]** | A list of account group identifiers that the test is shared with (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint). | [optional] 
 **mtu_measurements** | **bool** | Set &#x60;true&#x60; to measure MTU sizes on network from agents to the target. | [optional] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
 **num_path_traces** | **int** | Number of path traces executed by the agent. | [optional] [default to 3]
@@ -30,7 +28,9 @@ Name | Type | Description | Notes
 **sip_time_limit** | **int** | Time limit in milliseconds. | [optional] [default to 5]
 **fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
 **ipv6_policy** | [**TestIpv6Policy**](TestIpv6Policy.md) |  | [optional] 
+**labels** | **List[str]** | A list of test label identifiers (get &#x60;labelId&#x60; from &#x60;/labels&#x60; endpoint). | [optional] 
 **tags** | **List[str]** | A list of test tag identifiers (get &#x60;id&#x60; from &#x60;/tags&#x60; endpoint). | [optional] 
+**shared_with_accounts** | **List[str]** | A list of account group identifiers that the test is shared with (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint). | [optional] 
 **agents** | [**List[TestAgent]**](TestAgent.md) | A list of objects with &#x60;agentId&#x60; (required) and &#x60;sourceIpAddress&#x60; (optional). | 
 **target_sip_credentials** | [**TestSipCredentials**](TestSipCredentials.md) |  | 
 

@@ -42,6 +42,7 @@ docs/ApiTestRequest.md
 docs/ApiTestResponse.md
 docs/ApiTests.md
 docs/BGPTestsApi.md
+docs/BaseBgpRequest.md
 docs/BaseBgpTest.md
 docs/BaseRequest.md
 docs/BaseTest.md
@@ -63,11 +64,11 @@ docs/DnsSecTestResponse.md
 docs/DnsSecTests.md
 docs/DnsServerInstantTest.md
 docs/DnsServerProperties.md
+docs/DnsServerRequestProperties.md
 docs/DnsServerTest.md
 docs/DnsServerTestRequest.md
 docs/DnsServerTestResponse.md
 docs/DnsServerTests.md
-docs/DnsServersRequest.md
 docs/DnsTraceInstantTest.md
 docs/DnsTraceProperties.md
 docs/DnsTraceTest.md
@@ -158,6 +159,7 @@ docs/UnexpandedAgentToServerTest.md
 docs/UnexpandedApiTest.md
 docs/UnexpandedBgpTest.md
 docs/UnexpandedDnsSecTest.md
+docs/UnexpandedDnsServerRequestTest.md
 docs/UnexpandedDnsServerTest.md
 docs/UnexpandedDnsTraceTest.md
 docs/UnexpandedFtpServerTest.md
@@ -170,7 +172,6 @@ docs/UnexpandedVoiceTest.md
 docs/UnexpandedWebTransactionTest.md
 docs/UpdateAgentToServerTestRequest.md
 docs/UpdateBgpTestRequest.md
-docs/UpdateSipServerTest.md
 docs/ValidationError.md
 docs/ValidationErrorItem.md
 docs/VoiceInstantTest.md
@@ -244,6 +245,7 @@ src/thousandeyes_sdk/tests/models/api_test.py
 src/thousandeyes_sdk/tests/models/api_test_request.py
 src/thousandeyes_sdk/tests/models/api_test_response.py
 src/thousandeyes_sdk/tests/models/api_tests.py
+src/thousandeyes_sdk/tests/models/base_bgp_request.py
 src/thousandeyes_sdk/tests/models/base_bgp_test.py
 src/thousandeyes_sdk/tests/models/base_request.py
 src/thousandeyes_sdk/tests/models/base_test.py
@@ -262,11 +264,11 @@ src/thousandeyes_sdk/tests/models/dns_sec_test_response.py
 src/thousandeyes_sdk/tests/models/dns_sec_tests.py
 src/thousandeyes_sdk/tests/models/dns_server_instant_test.py
 src/thousandeyes_sdk/tests/models/dns_server_properties.py
+src/thousandeyes_sdk/tests/models/dns_server_request_properties.py
 src/thousandeyes_sdk/tests/models/dns_server_test.py
 src/thousandeyes_sdk/tests/models/dns_server_test_request.py
 src/thousandeyes_sdk/tests/models/dns_server_test_response.py
 src/thousandeyes_sdk/tests/models/dns_server_tests.py
-src/thousandeyes_sdk/tests/models/dns_servers_request.py
 src/thousandeyes_sdk/tests/models/dns_trace_instant_test.py
 src/thousandeyes_sdk/tests/models/dns_trace_properties.py
 src/thousandeyes_sdk/tests/models/dns_trace_test.py
@@ -351,6 +353,7 @@ src/thousandeyes_sdk/tests/models/unexpanded_agent_to_server_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_api_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_bgp_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_dns_sec_test.py
+src/thousandeyes_sdk/tests/models/unexpanded_dns_server_request_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_dns_server_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_dns_trace_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_ftp_server_test.py
@@ -363,7 +366,6 @@ src/thousandeyes_sdk/tests/models/unexpanded_voice_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_web_transaction_test.py
 src/thousandeyes_sdk/tests/models/update_agent_to_server_test_request.py
 src/thousandeyes_sdk/tests/models/update_bgp_test_request.py
-src/thousandeyes_sdk/tests/models/update_sip_server_test.py
 src/thousandeyes_sdk/tests/models/validation_error.py
 src/thousandeyes_sdk/tests/models/validation_error_item.py
 src/thousandeyes_sdk/tests/models/voice_instant_test.py

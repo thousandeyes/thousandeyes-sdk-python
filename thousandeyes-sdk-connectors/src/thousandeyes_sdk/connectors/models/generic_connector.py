@@ -32,10 +32,10 @@ class GenericConnector(BaseModel):
     type: ConnectorType
     name: StrictStr
     target: StrictStr
-    authentication: Optional[GenericConnectorAuth] = None
     last_modified_date: Optional[StrictInt] = Field(default=None, description="The date when the connector was last modified (Unix timestamp in milliseconds).", alias="lastModifiedDate")
+    authentication: Optional[GenericConnectorAuth] = None
     headers: Optional[List[Header]] = None
-    __properties: ClassVar[List[str]] = ["id", "type", "name", "target", "authentication", "lastModifiedDate", "headers"]
+    __properties: ClassVar[List[str]] = ["id", "type", "name", "target", "lastModifiedDate", "authentication", "headers"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -107,8 +107,8 @@ class GenericConnector(BaseModel):
             "type": obj.get("type"),
             "name": obj.get("name"),
             "target": obj.get("target"),
-            "authentication": GenericConnectorAuth.from_dict(obj["authentication"]) if obj.get("authentication") is not None else None,
             "lastModifiedDate": obj.get("lastModifiedDate"),
+            "authentication": GenericConnectorAuth.from_dict(obj["authentication"]) if obj.get("authentication") is not None else None,
             "headers": [Header.from_dict(_item) for _item in obj["headers"]] if obj.get("headers") is not None else None
         })
         return _obj
