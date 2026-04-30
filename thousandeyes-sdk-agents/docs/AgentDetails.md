@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 **country_id** | **str** | 2-digit ISO country code | [optional] [readonly] 
 **coordinates** | [**Coordinates**](Coordinates.md) |  | [optional] 
 **enabled** | **bool** | Flag indicating if the agent is enabled. | [optional] 
-**prefix** | **str** | Prefix containing agents public IP address. | [optional] [readonly] 
 **verify_ssl_certificates** | **bool** | Flag indicating if has normal SSL operations or  if instead it&#39;s set to ignore SSL errors on browserbot-based tests. | [optional] [readonly] 
+**prefix** | **str** | Prefix containing agents public IP address. | [optional] [readonly] 
 **agent_type** | **str** | Enterprise Cluster agent type. | 
 **tests** | [**List[SimpleTest]**](SimpleTest.md) | List of tests. See &#x60;/tests&#x60; for more information. | [optional] 
 **labels** | [**List[AgentLabel]**](AgentLabel.md) | List of labels. See &#x60;/labels&#x60; for more information. | [optional] [readonly] 

@@ -51,8 +51,8 @@ class TestDNSSECTestsApi(unittest.TestCase):
                     }
                   },
                   "liveShare" : false,
-                  "alertRules" : [ "344753", "212697" ],
                   "savedEvent" : true,
+                  "alertRules" : [ "344753", "212697" ],
                   "description" : "ThousandEyes Test",
                   "type" : "dnssec",
                   "enabled" : true,
@@ -443,8 +443,8 @@ class TestDNSSECTestsApi(unittest.TestCase):
                     }
                   },
                   "liveShare" : false,
-                  "alertRules" : [ "344753", "212697" ],
                   "savedEvent" : true,
+                  "alertRules" : [ "344753", "212697" ],
                   "description" : "ThousandEyes Test",
                   "type" : "dnssec",
                   "enabled" : true,

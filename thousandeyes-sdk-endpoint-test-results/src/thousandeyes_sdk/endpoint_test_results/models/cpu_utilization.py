@@ -26,11 +26,11 @@ class CpuUtilization(BaseModel):
     """
     CpuUtilization
     """ # noqa: E501
-    min: Optional[Union[Annotated[float, Field(le=1.0, strict=True, ge=0.0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The minimum sampled usage value recorded during the monitored period.")
-    max: Optional[Union[Annotated[float, Field(le=1.0, strict=True, ge=0.0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The maximum sampled usage value recorded during the monitored period.")
-    mean: Optional[Union[Annotated[float, Field(le=1.0, strict=True, ge=0.0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The mean (average) sampled usage value recorded during the monitored period.")
-    median: Optional[Union[Annotated[float, Field(le=1.0, strict=True, ge=0.0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The median sampled usage value recorded during the monitored period.")
-    std_dev: Optional[Union[Annotated[float, Field(le=1.0, strict=True, ge=0.0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The standard deviation of sampled usage values recorded during the monitored period.", alias="stdDev")
+    min: Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The minimum sampled usage value recorded during the monitored period.")
+    max: Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The maximum sampled usage value recorded during the monitored period.")
+    mean: Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The mean (average) sampled usage value recorded during the monitored period.")
+    median: Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The median sampled usage value recorded during the monitored period.")
+    std_dev: Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="The standard deviation of sampled usage values recorded during the monitored period.", alias="stdDev")
     count: Optional[StrictInt] = Field(default=None, description="The total number of samples collected during the monitored period.")
     __properties: ClassVar[List[str]] = ["min", "max", "mean", "median", "stdDev", "count"]
 

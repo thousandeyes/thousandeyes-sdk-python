@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **type** | [**ConnectorType**](ConnectorType.md) |  | 
 **name** | **str** |  | 
 **target** | **str** |  | 
-**authentication** | [**GenericConnectorAuth**](GenericConnectorAuth.md) |  | [optional] 
 **last_modified_date** | **int** | The date when the connector was last modified (Unix timestamp in milliseconds). | [optional] [readonly] 
+**authentication** | [**GenericConnectorAuth**](GenericConnectorAuth.md) |  | [optional] 
 **headers** | [**List[Header]**](Header.md) |  | [optional] 
 
 ## Example

@@ -48,8 +48,8 @@ class EnterpriseAgentClusterDetail(BaseModel):
     country_id: Optional[StrictStr] = Field(default=None, description="2-digit ISO country code", alias="countryId")
     coordinates: Optional[Coordinates] = None
     enabled: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent is enabled.")
-    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     verify_ssl_certificates: Optional[StrictBool] = Field(default=None, description="Flag indicating if has normal SSL operations or  if instead it's set to ignore SSL errors on browserbot-based tests.", alias="verifySslCertificates")
+    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     test_ids: Optional[List[StrictInt]] = Field(default=None, description="List of test IDs assigned to the agent.", alias="testIds")
     tests: Optional[List[SimpleTest]] = Field(default=None, description="List of tests. See `/tests` for more information.")
     cluster_members: Optional[List[ClusterMember]] = Field(default=None, description="If an enterprise agent is clustered, detailed information about each cluster member will be shown as array entries in the clusterMembers field. This field is not shown for Enterprise Agents in standalone mode, or for Cloud Agents.", alias="clusterMembers")
@@ -70,7 +70,7 @@ class EnterpriseAgentClusterDetail(BaseModel):
     tags: Optional[List[AgentTag]] = Field(default=None, description="List of tags. See `/tags` for more information.")
     agent_type: Annotated[str, Field(strict=True)] = Field(description="Enterprise Cluster agent type.", alias="agentType")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping", "notificationRules", "labels", "tags", "agentType", "_links"]
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "verifySslCertificates", "prefix", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping", "notificationRules", "labels", "tags", "agentType", "_links"]
 
     @field_validator('agent_type')
     def agent_type_validate_regular_expression(cls, value):
@@ -136,8 +136,8 @@ class EnterpriseAgentClusterDetail(BaseModel):
             "agent_id",
             "location",
             "country_id",
-            "prefix",
             "verify_ssl_certificates",
+            "prefix",
             "test_ids",
             "cluster_members",
             "utilization",
@@ -238,8 +238,8 @@ class EnterpriseAgentClusterDetail(BaseModel):
             "countryId": obj.get("countryId"),
             "coordinates": Coordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
             "enabled": obj.get("enabled"),
-            "prefix": obj.get("prefix"),
             "verifySslCertificates": obj.get("verifySslCertificates"),
+            "prefix": obj.get("prefix"),
             "testIds": obj.get("testIds"),
             "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "clusterMembers": [ClusterMember.from_dict(_item) for _item in obj["clusterMembers"]] if obj.get("clusterMembers") is not None else None,
