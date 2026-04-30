@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **alerts_enabled** | **bool** | Indicates if alerts are enabled. | [optional] 
 **alert_rules** | **List[str]** | List of alert rules IDs to apply to the test (get &#x60;ruleId&#x60; from &#x60;/alerts/rules&#x60; endpoint. If &#x60;alertsEnabled&#x60; is set to &#x60;true&#x60; and &#x60;alertRules&#x60; is not included on test creation or update, applicable user default alert rules will be used) | [optional] 
 **prefix** | **str** | a.b.c.d is a network address, with the prefix length defined as e. Prefixes can be any length from 8 to 24. | 
+**tags** | **List[str]** | Contains list of test tag IDs (get &#x60;id&#x60; from &#x60;/tags&#x60; endpoint). | [optional] 
 
 ## Example
 

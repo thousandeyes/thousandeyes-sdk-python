@@ -48,6 +48,8 @@ Name | Type | Description | Notes
 **allow_mic_and_camera** | **bool** | Set true allow the use of a fake mic and camera in the browser. | [optional] [default to False]
 **allow_geolocation** | **bool** | Set true to use the agent’s geolocation by the web page. | [optional] [default to False]
 **browser_language** | **str** | Set one of the available browser language that you want to use to configure the browser. | [optional] 
+**chrome_options** | **str** | Command-line options passed to Chrome when running the test. | [optional] [default to '']
+**chrome_policies** | **str** | JSON string of Chrome policy settings to apply. | [optional] [default to '{}']
 **page_loading_strategy** | [**TestPageLoadingStrategy**](TestPageLoadingStrategy.md) |  | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **type** | **str** |  | [optional] [readonly] 

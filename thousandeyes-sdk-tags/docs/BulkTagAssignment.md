@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **assignments** | [**List[Assignment]**](Assignment.md) |  | [optional] 
 **tag_id** | **str** | The ID of the tag to assign | [optional] 
+**links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
 

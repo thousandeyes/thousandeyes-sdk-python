@@ -1,6 +1,6 @@
 # TestProbeModeResponse
 
-Probe mode used by network test, only valid when the protocol is set to TCP.
+Probe mode returned by network test APIs, only valid when the protocol is set to TCP. Configuration responses return user-selectable values, while result responses may also return resolved driver values.
 
 ## Properties
 

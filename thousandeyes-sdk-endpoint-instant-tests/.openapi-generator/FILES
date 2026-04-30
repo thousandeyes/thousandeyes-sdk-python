@@ -27,6 +27,7 @@ docs/Link.md
 docs/RunEndpointInstantScheduledTestsApi.md
 docs/TestInterval.md
 docs/TestLabel.md
+docs/TestProbeMode.md
 docs/TestProbeModeResponse.md
 docs/TestSslVersionId.md
 docs/UnauthorizedError.md
@@ -63,6 +64,7 @@ src/thousandeyes_sdk/endpoint_instant_tests/models/error.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/link.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/test_interval.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/test_label.py
+src/thousandeyes_sdk/endpoint_instant_tests/models/test_probe_mode.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/test_probe_mode_response.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/test_ssl_version_id.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/unauthorized_error.py

@@ -6,12 +6,11 @@ Use this only if you want to use OAuth as the authentication mechanism.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**config_id** | **str** | The ID of the OAuth configuration. | [optional] 
 **test_url** | **str** | Target for the test. | [optional] 
-**request_method** | [**RequestMethod**](RequestMethod.md) |  | [optional] 
-**post_body** | **str** | Enter the OAuth body for the HTTP POST request in this field when using OAuth as the authentication mechanism. No special escaping is required. If content is provided in the post body, the &#x60;requestMethod&#x60; is automatically set to POST. | [optional] 
+**request_method** | [**OAuthRequestMethod**](OAuthRequestMethod.md) |  | [optional] 
+**post_body** | **str** | Enter the OAuth body for the HTTP POST request in this field when using OAuth as the authentication mechanism. No special escaping is required. The value is saved only when &#x60;requestMethod&#x60; is set to &#x60;post&#x60;. | [optional] 
 **headers** | **str** | Request headers used for OAuth. | [optional] 
-**auth_type** | [**TestAuthType**](TestAuthType.md) |  | [optional] 
+**auth_type** | [**OAuthAuthType**](OAuthAuthType.md) |  | [optional] 
 **username** | **str** | OAuth username | [optional] 
 **password** | **str** | OAuth password | [optional] 
 

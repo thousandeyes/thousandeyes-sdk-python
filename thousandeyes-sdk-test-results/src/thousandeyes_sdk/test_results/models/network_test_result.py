@@ -42,13 +42,18 @@ class NetworkTestResult(BaseModel):
     loss: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Percentage of packets not reaching destination")
     max_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Maximum RTT for packets sent to destination", alias="maxLatency")
     min_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Minimum RTT for packets sent to destination", alias="minLatency")
+    proxy_loss: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Percentage of packets not reaching proxy.", alias="proxyLoss")
+    proxy_average_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Average RTT for packets sent to proxy, in milliseconds.", alias="proxyAverageLatency")
+    proxy_min_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Minimum RTT for packets sent to proxy, in milliseconds.", alias="proxyMinLatency")
+    proxy_max_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Maximum RTT for packets sent to proxy, in milliseconds.", alias="proxyMaxLatency")
+    proxy_jitter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Standard deviation of proxy latency, in milliseconds.", alias="proxyJitter")
     packets_by_second: Optional[List[List[StrictInt]]] = Field(default=None, description="Number of packets sent and received in a second.", alias="packetsBySecond")
     agent: Optional[TestResultAgent] = None
     server_ip: Optional[StrictStr] = Field(default=None, description="IP of target server", alias="serverIp")
     server: Optional[StrictStr] = Field(default=None, description="Target server, including port (if method used is TCP)")
     health_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A normalized value (0.0-1.0) representing the network connection health of the test target. Returns negative values as error codes. -1.0 indicates there was insufficient data to calculate the health score.", alias="healthScore")
     direction: Optional[TestDirection] = None
-    __properties: ClassVar[List[str]] = ["date", "roundId", "_links", "startTime", "endTime", "availableBandwidth", "avgLatency", "bandwidth", "capacity", "jitter", "loss", "maxLatency", "minLatency", "packetsBySecond", "agent", "serverIp", "server", "healthScore", "direction"]
+    __properties: ClassVar[List[str]] = ["date", "roundId", "_links", "startTime", "endTime", "availableBandwidth", "avgLatency", "bandwidth", "capacity", "jitter", "loss", "maxLatency", "minLatency", "proxyLoss", "proxyAverageLatency", "proxyMinLatency", "proxyMaxLatency", "proxyJitter", "packetsBySecond", "agent", "serverIp", "server", "healthScore", "direction"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -96,6 +101,11 @@ class NetworkTestResult(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "var_date",
@@ -110,6 +120,11 @@ class NetworkTestResult(BaseModel):
             "loss",
             "max_latency",
             "min_latency",
+            "proxy_loss",
+            "proxy_average_latency",
+            "proxy_min_latency",
+            "proxy_max_latency",
+            "proxy_jitter",
             "packets_by_second",
             "server_ip",
             "server",
@@ -151,6 +166,11 @@ class NetworkTestResult(BaseModel):
             "loss": obj.get("loss"),
             "maxLatency": obj.get("maxLatency"),
             "minLatency": obj.get("minLatency"),
+            "proxyLoss": obj.get("proxyLoss"),
+            "proxyAverageLatency": obj.get("proxyAverageLatency"),
+            "proxyMinLatency": obj.get("proxyMinLatency"),
+            "proxyMaxLatency": obj.get("proxyMaxLatency"),
+            "proxyJitter": obj.get("proxyJitter"),
             "packetsBySecond": obj.get("packetsBySecond"),
             "agent": TestResultAgent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
             "serverIp": obj.get("serverIp"),

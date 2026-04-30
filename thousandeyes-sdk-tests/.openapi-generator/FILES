@@ -20,6 +20,7 @@ docs/AgentToServerTestRequest.md
 docs/AgentToServerTestResponse.md
 docs/AgentToServerTests.md
 docs/AgentToServerTestsApi.md
+docs/AgentToServerWritablePropertyFields.md
 docs/AlertDirection.md
 docs/AlertRoundsViolationMode.md
 docs/AlertRule.md
@@ -100,6 +101,8 @@ docs/Monitor.md
 docs/MonitorType.md
 docs/MonitorsRequest.md
 docs/OAuth.md
+docs/OAuthAuthType.md
+docs/OAuthRequestMethod.md
 docs/PageLoadInstantTest.md
 docs/PageLoadProperties.md
 docs/PageLoadTest.md
@@ -108,7 +111,6 @@ docs/PageLoadTestResponse.md
 docs/PageLoadTests.md
 docs/PageLoadTestsApi.md
 docs/PathVisualizationInterfaceGroupsApi.md
-docs/RequestMethod.md
 docs/SIPServerTestsApi.md
 docs/SelfLinks.md
 docs/SensitivityLevel.md
@@ -166,6 +168,7 @@ docs/UnexpandedSipServerTest.md
 docs/UnexpandedTest.md
 docs/UnexpandedVoiceTest.md
 docs/UnexpandedWebTransactionTest.md
+docs/UpdateAgentToServerTestRequest.md
 docs/UpdateBgpTestRequest.md
 docs/UpdateSipServerTest.md
 docs/ValidationError.md
@@ -220,6 +223,7 @@ src/thousandeyes_sdk/tests/models/agent_to_server_test.py
 src/thousandeyes_sdk/tests/models/agent_to_server_test_request.py
 src/thousandeyes_sdk/tests/models/agent_to_server_test_response.py
 src/thousandeyes_sdk/tests/models/agent_to_server_tests.py
+src/thousandeyes_sdk/tests/models/agent_to_server_writable_property_fields.py
 src/thousandeyes_sdk/tests/models/alert_direction.py
 src/thousandeyes_sdk/tests/models/alert_rounds_violation_mode.py
 src/thousandeyes_sdk/tests/models/alert_rule.py
@@ -294,13 +298,14 @@ src/thousandeyes_sdk/tests/models/monitor.py
 src/thousandeyes_sdk/tests/models/monitor_type.py
 src/thousandeyes_sdk/tests/models/monitors_request.py
 src/thousandeyes_sdk/tests/models/o_auth.py
+src/thousandeyes_sdk/tests/models/o_auth_auth_type.py
+src/thousandeyes_sdk/tests/models/o_auth_request_method.py
 src/thousandeyes_sdk/tests/models/page_load_instant_test.py
 src/thousandeyes_sdk/tests/models/page_load_properties.py
 src/thousandeyes_sdk/tests/models/page_load_test.py
 src/thousandeyes_sdk/tests/models/page_load_test_request.py
 src/thousandeyes_sdk/tests/models/page_load_test_response.py
 src/thousandeyes_sdk/tests/models/page_load_tests.py
-src/thousandeyes_sdk/tests/models/request_method.py
 src/thousandeyes_sdk/tests/models/self_links.py
 src/thousandeyes_sdk/tests/models/sensitivity_level.py
 src/thousandeyes_sdk/tests/models/severity.py
@@ -356,6 +361,7 @@ src/thousandeyes_sdk/tests/models/unexpanded_sip_server_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_voice_test.py
 src/thousandeyes_sdk/tests/models/unexpanded_web_transaction_test.py
+src/thousandeyes_sdk/tests/models/update_agent_to_server_test_request.py
 src/thousandeyes_sdk/tests/models/update_bgp_test_request.py
 src/thousandeyes_sdk/tests/models/update_sip_server_test.py
 src/thousandeyes_sdk/tests/models/validation_error.py

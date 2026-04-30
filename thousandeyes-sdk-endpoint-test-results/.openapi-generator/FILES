@@ -82,6 +82,7 @@ docs/LocalNetworkEndpointTestResultsApi.md
 docs/LocalNetworkResult.md
 docs/LocalNetworkResults.md
 docs/LocalNetworkTopologyDetailResults.md
+docs/LocalNetworkTopologyDnsServerTest.md
 docs/LocalNetworkTopologyResult.md
 docs/LocalNetworkTopologyResultBase.md
 docs/LocalNetworkTopologyResults.md
@@ -253,6 +254,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/link.py
 src/thousandeyes_sdk/endpoint_test_results/models/local_network_result.py
 src/thousandeyes_sdk/endpoint_test_results/models/local_network_results.py
 src/thousandeyes_sdk/endpoint_test_results/models/local_network_topology_detail_results.py
+src/thousandeyes_sdk/endpoint_test_results/models/local_network_topology_dns_server_test.py
 src/thousandeyes_sdk/endpoint_test_results/models/local_network_topology_result.py
 src/thousandeyes_sdk/endpoint_test_results/models/local_network_topology_result_base.py
 src/thousandeyes_sdk/endpoint_test_results/models/local_network_topology_results.py

@@ -28,7 +28,11 @@ from thousandeyes_sdk.tags.models.self_links import SelfLinks
 from thousandeyes_sdk.tags.models.tag import Tag
 from thousandeyes_sdk.tags.models.tag_assignment import TagAssignment
 from thousandeyes_sdk.tags.models.tag_bulk_create_error import TagBulkCreateError
+from thousandeyes_sdk.tags.models.tag_filter import TagFilter
+from thousandeyes_sdk.tags.models.tag_filter_mode import TagFilterMode
+from thousandeyes_sdk.tags.models.tag_filter_type import TagFilterType
 from thousandeyes_sdk.tags.models.tag_info import TagInfo
+from thousandeyes_sdk.tags.models.tag_match_type import TagMatchType
 from thousandeyes_sdk.tags.models.tags import Tags
 from thousandeyes_sdk.tags.models.type import Type
 from thousandeyes_sdk.tags.models.unauthorized_error import UnauthorizedError

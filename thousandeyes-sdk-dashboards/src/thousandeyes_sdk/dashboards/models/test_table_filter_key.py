@@ -31,6 +31,7 @@ class TestTableFilterKey(str, Enum):
     TEST_ID = 'Test ID'
     TEST_TYPE = 'Test type'
     LABEL_ID = 'Label ID'
+    TAG_ID = 'Tag ID'
     UNKNOWN = 'unknown'
 
     @classmethod

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 
 # **create_tag**
-> TagInfo create_tag(aid=aid, tag_info=tag_info)
+> Tag create_tag(aid=aid, tag_info=tag_info)
 
 Create tag
 
@@ -25,6 +25,7 @@ Creates a new tag.
 
 ```python
 import thousandeyes_sdk.tags
+from thousandeyes_sdk.tags.models.tag import Tag
 from thousandeyes_sdk.tags.models.tag_info import TagInfo
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
@@ -73,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagInfo**](TagInfo.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 
@@ -301,7 +302,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.tags.TagsApi(api_client)
     id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tags.ExpandTagsOptions()] # List[ExpandTagsOptions] | Optional, to retrieve associated assignments (optional)
+    expand = [thousandeyes_sdk.tags.ExpandTagsOptions()] # List[ExpandTagsOptions] | Optional, to retrieve associated assignments. Only static tags will return object assignments. (optional)
 
     try:
         # Retrieve tag
@@ -321,7 +322,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **id** | **str**| Tag ID | 
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[ExpandTagsOptions]**](ExpandTagsOptions.md)| Optional, to retrieve associated assignments | [optional] 
+ **expand** | [**List[ExpandTagsOptions]**](ExpandTagsOptions.md)| Optional, to retrieve associated assignments. Only static tags will return object assignments. | [optional] 
 
 ### Return type
 
@@ -388,7 +389,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tags.ExpandTagsOptions()] # List[ExpandTagsOptions] | Optional, to retrieve associated assignments (optional)
+    expand = [thousandeyes_sdk.tags.ExpandTagsOptions()] # List[ExpandTagsOptions] | Optional, to retrieve associated assignments. Only static tags will return object assignments. (optional)
 
     try:
         # List tags
@@ -407,7 +408,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
- **expand** | [**List[ExpandTagsOptions]**](ExpandTagsOptions.md)| Optional, to retrieve associated assignments | [optional] 
+ **expand** | [**List[ExpandTagsOptions]**](ExpandTagsOptions.md)| Optional, to retrieve associated assignments. Only static tags will return object assignments. | [optional] 
 
 ### Return type
 
@@ -436,7 +437,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **update_tag**
-> TagInfo update_tag(id, aid=aid, tag_info=tag_info)
+> Tag update_tag(id, aid=aid, tag_info=tag_info)
 
 Update tag
 
@@ -448,6 +449,7 @@ Updates a tag.
 
 ```python
 import thousandeyes_sdk.tags
+from thousandeyes_sdk.tags.models.tag import Tag
 from thousandeyes_sdk.tags.models.tag_info import TagInfo
 from thousandeyes_sdk.tags.rest import ApiException
 from pprint import pprint
@@ -498,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TagInfo**](TagInfo.md)
+[**Tag**](Tag.md)
 
 ### Authorization
 

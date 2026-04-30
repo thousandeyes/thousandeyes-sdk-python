@@ -17,26 +17,22 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class RequestMethod(str, Enum):
+class OAuthAuthType(str, Enum):
     """
-    HTTP request method.
+    HTTP authentication type used for the OAuth request.
     """
 
     """
     allowed enum values
     """
-    GET = 'get'
-    POST = 'post'
-    PUT = 'put'
-    DELETE = 'delete'
-    PATCH = 'patch'
-    OPTIONS = 'options'
-    TRACE = 'trace'
+    NONE = 'none'
+    BASIC = 'basic'
+    NTLM = 'ntlm'
     UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of RequestMethod from a JSON string"""
+        """Create an instance of OAuthAuthType from a JSON string"""
         return cls(json.loads(json_str))
 
     @classmethod

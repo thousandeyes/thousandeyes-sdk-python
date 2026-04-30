@@ -55,7 +55,19 @@ class TestTagAssignmentApi(unittest.TestCase):
                     "id" : "123",
                     "type" : "test"
                   } ],
-                  "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                  "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  }
                 }"""
 
         response_loaded_json = json.loads(response_body_json)
@@ -66,6 +78,18 @@ class TestTagAssignmentApi(unittest.TestCase):
         """Test case for assign_tags request and response models"""
         request_body_json = """
                 {
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
                   "tags" : [ {
                     "assignments" : [ {
                       "id" : "123",
@@ -74,7 +98,19 @@ class TestTagAssignmentApi(unittest.TestCase):
                       "id" : "123",
                       "type" : "test"
                     } ],
-                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    }
                   }, {
                     "assignments" : [ {
                       "id" : "123",
@@ -83,7 +119,19 @@ class TestTagAssignmentApi(unittest.TestCase):
                       "id" : "123",
                       "type" : "test"
                     } ],
-                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    }
                   } ]
                 }
                 """
@@ -94,6 +142,18 @@ class TestTagAssignmentApi(unittest.TestCase):
 
         response_body_json = """
                 {
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
                   "tags" : [ {
                     "assignments" : [ {
                       "id" : "123",
@@ -102,7 +162,19 @@ class TestTagAssignmentApi(unittest.TestCase):
                       "id" : "123",
                       "type" : "test"
                     } ],
-                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    }
                   }, {
                     "assignments" : [ {
                       "id" : "123",
@@ -111,7 +183,19 @@ class TestTagAssignmentApi(unittest.TestCase):
                       "id" : "123",
                       "type" : "test"
                     } ],
-                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    }
                   } ]
                 }"""
 
@@ -142,6 +226,18 @@ class TestTagAssignmentApi(unittest.TestCase):
         """Test case for unassign_tags request and response models"""
         request_body_json = """
                 {
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
                   "tags" : [ {
                     "assignments" : [ {
                       "id" : "123",
@@ -150,7 +246,19 @@ class TestTagAssignmentApi(unittest.TestCase):
                       "id" : "123",
                       "type" : "test"
                     } ],
-                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    }
                   }, {
                     "assignments" : [ {
                       "id" : "123",
@@ -159,7 +267,19 @@ class TestTagAssignmentApi(unittest.TestCase):
                       "id" : "123",
                       "type" : "test"
                     } ],
-                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    }
                   } ]
                 }
                 """
@@ -170,6 +290,18 @@ class TestTagAssignmentApi(unittest.TestCase):
 
         response_body_json = """
                 {
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
                   "tags" : [ {
                     "assignments" : [ {
                       "id" : "123",
@@ -178,7 +310,19 @@ class TestTagAssignmentApi(unittest.TestCase):
                       "id" : "123",
                       "type" : "test"
                     } ],
-                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    }
                   }, {
                     "assignments" : [ {
                       "id" : "123",
@@ -187,7 +331,19 @@ class TestTagAssignmentApi(unittest.TestCase):
                       "id" : "123",
                       "type" : "test"
                     } ],
-                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55"
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    }
                   } ]
                 }"""
 

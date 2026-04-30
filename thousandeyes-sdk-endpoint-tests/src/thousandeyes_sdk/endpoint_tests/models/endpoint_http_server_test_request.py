@@ -23,7 +23,7 @@ from thousandeyes_sdk.endpoint_tests.models.endpoint_test_agent_selector_type im
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_auth_type import EndpointTestAuthType
 from thousandeyes_sdk.endpoint_tests.models.endpoint_test_protocol import EndpointTestProtocol
 from thousandeyes_sdk.endpoint_tests.models.test_interval import TestInterval
-from thousandeyes_sdk.endpoint_tests.models.test_probe_mode_response import TestProbeModeResponse
+from thousandeyes_sdk.endpoint_tests.models.test_probe_mode import TestProbeMode
 from thousandeyes_sdk.endpoint_tests.models.test_ssl_version_id import TestSslVersionId
 from typing import Optional, Set
 from typing_extensions import Self
@@ -44,7 +44,7 @@ class EndpointHttpServerTestRequest(BaseModel):
     protocol: Optional[EndpointTestProtocol] = None
     username: Optional[StrictStr] = Field(default=None, description="Username for Basic/NTLM authentication.")
     ssl_version_id: Optional[TestSslVersionId] = Field(default=None, alias="sslVersionId")
-    tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
+    tcp_probe_mode: Optional[TestProbeMode] = Field(default=None, alias="tcpProbeMode")
     verify_certificate: Optional[StrictBool] = Field(default=True, description="Flag indicating if a certificate should be verified.", alias="verifyCertificate")
     url: StrictStr = Field(description="The test target URL. You can optionally specify the protocol (`http` or `https`).   - **Default Protocol:** If no protocol is specified, `https` is used by default.  - **Port Number:** To specify a port, append it to the URL with a colon after the hostname or IP address (e.g., `https://example.com:443`).      - If no port is specified in the URL, the `port` is determined by the default for protocol (HTTP: 80, HTTPS: 443). ")
     has_ping: Optional[StrictBool] = Field(default=True, description="Optional flag indicating if the test should run ping.", alias="hasPing")

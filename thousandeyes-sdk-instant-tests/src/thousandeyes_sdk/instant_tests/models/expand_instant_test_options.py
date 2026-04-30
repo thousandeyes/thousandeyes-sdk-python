@@ -27,6 +27,7 @@ class ExpandInstantTestOptions(str, Enum):
     """
     AGENT = 'agent'
     LABEL = 'label'
+    TAG = 'tag'
     SHARED_MINUS_WITH_MINUS_ACCOUNT = 'shared-with-account'
     UNKNOWN = 'unknown'
 
