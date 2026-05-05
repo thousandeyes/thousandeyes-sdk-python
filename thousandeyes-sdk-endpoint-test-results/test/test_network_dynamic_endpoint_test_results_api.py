@@ -48,11 +48,11 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     "conditionalOperator" : "and",
                     "filters" : [ {
                       "name" : "loss",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     }, {
                       "name" : "loss",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     } ]
                   }
@@ -134,14 +134,14 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "remoteIpAddress" : "120.98.134.7"
                     },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "minLatency" : 167.0,
+                    "minLatency" : 167,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
                       "vpnGatewayAddress" : "120.98.134.7",
                       "vpnType" : "cisco-anyconnect",
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    "maxLatency" : 168.0,
+                    "maxLatency" : 168,
                     "batteryMetrics" : {
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
@@ -164,10 +164,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
-                    "loss" : 0.0,
+                    "loss" : 0,
                     "protocol" : "tcp",
                     "networkProfile" : {
                       "previousInterface" : {
@@ -216,13 +216,13 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "gateway" : "10.0.0.1"
                     },
                     "ztaMetrics" : [ {
-                      "loss" : 50.0,
+                      "loss" : 50,
                       "jitter" : 5,
                       "avgLatency" : 3,
                       "errorMessage" : "ERR_NAME_NOT_RESOLVED",
                       "type" : "zta_service"
                     }, {
-                      "loss" : 50.0,
+                      "loss" : 50,
                       "jitter" : 5,
                       "avgLatency" : 3,
                       "errorMessage" : "ERR_NAME_NOT_RESOLVED",
@@ -273,14 +273,14 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "remoteIpAddress" : "120.98.134.7"
                     },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "minLatency" : 167.0,
+                    "minLatency" : 167,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
                       "vpnGatewayAddress" : "120.98.134.7",
                       "vpnType" : "cisco-anyconnect",
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    "maxLatency" : 168.0,
+                    "maxLatency" : 168,
                     "batteryMetrics" : {
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
@@ -303,10 +303,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
-                    "loss" : 0.0,
+                    "loss" : 0,
                     "protocol" : "tcp",
                     "networkProfile" : {
                       "previousInterface" : {
@@ -355,13 +355,13 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "gateway" : "10.0.0.1"
                     },
                     "ztaMetrics" : [ {
-                      "loss" : 50.0,
+                      "loss" : 50,
                       "jitter" : 5,
                       "avgLatency" : 3,
                       "errorMessage" : "ERR_NAME_NOT_RESOLVED",
                       "type" : "zta_service"
                     }, {
-                      "loss" : 50.0,
+                      "loss" : 50,
                       "jitter" : 5,
                       "avgLatency" : 3,
                       "errorMessage" : "ERR_NAME_NOT_RESOLVED",

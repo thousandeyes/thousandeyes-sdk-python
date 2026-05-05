@@ -111,7 +111,7 @@ class TestNetworkTestResultsApi(unittest.TestCase):
                     "packetsBySecond" : [ [ ], [ 0 ], [ 2 ], [ 2, 1 ], [ 1, 1 ] ],
                     "avgLatency" : 167.04,
                     "bandwidth" : 4.3313155,
-                    "minLatency" : 167.0,
+                    "minLatency" : 167,
                     "_links" : {
                       "appLink" : {
                         "hreflang" : "hreflang",
@@ -124,19 +124,19 @@ class TestNetworkTestResultsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
-                    "maxLatency" : 168.0,
+                    "maxLatency" : 168,
                     "proxyJitter" : 1.2,
-                    "proxyAverageLatency" : 45.0,
+                    "proxyAverageLatency" : 45,
                     "proxyLoss" : 2.5,
                     "healthScore" : 0.98,
                     "capacity" : 210.10854,
-                    "loss" : 0.0,
-                    "proxyMinLatency" : 40.0,
+                    "loss" : 0,
+                    "proxyMinLatency" : 40,
                     "jitter" : 0.076808,
                     "serverIp" : "50.18.127.223",
                     "startTime" : 1384309800,
                     "endTime" : 1384309800,
-                    "proxyMaxLatency" : 50.0,
+                    "proxyMaxLatency" : 50,
                     "roundId" : 1384309800,
                     "direction" : "to-target"
                   }, {
@@ -152,7 +152,7 @@ class TestNetworkTestResultsApi(unittest.TestCase):
                     "packetsBySecond" : [ [ ], [ 0 ], [ 2 ], [ 2, 1 ], [ 1, 1 ] ],
                     "avgLatency" : 167.04,
                     "bandwidth" : 4.3313155,
-                    "minLatency" : 167.0,
+                    "minLatency" : 167,
                     "_links" : {
                       "appLink" : {
                         "hreflang" : "hreflang",
@@ -165,19 +165,19 @@ class TestNetworkTestResultsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
-                    "maxLatency" : 168.0,
+                    "maxLatency" : 168,
                     "proxyJitter" : 1.2,
-                    "proxyAverageLatency" : 45.0,
+                    "proxyAverageLatency" : 45,
                     "proxyLoss" : 2.5,
                     "healthScore" : 0.98,
                     "capacity" : 210.10854,
-                    "loss" : 0.0,
-                    "proxyMinLatency" : 40.0,
+                    "loss" : 0,
+                    "proxyMinLatency" : 40,
                     "jitter" : 0.076808,
                     "serverIp" : "50.18.127.223",
                     "startTime" : 1384309800,
                     "endTime" : 1384309800,
-                    "proxyMaxLatency" : 50.0,
+                    "proxyMaxLatency" : 50,
                     "roundId" : 1384309800,
                     "direction" : "to-target"
                   } ],

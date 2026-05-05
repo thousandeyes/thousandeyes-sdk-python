@@ -45,7 +45,7 @@ docs/DnsServerInstantTest.md
 docs/DnsServerInstantTestRequest.md
 docs/DnsServerInstantTestResponse.md
 docs/DnsServerProperties.md
-docs/DnsServersRequest.md
+docs/DnsServerRequestProperties.md
 docs/DnsTraceInstantTest.md
 docs/DnsTraceInstantTestRequest.md
 docs/DnsTraceInstantTestResponse.md
@@ -172,7 +172,7 @@ src/thousandeyes_sdk/instant_tests/models/dns_server_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/dns_server_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/dns_server_instant_test_response.py
 src/thousandeyes_sdk/instant_tests/models/dns_server_properties.py
-src/thousandeyes_sdk/instant_tests/models/dns_servers_request.py
+src/thousandeyes_sdk/instant_tests/models/dns_server_request_properties.py
 src/thousandeyes_sdk/instant_tests/models/dns_trace_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/dns_trace_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/dns_trace_instant_test_response.py

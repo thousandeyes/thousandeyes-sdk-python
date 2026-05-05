@@ -44,7 +44,6 @@ from thousandeyes_sdk.streaming.models.stream_status import StreamStatus
 from thousandeyes_sdk.streaming.models.stream_status_type import StreamStatusType
 from thousandeyes_sdk.streaming.models.stream_type import StreamType
 from thousandeyes_sdk.streaming.models.tag_match import TagMatch
-from thousandeyes_sdk.streaming.models.tag_match_object_type import TagMatchObjectType
 from thousandeyes_sdk.streaming.models.test_match import TestMatch
 from thousandeyes_sdk.streaming.models.test_match_domain import TestMatchDomain
 from thousandeyes_sdk.streaming.models.test_type import TestType

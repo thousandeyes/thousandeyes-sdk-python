@@ -127,7 +127,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                   },
                   "accountGroupName" : "Account A",
                   "isDefaultAccountGroup" : true,
-                  "accountToken" : "6j052y4vfgyuhefghue",
+                  "accountToken" : "accountToken",
                   "aid" : "1234",
                   "orgId" : "12345",
                   "users" : [ {
@@ -531,7 +531,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                   },
                   "accountGroupName" : "Account A",
                   "isDefaultAccountGroup" : true,
-                  "accountToken" : "6j052y4vfgyuhefghue",
+                  "accountToken" : "accountToken",
                   "aid" : "1234",
                   "orgId" : "12345",
                   "users" : [ {

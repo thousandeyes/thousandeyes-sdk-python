@@ -95,21 +95,7 @@ class TestSIPServerTestsApi(unittest.TestCase):
                   "interval" : 60,
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ "1234", "12345" ],
-                  "monitors" : [ {
-                    "monitorType" : "public",
-                    "monitorId" : "1234",
-                    "monitorName" : "Seattle, WA",
-                    "ipAddress" : "4.69.184.193",
-                    "countryId" : "GB",
-                    "network" : "Level 3 Communications, Inc. (AS 3356)"
-                  }, {
-                    "monitorType" : "public",
-                    "monitorId" : "1234",
-                    "monitorName" : "Seattle, WA",
-                    "ipAddress" : "4.69.184.193",
-                    "countryId" : "GB",
-                    "network" : "Level 3 Communications, Inc. (AS 3356)"
-                  } ]
+                  "monitors" : [ "17410", "5" ]
                 }
                 """
 
@@ -619,21 +605,7 @@ class TestSIPServerTestsApi(unittest.TestCase):
                   "interval" : 60,
                   "testId" : "281474976710706",
                   "sharedWithAccounts" : [ "1234", "12345" ],
-                  "monitors" : [ {
-                    "monitorType" : "public",
-                    "monitorId" : "1234",
-                    "monitorName" : "Seattle, WA",
-                    "ipAddress" : "4.69.184.193",
-                    "countryId" : "GB",
-                    "network" : "Level 3 Communications, Inc. (AS 3356)"
-                  }, {
-                    "monitorType" : "public",
-                    "monitorId" : "1234",
-                    "monitorName" : "Seattle, WA",
-                    "ipAddress" : "4.69.184.193",
-                    "countryId" : "GB",
-                    "network" : "Level 3 Communications, Inc. (AS 3356)"
-                  } ]
+                  "monitors" : [ "17410", "5" ]
                 }
                 """
 

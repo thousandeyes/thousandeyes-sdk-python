@@ -35,9 +35,9 @@ class SimpleAgent(BaseModel):
     country_id: Optional[StrictStr] = Field(default=None, description="2-digit ISO country code", alias="countryId")
     coordinates: Optional[Coordinates] = None
     enabled: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent is enabled.")
-    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     verify_ssl_certificates: Optional[StrictBool] = Field(default=None, description="Flag indicating if has normal SSL operations or  if instead it's set to ignore SSL errors on browserbot-based tests.", alias="verifySslCertificates")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates"]
+    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "verifySslCertificates", "prefix"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,8 +86,8 @@ class SimpleAgent(BaseModel):
             "agent_id",
             "location",
             "country_id",
-            "prefix",
             "verify_ssl_certificates",
+            "prefix",
         ])
 
         _dict = self.model_dump(
@@ -119,8 +119,8 @@ class SimpleAgent(BaseModel):
             "countryId": obj.get("countryId"),
             "coordinates": Coordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
             "enabled": obj.get("enabled"),
-            "prefix": obj.get("prefix"),
-            "verifySslCertificates": obj.get("verifySslCertificates")
+            "verifySslCertificates": obj.get("verifySslCertificates"),
+            "prefix": obj.get("prefix")
         })
         return _obj
 
