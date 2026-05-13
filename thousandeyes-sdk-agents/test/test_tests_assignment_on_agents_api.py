@@ -62,6 +62,7 @@ class TestTestsAssignmentOnAgentsApi(unittest.TestCase):
                     "longitude" : -122.41942
                   },
                   "agentName" : "thousandeyes-stg-va-254",
+                  "networkProviderInfo" : "",
                   "countryId" : "US",
                   "enabled" : true,
                   "network" : "AT&T Services, Inc. (AS 7018)",
@@ -188,6 +189,7 @@ class TestTestsAssignmentOnAgentsApi(unittest.TestCase):
                     "longitude" : -122.41942
                   },
                   "agentName" : "thousandeyes-stg-va-254",
+                  "networkProviderInfo" : "",
                   "countryId" : "US",
                   "enabled" : true,
                   "network" : "AT&T Services, Inc. (AS 7018)",
@@ -314,6 +316,7 @@ class TestTestsAssignmentOnAgentsApi(unittest.TestCase):
                     "longitude" : -122.41942
                   },
                   "agentName" : "thousandeyes-stg-va-254",
+                  "networkProviderInfo" : "",
                   "countryId" : "US",
                   "enabled" : true,
                   "network" : "AT&T Services, Inc. (AS 7018)",

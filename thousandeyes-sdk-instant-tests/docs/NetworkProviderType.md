@@ -1,6 +1,6 @@
-# ApiAgentWidgetShow
+# NetworkProviderType
 
-Ownership of the agent.
+Classification of the agent's network provider.
 
 ## Properties
 

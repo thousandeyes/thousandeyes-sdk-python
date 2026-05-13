@@ -60,6 +60,8 @@ from thousandeyes_sdk.agents.models.error_detail_code import ErrorDetailCode
 from thousandeyes_sdk.agents.models.interface_ip_mapping import InterfaceIpMapping
 from thousandeyes_sdk.agents.models.link import Link
 from thousandeyes_sdk.agents.models.list_notification_rules_response import ListNotificationRulesResponse
+from thousandeyes_sdk.agents.models.network_provider_info import NetworkProviderInfo
+from thousandeyes_sdk.agents.models.network_provider_type import NetworkProviderType
 from thousandeyes_sdk.agents.models.notification_rule import NotificationRule
 from thousandeyes_sdk.agents.models.notification_rule_detail import NotificationRuleDetail
 from thousandeyes_sdk.agents.models.notification_rules import NotificationRules

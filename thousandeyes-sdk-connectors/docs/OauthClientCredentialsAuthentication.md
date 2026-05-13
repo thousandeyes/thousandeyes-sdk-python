@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **oauth_client_id** | **str** |  | 
 **oauth_token_url** | **str** |  | 
 **oauth_client_secret** | **str** |  | 
+**scope** | **str** |  | [optional] 
 **type** | [**AuthenticationType**](AuthenticationType.md) |  | 
 
 ## Example

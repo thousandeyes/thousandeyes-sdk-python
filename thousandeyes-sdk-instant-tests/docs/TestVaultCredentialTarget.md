@@ -1,6 +1,6 @@
-# ApiAgentWidgetType
+# TestVaultCredentialTarget
 
-Type of the agent.
+The target setting that the credential should be used for.
 
 ## Properties
 

@@ -1,6 +1,6 @@
-# TagMatchObjectType
+# NetworkProviderType
 
-The object type of tag
+Classification of the agent's network provider.
 
 ## Properties
 

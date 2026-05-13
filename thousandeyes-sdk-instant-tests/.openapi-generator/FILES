@@ -45,7 +45,7 @@ docs/DnsServerInstantTest.md
 docs/DnsServerInstantTestRequest.md
 docs/DnsServerInstantTestResponse.md
 docs/DnsServerProperties.md
-docs/DnsServersRequest.md
+docs/DnsServerRequestProperties.md
 docs/DnsTraceInstantTest.md
 docs/DnsTraceInstantTestRequest.md
 docs/DnsTraceInstantTestResponse.md
@@ -69,6 +69,8 @@ docs/InstantTest.md
 docs/InstantTestRequest.md
 docs/InstantTestsApi.md
 docs/Link.md
+docs/NetworkProviderInfo.md
+docs/NetworkProviderType.md
 docs/OAuth.md
 docs/OAuthAuthType.md
 docs/OAuthRequestMethod.md
@@ -102,6 +104,8 @@ docs/TestSelfLink.md
 docs/TestSipCredentials.md
 docs/TestSslVersionId.md
 docs/TestType.md
+docs/TestVaultCredential.md
+docs/TestVaultCredentialTarget.md
 docs/UnauthorizedError.md
 docs/UnexpandedInstantTest.md
 docs/ValidationError.md
@@ -172,7 +176,7 @@ src/thousandeyes_sdk/instant_tests/models/dns_server_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/dns_server_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/dns_server_instant_test_response.py
 src/thousandeyes_sdk/instant_tests/models/dns_server_properties.py
-src/thousandeyes_sdk/instant_tests/models/dns_servers_request.py
+src/thousandeyes_sdk/instant_tests/models/dns_server_request_properties.py
 src/thousandeyes_sdk/instant_tests/models/dns_trace_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/dns_trace_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/dns_trace_instant_test_response.py
@@ -192,6 +196,8 @@ src/thousandeyes_sdk/instant_tests/models/http_server_properties.py
 src/thousandeyes_sdk/instant_tests/models/instant_test.py
 src/thousandeyes_sdk/instant_tests/models/instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/link.py
+src/thousandeyes_sdk/instant_tests/models/network_provider_info.py
+src/thousandeyes_sdk/instant_tests/models/network_provider_type.py
 src/thousandeyes_sdk/instant_tests/models/o_auth.py
 src/thousandeyes_sdk/instant_tests/models/o_auth_auth_type.py
 src/thousandeyes_sdk/instant_tests/models/o_auth_request_method.py
@@ -224,6 +230,8 @@ src/thousandeyes_sdk/instant_tests/models/test_self_link.py
 src/thousandeyes_sdk/instant_tests/models/test_sip_credentials.py
 src/thousandeyes_sdk/instant_tests/models/test_ssl_version_id.py
 src/thousandeyes_sdk/instant_tests/models/test_type.py
+src/thousandeyes_sdk/instant_tests/models/test_vault_credential.py
+src/thousandeyes_sdk/instant_tests/models/test_vault_credential_target.py
 src/thousandeyes_sdk/instant_tests/models/unauthorized_error.py
 src/thousandeyes_sdk/instant_tests/models/unexpanded_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/validation_error.py

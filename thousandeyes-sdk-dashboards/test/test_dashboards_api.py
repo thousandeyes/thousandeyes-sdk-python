@@ -85,7 +85,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -122,7 +122,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -226,7 +226,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -263,7 +263,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -373,7 +373,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -410,7 +410,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -558,8 +558,8 @@ class TestDashboardsApi(unittest.TestCase):
                         "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       } ],
                       "binSize" : 3600,
-                      "previousValue" : 500.0,
-                      "value" : 100.0,
+                      "previousValue" : 500,
+                      "value" : 100,
                       "startDate" : "2023-05-16T10:14:28Z",
                       "timestamp" : 1567620000,
                       "status" : "No data"
@@ -600,8 +600,8 @@ class TestDashboardsApi(unittest.TestCase):
                         "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       } ],
                       "binSize" : 3600,
-                      "previousValue" : 500.0,
-                      "value" : 100.0,
+                      "previousValue" : 500,
+                      "value" : 100,
                       "startDate" : "2023-05-16T10:14:28Z",
                       "timestamp" : 1567620000,
                       "status" : "No data"
@@ -706,7 +706,7 @@ class TestDashboardsApi(unittest.TestCase):
                           "groupProperty" : "COUNTRY",
                           "groupValue" : "US"
                         } ],
-                        "value" : 100.0,
+                        "value" : 100,
                         "timestamp" : 1567620000
                       }, {
                         "numberOfDataPoints" : 23304,
@@ -717,7 +717,7 @@ class TestDashboardsApi(unittest.TestCase):
                           "groupProperty" : "COUNTRY",
                           "groupValue" : "US"
                         } ],
-                        "value" : 100.0,
+                        "value" : 100,
                         "timestamp" : 1567620000
                       } ],
                       "status" : "No data"
@@ -764,7 +764,7 @@ class TestDashboardsApi(unittest.TestCase):
                           "groupProperty" : "COUNTRY",
                           "groupValue" : "US"
                         } ],
-                        "value" : 100.0,
+                        "value" : 100,
                         "timestamp" : 1567620000
                       }, {
                         "numberOfDataPoints" : 23304,
@@ -775,7 +775,7 @@ class TestDashboardsApi(unittest.TestCase):
                           "groupProperty" : "COUNTRY",
                           "groupValue" : "US"
                         } ],
-                        "value" : 100.0,
+                        "value" : 100,
                         "timestamp" : 1567620000
                       } ],
                       "status" : "No data"
@@ -810,7 +810,7 @@ class TestDashboardsApi(unittest.TestCase):
                         "groupProperty" : "COUNTRY",
                         "groupValue" : "US"
                       } ],
-                      "value" : 100.0,
+                      "value" : 100,
                       "timestamp" : 1567620000
                     }, {
                       "numberOfDataPoints" : 23304,
@@ -821,7 +821,7 @@ class TestDashboardsApi(unittest.TestCase):
                         "groupProperty" : "COUNTRY",
                         "groupValue" : "US"
                       } ],
-                      "value" : 100.0,
+                      "value" : 100,
                       "timestamp" : 1567620000
                     } ],
                     "agents" : [ {
@@ -956,7 +956,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -993,7 +993,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -1100,7 +1100,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -1137,7 +1137,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -1240,8 +1240,8 @@ class TestDashboardsApi(unittest.TestCase):
                     "startTimes" : [ "2023-05-16T10:14:28Z" ]
                   } ],
                   "binSize" : 3600,
-                  "previousValue" : 500.0,
-                  "value" : 100.0,
+                  "previousValue" : 500,
+                  "value" : 100,
                   "startDate" : "2023-05-16T10:14:28Z",
                   "timestamp" : 1567620000,
                   "status" : "No data"
@@ -1298,7 +1298,7 @@ class TestDashboardsApi(unittest.TestCase):
                       "groupProperty" : "COUNTRY",
                       "groupValue" : "US"
                     } ],
-                    "value" : 100.0,
+                    "value" : 100,
                     "timestamp" : 1567620000
                   }, {
                     "numberOfDataPoints" : 23304,
@@ -1309,7 +1309,7 @@ class TestDashboardsApi(unittest.TestCase):
                       "groupProperty" : "COUNTRY",
                       "groupValue" : "US"
                     } ],
-                    "value" : 100.0,
+                    "value" : 100,
                     "timestamp" : 1567620000
                   } ],
                   "status" : "No data"
@@ -1376,7 +1376,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -1413,7 +1413,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -1517,7 +1517,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
@@ -1554,7 +1554,7 @@ class TestDashboardsApi(unittest.TestCase):
                     "type" : "Agent Status",
                     "metricGroup" : "BGP",
                     "measure" : {
-                      "percentileValue" : 95.0,
+                      "percentileValue" : 95,
                       "type" : "MEAN"
                     },
                     "apiLink" : "apiLink",
