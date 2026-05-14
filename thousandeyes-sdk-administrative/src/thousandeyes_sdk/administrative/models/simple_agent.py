@@ -19,6 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.administrative.models.coordinates import Coordinates
+from thousandeyes_sdk.administrative.models.network_provider_info import NetworkProviderInfo
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -34,10 +35,11 @@ class SimpleAgent(BaseModel):
     location: Optional[StrictStr] = Field(default=None, description="Location of the agent.")
     country_id: Optional[StrictStr] = Field(default=None, description="2-digit ISO country code", alias="countryId")
     coordinates: Optional[Coordinates] = None
+    network_provider_info: Optional[NetworkProviderInfo] = Field(default=None, alias="networkProviderInfo")
     enabled: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent is enabled.")
-    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     verify_ssl_certificates: Optional[StrictBool] = Field(default=None, description="Flag indicating if has normal SSL operations or  if instead it's set to ignore SSL errors on browserbot-based tests.", alias="verifySslCertificates")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates"]
+    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "networkProviderInfo", "enabled", "verifySslCertificates", "prefix"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -78,6 +80,7 @@ class SimpleAgent(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "ip_addresses",
@@ -86,8 +89,9 @@ class SimpleAgent(BaseModel):
             "agent_id",
             "location",
             "country_id",
-            "prefix",
+            "network_provider_info",
             "verify_ssl_certificates",
+            "prefix",
         ])
 
         _dict = self.model_dump(
@@ -98,6 +102,9 @@ class SimpleAgent(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of coordinates
         if self.coordinates:
             _dict['coordinates'] = self.coordinates.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of network_provider_info
+        if self.network_provider_info:
+            _dict['networkProviderInfo'] = self.network_provider_info.to_dict()
         return _dict
 
     @classmethod
@@ -118,9 +125,10 @@ class SimpleAgent(BaseModel):
             "location": obj.get("location"),
             "countryId": obj.get("countryId"),
             "coordinates": Coordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
+            "networkProviderInfo": NetworkProviderInfo.from_dict(obj["networkProviderInfo"]) if obj.get("networkProviderInfo") is not None else None,
             "enabled": obj.get("enabled"),
-            "prefix": obj.get("prefix"),
-            "verifySslCertificates": obj.get("verifySslCertificates")
+            "verifySslCertificates": obj.get("verifySslCertificates"),
+            "prefix": obj.get("prefix")
         })
         return _obj
 

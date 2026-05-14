@@ -6,7 +6,7 @@ Endpoint Agent label configuration.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**id** | **str** | The label ID of Endpoint Agent labels. | [optional] 
+**id** | **str** | The label ID of Endpoint Agent labels. | 
 
 ## Example
 

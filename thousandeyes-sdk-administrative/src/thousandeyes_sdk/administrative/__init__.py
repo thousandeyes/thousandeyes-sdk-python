@@ -48,6 +48,8 @@ from thousandeyes_sdk.administrative.models.expand_account_group_options import 
 from thousandeyes_sdk.administrative.models.extended_user import ExtendedUser
 from thousandeyes_sdk.administrative.models.interface_ip_mapping import InterfaceIpMapping
 from thousandeyes_sdk.administrative.models.link import Link
+from thousandeyes_sdk.administrative.models.network_provider_info import NetworkProviderInfo
+from thousandeyes_sdk.administrative.models.network_provider_type import NetworkProviderType
 from thousandeyes_sdk.administrative.models.pagination_links import PaginationLinks
 from thousandeyes_sdk.administrative.models.permission import Permission
 from thousandeyes_sdk.administrative.models.permissions import Permissions

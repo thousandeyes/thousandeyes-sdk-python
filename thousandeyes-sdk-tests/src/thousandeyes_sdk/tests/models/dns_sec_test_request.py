@@ -33,7 +33,6 @@ class DnsSecTestRequest(BaseModel):
     interval: TestInterval
     alerts_enabled: Optional[StrictBool] = Field(default=None, description="Indicates if alerts are enabled.", alias="alertsEnabled")
     enabled: Optional[StrictBool] = Field(default=True, description="Test is enabled.")
-    alert_rules: Optional[List[StrictStr]] = Field(default=None, description="List of alert rules IDs to apply to the test (get `ruleId` from `/alerts/rules` endpoint. If `alertsEnabled` is set to `true` and `alertRules` is not included on test creation or update, applicable user default alert rules will be used)", alias="alertRules")
     created_by: Optional[StrictStr] = Field(default=None, description="User that created the test.", alias="createdBy")
     created_date: Optional[datetime] = Field(default=None, description="UTC created date (ISO date-time format).", alias="createdDate")
     description: Optional[StrictStr] = Field(default=None, description="A description of the test.")
@@ -45,14 +44,15 @@ class DnsSecTestRequest(BaseModel):
     test_name: Optional[StrictStr] = Field(default=None, description="The name of the test. Test name must be unique.", alias="testName")
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
-    labels: Optional[List[StrictStr]] = Field(default=None, description="Contains list of test label IDs (get `labelId` from `/labels` endpoint)")
-    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="Contains list of account group IDs. Test is shared with the listed account groups (get `aid` from `/account-groups` endpoint)", alias="sharedWithAccounts")
     domain: StrictStr = Field(description="The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record.")
     dns_query_class: Optional[DnsQueryClass] = Field(default=None, alias="dnsQueryClass")
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
+    labels: Optional[List[StrictStr]] = Field(default=None, description="Contains list of test label IDs (get `labelId` from `/labels` endpoint)")
     tags: Optional[List[StrictStr]] = Field(default=None, description="Contains list of test tag IDs (get `id` from `/tags` endpoint).")
+    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="Contains list of account group IDs. Test is shared with the listed account groups (get `aid` from `/account-groups` endpoint)", alias="sharedWithAccounts")
+    alert_rules: Optional[List[StrictStr]] = Field(default=None, description="List of alert rules IDs to apply to the test (get `ruleId` from `/alerts/rules` endpoint. If `alertsEnabled` is set to `true` and `alertRules` is not included on test creation or update, applicable user default alert rules will be used)", alias="alertRules")
     agents: List[TestAgentRequest] = Field(description="Contains list of Agent IDs (get `agentId` from `/agents` endpoint).")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "domain", "dnsQueryClass", "randomizedStartTime", "tags", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "domain", "dnsQueryClass", "randomizedStartTime", "labels", "tags", "sharedWithAccounts", "alertRules", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -135,7 +135,6 @@ class DnsSecTestRequest(BaseModel):
             "interval": obj.get("interval"),
             "alertsEnabled": obj.get("alertsEnabled"),
             "enabled": obj.get("enabled") if obj.get("enabled") is not None else True,
-            "alertRules": obj.get("alertRules"),
             "createdBy": obj.get("createdBy"),
             "createdDate": obj.get("createdDate"),
             "description": obj.get("description"),
@@ -147,12 +146,13 @@ class DnsSecTestRequest(BaseModel):
             "testName": obj.get("testName"),
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "labels": obj.get("labels"),
-            "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "domain": obj.get("domain"),
             "dnsQueryClass": obj.get("dnsQueryClass"),
             "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
+            "labels": obj.get("labels"),
             "tags": obj.get("tags"),
+            "sharedWithAccounts": obj.get("sharedWithAccounts"),
+            "alertRules": obj.get("alertRules"),
             "agents": [TestAgentRequest.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj

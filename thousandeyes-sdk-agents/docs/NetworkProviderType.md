@@ -1,6 +1,6 @@
-# ApiWidgetSortProperty
+# NetworkProviderType
 
-Determines the card sorting criterion.
+Classification of the agent's network provider.
 
 ## Properties
 

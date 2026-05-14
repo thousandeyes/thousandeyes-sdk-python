@@ -21,6 +21,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.connectors.models.connector_type import ConnectorType
 from thousandeyes_sdk.connectors.models.generic_connector_auth import GenericConnectorAuth
 from thousandeyes_sdk.connectors.models.header import Header
+from thousandeyes_sdk.connectors.models.self_links import SelfLinks
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -32,10 +33,11 @@ class GenericConnector(BaseModel):
     type: ConnectorType
     name: StrictStr
     target: StrictStr
-    authentication: Optional[GenericConnectorAuth] = None
     last_modified_date: Optional[StrictInt] = Field(default=None, description="The date when the connector was last modified (Unix timestamp in milliseconds).", alias="lastModifiedDate")
+    authentication: Optional[GenericConnectorAuth] = None
     headers: Optional[List[Header]] = None
-    __properties: ClassVar[List[str]] = ["id", "type", "name", "target", "authentication", "lastModifiedDate", "headers"]
+    links: Optional[SelfLinks] = Field(default=None, alias="_links")
+    __properties: ClassVar[List[str]] = ["id", "type", "name", "target", "lastModifiedDate", "authentication", "headers", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -91,6 +93,9 @@ class GenericConnector(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['headers'] = _items
+        # override the default output from pydantic by calling `to_dict()` of links
+        if self.links:
+            _dict['_links'] = self.links.to_dict()
         return _dict
 
     @classmethod
@@ -107,9 +112,10 @@ class GenericConnector(BaseModel):
             "type": obj.get("type"),
             "name": obj.get("name"),
             "target": obj.get("target"),
-            "authentication": GenericConnectorAuth.from_dict(obj["authentication"]) if obj.get("authentication") is not None else None,
             "lastModifiedDate": obj.get("lastModifiedDate"),
-            "headers": [Header.from_dict(_item) for _item in obj["headers"]] if obj.get("headers") is not None else None
+            "authentication": GenericConnectorAuth.from_dict(obj["authentication"]) if obj.get("authentication") is not None else None,
+            "headers": [Header.from_dict(_item) for _item in obj["headers"]] if obj.get("headers") is not None else None,
+            "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj
 

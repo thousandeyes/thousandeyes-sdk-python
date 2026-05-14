@@ -1,6 +1,6 @@
-# WidgetType
+# NetworkProviderType
 
-Type of the Widget
+Classification of the agent's network provider.
 
 ## Properties
 

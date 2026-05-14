@@ -43,6 +43,8 @@ docs/ErrorDetailCode.md
 docs/InterfaceIpMapping.md
 docs/Link.md
 docs/ListNotificationRulesResponse.md
+docs/NetworkProviderInfo.md
+docs/NetworkProviderType.md
 docs/NotificationRule.md
 docs/NotificationRuleDetail.md
 docs/NotificationRules.md
@@ -108,6 +110,8 @@ src/thousandeyes_sdk/agents/models/error_detail_code.py
 src/thousandeyes_sdk/agents/models/interface_ip_mapping.py
 src/thousandeyes_sdk/agents/models/link.py
 src/thousandeyes_sdk/agents/models/list_notification_rules_response.py
+src/thousandeyes_sdk/agents/models/network_provider_info.py
+src/thousandeyes_sdk/agents/models/network_provider_type.py
 src/thousandeyes_sdk/agents/models/notification_rule.py
 src/thousandeyes_sdk/agents/models/notification_rule_detail.py
 src/thousandeyes_sdk/agents/models/notification_rules.py

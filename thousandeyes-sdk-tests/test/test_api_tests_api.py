@@ -139,6 +139,13 @@ class TestAPITestsApi(unittest.TestCase):
                   "type" : "api",
                   "usePublicBgp" : true,
                   "enabled" : true,
+                  "vaultCredentials" : [ {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  }, {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  } ],
                   "protocol" : "tcp",
                   "collectProxyNetworkData" : false,
                   "followRedirects" : true,
@@ -182,21 +189,7 @@ class TestAPITestsApi(unittest.TestCase):
                   "overrideProxyId" : "281474976710706",
                   "sslVersionId" : "0",
                   "targetTime" : 1,
-                  "monitors" : [ {
-                    "monitorType" : "public",
-                    "monitorId" : "1234",
-                    "monitorName" : "Seattle, WA",
-                    "ipAddress" : "4.69.184.193",
-                    "countryId" : "GB",
-                    "network" : "Level 3 Communications, Inc. (AS 3356)"
-                  }, {
-                    "monitorType" : "public",
-                    "monitorId" : "1234",
-                    "monitorName" : "Seattle, WA",
-                    "ipAddress" : "4.69.184.193",
-                    "countryId" : "GB",
-                    "network" : "Level 3 Communications, Inc. (AS 3356)"
-                  } ]
+                  "monitors" : [ "17410", "5" ]
                 }
                 """
 
@@ -341,6 +334,13 @@ class TestAPITestsApi(unittest.TestCase):
                   "type" : "api",
                   "usePublicBgp" : true,
                   "enabled" : true,
+                  "vaultCredentials" : [ {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  }, {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  } ],
                   "protocol" : "tcp",
                   "collectProxyNetworkData" : false,
                   "followRedirects" : true,
@@ -376,34 +376,36 @@ class TestAPITestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
-                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
                     "coordinates" : {
                       "latitude" : 37.77493,
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
-                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
-                    "location" : "San Francisco Bay Area",
+                    "networkProviderInfo" : "",
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
                     "verifySslCertificates" : true
                   }, {
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
-                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
                     "coordinates" : {
                       "latitude" : 37.77493,
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
-                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
-                    "location" : "San Francisco Bay Area",
+                    "networkProviderInfo" : "",
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
                     "verifySslCertificates" : true
                   } ],
                   "timeLimit" : 19,
@@ -588,6 +590,13 @@ class TestAPITestsApi(unittest.TestCase):
                   "type" : "api",
                   "usePublicBgp" : true,
                   "enabled" : true,
+                  "vaultCredentials" : [ {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  }, {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  } ],
                   "protocol" : "tcp",
                   "collectProxyNetworkData" : false,
                   "followRedirects" : true,
@@ -623,34 +632,36 @@ class TestAPITestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
-                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
                     "coordinates" : {
                       "latitude" : 37.77493,
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
-                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
-                    "location" : "San Francisco Bay Area",
+                    "networkProviderInfo" : "",
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
                     "verifySslCertificates" : true
                   }, {
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
-                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
                     "coordinates" : {
                       "latitude" : 37.77493,
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
-                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
-                    "location" : "San Francisco Bay Area",
+                    "networkProviderInfo" : "",
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
                     "verifySslCertificates" : true
                   } ],
                   "timeLimit" : 19,
@@ -1104,6 +1115,13 @@ class TestAPITestsApi(unittest.TestCase):
                   "type" : "api",
                   "usePublicBgp" : true,
                   "enabled" : true,
+                  "vaultCredentials" : [ {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  }, {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  } ],
                   "protocol" : "tcp",
                   "collectProxyNetworkData" : false,
                   "followRedirects" : true,
@@ -1147,21 +1165,7 @@ class TestAPITestsApi(unittest.TestCase):
                   "overrideProxyId" : "281474976710706",
                   "sslVersionId" : "0",
                   "targetTime" : 1,
-                  "monitors" : [ {
-                    "monitorType" : "public",
-                    "monitorId" : "1234",
-                    "monitorName" : "Seattle, WA",
-                    "ipAddress" : "4.69.184.193",
-                    "countryId" : "GB",
-                    "network" : "Level 3 Communications, Inc. (AS 3356)"
-                  }, {
-                    "monitorType" : "public",
-                    "monitorId" : "1234",
-                    "monitorName" : "Seattle, WA",
-                    "ipAddress" : "4.69.184.193",
-                    "countryId" : "GB",
-                    "network" : "Level 3 Communications, Inc. (AS 3356)"
-                  } ]
+                  "monitors" : [ "17410", "5" ]
                 }
                 """
 
@@ -1306,6 +1310,13 @@ class TestAPITestsApi(unittest.TestCase):
                   "type" : "api",
                   "usePublicBgp" : true,
                   "enabled" : true,
+                  "vaultCredentials" : [ {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  }, {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
+                  } ],
                   "protocol" : "tcp",
                   "collectProxyNetworkData" : false,
                   "followRedirects" : true,
@@ -1341,34 +1352,36 @@ class TestAPITestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
-                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
                     "coordinates" : {
                       "latitude" : 37.77493,
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
-                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
-                    "location" : "San Francisco Bay Area",
+                    "networkProviderInfo" : "",
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
                     "verifySslCertificates" : true
                   }, {
                     "agentId" : "281474976710706",
                     "agentType" : "enterprise-cluster",
-                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
                     "prefix" : "99.128.0.0/11",
                     "coordinates" : {
                       "latitude" : 37.77493,
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
-                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
-                    "location" : "San Francisco Bay Area",
+                    "networkProviderInfo" : "",
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
                     "verifySslCertificates" : true
                   } ],
                   "timeLimit" : 19,

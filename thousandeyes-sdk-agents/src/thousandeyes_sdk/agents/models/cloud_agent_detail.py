@@ -22,6 +22,7 @@ from typing_extensions import Annotated
 from thousandeyes_sdk.agents.models.agent_label import AgentLabel
 from thousandeyes_sdk.agents.models.agent_tag import AgentTag
 from thousandeyes_sdk.agents.models.coordinates import Coordinates
+from thousandeyes_sdk.agents.models.network_provider_info import NetworkProviderInfo
 from thousandeyes_sdk.agents.models.self_links import SelfLinks
 from thousandeyes_sdk.agents.models.simple_test import SimpleTest
 from typing import Optional, Set
@@ -39,15 +40,16 @@ class CloudAgentDetail(BaseModel):
     location: Optional[StrictStr] = Field(default=None, description="Location of the agent.")
     country_id: Optional[StrictStr] = Field(default=None, description="2-digit ISO country code", alias="countryId")
     coordinates: Optional[Coordinates] = None
+    network_provider_info: Optional[NetworkProviderInfo] = Field(default=None, alias="networkProviderInfo")
     enabled: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent is enabled.")
-    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     verify_ssl_certificates: Optional[StrictBool] = Field(default=None, description="Flag indicating if has normal SSL operations or  if instead it's set to ignore SSL errors on browserbot-based tests.", alias="verifySslCertificates")
+    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     agent_type: Annotated[str, Field(strict=True)] = Field(description="Cloud agent type.", alias="agentType")
     tests: Optional[List[SimpleTest]] = Field(default=None, description="List of tests. See `/tests` for more information.")
     labels: Optional[List[AgentLabel]] = Field(default=None, description="List of labels - see `/labels` for more information.")
     tags: Optional[List[AgentTag]] = Field(default=None, description="List of tags. See `/tags` for more information.")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "agentType", "tests", "labels", "tags", "_links"]
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "networkProviderInfo", "enabled", "verifySslCertificates", "prefix", "agentType", "tests", "labels", "tags", "_links"]
 
     @field_validator('agent_type')
     def agent_type_validate_regular_expression(cls, value):
@@ -97,6 +99,7 @@ class CloudAgentDetail(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "ip_addresses",
@@ -105,8 +108,9 @@ class CloudAgentDetail(BaseModel):
             "agent_id",
             "location",
             "country_id",
-            "prefix",
+            "network_provider_info",
             "verify_ssl_certificates",
+            "prefix",
             "labels",
             "tags",
         ])
@@ -119,6 +123,9 @@ class CloudAgentDetail(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of coordinates
         if self.coordinates:
             _dict['coordinates'] = self.coordinates.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of network_provider_info
+        if self.network_provider_info:
+            _dict['networkProviderInfo'] = self.network_provider_info.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in tests (list)
         _items = []
         if self.tests:
@@ -163,9 +170,10 @@ class CloudAgentDetail(BaseModel):
             "location": obj.get("location"),
             "countryId": obj.get("countryId"),
             "coordinates": Coordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
+            "networkProviderInfo": NetworkProviderInfo.from_dict(obj["networkProviderInfo"]) if obj.get("networkProviderInfo") is not None else None,
             "enabled": obj.get("enabled"),
-            "prefix": obj.get("prefix"),
             "verifySslCertificates": obj.get("verifySslCertificates"),
+            "prefix": obj.get("prefix"),
             "agentType": obj.get("agentType"),
             "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "labels": [AgentLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,

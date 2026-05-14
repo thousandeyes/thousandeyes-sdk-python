@@ -591,10 +591,10 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                           "count" : 10
                         },
                         "physicalMemoryUsedBytes" : {
-                          "min" : 1.2805128192E10,
-                          "max" : 1.2825530368E10,
+                          "min" : 12805128192,
+                          "max" : 12825530368,
                           "mean" : 1.281914582109091E10,
-                          "median" : 1.2818219008E10,
+                          "median" : 12818219008,
                           "stdDev" : 5741124.05691331,
                           "count" : 11
                         },
@@ -663,7 +663,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                       "isIcmpBlocked" : true,
                       "vpnPing" : {
                         "maxRtt" : 66,
-                        "loss" : 1.0,
+                        "loss" : 1,
                         "pktsReceived" : 10,
                         "avgRtt" : 7,
                         "meanDevRtt" : 11,
@@ -674,7 +674,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                       },
                       "ping" : {
                         "maxRtt" : 66,
-                        "loss" : 1.0,
+                        "loss" : 1,
                         "pktsReceived" : 10,
                         "avgRtt" : 7,
                         "meanDevRtt" : 11,
@@ -778,7 +778,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                       "connectRtt" : 77.777,
                       "gatewayPing" : {
                         "maxRtt" : 66,
-                        "loss" : 1.0,
+                        "loss" : 1,
                         "pktsReceived" : 10,
                         "avgRtt" : 7,
                         "meanDevRtt" : 11,
@@ -857,7 +857,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                       "isIcmpBlocked" : true,
                       "vpnPing" : {
                         "maxRtt" : 66,
-                        "loss" : 1.0,
+                        "loss" : 1,
                         "pktsReceived" : 10,
                         "avgRtt" : 7,
                         "meanDevRtt" : 11,
@@ -868,7 +868,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                       },
                       "ping" : {
                         "maxRtt" : 66,
-                        "loss" : 1.0,
+                        "loss" : 1,
                         "pktsReceived" : 10,
                         "avgRtt" : 7,
                         "meanDevRtt" : 11,
@@ -972,7 +972,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
                       "connectRtt" : 77.777,
                       "gatewayPing" : {
                         "maxRtt" : 66,
-                        "loss" : 1.0,
+                        "loss" : 1,
                         "pktsReceived" : 10,
                         "avgRtt" : 7,
                         "meanDevRtt" : 11,

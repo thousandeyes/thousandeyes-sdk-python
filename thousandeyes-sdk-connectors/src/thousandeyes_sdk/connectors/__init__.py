@@ -14,6 +14,8 @@
 
 
 # import apis into sdk package
+from thousandeyes_sdk.connectors.api.credential_vault_operations_api import CredentialVaultOperationsApi
+from thousandeyes_sdk.connectors.api.cyber_ark_conjur_connectors_api import CyberArkConjurConnectorsApi
 from thousandeyes_sdk.connectors.api.generic_connectors_api import GenericConnectorsApi
 from thousandeyes_sdk.connectors.api.operation_connectors_api import OperationConnectorsApi
 from thousandeyes_sdk.connectors.api.webhook_operations_api import WebhookOperationsApi
@@ -24,7 +26,13 @@ from thousandeyes_sdk.connectors.models.assignments import Assignments
 from thousandeyes_sdk.connectors.models.authentication_type import AuthenticationType
 from thousandeyes_sdk.connectors.models.basic_authentication import BasicAuthentication
 from thousandeyes_sdk.connectors.models.bearer_token_authentication import BearerTokenAuthentication
+from thousandeyes_sdk.connectors.models.conjur_connector import ConjurConnector
+from thousandeyes_sdk.connectors.models.conjur_connectors import ConjurConnectors
+from thousandeyes_sdk.connectors.models.conjur_host_authentication import ConjurHostAuthentication
 from thousandeyes_sdk.connectors.models.connector_type import ConnectorType
+from thousandeyes_sdk.connectors.models.credential_vault_operation import CredentialVaultOperation
+from thousandeyes_sdk.connectors.models.credential_vault_operations import CredentialVaultOperations
+from thousandeyes_sdk.connectors.models.credential_vault_secret import CredentialVaultSecret
 from thousandeyes_sdk.connectors.models.error import Error
 from thousandeyes_sdk.connectors.models.generic_connector import GenericConnector
 from thousandeyes_sdk.connectors.models.generic_connector_auth import GenericConnectorAuth

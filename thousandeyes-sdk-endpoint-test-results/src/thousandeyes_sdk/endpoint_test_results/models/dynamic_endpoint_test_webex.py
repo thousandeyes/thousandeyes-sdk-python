@@ -28,8 +28,9 @@ class DynamicEndpointTestWebex(BaseModel):
     conference_id: Optional[StrictStr] = Field(default=None, description="Webex conference ID.", alias="conferenceId")
     correlation_id: Optional[StrictStr] = Field(default=None, description="Webex conference correlation ID.", alias="correlationId")
     local_sip_session_id: Optional[StrictStr] = Field(default=None, description="Webex calling local sip session ID.", alias="localSipSessionId")
+    meeting_app: Optional[StrictStr] = Field(default=None, description="RoomOS meeting app.", alias="meetingApp")
     remote_sip_session_id: Optional[StrictStr] = Field(default=None, description="Webex calling remote sip session ID.", alias="remoteSipSessionId")
-    __properties: ClassVar[List[str]] = ["conferenceId", "correlationId", "localSipSessionId", "remoteSipSessionId"]
+    __properties: ClassVar[List[str]] = ["conferenceId", "correlationId", "localSipSessionId", "meetingApp", "remoteSipSessionId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -66,11 +67,13 @@ class DynamicEndpointTestWebex(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "conference_id",
             "correlation_id",
             "local_sip_session_id",
+            "meeting_app",
             "remote_sip_session_id",
         ])
 
@@ -94,6 +97,7 @@ class DynamicEndpointTestWebex(BaseModel):
             "conferenceId": obj.get("conferenceId"),
             "correlationId": obj.get("correlationId"),
             "localSipSessionId": obj.get("localSipSessionId"),
+            "meetingApp": obj.get("meetingApp"),
             "remoteSipSessionId": obj.get("remoteSipSessionId")
         })
         return _obj

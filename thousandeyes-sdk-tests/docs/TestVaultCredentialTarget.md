@@ -1,6 +1,6 @@
-# ApiWidgetSortDirection
+# TestVaultCredentialTarget
 
-Specifies the order in which cards are sorted.
+The target setting that the credential should be used for.
 
 ## Properties
 
