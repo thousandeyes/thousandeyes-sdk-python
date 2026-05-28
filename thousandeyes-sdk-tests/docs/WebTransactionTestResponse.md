@@ -57,6 +57,7 @@ Name | Type | Description | Notes
 **override_agent_proxy** | **bool** | Flag indicating if a proxy other than the default should be used. To override the default proxy for agents, set to &#x60;true&#x60; and specify a value for &#x60;overrideProxyId&#x60;. | [optional] [default to False]
 **override_proxy_id** | **str** | ID of the proxy to be used if the default proxy is overridden. | [optional] 
 **collect_proxy_network_data** | **bool** | Indicates whether network data to the proxy should be collected. | [optional] [default to False]
+**vault_credentials** | [**List[TestVaultCredential]**](TestVaultCredential.md) | List of credential IDs that are stored in an external vault. | [optional] 
 **emulated_device_id** | **str** | ID of the emulated device, if specified when the test was created. | [optional] 
 **target_time** | **int** | Target completion time, in seconds. Defaults to 10. Cannot exceed the &#x60;timeLimit&#x60; value. | [optional] [default to 10]
 **time_limit** | **int** | Time limit for transaction in seconds. | [optional] [default to 30]

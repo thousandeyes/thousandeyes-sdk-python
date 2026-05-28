@@ -21,6 +21,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.streaming.models.audit_operation import AuditOperation
 from thousandeyes_sdk.streaming.models.data_model_version import DataModelVersion
 from thousandeyes_sdk.streaming.models.endpoint_agent_label import EndpointAgentLabel
+from thousandeyes_sdk.streaming.models.endpoint_agent_tag import EndpointAgentTag
 from thousandeyes_sdk.streaming.models.endpoint_type import EndpointType
 from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
 from thousandeyes_sdk.streaming.models.filters import Filters
@@ -50,10 +51,11 @@ class CreateStreamResponse(BaseModel):
     test_match: Optional[List[TestMatch]] = Field(default=None, description="A collection of tests to be included in the data stream.", alias="testMatch")
     filters: Optional[Filters] = None
     exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
-    endpoint_agent_label: Optional[List[EndpointAgentLabel]] = Field(default=None, description="A collection of Endpoint Agent label IDs that determines what local network data is included in the data stream.", alias="endpointAgentLabel")
+    endpoint_agent_label: Optional[List[EndpointAgentLabel]] = Field(default=None, description="A collection of Endpoint Agent label IDs that determines what local network data is included in the data stream. `endpointAgentLabel` and `endpointAgentTag` represent the same data. Configure only one; both are synchronized.", alias="endpointAgentLabel")
+    endpoint_agent_tag: Optional[List[EndpointAgentTag]] = Field(default=None, description="A collection of Endpoint Agent Tag IDs that determines what local network data is included in the data stream. `endpointAgentLabel` and `endpointAgentTag` represent the same data. Configure only one; both are synchronized.", alias="endpointAgentTag")
     audit_operation: Optional[AuditOperation] = Field(default=None, alias="auditOperation")
     stream_status: Optional[StreamStatus] = Field(default=None, alias="streamStatus")
-    __properties: ClassVar[List[str]] = ["id", "enabled", "_links", "type", "signal", "endpointType", "streamEndpointUrl", "dataModelVersion", "customHeaders", "tagMatch", "testMatch", "filters", "exporterConfig", "endpointAgentLabel", "auditOperation", "streamStatus"]
+    __properties: ClassVar[List[str]] = ["id", "enabled", "_links", "type", "signal", "endpointType", "streamEndpointUrl", "dataModelVersion", "customHeaders", "tagMatch", "testMatch", "filters", "exporterConfig", "endpointAgentLabel", "endpointAgentTag", "auditOperation", "streamStatus"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -127,6 +129,13 @@ class CreateStreamResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['endpointAgentLabel'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in endpoint_agent_tag (list)
+        _items = []
+        if self.endpoint_agent_tag:
+            for _item in self.endpoint_agent_tag:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['endpointAgentTag'] = _items
         # override the default output from pydantic by calling `to_dict()` of audit_operation
         if self.audit_operation:
             _dict['auditOperation'] = self.audit_operation.to_dict()
@@ -159,6 +168,7 @@ class CreateStreamResponse(BaseModel):
             "filters": Filters.from_dict(obj["filters"]) if obj.get("filters") is not None else None,
             "exporterConfig": ExporterConfig.from_dict(obj["exporterConfig"]) if obj.get("exporterConfig") is not None else None,
             "endpointAgentLabel": [EndpointAgentLabel.from_dict(_item) for _item in obj["endpointAgentLabel"]] if obj.get("endpointAgentLabel") is not None else None,
+            "endpointAgentTag": [EndpointAgentTag.from_dict(_item) for _item in obj["endpointAgentTag"]] if obj.get("endpointAgentTag") is not None else None,
             "auditOperation": AuditOperation.from_dict(obj["auditOperation"]) if obj.get("auditOperation") is not None else None,
             "streamStatus": StreamStatus.from_dict(obj["streamStatus"]) if obj.get("streamStatus") is not None else None
         })

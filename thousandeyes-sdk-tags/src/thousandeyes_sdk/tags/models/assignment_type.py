@@ -29,6 +29,7 @@ class AssignmentType(str, Enum):
     V_MINUS_AGENT = 'v-agent'
     ENDPOINT_MINUS_TEST = 'endpoint-test'
     DASHBOARD = 'dashboard'
+    CONNECTED_MINUS_DEVICES_MINUS_TEST = 'connected-devices-test'
     UNKNOWN = 'unknown'
 
     @classmethod

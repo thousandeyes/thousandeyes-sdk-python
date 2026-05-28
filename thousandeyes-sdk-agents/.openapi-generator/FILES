@@ -43,6 +43,8 @@ docs/ErrorDetailCode.md
 docs/InterfaceIpMapping.md
 docs/Link.md
 docs/ListNotificationRulesResponse.md
+docs/NetworkProviderInfo.md
+docs/NetworkProviderType.md
 docs/NotificationRule.md
 docs/NotificationRuleDetail.md
 docs/NotificationRules.md
@@ -50,6 +52,7 @@ docs/ProxyAuthType.md
 docs/ProxyType.md
 docs/SelfLinks.md
 docs/SimpleAgent.md
+docs/SimpleAgentAllOfNetworkProviderInfo.md
 docs/SimpleEnterpriseAgent.md
 docs/SimpleTest.md
 docs/TestInterval.md
@@ -108,6 +111,8 @@ src/thousandeyes_sdk/agents/models/error_detail_code.py
 src/thousandeyes_sdk/agents/models/interface_ip_mapping.py
 src/thousandeyes_sdk/agents/models/link.py
 src/thousandeyes_sdk/agents/models/list_notification_rules_response.py
+src/thousandeyes_sdk/agents/models/network_provider_info.py
+src/thousandeyes_sdk/agents/models/network_provider_type.py
 src/thousandeyes_sdk/agents/models/notification_rule.py
 src/thousandeyes_sdk/agents/models/notification_rule_detail.py
 src/thousandeyes_sdk/agents/models/notification_rules.py
@@ -115,6 +120,7 @@ src/thousandeyes_sdk/agents/models/proxy_auth_type.py
 src/thousandeyes_sdk/agents/models/proxy_type.py
 src/thousandeyes_sdk/agents/models/self_links.py
 src/thousandeyes_sdk/agents/models/simple_agent.py
+src/thousandeyes_sdk/agents/models/simple_agent_all_of_network_provider_info.py
 src/thousandeyes_sdk/agents/models/simple_enterprise_agent.py
 src/thousandeyes_sdk/agents/models/simple_test.py
 src/thousandeyes_sdk/agents/models/test_interval.py

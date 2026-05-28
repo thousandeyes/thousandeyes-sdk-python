@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**delete_generic_connector**](GenericConnectorsApi.md#delete_generic_connector) | **DELETE** /connectors/generic/{id} | Delete connector
 [**get_generic_connector**](GenericConnectorsApi.md#get_generic_connector) | **GET** /connectors/generic/{id} | Retrieve connector
 [**get_generic_connectors**](GenericConnectorsApi.md#get_generic_connectors) | **GET** /connectors/generic | List connectors
-[**list_generic_connector_operations**](GenericConnectorsApi.md#list_generic_connector_operations) | **GET** /connectors/generic/{id}/operations | List operation IDs assigned to a connector
+[**list_generic_connector_operations**](GenericConnectorsApi.md#list_generic_connector_operations) | **GET** /connectors/generic/{id}/operations | List operation IDs for a connector
 [**set_generic_connector_operations**](GenericConnectorsApi.md#set_generic_connector_operations) | **PUT** /connectors/generic/{id}/operations | Assign operations to a connector
 [**update_generic_connector**](GenericConnectorsApi.md#update_generic_connector) | **PUT** /connectors/generic/{id} | Update connector
 
@@ -171,7 +171,7 @@ void (empty response body)
 
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**204** | No Content |  -  |
+**204** | No Content. |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **403** | Insufficient permissions to query endpoint |  -  |
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 # **list_generic_connector_operations**
 > Assignments list_generic_connector_operations(id, aid=aid)
 
-List operation IDs assigned to a connector
+List operation IDs for a connector
 
 Returns a list of operation IDs assigned to a connector.
 
@@ -389,7 +389,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
-        # List operation IDs assigned to a connector
+        # List operation IDs for a connector
         api_response = api_instance.list_generic_connector_operations(id, aid=aid)
         print("The response of GenericConnectorsApi->list_generic_connector_operations:\n")
         pprint(api_response)

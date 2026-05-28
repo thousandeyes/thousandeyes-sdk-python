@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **conference_id** | **str** | Webex conference ID. | [optional] [readonly] 
 **correlation_id** | **str** | Webex conference correlation ID. | [optional] [readonly] 
 **local_sip_session_id** | **str** | Webex calling local sip session ID. | [optional] [readonly] 
+**meeting_app** | **str** | RoomOS meeting app. | [optional] [readonly] 
 **remote_sip_session_id** | **str** | Webex calling remote sip session ID. | [optional] [readonly] 
 
 ## Example

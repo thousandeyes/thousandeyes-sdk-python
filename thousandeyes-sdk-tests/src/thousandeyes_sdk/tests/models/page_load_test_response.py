@@ -38,6 +38,7 @@ from thousandeyes_sdk.tests.models.test_probe_mode import TestProbeMode
 from thousandeyes_sdk.tests.models.test_protocol import TestProtocol
 from thousandeyes_sdk.tests.models.test_ssl_version_id import TestSslVersionId
 from thousandeyes_sdk.tests.models.test_sub_interval import TestSubInterval
+from thousandeyes_sdk.tests.models.test_vault_credential import TestVaultCredential
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -97,6 +98,7 @@ class PageLoadTestResponse(BaseModel):
     override_agent_proxy: Optional[StrictBool] = Field(default=False, description="Flag indicating if a proxy other than the default should be used. To override the default proxy for agents, set to `true` and specify a value for `overrideProxyId`.", alias="overrideAgentProxy")
     override_proxy_id: Optional[StrictStr] = Field(default=None, description="ID of the proxy to be used if the default proxy is overridden.", alias="overrideProxyId")
     collect_proxy_network_data: Optional[StrictBool] = Field(default=False, description="Indicates whether network data to the proxy should be collected.", alias="collectProxyNetworkData")
+    vault_credentials: Optional[List[TestVaultCredential]] = Field(default=None, description="List of credential IDs that are stored in an external vault.", alias="vaultCredentials")
     emulated_device_id: Optional[StrictStr] = Field(default=None, description="ID of the emulated device, if one was given when the test was created.", alias="emulatedDeviceId")
     page_load_target_time: Optional[Annotated[int, Field(le=60, strict=True, ge=1)]] = Field(default=None, description="Target time for page load completion, specified in seconds and cannot exceed the `pageLoadTimeLimit`.", alias="pageLoadTargetTime")
     page_load_time_limit: Optional[Annotated[int, Field(le=60, strict=True, ge=5)]] = Field(default=10, description="Page load time limit. Must be larger than the `httpTimeLimit`.", alias="pageLoadTimeLimit")
@@ -116,7 +118,7 @@ class PageLoadTestResponse(BaseModel):
     http_interval: Optional[TestHttpInterval] = Field(default=None, alias="httpInterval")
     subinterval: Optional[TestSubInterval] = None
     agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent", "bgpMeasurements", "usePublicBgp", "monitors", "httpInterval", "subinterval", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent", "bgpMeasurements", "usePublicBgp", "monitors", "httpInterval", "subinterval", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -215,6 +217,13 @@ class PageLoadTestResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of o_auth
         if self.o_auth:
             _dict['oAuth'] = self.o_auth.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in vault_credentials (list)
+        _items = []
+        if self.vault_credentials:
+            for _item in self.vault_credentials:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['vaultCredentials'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in monitors (list)
         _items = []
         if self.monitors:
@@ -293,6 +302,7 @@ class PageLoadTestResponse(BaseModel):
             "overrideAgentProxy": obj.get("overrideAgentProxy") if obj.get("overrideAgentProxy") is not None else False,
             "overrideProxyId": obj.get("overrideProxyId"),
             "collectProxyNetworkData": obj.get("collectProxyNetworkData") if obj.get("collectProxyNetworkData") is not None else False,
+            "vaultCredentials": [TestVaultCredential.from_dict(_item) for _item in obj["vaultCredentials"]] if obj.get("vaultCredentials") is not None else None,
             "emulatedDeviceId": obj.get("emulatedDeviceId"),
             "pageLoadTargetTime": obj.get("pageLoadTargetTime"),
             "pageLoadTimeLimit": obj.get("pageLoadTimeLimit") if obj.get("pageLoadTimeLimit") is not None else 10,
