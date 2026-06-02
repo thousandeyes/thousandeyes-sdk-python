@@ -21,6 +21,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
       - id: validate
         env:
           RELEASE_VERSION: ${{ inputs.releaseVersion }}
@@ -44,6 +45,8 @@ jobs:
       packages: ${{ steps.packages.outputs.packages }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - id: packages
         run: |
           shopt -s nullglob
@@ -80,6 +83,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: main
+          persist-credentials: false
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
