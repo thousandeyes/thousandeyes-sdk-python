@@ -1,3 +1,7 @@
+# Runs on pushes to main and on pull requests whose head branch lives in this
+# repository (contributors with push access). Fork PRs are skipped: GitHub still
+# starts the workflow, but the job does not run, so untrusted code is not installed
+# or executed via pip/pytest.
 name: Python CI
 
 on:
@@ -6,36 +10,66 @@ on:
   pull_request:
     branches: [ "main" ]
 
+permissions:
+  contents: read
+
 jobs:
   build:
+    if: github.event_name == 'push' || github.event.pull_request.head.repo.full_name == github.repository
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
           cache: 'pip'
 
+      - id: packages
+        name: Discover packages
+        run: |
+          shopt -s nullglob
+          packages=()
+          for dir in ./thousandeyes-sdk-*/; do
+            name="${dir#./}"
+            name="${name%/}"
+            if ! printf '%s' "$name" | grep -Eq '^thousandeyes-sdk-[a-z0-9-]+$'; then
+              echo "Invalid package directory name: ${name}" >&2
+              exit 1
+            fi
+            packages+=("$name")
+          done
+          if [ "${#packages[@]}" -eq 0 ]; then
+            echo "No thousandeyes-sdk-* packages found" >&2
+            exit 1
+          fi
+          FOLDERS_JSON=$(printf '%s\n' "${packages[@]}" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "packages=${FOLDERS_JSON}" >> "$GITHUB_OUTPUT"
+
       - name: Install core module
         run: pip install -e thousandeyes-sdk-core
 
       - name: Install and test modules
+        env:
+          PACKAGES_JSON: ${{ steps.packages.outputs.packages }}
         run: |
           pip install pytest
           pip install coverage
-          
-          # Initialize coverage data file
+
           coverage erase
-          
-          for module in $(find . -maxdepth 1 -type d -name "thousandeyes-sdk-*" | cut -c 3-); do            
-            pip install -e $module
-            coverage run --source=$module -m pytest $module
-            # Move the .coverage file to a unique name
-            mv .coverage .coverage.$module
+
+          mapfile -t modules < <(jq -r '.[]' <<< "$PACKAGES_JSON")
+          for module in "${modules[@]}"; do
+            pip install -e "./${module}"
+            coverage run --source="./${module}" -m pytest "./${module}"
+            mv .coverage ".coverage.${module}"
           done
-          
-          # Combine all .coverage files
+
           coverage combine .coverage.*
           coverage report
           coverage xml

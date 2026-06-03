@@ -1,3 +1,5 @@
+# Manual release only. GitHub allows workflow_dispatch only for users with write
+# access to this repository. PyPI publish is further gated by the "release" environment.
 name: Release
 on:
   workflow_dispatch:
@@ -7,59 +9,114 @@ on:
         required: true
         type: string
 
+permissions:
+  contents: read
+
 jobs:
+  validate-release:
+    runs-on: ubuntu-latest
+    outputs:
+      release_version: ${{ steps.validate.outputs.release_version }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - id: validate
+        env:
+          RELEASE_VERSION: ${{ inputs.releaseVersion }}
+        run: |
+          if ! printf '%s' "$RELEASE_VERSION" | grep -Eq '^[0-9]+\.[0-9]+\.[0-9]+(rc[0-9]+)?$'; then
+            echo "Invalid releaseVersion: must match X.Y.Z or X.Y.ZrcN (e.g. 2.26.0 or 2.0.0rc1)" >&2
+            exit 1
+          fi
+          if git rev-parse "refs/tags/${RELEASE_VERSION}" >/dev/null 2>&1; then
+            echo "Tag ${RELEASE_VERSION} already exists" >&2
+            exit 1
+          fi
+          echo "release_version=${RELEASE_VERSION}" >> "$GITHUB_OUTPUT"
+
   set-package-matrix:
+    needs: validate-release
     # This action returns all sub-packages to be published.
-    # It thens exports the variable to `matrix`, so that the deployment job is run individually for each sub-package
+    # It then exports the variable to `matrix`, so that the deployment job is run individually for each sub-package
     runs-on: ubuntu-latest
     outputs:
       packages: ${{ steps.packages.outputs.packages }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - id: packages
         run: |
-          FOLDERS_JSON=$(find . -maxdepth 1 -type d -name "thousandeyes-sdk-*" | cut -c 3- | jq -R -s -c 'split("\n")[:-1]')
-          echo "packages=$FOLDERS_JSON" >> "$GITHUB_OUTPUT"
+          shopt -s nullglob
+          packages=()
+          for dir in ./thousandeyes-sdk-*/; do
+            name="${dir#./}"
+            name="${name%/}"
+            if ! printf '%s' "$name" | grep -Eq '^thousandeyes-sdk-[a-z0-9-]+$'; then
+              echo "Invalid package directory name: ${name}" >&2
+              exit 1
+            fi
+            packages+=("$name")
+          done
+          if [ "${#packages[@]}" -eq 0 ]; then
+            echo "No thousandeyes-sdk-* packages found" >&2
+            exit 1
+          fi
+          FOLDERS_JSON=$(printf '%s\n' "${packages[@]}" | jq -R -s -c 'split("\n") | map(select(length > 0))')
+          echo "packages=${FOLDERS_JSON}" >> "$GITHUB_OUTPUT"
+
   deployment:
-    needs: set-package-matrix
+    needs: [validate-release, set-package-matrix]
     strategy:
       matrix:
         package-name: ${{ fromJSON(needs.set-package-matrix.outputs.packages) }}
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       id-token: write
-    environment: 
+    environment:
       name: release
       url: https://pypi.org/p/${{ matrix.package-name }}
     steps:
       - uses: actions/checkout@v4
         with:
           ref: main
+          persist-credentials: false
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           cache: pip
           cache-dependency-path: '**/pyproject.toml'
       - name: Install dependencies
-        run: |
-          pip install setuptools wheel build
+        run: pip install setuptools wheel build
       - name: Build
+        env:
+          RELEASE_VERSION: ${{ needs.validate-release.outputs.release_version }}
+          PACKAGE_NAME: ${{ matrix.package-name }}
         run: |
-          echo ${{ inputs.releaseVersion }} >> ${{ matrix.package-name }}/.version
-          cp LICENSE NOTICE ${{ matrix.package-name }}/  
-          python -m build ${{ matrix.package-name }} --outdir dist/
+          printf '%s\n' "$RELEASE_VERSION" >> "${PACKAGE_NAME}/.version"
+          cp LICENSE NOTICE "${PACKAGE_NAME}/"
+          python -m build "${PACKAGE_NAME}" --outdir dist/
       - name: Publish
         uses: pypa/gh-action-pypi-publish@release/v1
         with:
           skip-existing: true
+
   add-tag:
     runs-on: ubuntu-latest
-    needs: deployment
+    needs: [validate-release, deployment]
+    permissions:
+      contents: write
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: ${{ inputs.releaseVersion }}
+          tag_name: ${{ needs.validate-release.outputs.release_version }}
           prerelease: false
           draft: false
           generate_release_notes: true
