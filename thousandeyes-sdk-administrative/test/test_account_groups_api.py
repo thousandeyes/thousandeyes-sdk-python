@@ -127,7 +127,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                   },
                   "accountGroupName" : "Account A",
                   "isDefaultAccountGroup" : true,
-                  "accountToken" : "6j052y4vfgyuhefghue",
+                  "accountToken" : "accountToken",
                   "aid" : "1234",
                   "orgId" : "12345",
                   "users" : [ {
@@ -170,6 +170,11 @@ class TestAccountGroupsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "ipv6Policy" : "force-ipv4",
                     "prefix" : "99.128.0.0/11",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
+                    },
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
@@ -315,6 +320,11 @@ class TestAccountGroupsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "ipv6Policy" : "force-ipv4",
                     "prefix" : "99.128.0.0/11",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
+                    },
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
@@ -531,7 +541,7 @@ class TestAccountGroupsApi(unittest.TestCase):
                   },
                   "accountGroupName" : "Account A",
                   "isDefaultAccountGroup" : true,
-                  "accountToken" : "6j052y4vfgyuhefghue",
+                  "accountToken" : "accountToken",
                   "aid" : "1234",
                   "orgId" : "12345",
                   "users" : [ {
@@ -574,6 +584,11 @@ class TestAccountGroupsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "ipv6Policy" : "force-ipv4",
                     "prefix" : "99.128.0.0/11",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
+                    },
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",
@@ -719,6 +734,11 @@ class TestAccountGroupsApi(unittest.TestCase):
                     "agentType" : "enterprise-cluster",
                     "ipv6Policy" : "force-ipv4",
                     "prefix" : "99.128.0.0/11",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
+                    },
                     "countryId" : "US",
                     "enabled" : true,
                     "network" : "AT&T Services, Inc. (AS 7018)",

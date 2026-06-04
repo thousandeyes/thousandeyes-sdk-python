@@ -51,6 +51,8 @@ from thousandeyes_sdk.agents.models.error_detail_code import ErrorDetailCode
 from thousandeyes_sdk.agents.models.interface_ip_mapping import InterfaceIpMapping
 from thousandeyes_sdk.agents.models.link import Link
 from thousandeyes_sdk.agents.models.list_notification_rules_response import ListNotificationRulesResponse
+from thousandeyes_sdk.agents.models.network_provider_info import NetworkProviderInfo
+from thousandeyes_sdk.agents.models.network_provider_type import NetworkProviderType
 from thousandeyes_sdk.agents.models.notification_rule import NotificationRule
 from thousandeyes_sdk.agents.models.notification_rule_detail import NotificationRuleDetail
 from thousandeyes_sdk.agents.models.notification_rules import NotificationRules
@@ -58,6 +60,7 @@ from thousandeyes_sdk.agents.models.proxy_auth_type import ProxyAuthType
 from thousandeyes_sdk.agents.models.proxy_type import ProxyType
 from thousandeyes_sdk.agents.models.self_links import SelfLinks
 from thousandeyes_sdk.agents.models.simple_agent import SimpleAgent
+from thousandeyes_sdk.agents.models.simple_agent_all_of_network_provider_info import SimpleAgentAllOfNetworkProviderInfo
 from thousandeyes_sdk.agents.models.simple_enterprise_agent import SimpleEnterpriseAgent
 from thousandeyes_sdk.agents.models.simple_test import SimpleTest
 from thousandeyes_sdk.agents.models.test_interval import TestInterval

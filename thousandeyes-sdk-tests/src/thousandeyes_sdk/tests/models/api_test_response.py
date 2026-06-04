@@ -33,6 +33,7 @@ from thousandeyes_sdk.tests.models.test_path_trace_mode import TestPathTraceMode
 from thousandeyes_sdk.tests.models.test_probe_mode import TestProbeMode
 from thousandeyes_sdk.tests.models.test_protocol import TestProtocol
 from thousandeyes_sdk.tests.models.test_ssl_version_id import TestSslVersionId
+from thousandeyes_sdk.tests.models.test_vault_credential import TestVaultCredential
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -78,11 +79,12 @@ class ApiTestResponse(BaseModel):
     time_limit: Optional[Annotated[int, Field(le=180, strict=True, ge=5)]] = Field(default=30, description="Time limit for transaction in seconds. Exceeding this limit will result in a Timeout error.", alias="timeLimit")
     url: StrictStr = Field(description="Target for the test.")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
+    vault_credentials: Optional[List[TestVaultCredential]] = Field(default=None, description="List of credential IDs that are stored in an external vault.", alias="vaultCredentials")
     bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
     monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
     agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "clientCertificate", "clientCertDomainsAllowList", "collectProxyNetworkData", "distributedTracing", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "randomizedStartTime", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "clientCertificate", "clientCertDomainsAllowList", "collectProxyNetworkData", "distributedTracing", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "randomizedStartTime", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials", "vaultCredentials", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -184,6 +186,13 @@ class ApiTestResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['requests'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in vault_credentials (list)
+        _items = []
+        if self.vault_credentials:
+            for _item in self.vault_credentials:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['vaultCredentials'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in monitors (list)
         _items = []
         if self.monitors:
@@ -248,6 +257,7 @@ class ApiTestResponse(BaseModel):
             "timeLimit": obj.get("timeLimit") if obj.get("timeLimit") is not None else 30,
             "url": obj.get("url"),
             "credentials": obj.get("credentials"),
+            "vaultCredentials": [TestVaultCredential.from_dict(_item) for _item in obj["vaultCredentials"]] if obj.get("vaultCredentials") is not None else None,
             "bgpMeasurements": obj.get("bgpMeasurements") if obj.get("bgpMeasurements") is not None else True,
             "usePublicBgp": obj.get("usePublicBgp") if obj.get("usePublicBgp") is not None else True,
             "monitors": [Monitor.from_dict(_item) for _item in obj["monitors"]] if obj.get("monitors") is not None else None,

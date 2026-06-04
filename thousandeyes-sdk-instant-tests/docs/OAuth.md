@@ -7,7 +7,7 @@ Use this only if you want to use OAuth as the authentication mechanism.
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **test_url** | **str** | Target for the test. | [optional] 
-**request_method** | [**OAuthRequestMethod**](OAuthRequestMethod.md) |  | [optional] 
+**request_method** | [**RequestMethod**](RequestMethod.md) |  | [optional] 
 **post_body** | **str** | Enter the OAuth body for the HTTP POST request in this field when using OAuth as the authentication mechanism. No special escaping is required. The value is saved only when &#x60;requestMethod&#x60; is set to &#x60;post&#x60;. | [optional] 
 **headers** | **str** | Request headers used for OAuth. | [optional] 
 **auth_type** | [**OAuthAuthType**](OAuthAuthType.md) |  | [optional] 

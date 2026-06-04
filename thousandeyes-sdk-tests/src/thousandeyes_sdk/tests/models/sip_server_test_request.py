@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.tests.models.monitor import Monitor
 from thousandeyes_sdk.tests.models.test_agent_request import TestAgentRequest
 from thousandeyes_sdk.tests.models.test_interval import TestInterval
 from thousandeyes_sdk.tests.models.test_ipv6_policy import TestIpv6Policy
@@ -38,7 +37,6 @@ class SipServerTestRequest(BaseModel):
     interval: TestInterval
     alerts_enabled: Optional[StrictBool] = Field(default=None, description="Indicates if alerts are enabled.", alias="alertsEnabled")
     enabled: Optional[StrictBool] = Field(default=True, description="Test is enabled.")
-    alert_rules: Optional[List[StrictStr]] = Field(default=None, description="List of alert rules IDs to apply to the test (get `ruleId` from `/alerts/rules` endpoint. If `alertsEnabled` is set to `true` and `alertRules` is not included on test creation or update, applicable user default alert rules will be used)", alias="alertRules")
     created_by: Optional[StrictStr] = Field(default=None, description="User that created the test.", alias="createdBy")
     created_date: Optional[datetime] = Field(default=None, description="UTC created date (ISO date-time format).", alias="createdDate")
     description: Optional[StrictStr] = Field(default=None, description="A description of the test.")
@@ -50,8 +48,6 @@ class SipServerTestRequest(BaseModel):
     test_name: Optional[StrictStr] = Field(default=None, description="The name of the test. Test name must be unique.", alias="testName")
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
-    labels: Optional[List[StrictStr]] = Field(default=None, description="Contains list of test label IDs (get `labelId` from `/labels` endpoint)")
-    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="Contains list of account group IDs. Test is shared with the listed account groups (get `aid` from `/account-groups` endpoint)", alias="sharedWithAccounts")
     mtu_measurements: Optional[StrictBool] = Field(default=None, description="Set `true` to measure MTU sizes on network from agents to the target.", alias="mtuMeasurements")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
     num_path_traces: Optional[Annotated[int, Field(le=10, strict=True, ge=1)]] = Field(default=3, description="Number of path traces executed by the agent.", alias="numPathTraces")
@@ -64,13 +60,16 @@ class SipServerTestRequest(BaseModel):
     sip_time_limit: Optional[Annotated[int, Field(le=10, strict=True, ge=5)]] = Field(default=5, description="Time limit in milliseconds.", alias="sipTimeLimit")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
+    labels: Optional[List[StrictStr]] = Field(default=None, description="Contains list of test label IDs (get `labelId` from `/labels` endpoint)")
+    tags: Optional[List[StrictStr]] = Field(default=None, description="Contains list of test tag IDs (get `id` from `/tags` endpoint).")
+    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="Contains list of account group IDs. Test is shared with the listed account groups (get `aid` from `/account-groups` endpoint)", alias="sharedWithAccounts")
+    alert_rules: Optional[List[StrictStr]] = Field(default=None, description="List of alert rules IDs to apply to the test (get `ruleId` from `/alerts/rules` endpoint. If `alertsEnabled` is set to `true` and `alertRules` is not included on test creation or update, applicable user default alert rules will be used)", alias="alertRules")
+    agents: List[TestAgentRequest] = Field(description="Contains list of Agent IDs (get `agentId` from `/agents` endpoint).")
+    monitors: Optional[List[StrictStr]] = Field(default=None, description="Contains list of BGP monitor IDs (get `monitorId` from `/monitors` endpoint)")
+    target_sip_credentials: TestSipCredentials = Field(alias="targetSipCredentials")
     bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
-    monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
-    target_sip_credentials: TestSipCredentials = Field(alias="targetSipCredentials")
-    tags: Optional[List[StrictStr]] = Field(default=None, description="Contains list of test tag IDs (get `id` from `/tags` endpoint).")
-    agents: List[TestAgentRequest] = Field(description="Contains list of Agent IDs (get `agentId` from `/agents` endpoint).")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "randomizedStartTime", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "bgpMeasurements", "usePublicBgp", "monitors", "targetSipCredentials", "tags", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "randomizedStartTime", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "labels", "tags", "sharedWithAccounts", "alertRules", "agents", "monitors", "targetSipCredentials", "bgpMeasurements", "usePublicBgp"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,7 +110,6 @@ class SipServerTestRequest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -122,7 +120,6 @@ class SipServerTestRequest(BaseModel):
             "saved_event",
             "test_id",
             "type",
-            "monitors",
         ])
 
         _dict = self.model_dump(
@@ -133,16 +130,6 @@ class SipServerTestRequest(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in monitors (list)
-        _items = []
-        if self.monitors:
-            for _item in self.monitors:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['monitors'] = _items
-        # override the default output from pydantic by calling `to_dict()` of target_sip_credentials
-        if self.target_sip_credentials:
-            _dict['targetSipCredentials'] = self.target_sip_credentials.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in agents (list)
         _items = []
         if self.agents:
@@ -150,6 +137,9 @@ class SipServerTestRequest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['agents'] = _items
+        # override the default output from pydantic by calling `to_dict()` of target_sip_credentials
+        if self.target_sip_credentials:
+            _dict['targetSipCredentials'] = self.target_sip_credentials.to_dict()
         return _dict
 
     @classmethod
@@ -165,7 +155,6 @@ class SipServerTestRequest(BaseModel):
             "interval": obj.get("interval"),
             "alertsEnabled": obj.get("alertsEnabled"),
             "enabled": obj.get("enabled") if obj.get("enabled") is not None else True,
-            "alertRules": obj.get("alertRules"),
             "createdBy": obj.get("createdBy"),
             "createdDate": obj.get("createdDate"),
             "description": obj.get("description"),
@@ -177,8 +166,6 @@ class SipServerTestRequest(BaseModel):
             "testName": obj.get("testName"),
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "labels": obj.get("labels"),
-            "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "mtuMeasurements": obj.get("mtuMeasurements"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
             "numPathTraces": obj.get("numPathTraces") if obj.get("numPathTraces") is not None else 3,
@@ -191,12 +178,15 @@ class SipServerTestRequest(BaseModel):
             "sipTimeLimit": obj.get("sipTimeLimit") if obj.get("sipTimeLimit") is not None else 5,
             "fixedPacketRate": obj.get("fixedPacketRate"),
             "ipv6Policy": obj.get("ipv6Policy"),
-            "bgpMeasurements": obj.get("bgpMeasurements") if obj.get("bgpMeasurements") is not None else True,
-            "usePublicBgp": obj.get("usePublicBgp") if obj.get("usePublicBgp") is not None else True,
-            "monitors": [Monitor.from_dict(_item) for _item in obj["monitors"]] if obj.get("monitors") is not None else None,
-            "targetSipCredentials": TestSipCredentials.from_dict(obj["targetSipCredentials"]) if obj.get("targetSipCredentials") is not None else None,
+            "labels": obj.get("labels"),
             "tags": obj.get("tags"),
-            "agents": [TestAgentRequest.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "sharedWithAccounts": obj.get("sharedWithAccounts"),
+            "alertRules": obj.get("alertRules"),
+            "agents": [TestAgentRequest.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
+            "monitors": obj.get("monitors"),
+            "targetSipCredentials": TestSipCredentials.from_dict(obj["targetSipCredentials"]) if obj.get("targetSipCredentials") is not None else None,
+            "bgpMeasurements": obj.get("bgpMeasurements") if obj.get("bgpMeasurements") is not None else True,
+            "usePublicBgp": obj.get("usePublicBgp") if obj.get("usePublicBgp") is not None else True
         })
         return _obj
 

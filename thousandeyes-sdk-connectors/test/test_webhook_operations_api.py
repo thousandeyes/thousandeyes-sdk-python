@@ -36,6 +36,9 @@ class TestWebhookOperationsApi(unittest.TestCase):
                   "headers" : [ {
                     "name" : "Content-Type",
                     "value" : "application/json"
+                  }, {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   } ],
                   "payload" : "{\\"property1\\": {{numericVar}}, \\"property2\\": \\"{{stringVar}}\\"}",
                   "queryParams" : "{\\"queryParam1\\":\\"{{stringVar}}\\"}",
@@ -68,6 +71,9 @@ class TestWebhookOperationsApi(unittest.TestCase):
                 {
                   "path" : "/custom/path",
                   "headers" : [ {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
+                  }, {
                     "name" : "Content-Type",
                     "value" : "application/json"
                   } ],
@@ -108,6 +114,9 @@ class TestWebhookOperationsApi(unittest.TestCase):
                 {
                   "path" : "/custom/path",
                   "headers" : [ {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
+                  }, {
                     "name" : "Content-Type",
                     "value" : "application/json"
                   } ],
@@ -159,6 +168,9 @@ class TestWebhookOperationsApi(unittest.TestCase):
                     "headers" : [ {
                       "name" : "Content-Type",
                       "value" : "application/json"
+                    }, {
+                      "name" : "Content-Type",
+                      "value" : "application/json"
                     } ],
                     "payload" : "{\\"property1\\": {{numericVar}}, \\"property2\\": \\"{{stringVar}}\\"}",
                     "queryParams" : "{\\"queryParam1\\":\\"{{stringVar}}\\"}",
@@ -183,6 +195,9 @@ class TestWebhookOperationsApi(unittest.TestCase):
                   }, {
                     "path" : "/custom/path",
                     "headers" : [ {
+                      "name" : "Content-Type",
+                      "value" : "application/json"
+                    }, {
                       "name" : "Content-Type",
                       "value" : "application/json"
                     } ],
@@ -221,6 +236,9 @@ class TestWebhookOperationsApi(unittest.TestCase):
                   "headers" : [ {
                     "name" : "Content-Type",
                     "value" : "application/json"
+                  }, {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   } ],
                   "payload" : "{\\"property1\\": {{numericVar}}, \\"property2\\": \\"{{stringVar}}\\"}",
                   "queryParams" : "{\\"queryParam1\\":\\"{{stringVar}}\\"}",
@@ -253,6 +271,9 @@ class TestWebhookOperationsApi(unittest.TestCase):
                 {
                   "path" : "/custom/path",
                   "headers" : [ {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
+                  }, {
                     "name" : "Content-Type",
                     "value" : "application/json"
                   } ],
