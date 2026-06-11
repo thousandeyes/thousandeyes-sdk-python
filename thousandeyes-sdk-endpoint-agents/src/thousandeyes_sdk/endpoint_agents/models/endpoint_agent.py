@@ -18,7 +18,8 @@ import json
 
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List, Optional, Union
+from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_agents.models.agent_license_type import AgentLicenseType
 from thousandeyes_sdk.endpoint_agents.models.battery_metrics import BatteryMetrics
 from thousandeyes_sdk.endpoint_agents.models.cellular_profile import CellularProfile
@@ -42,11 +43,14 @@ class EndpointAgent(BaseModel):
     aid: Optional[Any] = None
     name: Optional[StrictStr] = Field(default=None, description="The name of the agent.")
     computer_name: Optional[StrictStr] = Field(default=None, alias="computerName")
+    free_disk_space_normalized: Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="Free storage space as a normalized percentage (0-1).", alias="freeDiskSpaceNormalized")
     os_version: Optional[StrictStr] = Field(default=None, alias="osVersion")
     platform: Optional[Platform] = None
     kernel_version: Optional[StrictStr] = Field(default=None, alias="kernelVersion")
     manufacturer: Optional[StrictStr] = None
     model: Optional[StrictStr] = None
+    nic_driver_version: Optional[StrictStr] = Field(default=None, description="Network interface card driver version.", alias="nicDriverVersion")
+    nic_model: Optional[StrictStr] = Field(default=None, description="Network interface card model.", alias="nicModel")
     serial_number: Optional[StrictStr] = Field(default=None, alias="serialNumber")
     last_seen: Optional[datetime] = Field(default=None, description="The last time the agent checked-in.", alias="lastSeen")
     status: Optional[Status] = None
@@ -70,7 +74,7 @@ class EndpointAgent(BaseModel):
     battery_metrics: Optional[BatteryMetrics] = Field(default=None, alias="batteryMetrics")
     cellular_profile: Optional[CellularProfile] = Field(default=None, alias="cellularProfile")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "serialNumber", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "externalMetadata", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "batteryMetrics", "cellularProfile", "_links"]
+    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "freeDiskSpaceNormalized", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "nicDriverVersion", "nicModel", "serialNumber", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "externalMetadata", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "batteryMetrics", "cellularProfile", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -124,14 +128,20 @@ class EndpointAgent(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "id",
             "computer_name",
+            "free_disk_space_normalized",
             "os_version",
             "kernel_version",
             "manufacturer",
             "model",
+            "nic_driver_version",
+            "nic_model",
             "serial_number",
             "last_seen",
             "deleted",
@@ -197,6 +207,21 @@ class EndpointAgent(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
+        # set to None if free_disk_space_normalized (nullable) is None
+        # and model_fields_set contains the field
+        if self.free_disk_space_normalized is None and "free_disk_space_normalized" in self.model_fields_set:
+            _dict['freeDiskSpaceNormalized'] = None
+
+        # set to None if nic_driver_version (nullable) is None
+        # and model_fields_set contains the field
+        if self.nic_driver_version is None and "nic_driver_version" in self.model_fields_set:
+            _dict['nicDriverVersion'] = None
+
+        # set to None if nic_model (nullable) is None
+        # and model_fields_set contains the field
+        if self.nic_model is None and "nic_model" in self.model_fields_set:
+            _dict['nicModel'] = None
+
         return _dict
 
     @classmethod
@@ -213,11 +238,14 @@ class EndpointAgent(BaseModel):
             "aid": obj.get("aid"),
             "name": obj.get("name"),
             "computerName": obj.get("computerName"),
+            "freeDiskSpaceNormalized": obj.get("freeDiskSpaceNormalized"),
             "osVersion": obj.get("osVersion"),
             "platform": obj.get("platform"),
             "kernelVersion": obj.get("kernelVersion"),
             "manufacturer": obj.get("manufacturer"),
             "model": obj.get("model"),
+            "nicDriverVersion": obj.get("nicDriverVersion"),
+            "nicModel": obj.get("nicModel"),
             "serialNumber": obj.get("serialNumber"),
             "lastSeen": obj.get("lastSeen"),
             "status": obj.get("status"),

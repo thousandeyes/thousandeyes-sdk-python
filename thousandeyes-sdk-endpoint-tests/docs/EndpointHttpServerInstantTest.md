@@ -7,7 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_selector_type** | [**EndpointTestAgentSelectorType**](EndpointTestAgentSelectorType.md) |  | [optional] 
 **agents** | **List[str]** | List of endpoint agent IDs (obtained from &#x60;/endpoint/agents&#x60; endpoint). Required when &#x60;agentSelectorType&#x60; is set to &#x60;specific-agent&#x60;. | [optional] 
-**endpoint_agent_labels** | **List[str]** | List of endpoint agent label IDs (obtained from &#x60;/endpoint/labels&#x60; endpoint), required when &#x60;agentSelectorType&#x60; is set to &#x60;agent-labels&#x60;. | [optional] 
+**endpoint_agent_labels** | **List[str]** | Deprecated. Use &#x60;tagIds&#x60; instead.  List of endpoint agent label IDs (obtained from &#x60;/endpoint/labels&#x60; endpoint), required when &#x60;agentSelectorType&#x60; is set to &#x60;agent-labels&#x60;.  | [optional] 
+**tag_ids** | **List[str]** | List of tag IDs (obtained from &#x60;/tags&#x60; endpoint). | [optional] 
 **max_machines** | **int** | Maximum number of agents which can execute the test. | [optional] [default to 25]
 **test_name** | **str** | Name of the test. | 
 **ip_version** | [**EndpointIpVersionIn**](EndpointIpVersionIn.md) |  | [optional] 

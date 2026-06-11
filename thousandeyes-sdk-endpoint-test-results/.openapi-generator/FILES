@@ -18,6 +18,7 @@ docs/DynamicTestLinks.md
 docs/DynamicTestSelfLink.md
 docs/EndpointAgentLabelsSelectorConfig.md
 docs/EndpointAgentSelectorConfig.md
+docs/EndpointAgentTagsSelectorConfig.md
 docs/EndpointAgentToServerTest.md
 docs/EndpointAllAgentsSelectorConfig.md
 docs/EndpointBrowser.md
@@ -192,6 +193,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/dynamic_test_links.py
 src/thousandeyes_sdk/endpoint_test_results/models/dynamic_test_self_link.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_agent_labels_selector_config.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_agent_selector_config.py
+src/thousandeyes_sdk/endpoint_test_results/models/endpoint_agent_tags_selector_config.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_agent_to_server_test.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_all_agents_selector_config.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_browser.py

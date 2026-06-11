@@ -49,11 +49,11 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     "conditionalOperator" : "and",
                     "filters" : [ {
                       "name" : "loss",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     }, {
                       "name" : "loss",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     } ]
                   }
@@ -87,7 +87,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     },
                     "isIcmpBlocked" : true,
                     "gatewayScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "tcpConnect" : {
@@ -97,14 +97,15 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
                     "vpnScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "proxyScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -222,12 +223,12 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       } ]
                     },
                     "connectionScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
-                      "loss" : 1.0,
+                      "loss" : 1,
                       "pktsReceived" : 10,
                       "avgRtt" : 7,
                       "meanDevRtt" : 11,
@@ -239,7 +240,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
                     "roundId" : 1384309800,
                     "agentScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     }
                   }, {
@@ -250,7 +251,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     },
                     "isIcmpBlocked" : true,
                     "gatewayScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "tcpConnect" : {
@@ -260,14 +261,15 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
                     "vpnScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "proxyScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -385,12 +387,12 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       } ]
                     },
                     "connectionScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
-                      "loss" : 1.0,
+                      "loss" : 1,
                       "pktsReceived" : 10,
                       "avgRtt" : 7,
                       "meanDevRtt" : 11,
@@ -402,7 +404,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
                     "roundId" : 1384309800,
                     "agentScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     }
                   } ],
@@ -471,10 +473,11 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "resolutionTime" : 3
                     },
                     "vpnScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -564,12 +567,12 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     },
                     "roundId" : 1384309800,
                     "agentScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "isIcmpBlocked" : true,
                     "gatewayScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "tcpConnect" : {
@@ -579,7 +582,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
                     "proxyScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "coordinates" : {
@@ -731,12 +734,12 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       } ]
                     },
                     "connectionScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
-                      "loss" : 1.0,
+                      "loss" : 1,
                       "pktsReceived" : 10,
                       "avgRtt" : 7,
                       "meanDevRtt" : 11,
@@ -753,10 +756,11 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "resolutionTime" : 3
                     },
                     "vpnScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -846,12 +850,12 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                     },
                     "roundId" : 1384309800,
                     "agentScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "isIcmpBlocked" : true,
                     "gatewayScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "tcpConnect" : {
@@ -861,7 +865,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
                     "proxyScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "coordinates" : {
@@ -1013,12 +1017,12 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                       } ]
                     },
                     "connectionScore" : {
-                      "score" : 100.0,
+                      "score" : 100,
                       "quality" : "great"
                     },
                     "icmpPing" : {
                       "maxRtt" : 66,
-                      "loss" : 1.0,
+                      "loss" : 1,
                       "pktsReceived" : 10,
                       "avgRtt" : 7,
                       "meanDevRtt" : 11,

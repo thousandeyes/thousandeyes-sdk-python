@@ -16,10 +16,10 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.tags.models.tag_filter_mode import TagFilterMode
-from thousandeyes_sdk.tags.models.tag_filter_type import TagFilterType
+from thousandeyes_sdk.tags.models.tag_filter_scope import TagFilterScope
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -27,10 +27,11 @@ class TagFilter(BaseModel):
     """
     TagFilter
     """ # noqa: E501
-    key: Optional[TagFilterType] = None
+    key: Optional[StrictStr] = Field(default=None, description="Filter key used for filtering.  When `scope` is `default`, accepted values are `agent-id`, `location`, `serial-number`, `public-network`, `local-network`, `connection`, `gateway`, `platform`, `nic-model`, `nic-driver-version`, `agent-type`, `proxy-target`, `vpn-vendor`, `vpn-gateway-address`, `vpn-target`, `vpn-client-network`, `vpn-client-address`, `ip-address-family`, `ssid`, `bssid`, `hostname`, `username`, and `asn`.  When `scope` is `custom`, use a user-defined check-in metadata key. ")
     values: Optional[List[StrictStr]] = None
     mode: Optional[TagFilterMode] = None
-    __properties: ClassVar[List[str]] = ["key", "values", "mode"]
+    scope: Optional[TagFilterScope] = None
+    __properties: ClassVar[List[str]] = ["key", "values", "mode", "scope"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,7 +87,8 @@ class TagFilter(BaseModel):
         _obj = cls.model_validate({
             "key": obj.get("key"),
             "values": obj.get("values"),
-            "mode": obj.get("mode")
+            "mode": obj.get("mode"),
+            "scope": obj.get("scope")
         })
         return _obj
 

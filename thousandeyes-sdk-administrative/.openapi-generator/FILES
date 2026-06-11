@@ -28,6 +28,8 @@ docs/ExpandAccountGroupOptions.md
 docs/ExtendedUser.md
 docs/InterfaceIpMapping.md
 docs/Link.md
+docs/NetworkProviderInfo.md
+docs/NetworkProviderType.md
 docs/PaginationLinks.md
 docs/Permission.md
 docs/Permissions.md
@@ -40,6 +42,7 @@ docs/Roles.md
 docs/RolesApi.md
 docs/SelfLinks.md
 docs/SimpleAgent.md
+docs/SimpleAgentAllOfNetworkProviderInfo.md
 docs/SimpleTest.md
 docs/TestInterval.md
 docs/TestLinks.md
@@ -93,6 +96,8 @@ src/thousandeyes_sdk/administrative/models/expand_account_group_options.py
 src/thousandeyes_sdk/administrative/models/extended_user.py
 src/thousandeyes_sdk/administrative/models/interface_ip_mapping.py
 src/thousandeyes_sdk/administrative/models/link.py
+src/thousandeyes_sdk/administrative/models/network_provider_info.py
+src/thousandeyes_sdk/administrative/models/network_provider_type.py
 src/thousandeyes_sdk/administrative/models/pagination_links.py
 src/thousandeyes_sdk/administrative/models/permission.py
 src/thousandeyes_sdk/administrative/models/permissions.py
@@ -103,6 +108,7 @@ src/thousandeyes_sdk/administrative/models/role_request_body.py
 src/thousandeyes_sdk/administrative/models/roles.py
 src/thousandeyes_sdk/administrative/models/self_links.py
 src/thousandeyes_sdk/administrative/models/simple_agent.py
+src/thousandeyes_sdk/administrative/models/simple_agent_all_of_network_provider_info.py
 src/thousandeyes_sdk/administrative/models/simple_test.py
 src/thousandeyes_sdk/administrative/models/test_interval.py
 src/thousandeyes_sdk/administrative/models/test_links.py

@@ -6,6 +6,7 @@ Battery metrics for the endpoint agent.
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**battery_health_normalized_percent** | **float** | Battery health as a normalized percentage (0-1). | [optional] 
 **battery_level** | [**BatteryLevel**](BatteryLevel.md) |  | 
 **battery_level_normalized_percent** | **float** | Battery level as a normalized percentage (0-1). | 
 

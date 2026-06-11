@@ -18,7 +18,7 @@ from importlib.metadata import version
 
 import thousandeyes_sdk.connectors.models
 
-from pydantic import Field, StrictStr
+from pydantic import Field, StrictBool, StrictStr
 from typing import List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.connectors.models.assignments import Assignments
@@ -105,11 +105,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -186,11 +186,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -267,11 +267,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -322,9 +322,9 @@ class OperationConnectorsApi:
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             [
-                'application/problem+json', 
                 'application/hal+json', 
-                'application/json'
+                'application/json', 
+                'application/problem+json'
             ]
         )
 
@@ -358,6 +358,7 @@ class OperationConnectorsApi:
         type: Annotated[StrictStr, Field(description="The operation type.")],
         id: Annotated[StrictStr, Field(description="The operation ID.")],
         request_body: Annotated[List[StrictStr], Field(min_length=0, max_length=1, description="List of connector IDs to assign to the operation.")],
+        confirm_disabled_objects: Annotated[Optional[StrictBool], Field(description="Confirmation to disable affected objects (for example, tests) for credential-vault operations.")] = None,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
             None,
@@ -374,7 +375,7 @@ class OperationConnectorsApi:
     ) -> Assignments:
         """Assign connectors to an operation
 
-        Assigns one or more connectors to an operation. This replaces any existing assignments.
+        Assigns one or more connectors to an operation. This replaces any existing assignments. Note: This operation may disable affected objects (such as tests) if connectors are changed.
 
         :param type: The operation type. (required)
         :type type: str
@@ -382,6 +383,8 @@ class OperationConnectorsApi:
         :type id: str
         :param request_body: List of connector IDs to assign to the operation. (required)
         :type request_body: List[str]
+        :param confirm_disabled_objects: Confirmation to disable affected objects (for example, tests) for credential-vault operations.
+        :type confirm_disabled_objects: bool
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param _request_timeout: timeout setting for this request. If one
@@ -410,6 +413,7 @@ class OperationConnectorsApi:
             type=type,
             id=id,
             request_body=request_body,
+            confirm_disabled_objects=confirm_disabled_objects,
             aid=aid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -418,11 +422,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -443,6 +447,7 @@ class OperationConnectorsApi:
         type: Annotated[StrictStr, Field(description="The operation type.")],
         id: Annotated[StrictStr, Field(description="The operation ID.")],
         request_body: Annotated[List[StrictStr], Field(min_length=0, max_length=1, description="List of connector IDs to assign to the operation.")],
+        confirm_disabled_objects: Annotated[Optional[StrictBool], Field(description="Confirmation to disable affected objects (for example, tests) for credential-vault operations.")] = None,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
             None,
@@ -459,7 +464,7 @@ class OperationConnectorsApi:
     ) -> ApiResponse[Assignments]:
         """Assign connectors to an operation
 
-        Assigns one or more connectors to an operation. This replaces any existing assignments.
+        Assigns one or more connectors to an operation. This replaces any existing assignments. Note: This operation may disable affected objects (such as tests) if connectors are changed.
 
         :param type: The operation type. (required)
         :type type: str
@@ -467,6 +472,8 @@ class OperationConnectorsApi:
         :type id: str
         :param request_body: List of connector IDs to assign to the operation. (required)
         :type request_body: List[str]
+        :param confirm_disabled_objects: Confirmation to disable affected objects (for example, tests) for credential-vault operations.
+        :type confirm_disabled_objects: bool
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param _request_timeout: timeout setting for this request. If one
@@ -495,6 +502,7 @@ class OperationConnectorsApi:
             type=type,
             id=id,
             request_body=request_body,
+            confirm_disabled_objects=confirm_disabled_objects,
             aid=aid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -503,11 +511,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -528,6 +536,7 @@ class OperationConnectorsApi:
         type: Annotated[StrictStr, Field(description="The operation type.")],
         id: Annotated[StrictStr, Field(description="The operation ID.")],
         request_body: Annotated[List[StrictStr], Field(min_length=0, max_length=1, description="List of connector IDs to assign to the operation.")],
+        confirm_disabled_objects: Annotated[Optional[StrictBool], Field(description="Confirmation to disable affected objects (for example, tests) for credential-vault operations.")] = None,
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
         _request_timeout: Union[
             None,
@@ -544,7 +553,7 @@ class OperationConnectorsApi:
     ) -> RESTResponseType:
         """Assign connectors to an operation
 
-        Assigns one or more connectors to an operation. This replaces any existing assignments.
+        Assigns one or more connectors to an operation. This replaces any existing assignments. Note: This operation may disable affected objects (such as tests) if connectors are changed.
 
         :param type: The operation type. (required)
         :type type: str
@@ -552,6 +561,8 @@ class OperationConnectorsApi:
         :type id: str
         :param request_body: List of connector IDs to assign to the operation. (required)
         :type request_body: List[str]
+        :param confirm_disabled_objects: Confirmation to disable affected objects (for example, tests) for credential-vault operations.
+        :type confirm_disabled_objects: bool
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
         :param _request_timeout: timeout setting for this request. If one
@@ -580,6 +591,7 @@ class OperationConnectorsApi:
             type=type,
             id=id,
             request_body=request_body,
+            confirm_disabled_objects=confirm_disabled_objects,
             aid=aid,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -588,11 +600,11 @@ class OperationConnectorsApi:
         )
 
         _response_types_map: Dict[str, Optional[str]] = {
-            '404': "Error",
             '200': "Assignments",
             '400': "ValidationError",
             '401': "UnauthorizedError",
             '403': "Error",
+            '404': "Error",
             '500': "Error",
         }
         response_data = self.api_client.call_api(
@@ -607,6 +619,7 @@ class OperationConnectorsApi:
         type,
         id,
         request_body,
+        confirm_disabled_objects,
         aid,
         _request_auth,
         _content_type,
@@ -633,6 +646,10 @@ class OperationConnectorsApi:
         if id is not None:
             _path_params['id'] = id
         # process the query parameters
+        if confirm_disabled_objects is not None:
+            
+            _query_params.append(('confirmDisabledObjects', confirm_disabled_objects))
+            
         if aid is not None:
             
             _query_params.append(('aid', aid))
@@ -647,9 +664,9 @@ class OperationConnectorsApi:
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             [
-                'application/problem+json', 
                 'application/hal+json', 
-                'application/json'
+                'application/json', 
+                'application/problem+json'
             ]
         )
 

@@ -39,6 +39,8 @@ from thousandeyes_sdk.administrative.models.expand_account_group_options import 
 from thousandeyes_sdk.administrative.models.extended_user import ExtendedUser
 from thousandeyes_sdk.administrative.models.interface_ip_mapping import InterfaceIpMapping
 from thousandeyes_sdk.administrative.models.link import Link
+from thousandeyes_sdk.administrative.models.network_provider_info import NetworkProviderInfo
+from thousandeyes_sdk.administrative.models.network_provider_type import NetworkProviderType
 from thousandeyes_sdk.administrative.models.pagination_links import PaginationLinks
 from thousandeyes_sdk.administrative.models.permission import Permission
 from thousandeyes_sdk.administrative.models.permissions import Permissions
@@ -49,6 +51,7 @@ from thousandeyes_sdk.administrative.models.role_request_body import RoleRequest
 from thousandeyes_sdk.administrative.models.roles import Roles
 from thousandeyes_sdk.administrative.models.self_links import SelfLinks
 from thousandeyes_sdk.administrative.models.simple_agent import SimpleAgent
+from thousandeyes_sdk.administrative.models.simple_agent_all_of_network_provider_info import SimpleAgentAllOfNetworkProviderInfo
 from thousandeyes_sdk.administrative.models.simple_test import SimpleTest
 from thousandeyes_sdk.administrative.models.test_interval import TestInterval
 from thousandeyes_sdk.administrative.models.test_links import TestLinks

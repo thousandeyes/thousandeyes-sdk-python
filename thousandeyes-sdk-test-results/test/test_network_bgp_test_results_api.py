@@ -120,9 +120,9 @@ class TestNetworkBGPTestResultsApi(unittest.TestCase):
                     },
                     "startTime" : 1384309800,
                     "endTime" : 1384309800,
-                    "reachability" : 0.0,
-                    "updates" : 0.0,
-                    "pathChanges" : 0.0,
+                    "reachability" : 0,
+                    "updates" : 0,
+                    "pathChanges" : 0,
                     "roundId" : 1384309800,
                     "prefixId" : "215"
                   }, {
@@ -147,9 +147,9 @@ class TestNetworkBGPTestResultsApi(unittest.TestCase):
                     },
                     "startTime" : 1384309800,
                     "endTime" : 1384309800,
-                    "reachability" : 0.0,
-                    "updates" : 0.0,
-                    "pathChanges" : 0.0,
+                    "reachability" : 0,
+                    "updates" : 0,
+                    "pathChanges" : 0,
                     "roundId" : 1384309800,
                     "prefixId" : "215"
                   } ],
