@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **last_seen** | **datetime** | UTC last seen date (ISO date-time format). | [optional] [readonly] 
 **agent_state** | [**EnterpriseAgentState**](EnterpriseAgentState.md) |  | [optional] 
 **target_for_tests** | **str** | Test target IP address. | [optional] 
+**serial_number** | **str** | Serial number of an enterprise agent or cluster member device. This field is not available for Cloud Agents. | [optional] [readonly] 
 **utilization** | **int** | Shows overall utilization percentage (online Enterprise Agents and Enterprise Clusters only). | [optional] [readonly] 
 
 ## Example

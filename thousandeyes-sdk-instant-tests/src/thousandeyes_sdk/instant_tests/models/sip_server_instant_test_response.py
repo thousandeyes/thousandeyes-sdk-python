@@ -28,6 +28,7 @@ from thousandeyes_sdk.instant_tests.models.test_label import TestLabel
 from thousandeyes_sdk.instant_tests.models.test_links import TestLinks
 from thousandeyes_sdk.instant_tests.models.test_path_trace_mode import TestPathTraceMode
 from thousandeyes_sdk.instant_tests.models.test_probe_mode import TestProbeMode
+from thousandeyes_sdk.instant_tests.models.test_tag import TestTag
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -47,6 +48,7 @@ class SipServerInstantTestResponse(BaseModel):
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
     labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
+    tags: Optional[List[TestTag]] = Field(default=None, description="Tags assigned to the test. Returned only when `expand=tag` is specified. This field is not returned for Instant Tests. For more information, see `/tags`.")
     shared_with_accounts: Optional[List[SharedWithAccount]] = Field(default=None, alias="sharedWithAccounts")
     mtu_measurements: Optional[StrictBool] = Field(default=None, description="Set `true` to measure MTU sizes on network from agents to the target.", alias="mtuMeasurements")
     network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
@@ -67,7 +69,7 @@ class SipServerInstantTestResponse(BaseModel):
     sip_registrar: Optional[StrictStr] = Field(default=None, description="SIP server to be tested, specified by domain name or IP address.", alias="sipRegistrar")
     user: Optional[StrictStr] = Field(default=None, description="Username for SIP registration, should be unique within a ThousandEyes account group.")
     agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "randomizedStartTime", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "authUser", "password", "port", "protocol", "sipRegistrar", "user", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "randomizedStartTime", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "authUser", "password", "port", "protocol", "sipRegistrar", "user", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -110,6 +112,7 @@ class SipServerInstantTestResponse(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -121,6 +124,7 @@ class SipServerInstantTestResponse(BaseModel):
             "test_id",
             "type",
             "labels",
+            "tags",
             "shared_with_accounts",
         ])
 
@@ -139,6 +143,13 @@ class SipServerInstantTestResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['labels'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
+        _items = []
+        if self.tags:
+            for _item in self.tags:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['tags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in shared_with_accounts (list)
         _items = []
         if self.shared_with_accounts:
@@ -177,6 +188,7 @@ class SipServerInstantTestResponse(BaseModel):
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
+            "tags": [TestTag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None,
             "mtuMeasurements": obj.get("mtuMeasurements"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,

@@ -5,7 +5,15 @@ docs/Assignments.md
 docs/AuthenticationType.md
 docs/BasicAuthentication.md
 docs/BearerTokenAuthentication.md
+docs/ConjurConnector.md
+docs/ConjurConnectors.md
+docs/ConjurHostAuthentication.md
 docs/ConnectorType.md
+docs/CredentialVaultOperation.md
+docs/CredentialVaultOperations.md
+docs/CredentialVaultOperationsApi.md
+docs/CredentialVaultSecret.md
+docs/CyberArkConjurConnectorsApi.md
 docs/Error.md
 docs/GenericConnector.md
 docs/GenericConnectorAuth.md
@@ -31,6 +39,8 @@ pyproject.toml
 setup.cfg
 src/thousandeyes_sdk/connectors/__init__.py
 src/thousandeyes_sdk/connectors/api/__init__.py
+src/thousandeyes_sdk/connectors/api/credential_vault_operations_api.py
+src/thousandeyes_sdk/connectors/api/cyber_ark_conjur_connectors_api.py
 src/thousandeyes_sdk/connectors/api/generic_connectors_api.py
 src/thousandeyes_sdk/connectors/api/operation_connectors_api.py
 src/thousandeyes_sdk/connectors/api/webhook_operations_api.py
@@ -39,7 +49,13 @@ src/thousandeyes_sdk/connectors/models/assignments.py
 src/thousandeyes_sdk/connectors/models/authentication_type.py
 src/thousandeyes_sdk/connectors/models/basic_authentication.py
 src/thousandeyes_sdk/connectors/models/bearer_token_authentication.py
+src/thousandeyes_sdk/connectors/models/conjur_connector.py
+src/thousandeyes_sdk/connectors/models/conjur_connectors.py
+src/thousandeyes_sdk/connectors/models/conjur_host_authentication.py
 src/thousandeyes_sdk/connectors/models/connector_type.py
+src/thousandeyes_sdk/connectors/models/credential_vault_operation.py
+src/thousandeyes_sdk/connectors/models/credential_vault_operations.py
+src/thousandeyes_sdk/connectors/models/credential_vault_secret.py
 src/thousandeyes_sdk/connectors/models/error.py
 src/thousandeyes_sdk/connectors/models/generic_connector.py
 src/thousandeyes_sdk/connectors/models/generic_connector_auth.py
@@ -60,6 +76,8 @@ src/thousandeyes_sdk/connectors/models/webhook_operation.py
 src/thousandeyes_sdk/connectors/models/webhook_operations.py
 src/thousandeyes_sdk/connectors/py.typed
 test/__init__.py
+test/test_credential_vault_operations_api.py
+test/test_cyber_ark_conjur_connectors_api.py
 test/test_generic_connectors_api.py
 test/test_operation_connectors_api.py
 test/test_utils.py

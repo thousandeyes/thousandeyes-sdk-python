@@ -132,6 +132,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     },
                     "errorType" : "connect",
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -154,7 +155,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
                     "connectTime" : 2,
@@ -259,6 +260,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     },
                     "errorType" : "connect",
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -281,7 +283,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
                     "connectTime" : 2,
@@ -398,11 +400,11 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     "conditionalOperator" : "and",
                     "filters" : [ {
                       "name" : "response-time",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     }, {
                       "name" : "response-time",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     } ]
                   }
@@ -455,6 +457,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     },
                     "errorType" : "connect",
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -477,7 +480,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
                     "connectTime" : 2,
@@ -582,6 +585,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     },
                     "errorType" : "connect",
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -604,7 +608,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
                     "connectTime" : 2,
@@ -721,11 +725,11 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     "conditionalOperator" : "and",
                     "filters" : [ {
                       "name" : "response-time",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     }, {
                       "name" : "response-time",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     } ]
                   }
@@ -778,6 +782,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     },
                     "errorType" : "connect",
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -800,7 +805,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
                     "connectTime" : 2,
@@ -905,6 +910,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     },
                     "errorType" : "connect",
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -927,7 +933,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
                     "connectTime" : 2,

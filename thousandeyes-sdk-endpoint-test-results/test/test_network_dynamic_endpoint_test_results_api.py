@@ -41,18 +41,20 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                   } ],
                   "searchFilters" : {
                     "agentId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ],
-                    "webexConferenceId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ],
-                    "userPrincipalName" : [ "joeblogs32@c.com", "joeblogs32@c.com" ]
+                    "webexConferenceId" : [ "719057112996612360", "719057112996612360" ],
+                    "webexLocalSipSessionId" : [ "c124ba2b012050008000aa0c26c4bf0f", "c124ba2b012050008000aa0c26c4bf0f" ],
+                    "userPrincipalName" : [ "joeblogs32@c.com", "joeblogs32@c.com" ],
+                    "webexCorrelationId" : [ "f7d73641-8673-4547-be62-9521f78d9888", "f7d73641-8673-4547-be62-9521f78d9888" ]
                   },
                   "thresholdFilter" : {
                     "conditionalOperator" : "and",
                     "filters" : [ {
                       "name" : "loss",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     }, {
                       "name" : "loss",
-                      "value" : 10.0,
+                      "value" : 10,
                       "operator" : "gte"
                     } ]
                   }
@@ -134,15 +136,16 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "remoteIpAddress" : "120.98.134.7"
                     },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "minLatency" : 167.0,
+                    "minLatency" : 167,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
                       "vpnGatewayAddress" : "120.98.134.7",
                       "vpnType" : "cisco-anyconnect",
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    "maxLatency" : 168.0,
+                    "maxLatency" : 168,
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -164,10 +167,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
-                    "loss" : 0.0,
+                    "loss" : 0,
                     "protocol" : "tcp",
                     "networkProfile" : {
                       "previousInterface" : {
@@ -216,13 +219,13 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "gateway" : "10.0.0.1"
                     },
                     "ztaMetrics" : [ {
-                      "loss" : 50.0,
+                      "loss" : 50,
                       "jitter" : 5,
                       "avgLatency" : 3,
                       "errorMessage" : "ERR_NAME_NOT_RESOLVED",
                       "type" : "zta_service"
                     }, {
-                      "loss" : 50.0,
+                      "loss" : 50,
                       "jitter" : 5,
                       "avgLatency" : 3,
                       "errorMessage" : "ERR_NAME_NOT_RESOLVED",
@@ -260,9 +263,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     "testId" : "584739201",
                     "webex" : {
                       "remoteSipSessionId" : "22581707460321454",
-                      "localSipSessionId" : "22581707460321454",
+                      "localSipSessionId" : "c124ba2b012050008000aa0c26c4bf0f",
                       "conferenceId" : "225817074608419375",
-                      "correlationId" : "22581707460321454"
+                      "correlationId" : "4e57c97e-abdf-4ec8-a78c-95bac9719896",
+                      "meetingApp" : "ZoomCRC"
                     },
                     "aid" : "1234",
                     "errorDetails" : "Error"
@@ -273,15 +277,16 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "remoteIpAddress" : "120.98.134.7"
                     },
                     "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
-                    "minLatency" : 167.0,
+                    "minLatency" : 167,
                     "vpnProfile" : {
                       "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
                       "vpnGatewayAddress" : "120.98.134.7",
                       "vpnType" : "cisco-anyconnect",
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    "maxLatency" : 168.0,
+                    "maxLatency" : 168,
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -303,10 +308,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "sinr" : 20
                     },
                     "score" : {
-                      "applicationScore" : 100.0,
+                      "applicationScore" : 100,
                       "quality" : "great"
                     },
-                    "loss" : 0.0,
+                    "loss" : 0,
                     "protocol" : "tcp",
                     "networkProfile" : {
                       "previousInterface" : {
@@ -355,13 +360,13 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "gateway" : "10.0.0.1"
                     },
                     "ztaMetrics" : [ {
-                      "loss" : 50.0,
+                      "loss" : 50,
                       "jitter" : 5,
                       "avgLatency" : 3,
                       "errorMessage" : "ERR_NAME_NOT_RESOLVED",
                       "type" : "zta_service"
                     }, {
-                      "loss" : 50.0,
+                      "loss" : 50,
                       "jitter" : 5,
                       "avgLatency" : 3,
                       "errorMessage" : "ERR_NAME_NOT_RESOLVED",
@@ -399,9 +404,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     "testId" : "584739201",
                     "webex" : {
                       "remoteSipSessionId" : "22581707460321454",
-                      "localSipSessionId" : "22581707460321454",
+                      "localSipSessionId" : "c124ba2b012050008000aa0c26c4bf0f",
                       "conferenceId" : "225817074608419375",
-                      "correlationId" : "22581707460321454"
+                      "correlationId" : "4e57c97e-abdf-4ec8-a78c-95bac9719896",
+                      "meetingApp" : "ZoomCRC"
                     },
                     "aid" : "1234",
                     "errorDetails" : "Error"
@@ -498,6 +504,7 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -684,9 +691,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     "testId" : "584739201",
                     "webex" : {
                       "remoteSipSessionId" : "22581707460321454",
-                      "localSipSessionId" : "22581707460321454",
+                      "localSipSessionId" : "c124ba2b012050008000aa0c26c4bf0f",
                       "conferenceId" : "225817074608419375",
-                      "correlationId" : "22581707460321454"
+                      "correlationId" : "4e57c97e-abdf-4ec8-a78c-95bac9719896",
+                      "meetingApp" : "ZoomCRC"
                     },
                     "aid" : "1234",
                     "roundId" : 1384309800
@@ -710,6 +718,7 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -896,9 +905,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     "testId" : "584739201",
                     "webex" : {
                       "remoteSipSessionId" : "22581707460321454",
-                      "localSipSessionId" : "22581707460321454",
+                      "localSipSessionId" : "c124ba2b012050008000aa0c26c4bf0f",
                       "conferenceId" : "225817074608419375",
-                      "correlationId" : "22581707460321454"
+                      "correlationId" : "4e57c97e-abdf-4ec8-a78c-95bac9719896",
+                      "meetingApp" : "ZoomCRC"
                     },
                     "aid" : "1234",
                     "roundId" : 1384309800
@@ -1006,6 +1016,7 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -1120,9 +1131,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     "location" : "San Francisco Area",
                     "webex" : {
                       "remoteSipSessionId" : "22581707460321454",
-                      "localSipSessionId" : "22581707460321454",
+                      "localSipSessionId" : "c124ba2b012050008000aa0c26c4bf0f",
                       "conferenceId" : "225817074608419375",
-                      "correlationId" : "22581707460321454"
+                      "correlationId" : "4e57c97e-abdf-4ec8-a78c-95bac9719896",
+                      "meetingApp" : "ZoomCRC"
                     },
                     "aid" : "1234",
                     "roundId" : 1384309800
@@ -1146,6 +1158,7 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                       "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
                     "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
                       "batteryLevel" : "medium",
                       "batteryLevelNormalizedPercent" : 0.3
                     },
@@ -1260,9 +1273,10 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     "location" : "San Francisco Area",
                     "webex" : {
                       "remoteSipSessionId" : "22581707460321454",
-                      "localSipSessionId" : "22581707460321454",
+                      "localSipSessionId" : "c124ba2b012050008000aa0c26c4bf0f",
                       "conferenceId" : "225817074608419375",
-                      "correlationId" : "22581707460321454"
+                      "correlationId" : "4e57c97e-abdf-4ec8-a78c-95bac9719896",
+                      "meetingApp" : "ZoomCRC"
                     },
                     "aid" : "1234",
                     "roundId" : 1384309800

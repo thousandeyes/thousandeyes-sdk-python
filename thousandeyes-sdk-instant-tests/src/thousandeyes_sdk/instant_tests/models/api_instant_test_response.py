@@ -30,6 +30,8 @@ from thousandeyes_sdk.instant_tests.models.test_path_trace_mode import TestPathT
 from thousandeyes_sdk.instant_tests.models.test_probe_mode import TestProbeMode
 from thousandeyes_sdk.instant_tests.models.test_protocol import TestProtocol
 from thousandeyes_sdk.instant_tests.models.test_ssl_version_id import TestSslVersionId
+from thousandeyes_sdk.instant_tests.models.test_tag import TestTag
+from thousandeyes_sdk.instant_tests.models.test_vault_credential import TestVaultCredential
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -49,6 +51,7 @@ class ApiInstantTestResponse(BaseModel):
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
     labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
+    tags: Optional[List[TestTag]] = Field(default=None, description="Tags assigned to the test. Returned only when `expand=tag` is specified. This field is not returned for Instant Tests. For more information, see `/tags`.")
     shared_with_accounts: Optional[List[SharedWithAccount]] = Field(default=None, alias="sharedWithAccounts")
     client_certificate: Optional[StrictStr] = Field(default=None, description="String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate.", alias="clientCertificate")
     client_cert_domains_allow_list: Optional[StrictStr] = Field(default=None, description="Comma separated list of domains to send the client certificate.", alias="clientCertDomainsAllowList")
@@ -71,8 +74,9 @@ class ApiInstantTestResponse(BaseModel):
     time_limit: Optional[Annotated[int, Field(le=180, strict=True, ge=5)]] = Field(default=30, description="Time limit for transaction in seconds. Exceeding this limit will result in a Timeout error.", alias="timeLimit")
     url: StrictStr = Field(description="Target for the test.")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
+    vault_credentials: Optional[List[TestVaultCredential]] = Field(default=None, description="List of credential IDs that are stored in an external vault.", alias="vaultCredentials")
     agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "clientCertificate", "clientCertDomainsAllowList", "collectProxyNetworkData", "distributedTracing", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "randomizedStartTime", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "clientCertificate", "clientCertDomainsAllowList", "collectProxyNetworkData", "distributedTracing", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "randomizedStartTime", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials", "vaultCredentials", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -115,6 +119,7 @@ class ApiInstantTestResponse(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -126,6 +131,7 @@ class ApiInstantTestResponse(BaseModel):
             "test_id",
             "type",
             "labels",
+            "tags",
             "shared_with_accounts",
         ])
 
@@ -144,6 +150,13 @@ class ApiInstantTestResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['labels'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
+        _items = []
+        if self.tags:
+            for _item in self.tags:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['tags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in shared_with_accounts (list)
         _items = []
         if self.shared_with_accounts:
@@ -165,6 +178,13 @@ class ApiInstantTestResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['requests'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in vault_credentials (list)
+        _items = []
+        if self.vault_credentials:
+            for _item in self.vault_credentials:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['vaultCredentials'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in agents (list)
         _items = []
         if self.agents:
@@ -196,6 +216,7 @@ class ApiInstantTestResponse(BaseModel):
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
+            "tags": [TestTag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None,
             "clientCertificate": obj.get("clientCertificate"),
             "clientCertDomainsAllowList": obj.get("clientCertDomainsAllowList"),
@@ -218,6 +239,7 @@ class ApiInstantTestResponse(BaseModel):
             "timeLimit": obj.get("timeLimit") if obj.get("timeLimit") is not None else 30,
             "url": obj.get("url"),
             "credentials": obj.get("credentials"),
+            "vaultCredentials": [TestVaultCredential.from_dict(_item) for _item in obj["vaultCredentials"]] if obj.get("vaultCredentials") is not None else None,
             "agents": [AgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj

@@ -16,13 +16,13 @@ Name | Type | Description | Notes
 **test_name** | **str** | The name of the test. Test name must be unique. | [optional] 
 **type** | **str** |  | [optional] [readonly] 
 **links** | [**TestLinks**](TestLinks.md) |  | [optional] 
-**labels** | **List[str]** | A list of test label identifiers (get &#x60;labelId&#x60; from &#x60;/labels&#x60; endpoint). | [optional] 
-**shared_with_accounts** | **List[str]** | A list of account group identifiers that the test is shared with (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint). | [optional] 
 **dns_transport_protocol** | [**TestDnsTransportProtocol**](TestDnsTransportProtocol.md) |  | [optional] 
 **domain** | **str** | The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record. | 
 **dns_query_class** | [**DnsQueryClass**](DnsQueryClass.md) |  | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
+**labels** | **List[str]** | A list of test label identifiers (get &#x60;labelId&#x60; from &#x60;/labels&#x60; endpoint). | [optional] 
 **tags** | **List[str]** | A list of test tag identifiers (get &#x60;id&#x60; from &#x60;/tags&#x60; endpoint). | [optional] 
+**shared_with_accounts** | **List[str]** | A list of account group identifiers that the test is shared with (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint). | [optional] 
 **agents** | [**List[TestAgent]**](TestAgent.md) | A list of objects with &#x60;agentId&#x60; (required) and &#x60;sourceIpAddress&#x60; (optional). | 
 
 ## Example

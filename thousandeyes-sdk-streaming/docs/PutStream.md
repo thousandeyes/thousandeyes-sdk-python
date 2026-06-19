@@ -12,7 +12,8 @@ Name | Type | Description | Notes
 **enabled** | **bool** | Flag to enable or disable the stream integration. | [optional] 
 **filters** | [**Filters**](Filters.md) |  | [optional] 
 **exporter_config** | [**ExporterConfig**](ExporterConfig.md) |  | [optional] 
-**endpoint_agent_label** | [**List[EndpointAgentLabel]**](EndpointAgentLabel.md) | A collection of Endpoint Agent label IDs that determines what local network data is included in the data stream. | [optional] 
+**endpoint_agent_label** | [**List[EndpointAgentLabel]**](EndpointAgentLabel.md) | A collection of Endpoint Agent label IDs that determines what local network data is included in the data stream. &#x60;endpointAgentLabel&#x60; and &#x60;endpointAgentTag&#x60; represent the same data. Configure only one; both are synchronized. | [optional] 
+**endpoint_agent_tag** | [**List[EndpointAgentTag]**](EndpointAgentTag.md) | A collection of Endpoint Agent Tag IDs that determines what local network data is included in the data stream. &#x60;endpointAgentLabel&#x60; and &#x60;endpointAgentTag&#x60; represent the same data. Configure only one; both are synchronized. | [optional] 
 
 ## Example
 

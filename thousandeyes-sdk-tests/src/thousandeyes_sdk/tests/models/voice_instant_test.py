@@ -24,6 +24,7 @@ from thousandeyes_sdk.tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.tests.models.test_dscp_id import TestDscpId
 from thousandeyes_sdk.tests.models.test_label import TestLabel
 from thousandeyes_sdk.tests.models.test_links import TestLinks
+from thousandeyes_sdk.tests.models.test_tag import TestTag
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -43,9 +44,10 @@ class VoiceInstantTest(BaseModel):
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
     labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
+    tags: Optional[List[TestTag]] = Field(default=None, description="Tags assigned to the test. Returned only when `expand=tag` is specified. This field is not returned for Instant Tests. For more information, see `/tags`.")
     shared_with_accounts: Optional[List[SharedWithAccount]] = Field(default=None, alias="sharedWithAccounts")
     codec: Optional[StrictStr] = Field(default=None, description="Codec label")
-    codec_id: Optional[StrictStr] = Field(default=None, description="Coded ID, [see the list of acceptable values](https://docs.thousandeyes.com/product-documentation/internet-and-wan-monitoring/tests/working-with-test-settings#rtp-stream-advanced-settings-tab)", alias="codecId")
+    codec_id: Optional[StrictStr] = Field(default=None, description="Codec identifier for the RTP stream. Valid values:  * `0`: G.711 @ 64 Kbps * `1`: G.722.1 @ 24 Kbps (WB) * `2`: G.722.1 @ 32 Kbps (WB) * `3`: G.726 @ 32 Kbps * `4`: G.723.1 @ 6.4 Kbps * `5`: G.729a @ 8 Kbps * `6`: RTAudio @ 45 Kbps (WB) * `7`: RTAudio @ 27.8 Kbps * `8`: SILK @ 36 Kbps (WB) * `9`: G.722 @ 64 Kbps (WB) ", alias="codecId")
     dscp: Optional[StrictStr] = Field(default=None, description="DSCP label.")
     dscp_id: Optional[TestDscpId] = Field(default=None, alias="dscpId")
     duration: Optional[Annotated[int, Field(le=30, strict=True, ge=5)]] = Field(default=5, description="Duration of the test in seconds.")
@@ -54,7 +56,7 @@ class VoiceInstantTest(BaseModel):
     port: Optional[Annotated[int, Field(le=65535, strict=True, ge=1024)]] = Field(default=None, description="Port number for the chosen protocol.")
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     target_agent_id: StrictStr = Field(description="Agent ID of the target agent for the test.", alias="targetAgentId")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "codec", "codecId", "dscp", "dscpId", "duration", "jitterBuffer", "numPathTraces", "port", "randomizedStartTime", "targetAgentId"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "codec", "codecId", "dscp", "dscpId", "duration", "jitterBuffer", "numPathTraces", "port", "randomizedStartTime", "targetAgentId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -99,6 +101,7 @@ class VoiceInstantTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -110,6 +113,7 @@ class VoiceInstantTest(BaseModel):
             "test_id",
             "type",
             "labels",
+            "tags",
             "shared_with_accounts",
             "codec",
             "dscp",
@@ -130,6 +134,13 @@ class VoiceInstantTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['labels'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
+        _items = []
+        if self.tags:
+            for _item in self.tags:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['tags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in shared_with_accounts (list)
         _items = []
         if self.shared_with_accounts:
@@ -161,6 +172,7 @@ class VoiceInstantTest(BaseModel):
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
+            "tags": [TestTag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None,
             "codec": obj.get("codec"),
             "codecId": obj.get("codecId"),

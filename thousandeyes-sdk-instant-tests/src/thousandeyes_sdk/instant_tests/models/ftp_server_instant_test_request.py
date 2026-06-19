@@ -45,8 +45,6 @@ class FtpServerInstantTestRequest(BaseModel):
     test_name: Optional[StrictStr] = Field(default=None, description="The name of the test. Test name must be unique.", alias="testName")
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
-    labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
-    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
     bandwidth_measurements: Optional[StrictBool] = Field(default=None, description="Set to `true` to enable bandwidth measurements, only applies to Enterprise agents assigned to the test.", alias="bandwidthMeasurements")
     download_limit: Optional[StrictInt] = Field(default=None, description="Specify maximum number of bytes to download from the target object.", alias="downloadLimit")
     ftp_target_time: Optional[Annotated[int, Field(le=6000, strict=True, ge=1000)]] = Field(default=None, description="Target time for operation completion; specified in milliseconds.", alias="ftpTargetTime")
@@ -66,9 +64,11 @@ class FtpServerInstantTestRequest(BaseModel):
     username: StrictStr = Field(description="Username for Basic/NTLM authentication.")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
+    labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
     tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
+    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
     agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "bandwidthMeasurements", "downloadLimit", "ftpTargetTime", "ftpTimeLimit", "mtuMeasurements", "networkMeasurements", "numPathTraces", "password", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "requestType", "url", "useActiveFtp", "useExplicitFtps", "username", "fixedPacketRate", "ipv6Policy", "tags", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "bandwidthMeasurements", "downloadLimit", "ftpTargetTime", "ftpTimeLimit", "mtuMeasurements", "networkMeasurements", "numPathTraces", "password", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "requestType", "url", "useActiveFtp", "useExplicitFtps", "username", "fixedPacketRate", "ipv6Policy", "labels", "tags", "sharedWithAccounts", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -159,8 +159,6 @@ class FtpServerInstantTestRequest(BaseModel):
             "testName": obj.get("testName"),
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "labels": obj.get("labels"),
-            "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "downloadLimit": obj.get("downloadLimit"),
             "ftpTargetTime": obj.get("ftpTargetTime"),
@@ -180,7 +178,9 @@ class FtpServerInstantTestRequest(BaseModel):
             "username": obj.get("username"),
             "fixedPacketRate": obj.get("fixedPacketRate"),
             "ipv6Policy": obj.get("ipv6Policy"),
+            "labels": obj.get("labels"),
             "tags": obj.get("tags"),
+            "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj

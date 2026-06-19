@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **type** | **str** |  | [optional] [readonly] 
 **links** | [**TestLinks**](TestLinks.md) |  | [optional] 
 **labels** | [**List[TestLabel]**](TestLabel.md) | Labels to which the test is assigned. This field is not returned for Instant Tests. | [optional] [readonly] 
+**tags** | [**List[TestTag]**](TestTag.md) | Tags assigned to the test. Returned only when &#x60;expand&#x3D;tag&#x60; is specified. This field is not returned for Instant Tests. For more information, see &#x60;/tags&#x60;. | [optional] [readonly] 
 **shared_with_accounts** | [**List[SharedWithAccount]**](SharedWithAccount.md) |  | [optional] [readonly] 
 **client_certificate** | **str** | String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate. | [optional] 
 **client_cert_domains_allow_list** | **str** | Comma separated list of domains to send the client certificate. | [optional] 
@@ -39,6 +40,7 @@ Name | Type | Description | Notes
 **time_limit** | **int** | Time limit for transaction in seconds. Exceeding this limit will result in a Timeout error. | [optional] [default to 30]
 **url** | **str** | Target for the test. | 
 **credentials** | **List[str]** | Contains a list of credential IDs (get &#x60;credentialId&#x60; from &#x60;/credentials&#x60; endpoint). | [optional] 
+**vault_credentials** | [**List[TestVaultCredential]**](TestVaultCredential.md) | List of credential IDs that are stored in an external vault. | [optional] 
 **agents** | [**List[AgentResponse]**](AgentResponse.md) | Contains list of agents. | [optional] 
 
 ## Example

@@ -1,6 +1,6 @@
 # EndpointTestAgentSelectorType
 
-Retrieve either all available agents, a specific list of agents, or a list of agent labels.
+Specifies how agents are selected for the endpoint test.  Agents can be selected from:   - all available agents   - a specific list of agents   - agents matching tags   - agents matching labels (deprecated) 
 
 ## Properties
 

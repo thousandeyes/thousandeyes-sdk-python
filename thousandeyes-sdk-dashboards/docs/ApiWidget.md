@@ -46,6 +46,7 @@ Name | Type | Description | Notes
 **row_group_by** | [**ApiAggregateProperty**](ApiAggregateProperty.md) |  | [optional] 
 **multi_metric_columns** | [**List[ApiMultiMetricColumn]**](ApiMultiMetricColumn.md) |  | [optional] 
 **number_cards** | [**List[ApiNumbersCard]**](ApiNumbersCard.md) |  | [optional] 
+**show_submetrics** | **bool** | Controls how metrics with submetric components are displayed. If &#x60;true&#x60; (default), the widget displays one chart per group. If &#x60;false&#x60;, the widget displays all submetrics in a single chart. For metrics without submetric components, this field is ignored and returned as &#x60;null&#x60;. | [optional] [default to True]
 **column_group_by** | [**ApiAggregateProperty**](ApiAggregateProperty.md) |  | [optional] 
 **filter** | [**ApiWidgetFilterApiTestTableFilterKey**](ApiWidgetFilterApiTestTableFilterKey.md) |  | [optional] 
 **exclude** | [**ApiWidgetFilterApiTestTableFilterKey**](ApiWidgetFilterApiTestTableFilterKey.md) |  | [optional] 

@@ -30,8 +30,9 @@ class OauthClientCredentialsAuthentication(BaseModel):
     oauth_client_id: StrictStr = Field(alias="oauthClientId")
     oauth_token_url: StrictStr = Field(alias="oauthTokenUrl")
     oauth_client_secret: StrictStr = Field(alias="oauthClientSecret")
+    scope: Optional[StrictStr] = None
     type: AuthenticationType
-    __properties: ClassVar[List[str]] = ["token", "oauthClientId", "oauthTokenUrl", "oauthClientSecret", "type"]
+    __properties: ClassVar[List[str]] = ["token", "oauthClientId", "oauthTokenUrl", "oauthClientSecret", "scope", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class OauthClientCredentialsAuthentication(BaseModel):
             "oauthClientId": obj.get("oauthClientId"),
             "oauthTokenUrl": obj.get("oauthTokenUrl"),
             "oauthClientSecret": obj.get("oauthClientSecret"),
+            "scope": obj.get("scope"),
             "type": obj.get("type")
         })
         return _obj

@@ -1236,7 +1236,7 @@ class GenericConnectorsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> Assignments:
-        """List operation IDs assigned to a connector
+        """List operation IDs for a connector
 
         Returns a list of operation IDs assigned to a connector.
 
@@ -1313,7 +1313,7 @@ class GenericConnectorsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> ApiResponse[Assignments]:
-        """List operation IDs assigned to a connector
+        """List operation IDs for a connector
 
         Returns a list of operation IDs assigned to a connector.
 
@@ -1390,7 +1390,7 @@ class GenericConnectorsApi:
         _headers: Optional[Dict[StrictStr, Any]] = None,
         _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
     ) -> RESTResponseType:
-        """List operation IDs assigned to a connector
+        """List operation IDs for a connector
 
         Returns a list of operation IDs assigned to a connector.
 

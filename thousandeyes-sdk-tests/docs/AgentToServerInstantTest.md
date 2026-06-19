@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **type** | **str** |  | [optional] [readonly] 
 **links** | [**TestLinks**](TestLinks.md) |  | [optional] 
 **labels** | [**List[TestLabel]**](TestLabel.md) | Labels to which the test is assigned. This field is not returned for Instant Tests. | [optional] [readonly] 
+**tags** | [**List[TestTag]**](TestTag.md) | Tags assigned to the test. Returned only when &#x60;expand&#x3D;tag&#x60; is specified. This field is not returned for Instant Tests. For more information, see &#x60;/tags&#x60;. | [optional] [readonly] 
 **shared_with_accounts** | [**List[SharedWithAccount]**](SharedWithAccount.md) |  | [optional] [readonly] 
 **bandwidth_measurements** | **bool** | Set to &#x60;true&#x60; to enable bandwidth measurements, only applies to Enterprise agents assigned to the test. | [optional] 
 **continuous_mode** | **bool** | To enable continuous monitoring, set this parameter to &#x60;true&#x60; to.  When continuous monitoring is enabled, the following actions occur: * &#x60;fixedPacketRate&#x60; is enforced * &#x60;bandwidthMeasurements&#x60; are disabled * If the &#x60;protocol&#x60; is set to &#x60;tcp&#x60;, &#x60;probeMode&#x60; is set to &#x60;syn&#x60;.  | [optional] 

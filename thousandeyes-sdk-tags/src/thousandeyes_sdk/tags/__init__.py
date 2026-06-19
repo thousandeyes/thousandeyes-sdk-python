@@ -36,7 +36,7 @@ from thousandeyes_sdk.tags.models.tag_assignment import TagAssignment
 from thousandeyes_sdk.tags.models.tag_bulk_create_error import TagBulkCreateError
 from thousandeyes_sdk.tags.models.tag_filter import TagFilter
 from thousandeyes_sdk.tags.models.tag_filter_mode import TagFilterMode
-from thousandeyes_sdk.tags.models.tag_filter_type import TagFilterType
+from thousandeyes_sdk.tags.models.tag_filter_scope import TagFilterScope
 from thousandeyes_sdk.tags.models.tag_info import TagInfo
 from thousandeyes_sdk.tags.models.tag_match_type import TagMatchType
 from thousandeyes_sdk.tags.models.tags import Tags

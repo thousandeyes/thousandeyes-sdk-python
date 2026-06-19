@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **oauth_client_secret** | **str** |  | 
 **code** | **str** |  | 
 **redirect_uri** | **str** |  | 
+**scope** | **str** |  | [optional] 
 
 ## Example
 

@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **type** | **str** |  | [optional] [readonly] 
 **links** | [**TestLinks**](TestLinks.md) |  | [optional] 
 **labels** | [**List[TestLabel]**](TestLabel.md) | Labels to which the test is assigned. This field is not returned for Instant Tests. | [optional] [readonly] 
+**tags** | [**List[TestTag]**](TestTag.md) | Tags assigned to the test. Returned only when &#x60;expand&#x3D;tag&#x60; is specified. This field is not returned for Instant Tests. For more information, see &#x60;/tags&#x60;. | [optional] [readonly] 
 **shared_with_accounts** | [**List[SharedWithAccount]**](SharedWithAccount.md) |  | [optional] [readonly] 
 **mtu_measurements** | **bool** | Set &#x60;true&#x60; to measure MTU sizes on network from agents to the target. | [optional] 
 **network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]

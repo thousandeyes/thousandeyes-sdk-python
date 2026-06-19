@@ -46,9 +46,10 @@ class EnterpriseAgentData(BaseModel):
     keep_browser_cache: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent retains cache.", alias="keepBrowserCache")
     created_date: Optional[datetime] = Field(default=None, description="UTC Agent creation date (ISO date-time format).", alias="createdDate")
     target_for_tests: Optional[StrictStr] = Field(default=None, description="Test target IP address.", alias="targetForTests")
+    serial_number: Optional[StrictStr] = Field(default=None, description="Serial number of an enterprise agent or cluster member device. This field is not available for Cloud Agents.", alias="serialNumber")
     local_resolution_prefixes: Optional[List[StrictStr]] = Field(default=None, description="To perform rDNS lookups for public IP ranges, this field represents the public IP ranges. The range must be in CIDR notation; for example, 10.1.1.0/24. Maximum of 5 prefixes allowed (Enterprise Agents and Enterprise Agent clusters only).", alias="localResolutionPrefixes")
     interface_ip_mapping: Optional[List[InterfaceIpMapping]] = Field(default=None, alias="interfaceIpMapping")
-    __properties: ClassVar[List[str]] = ["testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping"]
+    __properties: ClassVar[List[str]] = ["testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "serialNumber", "localResolutionPrefixes", "interfaceIpMapping"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -89,6 +90,7 @@ class EnterpriseAgentData(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "test_ids",
@@ -98,6 +100,7 @@ class EnterpriseAgentData(BaseModel):
             "hostname",
             "last_seen",
             "created_date",
+            "serial_number",
             "interface_ip_mapping",
         ])
 
@@ -166,6 +169,7 @@ class EnterpriseAgentData(BaseModel):
             "keepBrowserCache": obj.get("keepBrowserCache"),
             "createdDate": obj.get("createdDate"),
             "targetForTests": obj.get("targetForTests"),
+            "serialNumber": obj.get("serialNumber"),
             "localResolutionPrefixes": obj.get("localResolutionPrefixes"),
             "interfaceIpMapping": [InterfaceIpMapping.from_dict(_item) for _item in obj["interfaceIpMapping"]] if obj.get("interfaceIpMapping") is not None else None
         })
