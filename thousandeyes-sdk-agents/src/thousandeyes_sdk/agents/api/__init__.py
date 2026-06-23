@@ -5,5 +5,6 @@ from thousandeyes_sdk.agents.api.agent_proxies_api import AgentProxiesApi
 from thousandeyes_sdk.agents.api.cloud_and_enterprise_agent_notification_rules_api import CloudAndEnterpriseAgentNotificationRulesApi
 from thousandeyes_sdk.agents.api.cloud_and_enterprise_agents_api import CloudAndEnterpriseAgentsApi
 from thousandeyes_sdk.agents.api.enterprise_agent_cluster_api import EnterpriseAgentClusterApi
+from thousandeyes_sdk.agents.api.local_problems_api import LocalProblemsApi
 from thousandeyes_sdk.agents.api.tests_assignment_on_agents_api import TestsAssignmentOnAgentsApi
 

@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **keep_browser_cache** | **bool** | Flag indicating if the agent retains cache. | [optional] 
 **created_date** | **datetime** | UTC Agent creation date (ISO date-time format). | [optional] [readonly] 
 **target_for_tests** | **str** | Test target IP address. | [optional] 
+**serial_number** | **str** | Serial number of an enterprise agent or cluster member device. This field is not available for Cloud Agents. | [optional] [readonly] 
 **local_resolution_prefixes** | **List[str]** | To perform rDNS lookups for public IP ranges, this field represents the public IP ranges. The range must be in CIDR notation; for example, 10.1.1.0/24. Maximum of 5 prefixes allowed (Enterprise Agents and Enterprise Agent clusters only). | [optional] 
 **interface_ip_mapping** | [**List[InterfaceIpMapping]**](InterfaceIpMapping.md) |  | [optional] [readonly] 
 

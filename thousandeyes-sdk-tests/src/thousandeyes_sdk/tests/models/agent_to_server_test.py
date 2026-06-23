@@ -31,6 +31,7 @@ from thousandeyes_sdk.tests.models.test_links import TestLinks
 from thousandeyes_sdk.tests.models.test_path_trace_mode import TestPathTraceMode
 from thousandeyes_sdk.tests.models.test_probe_mode import TestProbeMode
 from thousandeyes_sdk.tests.models.test_protocol import TestProtocol
+from thousandeyes_sdk.tests.models.test_tag import TestTag
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -54,6 +55,7 @@ class AgentToServerTest(BaseModel):
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
     labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
+    tags: Optional[List[TestTag]] = Field(default=None, description="Tags assigned to the test. Returned only when `expand=tag` is specified. This field is not returned for Instant Tests. For more information, see `/tags`.")
     shared_with_accounts: Optional[List[SharedWithAccount]] = Field(default=None, alias="sharedWithAccounts")
     bandwidth_measurements: Optional[StrictBool] = Field(default=None, description="Set to `true` to enable bandwidth measurements, only applies to Enterprise agents assigned to the test.", alias="bandwidthMeasurements")
     continuous_mode: Optional[StrictBool] = Field(default=None, description="To enable continuous monitoring, set this parameter to `true` to.  When continuous monitoring is enabled, the following actions occur: * `fixedPacketRate` is enforced * `bandwidthMeasurements` are disabled * If the `protocol` is set to `tcp`, `probeMode` is set to `syn`. ", alias="continuousMode")
@@ -73,7 +75,7 @@ class AgentToServerTest(BaseModel):
     bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
     monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "bandwidthMeasurements", "continuousMode", "fixedPacketRate", "mtuMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "server", "dscp", "dscpId", "ipv6Policy", "pingPayloadSize", "networkMeasurements", "bgpMeasurements", "usePublicBgp", "monitors"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "bandwidthMeasurements", "continuousMode", "fixedPacketRate", "mtuMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "server", "dscp", "dscpId", "ipv6Policy", "pingPayloadSize", "networkMeasurements", "bgpMeasurements", "usePublicBgp", "monitors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,6 +120,7 @@ class AgentToServerTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -129,6 +132,7 @@ class AgentToServerTest(BaseModel):
             "test_id",
             "type",
             "labels",
+            "tags",
             "shared_with_accounts",
             "dscp",
             "monitors",
@@ -156,6 +160,13 @@ class AgentToServerTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['labels'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
+        _items = []
+        if self.tags:
+            for _item in self.tags:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['tags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in shared_with_accounts (list)
         _items = []
         if self.shared_with_accounts:
@@ -198,6 +209,7 @@ class AgentToServerTest(BaseModel):
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
+            "tags": [TestTag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None,
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "continuousMode": obj.get("continuousMode"),

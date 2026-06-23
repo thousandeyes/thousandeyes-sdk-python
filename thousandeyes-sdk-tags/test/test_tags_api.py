@@ -47,10 +47,12 @@ class TestTagsApi(unittest.TestCase):
                   "filters" : [ {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   }, {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   } ],
                   "type" : "static",
@@ -99,10 +101,12 @@ class TestTagsApi(unittest.TestCase):
                   "filters" : [ {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   }, {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   } ],
                   "type" : "static",
@@ -155,10 +159,12 @@ class TestTagsApi(unittest.TestCase):
                         "filters" : [ {
                           "mode" : "in",
                           "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
                           "key" : "vpn-client-network"
                         }, {
                           "mode" : "in",
                           "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
                           "key" : "vpn-client-network"
                         } ],
                         "type" : "static",
@@ -193,10 +199,12 @@ class TestTagsApi(unittest.TestCase):
                         "filters" : [ {
                           "mode" : "in",
                           "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
                           "key" : "vpn-client-network"
                         }, {
                           "mode" : "in",
                           "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
                           "key" : "vpn-client-network"
                         } ],
                         "type" : "static",
@@ -242,10 +250,12 @@ class TestTagsApi(unittest.TestCase):
                     "filters" : [ {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     }, {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     } ],
                     "type" : "static",
@@ -286,10 +296,12 @@ class TestTagsApi(unittest.TestCase):
                     "filters" : [ {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     }, {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     } ],
                     "type" : "static",
@@ -342,10 +354,12 @@ class TestTagsApi(unittest.TestCase):
                         "filters" : [ {
                           "mode" : "in",
                           "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
                           "key" : "vpn-client-network"
                         }, {
                           "mode" : "in",
                           "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
                           "key" : "vpn-client-network"
                         } ],
                         "type" : "static",
@@ -380,10 +394,12 @@ class TestTagsApi(unittest.TestCase):
                         "filters" : [ {
                           "mode" : "in",
                           "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
                           "key" : "vpn-client-network"
                         }, {
                           "mode" : "in",
                           "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
                           "key" : "vpn-client-network"
                         } ],
                         "type" : "static",
@@ -429,10 +445,12 @@ class TestTagsApi(unittest.TestCase):
                     "filters" : [ {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     }, {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     } ],
                     "type" : "static",
@@ -473,10 +491,12 @@ class TestTagsApi(unittest.TestCase):
                     "filters" : [ {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     }, {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     } ],
                     "type" : "static",
@@ -532,10 +552,12 @@ class TestTagsApi(unittest.TestCase):
                   "filters" : [ {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   }, {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   } ],
                   "type" : "static",
@@ -599,10 +621,12 @@ class TestTagsApi(unittest.TestCase):
                     "filters" : [ {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     }, {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     } ],
                     "type" : "static",
@@ -643,10 +667,12 @@ class TestTagsApi(unittest.TestCase):
                     "filters" : [ {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     }, {
                       "mode" : "in",
                       "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
                       "key" : "vpn-client-network"
                     } ],
                     "type" : "static",
@@ -685,10 +711,12 @@ class TestTagsApi(unittest.TestCase):
                   "filters" : [ {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   }, {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   } ],
                   "type" : "static",
@@ -737,10 +765,12 @@ class TestTagsApi(unittest.TestCase):
                   "filters" : [ {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   }, {
                     "mode" : "in",
                     "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
                     "key" : "vpn-client-network"
                   } ],
                   "type" : "static",

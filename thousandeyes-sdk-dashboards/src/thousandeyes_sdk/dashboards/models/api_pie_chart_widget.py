@@ -52,7 +52,8 @@ class ApiPieChartWidget(BaseModel):
     type: Annotated[str, Field(strict=True)] = Field(description="Pie Chart widget type")
     group_by: Optional[ApiAggregateProperty] = Field(default=None, alias="groupBy")
     data_source: Optional[PieChartDatasource] = Field(default=None, alias="dataSource")
-    __properties: ClassVar[List[str]] = ["id", "title", "visualMode", "embedUrl", "isEmbedded", "metricGroup", "direction", "metric", "filters", "measure", "fixedTimespan", "apiLink", "shouldExcludeAlertSuppressionWindows", "_links", "type", "groupBy", "dataSource"]
+    show_submetrics: Optional[StrictBool] = Field(default=True, description="Controls how metrics with submetric components are displayed. If `true` (default), the widget displays one chart per group. If `false`, the widget displays all submetrics in a single chart. For metrics without submetric components, this field is ignored and returned as `null`.", alias="showSubmetrics")
+    __properties: ClassVar[List[str]] = ["id", "title", "visualMode", "embedUrl", "isEmbedded", "metricGroup", "direction", "metric", "filters", "measure", "fixedTimespan", "apiLink", "shouldExcludeAlertSuppressionWindows", "_links", "type", "groupBy", "dataSource", "showSubmetrics"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
@@ -116,6 +117,11 @@ class ApiPieChartWidget(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
+        # set to None if show_submetrics (nullable) is None
+        # and model_fields_set contains the field
+        if self.show_submetrics is None and "show_submetrics" in self.model_fields_set:
+            _dict['showSubmetrics'] = None
+
         return _dict
 
     @classmethod
@@ -144,7 +150,8 @@ class ApiPieChartWidget(BaseModel):
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "type": obj.get("type"),
             "groupBy": obj.get("groupBy"),
-            "dataSource": obj.get("dataSource")
+            "dataSource": obj.get("dataSource"),
+            "showSubmetrics": obj.get("showSubmetrics") if obj.get("showSubmetrics") is not None else True
         })
         return _obj
 

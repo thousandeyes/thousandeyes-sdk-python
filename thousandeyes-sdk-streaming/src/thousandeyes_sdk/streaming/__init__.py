@@ -26,6 +26,7 @@ from thousandeyes_sdk.streaming.models.bad_request_error import BadRequestError
 from thousandeyes_sdk.streaming.models.create_stream_response import CreateStreamResponse
 from thousandeyes_sdk.streaming.models.data_model_version import DataModelVersion
 from thousandeyes_sdk.streaming.models.endpoint_agent_label import EndpointAgentLabel
+from thousandeyes_sdk.streaming.models.endpoint_agent_tag import EndpointAgentTag
 from thousandeyes_sdk.streaming.models.endpoint_type import EndpointType
 from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
 from thousandeyes_sdk.streaming.models.exporter_config_authorization import ExporterConfigAuthorization
@@ -44,7 +45,6 @@ from thousandeyes_sdk.streaming.models.stream_status import StreamStatus
 from thousandeyes_sdk.streaming.models.stream_status_type import StreamStatusType
 from thousandeyes_sdk.streaming.models.stream_type import StreamType
 from thousandeyes_sdk.streaming.models.tag_match import TagMatch
-from thousandeyes_sdk.streaming.models.tag_match_object_type import TagMatchObjectType
 from thousandeyes_sdk.streaming.models.test_match import TestMatch
 from thousandeyes_sdk.streaming.models.test_match_domain import TestMatchDomain
 from thousandeyes_sdk.streaming.models.test_type import TestType

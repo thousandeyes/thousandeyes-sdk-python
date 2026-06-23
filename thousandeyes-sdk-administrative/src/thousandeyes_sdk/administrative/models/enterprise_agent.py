@@ -27,6 +27,7 @@ from thousandeyes_sdk.administrative.models.enterprise_agent_ipv6_policy import 
 from thousandeyes_sdk.administrative.models.enterprise_agent_state import EnterpriseAgentState
 from thousandeyes_sdk.administrative.models.error_detail import ErrorDetail
 from thousandeyes_sdk.administrative.models.interface_ip_mapping import InterfaceIpMapping
+from thousandeyes_sdk.administrative.models.simple_agent_all_of_network_provider_info import SimpleAgentAllOfNetworkProviderInfo
 from thousandeyes_sdk.administrative.models.simple_test import SimpleTest
 from typing import Optional, Set
 from typing_extensions import Self
@@ -44,9 +45,10 @@ class EnterpriseAgent(BaseModel):
     location: Optional[StrictStr] = Field(default=None, description="Location of the agent.")
     country_id: Optional[StrictStr] = Field(default=None, description="2-digit ISO country code", alias="countryId")
     coordinates: Optional[Coordinates] = None
+    network_provider_info: Optional[SimpleAgentAllOfNetworkProviderInfo] = Field(default=None, alias="networkProviderInfo")
     enabled: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent is enabled.")
-    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     verify_ssl_certificates: Optional[StrictBool] = Field(default=None, description="Flag indicating if has normal SSL operations or  if instead it's set to ignore SSL errors on browserbot-based tests.", alias="verifySslCertificates")
+    prefix: Optional[StrictStr] = Field(default=None, description="Prefix containing agents public IP address.")
     test_ids: Optional[List[StrictInt]] = Field(default=None, description="List of test IDs assigned to the agent.", alias="testIds")
     tests: Optional[List[SimpleTest]] = Field(default=None, description="List of tests. See `/tests` for more information.")
     cluster_members: Optional[List[ClusterMember]] = Field(default=None, description="If an enterprise agent is clustered, detailed information about each cluster member will be shown as array entries in the clusterMembers field. This field is not shown for Enterprise Agents in standalone mode, or for Cloud Agents.", alias="clusterMembers")
@@ -60,9 +62,10 @@ class EnterpriseAgent(BaseModel):
     keep_browser_cache: Optional[StrictBool] = Field(default=None, description="Flag indicating if the agent retains cache.", alias="keepBrowserCache")
     created_date: Optional[datetime] = Field(default=None, description="UTC Agent creation date (ISO date-time format).", alias="createdDate")
     target_for_tests: Optional[StrictStr] = Field(default=None, description="Test target IP address.", alias="targetForTests")
+    serial_number: Optional[StrictStr] = Field(default=None, description="Serial number of an enterprise agent or cluster member device. This field is not available for Cloud Agents.", alias="serialNumber")
     local_resolution_prefixes: Optional[List[StrictStr]] = Field(default=None, description="To perform rDNS lookups for public IP ranges, this field represents the public IP ranges. The range must be in CIDR notation; for example, 10.1.1.0/24. Maximum of 5 prefixes allowed (Enterprise Agents and Enterprise Agent clusters only).", alias="localResolutionPrefixes")
     interface_ip_mapping: Optional[List[InterfaceIpMapping]] = Field(default=None, alias="interfaceIpMapping")
-    __properties: ClassVar[List[str]] = ["agentType", "ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "enabled", "prefix", "verifySslCertificates", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "localResolutionPrefixes", "interfaceIpMapping"]
+    __properties: ClassVar[List[str]] = ["agentType", "ipAddresses", "publicIpAddresses", "network", "agentId", "agentName", "location", "countryId", "coordinates", "networkProviderInfo", "enabled", "verifySslCertificates", "prefix", "testIds", "tests", "clusterMembers", "utilization", "accountGroups", "ipv6Policy", "errorDetails", "hostname", "lastSeen", "agentState", "keepBrowserCache", "createdDate", "targetForTests", "serialNumber", "localResolutionPrefixes", "interfaceIpMapping"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -111,6 +114,7 @@ class EnterpriseAgent(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "ip_addresses",
@@ -119,8 +123,8 @@ class EnterpriseAgent(BaseModel):
             "agent_id",
             "location",
             "country_id",
-            "prefix",
             "verify_ssl_certificates",
+            "prefix",
             "test_ids",
             "cluster_members",
             "utilization",
@@ -128,6 +132,7 @@ class EnterpriseAgent(BaseModel):
             "hostname",
             "last_seen",
             "created_date",
+            "serial_number",
             "interface_ip_mapping",
         ])
 
@@ -139,6 +144,9 @@ class EnterpriseAgent(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of coordinates
         if self.coordinates:
             _dict['coordinates'] = self.coordinates.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of network_provider_info
+        if self.network_provider_info:
+            _dict['networkProviderInfo'] = self.network_provider_info.to_dict()
         # override the default output from pydantic by calling `to_dict()` of each item in tests (list)
         _items = []
         if self.tests:
@@ -195,9 +203,10 @@ class EnterpriseAgent(BaseModel):
             "location": obj.get("location"),
             "countryId": obj.get("countryId"),
             "coordinates": Coordinates.from_dict(obj["coordinates"]) if obj.get("coordinates") is not None else None,
+            "networkProviderInfo": SimpleAgentAllOfNetworkProviderInfo.from_dict(obj["networkProviderInfo"]) if obj.get("networkProviderInfo") is not None else None,
             "enabled": obj.get("enabled"),
-            "prefix": obj.get("prefix"),
             "verifySslCertificates": obj.get("verifySslCertificates"),
+            "prefix": obj.get("prefix"),
             "testIds": obj.get("testIds"),
             "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "clusterMembers": [ClusterMember.from_dict(_item) for _item in obj["clusterMembers"]] if obj.get("clusterMembers") is not None else None,
@@ -211,6 +220,7 @@ class EnterpriseAgent(BaseModel):
             "keepBrowserCache": obj.get("keepBrowserCache"),
             "createdDate": obj.get("createdDate"),
             "targetForTests": obj.get("targetForTests"),
+            "serialNumber": obj.get("serialNumber"),
             "localResolutionPrefixes": obj.get("localResolutionPrefixes"),
             "interfaceIpMapping": [InterfaceIpMapping.from_dict(_item) for _item in obj["interfaceIpMapping"]] if obj.get("interfaceIpMapping") is not None else None
         })

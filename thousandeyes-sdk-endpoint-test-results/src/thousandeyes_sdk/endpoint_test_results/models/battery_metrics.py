@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field
-from typing import Any, ClassVar, Dict, List, Union
+from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
 from thousandeyes_sdk.endpoint_test_results.models.battery_level import BatteryLevel
 from typing import Optional, Set
@@ -27,9 +27,10 @@ class BatteryMetrics(BaseModel):
     """
     Battery metrics for the endpoint agent.
     """ # noqa: E501
+    battery_health_normalized_percent: Optional[Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]]] = Field(default=None, description="Battery health as a normalized percentage (0-1).", alias="batteryHealthNormalizedPercent")
     battery_level: BatteryLevel = Field(alias="batteryLevel")
     battery_level_normalized_percent: Union[Annotated[float, Field(le=1, strict=True, ge=0)], Annotated[int, Field(le=1, strict=True, ge=0)]] = Field(description="Battery level as a normalized percentage (0-1).", alias="batteryLevelNormalizedPercent")
-    __properties: ClassVar[List[str]] = ["batteryLevel", "batteryLevelNormalizedPercent"]
+    __properties: ClassVar[List[str]] = ["batteryHealthNormalizedPercent", "batteryLevel", "batteryLevelNormalizedPercent"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -83,6 +84,7 @@ class BatteryMetrics(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "batteryHealthNormalizedPercent": obj.get("batteryHealthNormalizedPercent"),
             "batteryLevel": obj.get("batteryLevel"),
             "batteryLevelNormalizedPercent": obj.get("batteryLevelNormalizedPercent")
         })

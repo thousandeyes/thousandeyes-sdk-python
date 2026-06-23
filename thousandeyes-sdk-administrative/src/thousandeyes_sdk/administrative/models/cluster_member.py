@@ -37,8 +37,9 @@ class ClusterMember(BaseModel):
     last_seen: Optional[datetime] = Field(default=None, description="UTC last seen date (ISO date-time format).", alias="lastSeen")
     agent_state: Optional[EnterpriseAgentState] = Field(default=None, alias="agentState")
     target_for_tests: Optional[StrictStr] = Field(default=None, description="Test target IP address.", alias="targetForTests")
+    serial_number: Optional[StrictStr] = Field(default=None, description="Serial number of an enterprise agent or cluster member device. This field is not available for Cloud Agents.", alias="serialNumber")
     utilization: Optional[StrictInt] = Field(default=None, description="Shows overall utilization percentage (online Enterprise Agents and Enterprise Clusters only).")
-    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "memberId", "name", "errorDetails", "lastSeen", "agentState", "targetForTests", "utilization"]
+    __properties: ClassVar[List[str]] = ["ipAddresses", "publicIpAddresses", "network", "memberId", "name", "errorDetails", "lastSeen", "agentState", "targetForTests", "serialNumber", "utilization"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -79,6 +80,7 @@ class ClusterMember(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "ip_addresses",
@@ -88,6 +90,7 @@ class ClusterMember(BaseModel):
             "name",
             "error_details",
             "last_seen",
+            "serial_number",
             "utilization",
         ])
 
@@ -124,6 +127,7 @@ class ClusterMember(BaseModel):
             "lastSeen": obj.get("lastSeen"),
             "agentState": obj.get("agentState"),
             "targetForTests": obj.get("targetForTests"),
+            "serialNumber": obj.get("serialNumber"),
             "utilization": obj.get("utilization")
         })
         return _obj

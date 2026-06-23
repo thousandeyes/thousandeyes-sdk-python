@@ -141,6 +141,15 @@ class TestBGPTestsApi(unittest.TestCase):
                     "name" : "Artem label",
                     "isBuiltin" : false
                   } ],
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
+                  }, {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
+                  } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
                   "modifiedDate" : "2022-07-17T22:00:54Z",
@@ -247,6 +256,15 @@ class TestBGPTestsApi(unittest.TestCase):
                     "labelId" : "961",
                     "name" : "Artem label",
                     "isBuiltin" : false
+                  } ],
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
+                  }, {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -484,6 +502,15 @@ class TestBGPTestsApi(unittest.TestCase):
                     "labelId" : "961",
                     "name" : "Artem label",
                     "isBuiltin" : false
+                  } ],
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
+                  }, {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",

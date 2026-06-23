@@ -46,8 +46,6 @@ class DnsServerInstantTestRequest(BaseModel):
     test_name: Optional[StrictStr] = Field(default=None, description="The name of the test. Test name must be unique.", alias="testName")
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
-    labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
-    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
     bandwidth_measurements: Optional[StrictBool] = Field(default=None, description="Set to `true` to enable bandwidth measurements, only applies to Enterprise agents assigned to the test.", alias="bandwidthMeasurements")
     dns_servers: List[StrictStr] = Field(description="A list of DNS server FQDN.", alias="dnsServers")
     dns_transport_protocol: Optional[TestDnsTransportProtocol] = Field(default=None, alias="dnsTransportProtocol")
@@ -63,9 +61,11 @@ class DnsServerInstantTestRequest(BaseModel):
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     dns_query_class: Optional[DnsQueryClass] = Field(default=None, alias="dnsQueryClass")
+    labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
     tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
+    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
     agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "bandwidthMeasurements", "dnsServers", "dnsTransportProtocol", "domain", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "recursiveQueries", "ipv6Policy", "fixedPacketRate", "dnsQueryClass", "tags", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "bandwidthMeasurements", "dnsServers", "dnsTransportProtocol", "domain", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "recursiveQueries", "ipv6Policy", "fixedPacketRate", "dnsQueryClass", "labels", "tags", "sharedWithAccounts", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -156,8 +156,6 @@ class DnsServerInstantTestRequest(BaseModel):
             "testName": obj.get("testName"),
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "labels": obj.get("labels"),
-            "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "dnsServers": obj.get("dnsServers"),
             "dnsTransportProtocol": obj.get("dnsTransportProtocol"),
@@ -173,7 +171,9 @@ class DnsServerInstantTestRequest(BaseModel):
             "ipv6Policy": obj.get("ipv6Policy"),
             "fixedPacketRate": obj.get("fixedPacketRate"),
             "dnsQueryClass": obj.get("dnsQueryClass"),
+            "labels": obj.get("labels"),
             "tags": obj.get("tags"),
+            "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj

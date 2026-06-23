@@ -28,6 +28,7 @@ from thousandeyes_sdk.instant_tests.models.test_path_trace_mode import TestPathT
 from thousandeyes_sdk.instant_tests.models.test_probe_mode import TestProbeMode
 from thousandeyes_sdk.instant_tests.models.test_protocol import TestProtocol
 from thousandeyes_sdk.instant_tests.models.test_ssl_version_id import TestSslVersionId
+from thousandeyes_sdk.instant_tests.models.test_vault_credential import TestVaultCredential
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -46,8 +47,6 @@ class ApiInstantTestRequest(BaseModel):
     test_name: Optional[StrictStr] = Field(default=None, description="The name of the test. Test name must be unique.", alias="testName")
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
-    labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
-    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
     client_certificate: Optional[StrictStr] = Field(default=None, description="String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate.", alias="clientCertificate")
     client_cert_domains_allow_list: Optional[StrictStr] = Field(default=None, description="Comma separated list of domains to send the client certificate.", alias="clientCertDomainsAllowList")
     collect_proxy_network_data: Optional[StrictBool] = Field(default=False, description="Indicates whether network data to the proxy should be collected.", alias="collectProxyNetworkData")
@@ -68,10 +67,13 @@ class ApiInstantTestRequest(BaseModel):
     target_time: Optional[Annotated[int, Field(le=60, strict=True, ge=0)]] = Field(default=None, description="Target time for completion metric, defaults to 50% of time limit specified in seconds. (0 means default behavior)", alias="targetTime")
     time_limit: Optional[Annotated[int, Field(le=180, strict=True, ge=5)]] = Field(default=30, description="Time limit for transaction in seconds. Exceeding this limit will result in a Timeout error.", alias="timeLimit")
     url: StrictStr = Field(description="Target for the test.")
-    credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
+    labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
     tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
+    shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
     agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "clientCertificate", "clientCertDomainsAllowList", "collectProxyNetworkData", "distributedTracing", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "randomizedStartTime", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "credentials", "tags", "agents"]
+    credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
+    vault_credentials: Optional[List[TestVaultCredential]] = Field(default=None, description="List of credential IDs that are stored in an external vault.", alias="vaultCredentials")
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "clientCertificate", "clientCertDomainsAllowList", "collectProxyNetworkData", "distributedTracing", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "randomizedStartTime", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "labels", "tags", "sharedWithAccounts", "agents", "credentials", "vaultCredentials"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -153,6 +155,13 @@ class ApiInstantTestRequest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['agents'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in vault_credentials (list)
+        _items = []
+        if self.vault_credentials:
+            for _item in self.vault_credentials:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['vaultCredentials'] = _items
         return _dict
 
     @classmethod
@@ -176,8 +185,6 @@ class ApiInstantTestRequest(BaseModel):
             "testName": obj.get("testName"),
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "labels": obj.get("labels"),
-            "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "clientCertificate": obj.get("clientCertificate"),
             "clientCertDomainsAllowList": obj.get("clientCertDomainsAllowList"),
             "collectProxyNetworkData": obj.get("collectProxyNetworkData") if obj.get("collectProxyNetworkData") is not None else False,
@@ -198,9 +205,12 @@ class ApiInstantTestRequest(BaseModel):
             "targetTime": obj.get("targetTime"),
             "timeLimit": obj.get("timeLimit") if obj.get("timeLimit") is not None else 30,
             "url": obj.get("url"),
-            "credentials": obj.get("credentials"),
+            "labels": obj.get("labels"),
             "tags": obj.get("tags"),
-            "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "sharedWithAccounts": obj.get("sharedWithAccounts"),
+            "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
+            "credentials": obj.get("credentials"),
+            "vaultCredentials": [TestVaultCredential.from_dict(_item) for _item in obj["vaultCredentials"]] if obj.get("vaultCredentials") is not None else None
         })
         return _obj
 

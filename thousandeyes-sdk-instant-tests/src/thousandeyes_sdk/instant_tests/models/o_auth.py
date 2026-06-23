@@ -19,7 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.instant_tests.models.o_auth_auth_type import OAuthAuthType
-from thousandeyes_sdk.instant_tests.models.o_auth_request_method import OAuthRequestMethod
+from thousandeyes_sdk.instant_tests.models.request_method import RequestMethod
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class OAuth(BaseModel):
     Use this only if you want to use OAuth as the authentication mechanism.
     """ # noqa: E501
     test_url: Optional[StrictStr] = Field(default=None, description="Target for the test.", alias="testUrl")
-    request_method: Optional[OAuthRequestMethod] = Field(default=None, alias="requestMethod")
+    request_method: Optional[RequestMethod] = Field(default=None, alias="requestMethod")
     post_body: Optional[StrictStr] = Field(default=None, description="Enter the OAuth body for the HTTP POST request in this field when using OAuth as the authentication mechanism. No special escaping is required. The value is saved only when `requestMethod` is set to `post`.", alias="postBody")
     headers: Optional[StrictStr] = Field(default=None, description="Request headers used for OAuth.")
     auth_type: Optional[OAuthAuthType] = Field(default=None, alias="authType")

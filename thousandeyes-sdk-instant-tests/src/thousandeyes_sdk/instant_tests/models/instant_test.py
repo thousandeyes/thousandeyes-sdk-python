@@ -22,6 +22,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.instant_tests.models.test_label import TestLabel
 from thousandeyes_sdk.instant_tests.models.test_links import TestLinks
+from thousandeyes_sdk.instant_tests.models.test_tag import TestTag
 from thousandeyes_sdk.instant_tests.models.test_type import TestType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -42,8 +43,9 @@ class InstantTest(BaseModel):
     type: Optional[TestType] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
     labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
+    tags: Optional[List[TestTag]] = Field(default=None, description="Tags assigned to the test. Returned only when `expand=tag` is specified. This field is not returned for Instant Tests. For more information, see `/tags`.")
     shared_with_accounts: Optional[List[SharedWithAccount]] = Field(default=None, alias="sharedWithAccounts")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -85,6 +87,7 @@ class InstantTest(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -95,6 +98,7 @@ class InstantTest(BaseModel):
             "saved_event",
             "test_id",
             "labels",
+            "tags",
             "shared_with_accounts",
         ])
 
@@ -113,6 +117,13 @@ class InstantTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['labels'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
+        _items = []
+        if self.tags:
+            for _item in self.tags:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['tags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in shared_with_accounts (list)
         _items = []
         if self.shared_with_accounts:
@@ -144,6 +155,7 @@ class InstantTest(BaseModel):
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
+            "tags": [TestTag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None
         })
         return _obj

@@ -26,6 +26,7 @@ Name | Type | Description | Notes
 **type** | **str** | Time Series: Stacked Area widget type | 
 **group_by** | [**ApiAggregateProperty**](ApiAggregateProperty.md) |  | [optional] 
 **data_source** | [**StackedAreaChartDatasource**](StackedAreaChartDatasource.md) |  | [optional] 
+**show_submetrics** | **bool** | Controls how metrics with submetric components are displayed. If &#x60;true&#x60; (default), the widget displays one chart per group. If &#x60;false&#x60;, the widget displays all submetrics in a single chart. For metrics without submetric components, this field is ignored and returned as &#x60;null&#x60;. | [optional] [default to True]
 
 ## Example
 

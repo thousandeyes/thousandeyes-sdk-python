@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -25,7 +25,7 @@ class EndpointAgentLabel(BaseModel):
     """
     Endpoint Agent label configuration.
     """ # noqa: E501
-    id: Optional[StrictStr] = Field(default=None, description="The label ID of Endpoint Agent labels.")
+    id: StrictStr = Field(description="The label ID of Endpoint Agent labels.")
     __properties: ClassVar[List[str]] = ["id"]
 
     model_config = ConfigDict(

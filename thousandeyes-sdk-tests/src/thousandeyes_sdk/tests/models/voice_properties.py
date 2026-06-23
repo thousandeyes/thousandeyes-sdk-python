@@ -28,7 +28,7 @@ class VoiceProperties(BaseModel):
     VoiceProperties
     """ # noqa: E501
     codec: Optional[StrictStr] = Field(default=None, description="Codec label")
-    codec_id: Optional[StrictStr] = Field(default=None, description="Coded ID, [see the list of acceptable values](https://docs.thousandeyes.com/product-documentation/internet-and-wan-monitoring/tests/working-with-test-settings#rtp-stream-advanced-settings-tab)", alias="codecId")
+    codec_id: Optional[StrictStr] = Field(default=None, description="Codec identifier for the RTP stream. Valid values:  * `0`: G.711 @ 64 Kbps * `1`: G.722.1 @ 24 Kbps (WB) * `2`: G.722.1 @ 32 Kbps (WB) * `3`: G.726 @ 32 Kbps * `4`: G.723.1 @ 6.4 Kbps * `5`: G.729a @ 8 Kbps * `6`: RTAudio @ 45 Kbps (WB) * `7`: RTAudio @ 27.8 Kbps * `8`: SILK @ 36 Kbps (WB) * `9`: G.722 @ 64 Kbps (WB) ", alias="codecId")
     dscp: Optional[StrictStr] = Field(default=None, description="DSCP label.")
     dscp_id: Optional[TestDscpId] = Field(default=None, alias="dscpId")
     duration: Optional[Annotated[int, Field(le=30, strict=True, ge=5)]] = Field(default=5, description="Duration of the test in seconds.")

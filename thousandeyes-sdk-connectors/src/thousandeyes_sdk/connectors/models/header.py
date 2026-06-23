@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, StrictStr
 from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,7 +26,7 @@ class Header(BaseModel):
     Header
     """ # noqa: E501
     name: StrictStr
-    value: StrictStr = Field(description="The value of the header. Note that this value is obfuscated in the response, even when overwritten.")
+    value: StrictStr
     __properties: ClassVar[List[str]] = ["name", "value"]
 
     model_config = ConfigDict(

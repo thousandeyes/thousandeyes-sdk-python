@@ -25,6 +25,7 @@ from thousandeyes_sdk.tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.tests.models.alert_rule import AlertRule
 from thousandeyes_sdk.tests.models.monitor import Monitor
 from thousandeyes_sdk.tests.models.o_auth import OAuth
+from thousandeyes_sdk.tests.models.request_method import RequestMethod
 from thousandeyes_sdk.tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.tests.models.test_auth_type import TestAuthType
 from thousandeyes_sdk.tests.models.test_custom_headers import TestCustomHeaders
@@ -36,6 +37,8 @@ from thousandeyes_sdk.tests.models.test_path_trace_mode import TestPathTraceMode
 from thousandeyes_sdk.tests.models.test_probe_mode import TestProbeMode
 from thousandeyes_sdk.tests.models.test_protocol import TestProtocol
 from thousandeyes_sdk.tests.models.test_ssl_version_id import TestSslVersionId
+from thousandeyes_sdk.tests.models.test_tag import TestTag
+from thousandeyes_sdk.tests.models.test_vault_credential import TestVaultCredential
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -59,6 +62,7 @@ class HttpServerTestResponse(BaseModel):
     type: Optional[StrictStr] = None
     links: Optional[TestLinks] = Field(default=None, alias="_links")
     labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
+    tags: Optional[List[TestTag]] = Field(default=None, description="Tags assigned to the test. Returned only when `expand=tag` is specified. This field is not returned for Instant Tests. For more information, see `/tags`.")
     shared_with_accounts: Optional[List[SharedWithAccount]] = Field(default=None, alias="sharedWithAccounts")
     auth_type: Optional[TestAuthType] = Field(default=None, alias="authType")
     agent_interfaces: Optional[AgentInterfaces] = Field(default=None, alias="agentInterfaces")
@@ -95,15 +99,17 @@ class HttpServerTestResponse(BaseModel):
     override_agent_proxy: Optional[StrictBool] = Field(default=False, description="Flag indicating if a proxy other than the default should be used. To override the default proxy for agents, set to `true` and specify a value for `overrideProxyId`.", alias="overrideAgentProxy")
     override_proxy_id: Optional[StrictStr] = Field(default=None, description="ID of the proxy to be used if the default proxy is overridden.", alias="overrideProxyId")
     collect_proxy_network_data: Optional[StrictBool] = Field(default=False, description="Indicates whether network data to the proxy should be collected.", alias="collectProxyNetworkData")
+    vault_credentials: Optional[List[TestVaultCredential]] = Field(default=None, description="List of credential IDs that are stored in an external vault.", alias="vaultCredentials")
     headers: Optional[List[StrictStr]] = Field(default=None, description="HTTP request headers used.")
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
-    post_body: Optional[StrictStr] = Field(default=None, description="Enter the body for the HTTP POST request in this field. No special escaping is necessary. If the post body is provided with content, the `requestMethod` is automatically set to POST.", alias="postBody")
+    request_method: Optional[RequestMethod] = Field(default=None, alias="requestMethod")
+    post_body: Optional[StrictStr] = Field(default=None, description="Enter the body for the HTTP POST request in this field. No special escaping is required. If content is provided and `requestMethod` is not specified, `requestMethod` is automatically set to `post`.", alias="postBody")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
     bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
     monitors: Optional[List[Monitor]] = Field(default=None, description="Contains list of enabled BGP monitors.")
     agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "headers", "randomizedStartTime", "postBody", "ipv6Policy", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "headers", "randomizedStartTime", "requestMethod", "postBody", "ipv6Policy", "bgpMeasurements", "usePublicBgp", "monitors", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -148,6 +154,7 @@ class HttpServerTestResponse(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "created_by",
@@ -159,6 +166,7 @@ class HttpServerTestResponse(BaseModel):
             "test_id",
             "type",
             "labels",
+            "tags",
             "shared_with_accounts",
             "ssl_version",
             "monitors",
@@ -186,6 +194,13 @@ class HttpServerTestResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['labels'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in tags (list)
+        _items = []
+        if self.tags:
+            for _item in self.tags:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['tags'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in shared_with_accounts (list)
         _items = []
         if self.shared_with_accounts:
@@ -202,6 +217,13 @@ class HttpServerTestResponse(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of o_auth
         if self.o_auth:
             _dict['oAuth'] = self.o_auth.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of each item in vault_credentials (list)
+        _items = []
+        if self.vault_credentials:
+            for _item in self.vault_credentials:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['vaultCredentials'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in monitors (list)
         _items = []
         if self.monitors:
@@ -244,6 +266,7 @@ class HttpServerTestResponse(BaseModel):
             "type": obj.get("type"),
             "_links": TestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
+            "tags": [TestTag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None,
             "authType": obj.get("authType"),
             "agentInterfaces": AgentInterfaces.from_dict(obj["agentInterfaces"]) if obj.get("agentInterfaces") is not None else None,
@@ -280,8 +303,10 @@ class HttpServerTestResponse(BaseModel):
             "overrideAgentProxy": obj.get("overrideAgentProxy") if obj.get("overrideAgentProxy") is not None else False,
             "overrideProxyId": obj.get("overrideProxyId"),
             "collectProxyNetworkData": obj.get("collectProxyNetworkData") if obj.get("collectProxyNetworkData") is not None else False,
+            "vaultCredentials": [TestVaultCredential.from_dict(_item) for _item in obj["vaultCredentials"]] if obj.get("vaultCredentials") is not None else None,
             "headers": obj.get("headers"),
             "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
+            "requestMethod": obj.get("requestMethod"),
             "postBody": obj.get("postBody"),
             "ipv6Policy": obj.get("ipv6Policy"),
             "bgpMeasurements": obj.get("bgpMeasurements") if obj.get("bgpMeasurements") is not None else True,
