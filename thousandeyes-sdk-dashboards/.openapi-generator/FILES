@@ -30,6 +30,7 @@ docs/ApiDuration.md
 docs/ApiGeoMapWidget.md
 docs/ApiGraphletPoint.md
 docs/ApiGroupedBarchartWidget.md
+docs/ApiHeatmapWidget.md
 docs/ApiListWidget.md
 docs/ApiMultiMetricColumn.md
 docs/ApiMultiMetricColumnData.md
@@ -85,6 +86,7 @@ docs/Error.md
 docs/GenerateDashboardSnapshotRequest.md
 docs/GeoMapDatasource.md
 docs/GroupedBarChartDatasource.md
+docs/HeatmapDatasource.md
 docs/LegacyAgentWidgetShow.md
 docs/LegacyAgentWidgetType.md
 docs/LegacyAlertListAlertType.md
@@ -155,6 +157,7 @@ src/thousandeyes_sdk/dashboards/models/api_duration.py
 src/thousandeyes_sdk/dashboards/models/api_geo_map_widget.py
 src/thousandeyes_sdk/dashboards/models/api_graphlet_point.py
 src/thousandeyes_sdk/dashboards/models/api_grouped_barchart_widget.py
+src/thousandeyes_sdk/dashboards/models/api_heatmap_widget.py
 src/thousandeyes_sdk/dashboards/models/api_list_widget.py
 src/thousandeyes_sdk/dashboards/models/api_multi_metric_column.py
 src/thousandeyes_sdk/dashboards/models/api_multi_metric_column_data.py
@@ -207,6 +210,7 @@ src/thousandeyes_sdk/dashboards/models/error.py
 src/thousandeyes_sdk/dashboards/models/generate_dashboard_snapshot_request.py
 src/thousandeyes_sdk/dashboards/models/geo_map_datasource.py
 src/thousandeyes_sdk/dashboards/models/grouped_bar_chart_datasource.py
+src/thousandeyes_sdk/dashboards/models/heatmap_datasource.py
 src/thousandeyes_sdk/dashboards/models/legacy_agent_widget_show.py
 src/thousandeyes_sdk/dashboards/models/legacy_agent_widget_type.py
 src/thousandeyes_sdk/dashboards/models/legacy_alert_list_alert_type.py
