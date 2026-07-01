@@ -49,6 +49,7 @@ from thousandeyes_sdk.dashboards.models.api_duration import ApiDuration
 from thousandeyes_sdk.dashboards.models.api_geo_map_widget import ApiGeoMapWidget
 from thousandeyes_sdk.dashboards.models.api_graphlet_point import ApiGraphletPoint
 from thousandeyes_sdk.dashboards.models.api_grouped_barchart_widget import ApiGroupedBarchartWidget
+from thousandeyes_sdk.dashboards.models.api_heatmap_widget import ApiHeatmapWidget
 from thousandeyes_sdk.dashboards.models.api_list_widget import ApiListWidget
 from thousandeyes_sdk.dashboards.models.api_multi_metric_column import ApiMultiMetricColumn
 from thousandeyes_sdk.dashboards.models.api_multi_metric_column_data import ApiMultiMetricColumnData
@@ -101,6 +102,7 @@ from thousandeyes_sdk.dashboards.models.error import Error
 from thousandeyes_sdk.dashboards.models.generate_dashboard_snapshot_request import GenerateDashboardSnapshotRequest
 from thousandeyes_sdk.dashboards.models.geo_map_datasource import GeoMapDatasource
 from thousandeyes_sdk.dashboards.models.grouped_bar_chart_datasource import GroupedBarChartDatasource
+from thousandeyes_sdk.dashboards.models.heatmap_datasource import HeatmapDatasource
 from thousandeyes_sdk.dashboards.models.legacy_agent_widget_show import LegacyAgentWidgetShow
 from thousandeyes_sdk.dashboards.models.legacy_agent_widget_type import LegacyAgentWidgetType
 from thousandeyes_sdk.dashboards.models.legacy_alert_list_alert_type import LegacyAlertListAlertType
