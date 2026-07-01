@@ -12,7 +12,7 @@ Method | HTTP request | Description
 
 Get HTTP server test results
 
-Returns results for requests made over HTTP. Components include DNS, Connect, Wait, Receive, and Fetch. 
+Returns results for requests made over HTTP. Components include DNS, Connect, Wait, Receive, and Fetch.  When DNS server measurement data is available for a round, each result includes a `dnsServerMeasurement` object describing the DNS response used to resolve the target and any additional DNS responses observed during resolution. 
 
 ### Example
 
