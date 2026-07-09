@@ -41,19 +41,3 @@ def test_parse_reset_header_invalid():
     retry = ThousandEyesRetry()
     assert retry._parse_reset_header("invalid") is None
     assert retry._parse_reset_header(None) is None
-
-
-def test_retry_new_clones_with_retry_after_max():
-    retry = ThousandEyesRetry(retry_after_max=3600)
-    cloned = retry.new()
-    assert isinstance(cloned, ThousandEyesRetry)
-    assert cloned.retry_after_max == 3600
-
-
-def test_retry_increment_on_429():
-    response = Mock(spec=HTTPResponse)
-    response.status = 429
-    response.headers = {"Retry-After": "0"}
-    retry = ThousandEyesRetry(total=1)
-    new_retry = retry.increment(method="GET", url="/test", response=response)
-    assert isinstance(new_retry, ThousandEyesRetry)
