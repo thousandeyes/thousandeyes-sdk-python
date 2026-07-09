@@ -48,11 +48,12 @@ class ThousandEyesRetry(Retry):
             history: Optional[tuple[RequestHistory, ...]] = None,
             respect_retry_after_header: bool = True,
             remove_headers_on_redirect: Collection[str] = Retry.DEFAULT_REMOVE_HEADERS_ON_REDIRECT,
-            backoff_jitter: float = 0.0) -> None:
+            backoff_jitter: float = 0.0,
+            retry_after_max: int = Retry.DEFAULT_RETRY_AFTER_MAX) -> None:
         super().__init__(total, connect, read, redirect, status, other, allowed_methods,
                          status_forcelist, backoff_factor, backoff_max, raise_on_redirect,
                          raise_on_status, history, respect_retry_after_header,
-                         remove_headers_on_redirect, backoff_jitter)
+                         remove_headers_on_redirect, backoff_jitter, retry_after_max)
 
     def is_retry(self, method: str, status_code: int, has_retry_after: bool = False) -> bool:
         # Always retry on 429, regardless of method or status_forcelist
