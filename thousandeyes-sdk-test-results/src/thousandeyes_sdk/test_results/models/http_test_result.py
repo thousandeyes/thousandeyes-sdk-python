@@ -19,6 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictFloat, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
+from thousandeyes_sdk.test_results.models.dns_server_measurement import DnsServerMeasurement
 from thousandeyes_sdk.test_results.models.http_test_result_headers import HttpTestResultHeaders
 from thousandeyes_sdk.test_results.models.ssl_cert import SslCert
 from thousandeyes_sdk.test_results.models.test_result_agent import TestResultAgent
@@ -41,6 +42,7 @@ class HttpTestResult(BaseModel):
     num_redirects: Optional[StrictInt] = Field(default=None, description="Number of redirects", alias="numRedirects")
     redirect_time: Optional[StrictInt] = Field(default=None, description="Cumulative redirect timing in milliseconds", alias="redirectTime")
     dns_time: Optional[StrictInt] = Field(default=None, description="Time required to resolve DNS in milliseconds", alias="dnsTime")
+    dns_server_measurement: Optional[DnsServerMeasurement] = Field(default=None, alias="dnsServerMeasurement")
     ssl_time: Optional[StrictInt] = Field(default=None, description="Time to negotiate SSL/TLS in milliseconds", alias="sslTime")
     connect_time: Optional[StrictInt] = Field(default=None, description="Time required to establish a TCP connection to the server", alias="connectTime")
     wait_time: Optional[StrictInt] = Field(default=None, description="Time elapsed between completion of request and first byte of response in milliseconds", alias="waitTime")
@@ -56,7 +58,7 @@ class HttpTestResult(BaseModel):
     ssl_version: Optional[StrictStr] = Field(default=None, description="TLS version", alias="sslVersion")
     ssl_certificates: Optional[List[SslCert]] = Field(default=None, alias="sslCertificates")
     health_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A normalized value (0.0-1.0) representing the web application connection health of the test target. Returns negative values as error codes. -1.0 indicates there was insufficient data to calculate the health score.", alias="healthScore")
-    __properties: ClassVar[List[str]] = ["date", "roundId", "_links", "startTime", "endTime", "agent", "serverIp", "responseCode", "numRedirects", "redirectTime", "dnsTime", "sslTime", "connectTime", "waitTime", "receiveTime", "wireSize", "responseTime", "throughput", "totalTime", "headers", "errorType", "errorDetails", "sslCipher", "sslVersion", "sslCertificates", "healthScore"]
+    __properties: ClassVar[List[str]] = ["date", "roundId", "_links", "startTime", "endTime", "agent", "serverIp", "responseCode", "numRedirects", "redirectTime", "dnsTime", "dnsServerMeasurement", "sslTime", "connectTime", "waitTime", "receiveTime", "wireSize", "responseTime", "throughput", "totalTime", "headers", "errorType", "errorDetails", "sslCipher", "sslVersion", "sslCertificates", "healthScore"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -118,6 +120,9 @@ class HttpTestResult(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of agent
         if self.agent:
             _dict['agent'] = self.agent.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of dns_server_measurement
+        if self.dns_server_measurement:
+            _dict['dnsServerMeasurement'] = self.dns_server_measurement.to_dict()
         # override the default output from pydantic by calling `to_dict()` of headers
         if self.headers:
             _dict['headers'] = self.headers.to_dict()
@@ -151,6 +156,7 @@ class HttpTestResult(BaseModel):
             "numRedirects": obj.get("numRedirects"),
             "redirectTime": obj.get("redirectTime"),
             "dnsTime": obj.get("dnsTime"),
+            "dnsServerMeasurement": DnsServerMeasurement.from_dict(obj["dnsServerMeasurement"]) if obj.get("dnsServerMeasurement") is not None else None,
             "sslTime": obj.get("sslTime"),
             "connectTime": obj.get("connectTime"),
             "waitTime": obj.get("waitTime"),
