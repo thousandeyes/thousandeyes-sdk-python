@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **num_redirects** | **int** | Number of redirects | [optional] 
 **redirect_time** | **int** | Cumulative redirect timing in milliseconds | [optional] 
 **dns_time** | **int** | Time required to resolve DNS in milliseconds | [optional] 
+**dns_server_measurement** | [**DnsServerMeasurement**](DnsServerMeasurement.md) |  | [optional] 
 **ssl_time** | **int** | Time to negotiate SSL/TLS in milliseconds | [optional] 
 **connect_time** | **int** | Time required to establish a TCP connection to the server | [optional] 
 **wait_time** | **int** | Time elapsed between completion of request and first byte of response in milliseconds | [optional] 

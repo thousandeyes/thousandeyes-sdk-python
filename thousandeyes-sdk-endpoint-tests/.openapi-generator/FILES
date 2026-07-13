@@ -25,7 +25,12 @@ docs/EndpointHttpServerTests.md
 docs/EndpointHttpTestUpdate.md
 docs/EndpointInstantTest.md
 docs/EndpointIpVersionIn.md
+docs/EndpointMonitoringSettings.md
+docs/EndpointMonitoringSettingsType.md
 docs/EndpointNetworkTestUpdate.md
+docs/EndpointRealUserTest.md
+docs/EndpointRealUserTestsApi.md
+docs/EndpointRealUserTestsResponse.md
 docs/EndpointScheduledTestType.md
 docs/EndpointScheduledTestsApi.md
 docs/EndpointSpecificAgentsSelectorConfig.md
@@ -55,6 +60,7 @@ src/thousandeyes_sdk/endpoint_tests/__init__.py
 src/thousandeyes_sdk/endpoint_tests/api/__init__.py
 src/thousandeyes_sdk/endpoint_tests/api/agent_to_server_endpoint_dynamic_tests_api.py
 src/thousandeyes_sdk/endpoint_tests/api/agent_to_server_endpoint_scheduled_tests_api.py
+src/thousandeyes_sdk/endpoint_tests/api/endpoint_real_user_tests_api.py
 src/thousandeyes_sdk/endpoint_tests/api/endpoint_scheduled_tests_api.py
 src/thousandeyes_sdk/endpoint_tests/api/http_server_endpoint_scheduled_tests_api.py
 src/thousandeyes_sdk/endpoint_tests/models/__init__.py
@@ -80,7 +86,11 @@ src/thousandeyes_sdk/endpoint_tests/models/endpoint_http_server_tests.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_http_test_update.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_instant_test.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_ip_version_in.py
+src/thousandeyes_sdk/endpoint_tests/models/endpoint_monitoring_settings.py
+src/thousandeyes_sdk/endpoint_tests/models/endpoint_monitoring_settings_type.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_network_test_update.py
+src/thousandeyes_sdk/endpoint_tests/models/endpoint_real_user_test.py
+src/thousandeyes_sdk/endpoint_tests/models/endpoint_real_user_tests_response.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_scheduled_test_type.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_specific_agents_selector_config.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_test.py
@@ -106,6 +116,7 @@ src/thousandeyes_sdk/endpoint_tests/py.typed
 test/__init__.py
 test/test_agent_to_server_endpoint_dynamic_tests_api.py
 test/test_agent_to_server_endpoint_scheduled_tests_api.py
+test/test_endpoint_real_user_tests_api.py
 test/test_endpoint_scheduled_tests_api.py
 test/test_http_server_endpoint_scheduled_tests_api.py
 test/test_utils.py
