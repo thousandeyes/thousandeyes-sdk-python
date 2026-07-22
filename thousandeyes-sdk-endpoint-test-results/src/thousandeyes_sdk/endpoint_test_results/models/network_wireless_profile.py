@@ -31,10 +31,11 @@ class NetworkWirelessProfile(BaseModel):
     phy_mode: Optional[StrictStr] = Field(default=None, description="Wireless network PHY mode.", alias="phyMode")
     rssi: Optional[StrictInt] = Field(default=None, description="Wireless network RSSI.")
     noise: Optional[StrictInt] = Field(default=None, description="Wireless network noise.")
+    snr: Optional[StrictInt] = Field(default=None, description="Wireless network signal-to-noise ratio (SNR), in dB.")
     quality: Optional[StrictInt] = Field(default=None, description="Wireless network quality.")
     tx_rate: Optional[StrictInt] = Field(default=None, description="Wireless network transmitted rate.", alias="txRate")
     vendor: Optional[StrictStr] = Field(default=None, description="Wireless network device vendor.")
-    __properties: ClassVar[List[str]] = ["ssid", "bssid", "channel", "phyMode", "rssi", "noise", "quality", "txRate", "vendor"]
+    __properties: ClassVar[List[str]] = ["ssid", "bssid", "channel", "phyMode", "rssi", "noise", "snr", "quality", "txRate", "vendor"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -76,6 +77,7 @@ class NetworkWirelessProfile(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "ssid",
@@ -84,6 +86,7 @@ class NetworkWirelessProfile(BaseModel):
             "phy_mode",
             "rssi",
             "noise",
+            "snr",
             "quality",
             "tx_rate",
             "vendor",
@@ -112,6 +115,7 @@ class NetworkWirelessProfile(BaseModel):
             "phyMode": obj.get("phyMode"),
             "rssi": obj.get("rssi"),
             "noise": obj.get("noise"),
+            "snr": obj.get("snr"),
             "quality": obj.get("quality"),
             "txRate": obj.get("txRate"),
             "vendor": obj.get("vendor")

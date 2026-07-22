@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **phy_mode** | **str** | Wireless network PHY mode. | [optional] [readonly] 
 **rssi** | **int** | Wireless network RSSI. | [optional] [readonly] 
 **noise** | **int** | Wireless network noise. | [optional] [readonly] 
+**snr** | **int** | Wireless network signal-to-noise ratio (SNR), in dB. | [optional] [readonly] 
 **quality** | **int** | Wireless network quality. | [optional] [readonly] 
 **tx_rate** | **int** | Wireless network transmitted rate. | [optional] [readonly] 
 **vendor** | **str** | Wireless network device vendor. | [optional] [readonly] 

@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, StrictInt
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.endpoint_test_results.models.endpoint_http_server_test import EndpointHttpServerTest
 from thousandeyes_sdk.endpoint_test_results.models.http_endpoint_test_result import HttpEndpointTestResult
@@ -30,11 +30,12 @@ class HttpEndpointTestResults(BaseModel):
     HttpEndpointTestResults
     """ # noqa: E501
     results: Optional[List[HttpEndpointTestResult]] = None
+    total_hits: Optional[StrictInt] = Field(default=None, description="Total number of measurements that match the search criteria.", alias="totalHits")
     test: Optional[EndpointHttpServerTest] = None
     start_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `startDate` parameter,  the client will also receive the `startDate` field indicating the UTC start date of the data's time range being retrieved  (ISO date-time format).", alias="startDate")
     end_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `endDate` parameter,  the client will also receive the `endDate` field indicating the UTC end date of the data's time range being retrieved  (ISO date-time format).", alias="endDate")
     links: Optional[PaginationNextAndSelfLink] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["results", "test", "startDate", "endDate", "_links"]
+    __properties: ClassVar[List[str]] = ["results", "totalHits", "test", "startDate", "endDate", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +107,7 @@ class HttpEndpointTestResults(BaseModel):
 
         _obj = cls.model_validate({
             "results": [HttpEndpointTestResult.from_dict(_item) for _item in obj["results"]] if obj.get("results") is not None else None,
+            "totalHits": obj.get("totalHits"),
             "test": EndpointHttpServerTest.from_dict(obj["test"]) if obj.get("test") is not None else None,
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),
