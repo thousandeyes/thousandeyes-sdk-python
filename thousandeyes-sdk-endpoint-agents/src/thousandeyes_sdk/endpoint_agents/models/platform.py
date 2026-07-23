@@ -30,6 +30,7 @@ class Platform(str, Enum):
     PHONEOS = 'phoneos'
     ELUX = 'elux'
     CISCO_MINUS_WIRELESS = 'cisco-wireless'
+    CISCO_MINUS_WIRELESS_MINUS_CLOUD = 'cisco-wireless-cloud'
     LINUX = 'linux'
     MAC = 'mac'
     ANDROID = 'android'
