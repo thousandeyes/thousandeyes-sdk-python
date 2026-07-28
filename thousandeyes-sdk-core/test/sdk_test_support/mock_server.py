@@ -19,6 +19,7 @@ from __future__ import annotations
 import json
 import re
 import threading
+from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any, Dict, Mapping, Optional
 from urllib.parse import urlparse
@@ -30,18 +31,36 @@ ERROR_STATUS_HEADER = "X-TE-Error-Status"
 AUTHORIZATION_HEADER = "Authorization"
 
 
+def _normalize_scalar(value: Any) -> Any:
+    if isinstance(value, str) and "T" in value:
+        try:
+            return datetime.fromisoformat(value.replace("Z", "+00:00")).isoformat().replace("+00:00", "Z")
+        except ValueError:
+            return value
+    return value
+
+
 def _normalize_json(value: Any) -> Any:
     if isinstance(value, dict):
         return {key: _normalize_json(value[key]) for key in sorted(value.keys())}
     if isinstance(value, list):
         return [_normalize_json(item) for item in value]
-    return value
+    return _normalize_scalar(value)
 
 
 def _json_body_matches(expected: Any, actual: Any) -> bool:
     if isinstance(expected, dict) and isinstance(actual, dict):
-        filtered_expected = {key: expected[key] for key in actual if key in expected}
-        return _normalize_json(filtered_expected) == _normalize_json(actual)
+        for key in actual:
+            if key not in expected:
+                return False
+            if not _json_body_matches(expected[key], actual[key]):
+                return False
+        return True
+    if isinstance(expected, list) and isinstance(actual, list):
+        if len(expected) != len(actual):
+            return False
+        return all(_json_body_matches(expected_item, actual_item)
+                   for expected_item, actual_item in zip(expected, actual))
     return _normalize_json(expected) == _normalize_json(actual)
 
 

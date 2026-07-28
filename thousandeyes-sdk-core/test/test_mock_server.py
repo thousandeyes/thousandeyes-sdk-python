@@ -185,3 +185,131 @@ def test_mock_server_rejects_path_missing_path_variable(manifest):
         )
         assert status == 400
         assert json.loads(body.decode("utf-8"))["detail"] == "Path does not match operation expectation"
+
+
+def test_mock_server_accepts_equivalent_iso8601_datetime_formats(manifest):
+    datetime_manifest = {
+        **manifest,
+        "createAlertRule": OperationExpectation(
+            operation_id="createAlertRule",
+            method="POST",
+            path="/alerts/rules",
+            request_body_example={
+                "ruleName": "Example",
+                "startDate": "2017-07-01T05:00:00Z",
+            },
+            success_status=201,
+            success_body={"ruleId": "1"},
+        ),
+    }
+    with MockApiServer(datetime_manifest) as server:
+        status, body = _request(
+            server,
+            method="POST",
+            path="/alerts/rules",
+            body={
+                "ruleName": "Example",
+                "startDate": "2017-07-01T05:00:00+00:00",
+            },
+        )
+        assert status == 201
+        assert json.loads(body.decode("utf-8")) == {"ruleId": "1"}
+
+
+def test_mock_server_ignores_readonly_fields_in_nested_request_objects(manifest):
+    nested_manifest = {
+        **manifest,
+        "createAlertRule": OperationExpectation(
+            operation_id="createAlertRule",
+            method="POST",
+            path="/alerts/rules",
+            request_body_example={
+                "ruleName": "Example",
+                "widgets": [
+                    {
+                        "title": "Widget Title",
+                        "id": "read-only-id",
+                        "embedUrl": "https://example.com/embed",
+                    }
+                ],
+            },
+            success_status=201,
+            success_body={"ruleId": "1"},
+        ),
+    }
+    with MockApiServer(nested_manifest) as server:
+        status, body = _request(
+            server,
+            method="POST",
+            path="/alerts/rules",
+            body={
+                "ruleName": "Example",
+                "widgets": [{"title": "Widget Title"}],
+            },
+        )
+        assert status == 201
+        assert json.loads(body.decode("utf-8")) == {"ruleId": "1"}
+
+
+def test_integration_error_assertion_fails_when_deserialized_error_does_not_match_oas_example():
+    """Generated error-path tests compare ApiException.data to the OAS error example."""
+    import unittest
+    import urllib.error
+    import urllib.request
+
+    from pydantic import BaseModel, ConfigDict
+
+    class Error(BaseModel):
+        title: str
+        status: int
+
+        model_config = ConfigDict(extra="allow")
+
+        def to_json(self) -> str:
+            return self.model_dump_json()
+
+    mismatched_manifest = {
+        "createAlertRule": OperationExpectation(
+            operation_id="createAlertRule",
+            method="POST",
+            path="/alerts/rules",
+            request_body_example={"ruleName": "Example"},
+            success_status=201,
+            success_body={"ruleId": "1"},
+            error_responses={
+                "400": ErrorResponseExpectation(
+                    status=400,
+                    body={"title": "Wrong Title", "status": 400},
+                )
+            },
+        ),
+    }
+    oas_example = {"title": "Bad Request", "status": 400}
+
+    with MockApiServer(mismatched_manifest) as server:
+        request = urllib.request.Request(
+            server.base_url + "/alerts/rules",
+            data=json.dumps({"unexpected": True}).encode("utf-8"),
+            headers={
+                AUTHORIZATION_HEADER: "Bearer test-token",
+                OPERATION_ID_HEADER: "createAlertRule",
+                ERROR_STATUS_HEADER: "400",
+                "Content-Type": "application/json",
+            },
+            method="POST",
+        )
+        with pytest.raises(urllib.error.HTTPError) as http_error:
+            urllib.request.urlopen(request)
+        wire_body = json.loads(http_error.value.read().decode("utf-8"))
+
+    exception_data = Error.model_validate(wire_body)
+
+    def assert_constructed_model_matches_example_json(model, loaded_json):
+        test_case = unittest.TestCase()
+        test_case.assertEqual(
+            json.dumps(loaded_json, sort_keys=True),
+            json.dumps(json.loads(model.to_json()), sort_keys=True),
+        )
+
+    with pytest.raises(AssertionError):
+        assert_constructed_model_matches_example_json(exception_data, oas_example)
