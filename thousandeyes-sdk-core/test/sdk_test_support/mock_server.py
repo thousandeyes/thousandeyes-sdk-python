@@ -50,8 +50,17 @@ def _normalize_json(value: Any) -> Any:
 
 def _json_body_matches(expected: Any, actual: Any) -> bool:
     if isinstance(expected, dict) and isinstance(actual, dict):
-        filtered_expected = {key: expected[key] for key in actual if key in expected}
-        return _normalize_json(filtered_expected) == _normalize_json(actual)
+        for key in actual:
+            if key not in expected:
+                return False
+            if not _json_body_matches(expected[key], actual[key]):
+                return False
+        return True
+    if isinstance(expected, list) and isinstance(actual, list):
+        if len(expected) != len(actual):
+            return False
+        return all(_json_body_matches(expected_item, actual_item)
+                   for expected_item, actual_item in zip(expected, actual))
     return _normalize_json(expected) == _normalize_json(actual)
 
 

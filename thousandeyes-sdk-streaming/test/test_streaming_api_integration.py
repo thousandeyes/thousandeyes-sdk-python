@@ -907,7 +907,10 @@ class TestStreamingApiIntegration(IntegrationTestBase):
 
             _headers=self.te_headers("get_streams"),
         )
-        assert_constructed_model_matches_example_json(response, expected_response)
+        self.assertIsInstance(response, list)
+        self.assertEqual(len(response), len(expected_response))
+        for index, element in enumerate(response):
+            assert_constructed_model_matches_example_json(element, expected_response[index])
 
 
     def test_get_streams_error_400(self) -> None:

@@ -214,3 +214,38 @@ def test_mock_server_accepts_equivalent_iso8601_datetime_formats(manifest):
         )
         assert status == 201
         assert json.loads(body.decode("utf-8")) == {"ruleId": "1"}
+
+
+def test_mock_server_ignores_readonly_fields_in_nested_request_objects(manifest):
+    nested_manifest = {
+        **manifest,
+        "createAlertRule": OperationExpectation(
+            operation_id="createAlertRule",
+            method="POST",
+            path="/alerts/rules",
+            request_body_example={
+                "ruleName": "Example",
+                "widgets": [
+                    {
+                        "title": "Widget Title",
+                        "id": "read-only-id",
+                        "embedUrl": "https://example.com/embed",
+                    }
+                ],
+            },
+            success_status=201,
+            success_body={"ruleId": "1"},
+        ),
+    }
+    with MockApiServer(nested_manifest) as server:
+        status, body = _request(
+            server,
+            method="POST",
+            path="/alerts/rules",
+            body={
+                "ruleName": "Example",
+                "widgets": [{"title": "Widget Title"}],
+            },
+        )
+        assert status == 201
+        assert json.loads(body.decode("utf-8")) == {"ruleId": "1"}
