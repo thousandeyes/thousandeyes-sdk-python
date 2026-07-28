@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_events**
-> Events get_events(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor)
+> Events get_events(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, ongoing=ongoing)
 
 List events
 
@@ -138,10 +138,11 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     max = 5 # int | (Optional) Maximum number of objects to return. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
+    ongoing = true # bool | When set to `true`, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to `false`, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response. (optional)
 
     try:
         # List events
-        api_response = api_instance.get_events(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor)
+        api_response = api_instance.get_events(aid=aid, window=window, start_date=start_date, end_date=end_date, max=max, cursor=cursor, ongoing=ongoing)
         print("The response of EventsApi->get_events:\n")
         pprint(api_response)
     except Exception as e:
@@ -161,6 +162,7 @@ Name | Type | Description  | Notes
  **end_date** | **datetime**| Defaults to current time the request is made. Use with the &#x60;startDate&#x60; parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can&#39;t be used with &#x60;window&#x60;. | [optional] 
  **max** | **int**| (Optional) Maximum number of objects to return. | [optional] 
  **cursor** | **str**| (Optional) Opaque cursor used for pagination. Clients should use &#x60;next&#x60; value from &#x60;_links&#x60; instead of this parameter. | [optional] 
+ **ongoing** | **bool**| When set to &#x60;true&#x60;, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to &#x60;false&#x60;, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response. | [optional] 
 
 ### Return type
 
