@@ -185,3 +185,32 @@ def test_mock_server_rejects_path_missing_path_variable(manifest):
         )
         assert status == 400
         assert json.loads(body.decode("utf-8"))["detail"] == "Path does not match operation expectation"
+
+
+def test_mock_server_accepts_equivalent_iso8601_datetime_formats(manifest):
+    datetime_manifest = {
+        **manifest,
+        "createAlertRule": OperationExpectation(
+            operation_id="createAlertRule",
+            method="POST",
+            path="/alerts/rules",
+            request_body_example={
+                "ruleName": "Example",
+                "startDate": "2017-07-01T05:00:00Z",
+            },
+            success_status=201,
+            success_body={"ruleId": "1"},
+        ),
+    }
+    with MockApiServer(datetime_manifest) as server:
+        status, body = _request(
+            server,
+            method="POST",
+            path="/alerts/rules",
+            body={
+                "ruleName": "Example",
+                "startDate": "2017-07-01T05:00:00+00:00",
+            },
+        )
+        assert status == 201
+        assert json.loads(body.decode("utf-8")) == {"ruleId": "1"}
