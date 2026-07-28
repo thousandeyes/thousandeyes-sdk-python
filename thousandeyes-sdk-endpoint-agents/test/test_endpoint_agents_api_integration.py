@@ -820,7 +820,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         response_body_json = """
                 {
                   "_links" : {
@@ -1261,7 +1261,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1347,7 +1347,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1421,7 +1421,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1498,7 +1498,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1535,7 +1535,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent success path"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         response_body_json = """
                 {
                   "npcapVersion" : "npcapVersion",
@@ -1736,7 +1736,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent error path (HTTP 401)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1764,7 +1764,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent error path (HTTP 403)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1795,7 +1795,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent error path (HTTP 404)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1826,7 +1826,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent error path (HTTP 429)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1860,7 +1860,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         use_all_permitted_aids = False
         agent_name = 'agent_name_example'
         computer_name = 'computer_name_example'
@@ -2277,7 +2277,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         use_all_permitted_aids = False
         agent_name = 'agent_name_example'
         computer_name = 'computer_name_example'
@@ -2317,7 +2317,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         use_all_permitted_aids = False
         agent_name = 'agent_name_example'
         computer_name = 'computer_name_example'
@@ -2360,7 +2360,7 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        include_deleted = false
+        include_deleted = False
         use_all_permitted_aids = False
         agent_name = 'agent_name_example'
         computer_name = 'computer_name_example'

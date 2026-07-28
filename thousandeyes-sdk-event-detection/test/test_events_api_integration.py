@@ -353,7 +353,7 @@ class TestEventsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        ongoing = true
+        ongoing = True
         response_body_json = """
                 {
                   "endDate" : "2022-07-18T22:00:54Z",
@@ -482,7 +482,7 @@ class TestEventsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        ongoing = true
+        ongoing = True
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -534,7 +534,7 @@ class TestEventsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        ongoing = true
+        ongoing = True
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -574,7 +574,7 @@ class TestEventsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        ongoing = true
+        ongoing = True
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -617,7 +617,7 @@ class TestEventsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        ongoing = true
+        ongoing = True
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -660,7 +660,7 @@ class TestEventsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        ongoing = true
+        ongoing = True
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -703,7 +703,7 @@ class TestEventsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        ongoing = true
+        ongoing = True
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -746,7 +746,7 @@ class TestEventsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        ongoing = true
+        ongoing = True
         error_body_json = """
                 {
                   "instance" : "instance",
