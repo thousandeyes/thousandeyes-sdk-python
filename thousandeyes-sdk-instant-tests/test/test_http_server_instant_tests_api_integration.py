@@ -146,181 +146,182 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         http_server_instant_test_request = thousandeyes_sdk.instant_tests.models.HttpServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         response_body_json = """
                 {
-                  &quot;clientCertificate&quot; : &quot;-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n&quot;,
-                  &quot;mtuMeasurements&quot; : false,
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "clientCertificate" : "-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n",
+                  "mtuMeasurements" : false,
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;dnsOverride&quot; : &quot;8.8.8.8&quot;,
-                  &quot;bandwidthMeasurements&quot; : true,
-                  &quot;probeMode&quot; : &quot;auto&quot;,
-                  &quot;includeHeaders&quot; : true,
-                  &quot;type&quot; : &quot;http-server&quot;,
-                  &quot;oAuth&quot; : {
-                    &quot;testUrl&quot; : &quot;https://api.thousandeyes.com/v7/status&quot;,
-                    &quot;requestMethod&quot; : &quot;post&quot;,
-                    &quot;postBody&quot; : &quot;client_id: ************&quot;,
-                    &quot;headers&quot; : &quot;Authorization: Basic ************&quot;,
-                    &quot;authType&quot; : &quot;none&quot;,
-                    &quot;username&quot; : &quot;user123&quot;,
-                    &quot;password&quot; : &quot;*******&quot;
+                  "dnsOverride" : "8.8.8.8",
+                  "bandwidthMeasurements" : true,
+                  "probeMode" : "auto",
+                  "includeHeaders" : true,
+                  "type" : "http-server",
+                  "oAuth" : {
+                    "testUrl" : "https://api.thousandeyes.com/v7/status",
+                    "requestMethod" : "post",
+                    "postBody" : "client_id: ************",
+                    "headers" : "Authorization: Basic ************",
+                    "authType" : "none",
+                    "username" : "user123",
+                    "password" : "*******"
                   },
-                  &quot;password&quot; : &quot;password&quot;,
-                  &quot;protocol&quot; : &quot;tcp&quot;,
-                  &quot;followRedirects&quot; : true,
-                  &quot;contentRegex&quot; : &quot;(regex)+&quot;,
-                  &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;verifyCertificate&quot; : false,
-                  &quot;overrideAgentProxy&quot; : false,
-                  &quot;liveShare&quot; : false,
-                  &quot;agentInterfaces&quot; : {
-                    &quot;agentId&quot; : &quot;2954&quot;,
-                    &quot;ipAddress&quot; : &quot;192.1.1.0&quot;
+                  "password" : "password",
+                  "protocol" : "tcp",
+                  "followRedirects" : true,
+                  "contentRegex" : "(regex)+",
+                  "testName" : "ThousandEyes Test",
+                  "verifyCertificate" : false,
+                  "overrideAgentProxy" : false,
+                  "liveShare" : false,
+                  "agentInterfaces" : {
+                    "agentId" : "2954",
+                    "ipAddress" : "192.1.1.0"
                   },
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;randomizedStartTime&quot; : false,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;sharedWithAccounts&quot; : [ {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "randomizedStartTime" : false,
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "sharedWithAccounts" : [ {
+                    "name" : "Account name",
+                    "aid" : "1234"
                   }, {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Account name",
+                    "aid" : "1234"
                   } ],
-                  &quot;overrideProxyId&quot; : &quot;281474976710706&quot;,
-                  &quot;sslVersion&quot; : &quot;Auto&quot;,
-                  &quot;useNtlm&quot; : false,
-                  &quot;ipv6Policy&quot; : &quot;use-agent-policy&quot;,
-                  &quot;downloadLimit&quot; : 2048,
-                  &quot;requestMethod&quot; : &quot;get&quot;,
-                  &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;httpTimeLimit&quot; : 5,
-                  &quot;vaultCredentials&quot; : [ {
-                    &quot;secretId&quot; : &quot;f27e85b2-318b-4145-b5aa-c9dc8d8b0819&quot;,
-                    &quot;target&quot; : &quot;username&quot;
+                  "overrideProxyId" : "281474976710706",
+                  "sslVersion" : "Auto",
+                  "useNtlm" : false,
+                  "ipv6Policy" : "use-agent-policy",
+                  "downloadLimit" : 2048,
+                  "requestMethod" : "get",
+                  "description" : "ThousandEyes Test",
+                  "httpTimeLimit" : 5,
+                  "vaultCredentials" : [ {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
                   }, {
-                    &quot;secretId&quot; : &quot;f27e85b2-318b-4145-b5aa-c9dc8d8b0819&quot;,
-                    &quot;target&quot; : &quot;username&quot;
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
                   } ],
-                  &quot;allowUnsafeLegacyRenegotiation&quot; : true,
-                  &quot;fixedPacketRate&quot; : 50,
-                  &quot;httpVersion&quot; : 2,
-                  &quot;collectProxyNetworkData&quot; : false,
-                  &quot;pathTraceMode&quot; : &quot;classic&quot;,
-                  &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                  &quot;authType&quot; : &quot;none&quot;,
-                  &quot;customHeaders&quot; : {
-                    &quot;root&quot; : {
-                      &quot;header1&quot; : &quot;value1&quot;
+                  "allowUnsafeLegacyRenegotiation" : true,
+                  "fixedPacketRate" : 50,
+                  "httpVersion" : 2,
+                  "collectProxyNetworkData" : false,
+                  "pathTraceMode" : "classic",
+                  "modifiedBy" : "user@user.com",
+                  "authType" : "none",
+                  "customHeaders" : {
+                    "root" : {
+                      "header1" : "value1"
                     },
-                    &quot;domains&quot; : {
-                      &quot;domain1.com&quot; : {
-                        &quot;header2&quot; : &quot;value2&quot;
+                    "domains" : {
+                      "domain1.com" : {
+                        "header2" : "value2"
                       }
                     },
-                    &quot;all&quot; : {
-                      &quot;header3&quot; : &quot;value3&quot;
+                    "all" : {
+                      "header3" : "value3"
                     }
                   },
-                  &quot;headers&quot; : [ &quot;header1: value1&quot;, &quot;header2: value2&quot; ],
-                  &quot;numPathTraces&quot; : 3,
-                  &quot;distributedTracing&quot; : false,
-                  &quot;savedEvent&quot; : true,
-                  &quot;userAgent&quot; : &quot;curl&quot;,
-                  &quot;networkMeasurements&quot; : true,
-                  &quot;url&quot; : &quot;www.thousandeyes.com&quot;,
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                  "headers" : [ "header1: value1", "header2: value2" ],
+                  "numPathTraces" : 3,
+                  "distributedTracing" : false,
+                  "savedEvent" : true,
+                  "userAgent" : "curl",
+                  "networkMeasurements" : true,
+                  "url" : "www.thousandeyes.com",
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   } ],
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;postBody&quot; : &quot;{ \&quot;example\&quot; : \&quot;value\&quot;}&quot;,
-                  &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;desiredStatusCode&quot; : &quot;200&quot;,
-                  &quot;httpTargetTime&quot; : 100,
-                  &quot;sslVersionId&quot; : &quot;0&quot;,
-                  &quot;username&quot; : &quot;username&quot;
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "postBody" : "{ \\"example\\" : \\"value\\"}",
+                  "createdBy" : "user@user.com",
+                  "testId" : "281474976710706",
+                  "desiredStatusCode" : "200",
+                  "httpTargetTime" : 100,
+                  "sslVersionId" : "0",
+                  "username" : "username"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_http_server_instant_test(
+
             http_server_instant_test_request=http_server_instant_test_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("create_http_server_instant_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -443,7 +444,6 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         http_server_instant_test_request = thousandeyes_sdk.instant_tests.models.HttpServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -467,9 +467,11 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_http_server_instant_test(
+
                 http_server_instant_test_request=http_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_http_server_instant_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -592,7 +594,6 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         http_server_instant_test_request = thousandeyes_sdk.instant_tests.models.HttpServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -604,9 +605,11 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_http_server_instant_test(
+
                 http_server_instant_test_request=http_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_http_server_instant_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -729,7 +732,6 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         http_server_instant_test_request = thousandeyes_sdk.instant_tests.models.HttpServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -744,9 +746,11 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_http_server_instant_test(
+
                 http_server_instant_test_request=http_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_http_server_instant_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -869,7 +873,6 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         http_server_instant_test_request = thousandeyes_sdk.instant_tests.models.HttpServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -884,9 +887,11 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_http_server_instant_test(
+
                 http_server_instant_test_request=http_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_http_server_instant_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1009,7 +1014,6 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         http_server_instant_test_request = thousandeyes_sdk.instant_tests.models.HttpServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1024,9 +1028,11 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_http_server_instant_test(
+
                 http_server_instant_test_request=http_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_http_server_instant_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1149,7 +1155,6 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         http_server_instant_test_request = thousandeyes_sdk.instant_tests.models.HttpServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1164,9 +1169,11 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_http_server_instant_test(
+
                 http_server_instant_test_request=http_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_http_server_instant_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1289,7 +1296,6 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         http_server_instant_test_request = thousandeyes_sdk.instant_tests.models.HttpServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1304,9 +1310,11 @@ class TestHTTPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.create_http_server_instant_test(
+
                 http_server_instant_test_request=http_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_http_server_instant_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

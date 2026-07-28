@@ -35,141 +35,144 @@ class TestEventsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;severity&quot; : &quot;medium&quot;,
-                  &quot;summary&quot; : &quot;Significant number of issues detected with 66.29.146.15&quot;,
-                  &quot;agentType&quot; : &quot;cloud-enterprise-agent&quot;,
-                  &quot;affectedTests&quot; : {
-                    &quot;total&quot; : 5,
-                    &quot;tests&quot; : [ {
-                      &quot;affectedTargetIds&quot; : [ &quot;123&quot;, &quot;1234&quot; ],
-                      &quot;affectedAgentIds&quot; : [ &quot;2954&quot;, &quot;2953&quot; ],
-                      &quot;_links&quot; : {
-                        &quot;test&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                  "severity" : "medium",
+                  "summary" : "Significant number of issues detected with 66.29.146.15",
+                  "agentType" : "cloud-enterprise-agent",
+                  "affectedTests" : {
+                    "total" : 5,
+                    "tests" : [ {
+                      "affectedTargetIds" : [ "123", "1234" ],
+                      "affectedAgentIds" : [ "2954", "2953" ],
+                      "_links" : {
+                        "test" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;name&quot; : &quot;Google test&quot;,
-                      &quot;testType&quot; : &quot;agent-to-server&quot;,
-                      &quot;testId&quot; : &quot;226770&quot;
+                      "name" : "Google test",
+                      "testType" : "agent-to-server",
+                      "testId" : "226770"
                     }, {
-                      &quot;affectedTargetIds&quot; : [ &quot;123&quot;, &quot;1234&quot; ],
-                      &quot;affectedAgentIds&quot; : [ &quot;2954&quot;, &quot;2953&quot; ],
-                      &quot;_links&quot; : {
-                        &quot;test&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                      "affectedTargetIds" : [ "123", "1234" ],
+                      "affectedAgentIds" : [ "2954", "2953" ],
+                      "_links" : {
+                        "test" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;name&quot; : &quot;Google test&quot;,
-                      &quot;testType&quot; : &quot;agent-to-server&quot;,
-                      &quot;testId&quot; : &quot;226770&quot;
+                      "name" : "Google test",
+                      "testType" : "agent-to-server",
+                      "testId" : "226770"
                     } ],
-                    &quot;inAccountGroup&quot; : 2
+                    "inAccountGroup" : 2
                   },
-                  &quot;endDate&quot; : &quot;2020-04-23T13:43:16Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2020-04-23T13:43:16Z",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;typeName&quot; : &quot;Network Issue&quot;,
-                  &quot;cause&quot; : [ &quot;Network Loss and/or High RTT&quot; ],
-                  &quot;affectedTargets&quot; : {
-                    &quot;total&quot; : 5,
-                    &quot;inAccountGroup&quot; : 2,
-                    &quot;targets&quot; : [ {
-                      &quot;affectedAgentIds&quot; : [ &quot;2954&quot;, &quot;2953&quot; ],
-                      &quot;ip&quot; : &quot;216.239.32.10&quot;,
-                      &quot;name&quot; : &quot;google.com&quot;,
-                      &quot;affectedTestIds&quot; : [ &quot;123&quot;, &quot;1234&quot; ],
-                      &quot;serverId&quot; : &quot;123&quot;
+                  "typeName" : "Network Issue",
+                  "cause" : [ "Network Loss and/or High RTT" ],
+                  "affectedTargets" : {
+                    "total" : 5,
+                    "inAccountGroup" : 2,
+                    "targets" : [ {
+                      "affectedAgentIds" : [ "2954", "2953" ],
+                      "ip" : "216.239.32.10",
+                      "name" : "google.com",
+                      "affectedTestIds" : [ "123", "1234" ],
+                      "serverId" : "123"
                     }, {
-                      &quot;affectedAgentIds&quot; : [ &quot;2954&quot;, &quot;2953&quot; ],
-                      &quot;ip&quot; : &quot;216.239.32.10&quot;,
-                      &quot;name&quot; : &quot;google.com&quot;,
-                      &quot;affectedTestIds&quot; : [ &quot;123&quot;, &quot;1234&quot; ],
-                      &quot;serverId&quot; : &quot;123&quot;
+                      "affectedAgentIds" : [ "2954", "2953" ],
+                      "ip" : "216.239.32.10",
+                      "name" : "google.com",
+                      "affectedTestIds" : [ "123", "1234" ],
+                      "serverId" : "123"
                     } ]
                   },
-                  &quot;type&quot; : &quot;target&quot;,
-                  &quot;grouping&quot; : {
-                    &quot;target&quot; : &quot;google.com&quot;
+                  "type" : "target",
+                  "grouping" : {
+                    "target" : "google.com"
                   },
-                  &quot;affectedAgents&quot; : {
-                    &quot;total&quot; : 5,
-                    &quot;inAccountGroup&quot; : 2,
-                    &quot;agents&quot; : [ {
-                      &quot;affectedTargetIds&quot; : [ &quot;123&quot;, &quot;1234&quot; ],
-                      &quot;agentId&quot; : &quot;2954&quot;,
-                      &quot;_links&quot; : {
-                        &quot;agent&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                  "affectedAgents" : {
+                    "total" : 5,
+                    "inAccountGroup" : 2,
+                    "agents" : [ {
+                      "affectedTargetIds" : [ "123", "1234" ],
+                      "agentId" : "2954",
+                      "_links" : {
+                        "agent" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;countryCode&quot; : &quot;BR&quot;,
-                      &quot;name&quot; : &quot;São Paulo, Brazil - agent&quot;,
-                      &quot;location&quot; : &quot;São Paulo, Brazil&quot;,
-                      &quot;affectedTestIds&quot; : [ &quot;2954&quot;, &quot;2953&quot; ],
-                      &quot;type&quot; : &quot;enterprise&quot;
+                      "countryCode" : "BR",
+                      "name" : "São Paulo, Brazil - agent",
+                      "location" : "São Paulo, Brazil",
+                      "affectedTestIds" : [ "2954", "2953" ],
+                      "type" : "enterprise"
                     }, {
-                      &quot;affectedTargetIds&quot; : [ &quot;123&quot;, &quot;1234&quot; ],
-                      &quot;agentId&quot; : &quot;2954&quot;,
-                      &quot;_links&quot; : {
-                        &quot;agent&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                      "affectedTargetIds" : [ "123", "1234" ],
+                      "agentId" : "2954",
+                      "_links" : {
+                        "agent" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;countryCode&quot; : &quot;BR&quot;,
-                      &quot;name&quot; : &quot;São Paulo, Brazil - agent&quot;,
-                      &quot;location&quot; : &quot;São Paulo, Brazil&quot;,
-                      &quot;affectedTestIds&quot; : [ &quot;2954&quot;, &quot;2953&quot; ],
-                      &quot;type&quot; : &quot;enterprise&quot;
+                      "countryCode" : "BR",
+                      "name" : "São Paulo, Brazil - agent",
+                      "location" : "São Paulo, Brazil",
+                      "affectedTestIds" : [ "2954", "2953" ],
+                      "type" : "enterprise"
                     } ]
                   },
-                  &quot;id&quot; : &quot;e9c3bf02-a48c-4aa8-9e5f-898800d6f569&quot;,
-                  &quot;state&quot; : &quot;resolved&quot;,
-                  &quot;aid&quot; : &quot;1234&quot;,
-                  &quot;startDate&quot; : &quot;2020-04-23T13:43:16Z&quot;
+                  "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                  "state" : "resolved",
+                  "aid" : "1234",
+                  "startDate" : "2020-04-23T13:43:16Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_event(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_event"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -190,8 +193,11 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_event(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_event", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -215,8 +221,11 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_event(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_event", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -240,8 +249,11 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_event(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_event", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -265,8 +277,11 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_event(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_event", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -290,8 +305,11 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_event(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_event", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -315,8 +333,11 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_event(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_event", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -335,111 +356,119 @@ class TestEventsApiIntegration(IntegrationTestBase):
         ongoing = true
         response_body_json = """
                 {
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;aid&quot; : &quot;1234&quot;,
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;events&quot; : [ {
-                    &quot;severity&quot; : &quot;medium&quot;,
-                    &quot;agentType&quot; : &quot;cloud-enterprise-agent&quot;,
-                    &quot;affectedTests&quot; : {
-                      &quot;total&quot; : 5,
-                      &quot;inAccountGroup&quot; : 2
+                  "aid" : "1234",
+                  "startDate" : "2022-07-17T22:00:54Z",
+                  "events" : [ {
+                    "severity" : "medium",
+                    "agentType" : "cloud-enterprise-agent",
+                    "affectedTests" : {
+                      "total" : 5,
+                      "inAccountGroup" : 2
                     },
-                    &quot;endDate&quot; : &quot;2020-04-23T13:43:16Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "endDate" : "2020-04-23T13:43:16Z",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;typeName&quot; : &quot;Network Issue&quot;,
-                    &quot;title&quot; : &quot;Affecting destinations in google.com&quot;,
-                    &quot;type&quot; : &quot;target&quot;,
-                    &quot;affectedTargets&quot; : {
-                      &quot;total&quot; : 5,
-                      &quot;inAccountGroup&quot; : 2
+                    "typeName" : "Network Issue",
+                    "title" : "Affecting destinations in google.com",
+                    "type" : "target",
+                    "affectedTargets" : {
+                      "total" : 5,
+                      "inAccountGroup" : 2
                     },
-                    &quot;affectedAgents&quot; : {
-                      &quot;total&quot; : 5,
-                      &quot;inAccountGroup&quot; : 2
+                    "affectedAgents" : {
+                      "total" : 5,
+                      "inAccountGroup" : 2
                     },
-                    &quot;id&quot; : &quot;e9c3bf02-a48c-4aa8-9e5f-898800d6f569&quot;,
-                    &quot;state&quot; : &quot;resolved&quot;,
-                    &quot;startDate&quot; : &quot;2020-04-23T13:43:16Z&quot;
+                    "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                    "state" : "resolved",
+                    "startDate" : "2020-04-23T13:43:16Z"
                   }, {
-                    &quot;severity&quot; : &quot;medium&quot;,
-                    &quot;agentType&quot; : &quot;cloud-enterprise-agent&quot;,
-                    &quot;affectedTests&quot; : {
-                      &quot;total&quot; : 5,
-                      &quot;inAccountGroup&quot; : 2
+                    "severity" : "medium",
+                    "agentType" : "cloud-enterprise-agent",
+                    "affectedTests" : {
+                      "total" : 5,
+                      "inAccountGroup" : 2
                     },
-                    &quot;endDate&quot; : &quot;2020-04-23T13:43:16Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "endDate" : "2020-04-23T13:43:16Z",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;typeName&quot; : &quot;Network Issue&quot;,
-                    &quot;title&quot; : &quot;Affecting destinations in google.com&quot;,
-                    &quot;type&quot; : &quot;target&quot;,
-                    &quot;affectedTargets&quot; : {
-                      &quot;total&quot; : 5,
-                      &quot;inAccountGroup&quot; : 2
+                    "typeName" : "Network Issue",
+                    "title" : "Affecting destinations in google.com",
+                    "type" : "target",
+                    "affectedTargets" : {
+                      "total" : 5,
+                      "inAccountGroup" : 2
                     },
-                    &quot;affectedAgents&quot; : {
-                      &quot;total&quot; : 5,
-                      &quot;inAccountGroup&quot; : 2
+                    "affectedAgents" : {
+                      "total" : 5,
+                      "inAccountGroup" : 2
                     },
-                    &quot;id&quot; : &quot;e9c3bf02-a48c-4aa8-9e5f-898800d6f569&quot;,
-                    &quot;state&quot; : &quot;resolved&quot;,
-                    &quot;startDate&quot; : &quot;2020-04-23T13:43:16Z&quot;
+                    "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                    "state" : "resolved",
+                    "startDate" : "2020-04-23T13:43:16Z"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_events(
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             max=max,
+
             cursor=cursor,
+
             ongoing=ongoing,
+
             _headers=self.te_headers("get_events"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -477,13 +506,21 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_events(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 ongoing=ongoing,
+
                 _headers=self.te_headers("get_events", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -509,13 +546,21 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_events(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 ongoing=ongoing,
+
                 _headers=self.te_headers("get_events", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -544,13 +589,21 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_events(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 ongoing=ongoing,
+
                 _headers=self.te_headers("get_events", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -579,13 +632,21 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_events(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 ongoing=ongoing,
+
                 _headers=self.te_headers("get_events", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -614,13 +675,21 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_events(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 ongoing=ongoing,
+
                 _headers=self.te_headers("get_events", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -649,13 +718,21 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_events(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 ongoing=ongoing,
+
                 _headers=self.te_headers("get_events", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -684,13 +761,21 @@ class TestEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_events(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 ongoing=ongoing,
+
                 _headers=self.te_headers("get_events", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

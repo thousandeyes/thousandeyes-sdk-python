@@ -36,36 +36,40 @@ class TestTestsApiIntegration(IntegrationTestBase):
         limit = 50
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;testVersionHistory&quot; : [ {
-                    &quot;versionId&quot; : &quot;1234&quot;,
-                    &quot;versionTimestamp&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user (user@user.com)&quot;,
-                    &quot;testId&quot; : &quot;474276&quot;
+                  "testVersionHistory" : [ {
+                    "versionId" : "1234",
+                    "versionTimestamp" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user (user@user.com)",
+                    "testId" : "474276"
                   }, {
-                    &quot;versionId&quot; : &quot;1234&quot;,
-                    &quot;versionTimestamp&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user (user@user.com)&quot;,
-                    &quot;testId&quot; : &quot;474276&quot;
+                    "versionId" : "1234",
+                    "versionTimestamp" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user (user@user.com)",
+                    "testId" : "474276"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_test_version_history(
+
             test_id=test_id,
+
             aid=aid,
+
             limit=limit,
+
             _headers=self.te_headers("get_test_version_history"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -87,9 +91,13 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_test_version_history(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 limit=limit,
+
                 _headers=self.te_headers("get_test_version_history", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -114,9 +122,13 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_test_version_history(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 limit=limit,
+
                 _headers=self.te_headers("get_test_version_history", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -141,9 +153,13 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_test_version_history(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 limit=limit,
+
                 _headers=self.te_headers("get_test_version_history", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -168,9 +184,13 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_test_version_history(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 limit=limit,
+
                 _headers=self.te_headers("get_test_version_history", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -183,86 +203,88 @@ class TestTestsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;tests&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "tests" : [ {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_tests(
+
             aid=aid,
+
             _headers=self.te_headers("get_tests"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -282,7 +304,9 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_tests", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -305,7 +329,9 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_tests", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -328,7 +354,9 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_tests", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -351,7 +379,9 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_tests", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -374,7 +404,9 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_tests", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -397,7 +429,9 @@ class TestTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_tests", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

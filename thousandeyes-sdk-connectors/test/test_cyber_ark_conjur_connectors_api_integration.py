@@ -64,35 +64,38 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;lastModifiedDate&quot; : 1770293655756,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "lastModifiedDate" : 1770293655756,
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;Cisco Slack&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;type&quot; : &quot;generic&quot;,
-                  &quot;account&quot; : &quot;My CyberArk Account&quot;,
-                  &quot;target&quot; : &quot;https://eval.conjur.org/secrets&quot;,
-                  &quot;authentication&quot; : {
-                    &quot;apiKey&quot; : &quot;abc123&quot;,
-                    &quot;hostId&quot; : &quot;host1&quot;,
-                    &quot;type&quot; : &quot;basic&quot;
+                  "name" : "Cisco Slack",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "type" : "generic",
+                  "account" : "My CyberArk Account",
+                  "target" : "https://eval.conjur.org/secrets",
+                  "authentication" : {
+                    "apiKey" : "abc123",
+                    "hostId" : "host1",
+                    "type" : "basic"
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_conjur_connector(
+
             conjur_connector=conjur_connector,
+
             aid=aid,
+
             _headers=self.te_headers("create_conjur_connector"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -154,8 +157,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_conjur_connector(
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_conjur_connector", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -205,8 +211,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_conjur_connector(
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_conjur_connector", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -259,8 +268,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_conjur_connector(
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_conjur_connector", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -313,8 +325,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_conjur_connector(
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_conjur_connector", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -367,8 +382,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_conjur_connector(
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_conjur_connector", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -382,9 +400,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
         confirm_disabled_objects = False
         aid = '1234'
         response = self.api.delete_conjur_connector_with_http_info(
+
             id=id,
+
             confirm_disabled_objects=confirm_disabled_objects,
+
             aid=aid,
+
             _headers=self.te_headers("delete_conjur_connector"),
         )
         self.assertEqual(204, response.status_code)
@@ -419,9 +441,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_conjur_connector(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_conjur_connector", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -443,9 +469,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_conjur_connector(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_conjur_connector", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -470,9 +500,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_conjur_connector(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_conjur_connector", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -497,9 +531,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_conjur_connector(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_conjur_connector", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -524,9 +562,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_conjur_connector(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_conjur_connector", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -540,35 +582,38 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;lastModifiedDate&quot; : 1770293655756,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "lastModifiedDate" : 1770293655756,
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;Cisco Slack&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;type&quot; : &quot;generic&quot;,
-                  &quot;account&quot; : &quot;My CyberArk Account&quot;,
-                  &quot;target&quot; : &quot;https://eval.conjur.org/secrets&quot;,
-                  &quot;authentication&quot; : {
-                    &quot;apiKey&quot; : &quot;abc123&quot;,
-                    &quot;hostId&quot; : &quot;host1&quot;,
-                    &quot;type&quot; : &quot;basic&quot;
+                  "name" : "Cisco Slack",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "type" : "generic",
+                  "account" : "My CyberArk Account",
+                  "target" : "https://eval.conjur.org/secrets",
+                  "authentication" : {
+                    "apiKey" : "abc123",
+                    "hostId" : "host1",
+                    "type" : "basic"
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_conjur_connector(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_conjur_connector"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -601,8 +646,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_conjur_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -623,8 +671,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_conjur_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -648,8 +699,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_conjur_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -673,8 +727,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_conjur_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -698,8 +755,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_conjur_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -713,25 +773,28 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;items&quot; : [ &quot;ca39314d-eb4f-496f-9435-b5d20b1bfbff&quot;, &quot;ca39314d-eb4f-496f-9435-b5d20b1bfbff&quot; ]
+                  "items" : [ "ca39314d-eb4f-496f-9435-b5d20b1bfbff", "ca39314d-eb4f-496f-9435-b5d20b1bfbff" ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_conjur_connector_operations(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_conjur_connector_operations"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -764,8 +827,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_conjur_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector_operations", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -786,8 +852,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_conjur_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector_operations", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -811,8 +880,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_conjur_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector_operations", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -836,8 +908,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_conjur_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector_operations", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -861,8 +936,11 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_conjur_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connector_operations", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -875,72 +953,74 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;items&quot; : [ {
-                    &quot;lastModifiedDate&quot; : 1770293655756,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "items" : [ {
+                    "lastModifiedDate" : 1770293655756,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;Cisco Slack&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                    &quot;type&quot; : &quot;generic&quot;,
-                    &quot;account&quot; : &quot;My CyberArk Account&quot;,
-                    &quot;target&quot; : &quot;https://eval.conjur.org/secrets&quot;,
-                    &quot;authentication&quot; : {
-                      &quot;apiKey&quot; : &quot;abc123&quot;,
-                      &quot;hostId&quot; : &quot;host1&quot;,
-                      &quot;type&quot; : &quot;basic&quot;
+                    "name" : "Cisco Slack",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                    "type" : "generic",
+                    "account" : "My CyberArk Account",
+                    "target" : "https://eval.conjur.org/secrets",
+                    "authentication" : {
+                      "apiKey" : "abc123",
+                      "hostId" : "host1",
+                      "type" : "basic"
                     }
                   }, {
-                    &quot;lastModifiedDate&quot; : 1770293655756,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "lastModifiedDate" : 1770293655756,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;Cisco Slack&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                    &quot;type&quot; : &quot;generic&quot;,
-                    &quot;account&quot; : &quot;My CyberArk Account&quot;,
-                    &quot;target&quot; : &quot;https://eval.conjur.org/secrets&quot;,
-                    &quot;authentication&quot; : {
-                      &quot;apiKey&quot; : &quot;abc123&quot;,
-                      &quot;hostId&quot; : &quot;host1&quot;,
-                      &quot;type&quot; : &quot;basic&quot;
+                    "name" : "Cisco Slack",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                    "type" : "generic",
+                    "account" : "My CyberArk Account",
+                    "target" : "https://eval.conjur.org/secrets",
+                    "authentication" : {
+                      "apiKey" : "abc123",
+                      "hostId" : "host1",
+                      "type" : "basic"
                     }
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_conjur_connectors(
+
             aid=aid,
+
             _headers=self.te_headers("get_conjur_connectors"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -972,7 +1052,9 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_conjur_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connectors", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -992,7 +1074,9 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_conjur_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connectors", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1015,7 +1099,9 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_conjur_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connectors", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1038,7 +1124,9 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_conjur_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connectors", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1061,7 +1149,9 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_conjur_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_conjur_connectors", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1105,36 +1195,40 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;lastModifiedDate&quot; : 1770293655756,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "lastModifiedDate" : 1770293655756,
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;Cisco Slack&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;type&quot; : &quot;generic&quot;,
-                  &quot;account&quot; : &quot;My CyberArk Account&quot;,
-                  &quot;target&quot; : &quot;https://eval.conjur.org/secrets&quot;,
-                  &quot;authentication&quot; : {
-                    &quot;apiKey&quot; : &quot;abc123&quot;,
-                    &quot;hostId&quot; : &quot;host1&quot;,
-                    &quot;type&quot; : &quot;basic&quot;
+                  "name" : "Cisco Slack",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "type" : "generic",
+                  "account" : "My CyberArk Account",
+                  "target" : "https://eval.conjur.org/secrets",
+                  "authentication" : {
+                    "apiKey" : "abc123",
+                    "hostId" : "host1",
+                    "type" : "basic"
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_conjur_connector(
+
             id=id,
+
             conjur_connector=conjur_connector,
+
             aid=aid,
+
             _headers=self.te_headers("update_conjur_connector"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1197,9 +1291,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_conjur_connector(
+
                 id=id,
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_conjur_connector", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1250,9 +1348,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_conjur_connector(
+
                 id=id,
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_conjur_connector", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1306,9 +1408,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_conjur_connector(
+
                 id=id,
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_conjur_connector", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1362,9 +1468,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_conjur_connector(
+
                 id=id,
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_conjur_connector", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1418,9 +1528,13 @@ class TestCyberArkConjurConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_conjur_connector(
+
                 id=id,
+
                 conjur_connector=conjur_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_conjur_connector", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

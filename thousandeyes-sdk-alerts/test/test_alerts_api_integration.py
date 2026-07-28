@@ -35,98 +35,101 @@ class TestAlertsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;severity&quot; : &quot;major&quot;,
-                  &quot;alertType&quot; : &quot;http-server&quot;,
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;appLink&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "severity" : "major",
+                  "alertType" : "http-server",
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "appLink" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;test&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "test" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;rule&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "rule" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;alertSeverity&quot; : &quot;major&quot;,
-                  &quot;duration&quot; : 60,
-                  &quot;violationCount&quot; : 2,
-                  &quot;_embedded&quot; : {
-                    &quot;asn&quot; : {
-                      &quot;name&quot; : &quot;Cisco Webex LLC&quot;,
-                      &quot;id&quot; : &quot;13445&quot;,
-                      &quot;type&quot; : &quot;asn&quot;
+                  "alertSeverity" : "major",
+                  "duration" : 60,
+                  "violationCount" : 2,
+                  "_embedded" : {
+                    "asn" : {
+                      "name" : "Cisco Webex LLC",
+                      "id" : "13445",
+                      "type" : "asn"
                     }
                   },
-                  &quot;meta&quot; : {
-                    &quot;version&quot; : 1
+                  "meta" : {
+                    "version" : 1
                   },
-                  &quot;details&quot; : [ {
-                    &quot;name&quot; : &quot;Bucharest, Romania&quot;,
-                    &quot;start&quot; : {
-                      &quot;metrics&quot; : &quot;metrics&quot;
+                  "details" : [ {
+                    "name" : "Bucharest, Romania",
+                    "start" : {
+                      "metrics" : "metrics"
                     },
-                    &quot;end&quot; : {
-                      &quot;metrics&quot; : &quot;metrics&quot;
+                    "end" : {
+                      "metrics" : "metrics"
                     },
-                    &quot;id&quot; : &quot;3379&quot;,
-                    &quot;state&quot; : &quot;trigger&quot;,
-                    &quot;type&quot; : &quot;cea_agent&quot;
+                    "id" : "3379",
+                    "state" : "trigger",
+                    "type" : "cea_agent"
                   }, {
-                    &quot;name&quot; : &quot;Bucharest, Romania&quot;,
-                    &quot;start&quot; : {
-                      &quot;metrics&quot; : &quot;metrics&quot;
+                    "name" : "Bucharest, Romania",
+                    "start" : {
+                      "metrics" : "metrics"
                     },
-                    &quot;end&quot; : {
-                      &quot;metrics&quot; : &quot;metrics&quot;
+                    "end" : {
+                      "metrics" : "metrics"
                     },
-                    &quot;id&quot; : &quot;3379&quot;,
-                    &quot;state&quot; : &quot;trigger&quot;,
-                    &quot;type&quot; : &quot;cea_agent&quot;
+                    "id" : "3379",
+                    "state" : "trigger",
+                    "type" : "cea_agent"
                   } ],
-                  &quot;id&quot; : &quot;e9c3bf02-a48c-4aa8-9e5f-898800d6f569&quot;,
-                  &quot;suppressed&quot; : false,
-                  &quot;state&quot; : &quot;trigger&quot;,
-                  &quot;alertState&quot; : &quot;trigger&quot;,
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                  "suppressed" : false,
+                  "state" : "trigger",
+                  "alertState" : "trigger",
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_alert(
+
             alert_id=alert_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_alert"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -147,8 +150,11 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_alert(
+
                 alert_id=alert_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -172,8 +178,11 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_alert(
+
                 alert_id=alert_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -197,8 +206,11 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_alert(
+
                 alert_id=alert_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -222,8 +234,11 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_alert(
+
                 alert_id=alert_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -247,8 +262,11 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_alert(
+
                 alert_id=alert_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -264,189 +282,194 @@ class TestAlertsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        state = thousandeyes_sdk.alerts.State()
         response_body_json = """
                 {
-                  &quot;alerts&quot; : [ {
-                    &quot;severity&quot; : &quot;MAJOR&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "alerts" : [ {
+                    "severity" : "MAJOR",
+                    "alertType" : "http-server",
+                    "endDate" : "2022-07-18T22:00:54Z",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       },
-                      &quot;test&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "test" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       },
-                      &quot;rule&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "rule" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       },
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;apiLinks&quot; : [ {
-                      &quot;key&quot; : &quot;&quot;
+                    "apiLinks" : [ {
+                      "key" : ""
                     }, {
-                      &quot;key&quot; : &quot;&quot;
+                      "key" : ""
                     } ],
-                    &quot;alertSeverity&quot; : &quot;major&quot;,
-                    &quot;dateEnd&quot; : &quot;2020-04-23 13:43:16&quot;,
-                    &quot;duration&quot; : 60,
-                    &quot;violationCount&quot; : 2,
-                    &quot;dateStart&quot; : &quot;2020-04-23 13:43:16&quot;,
-                    &quot;meta&quot; : {
-                      &quot;version&quot; : 1
+                    "alertSeverity" : "major",
+                    "dateEnd" : "2020-04-23 13:43:16",
+                    "duration" : 60,
+                    "violationCount" : 2,
+                    "dateStart" : "2020-04-23 13:43:16",
+                    "meta" : {
+                      "version" : 1
                     },
-                    &quot;id&quot; : &quot;e9c3bf02-a48c-4aa8-9e5f-898800d6f569&quot;,
-                    &quot;suppressed&quot; : false,
-                    &quot;alertId&quot; : &quot;e9c3bf02-a48c-4aa8-9e5f-898800d6f569&quot;,
-                    &quot;state&quot; : &quot;ACTIVE&quot;,
-                    &quot;ruleId&quot; : 127094,
-                    &quot;permalink&quot; : &quot;https://app.thousandeyes.com/alerts/list?__a&#x3D;75&amp;alertId&#x3D;2783&amp;agentId&#x3D;12&quot;,
-                    &quot;alertState&quot; : &quot;trigger&quot;,
-                    &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;alertRuleId&quot; : &quot;127094&quot;
+                    "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                    "suppressed" : false,
+                    "alertId" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                    "state" : "ACTIVE",
+                    "ruleId" : 127094,
+                    "permalink" : "https://app.thousandeyes.com/alerts/list?__a=75&alertId=2783&agentId=12",
+                    "alertState" : "trigger",
+                    "startDate" : "2022-07-17T22:00:54Z",
+                    "alertRuleId" : "127094"
                   }, {
-                    &quot;severity&quot; : &quot;MAJOR&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "severity" : "MAJOR",
+                    "alertType" : "http-server",
+                    "endDate" : "2022-07-18T22:00:54Z",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       },
-                      &quot;test&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "test" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       },
-                      &quot;rule&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "rule" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       },
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;apiLinks&quot; : [ {
-                      &quot;key&quot; : &quot;&quot;
+                    "apiLinks" : [ {
+                      "key" : ""
                     }, {
-                      &quot;key&quot; : &quot;&quot;
+                      "key" : ""
                     } ],
-                    &quot;alertSeverity&quot; : &quot;major&quot;,
-                    &quot;dateEnd&quot; : &quot;2020-04-23 13:43:16&quot;,
-                    &quot;duration&quot; : 60,
-                    &quot;violationCount&quot; : 2,
-                    &quot;dateStart&quot; : &quot;2020-04-23 13:43:16&quot;,
-                    &quot;meta&quot; : {
-                      &quot;version&quot; : 1
+                    "alertSeverity" : "major",
+                    "dateEnd" : "2020-04-23 13:43:16",
+                    "duration" : 60,
+                    "violationCount" : 2,
+                    "dateStart" : "2020-04-23 13:43:16",
+                    "meta" : {
+                      "version" : 1
                     },
-                    &quot;id&quot; : &quot;e9c3bf02-a48c-4aa8-9e5f-898800d6f569&quot;,
-                    &quot;suppressed&quot; : false,
-                    &quot;alertId&quot; : &quot;e9c3bf02-a48c-4aa8-9e5f-898800d6f569&quot;,
-                    &quot;state&quot; : &quot;ACTIVE&quot;,
-                    &quot;ruleId&quot; : 127094,
-                    &quot;permalink&quot; : &quot;https://app.thousandeyes.com/alerts/list?__a&#x3D;75&amp;alertId&#x3D;2783&amp;agentId&#x3D;12&quot;,
-                    &quot;alertState&quot; : &quot;trigger&quot;,
-                    &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;alertRuleId&quot; : &quot;127094&quot;
+                    "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                    "suppressed" : false,
+                    "alertId" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                    "state" : "ACTIVE",
+                    "ruleId" : 127094,
+                    "permalink" : "https://app.thousandeyes.com/alerts/list?__a=75&alertId=2783&agentId=12",
+                    "alertState" : "trigger",
+                    "startDate" : "2022-07-17T22:00:54Z",
+                    "alertRuleId" : "127094"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_alerts(
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             max=max,
+
             cursor=cursor,
-            state=state,
+
             _headers=self.te_headers("get_alerts"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -460,7 +483,6 @@ class TestAlertsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        state = thousandeyes_sdk.alerts.State()
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -472,13 +494,19 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_alerts(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
-                state=state,
+
                 _headers=self.te_headers("get_alerts", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -492,7 +520,6 @@ class TestAlertsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        state = thousandeyes_sdk.alerts.State()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -507,13 +534,19 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_alerts(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
-                state=state,
+
                 _headers=self.te_headers("get_alerts", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -527,7 +560,6 @@ class TestAlertsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        state = thousandeyes_sdk.alerts.State()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -542,13 +574,19 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_alerts(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
-                state=state,
+
                 _headers=self.te_headers("get_alerts", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -562,7 +600,6 @@ class TestAlertsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        state = thousandeyes_sdk.alerts.State()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -577,13 +614,19 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_alerts(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
-                state=state,
+
                 _headers=self.te_headers("get_alerts", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -597,7 +640,6 @@ class TestAlertsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         max = 5
         cursor = 'cursor_example'
-        state = thousandeyes_sdk.alerts.State()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -612,13 +654,19 @@ class TestAlertsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_alerts(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
-                state=state,
+
                 _headers=self.te_headers("get_alerts", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

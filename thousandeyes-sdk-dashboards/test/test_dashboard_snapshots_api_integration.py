@@ -48,25 +48,28 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;snapshotId&quot; : &quot;d28bb71f-5a47-4783-8f12-d4b115e61b0c&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "snapshotId" : "d28bb71f-5a47-4783-8f12-d4b115e61b0c",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_dashboard_snapshot(
+
             generate_dashboard_snapshot_request=generate_dashboard_snapshot_request,
+
             aid=aid,
+
             _headers=self.te_headers("create_dashboard_snapshot"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -112,8 +115,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_dashboard_snapshot(
+
                 generate_dashboard_snapshot_request=generate_dashboard_snapshot_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_snapshot", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -147,8 +153,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_dashboard_snapshot(
+
                 generate_dashboard_snapshot_request=generate_dashboard_snapshot_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_snapshot", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -185,8 +194,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_dashboard_snapshot(
+
                 generate_dashboard_snapshot_request=generate_dashboard_snapshot_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_snapshot", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -223,8 +235,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_dashboard_snapshot(
+
                 generate_dashboard_snapshot_request=generate_dashboard_snapshot_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_snapshot", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -261,8 +276,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_dashboard_snapshot(
+
                 generate_dashboard_snapshot_request=generate_dashboard_snapshot_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_snapshot", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -275,8 +293,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
         snapshot_id = 'd28bb71f-5a47-4783-8f12-d4b115e61b0c'
         aid = '1234'
         response = self.api.delete_dashboard_snapshot_with_http_info(
+
             snapshot_id=snapshot_id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_dashboard_snapshot"),
         )
         self.assertEqual(204, response.status_code)
@@ -310,8 +331,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_snapshot", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -332,8 +356,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_snapshot", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -357,8 +384,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_snapshot", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -382,8 +412,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_snapshot", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -407,8 +440,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_snapshot", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -432,8 +468,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_snapshot", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -447,275 +486,278 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;snapshotId&quot; : &quot;d28bb71f-5a47-4783-8f12-d4b115e61b0c&quot;,
-                  &quot;_links&quot; : {
-                    &quot;appLink&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "snapshotId" : "d28bb71f-5a47-4783-8f12-d4b115e61b0c",
+                  "_links" : {
+                    "appLink" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;apiLinks&quot; : [ {
-                    &quot;key&quot; : &quot;&quot;
+                  "apiLinks" : [ {
+                    "key" : ""
                   }, {
-                    &quot;key&quot; : &quot;&quot;
+                    "key" : ""
                   } ],
-                  &quot;snapshotExpirationDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                  &quot;isScheduled&quot; : true,
-                  &quot;widgets&quot; : [ {
-                    &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                    &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "snapshotExpirationDate" : "2023-05-16T10:14:28Z",
+                  "isScheduled" : true,
+                  "widgets" : [ {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;visualMode&quot; : &quot;Full&quot;,
-                    &quot;filters&quot; : {
-                      &quot;TEST&quot; : [ 5187, 5227 ],
-                      &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                     },
-                    &quot;title&quot; : &quot;Widget Title&quot;,
-                    &quot;type&quot; : &quot;Agent Status&quot;,
-                    &quot;metricGroup&quot; : &quot;BGP&quot;,
-                    &quot;measure&quot; : {
-                      &quot;percentileValue&quot; : 95,
-                      &quot;type&quot; : &quot;MEAN&quot;
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
                     },
-                    &quot;apiLink&quot; : &quot;apiLink&quot;,
-                    &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                    &quot;isEmbedded&quot; : true,
-                    &quot;id&quot; : &quot;1234&quot;,
-                    &quot;fixedTimespan&quot; : {
-                      &quot;unit&quot; : &quot;Days&quot;,
-                      &quot;value&quot; : 10
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
                     },
-                    &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                    &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
                   }, {
-                    &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                    &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;visualMode&quot; : &quot;Full&quot;,
-                    &quot;filters&quot; : {
-                      &quot;TEST&quot; : [ 5187, 5227 ],
-                      &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                     },
-                    &quot;title&quot; : &quot;Widget Title&quot;,
-                    &quot;type&quot; : &quot;Agent Status&quot;,
-                    &quot;metricGroup&quot; : &quot;BGP&quot;,
-                    &quot;measure&quot; : {
-                      &quot;percentileValue&quot; : 95,
-                      &quot;type&quot; : &quot;MEAN&quot;
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
                     },
-                    &quot;apiLink&quot; : &quot;apiLink&quot;,
-                    &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                    &quot;isEmbedded&quot; : true,
-                    &quot;id&quot; : &quot;1234&quot;,
-                    &quot;fixedTimespan&quot; : {
-                      &quot;unit&quot; : &quot;Days&quot;,
-                      &quot;value&quot; : 10
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
                     },
-                    &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                    &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
                   } ],
-                  &quot;accountId&quot; : 1234,
-                  &quot;createdDate&quot; : &quot;2023-05-16 10:14:28&quot;,
-                  &quot;snapshotName&quot; : &quot;HTTP Server Dashboard Snapshot&quot;,
-                  &quot;timeSpan&quot; : {
-                    &quot;duration&quot; : 60,
-                    &quot;start&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                    &quot;startDate&quot; : &quot;2023-05-16 10:14:28&quot;
+                  "accountId" : 1234,
+                  "createdDate" : "2023-05-16 10:14:28",
+                  "snapshotName" : "HTTP Server Dashboard Snapshot",
+                  "timeSpan" : {
+                    "duration" : 60,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "startDate" : "2023-05-16 10:14:28"
                   },
-                  &quot;permalink&quot; : &quot;https://app.thousandeyes.com/dashboard/?snapshotId&#x3D;d28bb71f-5a47-4783-8f12-d4b115e61b0c&quot;,
-                  &quot;aid&quot; : &quot;1234&quot;,
-                  &quot;snapshotCreatedDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                  &quot;isShared&quot; : true,
-                  &quot;dashboard&quot; : {
-                    &quot;isMigratedReport&quot; : false,
-                    &quot;dashboardCreatedBy&quot; : &quot;1&quot;,
-                    &quot;_links&quot; : {
-                      &quot;snapshots&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "permalink" : "https://app.thousandeyes.com/dashboard/?snapshotId=d28bb71f-5a47-4783-8f12-d4b115e61b0c",
+                  "aid" : "1234",
+                  "snapshotCreatedDate" : "2023-05-16T10:14:28Z",
+                  "isShared" : true,
+                  "dashboard" : {
+                    "isMigratedReport" : false,
+                    "dashboardCreatedBy" : "1",
+                    "_links" : {
+                      "snapshots" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       },
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;isDefaultForUser&quot; : true,
-                    &quot;description&quot; : &quot;HTTP Server Widgets&quot;,
-                    &quot;isPrivate&quot; : true,
-                    &quot;title&quot; : &quot;HTTP Server Widgets&quot;,
-                    &quot;isBuiltIn&quot; : true,
-                    &quot;widgets&quot; : [ {
-                      &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                      &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                    "isDefaultForUser" : true,
+                    "description" : "HTTP Server Widgets",
+                    "isPrivate" : true,
+                    "title" : "HTTP Server Widgets",
+                    "isBuiltIn" : true,
+                    "widgets" : [ {
+                      "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                      "shouldExcludeAlertSuppressionWindows" : true,
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;visualMode&quot; : &quot;Full&quot;,
-                      &quot;filters&quot; : {
-                        &quot;TEST&quot; : [ 5187, 5227 ],
-                        &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                      "visualMode" : "Full",
+                      "filters" : {
+                        "TEST" : [ 5187, 5227 ],
+                        "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                       },
-                      &quot;title&quot; : &quot;Widget Title&quot;,
-                      &quot;type&quot; : &quot;Agent Status&quot;,
-                      &quot;metricGroup&quot; : &quot;BGP&quot;,
-                      &quot;measure&quot; : {
-                        &quot;percentileValue&quot; : 95,
-                        &quot;type&quot; : &quot;MEAN&quot;
+                      "title" : "Widget Title",
+                      "type" : "Agent Status",
+                      "metricGroup" : "BGP",
+                      "measure" : {
+                        "percentileValue" : 95,
+                        "type" : "MEAN"
                       },
-                      &quot;apiLink&quot; : &quot;apiLink&quot;,
-                      &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                      &quot;isEmbedded&quot; : true,
-                      &quot;id&quot; : &quot;1234&quot;,
-                      &quot;fixedTimespan&quot; : {
-                        &quot;unit&quot; : &quot;Days&quot;,
-                        &quot;value&quot; : 10
+                      "apiLink" : "apiLink",
+                      "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                      "isEmbedded" : true,
+                      "id" : "1234",
+                      "fixedTimespan" : {
+                        "unit" : "Days",
+                        "value" : 10
                       },
-                      &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                      &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                      "dataSource" : "ENDPOINT_AGENTS",
+                      "direction" : "FROM_TARGET"
                     }, {
-                      &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                      &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                      "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                      "shouldExcludeAlertSuppressionWindows" : true,
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;visualMode&quot; : &quot;Full&quot;,
-                      &quot;filters&quot; : {
-                        &quot;TEST&quot; : [ 5187, 5227 ],
-                        &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                      "visualMode" : "Full",
+                      "filters" : {
+                        "TEST" : [ 5187, 5227 ],
+                        "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                       },
-                      &quot;title&quot; : &quot;Widget Title&quot;,
-                      &quot;type&quot; : &quot;Agent Status&quot;,
-                      &quot;metricGroup&quot; : &quot;BGP&quot;,
-                      &quot;measure&quot; : {
-                        &quot;percentileValue&quot; : 95,
-                        &quot;type&quot; : &quot;MEAN&quot;
+                      "title" : "Widget Title",
+                      "type" : "Agent Status",
+                      "metricGroup" : "BGP",
+                      "measure" : {
+                        "percentileValue" : 95,
+                        "type" : "MEAN"
                       },
-                      &quot;apiLink&quot; : &quot;apiLink&quot;,
-                      &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                      &quot;isEmbedded&quot; : true,
-                      &quot;id&quot; : &quot;1234&quot;,
-                      &quot;fixedTimespan&quot; : {
-                        &quot;unit&quot; : &quot;Days&quot;,
-                        &quot;value&quot; : 10
+                      "apiLink" : "apiLink",
+                      "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                      "isEmbedded" : true,
+                      "id" : "1234",
+                      "fixedTimespan" : {
+                        "unit" : "Days",
+                        "value" : 10
                       },
-                      &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                      &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                      "dataSource" : "ENDPOINT_AGENTS",
+                      "direction" : "FROM_TARGET"
                     } ],
-                    &quot;globalFilterId&quot; : &quot;65babd9bb90bf55b17c96c8d&quot;,
-                    &quot;modifiedBy&quot; : 1,
-                    &quot;dashboardModifiedBy&quot; : &quot;1&quot;,
-                    &quot;migratedReport&quot; : false,
-                    &quot;isDefaultForAccount&quot; : false,
-                    &quot;defaultTimespan&quot; : {
-                      &quot;duration&quot; : 7200,
-                      &quot;timespanDuration&quot; : 7200,
-                      &quot;start&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                      &quot;end&quot; : &quot;2023-05-16T11:14:28Z&quot;,
-                      &quot;timespanStart&quot; : &quot;2023-05-16 10:14:28&quot;,
-                      &quot;timespanEnd&quot; : &quot;2023-05-16 11:14:28&quot;
+                    "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                    "modifiedBy" : 1,
+                    "dashboardModifiedBy" : "1",
+                    "migratedReport" : false,
+                    "isDefaultForAccount" : false,
+                    "defaultTimespan" : {
+                      "duration" : 7200,
+                      "timespanDuration" : 7200,
+                      "start" : "2023-05-16T10:14:28Z",
+                      "end" : "2023-05-16T11:14:28Z",
+                      "timespanStart" : "2023-05-16 10:14:28",
+                      "timespanEnd" : "2023-05-16 11:14:28"
                     },
-                    &quot;layout&quot; : {
-                      &quot;layoutId&quot; : &quot;grid-layout-1&quot;,
-                      &quot;type&quot; : &quot;grid&quot;,
-                      &quot;details&quot; : {
-                        &quot;widgetPositioning&quot; : [ {
-                          &quot;x&quot; : 0,
-                          &quot;y&quot; : 0,
-                          &quot;w&quot; : 9,
-                          &quot;h&quot; : 5,
-                          &quot;id&quot; : &quot;widgetId-71lbb&quot;
+                    "layout" : {
+                      "layoutId" : "grid-layout-1",
+                      "type" : "grid",
+                      "details" : {
+                        "widgetPositioning" : [ {
+                          "x" : 0,
+                          "y" : 0,
+                          "w" : 9,
+                          "h" : 5,
+                          "id" : "widgetId-71lbb"
                         } ]
                       }
                     },
-                    &quot;accountId&quot; : 1234,
-                    &quot;apiLink&quot; : [ {
-                      &quot;key&quot; : &quot;&quot;
+                    "accountId" : 1234,
+                    "apiLink" : [ {
+                      "key" : ""
                     }, {
-                      &quot;key&quot; : &quot;&quot;
+                      "key" : ""
                     } ],
-                    &quot;dashboardId&quot; : &quot;5e1f7a99143ae6004fdc3bb4&quot;,
-                    &quot;createdBy&quot; : 1,
-                    &quot;globalOverride&quot; : true,
-                    &quot;modifiedDate&quot; : &quot;2023-05-16 10:14:28&quot;,
-                    &quot;isGlobalOverride&quot; : true,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;dashboardModifiedDate&quot; : &quot;2023-05-16T10:14:28Z&quot;
+                    "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
+                    "createdBy" : 1,
+                    "globalOverride" : true,
+                    "modifiedDate" : "2023-05-16 10:14:28",
+                    "isGlobalOverride" : true,
+                    "aid" : "1234",
+                    "dashboardModifiedDate" : "2023-05-16T10:14:28Z"
                   },
-                  &quot;expirationDate&quot; : &quot;2023-05-16 10:14:28&quot;
+                  "expirationDate" : "2023-05-16 10:14:28"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_dashboard_snapshot(
+
             snapshot_id=snapshot_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_dashboard_snapshot"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -748,8 +790,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -770,8 +815,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -795,8 +843,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -820,8 +871,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -845,8 +899,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -870,8 +927,11 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_dashboard_snapshot(
+
                 snapshot_id=snapshot_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -886,411 +946,415 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;groupLabels&quot; : [ {
-                    &quot;groupProperty&quot; : &quot;AGENT&quot;,
-                    &quot;groupLabels&quot; : [ {
-                      &quot;groupId&quot; : &quot;2565&quot;,
-                      &quot;groupLabel&quot; : &quot;San Francisco, CA&quot;
+                  "groupLabels" : [ {
+                    "groupProperty" : "AGENT",
+                    "groupLabels" : [ {
+                      "groupId" : "2565",
+                      "groupLabel" : "San Francisco, CA"
                     }, {
-                      &quot;groupId&quot; : &quot;2565&quot;,
-                      &quot;groupLabel&quot; : &quot;San Francisco, CA&quot;
+                      "groupId" : "2565",
+                      "groupLabel" : "San Francisco, CA"
                     } ]
                   }, {
-                    &quot;groupProperty&quot; : &quot;AGENT&quot;,
-                    &quot;groupLabels&quot; : [ {
-                      &quot;groupId&quot; : &quot;2565&quot;,
-                      &quot;groupLabel&quot; : &quot;San Francisco, CA&quot;
+                    "groupProperty" : "AGENT",
+                    "groupLabels" : [ {
+                      "groupId" : "2565",
+                      "groupLabel" : "San Francisco, CA"
                     }, {
-                      &quot;groupId&quot; : &quot;2565&quot;,
-                      &quot;groupLabel&quot; : &quot;San Francisco, CA&quot;
+                      "groupId" : "2565",
+                      "groupLabel" : "San Francisco, CA"
                     } ]
                   } ],
-                  &quot;data&quot; : {
-                    &quot;alerts&quot; : [ {
-                      &quot;alertType&quot; : &quot;network-end-to-end-server&quot;,
-                      &quot;durationInSeconds&quot; : 25,
-                      &quot;alertSource&quot; : &quot;Http Test&quot;,
-                      &quot;active&quot; : true,
-                      &quot;testId&quot; : &quot;56512&quot;,
-                      &quot;startTime&quot; : &quot;2023-06-02T08:54:00Z&quot;,
-                      &quot;alertId&quot; : &quot;2004945&quot;,
-                      &quot;ruleId&quot; : &quot;281724&quot;,
-                      &quot;alertRule&quot; : &quot;Http Test Rule&quot;
+                  "data" : {
+                    "alerts" : [ {
+                      "alertType" : "network-end-to-end-server",
+                      "durationInSeconds" : 25,
+                      "alertSource" : "Http Test",
+                      "active" : true,
+                      "testId" : "56512",
+                      "startTime" : "2023-06-02T08:54:00Z",
+                      "alertId" : "2004945",
+                      "ruleId" : "281724",
+                      "alertRule" : "Http Test Rule"
                     }, {
-                      &quot;alertType&quot; : &quot;network-end-to-end-server&quot;,
-                      &quot;durationInSeconds&quot; : 25,
-                      &quot;alertSource&quot; : &quot;Http Test&quot;,
-                      &quot;active&quot; : true,
-                      &quot;testId&quot; : &quot;56512&quot;,
-                      &quot;startTime&quot; : &quot;2023-06-02T08:54:00Z&quot;,
-                      &quot;alertId&quot; : &quot;2004945&quot;,
-                      &quot;ruleId&quot; : &quot;281724&quot;,
-                      &quot;alertRule&quot; : &quot;Http Test Rule&quot;
+                      "alertType" : "network-end-to-end-server",
+                      "durationInSeconds" : 25,
+                      "alertSource" : "Http Test",
+                      "active" : true,
+                      "testId" : "56512",
+                      "startTime" : "2023-06-02T08:54:00Z",
+                      "alertId" : "2004945",
+                      "ruleId" : "281724",
+                      "alertRule" : "Http Test Rule"
                     } ],
-                    &quot;summary&quot; : {
-                      &quot;offline&quot; : 2,
-                      &quot;online&quot; : 10,
-                      &quot;disabled&quot; : 3
+                    "summary" : {
+                      "offline" : 2,
+                      "online" : 10,
+                      "disabled" : 3
                     },
-                    &quot;totalAlerts&quot; : 500,
-                    &quot;cards&quot; : [ {
-                      &quot;numberOfDataPoints&quot; : 24192,
-                      &quot;cardName&quot; : &quot;Card Name&quot;,
-                      &quot;endDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                    "totalAlerts" : 500,
+                    "cards" : [ {
+                      "numberOfDataPoints" : 24192,
+                      "cardName" : "Card Name",
+                      "endDate" : "2023-05-16T10:14:28Z",
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;cardId&quot; : &quot;lrxxr&quot;,
-                      &quot;alertSuppressionWindows&quot; : [ {
-                        &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                        &quot;repeatUnit&quot; : &quot;week&quot;,
-                        &quot;durationInSeconds&quot; : 7200,
-                        &quot;repeat&quot; : &quot;custom&quot;,
-                        &quot;name&quot; : &quot;Test dashboards&quot;,
-                        &quot;repeatEvery&quot; : 5,
-                        &quot;id&quot; : &quot;281474976710662&quot;,
-                        &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                      "cardId" : "lrxxr",
+                      "alertSuppressionWindows" : [ {
+                        "testIds" : [ "281474976710661" ],
+                        "repeatUnit" : "week",
+                        "durationInSeconds" : 7200,
+                        "repeat" : "custom",
+                        "name" : "Test dashboards",
+                        "repeatEvery" : 5,
+                        "id" : "281474976710662",
+                        "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       }, {
-                        &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                        &quot;repeatUnit&quot; : &quot;week&quot;,
-                        &quot;durationInSeconds&quot; : 7200,
-                        &quot;repeat&quot; : &quot;custom&quot;,
-                        &quot;name&quot; : &quot;Test dashboards&quot;,
-                        &quot;repeatEvery&quot; : 5,
-                        &quot;id&quot; : &quot;281474976710662&quot;,
-                        &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                        "testIds" : [ "281474976710661" ],
+                        "repeatUnit" : "week",
+                        "durationInSeconds" : 7200,
+                        "repeat" : "custom",
+                        "name" : "Test dashboards",
+                        "repeatEvery" : 5,
+                        "id" : "281474976710662",
+                        "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       } ],
-                      &quot;binSize&quot; : 3600,
-                      &quot;previousValue&quot; : 500,
-                      &quot;value&quot; : 100,
-                      &quot;startDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                      &quot;timestamp&quot; : 1567620000,
-                      &quot;status&quot; : &quot;No data&quot;
+                      "binSize" : 3600,
+                      "previousValue" : 500,
+                      "value" : 100,
+                      "startDate" : "2023-05-16T10:14:28Z",
+                      "timestamp" : 1567620000,
+                      "status" : "No data"
                     }, {
-                      &quot;numberOfDataPoints&quot; : 24192,
-                      &quot;cardName&quot; : &quot;Card Name&quot;,
-                      &quot;endDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                      "numberOfDataPoints" : 24192,
+                      "cardName" : "Card Name",
+                      "endDate" : "2023-05-16T10:14:28Z",
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;cardId&quot; : &quot;lrxxr&quot;,
-                      &quot;alertSuppressionWindows&quot; : [ {
-                        &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                        &quot;repeatUnit&quot; : &quot;week&quot;,
-                        &quot;durationInSeconds&quot; : 7200,
-                        &quot;repeat&quot; : &quot;custom&quot;,
-                        &quot;name&quot; : &quot;Test dashboards&quot;,
-                        &quot;repeatEvery&quot; : 5,
-                        &quot;id&quot; : &quot;281474976710662&quot;,
-                        &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                      "cardId" : "lrxxr",
+                      "alertSuppressionWindows" : [ {
+                        "testIds" : [ "281474976710661" ],
+                        "repeatUnit" : "week",
+                        "durationInSeconds" : 7200,
+                        "repeat" : "custom",
+                        "name" : "Test dashboards",
+                        "repeatEvery" : 5,
+                        "id" : "281474976710662",
+                        "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       }, {
-                        &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                        &quot;repeatUnit&quot; : &quot;week&quot;,
-                        &quot;durationInSeconds&quot; : 7200,
-                        &quot;repeat&quot; : &quot;custom&quot;,
-                        &quot;name&quot; : &quot;Test dashboards&quot;,
-                        &quot;repeatEvery&quot; : 5,
-                        &quot;id&quot; : &quot;281474976710662&quot;,
-                        &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                        "testIds" : [ "281474976710661" ],
+                        "repeatUnit" : "week",
+                        "durationInSeconds" : 7200,
+                        "repeat" : "custom",
+                        "name" : "Test dashboards",
+                        "repeatEvery" : 5,
+                        "id" : "281474976710662",
+                        "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       } ],
-                      &quot;binSize&quot; : 3600,
-                      &quot;previousValue&quot; : 500,
-                      &quot;value&quot; : 100,
-                      &quot;startDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                      &quot;timestamp&quot; : 1567620000,
-                      &quot;status&quot; : &quot;No data&quot;
+                      "binSize" : 3600,
+                      "previousValue" : 500,
+                      "value" : 100,
+                      "startDate" : "2023-05-16T10:14:28Z",
+                      "timestamp" : 1567620000,
+                      "status" : "No data"
                     } ],
-                    &quot;tests&quot; : [ {
-                      &quot;graphlets&quot; : [ {
-                        &quot;metric&quot; : &quot;Availability&quot;,
-                        &quot;testId&quot; : &quot;68257&quot;,
-                        &quot;points&quot; : [ {
-                          &quot;x&quot; : 1580403900,
-                          &quot;y&quot; : 128.249
+                    "tests" : [ {
+                      "graphlets" : [ {
+                        "metric" : "Availability",
+                        "testId" : "68257",
+                        "points" : [ {
+                          "x" : 1580403900,
+                          "y" : 128.249
                         }, {
-                          &quot;x&quot; : 1580403900,
-                          &quot;y&quot; : 128.249
+                          "x" : 1580403900,
+                          "y" : 128.249
                         } ]
                       }, {
-                        &quot;metric&quot; : &quot;Availability&quot;,
-                        &quot;testId&quot; : &quot;68257&quot;,
-                        &quot;points&quot; : [ {
-                          &quot;x&quot; : 1580403900,
-                          &quot;y&quot; : 128.249
+                        "metric" : "Availability",
+                        "testId" : "68257",
+                        "points" : [ {
+                          "x" : 1580403900,
+                          "y" : 128.249
                         }, {
-                          &quot;x&quot; : 1580403900,
-                          &quot;y&quot; : 128.249
+                          "x" : 1580403900,
+                          "y" : 128.249
                         } ]
                       } ],
-                      &quot;alertCount&quot; : 398,
-                      &quot;testType&quot; : &quot;Web - HTTP Server&quot;,
-                      &quot;testId&quot; : &quot;68256&quot;,
-                      &quot;isShared&quot; : true,
-                      &quot;testName&quot; : &quot;Http Test Name&quot;,
-                      &quot;target&quot; : &quot;www.google.com&quot;
+                      "alertCount" : 398,
+                      "testType" : "Web - HTTP Server",
+                      "testId" : "68256",
+                      "isShared" : true,
+                      "testName" : "Http Test Name",
+                      "target" : "www.google.com"
                     }, {
-                      &quot;graphlets&quot; : [ {
-                        &quot;metric&quot; : &quot;Availability&quot;,
-                        &quot;testId&quot; : &quot;68257&quot;,
-                        &quot;points&quot; : [ {
-                          &quot;x&quot; : 1580403900,
-                          &quot;y&quot; : 128.249
+                      "graphlets" : [ {
+                        "metric" : "Availability",
+                        "testId" : "68257",
+                        "points" : [ {
+                          "x" : 1580403900,
+                          "y" : 128.249
                         }, {
-                          &quot;x&quot; : 1580403900,
-                          &quot;y&quot; : 128.249
+                          "x" : 1580403900,
+                          "y" : 128.249
                         } ]
                       }, {
-                        &quot;metric&quot; : &quot;Availability&quot;,
-                        &quot;testId&quot; : &quot;68257&quot;,
-                        &quot;points&quot; : [ {
-                          &quot;x&quot; : 1580403900,
-                          &quot;y&quot; : 128.249
+                        "metric" : "Availability",
+                        "testId" : "68257",
+                        "points" : [ {
+                          "x" : 1580403900,
+                          "y" : 128.249
                         }, {
-                          &quot;x&quot; : 1580403900,
-                          &quot;y&quot; : 128.249
+                          "x" : 1580403900,
+                          "y" : 128.249
                         } ]
                       } ],
-                      &quot;alertCount&quot; : 398,
-                      &quot;testType&quot; : &quot;Web - HTTP Server&quot;,
-                      &quot;testId&quot; : &quot;68256&quot;,
-                      &quot;isShared&quot; : true,
-                      &quot;testName&quot; : &quot;Http Test Name&quot;,
-                      &quot;target&quot; : &quot;www.google.com&quot;
+                      "alertCount" : 398,
+                      "testType" : "Web - HTTP Server",
+                      "testId" : "68256",
+                      "isShared" : true,
+                      "testName" : "Http Test Name",
+                      "target" : "www.google.com"
                     } ],
-                    &quot;columns&quot; : [ {
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                    "columns" : [ {
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;columnId&quot; : &quot;938to&quot;,
-                      &quot;alertSuppressionWindows&quot; : [ {
-                        &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                        &quot;repeatUnit&quot; : &quot;week&quot;,
-                        &quot;durationInSeconds&quot; : 7200,
-                        &quot;repeat&quot; : &quot;custom&quot;,
-                        &quot;name&quot; : &quot;Test dashboards&quot;,
-                        &quot;repeatEvery&quot; : 5,
-                        &quot;id&quot; : &quot;281474976710662&quot;,
-                        &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                      "columnId" : "938to",
+                      "alertSuppressionWindows" : [ {
+                        "testIds" : [ "281474976710661" ],
+                        "repeatUnit" : "week",
+                        "durationInSeconds" : 7200,
+                        "repeat" : "custom",
+                        "name" : "Test dashboards",
+                        "repeatEvery" : 5,
+                        "id" : "281474976710662",
+                        "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       }, {
-                        &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                        &quot;repeatUnit&quot; : &quot;week&quot;,
-                        &quot;durationInSeconds&quot; : 7200,
-                        &quot;repeat&quot; : &quot;custom&quot;,
-                        &quot;name&quot; : &quot;Test dashboards&quot;,
-                        &quot;repeatEvery&quot; : 5,
-                        &quot;id&quot; : &quot;281474976710662&quot;,
-                        &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                        "testIds" : [ "281474976710661" ],
+                        "repeatUnit" : "week",
+                        "durationInSeconds" : 7200,
+                        "repeat" : "custom",
+                        "name" : "Test dashboards",
+                        "repeatEvery" : 5,
+                        "id" : "281474976710662",
+                        "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       } ],
-                      &quot;binSize&quot; : 3600,
-                      &quot;points&quot; : [ {
-                        &quot;numberOfDataPoints&quot; : 23304,
-                        &quot;groups&quot; : [ {
-                          &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                          &quot;groupValue&quot; : &quot;US&quot;
+                      "binSize" : 3600,
+                      "points" : [ {
+                        "numberOfDataPoints" : 23304,
+                        "groups" : [ {
+                          "groupProperty" : "COUNTRY",
+                          "groupValue" : "US"
                         }, {
-                          &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                          &quot;groupValue&quot; : &quot;US&quot;
+                          "groupProperty" : "COUNTRY",
+                          "groupValue" : "US"
                         } ],
-                        &quot;value&quot; : 100,
-                        &quot;timestamp&quot; : 1567620000
+                        "value" : 100,
+                        "timestamp" : 1567620000
                       }, {
-                        &quot;numberOfDataPoints&quot; : 23304,
-                        &quot;groups&quot; : [ {
-                          &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                          &quot;groupValue&quot; : &quot;US&quot;
+                        "numberOfDataPoints" : 23304,
+                        "groups" : [ {
+                          "groupProperty" : "COUNTRY",
+                          "groupValue" : "US"
                         }, {
-                          &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                          &quot;groupValue&quot; : &quot;US&quot;
+                          "groupProperty" : "COUNTRY",
+                          "groupValue" : "US"
                         } ],
-                        &quot;value&quot; : 100,
-                        &quot;timestamp&quot; : 1567620000
+                        "value" : 100,
+                        "timestamp" : 1567620000
                       } ],
-                      &quot;status&quot; : &quot;No data&quot;
+                      "status" : "No data"
                     }, {
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;columnId&quot; : &quot;938to&quot;,
-                      &quot;alertSuppressionWindows&quot; : [ {
-                        &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                        &quot;repeatUnit&quot; : &quot;week&quot;,
-                        &quot;durationInSeconds&quot; : 7200,
-                        &quot;repeat&quot; : &quot;custom&quot;,
-                        &quot;name&quot; : &quot;Test dashboards&quot;,
-                        &quot;repeatEvery&quot; : 5,
-                        &quot;id&quot; : &quot;281474976710662&quot;,
-                        &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                      "columnId" : "938to",
+                      "alertSuppressionWindows" : [ {
+                        "testIds" : [ "281474976710661" ],
+                        "repeatUnit" : "week",
+                        "durationInSeconds" : 7200,
+                        "repeat" : "custom",
+                        "name" : "Test dashboards",
+                        "repeatEvery" : 5,
+                        "id" : "281474976710662",
+                        "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       }, {
-                        &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                        &quot;repeatUnit&quot; : &quot;week&quot;,
-                        &quot;durationInSeconds&quot; : 7200,
-                        &quot;repeat&quot; : &quot;custom&quot;,
-                        &quot;name&quot; : &quot;Test dashboards&quot;,
-                        &quot;repeatEvery&quot; : 5,
-                        &quot;id&quot; : &quot;281474976710662&quot;,
-                        &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                        "testIds" : [ "281474976710661" ],
+                        "repeatUnit" : "week",
+                        "durationInSeconds" : 7200,
+                        "repeat" : "custom",
+                        "name" : "Test dashboards",
+                        "repeatEvery" : 5,
+                        "id" : "281474976710662",
+                        "startTimes" : [ "2023-05-16T10:14:28Z" ]
                       } ],
-                      &quot;binSize&quot; : 3600,
-                      &quot;points&quot; : [ {
-                        &quot;numberOfDataPoints&quot; : 23304,
-                        &quot;groups&quot; : [ {
-                          &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                          &quot;groupValue&quot; : &quot;US&quot;
+                      "binSize" : 3600,
+                      "points" : [ {
+                        "numberOfDataPoints" : 23304,
+                        "groups" : [ {
+                          "groupProperty" : "COUNTRY",
+                          "groupValue" : "US"
                         }, {
-                          &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                          &quot;groupValue&quot; : &quot;US&quot;
+                          "groupProperty" : "COUNTRY",
+                          "groupValue" : "US"
                         } ],
-                        &quot;value&quot; : 100,
-                        &quot;timestamp&quot; : 1567620000
+                        "value" : 100,
+                        "timestamp" : 1567620000
                       }, {
-                        &quot;numberOfDataPoints&quot; : 23304,
-                        &quot;groups&quot; : [ {
-                          &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                          &quot;groupValue&quot; : &quot;US&quot;
+                        "numberOfDataPoints" : 23304,
+                        "groups" : [ {
+                          "groupProperty" : "COUNTRY",
+                          "groupValue" : "US"
                         }, {
-                          &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                          &quot;groupValue&quot; : &quot;US&quot;
+                          "groupProperty" : "COUNTRY",
+                          "groupValue" : "US"
                         } ],
-                        &quot;value&quot; : 100,
-                        &quot;timestamp&quot; : 1567620000
+                        "value" : 100,
+                        "timestamp" : 1567620000
                       } ],
-                      &quot;status&quot; : &quot;No data&quot;
+                      "status" : "No data"
                     } ],
-                    &quot;alertSuppressionWindows&quot; : [ {
-                      &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                      &quot;repeatUnit&quot; : &quot;week&quot;,
-                      &quot;durationInSeconds&quot; : 7200,
-                      &quot;repeat&quot; : &quot;custom&quot;,
-                      &quot;name&quot; : &quot;Test dashboards&quot;,
-                      &quot;repeatEvery&quot; : 5,
-                      &quot;id&quot; : &quot;281474976710662&quot;,
-                      &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                    "alertSuppressionWindows" : [ {
+                      "testIds" : [ "281474976710661" ],
+                      "repeatUnit" : "week",
+                      "durationInSeconds" : 7200,
+                      "repeat" : "custom",
+                      "name" : "Test dashboards",
+                      "repeatEvery" : 5,
+                      "id" : "281474976710662",
+                      "startTimes" : [ "2023-05-16T10:14:28Z" ]
                     }, {
-                      &quot;testIds&quot; : [ &quot;281474976710661&quot; ],
-                      &quot;repeatUnit&quot; : &quot;week&quot;,
-                      &quot;durationInSeconds&quot; : 7200,
-                      &quot;repeat&quot; : &quot;custom&quot;,
-                      &quot;name&quot; : &quot;Test dashboards&quot;,
-                      &quot;repeatEvery&quot; : 5,
-                      &quot;id&quot; : &quot;281474976710662&quot;,
-                      &quot;startTimes&quot; : [ &quot;2023-05-16T10:14:28Z&quot; ]
+                      "testIds" : [ "281474976710661" ],
+                      "repeatUnit" : "week",
+                      "durationInSeconds" : 7200,
+                      "repeat" : "custom",
+                      "name" : "Test dashboards",
+                      "repeatEvery" : 5,
+                      "id" : "281474976710662",
+                      "startTimes" : [ "2023-05-16T10:14:28Z" ]
                     } ],
-                    &quot;activeAlerts&quot; : 483,
-                    &quot;startRound&quot; : 1384309800,
-                    &quot;points&quot; : [ {
-                      &quot;numberOfDataPoints&quot; : 23304,
-                      &quot;groups&quot; : [ {
-                        &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                        &quot;groupValue&quot; : &quot;US&quot;
+                    "activeAlerts" : 483,
+                    "startRound" : 1384309800,
+                    "points" : [ {
+                      "numberOfDataPoints" : 23304,
+                      "groups" : [ {
+                        "groupProperty" : "COUNTRY",
+                        "groupValue" : "US"
                       }, {
-                        &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                        &quot;groupValue&quot; : &quot;US&quot;
+                        "groupProperty" : "COUNTRY",
+                        "groupValue" : "US"
                       } ],
-                      &quot;value&quot; : 100,
-                      &quot;timestamp&quot; : 1567620000
+                      "value" : 100,
+                      "timestamp" : 1567620000
                     }, {
-                      &quot;numberOfDataPoints&quot; : 23304,
-                      &quot;groups&quot; : [ {
-                        &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                        &quot;groupValue&quot; : &quot;US&quot;
+                      "numberOfDataPoints" : 23304,
+                      "groups" : [ {
+                        "groupProperty" : "COUNTRY",
+                        "groupValue" : "US"
                       }, {
-                        &quot;groupProperty&quot; : &quot;COUNTRY&quot;,
-                        &quot;groupValue&quot; : &quot;US&quot;
+                        "groupProperty" : "COUNTRY",
+                        "groupValue" : "US"
                       } ],
-                      &quot;value&quot; : 100,
-                      &quot;timestamp&quot; : 1567620000
+                      "value" : 100,
+                      "timestamp" : 1567620000
                     } ],
-                    &quot;agents&quot; : [ {
-                      &quot;agentId&quot; : &quot;6522&quot;,
-                      &quot;agentName&quot; : &quot;0c3898000117&quot;,
-                      &quot;location&quot; : {
-                        &quot;locationName&quot; : &quot;San Francisco, California, US&quot;,
-                        &quot;latitude&quot; : 37.77493,
-                        &quot;longitude&quot; : -122.41942
+                    "agents" : [ {
+                      "agentId" : "6522",
+                      "agentName" : "0c3898000117",
+                      "location" : {
+                        "locationName" : "San Francisco, California, US",
+                        "latitude" : 37.77493,
+                        "longitude" : -122.41942
                       },
-                      &quot;ipInfo&quot; : {
-                        &quot;ipv6&quot; : &quot;ipv6&quot;,
-                        &quot;privateIp&quot; : &quot;172.58.92.31&quot;,
-                        &quot;operativeSystemVersion&quot; : &quot;operativeSystemVersion&quot;,
-                        &quot;publicIp&quot; : &quot;172.58.92.31&quot;
+                      "ipInfo" : {
+                        "ipv6" : "ipv6",
+                        "privateIp" : "172.58.92.31",
+                        "operativeSystemVersion" : "operativeSystemVersion",
+                        "publicIp" : "172.58.92.31"
                       },
-                      &quot;status&quot; : &quot;online&quot;
+                      "status" : "online"
                     }, {
-                      &quot;agentId&quot; : &quot;6522&quot;,
-                      &quot;agentName&quot; : &quot;0c3898000117&quot;,
-                      &quot;location&quot; : {
-                        &quot;locationName&quot; : &quot;San Francisco, California, US&quot;,
-                        &quot;latitude&quot; : 37.77493,
-                        &quot;longitude&quot; : -122.41942
+                      "agentId" : "6522",
+                      "agentName" : "0c3898000117",
+                      "location" : {
+                        "locationName" : "San Francisco, California, US",
+                        "latitude" : 37.77493,
+                        "longitude" : -122.41942
                       },
-                      &quot;ipInfo&quot; : {
-                        &quot;ipv6&quot; : &quot;ipv6&quot;,
-                        &quot;privateIp&quot; : &quot;172.58.92.31&quot;,
-                        &quot;operativeSystemVersion&quot; : &quot;operativeSystemVersion&quot;,
-                        &quot;publicIp&quot; : &quot;172.58.92.31&quot;
+                      "ipInfo" : {
+                        "ipv6" : "ipv6",
+                        "privateIp" : "172.58.92.31",
+                        "operativeSystemVersion" : "operativeSystemVersion",
+                        "publicIp" : "172.58.92.31"
                       },
-                      &quot;status&quot; : &quot;online&quot;
+                      "status" : "online"
                     } ],
-                    &quot;status&quot; : &quot;No data&quot;
+                    "status" : "No data"
                   },
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;binSize&quot; : 3600,
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "binSize" : 3600,
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_dashboard_snapshot_widget_data(
+
             snapshot_id=snapshot_id,
+
             widget_id=widget_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_dashboard_snapshot_widget_data"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1324,9 +1388,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_dashboard_snapshot_widget_data(
+
                 snapshot_id=snapshot_id,
+
                 widget_id=widget_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot_widget_data", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1348,9 +1416,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_dashboard_snapshot_widget_data(
+
                 snapshot_id=snapshot_id,
+
                 widget_id=widget_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot_widget_data", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1375,9 +1447,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_dashboard_snapshot_widget_data(
+
                 snapshot_id=snapshot_id,
+
                 widget_id=widget_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot_widget_data", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1402,9 +1478,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_dashboard_snapshot_widget_data(
+
                 snapshot_id=snapshot_id,
+
                 widget_id=widget_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot_widget_data", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1429,9 +1509,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_dashboard_snapshot_widget_data(
+
                 snapshot_id=snapshot_id,
+
                 widget_id=widget_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot_widget_data", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1456,9 +1540,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_dashboard_snapshot_widget_data(
+
                 snapshot_id=snapshot_id,
+
                 widget_id=widget_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_snapshot_widget_data", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1473,577 +1561,581 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
         cursor = 'cursor_example'
         response_body_json = """
                 {
-                  &quot;pages&quot; : {
-                    &quot;key&quot; : &quot;&quot;
+                  "pages" : {
+                    "key" : ""
                   },
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;dashboardSnapshots&quot; : [ {
-                    &quot;snapshotId&quot; : &quot;d28bb71f-5a47-4783-8f12-d4b115e61b0c&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "dashboardSnapshots" : [ {
+                    "snapshotId" : "d28bb71f-5a47-4783-8f12-d4b115e61b0c",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       },
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;apiLinks&quot; : [ {
-                      &quot;key&quot; : &quot;&quot;
+                    "apiLinks" : [ {
+                      "key" : ""
                     }, {
-                      &quot;key&quot; : &quot;&quot;
+                      "key" : ""
                     } ],
-                    &quot;snapshotExpirationDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                    &quot;isScheduled&quot; : true,
-                    &quot;widgets&quot; : [ {
-                      &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                      &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                    "snapshotExpirationDate" : "2023-05-16T10:14:28Z",
+                    "isScheduled" : true,
+                    "widgets" : [ {
+                      "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                      "shouldExcludeAlertSuppressionWindows" : true,
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;visualMode&quot; : &quot;Full&quot;,
-                      &quot;filters&quot; : {
-                        &quot;TEST&quot; : [ 5187, 5227 ],
-                        &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                      "visualMode" : "Full",
+                      "filters" : {
+                        "TEST" : [ 5187, 5227 ],
+                        "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                       },
-                      &quot;title&quot; : &quot;Widget Title&quot;,
-                      &quot;type&quot; : &quot;Agent Status&quot;,
-                      &quot;metricGroup&quot; : &quot;BGP&quot;,
-                      &quot;measure&quot; : {
-                        &quot;percentileValue&quot; : 95,
-                        &quot;type&quot; : &quot;MEAN&quot;
+                      "title" : "Widget Title",
+                      "type" : "Agent Status",
+                      "metricGroup" : "BGP",
+                      "measure" : {
+                        "percentileValue" : 95,
+                        "type" : "MEAN"
                       },
-                      &quot;apiLink&quot; : &quot;apiLink&quot;,
-                      &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                      &quot;isEmbedded&quot; : true,
-                      &quot;id&quot; : &quot;1234&quot;,
-                      &quot;fixedTimespan&quot; : {
-                        &quot;unit&quot; : &quot;Days&quot;,
-                        &quot;value&quot; : 10
+                      "apiLink" : "apiLink",
+                      "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                      "isEmbedded" : true,
+                      "id" : "1234",
+                      "fixedTimespan" : {
+                        "unit" : "Days",
+                        "value" : 10
                       },
-                      &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                      &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                      "dataSource" : "ENDPOINT_AGENTS",
+                      "direction" : "FROM_TARGET"
                     }, {
-                      &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                      &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                      "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                      "shouldExcludeAlertSuppressionWindows" : true,
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;visualMode&quot; : &quot;Full&quot;,
-                      &quot;filters&quot; : {
-                        &quot;TEST&quot; : [ 5187, 5227 ],
-                        &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                      "visualMode" : "Full",
+                      "filters" : {
+                        "TEST" : [ 5187, 5227 ],
+                        "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                       },
-                      &quot;title&quot; : &quot;Widget Title&quot;,
-                      &quot;type&quot; : &quot;Agent Status&quot;,
-                      &quot;metricGroup&quot; : &quot;BGP&quot;,
-                      &quot;measure&quot; : {
-                        &quot;percentileValue&quot; : 95,
-                        &quot;type&quot; : &quot;MEAN&quot;
+                      "title" : "Widget Title",
+                      "type" : "Agent Status",
+                      "metricGroup" : "BGP",
+                      "measure" : {
+                        "percentileValue" : 95,
+                        "type" : "MEAN"
                       },
-                      &quot;apiLink&quot; : &quot;apiLink&quot;,
-                      &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                      &quot;isEmbedded&quot; : true,
-                      &quot;id&quot; : &quot;1234&quot;,
-                      &quot;fixedTimespan&quot; : {
-                        &quot;unit&quot; : &quot;Days&quot;,
-                        &quot;value&quot; : 10
+                      "apiLink" : "apiLink",
+                      "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                      "isEmbedded" : true,
+                      "id" : "1234",
+                      "fixedTimespan" : {
+                        "unit" : "Days",
+                        "value" : 10
                       },
-                      &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                      &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                      "dataSource" : "ENDPOINT_AGENTS",
+                      "direction" : "FROM_TARGET"
                     } ],
-                    &quot;accountId&quot; : 1234,
-                    &quot;createdDate&quot; : &quot;2023-05-16 10:14:28&quot;,
-                    &quot;snapshotName&quot; : &quot;HTTP Server Dashboard Snapshot&quot;,
-                    &quot;timeSpan&quot; : {
-                      &quot;duration&quot; : 60,
-                      &quot;start&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                      &quot;startDate&quot; : &quot;2023-05-16 10:14:28&quot;
+                    "accountId" : 1234,
+                    "createdDate" : "2023-05-16 10:14:28",
+                    "snapshotName" : "HTTP Server Dashboard Snapshot",
+                    "timeSpan" : {
+                      "duration" : 60,
+                      "start" : "2023-05-16T10:14:28Z",
+                      "startDate" : "2023-05-16 10:14:28"
                     },
-                    &quot;permalink&quot; : &quot;https://app.thousandeyes.com/dashboard/?snapshotId&#x3D;d28bb71f-5a47-4783-8f12-d4b115e61b0c&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;snapshotCreatedDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                    &quot;isShared&quot; : true,
-                    &quot;dashboard&quot; : {
-                      &quot;isMigratedReport&quot; : false,
-                      &quot;dashboardCreatedBy&quot; : &quot;1&quot;,
-                      &quot;_links&quot; : {
-                        &quot;snapshots&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                    "permalink" : "https://app.thousandeyes.com/dashboard/?snapshotId=d28bb71f-5a47-4783-8f12-d4b115e61b0c",
+                    "aid" : "1234",
+                    "snapshotCreatedDate" : "2023-05-16T10:14:28Z",
+                    "isShared" : true,
+                    "dashboard" : {
+                      "isMigratedReport" : false,
+                      "dashboardCreatedBy" : "1",
+                      "_links" : {
+                        "snapshots" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         },
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;isDefaultForUser&quot; : true,
-                      &quot;description&quot; : &quot;HTTP Server Widgets&quot;,
-                      &quot;isPrivate&quot; : true,
-                      &quot;title&quot; : &quot;HTTP Server Widgets&quot;,
-                      &quot;isBuiltIn&quot; : true,
-                      &quot;widgets&quot; : [ {
-                        &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                        &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                        &quot;_links&quot; : {
-                          &quot;self&quot; : {
-                            &quot;hreflang&quot; : &quot;hreflang&quot;,
-                            &quot;templated&quot; : true,
-                            &quot;profile&quot; : &quot;profile&quot;,
-                            &quot;name&quot; : &quot;name&quot;,
-                            &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                            &quot;type&quot; : &quot;type&quot;,
-                            &quot;deprecation&quot; : &quot;deprecation&quot;,
-                            &quot;title&quot; : &quot;title&quot;
+                      "isDefaultForUser" : true,
+                      "description" : "HTTP Server Widgets",
+                      "isPrivate" : true,
+                      "title" : "HTTP Server Widgets",
+                      "isBuiltIn" : true,
+                      "widgets" : [ {
+                        "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                        "shouldExcludeAlertSuppressionWindows" : true,
+                        "_links" : {
+                          "self" : {
+                            "hreflang" : "hreflang",
+                            "templated" : true,
+                            "profile" : "profile",
+                            "name" : "name",
+                            "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                            "type" : "type",
+                            "deprecation" : "deprecation",
+                            "title" : "title"
                           }
                         },
-                        &quot;visualMode&quot; : &quot;Full&quot;,
-                        &quot;filters&quot; : {
-                          &quot;TEST&quot; : [ 5187, 5227 ],
-                          &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                        "visualMode" : "Full",
+                        "filters" : {
+                          "TEST" : [ 5187, 5227 ],
+                          "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                         },
-                        &quot;title&quot; : &quot;Widget Title&quot;,
-                        &quot;type&quot; : &quot;Agent Status&quot;,
-                        &quot;metricGroup&quot; : &quot;BGP&quot;,
-                        &quot;measure&quot; : {
-                          &quot;percentileValue&quot; : 95,
-                          &quot;type&quot; : &quot;MEAN&quot;
+                        "title" : "Widget Title",
+                        "type" : "Agent Status",
+                        "metricGroup" : "BGP",
+                        "measure" : {
+                          "percentileValue" : 95,
+                          "type" : "MEAN"
                         },
-                        &quot;apiLink&quot; : &quot;apiLink&quot;,
-                        &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                        &quot;isEmbedded&quot; : true,
-                        &quot;id&quot; : &quot;1234&quot;,
-                        &quot;fixedTimespan&quot; : {
-                          &quot;unit&quot; : &quot;Days&quot;,
-                          &quot;value&quot; : 10
+                        "apiLink" : "apiLink",
+                        "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                        "isEmbedded" : true,
+                        "id" : "1234",
+                        "fixedTimespan" : {
+                          "unit" : "Days",
+                          "value" : 10
                         },
-                        &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                        &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                        "dataSource" : "ENDPOINT_AGENTS",
+                        "direction" : "FROM_TARGET"
                       }, {
-                        &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                        &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                        &quot;_links&quot; : {
-                          &quot;self&quot; : {
-                            &quot;hreflang&quot; : &quot;hreflang&quot;,
-                            &quot;templated&quot; : true,
-                            &quot;profile&quot; : &quot;profile&quot;,
-                            &quot;name&quot; : &quot;name&quot;,
-                            &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                            &quot;type&quot; : &quot;type&quot;,
-                            &quot;deprecation&quot; : &quot;deprecation&quot;,
-                            &quot;title&quot; : &quot;title&quot;
+                        "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                        "shouldExcludeAlertSuppressionWindows" : true,
+                        "_links" : {
+                          "self" : {
+                            "hreflang" : "hreflang",
+                            "templated" : true,
+                            "profile" : "profile",
+                            "name" : "name",
+                            "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                            "type" : "type",
+                            "deprecation" : "deprecation",
+                            "title" : "title"
                           }
                         },
-                        &quot;visualMode&quot; : &quot;Full&quot;,
-                        &quot;filters&quot; : {
-                          &quot;TEST&quot; : [ 5187, 5227 ],
-                          &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                        "visualMode" : "Full",
+                        "filters" : {
+                          "TEST" : [ 5187, 5227 ],
+                          "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                         },
-                        &quot;title&quot; : &quot;Widget Title&quot;,
-                        &quot;type&quot; : &quot;Agent Status&quot;,
-                        &quot;metricGroup&quot; : &quot;BGP&quot;,
-                        &quot;measure&quot; : {
-                          &quot;percentileValue&quot; : 95,
-                          &quot;type&quot; : &quot;MEAN&quot;
+                        "title" : "Widget Title",
+                        "type" : "Agent Status",
+                        "metricGroup" : "BGP",
+                        "measure" : {
+                          "percentileValue" : 95,
+                          "type" : "MEAN"
                         },
-                        &quot;apiLink&quot; : &quot;apiLink&quot;,
-                        &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                        &quot;isEmbedded&quot; : true,
-                        &quot;id&quot; : &quot;1234&quot;,
-                        &quot;fixedTimespan&quot; : {
-                          &quot;unit&quot; : &quot;Days&quot;,
-                          &quot;value&quot; : 10
+                        "apiLink" : "apiLink",
+                        "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                        "isEmbedded" : true,
+                        "id" : "1234",
+                        "fixedTimespan" : {
+                          "unit" : "Days",
+                          "value" : 10
                         },
-                        &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                        &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                        "dataSource" : "ENDPOINT_AGENTS",
+                        "direction" : "FROM_TARGET"
                       } ],
-                      &quot;globalFilterId&quot; : &quot;65babd9bb90bf55b17c96c8d&quot;,
-                      &quot;modifiedBy&quot; : 1,
-                      &quot;dashboardModifiedBy&quot; : &quot;1&quot;,
-                      &quot;migratedReport&quot; : false,
-                      &quot;isDefaultForAccount&quot; : false,
-                      &quot;defaultTimespan&quot; : {
-                        &quot;duration&quot; : 7200,
-                        &quot;timespanDuration&quot; : 7200,
-                        &quot;start&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                        &quot;end&quot; : &quot;2023-05-16T11:14:28Z&quot;,
-                        &quot;timespanStart&quot; : &quot;2023-05-16 10:14:28&quot;,
-                        &quot;timespanEnd&quot; : &quot;2023-05-16 11:14:28&quot;
+                      "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                      "modifiedBy" : 1,
+                      "dashboardModifiedBy" : "1",
+                      "migratedReport" : false,
+                      "isDefaultForAccount" : false,
+                      "defaultTimespan" : {
+                        "duration" : 7200,
+                        "timespanDuration" : 7200,
+                        "start" : "2023-05-16T10:14:28Z",
+                        "end" : "2023-05-16T11:14:28Z",
+                        "timespanStart" : "2023-05-16 10:14:28",
+                        "timespanEnd" : "2023-05-16 11:14:28"
                       },
-                      &quot;layout&quot; : {
-                        &quot;layoutId&quot; : &quot;grid-layout-1&quot;,
-                        &quot;type&quot; : &quot;grid&quot;,
-                        &quot;details&quot; : {
-                          &quot;widgetPositioning&quot; : [ {
-                            &quot;x&quot; : 0,
-                            &quot;y&quot; : 0,
-                            &quot;w&quot; : 9,
-                            &quot;h&quot; : 5,
-                            &quot;id&quot; : &quot;widgetId-71lbb&quot;
+                      "layout" : {
+                        "layoutId" : "grid-layout-1",
+                        "type" : "grid",
+                        "details" : {
+                          "widgetPositioning" : [ {
+                            "x" : 0,
+                            "y" : 0,
+                            "w" : 9,
+                            "h" : 5,
+                            "id" : "widgetId-71lbb"
                           } ]
                         }
                       },
-                      &quot;accountId&quot; : 1234,
-                      &quot;apiLink&quot; : [ {
-                        &quot;key&quot; : &quot;&quot;
+                      "accountId" : 1234,
+                      "apiLink" : [ {
+                        "key" : ""
                       }, {
-                        &quot;key&quot; : &quot;&quot;
+                        "key" : ""
                       } ],
-                      &quot;dashboardId&quot; : &quot;5e1f7a99143ae6004fdc3bb4&quot;,
-                      &quot;createdBy&quot; : 1,
-                      &quot;globalOverride&quot; : true,
-                      &quot;modifiedDate&quot; : &quot;2023-05-16 10:14:28&quot;,
-                      &quot;isGlobalOverride&quot; : true,
-                      &quot;aid&quot; : &quot;1234&quot;,
-                      &quot;dashboardModifiedDate&quot; : &quot;2023-05-16T10:14:28Z&quot;
+                      "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
+                      "createdBy" : 1,
+                      "globalOverride" : true,
+                      "modifiedDate" : "2023-05-16 10:14:28",
+                      "isGlobalOverride" : true,
+                      "aid" : "1234",
+                      "dashboardModifiedDate" : "2023-05-16T10:14:28Z"
                     },
-                    &quot;expirationDate&quot; : &quot;2023-05-16 10:14:28&quot;
+                    "expirationDate" : "2023-05-16 10:14:28"
                   }, {
-                    &quot;snapshotId&quot; : &quot;d28bb71f-5a47-4783-8f12-d4b115e61b0c&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "snapshotId" : "d28bb71f-5a47-4783-8f12-d4b115e61b0c",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       },
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;apiLinks&quot; : [ {
-                      &quot;key&quot; : &quot;&quot;
+                    "apiLinks" : [ {
+                      "key" : ""
                     }, {
-                      &quot;key&quot; : &quot;&quot;
+                      "key" : ""
                     } ],
-                    &quot;snapshotExpirationDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                    &quot;isScheduled&quot; : true,
-                    &quot;widgets&quot; : [ {
-                      &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                      &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                    "snapshotExpirationDate" : "2023-05-16T10:14:28Z",
+                    "isScheduled" : true,
+                    "widgets" : [ {
+                      "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                      "shouldExcludeAlertSuppressionWindows" : true,
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;visualMode&quot; : &quot;Full&quot;,
-                      &quot;filters&quot; : {
-                        &quot;TEST&quot; : [ 5187, 5227 ],
-                        &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                      "visualMode" : "Full",
+                      "filters" : {
+                        "TEST" : [ 5187, 5227 ],
+                        "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                       },
-                      &quot;title&quot; : &quot;Widget Title&quot;,
-                      &quot;type&quot; : &quot;Agent Status&quot;,
-                      &quot;metricGroup&quot; : &quot;BGP&quot;,
-                      &quot;measure&quot; : {
-                        &quot;percentileValue&quot; : 95,
-                        &quot;type&quot; : &quot;MEAN&quot;
+                      "title" : "Widget Title",
+                      "type" : "Agent Status",
+                      "metricGroup" : "BGP",
+                      "measure" : {
+                        "percentileValue" : 95,
+                        "type" : "MEAN"
                       },
-                      &quot;apiLink&quot; : &quot;apiLink&quot;,
-                      &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                      &quot;isEmbedded&quot; : true,
-                      &quot;id&quot; : &quot;1234&quot;,
-                      &quot;fixedTimespan&quot; : {
-                        &quot;unit&quot; : &quot;Days&quot;,
-                        &quot;value&quot; : 10
+                      "apiLink" : "apiLink",
+                      "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                      "isEmbedded" : true,
+                      "id" : "1234",
+                      "fixedTimespan" : {
+                        "unit" : "Days",
+                        "value" : 10
                       },
-                      &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                      &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                      "dataSource" : "ENDPOINT_AGENTS",
+                      "direction" : "FROM_TARGET"
                     }, {
-                      &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                      &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                      &quot;_links&quot; : {
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                      "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                      "shouldExcludeAlertSuppressionWindows" : true,
+                      "_links" : {
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;visualMode&quot; : &quot;Full&quot;,
-                      &quot;filters&quot; : {
-                        &quot;TEST&quot; : [ 5187, 5227 ],
-                        &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                      "visualMode" : "Full",
+                      "filters" : {
+                        "TEST" : [ 5187, 5227 ],
+                        "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                       },
-                      &quot;title&quot; : &quot;Widget Title&quot;,
-                      &quot;type&quot; : &quot;Agent Status&quot;,
-                      &quot;metricGroup&quot; : &quot;BGP&quot;,
-                      &quot;measure&quot; : {
-                        &quot;percentileValue&quot; : 95,
-                        &quot;type&quot; : &quot;MEAN&quot;
+                      "title" : "Widget Title",
+                      "type" : "Agent Status",
+                      "metricGroup" : "BGP",
+                      "measure" : {
+                        "percentileValue" : 95,
+                        "type" : "MEAN"
                       },
-                      &quot;apiLink&quot; : &quot;apiLink&quot;,
-                      &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                      &quot;isEmbedded&quot; : true,
-                      &quot;id&quot; : &quot;1234&quot;,
-                      &quot;fixedTimespan&quot; : {
-                        &quot;unit&quot; : &quot;Days&quot;,
-                        &quot;value&quot; : 10
+                      "apiLink" : "apiLink",
+                      "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                      "isEmbedded" : true,
+                      "id" : "1234",
+                      "fixedTimespan" : {
+                        "unit" : "Days",
+                        "value" : 10
                       },
-                      &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                      &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                      "dataSource" : "ENDPOINT_AGENTS",
+                      "direction" : "FROM_TARGET"
                     } ],
-                    &quot;accountId&quot; : 1234,
-                    &quot;createdDate&quot; : &quot;2023-05-16 10:14:28&quot;,
-                    &quot;snapshotName&quot; : &quot;HTTP Server Dashboard Snapshot&quot;,
-                    &quot;timeSpan&quot; : {
-                      &quot;duration&quot; : 60,
-                      &quot;start&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                      &quot;startDate&quot; : &quot;2023-05-16 10:14:28&quot;
+                    "accountId" : 1234,
+                    "createdDate" : "2023-05-16 10:14:28",
+                    "snapshotName" : "HTTP Server Dashboard Snapshot",
+                    "timeSpan" : {
+                      "duration" : 60,
+                      "start" : "2023-05-16T10:14:28Z",
+                      "startDate" : "2023-05-16 10:14:28"
                     },
-                    &quot;permalink&quot; : &quot;https://app.thousandeyes.com/dashboard/?snapshotId&#x3D;d28bb71f-5a47-4783-8f12-d4b115e61b0c&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;snapshotCreatedDate&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                    &quot;isShared&quot; : true,
-                    &quot;dashboard&quot; : {
-                      &quot;isMigratedReport&quot; : false,
-                      &quot;dashboardCreatedBy&quot; : &quot;1&quot;,
-                      &quot;_links&quot; : {
-                        &quot;snapshots&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                    "permalink" : "https://app.thousandeyes.com/dashboard/?snapshotId=d28bb71f-5a47-4783-8f12-d4b115e61b0c",
+                    "aid" : "1234",
+                    "snapshotCreatedDate" : "2023-05-16T10:14:28Z",
+                    "isShared" : true,
+                    "dashboard" : {
+                      "isMigratedReport" : false,
+                      "dashboardCreatedBy" : "1",
+                      "_links" : {
+                        "snapshots" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         },
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;isDefaultForUser&quot; : true,
-                      &quot;description&quot; : &quot;HTTP Server Widgets&quot;,
-                      &quot;isPrivate&quot; : true,
-                      &quot;title&quot; : &quot;HTTP Server Widgets&quot;,
-                      &quot;isBuiltIn&quot; : true,
-                      &quot;widgets&quot; : [ {
-                        &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                        &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                        &quot;_links&quot; : {
-                          &quot;self&quot; : {
-                            &quot;hreflang&quot; : &quot;hreflang&quot;,
-                            &quot;templated&quot; : true,
-                            &quot;profile&quot; : &quot;profile&quot;,
-                            &quot;name&quot; : &quot;name&quot;,
-                            &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                            &quot;type&quot; : &quot;type&quot;,
-                            &quot;deprecation&quot; : &quot;deprecation&quot;,
-                            &quot;title&quot; : &quot;title&quot;
+                      "isDefaultForUser" : true,
+                      "description" : "HTTP Server Widgets",
+                      "isPrivate" : true,
+                      "title" : "HTTP Server Widgets",
+                      "isBuiltIn" : true,
+                      "widgets" : [ {
+                        "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                        "shouldExcludeAlertSuppressionWindows" : true,
+                        "_links" : {
+                          "self" : {
+                            "hreflang" : "hreflang",
+                            "templated" : true,
+                            "profile" : "profile",
+                            "name" : "name",
+                            "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                            "type" : "type",
+                            "deprecation" : "deprecation",
+                            "title" : "title"
                           }
                         },
-                        &quot;visualMode&quot; : &quot;Full&quot;,
-                        &quot;filters&quot; : {
-                          &quot;TEST&quot; : [ 5187, 5227 ],
-                          &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                        "visualMode" : "Full",
+                        "filters" : {
+                          "TEST" : [ 5187, 5227 ],
+                          "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                         },
-                        &quot;title&quot; : &quot;Widget Title&quot;,
-                        &quot;type&quot; : &quot;Agent Status&quot;,
-                        &quot;metricGroup&quot; : &quot;BGP&quot;,
-                        &quot;measure&quot; : {
-                          &quot;percentileValue&quot; : 95,
-                          &quot;type&quot; : &quot;MEAN&quot;
+                        "title" : "Widget Title",
+                        "type" : "Agent Status",
+                        "metricGroup" : "BGP",
+                        "measure" : {
+                          "percentileValue" : 95,
+                          "type" : "MEAN"
                         },
-                        &quot;apiLink&quot; : &quot;apiLink&quot;,
-                        &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                        &quot;isEmbedded&quot; : true,
-                        &quot;id&quot; : &quot;1234&quot;,
-                        &quot;fixedTimespan&quot; : {
-                          &quot;unit&quot; : &quot;Days&quot;,
-                          &quot;value&quot; : 10
+                        "apiLink" : "apiLink",
+                        "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                        "isEmbedded" : true,
+                        "id" : "1234",
+                        "fixedTimespan" : {
+                          "unit" : "Days",
+                          "value" : 10
                         },
-                        &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                        &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                        "dataSource" : "ENDPOINT_AGENTS",
+                        "direction" : "FROM_TARGET"
                       }, {
-                        &quot;embedUrl&quot; : &quot;https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f&quot;,
-                        &quot;shouldExcludeAlertSuppressionWindows&quot; : true,
-                        &quot;_links&quot; : {
-                          &quot;self&quot; : {
-                            &quot;hreflang&quot; : &quot;hreflang&quot;,
-                            &quot;templated&quot; : true,
-                            &quot;profile&quot; : &quot;profile&quot;,
-                            &quot;name&quot; : &quot;name&quot;,
-                            &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                            &quot;type&quot; : &quot;type&quot;,
-                            &quot;deprecation&quot; : &quot;deprecation&quot;,
-                            &quot;title&quot; : &quot;title&quot;
+                        "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                        "shouldExcludeAlertSuppressionWindows" : true,
+                        "_links" : {
+                          "self" : {
+                            "hreflang" : "hreflang",
+                            "templated" : true,
+                            "profile" : "profile",
+                            "name" : "name",
+                            "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                            "type" : "type",
+                            "deprecation" : "deprecation",
+                            "title" : "title"
                           }
                         },
-                        &quot;visualMode&quot; : &quot;Full&quot;,
-                        &quot;filters&quot; : {
-                          &quot;TEST&quot; : [ 5187, 5227 ],
-                          &quot;ENDPOINT_MACHINE_ID&quot; : [ &quot;fbd0050c-07f7-43f7-9631-14b32f096962&quot; ]
+                        "visualMode" : "Full",
+                        "filters" : {
+                          "TEST" : [ 5187, 5227 ],
+                          "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
                         },
-                        &quot;title&quot; : &quot;Widget Title&quot;,
-                        &quot;type&quot; : &quot;Agent Status&quot;,
-                        &quot;metricGroup&quot; : &quot;BGP&quot;,
-                        &quot;measure&quot; : {
-                          &quot;percentileValue&quot; : 95,
-                          &quot;type&quot; : &quot;MEAN&quot;
+                        "title" : "Widget Title",
+                        "type" : "Agent Status",
+                        "metricGroup" : "BGP",
+                        "measure" : {
+                          "percentileValue" : 95,
+                          "type" : "MEAN"
                         },
-                        &quot;apiLink&quot; : &quot;apiLink&quot;,
-                        &quot;metric&quot; : &quot;ENDPOINT_GATEWAY_CPU_LOAD_PERCENT&quot;,
-                        &quot;isEmbedded&quot; : true,
-                        &quot;id&quot; : &quot;1234&quot;,
-                        &quot;fixedTimespan&quot; : {
-                          &quot;unit&quot; : &quot;Days&quot;,
-                          &quot;value&quot; : 10
+                        "apiLink" : "apiLink",
+                        "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                        "isEmbedded" : true,
+                        "id" : "1234",
+                        "fixedTimespan" : {
+                          "unit" : "Days",
+                          "value" : 10
                         },
-                        &quot;dataSource&quot; : &quot;ENDPOINT_AGENTS&quot;,
-                        &quot;direction&quot; : &quot;FROM_TARGET&quot;
+                        "dataSource" : "ENDPOINT_AGENTS",
+                        "direction" : "FROM_TARGET"
                       } ],
-                      &quot;globalFilterId&quot; : &quot;65babd9bb90bf55b17c96c8d&quot;,
-                      &quot;modifiedBy&quot; : 1,
-                      &quot;dashboardModifiedBy&quot; : &quot;1&quot;,
-                      &quot;migratedReport&quot; : false,
-                      &quot;isDefaultForAccount&quot; : false,
-                      &quot;defaultTimespan&quot; : {
-                        &quot;duration&quot; : 7200,
-                        &quot;timespanDuration&quot; : 7200,
-                        &quot;start&quot; : &quot;2023-05-16T10:14:28Z&quot;,
-                        &quot;end&quot; : &quot;2023-05-16T11:14:28Z&quot;,
-                        &quot;timespanStart&quot; : &quot;2023-05-16 10:14:28&quot;,
-                        &quot;timespanEnd&quot; : &quot;2023-05-16 11:14:28&quot;
+                      "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                      "modifiedBy" : 1,
+                      "dashboardModifiedBy" : "1",
+                      "migratedReport" : false,
+                      "isDefaultForAccount" : false,
+                      "defaultTimespan" : {
+                        "duration" : 7200,
+                        "timespanDuration" : 7200,
+                        "start" : "2023-05-16T10:14:28Z",
+                        "end" : "2023-05-16T11:14:28Z",
+                        "timespanStart" : "2023-05-16 10:14:28",
+                        "timespanEnd" : "2023-05-16 11:14:28"
                       },
-                      &quot;layout&quot; : {
-                        &quot;layoutId&quot; : &quot;grid-layout-1&quot;,
-                        &quot;type&quot; : &quot;grid&quot;,
-                        &quot;details&quot; : {
-                          &quot;widgetPositioning&quot; : [ {
-                            &quot;x&quot; : 0,
-                            &quot;y&quot; : 0,
-                            &quot;w&quot; : 9,
-                            &quot;h&quot; : 5,
-                            &quot;id&quot; : &quot;widgetId-71lbb&quot;
+                      "layout" : {
+                        "layoutId" : "grid-layout-1",
+                        "type" : "grid",
+                        "details" : {
+                          "widgetPositioning" : [ {
+                            "x" : 0,
+                            "y" : 0,
+                            "w" : 9,
+                            "h" : 5,
+                            "id" : "widgetId-71lbb"
                           } ]
                         }
                       },
-                      &quot;accountId&quot; : 1234,
-                      &quot;apiLink&quot; : [ {
-                        &quot;key&quot; : &quot;&quot;
+                      "accountId" : 1234,
+                      "apiLink" : [ {
+                        "key" : ""
                       }, {
-                        &quot;key&quot; : &quot;&quot;
+                        "key" : ""
                       } ],
-                      &quot;dashboardId&quot; : &quot;5e1f7a99143ae6004fdc3bb4&quot;,
-                      &quot;createdBy&quot; : 1,
-                      &quot;globalOverride&quot; : true,
-                      &quot;modifiedDate&quot; : &quot;2023-05-16 10:14:28&quot;,
-                      &quot;isGlobalOverride&quot; : true,
-                      &quot;aid&quot; : &quot;1234&quot;,
-                      &quot;dashboardModifiedDate&quot; : &quot;2023-05-16T10:14:28Z&quot;
+                      "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
+                      "createdBy" : 1,
+                      "globalOverride" : true,
+                      "modifiedDate" : "2023-05-16 10:14:28",
+                      "isGlobalOverride" : true,
+                      "aid" : "1234",
+                      "dashboardModifiedDate" : "2023-05-16T10:14:28Z"
                     },
-                    &quot;expirationDate&quot; : &quot;2023-05-16 10:14:28&quot;
+                    "expirationDate" : "2023-05-16 10:14:28"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_dashboard_snapshots(
+
             aid=aid,
+
             dashboard_id=dashboard_id,
+
             cursor=cursor,
+
             _headers=self.te_headers("get_dashboard_snapshots"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -2077,9 +2169,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_dashboard_snapshots(
+
                 aid=aid,
+
                 dashboard_id=dashboard_id,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_dashboard_snapshots", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2101,9 +2197,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_dashboard_snapshots(
+
                 aid=aid,
+
                 dashboard_id=dashboard_id,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_dashboard_snapshots", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2128,9 +2228,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_dashboard_snapshots(
+
                 aid=aid,
+
                 dashboard_id=dashboard_id,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_dashboard_snapshots", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2155,9 +2259,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_dashboard_snapshots(
+
                 aid=aid,
+
                 dashboard_id=dashboard_id,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_dashboard_snapshots", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2182,9 +2290,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_dashboard_snapshots(
+
                 aid=aid,
+
                 dashboard_id=dashboard_id,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_dashboard_snapshots", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2209,9 +2321,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_dashboard_snapshots(
+
                 aid=aid,
+
                 dashboard_id=dashboard_id,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_dashboard_snapshots", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2233,9 +2349,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
         snapshot_id = 'd28bb71f-5a47-4783-8f12-d4b115e61b0c'
         aid = '1234'
         response = self.api.update_dashboard_snapshot_expiration_date_with_http_info(
+
             snapshot_id=snapshot_id,
+
             update_snapshot_expiration_date_api_request=update_snapshot_expiration_date_api_request,
+
             aid=aid,
+
             _headers=self.te_headers("update_dashboard_snapshot_expiration_date"),
         )
         self.assertEqual(204, response.status_code)
@@ -2278,9 +2398,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_dashboard_snapshot_expiration_date(
+
                 snapshot_id=snapshot_id,
+
                 update_snapshot_expiration_date_api_request=update_snapshot_expiration_date_api_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_snapshot_expiration_date", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2310,9 +2434,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_dashboard_snapshot_expiration_date(
+
                 snapshot_id=snapshot_id,
+
                 update_snapshot_expiration_date_api_request=update_snapshot_expiration_date_api_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_snapshot_expiration_date", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2345,9 +2473,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_dashboard_snapshot_expiration_date(
+
                 snapshot_id=snapshot_id,
+
                 update_snapshot_expiration_date_api_request=update_snapshot_expiration_date_api_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_snapshot_expiration_date", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2380,9 +2512,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_dashboard_snapshot_expiration_date(
+
                 snapshot_id=snapshot_id,
+
                 update_snapshot_expiration_date_api_request=update_snapshot_expiration_date_api_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_snapshot_expiration_date", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2415,9 +2551,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_dashboard_snapshot_expiration_date(
+
                 snapshot_id=snapshot_id,
+
                 update_snapshot_expiration_date_api_request=update_snapshot_expiration_date_api_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_snapshot_expiration_date", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2450,9 +2590,13 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_dashboard_snapshot_expiration_date(
+
                 snapshot_id=snapshot_id,
+
                 update_snapshot_expiration_date_api_request=update_snapshot_expiration_date_api_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_snapshot_expiration_date", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

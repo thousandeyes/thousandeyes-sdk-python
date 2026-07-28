@@ -39,161 +39,168 @@ class TestVoiceSIPServerTestResultsApiIntegration(IntegrationTestBase):
         cursor = 'cursor_example'
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "test" : {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   },
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;numRedirects&quot; : 0,
-                    &quot;registerTime&quot; : 21,
-                    &quot;optionsTime&quot; : 17,
-                    &quot;optionsRequest&quot; : &quot;OPTIONS sip:6054@voice.sfo2.notarealco.com SIP/2.0\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;branch&#x3D;z9hG4bKRTzPzMoVh0;rport\\r\\nFrom: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;cGaJDNKQFE\\r\\nTo: &lt;sip:6054@voice.sfo2.notarealco.com&gt;\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nCSeq: 3 OPTIONS\\r\\nContact: &lt;sip:6054@38.140.61.68:55431;transport&#x3D;tcp&gt;\\r\\nUser-Agent: ThousandEyes Test Call\\r\\nAllow: INVITE, ACK, CANCEL, BYE\\r\\nSupported: outbound, path\\r\\nMax-Forwards: 70\\r\\nExpires: 60\\r\\nContent-Length: 0\\r\\n\\r\\n\\nOPTIONS sip:6054@voice.sfo2.notarealco.com SIP/2.0\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;branch&#x3D;z9hG4bKRTzPzMoVh0;rport\\r\\nFrom: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;cGaJDNKQFE\\r\\nTo: &lt;sip:6054@voice.sfo2.notarealco.com&gt;\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nCSeq: 4 OPTIONS\\r\\nContact: &lt;sip:6054@38.140.61.68:55431;transport&#x3D;tcp&gt;\\r\\nAuthorization: Digest username&#x3D;\&quot;al6054\&quot;, realm&#x3D;\&quot;asterisk\&quot;, nonce&#x3D;\&quot;1598728080/4e3bef2c789bdfa45ce9123221e08c8f\&quot;, uri&#x3D;\&quot;sip:6054@voice.sfo2.notarealco.com\&quot;, response&#x3D;\&quot;83c538a39ff766cf75ffd1d62317b442\&quot;, algorithm&#x3D;MD5, cnonce&#x3D;\&quot;0a4f113b\&quot;, opaque&#x3D;\&quot;748ffa241d840721\&quot;, qop&#x3D;auth, nc&#x3D;00000001\\r\\nUser-Agent: ThousandEyes Test Call\\r\\nAllow: INVITE, ACK, CANCEL, BYE\\r\\nSupported: outbound, path\\r\\nMax-Forwards: 70\\r\\nExpires: 60\\r\\nContent-Length: 0\\r\\n\\r\\n&quot;,
-                    &quot;responseTime&quot; : 12,
-                    &quot;totalTime&quot; : 40,
-                    &quot;errorType&quot; : &quot;none&quot;,
-                    &quot;availability&quot; : 100,
-                    &quot;responseCode&quot; : 200,
-                    &quot;optionsResponse&quot; : &quot;SIP/2.0 401 Unauthorized\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;rport&#x3D;55431;received&#x3D;38.140.61.68;branch&#x3D;z9hG4bKRTzPzMoVh0\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nFrom: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;cGaJDNKQFE\\r\\nTo: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;z9hG4bKRTzPzMoVh0\\r\\nCSeq: 3 OPTIONS\\r\\nWWW-Authenticate: Digest  realm&#x3D;\&quot;asterisk\&quot;,nonce&#x3D;\&quot;1598728080/4e3bef2c789bdfa45ce9123221e08c8f\&quot;,opaque&#x3D;\&quot;748ffa241d840721\&quot;,algorithm&#x3D;md5,qop&#x3D;\&quot;auth\&quot;\\r\\nServer: Asterisk PBX 16.4.0\\r\\nContent-Length:  0\\r\\n\\r\\n\\nSIP/2.0 200 OK\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;rport&#x3D;55431;received&#x3D;38.140.61.68;branch&#x3D;z9hG4bKRTzPzMoVh0\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nFrom: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;cGaJDNKQFE\\r\\nTo: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;z9hG4bKRTzPzMoVh0\\r\\nCSeq: 4 OPTIONS\\r\\nAccept: application/xpidf+xml, application/cpim-pidf+xml, application/simple-message-summary, application/pidf+xml, application/dialog-info+xml, application/simple-message-summary, application/pidf+xml, application/dialog-info+xml, application/sdp, message/sipfrag;version&#x3D;2.0\\r\\nAllow: OPTIONS, REGISTER, SUBSCRIBE, NOTIFY, PUBLISH, INVITE, ACK, BYE, CANCEL, UPDATE, PRACK, MESSAGE, REFER\\r\\nSupported: 100rel, timer, replaces, norefersub\\r\\nAccept-Encoding: text/plain\\r\\nAccept-Language: en\\r\\nServer: Asterisk PBX 16.4.0\\r\\nContent-Length:  0\\r\\n\\r\\n&quot;,
-                    &quot;problemDetail&quot; : &quot;problemDetail&quot;,
-                    &quot;connectTime&quot; : 5,
-                    &quot;dnsTime&quot; : 2,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;waitTime&quot; : 5,
-                    &quot;inviteTime&quot; : 10
+                    "numRedirects" : 0,
+                    "registerTime" : 21,
+                    "optionsTime" : 17,
+                    "optionsRequest" : "OPTIONS sip:6054@voice.sfo2.notarealco.com SIP/2.0\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;branch=z9hG4bKRTzPzMoVh0;rport\\r\\nFrom: <sip:6054@voice.sfo2.notarealco.com>;tag=cGaJDNKQFE\\r\\nTo: <sip:6054@voice.sfo2.notarealco.com>\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nCSeq: 3 OPTIONS\\r\\nContact: <sip:6054@38.140.61.68:55431;transport=tcp>\\r\\nUser-Agent: ThousandEyes Test Call\\r\\nAllow: INVITE, ACK, CANCEL, BYE\\r\\nSupported: outbound, path\\r\\nMax-Forwards: 70\\r\\nExpires: 60\\r\\nContent-Length: 0\\r\\n\\r\\n\\nOPTIONS sip:6054@voice.sfo2.notarealco.com SIP/2.0\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;branch=z9hG4bKRTzPzMoVh0;rport\\r\\nFrom: <sip:6054@voice.sfo2.notarealco.com>;tag=cGaJDNKQFE\\r\\nTo: <sip:6054@voice.sfo2.notarealco.com>\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nCSeq: 4 OPTIONS\\r\\nContact: <sip:6054@38.140.61.68:55431;transport=tcp>\\r\\nAuthorization: Digest username=\\"al6054\\", realm=\\"asterisk\\", nonce=\\"1598728080/4e3bef2c789bdfa45ce9123221e08c8f\\", uri=\\"sip:6054@voice.sfo2.notarealco.com\\", response=\\"83c538a39ff766cf75ffd1d62317b442\\", algorithm=MD5, cnonce=\\"0a4f113b\\", opaque=\\"748ffa241d840721\\", qop=auth, nc=00000001\\r\\nUser-Agent: ThousandEyes Test Call\\r\\nAllow: INVITE, ACK, CANCEL, BYE\\r\\nSupported: outbound, path\\r\\nMax-Forwards: 70\\r\\nExpires: 60\\r\\nContent-Length: 0\\r\\n\\r\\n",
+                    "responseTime" : 12,
+                    "totalTime" : 40,
+                    "errorType" : "none",
+                    "availability" : 100,
+                    "responseCode" : 200,
+                    "optionsResponse" : "SIP/2.0 401 Unauthorized\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;rport=55431;received=38.140.61.68;branch=z9hG4bKRTzPzMoVh0\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nFrom: <sip:6054@voice.sfo2.notarealco.com>;tag=cGaJDNKQFE\\r\\nTo: <sip:6054@voice.sfo2.notarealco.com>;tag=z9hG4bKRTzPzMoVh0\\r\\nCSeq: 3 OPTIONS\\r\\nWWW-Authenticate: Digest  realm=\\"asterisk\\",nonce=\\"1598728080/4e3bef2c789bdfa45ce9123221e08c8f\\",opaque=\\"748ffa241d840721\\",algorithm=md5,qop=\\"auth\\"\\r\\nServer: Asterisk PBX 16.4.0\\r\\nContent-Length:  0\\r\\n\\r\\n\\nSIP/2.0 200 OK\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;rport=55431;received=38.140.61.68;branch=z9hG4bKRTzPzMoVh0\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nFrom: <sip:6054@voice.sfo2.notarealco.com>;tag=cGaJDNKQFE\\r\\nTo: <sip:6054@voice.sfo2.notarealco.com>;tag=z9hG4bKRTzPzMoVh0\\r\\nCSeq: 4 OPTIONS\\r\\nAccept: application/xpidf+xml, application/cpim-pidf+xml, application/simple-message-summary, application/pidf+xml, application/dialog-info+xml, application/simple-message-summary, application/pidf+xml, application/dialog-info+xml, application/sdp, message/sipfrag;version=2.0\\r\\nAllow: OPTIONS, REGISTER, SUBSCRIBE, NOTIFY, PUBLISH, INVITE, ACK, BYE, CANCEL, UPDATE, PRACK, MESSAGE, REFER\\r\\nSupported: 100rel, timer, replaces, norefersub\\r\\nAccept-Encoding: text/plain\\r\\nAccept-Language: en\\r\\nServer: Asterisk PBX 16.4.0\\r\\nContent-Length:  0\\r\\n\\r\\n",
+                    "problemDetail" : "problemDetail",
+                    "connectTime" : 5,
+                    "dnsTime" : 2,
+                    "serverIp" : "193.2.1.88",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "roundId" : 1384309800,
+                    "waitTime" : 5,
+                    "inviteTime" : 10
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;numRedirects&quot; : 0,
-                    &quot;registerTime&quot; : 21,
-                    &quot;optionsTime&quot; : 17,
-                    &quot;optionsRequest&quot; : &quot;OPTIONS sip:6054@voice.sfo2.notarealco.com SIP/2.0\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;branch&#x3D;z9hG4bKRTzPzMoVh0;rport\\r\\nFrom: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;cGaJDNKQFE\\r\\nTo: &lt;sip:6054@voice.sfo2.notarealco.com&gt;\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nCSeq: 3 OPTIONS\\r\\nContact: &lt;sip:6054@38.140.61.68:55431;transport&#x3D;tcp&gt;\\r\\nUser-Agent: ThousandEyes Test Call\\r\\nAllow: INVITE, ACK, CANCEL, BYE\\r\\nSupported: outbound, path\\r\\nMax-Forwards: 70\\r\\nExpires: 60\\r\\nContent-Length: 0\\r\\n\\r\\n\\nOPTIONS sip:6054@voice.sfo2.notarealco.com SIP/2.0\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;branch&#x3D;z9hG4bKRTzPzMoVh0;rport\\r\\nFrom: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;cGaJDNKQFE\\r\\nTo: &lt;sip:6054@voice.sfo2.notarealco.com&gt;\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nCSeq: 4 OPTIONS\\r\\nContact: &lt;sip:6054@38.140.61.68:55431;transport&#x3D;tcp&gt;\\r\\nAuthorization: Digest username&#x3D;\&quot;al6054\&quot;, realm&#x3D;\&quot;asterisk\&quot;, nonce&#x3D;\&quot;1598728080/4e3bef2c789bdfa45ce9123221e08c8f\&quot;, uri&#x3D;\&quot;sip:6054@voice.sfo2.notarealco.com\&quot;, response&#x3D;\&quot;83c538a39ff766cf75ffd1d62317b442\&quot;, algorithm&#x3D;MD5, cnonce&#x3D;\&quot;0a4f113b\&quot;, opaque&#x3D;\&quot;748ffa241d840721\&quot;, qop&#x3D;auth, nc&#x3D;00000001\\r\\nUser-Agent: ThousandEyes Test Call\\r\\nAllow: INVITE, ACK, CANCEL, BYE\\r\\nSupported: outbound, path\\r\\nMax-Forwards: 70\\r\\nExpires: 60\\r\\nContent-Length: 0\\r\\n\\r\\n&quot;,
-                    &quot;responseTime&quot; : 12,
-                    &quot;totalTime&quot; : 40,
-                    &quot;errorType&quot; : &quot;none&quot;,
-                    &quot;availability&quot; : 100,
-                    &quot;responseCode&quot; : 200,
-                    &quot;optionsResponse&quot; : &quot;SIP/2.0 401 Unauthorized\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;rport&#x3D;55431;received&#x3D;38.140.61.68;branch&#x3D;z9hG4bKRTzPzMoVh0\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nFrom: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;cGaJDNKQFE\\r\\nTo: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;z9hG4bKRTzPzMoVh0\\r\\nCSeq: 3 OPTIONS\\r\\nWWW-Authenticate: Digest  realm&#x3D;\&quot;asterisk\&quot;,nonce&#x3D;\&quot;1598728080/4e3bef2c789bdfa45ce9123221e08c8f\&quot;,opaque&#x3D;\&quot;748ffa241d840721\&quot;,algorithm&#x3D;md5,qop&#x3D;\&quot;auth\&quot;\\r\\nServer: Asterisk PBX 16.4.0\\r\\nContent-Length:  0\\r\\n\\r\\n\\nSIP/2.0 200 OK\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;rport&#x3D;55431;received&#x3D;38.140.61.68;branch&#x3D;z9hG4bKRTzPzMoVh0\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nFrom: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;cGaJDNKQFE\\r\\nTo: &lt;sip:6054@voice.sfo2.notarealco.com&gt;;tag&#x3D;z9hG4bKRTzPzMoVh0\\r\\nCSeq: 4 OPTIONS\\r\\nAccept: application/xpidf+xml, application/cpim-pidf+xml, application/simple-message-summary, application/pidf+xml, application/dialog-info+xml, application/simple-message-summary, application/pidf+xml, application/dialog-info+xml, application/sdp, message/sipfrag;version&#x3D;2.0\\r\\nAllow: OPTIONS, REGISTER, SUBSCRIBE, NOTIFY, PUBLISH, INVITE, ACK, BYE, CANCEL, UPDATE, PRACK, MESSAGE, REFER\\r\\nSupported: 100rel, timer, replaces, norefersub\\r\\nAccept-Encoding: text/plain\\r\\nAccept-Language: en\\r\\nServer: Asterisk PBX 16.4.0\\r\\nContent-Length:  0\\r\\n\\r\\n&quot;,
-                    &quot;problemDetail&quot; : &quot;problemDetail&quot;,
-                    &quot;connectTime&quot; : 5,
-                    &quot;dnsTime&quot; : 2,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;waitTime&quot; : 5,
-                    &quot;inviteTime&quot; : 10
+                    "numRedirects" : 0,
+                    "registerTime" : 21,
+                    "optionsTime" : 17,
+                    "optionsRequest" : "OPTIONS sip:6054@voice.sfo2.notarealco.com SIP/2.0\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;branch=z9hG4bKRTzPzMoVh0;rport\\r\\nFrom: <sip:6054@voice.sfo2.notarealco.com>;tag=cGaJDNKQFE\\r\\nTo: <sip:6054@voice.sfo2.notarealco.com>\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nCSeq: 3 OPTIONS\\r\\nContact: <sip:6054@38.140.61.68:55431;transport=tcp>\\r\\nUser-Agent: ThousandEyes Test Call\\r\\nAllow: INVITE, ACK, CANCEL, BYE\\r\\nSupported: outbound, path\\r\\nMax-Forwards: 70\\r\\nExpires: 60\\r\\nContent-Length: 0\\r\\n\\r\\n\\nOPTIONS sip:6054@voice.sfo2.notarealco.com SIP/2.0\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;branch=z9hG4bKRTzPzMoVh0;rport\\r\\nFrom: <sip:6054@voice.sfo2.notarealco.com>;tag=cGaJDNKQFE\\r\\nTo: <sip:6054@voice.sfo2.notarealco.com>\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nCSeq: 4 OPTIONS\\r\\nContact: <sip:6054@38.140.61.68:55431;transport=tcp>\\r\\nAuthorization: Digest username=\\"al6054\\", realm=\\"asterisk\\", nonce=\\"1598728080/4e3bef2c789bdfa45ce9123221e08c8f\\", uri=\\"sip:6054@voice.sfo2.notarealco.com\\", response=\\"83c538a39ff766cf75ffd1d62317b442\\", algorithm=MD5, cnonce=\\"0a4f113b\\", opaque=\\"748ffa241d840721\\", qop=auth, nc=00000001\\r\\nUser-Agent: ThousandEyes Test Call\\r\\nAllow: INVITE, ACK, CANCEL, BYE\\r\\nSupported: outbound, path\\r\\nMax-Forwards: 70\\r\\nExpires: 60\\r\\nContent-Length: 0\\r\\n\\r\\n",
+                    "responseTime" : 12,
+                    "totalTime" : 40,
+                    "errorType" : "none",
+                    "availability" : 100,
+                    "responseCode" : 200,
+                    "optionsResponse" : "SIP/2.0 401 Unauthorized\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;rport=55431;received=38.140.61.68;branch=z9hG4bKRTzPzMoVh0\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nFrom: <sip:6054@voice.sfo2.notarealco.com>;tag=cGaJDNKQFE\\r\\nTo: <sip:6054@voice.sfo2.notarealco.com>;tag=z9hG4bKRTzPzMoVh0\\r\\nCSeq: 3 OPTIONS\\r\\nWWW-Authenticate: Digest  realm=\\"asterisk\\",nonce=\\"1598728080/4e3bef2c789bdfa45ce9123221e08c8f\\",opaque=\\"748ffa241d840721\\",algorithm=md5,qop=\\"auth\\"\\r\\nServer: Asterisk PBX 16.4.0\\r\\nContent-Length:  0\\r\\n\\r\\n\\nSIP/2.0 200 OK\\r\\nVia: SIP/2.0/TCP 38.140.61.68:55431;rport=55431;received=38.140.61.68;branch=z9hG4bKRTzPzMoVh0\\r\\nCall-ID: oO9WaL3av8@38.140.61.68\\r\\nFrom: <sip:6054@voice.sfo2.notarealco.com>;tag=cGaJDNKQFE\\r\\nTo: <sip:6054@voice.sfo2.notarealco.com>;tag=z9hG4bKRTzPzMoVh0\\r\\nCSeq: 4 OPTIONS\\r\\nAccept: application/xpidf+xml, application/cpim-pidf+xml, application/simple-message-summary, application/pidf+xml, application/dialog-info+xml, application/simple-message-summary, application/pidf+xml, application/dialog-info+xml, application/sdp, message/sipfrag;version=2.0\\r\\nAllow: OPTIONS, REGISTER, SUBSCRIBE, NOTIFY, PUBLISH, INVITE, ACK, BYE, CANCEL, UPDATE, PRACK, MESSAGE, REFER\\r\\nSupported: 100rel, timer, replaces, norefersub\\r\\nAccept-Encoding: text/plain\\r\\nAccept-Language: en\\r\\nServer: Asterisk PBX 16.4.0\\r\\nContent-Length:  0\\r\\n\\r\\n",
+                    "problemDetail" : "problemDetail",
+                    "connectTime" : 5,
+                    "dnsTime" : 2,
+                    "serverIp" : "193.2.1.88",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "roundId" : 1384309800,
+                    "waitTime" : 5,
+                    "inviteTime" : 10
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_test_sip_server_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
+
             _headers=self.te_headers("get_test_sip_server_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -230,12 +237,19 @@ class TestVoiceSIPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_test_sip_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_sip_server_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -260,12 +274,19 @@ class TestVoiceSIPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_test_sip_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_sip_server_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -293,12 +314,19 @@ class TestVoiceSIPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_test_sip_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_sip_server_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -326,12 +354,19 @@ class TestVoiceSIPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_test_sip_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_sip_server_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -359,12 +394,19 @@ class TestVoiceSIPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_test_sip_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_sip_server_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -392,12 +434,19 @@ class TestVoiceSIPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_test_sip_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_sip_server_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -425,12 +474,19 @@ class TestVoiceSIPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_test_sip_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_sip_server_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

@@ -70,41 +70,44 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;headers&quot; : [ {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                  "headers" : [ {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   }, {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   } ],
-                  &quot;lastModifiedDate&quot; : 1770293655756,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "lastModifiedDate" : 1770293655756,
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;Cisco Slack&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;type&quot; : &quot;generic&quot;,
-                  &quot;target&quot; : &quot;https://hooks.slack.com/services/abc/xyz&quot;,
-                  &quot;authentication&quot; : {
-                    &quot;password&quot; : &quot;abc123&quot;,
-                    &quot;type&quot; : &quot;basic&quot;,
-                    &quot;username&quot; : &quot;user1&quot;
+                  "name" : "Cisco Slack",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "type" : "generic",
+                  "target" : "https://hooks.slack.com/services/abc/xyz",
+                  "authentication" : {
+                    "password" : "abc123",
+                    "type" : "basic",
+                    "username" : "user1"
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_generic_connector(
+
             generic_connector=generic_connector,
+
             aid=aid,
+
             _headers=self.te_headers("create_generic_connector"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -172,8 +175,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_generic_connector(
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_generic_connector", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -229,8 +235,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_generic_connector(
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_generic_connector", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -289,8 +298,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_generic_connector(
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_generic_connector", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -349,8 +361,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_generic_connector(
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_generic_connector", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -409,8 +424,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_generic_connector(
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_generic_connector", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -423,8 +441,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
         id = 'cb1b8033-ea2d-4e9b-a920-fe87850693cf'
         aid = '1234'
         response = self.api.delete_generic_connector_with_http_info(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_generic_connector"),
         )
         self.assertEqual(204, response.status_code)
@@ -458,8 +479,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_generic_connector", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -480,8 +504,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_generic_connector", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -505,8 +532,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_generic_connector", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -530,8 +560,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_generic_connector", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -555,8 +588,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_generic_connector", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -570,41 +606,44 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;headers&quot; : [ {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                  "headers" : [ {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   }, {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   } ],
-                  &quot;lastModifiedDate&quot; : 1770293655756,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "lastModifiedDate" : 1770293655756,
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;Cisco Slack&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;type&quot; : &quot;generic&quot;,
-                  &quot;target&quot; : &quot;https://hooks.slack.com/services/abc/xyz&quot;,
-                  &quot;authentication&quot; : {
-                    &quot;password&quot; : &quot;abc123&quot;,
-                    &quot;type&quot; : &quot;basic&quot;,
-                    &quot;username&quot; : &quot;user1&quot;
+                  "name" : "Cisco Slack",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "type" : "generic",
+                  "target" : "https://hooks.slack.com/services/abc/xyz",
+                  "authentication" : {
+                    "password" : "abc123",
+                    "type" : "basic",
+                    "username" : "user1"
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_generic_connector(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_generic_connector"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -637,8 +676,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connector", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -659,8 +701,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connector", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -684,8 +729,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connector", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -709,8 +757,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connector", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -734,8 +785,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_generic_connector(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connector", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -748,84 +802,86 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;items&quot; : [ {
-                    &quot;headers&quot; : [ {
-                      &quot;name&quot; : &quot;Content-Type&quot;,
-                      &quot;value&quot; : &quot;application/json&quot;
+                  "items" : [ {
+                    "headers" : [ {
+                      "name" : "Content-Type",
+                      "value" : "application/json"
                     }, {
-                      &quot;name&quot; : &quot;Content-Type&quot;,
-                      &quot;value&quot; : &quot;application/json&quot;
+                      "name" : "Content-Type",
+                      "value" : "application/json"
                     } ],
-                    &quot;lastModifiedDate&quot; : 1770293655756,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "lastModifiedDate" : 1770293655756,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;Cisco Slack&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                    &quot;type&quot; : &quot;generic&quot;,
-                    &quot;target&quot; : &quot;https://hooks.slack.com/services/abc/xyz&quot;,
-                    &quot;authentication&quot; : {
-                      &quot;password&quot; : &quot;abc123&quot;,
-                      &quot;type&quot; : &quot;basic&quot;,
-                      &quot;username&quot; : &quot;user1&quot;
+                    "name" : "Cisco Slack",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                    "type" : "generic",
+                    "target" : "https://hooks.slack.com/services/abc/xyz",
+                    "authentication" : {
+                      "password" : "abc123",
+                      "type" : "basic",
+                      "username" : "user1"
                     }
                   }, {
-                    &quot;headers&quot; : [ {
-                      &quot;name&quot; : &quot;Content-Type&quot;,
-                      &quot;value&quot; : &quot;application/json&quot;
+                    "headers" : [ {
+                      "name" : "Content-Type",
+                      "value" : "application/json"
                     }, {
-                      &quot;name&quot; : &quot;Content-Type&quot;,
-                      &quot;value&quot; : &quot;application/json&quot;
+                      "name" : "Content-Type",
+                      "value" : "application/json"
                     } ],
-                    &quot;lastModifiedDate&quot; : 1770293655756,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "lastModifiedDate" : 1770293655756,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;Cisco Slack&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                    &quot;type&quot; : &quot;generic&quot;,
-                    &quot;target&quot; : &quot;https://hooks.slack.com/services/abc/xyz&quot;,
-                    &quot;authentication&quot; : {
-                      &quot;password&quot; : &quot;abc123&quot;,
-                      &quot;type&quot; : &quot;basic&quot;,
-                      &quot;username&quot; : &quot;user1&quot;
+                    "name" : "Cisco Slack",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                    "type" : "generic",
+                    "target" : "https://hooks.slack.com/services/abc/xyz",
+                    "authentication" : {
+                      "password" : "abc123",
+                      "type" : "basic",
+                      "username" : "user1"
                     }
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_generic_connectors(
+
             aid=aid,
+
             _headers=self.te_headers("get_generic_connectors"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -857,7 +913,9 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_generic_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connectors", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -877,7 +935,9 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_generic_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connectors", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -900,7 +960,9 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_generic_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connectors", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -923,7 +985,9 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_generic_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connectors", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -946,7 +1010,9 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_generic_connectors(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_generic_connectors", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -960,25 +1026,28 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;items&quot; : [ &quot;ca39314d-eb4f-496f-9435-b5d20b1bfbff&quot;, &quot;ca39314d-eb4f-496f-9435-b5d20b1bfbff&quot; ]
+                  "items" : [ "ca39314d-eb4f-496f-9435-b5d20b1bfbff", "ca39314d-eb4f-496f-9435-b5d20b1bfbff" ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.list_generic_connector_operations(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("list_generic_connector_operations"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1011,8 +1080,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.list_generic_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("list_generic_connector_operations", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1033,8 +1105,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.list_generic_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("list_generic_connector_operations", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1058,8 +1133,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.list_generic_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("list_generic_connector_operations", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1083,8 +1161,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.list_generic_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("list_generic_connector_operations", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1108,8 +1189,11 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.list_generic_connector_operations(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("list_generic_connector_operations", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1159,42 +1243,46 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;headers&quot; : [ {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                  "headers" : [ {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   }, {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   } ],
-                  &quot;lastModifiedDate&quot; : 1770293655756,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "lastModifiedDate" : 1770293655756,
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;Cisco Slack&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;type&quot; : &quot;generic&quot;,
-                  &quot;target&quot; : &quot;https://hooks.slack.com/services/abc/xyz&quot;,
-                  &quot;authentication&quot; : {
-                    &quot;password&quot; : &quot;abc123&quot;,
-                    &quot;type&quot; : &quot;basic&quot;,
-                    &quot;username&quot; : &quot;user1&quot;
+                  "name" : "Cisco Slack",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "type" : "generic",
+                  "target" : "https://hooks.slack.com/services/abc/xyz",
+                  "authentication" : {
+                    "password" : "abc123",
+                    "type" : "basic",
+                    "username" : "user1"
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_generic_connector(
+
             id=id,
+
             generic_connector=generic_connector,
+
             aid=aid,
+
             _headers=self.te_headers("update_generic_connector"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1263,9 +1351,13 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_generic_connector(
+
                 id=id,
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_generic_connector", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1322,9 +1414,13 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_generic_connector(
+
                 id=id,
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_generic_connector", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1384,9 +1480,13 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_generic_connector(
+
                 id=id,
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_generic_connector", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1446,9 +1546,13 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_generic_connector(
+
                 id=id,
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_generic_connector", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1508,9 +1612,13 @@ class TestGenericConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_generic_connector(
+
                 id=id,
+
                 generic_connector=generic_connector,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_generic_connector", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

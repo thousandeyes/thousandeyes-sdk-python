@@ -37,341 +37,346 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.test_results.Expand()]
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "test" : {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   },
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;sslVersion&quot; : &quot;TLSv1.3&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "sslVersion" : "TLSv1.3",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;numRedirects&quot; : 0,
-                    &quot;errorType&quot; : &quot;None&quot;,
-                    &quot;healthScore&quot; : 0.98,
-                    &quot;responseCode&quot; : 200,
-                    &quot;connectTime&quot; : 2,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;throughput&quot; : 123,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;headers&quot; : {
-                      &quot;requestHeaders&quot; : &quot;GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n&quot;,
-                      &quot;responseHeaders&quot; : &quot;HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset&#x3D;UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age&#x3D;600, must-revalidate\\r\\nStrict-Transport-Security: max-age&#x3D;31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode&#x3D;block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA&#x3D;&#x3D;\\r\\nAge: 132\\r\\n&quot;
+                    "numRedirects" : 0,
+                    "errorType" : "None",
+                    "healthScore" : 0.98,
+                    "responseCode" : 200,
+                    "connectTime" : 2,
+                    "startTime" : 1384309800,
+                    "throughput" : 123,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
                     },
-                    &quot;sslCipher&quot; : &quot;sslCipher&quot;,
-                    &quot;redirectTime&quot; : 10,
-                    &quot;sslCertificates&quot; : [ {
-                      &quot;hasValidSigningCert&quot; : false,
-                      &quot;issuerName&quot; : &quot;DigiCert SHA2 Extended Validation Server CA&quot;,
-                      &quot;subjectAlternativeNames&quot; : [ &quot;www.thousandeyes.com&quot;, &quot;thousandeyes.com&quot; ],
-                      &quot;isFetchDateInValidCertDateRange&quot; : true,
-                      &quot;validBefore&quot; : &quot;2020-05-12T12:00:00Z&quot;,
-                      &quot;daysUntilExpiry&quot; : 0,
-                      &quot;validAfter&quot; : &quot;2018-03-27T00:00:00Z&quot;,
-                      &quot;subjectName&quot; : &quot;www.thousandeyes.com&quot;
+                    "sslCipher" : "sslCipher",
+                    "redirectTime" : 10,
+                    "sslCertificates" : [ {
+                      "hasValidSigningCert" : false,
+                      "issuerName" : "DigiCert SHA2 Extended Validation Server CA",
+                      "subjectAlternativeNames" : [ "www.thousandeyes.com", "thousandeyes.com" ],
+                      "isFetchDateInValidCertDateRange" : true,
+                      "validBefore" : "2020-05-12T12:00:00Z",
+                      "daysUntilExpiry" : 0,
+                      "validAfter" : "2018-03-27T00:00:00Z",
+                      "subjectName" : "www.thousandeyes.com"
                     }, {
-                      &quot;hasValidSigningCert&quot; : false,
-                      &quot;issuerName&quot; : &quot;DigiCert SHA2 Extended Validation Server CA&quot;,
-                      &quot;subjectAlternativeNames&quot; : [ &quot;www.thousandeyes.com&quot;, &quot;thousandeyes.com&quot; ],
-                      &quot;isFetchDateInValidCertDateRange&quot; : true,
-                      &quot;validBefore&quot; : &quot;2020-05-12T12:00:00Z&quot;,
-                      &quot;daysUntilExpiry&quot; : 0,
-                      &quot;validAfter&quot; : &quot;2018-03-27T00:00:00Z&quot;,
-                      &quot;subjectName&quot; : &quot;www.thousandeyes.com&quot;
+                      "hasValidSigningCert" : false,
+                      "issuerName" : "DigiCert SHA2 Extended Validation Server CA",
+                      "subjectAlternativeNames" : [ "www.thousandeyes.com", "thousandeyes.com" ],
+                      "isFetchDateInValidCertDateRange" : true,
+                      "validBefore" : "2020-05-12T12:00:00Z",
+                      "daysUntilExpiry" : 0,
+                      "validAfter" : "2018-03-27T00:00:00Z",
+                      "subjectName" : "www.thousandeyes.com"
                     } ],
-                    &quot;responseTime&quot; : 14,
-                    &quot;totalTime&quot; : 15,
-                    &quot;receiveTime&quot; : 1,
-                    &quot;dnsTime&quot; : 0,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;sslTime&quot; : 9,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;waitTime&quot; : 3,
-                    &quot;dnsServerMeasurement&quot; : {
-                      &quot;usedDnsResponse&quot; : {
-                        &quot;id&quot; : 41837,
-                        &quot;qr&quot; : &quot;response&quot;,
-                        &quot;opcode&quot; : &quot;query&quot;,
-                        &quot;authoritativeAnswer&quot; : false,
-                        &quot;truncation&quot; : false,
-                        &quot;recursionDesired&quot; : true,
-                        &quot;recursionAvailable&quot; : true,
-                        &quot;zero&quot; : false,
-                        &quot;authenticData&quot; : false,
-                        &quot;checkingDisabled&quot; : false,
-                        &quot;responseCode&quot; : &quot;noerror&quot;,
-                        &quot;question&quot; : [ {
-                          &quot;name&quot; : &quot;www.example.com&quot;,
-                          &quot;type&quot; : &quot;a&quot;,
-                          &quot;class&quot; : &quot;in&quot;,
-                          &quot;ttl&quot; : 0,
-                          &quot;data&quot; : &quot;&quot;
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
+                    "sslTime" : 9,
+                    "endTime" : 1384309800,
+                    "waitTime" : 3,
+                    "dnsServerMeasurement" : {
+                      "usedDnsResponse" : {
+                        "id" : 41837,
+                        "qr" : "response",
+                        "opcode" : "query",
+                        "authoritativeAnswer" : false,
+                        "truncation" : false,
+                        "recursionDesired" : true,
+                        "recursionAvailable" : true,
+                        "zero" : false,
+                        "authenticData" : false,
+                        "checkingDisabled" : false,
+                        "responseCode" : "noerror",
+                        "question" : [ {
+                          "name" : "www.example.com",
+                          "type" : "a",
+                          "class" : "in",
+                          "ttl" : 0,
+                          "data" : ""
                         } ],
-                        &quot;answer&quot; : [ {
-                          &quot;name&quot; : &quot;www.example.com&quot;,
-                          &quot;type&quot; : &quot;a&quot;,
-                          &quot;class&quot; : &quot;in&quot;,
-                          &quot;ttl&quot; : 300,
-                          &quot;data&quot; : &quot;203.0.113.10&quot;
+                        "answer" : [ {
+                          "name" : "www.example.com",
+                          "type" : "a",
+                          "class" : "in",
+                          "ttl" : 300,
+                          "data" : "203.0.113.10"
                         } ],
-                        &quot;dnsResolver&quot; : &quot;8.8.8.8&quot;,
-                        &quot;timing&quot; : {
-                          &quot;startTimeUs&quot; : &quot;1769706600000000&quot;,
-                          &quot;totalTimeUs&quot; : 19304
+                        "dnsResolver" : "8.8.8.8",
+                        "timing" : {
+                          "startTimeUs" : "1769706600000000",
+                          "totalTimeUs" : 19304
                         },
-                        &quot;protocol&quot; : &quot;udp&quot;
+                        "protocol" : "udp"
                       },
-                      &quot;unusedDnsResponses&quot; : [ {
-                        &quot;id&quot; : 41838,
-                        &quot;qr&quot; : &quot;response&quot;,
-                        &quot;opcode&quot; : &quot;query&quot;,
-                        &quot;authoritativeAnswer&quot; : false,
-                        &quot;truncation&quot; : false,
-                        &quot;recursionDesired&quot; : true,
-                        &quot;recursionAvailable&quot; : true,
-                        &quot;zero&quot; : false,
-                        &quot;authenticData&quot; : false,
-                        &quot;checkingDisabled&quot; : false,
-                        &quot;responseCode&quot; : &quot;nxdomain&quot;,
-                        &quot;question&quot; : [ {
-                          &quot;name&quot; : &quot;www.example.com&quot;,
-                          &quot;type&quot; : &quot;aaaa&quot;,
-                          &quot;class&quot; : &quot;in&quot;,
-                          &quot;ttl&quot; : 0,
-                          &quot;data&quot; : &quot;&quot;
+                      "unusedDnsResponses" : [ {
+                        "id" : 41838,
+                        "qr" : "response",
+                        "opcode" : "query",
+                        "authoritativeAnswer" : false,
+                        "truncation" : false,
+                        "recursionDesired" : true,
+                        "recursionAvailable" : true,
+                        "zero" : false,
+                        "authenticData" : false,
+                        "checkingDisabled" : false,
+                        "responseCode" : "nxdomain",
+                        "question" : [ {
+                          "name" : "www.example.com",
+                          "type" : "aaaa",
+                          "class" : "in",
+                          "ttl" : 0,
+                          "data" : ""
                         } ],
-                        &quot;dnsResolver&quot; : &quot;8.8.4.4&quot;,
-                        &quot;timing&quot; : {
-                          &quot;startTimeUs&quot; : &quot;1769706600020000&quot;,
-                          &quot;totalTimeUs&quot; : 15420
+                        "dnsResolver" : "8.8.4.4",
+                        "timing" : {
+                          "startTimeUs" : "1769706600020000",
+                          "totalTimeUs" : 15420
                         },
-                        &quot;protocol&quot; : &quot;udp&quot;
+                        "protocol" : "udp"
                       } ],
-                      &quot;usedHostsFile&quot; : false,
-                      &quot;resolvedIp&quot; : &quot;203.0.113.10&quot;
+                      "usedHostsFile" : false,
+                      "resolvedIp" : "203.0.113.10"
                     },
-                    &quot;wireSize&quot; : 9993,
-                    &quot;errorDetails&quot; : &quot;Connection error&quot;
+                    "wireSize" : 9993,
+                    "errorDetails" : "Connection error"
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;sslVersion&quot; : &quot;TLSv1.3&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "sslVersion" : "TLSv1.3",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;numRedirects&quot; : 0,
-                    &quot;errorType&quot; : &quot;None&quot;,
-                    &quot;healthScore&quot; : 0.98,
-                    &quot;responseCode&quot; : 200,
-                    &quot;connectTime&quot; : 2,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;throughput&quot; : 123,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;headers&quot; : {
-                      &quot;requestHeaders&quot; : &quot;GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n&quot;,
-                      &quot;responseHeaders&quot; : &quot;HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset&#x3D;UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age&#x3D;600, must-revalidate\\r\\nStrict-Transport-Security: max-age&#x3D;31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode&#x3D;block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA&#x3D;&#x3D;\\r\\nAge: 132\\r\\n&quot;
+                    "numRedirects" : 0,
+                    "errorType" : "None",
+                    "healthScore" : 0.98,
+                    "responseCode" : 200,
+                    "connectTime" : 2,
+                    "startTime" : 1384309800,
+                    "throughput" : 123,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
                     },
-                    &quot;sslCipher&quot; : &quot;sslCipher&quot;,
-                    &quot;redirectTime&quot; : 10,
-                    &quot;sslCertificates&quot; : [ {
-                      &quot;hasValidSigningCert&quot; : false,
-                      &quot;issuerName&quot; : &quot;DigiCert SHA2 Extended Validation Server CA&quot;,
-                      &quot;subjectAlternativeNames&quot; : [ &quot;www.thousandeyes.com&quot;, &quot;thousandeyes.com&quot; ],
-                      &quot;isFetchDateInValidCertDateRange&quot; : true,
-                      &quot;validBefore&quot; : &quot;2020-05-12T12:00:00Z&quot;,
-                      &quot;daysUntilExpiry&quot; : 0,
-                      &quot;validAfter&quot; : &quot;2018-03-27T00:00:00Z&quot;,
-                      &quot;subjectName&quot; : &quot;www.thousandeyes.com&quot;
+                    "sslCipher" : "sslCipher",
+                    "redirectTime" : 10,
+                    "sslCertificates" : [ {
+                      "hasValidSigningCert" : false,
+                      "issuerName" : "DigiCert SHA2 Extended Validation Server CA",
+                      "subjectAlternativeNames" : [ "www.thousandeyes.com", "thousandeyes.com" ],
+                      "isFetchDateInValidCertDateRange" : true,
+                      "validBefore" : "2020-05-12T12:00:00Z",
+                      "daysUntilExpiry" : 0,
+                      "validAfter" : "2018-03-27T00:00:00Z",
+                      "subjectName" : "www.thousandeyes.com"
                     }, {
-                      &quot;hasValidSigningCert&quot; : false,
-                      &quot;issuerName&quot; : &quot;DigiCert SHA2 Extended Validation Server CA&quot;,
-                      &quot;subjectAlternativeNames&quot; : [ &quot;www.thousandeyes.com&quot;, &quot;thousandeyes.com&quot; ],
-                      &quot;isFetchDateInValidCertDateRange&quot; : true,
-                      &quot;validBefore&quot; : &quot;2020-05-12T12:00:00Z&quot;,
-                      &quot;daysUntilExpiry&quot; : 0,
-                      &quot;validAfter&quot; : &quot;2018-03-27T00:00:00Z&quot;,
-                      &quot;subjectName&quot; : &quot;www.thousandeyes.com&quot;
+                      "hasValidSigningCert" : false,
+                      "issuerName" : "DigiCert SHA2 Extended Validation Server CA",
+                      "subjectAlternativeNames" : [ "www.thousandeyes.com", "thousandeyes.com" ],
+                      "isFetchDateInValidCertDateRange" : true,
+                      "validBefore" : "2020-05-12T12:00:00Z",
+                      "daysUntilExpiry" : 0,
+                      "validAfter" : "2018-03-27T00:00:00Z",
+                      "subjectName" : "www.thousandeyes.com"
                     } ],
-                    &quot;responseTime&quot; : 14,
-                    &quot;totalTime&quot; : 15,
-                    &quot;receiveTime&quot; : 1,
-                    &quot;dnsTime&quot; : 0,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;sslTime&quot; : 9,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;waitTime&quot; : 3,
-                    &quot;dnsServerMeasurement&quot; : {
-                      &quot;usedDnsResponse&quot; : {
-                        &quot;id&quot; : 41837,
-                        &quot;qr&quot; : &quot;response&quot;,
-                        &quot;opcode&quot; : &quot;query&quot;,
-                        &quot;authoritativeAnswer&quot; : false,
-                        &quot;truncation&quot; : false,
-                        &quot;recursionDesired&quot; : true,
-                        &quot;recursionAvailable&quot; : true,
-                        &quot;zero&quot; : false,
-                        &quot;authenticData&quot; : false,
-                        &quot;checkingDisabled&quot; : false,
-                        &quot;responseCode&quot; : &quot;noerror&quot;,
-                        &quot;question&quot; : [ {
-                          &quot;name&quot; : &quot;www.example.com&quot;,
-                          &quot;type&quot; : &quot;a&quot;,
-                          &quot;class&quot; : &quot;in&quot;,
-                          &quot;ttl&quot; : 0,
-                          &quot;data&quot; : &quot;&quot;
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
+                    "sslTime" : 9,
+                    "endTime" : 1384309800,
+                    "waitTime" : 3,
+                    "dnsServerMeasurement" : {
+                      "usedDnsResponse" : {
+                        "id" : 41837,
+                        "qr" : "response",
+                        "opcode" : "query",
+                        "authoritativeAnswer" : false,
+                        "truncation" : false,
+                        "recursionDesired" : true,
+                        "recursionAvailable" : true,
+                        "zero" : false,
+                        "authenticData" : false,
+                        "checkingDisabled" : false,
+                        "responseCode" : "noerror",
+                        "question" : [ {
+                          "name" : "www.example.com",
+                          "type" : "a",
+                          "class" : "in",
+                          "ttl" : 0,
+                          "data" : ""
                         } ],
-                        &quot;answer&quot; : [ {
-                          &quot;name&quot; : &quot;www.example.com&quot;,
-                          &quot;type&quot; : &quot;a&quot;,
-                          &quot;class&quot; : &quot;in&quot;,
-                          &quot;ttl&quot; : 300,
-                          &quot;data&quot; : &quot;203.0.113.10&quot;
+                        "answer" : [ {
+                          "name" : "www.example.com",
+                          "type" : "a",
+                          "class" : "in",
+                          "ttl" : 300,
+                          "data" : "203.0.113.10"
                         } ],
-                        &quot;dnsResolver&quot; : &quot;8.8.8.8&quot;,
-                        &quot;timing&quot; : {
-                          &quot;startTimeUs&quot; : &quot;1769706600000000&quot;,
-                          &quot;totalTimeUs&quot; : 19304
+                        "dnsResolver" : "8.8.8.8",
+                        "timing" : {
+                          "startTimeUs" : "1769706600000000",
+                          "totalTimeUs" : 19304
                         },
-                        &quot;protocol&quot; : &quot;udp&quot;
+                        "protocol" : "udp"
                       },
-                      &quot;unusedDnsResponses&quot; : [ {
-                        &quot;id&quot; : 41838,
-                        &quot;qr&quot; : &quot;response&quot;,
-                        &quot;opcode&quot; : &quot;query&quot;,
-                        &quot;authoritativeAnswer&quot; : false,
-                        &quot;truncation&quot; : false,
-                        &quot;recursionDesired&quot; : true,
-                        &quot;recursionAvailable&quot; : true,
-                        &quot;zero&quot; : false,
-                        &quot;authenticData&quot; : false,
-                        &quot;checkingDisabled&quot; : false,
-                        &quot;responseCode&quot; : &quot;nxdomain&quot;,
-                        &quot;question&quot; : [ {
-                          &quot;name&quot; : &quot;www.example.com&quot;,
-                          &quot;type&quot; : &quot;aaaa&quot;,
-                          &quot;class&quot; : &quot;in&quot;,
-                          &quot;ttl&quot; : 0,
-                          &quot;data&quot; : &quot;&quot;
+                      "unusedDnsResponses" : [ {
+                        "id" : 41838,
+                        "qr" : "response",
+                        "opcode" : "query",
+                        "authoritativeAnswer" : false,
+                        "truncation" : false,
+                        "recursionDesired" : true,
+                        "recursionAvailable" : true,
+                        "zero" : false,
+                        "authenticData" : false,
+                        "checkingDisabled" : false,
+                        "responseCode" : "nxdomain",
+                        "question" : [ {
+                          "name" : "www.example.com",
+                          "type" : "aaaa",
+                          "class" : "in",
+                          "ttl" : 0,
+                          "data" : ""
                         } ],
-                        &quot;dnsResolver&quot; : &quot;8.8.4.4&quot;,
-                        &quot;timing&quot; : {
-                          &quot;startTimeUs&quot; : &quot;1769706600020000&quot;,
-                          &quot;totalTimeUs&quot; : 15420
+                        "dnsResolver" : "8.8.4.4",
+                        "timing" : {
+                          "startTimeUs" : "1769706600020000",
+                          "totalTimeUs" : 15420
                         },
-                        &quot;protocol&quot; : &quot;udp&quot;
+                        "protocol" : "udp"
                       } ],
-                      &quot;usedHostsFile&quot; : false,
-                      &quot;resolvedIp&quot; : &quot;203.0.113.10&quot;
+                      "usedHostsFile" : false,
+                      "resolvedIp" : "203.0.113.10"
                     },
-                    &quot;wireSize&quot; : 9993,
-                    &quot;errorDetails&quot; : &quot;Connection error&quot;
+                    "wireSize" : 9993,
+                    "errorDetails" : "Connection error"
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_test_http_server_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
-            expand=expand,
+
             _headers=self.te_headers("get_test_http_server_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -385,7 +390,6 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.test_results.Expand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -409,13 +413,19 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_test_http_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_test_http_server_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -429,7 +439,6 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.test_results.Expand()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -441,13 +450,19 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_test_http_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_test_http_server_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -461,7 +476,6 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.test_results.Expand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -476,13 +490,19 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_test_http_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_test_http_server_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -496,7 +516,6 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.test_results.Expand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -511,13 +530,19 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_test_http_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_test_http_server_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -531,7 +556,6 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.test_results.Expand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -546,13 +570,19 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_test_http_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_test_http_server_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -566,7 +596,6 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.test_results.Expand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -581,13 +610,19 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_test_http_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_test_http_server_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -601,7 +636,6 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.test_results.Expand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -616,13 +650,19 @@ class TestWebHTTPServerTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_test_http_server_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_test_http_server_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

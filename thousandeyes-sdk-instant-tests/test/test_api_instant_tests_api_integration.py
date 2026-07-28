@@ -190,225 +190,226 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
                 """
         api_instant_test_request = thousandeyes_sdk.instant_tests.models.ApiInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         response_body_json = """
                 {
-                  &quot;clientCertificate&quot; : &quot;-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n&quot;,
-                  &quot;mtuMeasurements&quot; : false,
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "clientCertificate" : "-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n",
+                  "mtuMeasurements" : false,
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;credentials&quot; : [ &quot;3247&quot;, &quot;1051&quot; ],
-                  &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;probeMode&quot; : &quot;auto&quot;,
-                  &quot;requests&quot; : [ {
-                    &quot;headers&quot; : [ {
-                      &quot;value&quot; : &quot;keep-alive&quot;,
-                      &quot;key&quot; : &quot;x-custom-header&quot;
+                  "credentials" : [ "3247", "1051" ],
+                  "description" : "ThousandEyes Test",
+                  "probeMode" : "auto",
+                  "requests" : [ {
+                    "headers" : [ {
+                      "value" : "keep-alive",
+                      "key" : "x-custom-header"
                     }, {
-                      &quot;value&quot; : &quot;keep-alive&quot;,
-                      &quot;key&quot; : &quot;x-custom-header&quot;
+                      "value" : "keep-alive",
+                      "key" : "x-custom-header"
                     } ],
-                    &quot;variables&quot; : [ {
-                      &quot;name&quot; : &quot;myTestName&quot;,
-                      &quot;value&quot; : &quot;tests[0].name&quot;
+                    "variables" : [ {
+                      "name" : "myTestName",
+                      "value" : "tests[0].name"
                     }, {
-                      &quot;name&quot; : &quot;myTestName&quot;,
-                      &quot;value&quot; : &quot;tests[0].name&quot;
+                      "name" : "myTestName",
+                      "value" : "tests[0].name"
                     } ],
-                    &quot;clientId&quot; : &quot;client-id&quot;,
-                    &quot;tokenUrl&quot; : &quot;https://id.cisco.com/oauth2/default/v1/token&quot;,
-                    &quot;method&quot; : &quot;get&quot;,
-                    &quot;verifyCertificate&quot; : false,
-                    &quot;body&quot; : &quot;body&quot;,
-                    &quot;url&quot; : &quot;https://api.thousandeyes.com/v7/status&quot;,
-                    &quot;password&quot; : &quot;basic_pw123&quot;,
-                    &quot;bearerToken&quot; : &quot;abcd-1234-...&quot;,
-                    &quot;scope&quot; : &quot;read, write, deploy&quot;,
-                    &quot;name&quot; : &quot;Step 1&quot;,
-                    &quot;waitTimeMs&quot; : 0,
-                    &quot;clientAuthentication&quot; : &quot;basic-auth-header&quot;,
-                    &quot;clientSecret&quot; : &quot;client-secret&quot;,
-                    &quot;assertions&quot; : [ {
-                      &quot;name&quot; : &quot;status-code&quot;,
-                      &quot;value&quot; : &quot;200&quot;,
-                      &quot;operator&quot; : &quot;is&quot;
+                    "clientId" : "client-id",
+                    "tokenUrl" : "https://id.cisco.com/oauth2/default/v1/token",
+                    "method" : "get",
+                    "verifyCertificate" : false,
+                    "body" : "body",
+                    "url" : "https://api.thousandeyes.com/v7/status",
+                    "password" : "basic_pw123",
+                    "bearerToken" : "abcd-1234-...",
+                    "scope" : "read, write, deploy",
+                    "name" : "Step 1",
+                    "waitTimeMs" : 0,
+                    "clientAuthentication" : "basic-auth-header",
+                    "clientSecret" : "client-secret",
+                    "assertions" : [ {
+                      "name" : "status-code",
+                      "value" : "200",
+                      "operator" : "is"
                     }, {
-                      &quot;name&quot; : &quot;status-code&quot;,
-                      &quot;value&quot; : &quot;200&quot;,
-                      &quot;operator&quot; : &quot;is&quot;
+                      "name" : "status-code",
+                      "value" : "200",
+                      "operator" : "is"
                     } ],
-                    &quot;authType&quot; : &quot;none&quot;,
-                    &quot;collectApiResponse&quot; : true,
-                    &quot;username&quot; : &quot;ThousandEyesUserName&quot;
+                    "authType" : "none",
+                    "collectApiResponse" : true,
+                    "username" : "ThousandEyesUserName"
                   }, {
-                    &quot;headers&quot; : [ {
-                      &quot;value&quot; : &quot;keep-alive&quot;,
-                      &quot;key&quot; : &quot;x-custom-header&quot;
+                    "headers" : [ {
+                      "value" : "keep-alive",
+                      "key" : "x-custom-header"
                     }, {
-                      &quot;value&quot; : &quot;keep-alive&quot;,
-                      &quot;key&quot; : &quot;x-custom-header&quot;
+                      "value" : "keep-alive",
+                      "key" : "x-custom-header"
                     } ],
-                    &quot;variables&quot; : [ {
-                      &quot;name&quot; : &quot;myTestName&quot;,
-                      &quot;value&quot; : &quot;tests[0].name&quot;
+                    "variables" : [ {
+                      "name" : "myTestName",
+                      "value" : "tests[0].name"
                     }, {
-                      &quot;name&quot; : &quot;myTestName&quot;,
-                      &quot;value&quot; : &quot;tests[0].name&quot;
+                      "name" : "myTestName",
+                      "value" : "tests[0].name"
                     } ],
-                    &quot;clientId&quot; : &quot;client-id&quot;,
-                    &quot;tokenUrl&quot; : &quot;https://id.cisco.com/oauth2/default/v1/token&quot;,
-                    &quot;method&quot; : &quot;get&quot;,
-                    &quot;verifyCertificate&quot; : false,
-                    &quot;body&quot; : &quot;body&quot;,
-                    &quot;url&quot; : &quot;https://api.thousandeyes.com/v7/status&quot;,
-                    &quot;password&quot; : &quot;basic_pw123&quot;,
-                    &quot;bearerToken&quot; : &quot;abcd-1234-...&quot;,
-                    &quot;scope&quot; : &quot;read, write, deploy&quot;,
-                    &quot;name&quot; : &quot;Step 1&quot;,
-                    &quot;waitTimeMs&quot; : 0,
-                    &quot;clientAuthentication&quot; : &quot;basic-auth-header&quot;,
-                    &quot;clientSecret&quot; : &quot;client-secret&quot;,
-                    &quot;assertions&quot; : [ {
-                      &quot;name&quot; : &quot;status-code&quot;,
-                      &quot;value&quot; : &quot;200&quot;,
-                      &quot;operator&quot; : &quot;is&quot;
+                    "clientId" : "client-id",
+                    "tokenUrl" : "https://id.cisco.com/oauth2/default/v1/token",
+                    "method" : "get",
+                    "verifyCertificate" : false,
+                    "body" : "body",
+                    "url" : "https://api.thousandeyes.com/v7/status",
+                    "password" : "basic_pw123",
+                    "bearerToken" : "abcd-1234-...",
+                    "scope" : "read, write, deploy",
+                    "name" : "Step 1",
+                    "waitTimeMs" : 0,
+                    "clientAuthentication" : "basic-auth-header",
+                    "clientSecret" : "client-secret",
+                    "assertions" : [ {
+                      "name" : "status-code",
+                      "value" : "200",
+                      "operator" : "is"
                     }, {
-                      &quot;name&quot; : &quot;status-code&quot;,
-                      &quot;value&quot; : &quot;200&quot;,
-                      &quot;operator&quot; : &quot;is&quot;
+                      "name" : "status-code",
+                      "value" : "200",
+                      "operator" : "is"
                     } ],
-                    &quot;authType&quot; : &quot;none&quot;,
-                    &quot;collectApiResponse&quot; : true,
-                    &quot;username&quot; : &quot;ThousandEyesUserName&quot;
+                    "authType" : "none",
+                    "collectApiResponse" : true,
+                    "username" : "ThousandEyesUserName"
                   } ],
-                  &quot;type&quot; : &quot;api&quot;,
-                  &quot;vaultCredentials&quot; : [ {
-                    &quot;secretId&quot; : &quot;f27e85b2-318b-4145-b5aa-c9dc8d8b0819&quot;,
-                    &quot;target&quot; : &quot;username&quot;
+                  "type" : "api",
+                  "vaultCredentials" : [ {
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
                   }, {
-                    &quot;secretId&quot; : &quot;f27e85b2-318b-4145-b5aa-c9dc8d8b0819&quot;,
-                    &quot;target&quot; : &quot;username&quot;
+                    "secretId" : "f27e85b2-318b-4145-b5aa-c9dc8d8b0819",
+                    "target" : "username"
                   } ],
-                  &quot;protocol&quot; : &quot;tcp&quot;,
-                  &quot;collectProxyNetworkData&quot; : false,
-                  &quot;followRedirects&quot; : true,
-                  &quot;pathTraceMode&quot; : &quot;classic&quot;,
-                  &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                  &quot;clientCertDomainsAllowList&quot; : &quot;www.thousandeyes.com&quot;,
-                  &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;numPathTraces&quot; : 3,
-                  &quot;overrideAgentProxy&quot; : false,
-                  &quot;predefinedVariables&quot; : [ {
-                    &quot;name&quot; : &quot;myUsername&quot;,
-                    &quot;value&quot; : &quot;ThousandEyesAccountUserName&quot;
+                  "protocol" : "tcp",
+                  "collectProxyNetworkData" : false,
+                  "followRedirects" : true,
+                  "pathTraceMode" : "classic",
+                  "modifiedBy" : "user@user.com",
+                  "clientCertDomainsAllowList" : "www.thousandeyes.com",
+                  "testName" : "ThousandEyes Test",
+                  "numPathTraces" : 3,
+                  "overrideAgentProxy" : false,
+                  "predefinedVariables" : [ {
+                    "name" : "myUsername",
+                    "value" : "ThousandEyesAccountUserName"
                   }, {
-                    &quot;name&quot; : &quot;myUsername&quot;,
-                    &quot;value&quot; : &quot;ThousandEyesAccountUserName&quot;
+                    "name" : "myUsername",
+                    "value" : "ThousandEyesAccountUserName"
                   } ],
-                  &quot;liveShare&quot; : false,
-                  &quot;distributedTracing&quot; : false,
-                  &quot;savedEvent&quot; : true,
-                  &quot;networkMeasurements&quot; : true,
-                  &quot;url&quot; : &quot;www.thousandeyes.com&quot;,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "liveShare" : false,
+                  "distributedTracing" : false,
+                  "savedEvent" : true,
+                  "networkMeasurements" : true,
+                  "url" : "www.thousandeyes.com",
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   } ],
-                  &quot;timeLimit&quot; : 19,
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                  &quot;randomizedStartTime&quot; : false,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;sharedWithAccounts&quot; : [ {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "timeLimit" : 19,
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "createdBy" : "user@user.com",
+                  "randomizedStartTime" : false,
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "testId" : "281474976710706",
+                  "sharedWithAccounts" : [ {
+                    "name" : "Account name",
+                    "aid" : "1234"
                   }, {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Account name",
+                    "aid" : "1234"
                   } ],
-                  &quot;overrideProxyId&quot; : &quot;281474976710706&quot;,
-                  &quot;sslVersionId&quot; : &quot;0&quot;,
-                  &quot;targetTime&quot; : 1
+                  "overrideProxyId" : "281474976710706",
+                  "sslVersionId" : "0",
+                  "targetTime" : 1
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_api_instant_test(
+
             api_instant_test_request=api_instant_test_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("create_api_instant_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -575,7 +576,6 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
                 """
         api_instant_test_request = thousandeyes_sdk.instant_tests.models.ApiInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -599,9 +599,11 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_api_instant_test(
+
                 api_instant_test_request=api_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_api_instant_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -768,7 +770,6 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
                 """
         api_instant_test_request = thousandeyes_sdk.instant_tests.models.ApiInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -780,9 +781,11 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_api_instant_test(
+
                 api_instant_test_request=api_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_api_instant_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -949,7 +952,6 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
                 """
         api_instant_test_request = thousandeyes_sdk.instant_tests.models.ApiInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -964,9 +966,11 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_api_instant_test(
+
                 api_instant_test_request=api_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_api_instant_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1133,7 +1137,6 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
                 """
         api_instant_test_request = thousandeyes_sdk.instant_tests.models.ApiInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1148,9 +1151,11 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_api_instant_test(
+
                 api_instant_test_request=api_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_api_instant_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1317,7 +1322,6 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
                 """
         api_instant_test_request = thousandeyes_sdk.instant_tests.models.ApiInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1332,9 +1336,11 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_api_instant_test(
+
                 api_instant_test_request=api_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_api_instant_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1501,7 +1507,6 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
                 """
         api_instant_test_request = thousandeyes_sdk.instant_tests.models.ApiInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1516,9 +1521,11 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_api_instant_test(
+
                 api_instant_test_request=api_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_api_instant_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1685,7 +1692,6 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
                 """
         api_instant_test_request = thousandeyes_sdk.instant_tests.models.ApiInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1700,9 +1706,11 @@ class TestAPIInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.create_api_instant_test(
+
                 api_instant_test_request=api_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_api_instant_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

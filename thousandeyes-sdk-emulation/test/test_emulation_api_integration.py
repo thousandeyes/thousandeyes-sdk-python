@@ -44,20 +44,23 @@ class TestEmulationApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;availableUserAgents&quot; : [ &quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36&quot;, &quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Safari/537.36&quot; ],
-                  &quot;width&quot; : 1024,
-                  &quot;name&quot; : &quot;iPad Pro 12.9-in&quot;,
-                  &quot;codeName&quot; : &quot;IPAD_PRO_12_9&quot;,
-                  &quot;id&quot; : &quot;11&quot;,
-                  &quot;category&quot; : &quot;desktop&quot;,
-                  &quot;defaultUserAgentTemplate&quot; : &quot;Mozilla/5.0 (Android 4.4; Tablet; rv:70.0) Gecko/70.0 Firefox/70.0&quot;,
-                  &quot;height&quot; : 768
+                  "availableUserAgents" : [ "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Safari/537.36" ],
+                  "width" : 1024,
+                  "name" : "iPad Pro 12.9-in",
+                  "codeName" : "IPAD_PRO_12_9",
+                  "id" : "11",
+                  "category" : "desktop",
+                  "defaultUserAgentTemplate" : "Mozilla/5.0 (Android 4.4; Tablet; rv:70.0) Gecko/70.0 Firefox/70.0",
+                  "height" : 768
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_emulated_device(
+
             emulated_device=emulated_device,
+
             aid=aid,
+
             _headers=self.te_headers("create_emulated_device"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -87,8 +90,11 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_emulated_device(
+
                 emulated_device=emulated_device,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_emulated_device", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -121,8 +127,11 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_emulated_device(
+
                 emulated_device=emulated_device,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_emulated_device", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -155,8 +164,11 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_emulated_device(
+
                 emulated_device=emulated_device,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_emulated_device", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -189,8 +201,11 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_emulated_device(
+
                 emulated_device=emulated_device,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_emulated_device", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -223,8 +238,11 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_emulated_device(
+
                 emulated_device=emulated_device,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_emulated_device", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -234,45 +252,44 @@ class TestEmulationApiIntegration(IntegrationTestBase):
 
     def test_get_emulated_devices_happy_path(self) -> None:
         """Integration test for get_emulated_devices success path"""
-        expand = [thousandeyes_sdk.emulation.ExpandEmulatedDeviceOptions()]
         response_body_json = """
                 {
-                  &quot;emulatedDevices&quot; : [ {
-                    &quot;availableUserAgents&quot; : [ &quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36&quot;, &quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Safari/537.36&quot; ],
-                    &quot;width&quot; : 1024,
-                    &quot;name&quot; : &quot;iPad Pro 12.9-in&quot;,
-                    &quot;codeName&quot; : &quot;IPAD_PRO_12_9&quot;,
-                    &quot;id&quot; : &quot;11&quot;,
-                    &quot;category&quot; : &quot;desktop&quot;,
-                    &quot;defaultUserAgentTemplate&quot; : &quot;Mozilla/5.0 (Android 4.4; Tablet; rv:70.0) Gecko/70.0 Firefox/70.0&quot;,
-                    &quot;height&quot; : 768
+                  "emulatedDevices" : [ {
+                    "availableUserAgents" : [ "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Safari/537.36" ],
+                    "width" : 1024,
+                    "name" : "iPad Pro 12.9-in",
+                    "codeName" : "IPAD_PRO_12_9",
+                    "id" : "11",
+                    "category" : "desktop",
+                    "defaultUserAgentTemplate" : "Mozilla/5.0 (Android 4.4; Tablet; rv:70.0) Gecko/70.0 Firefox/70.0",
+                    "height" : 768
                   }, {
-                    &quot;availableUserAgents&quot; : [ &quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36&quot;, &quot;Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Safari/537.36&quot; ],
-                    &quot;width&quot; : 1024,
-                    &quot;name&quot; : &quot;iPad Pro 12.9-in&quot;,
-                    &quot;codeName&quot; : &quot;IPAD_PRO_12_9&quot;,
-                    &quot;id&quot; : &quot;11&quot;,
-                    &quot;category&quot; : &quot;desktop&quot;,
-                    &quot;defaultUserAgentTemplate&quot; : &quot;Mozilla/5.0 (Android 4.4; Tablet; rv:70.0) Gecko/70.0 Firefox/70.0&quot;,
-                    &quot;height&quot; : 768
+                    "availableUserAgents" : [ "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Safari/537.36" ],
+                    "width" : 1024,
+                    "name" : "iPad Pro 12.9-in",
+                    "codeName" : "IPAD_PRO_12_9",
+                    "id" : "11",
+                    "category" : "desktop",
+                    "defaultUserAgentTemplate" : "Mozilla/5.0 (Android 4.4; Tablet; rv:70.0) Gecko/70.0 Firefox/70.0",
+                    "height" : 768
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_emulated_devices(
-            expand=expand,
+
             _headers=self.te_headers("get_emulated_devices"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -280,7 +297,6 @@ class TestEmulationApiIntegration(IntegrationTestBase):
 
     def test_get_emulated_devices_error_401(self) -> None:
         """Integration test for get_emulated_devices error path (HTTP 401)"""
-        expand = [thousandeyes_sdk.emulation.ExpandEmulatedDeviceOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -292,7 +308,7 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_emulated_devices(
-                expand=expand,
+
                 _headers=self.te_headers("get_emulated_devices", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -300,7 +316,6 @@ class TestEmulationApiIntegration(IntegrationTestBase):
 
     def test_get_emulated_devices_error_403(self) -> None:
         """Integration test for get_emulated_devices error path (HTTP 403)"""
-        expand = [thousandeyes_sdk.emulation.ExpandEmulatedDeviceOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -315,7 +330,7 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_emulated_devices(
-                expand=expand,
+
                 _headers=self.te_headers("get_emulated_devices", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -323,7 +338,6 @@ class TestEmulationApiIntegration(IntegrationTestBase):
 
     def test_get_emulated_devices_error_404(self) -> None:
         """Integration test for get_emulated_devices error path (HTTP 404)"""
-        expand = [thousandeyes_sdk.emulation.ExpandEmulatedDeviceOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -338,7 +352,7 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_emulated_devices(
-                expand=expand,
+
                 _headers=self.te_headers("get_emulated_devices", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -346,7 +360,6 @@ class TestEmulationApiIntegration(IntegrationTestBase):
 
     def test_get_emulated_devices_error_429(self) -> None:
         """Integration test for get_emulated_devices error path (HTTP 429)"""
-        expand = [thousandeyes_sdk.emulation.ExpandEmulatedDeviceOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -361,7 +374,7 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_emulated_devices(
-                expand=expand,
+
                 _headers=self.te_headers("get_emulated_devices", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -369,7 +382,6 @@ class TestEmulationApiIntegration(IntegrationTestBase):
 
     def test_get_emulated_devices_error_500(self) -> None:
         """Integration test for get_emulated_devices error path (HTTP 500)"""
-        expand = [thousandeyes_sdk.emulation.ExpandEmulatedDeviceOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -384,7 +396,7 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_emulated_devices(
-                expand=expand,
+
                 _headers=self.te_headers("get_emulated_devices", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -397,32 +409,34 @@ class TestEmulationApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;userAgents&quot; : [ {
-                    &quot;os&quot; : &quot;Windows&quot;,
-                    &quot;browser&quot; : &quot;Firefox&quot;,
-                    &quot;value&quot; : &quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36&quot;
+                  "userAgents" : [ {
+                    "os" : "Windows",
+                    "browser" : "Firefox",
+                    "value" : "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36"
                   }, {
-                    &quot;os&quot; : &quot;Windows&quot;,
-                    &quot;browser&quot; : &quot;Firefox&quot;,
-                    &quot;value&quot; : &quot;Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36&quot;
+                    "os" : "Windows",
+                    "browser" : "Firefox",
+                    "value" : "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_user_agents(
+
             aid=aid,
+
             _headers=self.te_headers("get_user_agents"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -442,7 +456,9 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_user_agents(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user_agents", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -465,7 +481,9 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_user_agents(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user_agents", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -488,7 +506,9 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_user_agents(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user_agents", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -511,7 +531,9 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_user_agents(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user_agents", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -534,7 +556,9 @@ class TestEmulationApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_user_agents(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user_agents", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

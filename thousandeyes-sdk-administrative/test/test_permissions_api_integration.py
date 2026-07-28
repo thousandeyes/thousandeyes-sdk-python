@@ -34,34 +34,36 @@ class TestPermissionsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;permissions&quot; : [ {
-                    &quot;label&quot; : &quot;View reports&quot;,
-                    &quot;permissionId&quot; : &quot;1&quot;,
-                    &quot;isManagementPermission&quot; : true,
-                    &quot;permission&quot; : &quot;REPORT_READ&quot;
+                  "permissions" : [ {
+                    "label" : "View reports",
+                    "permissionId" : "1",
+                    "isManagementPermission" : true,
+                    "permission" : "REPORT_READ"
                   }, {
-                    &quot;label&quot; : &quot;View snapshots&quot;,
-                    &quot;permissionId&quot; : &quot;51&quot;,
-                    &quot;isManagementPermission&quot; : false,
-                    &quot;permission&quot; : &quot;REPORT_SNAPSHOTS_READ&quot;
+                    "label" : "View snapshots",
+                    "permissionId" : "51",
+                    "isManagementPermission" : false,
+                    "permission" : "REPORT_SNAPSHOTS_READ"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_permissions(
+
             aid=aid,
+
             _headers=self.te_headers("get_permissions"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -93,7 +95,9 @@ class TestPermissionsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_permissions(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_permissions", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -113,7 +117,9 @@ class TestPermissionsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_permissions(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_permissions", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -136,7 +142,9 @@ class TestPermissionsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_permissions(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_permissions", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -159,7 +167,9 @@ class TestPermissionsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_permissions(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_permissions", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -182,7 +192,9 @@ class TestPermissionsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_permissions(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_permissions", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -205,7 +217,9 @@ class TestPermissionsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_permissions(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_permissions", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

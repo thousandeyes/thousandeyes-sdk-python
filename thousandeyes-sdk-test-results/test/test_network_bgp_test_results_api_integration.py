@@ -39,137 +39,144 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
         cursor = 'cursor_example'
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "test" : {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   },
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;monitor&quot; : {
-                      &quot;monitorId&quot; : &quot;281474976710706&quot;,
-                      &quot;monitorName&quot; : &quot;Vancouver, Canada - Bell Canada (AS 6539)&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "prefix" : "99.128.0.0/11",
+                    "monitor" : {
+                      "monitorId" : "281474976710706",
+                      "monitorName" : "Vancouver, Canada - Bell Canada (AS 6539)",
+                      "countryId" : "US"
                     },
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;reachability&quot; : 0,
-                    &quot;updates&quot; : 0,
-                    &quot;pathChanges&quot; : 0,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;prefixId&quot; : &quot;215&quot;
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "reachability" : 0,
+                    "updates" : 0,
+                    "pathChanges" : 0,
+                    "roundId" : 1384309800,
+                    "prefixId" : "215"
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "date" : "2022-07-17T22:00:54Z",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;monitor&quot; : {
-                      &quot;monitorId&quot; : &quot;281474976710706&quot;,
-                      &quot;monitorName&quot; : &quot;Vancouver, Canada - Bell Canada (AS 6539)&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "prefix" : "99.128.0.0/11",
+                    "monitor" : {
+                      "monitorId" : "281474976710706",
+                      "monitorName" : "Vancouver, Canada - Bell Canada (AS 6539)",
+                      "countryId" : "US"
                     },
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;reachability&quot; : 0,
-                    &quot;updates&quot; : 0,
-                    &quot;pathChanges&quot; : 0,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;prefixId&quot; : &quot;215&quot;
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "reachability" : 0,
+                    "updates" : 0,
+                    "pathChanges" : 0,
+                    "roundId" : 1384309800,
+                    "prefixId" : "215"
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_test_bgp_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
+
             _headers=self.te_headers("get_test_bgp_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -206,12 +213,19 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_test_bgp_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_bgp_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -236,12 +250,19 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_test_bgp_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_bgp_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -269,12 +290,19 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_test_bgp_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_bgp_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -302,12 +330,19 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_test_bgp_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_bgp_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -335,12 +370,19 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_test_bgp_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_bgp_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -368,12 +410,19 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_test_bgp_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_bgp_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -401,12 +450,19 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_test_bgp_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_bgp_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -422,119 +478,124 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "test" : {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   },
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;monitor&quot; : {
-                      &quot;monitorId&quot; : &quot;281474976710706&quot;,
-                      &quot;monitorName&quot; : &quot;Vancouver, Canada - Bell Canada (AS 6539)&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "prefix" : "99.128.0.0/11",
+                    "monitor" : {
+                      "monitorId" : "281474976710706",
+                      "monitorName" : "Vancouver, Canada - Bell Canada (AS 6539)",
+                      "countryId" : "US"
                     },
-                    &quot;hops&quot; : [ {
-                      &quot;asName&quot; : &quot;Telus Advanced Communications&quot;,
-                      &quot;asn&quot; : 852
+                    "hops" : [ {
+                      "asName" : "Telus Advanced Communications",
+                      "asn" : 852
                     }, {
-                      &quot;asName&quot; : &quot;Telus Advanced Communications&quot;,
-                      &quot;asn&quot; : 852
+                      "asName" : "Telus Advanced Communications",
+                      "asn" : 852
                     } ],
-                    &quot;isActive&quot; : true,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;prefixId&quot; : &quot;215&quot;
+                    "isActive" : true,
+                    "roundId" : 1384309800,
+                    "prefixId" : "215"
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "date" : "2022-07-17T22:00:54Z",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;monitor&quot; : {
-                      &quot;monitorId&quot; : &quot;281474976710706&quot;,
-                      &quot;monitorName&quot; : &quot;Vancouver, Canada - Bell Canada (AS 6539)&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "prefix" : "99.128.0.0/11",
+                    "monitor" : {
+                      "monitorId" : "281474976710706",
+                      "monitorName" : "Vancouver, Canada - Bell Canada (AS 6539)",
+                      "countryId" : "US"
                     },
-                    &quot;hops&quot; : [ {
-                      &quot;asName&quot; : &quot;Telus Advanced Communications&quot;,
-                      &quot;asn&quot; : 852
+                    "hops" : [ {
+                      "asName" : "Telus Advanced Communications",
+                      "asn" : 852
                     }, {
-                      &quot;asName&quot; : &quot;Telus Advanced Communications&quot;,
-                      &quot;asn&quot; : 852
+                      "asName" : "Telus Advanced Communications",
+                      "asn" : 852
                     } ],
-                    &quot;isActive&quot; : true,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;prefixId&quot; : &quot;215&quot;
+                    "isActive" : true,
+                    "roundId" : 1384309800,
+                    "prefixId" : "215"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_test_bgp_routes_prefix_round_results(
+
             test_id=test_id,
+
             prefix_id=prefix_id,
+
             round_id=round_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_test_bgp_routes_prefix_round_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -569,10 +630,15 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_test_bgp_routes_prefix_round_results(
+
                 test_id=test_id,
+
                 prefix_id=prefix_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_test_bgp_routes_prefix_round_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -595,10 +661,15 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_test_bgp_routes_prefix_round_results(
+
                 test_id=test_id,
+
                 prefix_id=prefix_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_test_bgp_routes_prefix_round_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -624,10 +695,15 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_test_bgp_routes_prefix_round_results(
+
                 test_id=test_id,
+
                 prefix_id=prefix_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_test_bgp_routes_prefix_round_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -653,10 +729,15 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_test_bgp_routes_prefix_round_results(
+
                 test_id=test_id,
+
                 prefix_id=prefix_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_test_bgp_routes_prefix_round_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -682,10 +763,15 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_test_bgp_routes_prefix_round_results(
+
                 test_id=test_id,
+
                 prefix_id=prefix_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_test_bgp_routes_prefix_round_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -711,10 +797,15 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_test_bgp_routes_prefix_round_results(
+
                 test_id=test_id,
+
                 prefix_id=prefix_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_test_bgp_routes_prefix_round_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -740,10 +831,15 @@ class TestNetworkBGPTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_test_bgp_routes_prefix_round_results(
+
                 test_id=test_id,
+
                 prefix_id=prefix_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_test_bgp_routes_prefix_round_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

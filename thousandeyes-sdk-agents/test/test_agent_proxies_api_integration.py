@@ -34,48 +34,50 @@ class TestAgentProxiesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;agentProxies&quot; : [ {
-                    &quot;password&quot; : &quot;**********&quot;,
-                    &quot;isLocalConfigured&quot; : true,
-                    &quot;name&quot; : &quot;Test Proxy - Auth Type - BASIC&quot;,
-                    &quot;location&quot; : &quot;proxy.thousandeyes.com:3128&quot;,
-                    &quot;lastModified&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;authType&quot; : &quot;basic&quot;,
-                    &quot;type&quot; : &quot;static&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;bypassList&quot; : [ &quot;10.0.0.0/16&quot;, &quot;*.thousandeyes.com&quot; ],
-                    &quot;user&quot; : &quot;user1&quot;,
-                    &quot;proxyId&quot; : &quot;281474976710706&quot;
+                  "agentProxies" : [ {
+                    "password" : "**********",
+                    "isLocalConfigured" : true,
+                    "name" : "Test Proxy - Auth Type - BASIC",
+                    "location" : "proxy.thousandeyes.com:3128",
+                    "lastModified" : "2022-07-17T22:00:54Z",
+                    "authType" : "basic",
+                    "type" : "static",
+                    "aid" : "1234",
+                    "bypassList" : [ "10.0.0.0/16", "*.thousandeyes.com" ],
+                    "user" : "user1",
+                    "proxyId" : "281474976710706"
                   }, {
-                    &quot;password&quot; : &quot;**********&quot;,
-                    &quot;isLocalConfigured&quot; : true,
-                    &quot;name&quot; : &quot;Test Proxy - Auth Type - BASIC&quot;,
-                    &quot;location&quot; : &quot;proxy.thousandeyes.com:3128&quot;,
-                    &quot;lastModified&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;authType&quot; : &quot;basic&quot;,
-                    &quot;type&quot; : &quot;static&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;bypassList&quot; : [ &quot;10.0.0.0/16&quot;, &quot;*.thousandeyes.com&quot; ],
-                    &quot;user&quot; : &quot;user1&quot;,
-                    &quot;proxyId&quot; : &quot;281474976710706&quot;
+                    "password" : "**********",
+                    "isLocalConfigured" : true,
+                    "name" : "Test Proxy - Auth Type - BASIC",
+                    "location" : "proxy.thousandeyes.com:3128",
+                    "lastModified" : "2022-07-17T22:00:54Z",
+                    "authType" : "basic",
+                    "type" : "static",
+                    "aid" : "1234",
+                    "bypassList" : [ "10.0.0.0/16", "*.thousandeyes.com" ],
+                    "user" : "user1",
+                    "proxyId" : "281474976710706"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_agents_proxies(
+
             aid=aid,
+
             _headers=self.te_headers("get_agents_proxies"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -95,7 +97,9 @@ class TestAgentProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_agents_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_proxies", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -118,7 +122,9 @@ class TestAgentProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_agents_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_proxies", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -141,7 +147,9 @@ class TestAgentProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_agents_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_proxies", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -164,7 +172,9 @@ class TestAgentProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_agents_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_proxies", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -187,7 +197,9 @@ class TestAgentProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_agents_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_proxies", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -210,7 +222,9 @@ class TestAgentProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_agents_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_proxies", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

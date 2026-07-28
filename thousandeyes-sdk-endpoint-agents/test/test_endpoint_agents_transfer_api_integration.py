@@ -50,37 +50,40 @@ class TestEndpointAgentsTransferApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;items&quot; : [ {
-                    &quot;status&quot; : 200,
-                    &quot;detail&quot; : &quot;Initiated&quot;,
-                    &quot;request&quot; : {
-                      &quot;agentId&quot; : &quot;5d0764ac-7e42-4ec8-a0d4-39fc53edccba&quot;,
-                      &quot;fromAid&quot; : &quot;1234&quot;,
-                      &quot;toAid&quot; : &quot;12345&quot;
+                  "items" : [ {
+                    "status" : 200,
+                    "detail" : "Initiated",
+                    "request" : {
+                      "agentId" : "5d0764ac-7e42-4ec8-a0d4-39fc53edccba",
+                      "fromAid" : "1234",
+                      "toAid" : "12345"
                     }
                   }, {
-                    &quot;status&quot; : 400,
-                    &quot;detail&quot; : &quot;Missing from-account id&quot;,
-                    &quot;request&quot; : {
-                      &quot;agentId&quot; : &quot;5d0764ac-7e42-4ec8-a0d5-39fc53ed1234&quot;,
-                      &quot;fromAid&quot; : &quot;xxx&quot;,
-                      &quot;toAid&quot; : &quot;12345&quot;
+                    "status" : 400,
+                    "detail" : "Missing from-account id",
+                    "request" : {
+                      "agentId" : "5d0764ac-7e42-4ec8-a0d5-39fc53ed1234",
+                      "fromAid" : "xxx",
+                      "toAid" : "12345"
                     }
                   }, {
-                    &quot;status&quot; : 403,
-                    &quot;detail&quot; : &quot;User does not have permission on &#39;to&#39; aid&quot;,
-                    &quot;request&quot; : {
-                      &quot;agentId&quot; : &quot;5d0764ac-7e42-4ec8-a0d5-39fc53ed7890&quot;,
-                      &quot;fromAid&quot; : &quot;1234&quot;,
-                      &quot;toAid&quot; : &quot;12345&quot;
+                    "status" : 403,
+                    "detail" : "User does not have permission on 'to' aid",
+                    "request" : {
+                      "agentId" : "5d0764ac-7e42-4ec8-a0d5-39fc53ed7890",
+                      "fromAid" : "1234",
+                      "toAid" : "12345"
                     }
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.transfer_endpoint_agents(
+
             aid=aid,
+
             bulk_agent_transfer_request=bulk_agent_transfer_request,
+
             _headers=self.te_headers("transfer_endpoint_agents"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -128,8 +131,11 @@ class TestEndpointAgentsTransferApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.transfer_endpoint_agents(
+
                 aid=aid,
+
                 bulk_agent_transfer_request=bulk_agent_transfer_request,
+
                 _headers=self.te_headers("transfer_endpoint_agents", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -165,8 +171,11 @@ class TestEndpointAgentsTransferApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.transfer_endpoint_agents(
+
                 aid=aid,
+
                 bulk_agent_transfer_request=bulk_agent_transfer_request,
+
                 _headers=self.te_headers("transfer_endpoint_agents", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -205,8 +214,11 @@ class TestEndpointAgentsTransferApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.transfer_endpoint_agents(
+
                 aid=aid,
+
                 bulk_agent_transfer_request=bulk_agent_transfer_request,
+
                 _headers=self.te_headers("transfer_endpoint_agents", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -245,8 +257,11 @@ class TestEndpointAgentsTransferApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.transfer_endpoint_agents(
+
                 aid=aid,
+
                 bulk_agent_transfer_request=bulk_agent_transfer_request,
+
                 _headers=self.te_headers("transfer_endpoint_agents", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -285,8 +300,11 @@ class TestEndpointAgentsTransferApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.transfer_endpoint_agents(
+
                 aid=aid,
+
                 bulk_agent_transfer_request=bulk_agent_transfer_request,
+
                 _headers=self.te_headers("transfer_endpoint_agents", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

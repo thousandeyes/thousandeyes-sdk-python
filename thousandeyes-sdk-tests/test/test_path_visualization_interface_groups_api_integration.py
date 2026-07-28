@@ -46,17 +46,20 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;groupName&quot; : &quot;PathVis Interface Group&quot;,
-                  &quot;rdnsRegexes&quot; : [ &quot;aggr403b-1.iad3.rackspace.net&quot;, &quot;aggr403c-1.iad3.rackspace.net&quot; ],
-                  &quot;groupId&quot; : &quot;281474976710706&quot;,
-                  &quot;ipAddresses&quot; : [ &quot;1.1.1.1&quot;, &quot;8.8.8.8&quot; ],
-                  &quot;aid&quot; : &quot;1234&quot;
+                  "groupName" : "PathVis Interface Group",
+                  "rdnsRegexes" : [ "aggr403b-1.iad3.rackspace.net", "aggr403c-1.iad3.rackspace.net" ],
+                  "groupId" : "281474976710706",
+                  "ipAddresses" : [ "1.1.1.1", "8.8.8.8" ],
+                  "aid" : "1234"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_path_vis_interface_groups(
+
             interface_group=interface_group,
+
             aid=aid,
+
             _headers=self.te_headers("create_path_vis_interface_groups"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -100,8 +103,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_path_vis_interface_groups(
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_path_vis_interface_groups", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -133,8 +139,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_path_vis_interface_groups(
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_path_vis_interface_groups", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -169,8 +178,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_path_vis_interface_groups(
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_path_vis_interface_groups", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -205,8 +217,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_path_vis_interface_groups(
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_path_vis_interface_groups", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -241,8 +256,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_path_vis_interface_groups(
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_path_vis_interface_groups", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -277,8 +295,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_path_vis_interface_groups(
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_path_vis_interface_groups", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -313,8 +334,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.create_path_vis_interface_groups(
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_path_vis_interface_groups", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -327,8 +351,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
         interface_group_id = '281474976710706'
         aid = '1234'
         response = self.api.delete_path_vis_interface_group_with_http_info(
+
             interface_group_id=interface_group_id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_path_vis_interface_group"),
         )
         self.assertEqual(204, response.status_code)
@@ -350,8 +377,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_path_vis_interface_group", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -375,8 +405,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_path_vis_interface_group", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -400,8 +433,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_path_vis_interface_group", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -425,8 +461,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_path_vis_interface_group", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -450,8 +489,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_path_vis_interface_group", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -475,8 +517,11 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.delete_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_path_vis_interface_group", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -489,36 +534,38 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;pathVisInterfaceGroups&quot; : [ {
-                    &quot;groupName&quot; : &quot;PathVis Interface Group&quot;,
-                    &quot;rdnsRegexes&quot; : [ &quot;aggr403b-1.iad3.rackspace.net&quot;, &quot;aggr403c-1.iad3.rackspace.net&quot; ],
-                    &quot;groupId&quot; : &quot;281474976710706&quot;,
-                    &quot;ipAddresses&quot; : [ &quot;1.1.1.1&quot;, &quot;8.8.8.8&quot; ],
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "pathVisInterfaceGroups" : [ {
+                    "groupName" : "PathVis Interface Group",
+                    "rdnsRegexes" : [ "aggr403b-1.iad3.rackspace.net", "aggr403c-1.iad3.rackspace.net" ],
+                    "groupId" : "281474976710706",
+                    "ipAddresses" : [ "1.1.1.1", "8.8.8.8" ],
+                    "aid" : "1234"
                   }, {
-                    &quot;groupName&quot; : &quot;PathVis Interface Group&quot;,
-                    &quot;rdnsRegexes&quot; : [ &quot;aggr403b-1.iad3.rackspace.net&quot;, &quot;aggr403c-1.iad3.rackspace.net&quot; ],
-                    &quot;groupId&quot; : &quot;281474976710706&quot;,
-                    &quot;ipAddresses&quot; : [ &quot;1.1.1.1&quot;, &quot;8.8.8.8&quot; ],
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "groupName" : "PathVis Interface Group",
+                    "rdnsRegexes" : [ "aggr403b-1.iad3.rackspace.net", "aggr403c-1.iad3.rackspace.net" ],
+                    "groupId" : "281474976710706",
+                    "ipAddresses" : [ "1.1.1.1", "8.8.8.8" ],
+                    "aid" : "1234"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_path_vis_interface_groups(
+
             aid=aid,
+
             _headers=self.te_headers("get_path_vis_interface_groups"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -538,7 +585,9 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_path_vis_interface_groups(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_path_vis_interface_groups", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -561,7 +610,9 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_path_vis_interface_groups(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_path_vis_interface_groups", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -584,7 +635,9 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_path_vis_interface_groups(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_path_vis_interface_groups", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -607,7 +660,9 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_path_vis_interface_groups(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_path_vis_interface_groups", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -630,7 +685,9 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_path_vis_interface_groups(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_path_vis_interface_groups", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -653,7 +710,9 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_path_vis_interface_groups(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_path_vis_interface_groups", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -679,18 +738,22 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;groupName&quot; : &quot;PathVis Interface Group&quot;,
-                  &quot;rdnsRegexes&quot; : [ &quot;aggr403b-1.iad3.rackspace.net&quot;, &quot;aggr403c-1.iad3.rackspace.net&quot; ],
-                  &quot;groupId&quot; : &quot;281474976710706&quot;,
-                  &quot;ipAddresses&quot; : [ &quot;1.1.1.1&quot;, &quot;8.8.8.8&quot; ],
-                  &quot;aid&quot; : &quot;1234&quot;
+                  "groupName" : "PathVis Interface Group",
+                  "rdnsRegexes" : [ "aggr403b-1.iad3.rackspace.net", "aggr403c-1.iad3.rackspace.net" ],
+                  "groupId" : "281474976710706",
+                  "ipAddresses" : [ "1.1.1.1", "8.8.8.8" ],
+                  "aid" : "1234"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_path_vis_interface_group(
+
             interface_group_id=interface_group_id,
+
             interface_group=interface_group,
+
             aid=aid,
+
             _headers=self.te_headers("update_path_vis_interface_group"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -735,9 +798,13 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_path_vis_interface_group", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -770,9 +837,13 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_path_vis_interface_group", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -808,9 +879,13 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_path_vis_interface_group", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -846,9 +921,13 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_path_vis_interface_group", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -884,9 +963,13 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_path_vis_interface_group", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -922,9 +1005,13 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_path_vis_interface_group", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -960,9 +1047,13 @@ class TestPathVisualizationInterfaceGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.update_path_vis_interface_group(
+
                 interface_group_id=interface_group_id,
+
                 interface_group=interface_group,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_path_vis_interface_group", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

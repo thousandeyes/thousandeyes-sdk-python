@@ -69,40 +69,43 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;path&quot; : &quot;/custom/path&quot;,
-                  &quot;headers&quot; : [ {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                  "path" : "/custom/path",
+                  "headers" : [ {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   }, {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   } ],
-                  &quot;payload&quot; : &quot;{\&quot;property1\&quot;: {{numericVar}}, \&quot;property2\&quot;: \&quot;{{stringVar}}\&quot;}&quot;,
-                  &quot;queryParams&quot; : &quot;{\&quot;queryParam1\&quot;:\&quot;{{stringVar}}\&quot;}&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "payload" : "{\\"property1\\": {{numericVar}}, \\"property2\\": \\"{{stringVar}}\\"}",
+                  "queryParams" : "{\\"queryParam1\\":\\"{{stringVar}}\\"}",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;My operation&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;category&quot; : &quot;alerts&quot;,
-                  &quot;type&quot; : &quot;webhook&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;status&quot; : &quot;pending&quot;
+                  "name" : "My operation",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "category" : "alerts",
+                  "type" : "webhook",
+                  "enabled" : true,
+                  "status" : "pending"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_webhook_operation(
+
             webhook_operation=webhook_operation,
+
             aid=aid,
+
             _headers=self.te_headers("create_webhook_operation"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -169,8 +172,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_webhook_operation(
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_webhook_operation", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -225,8 +231,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_webhook_operation(
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_webhook_operation", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -284,8 +293,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_webhook_operation(
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_webhook_operation", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -343,8 +355,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_webhook_operation(
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_webhook_operation", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -402,8 +417,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_webhook_operation(
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_webhook_operation", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -416,8 +434,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
         id = 'cb1b8033-ea2d-4e9b-a920-fe87850693cf'
         aid = '1234'
         response = self.api.delete_webhook_operation_with_http_info(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_webhook_operation"),
         )
         self.assertEqual(204, response.status_code)
@@ -451,8 +472,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_webhook_operation", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -473,8 +497,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_webhook_operation", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -498,8 +525,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_webhook_operation", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -523,8 +553,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_webhook_operation", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -548,8 +581,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_webhook_operation", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -563,40 +599,43 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;path&quot; : &quot;/custom/path&quot;,
-                  &quot;headers&quot; : [ {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                  "path" : "/custom/path",
+                  "headers" : [ {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   }, {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   } ],
-                  &quot;payload&quot; : &quot;{\&quot;property1\&quot;: {{numericVar}}, \&quot;property2\&quot;: \&quot;{{stringVar}}\&quot;}&quot;,
-                  &quot;queryParams&quot; : &quot;{\&quot;queryParam1\&quot;:\&quot;{{stringVar}}\&quot;}&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "payload" : "{\\"property1\\": {{numericVar}}, \\"property2\\": \\"{{stringVar}}\\"}",
+                  "queryParams" : "{\\"queryParam1\\":\\"{{stringVar}}\\"}",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;My operation&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;category&quot; : &quot;alerts&quot;,
-                  &quot;type&quot; : &quot;webhook&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;status&quot; : &quot;pending&quot;
+                  "name" : "My operation",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "category" : "alerts",
+                  "type" : "webhook",
+                  "enabled" : true,
+                  "status" : "pending"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_webhook_operation(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_webhook_operation"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -629,8 +668,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operation", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -651,8 +693,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operation", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -676,8 +721,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operation", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -701,8 +749,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operation", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -726,8 +777,11 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_webhook_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operation", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -740,82 +794,84 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;items&quot; : [ {
-                    &quot;path&quot; : &quot;/custom/path&quot;,
-                    &quot;headers&quot; : [ {
-                      &quot;name&quot; : &quot;Content-Type&quot;,
-                      &quot;value&quot; : &quot;application/json&quot;
+                  "items" : [ {
+                    "path" : "/custom/path",
+                    "headers" : [ {
+                      "name" : "Content-Type",
+                      "value" : "application/json"
                     }, {
-                      &quot;name&quot; : &quot;Content-Type&quot;,
-                      &quot;value&quot; : &quot;application/json&quot;
+                      "name" : "Content-Type",
+                      "value" : "application/json"
                     } ],
-                    &quot;payload&quot; : &quot;{\&quot;property1\&quot;: {{numericVar}}, \&quot;property2\&quot;: \&quot;{{stringVar}}\&quot;}&quot;,
-                    &quot;queryParams&quot; : &quot;{\&quot;queryParam1\&quot;:\&quot;{{stringVar}}\&quot;}&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "payload" : "{\\"property1\\": {{numericVar}}, \\"property2\\": \\"{{stringVar}}\\"}",
+                    "queryParams" : "{\\"queryParam1\\":\\"{{stringVar}}\\"}",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;My operation&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                    &quot;category&quot; : &quot;alerts&quot;,
-                    &quot;type&quot; : &quot;webhook&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;status&quot; : &quot;pending&quot;
+                    "name" : "My operation",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                    "category" : "alerts",
+                    "type" : "webhook",
+                    "enabled" : true,
+                    "status" : "pending"
                   }, {
-                    &quot;path&quot; : &quot;/custom/path&quot;,
-                    &quot;headers&quot; : [ {
-                      &quot;name&quot; : &quot;Content-Type&quot;,
-                      &quot;value&quot; : &quot;application/json&quot;
+                    "path" : "/custom/path",
+                    "headers" : [ {
+                      "name" : "Content-Type",
+                      "value" : "application/json"
                     }, {
-                      &quot;name&quot; : &quot;Content-Type&quot;,
-                      &quot;value&quot; : &quot;application/json&quot;
+                      "name" : "Content-Type",
+                      "value" : "application/json"
                     } ],
-                    &quot;payload&quot; : &quot;{\&quot;property1\&quot;: {{numericVar}}, \&quot;property2\&quot;: \&quot;{{stringVar}}\&quot;}&quot;,
-                    &quot;queryParams&quot; : &quot;{\&quot;queryParam1\&quot;:\&quot;{{stringVar}}\&quot;}&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "payload" : "{\\"property1\\": {{numericVar}}, \\"property2\\": \\"{{stringVar}}\\"}",
+                    "queryParams" : "{\\"queryParam1\\":\\"{{stringVar}}\\"}",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;My operation&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                    &quot;category&quot; : &quot;alerts&quot;,
-                    &quot;type&quot; : &quot;webhook&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;status&quot; : &quot;pending&quot;
+                    "name" : "My operation",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                    "category" : "alerts",
+                    "type" : "webhook",
+                    "enabled" : true,
+                    "status" : "pending"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_webhook_operations(
+
             aid=aid,
+
             _headers=self.te_headers("get_webhook_operations"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -847,7 +903,9 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_webhook_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operations", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -867,7 +925,9 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_webhook_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operations", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -890,7 +950,9 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_webhook_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operations", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -913,7 +975,9 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_webhook_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operations", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -936,7 +1000,9 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_webhook_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_webhook_operations", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -985,41 +1051,45 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;path&quot; : &quot;/custom/path&quot;,
-                  &quot;headers&quot; : [ {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                  "path" : "/custom/path",
+                  "headers" : [ {
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   }, {
-                    &quot;name&quot; : &quot;Content-Type&quot;,
-                    &quot;value&quot; : &quot;application/json&quot;
+                    "name" : "Content-Type",
+                    "value" : "application/json"
                   } ],
-                  &quot;payload&quot; : &quot;{\&quot;property1\&quot;: {{numericVar}}, \&quot;property2\&quot;: \&quot;{{stringVar}}\&quot;}&quot;,
-                  &quot;queryParams&quot; : &quot;{\&quot;queryParam1\&quot;:\&quot;{{stringVar}}\&quot;}&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "payload" : "{\\"property1\\": {{numericVar}}, \\"property2\\": \\"{{stringVar}}\\"}",
+                  "queryParams" : "{\\"queryParam1\\":\\"{{stringVar}}\\"}",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;My operation&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;category&quot; : &quot;alerts&quot;,
-                  &quot;type&quot; : &quot;webhook&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;status&quot; : &quot;pending&quot;
+                  "name" : "My operation",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "category" : "alerts",
+                  "type" : "webhook",
+                  "enabled" : true,
+                  "status" : "pending"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_webhook_operation(
+
             id=id,
+
             webhook_operation=webhook_operation,
+
             aid=aid,
+
             _headers=self.te_headers("update_webhook_operation"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1087,9 +1157,13 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_webhook_operation(
+
                 id=id,
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_webhook_operation", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1145,9 +1219,13 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_webhook_operation(
+
                 id=id,
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_webhook_operation", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1206,9 +1284,13 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_webhook_operation(
+
                 id=id,
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_webhook_operation", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1267,9 +1349,13 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_webhook_operation(
+
                 id=id,
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_webhook_operation", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1328,9 +1414,13 @@ class TestWebhookOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_webhook_operation(
+
                 id=id,
+
                 webhook_operation=webhook_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_webhook_operation", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

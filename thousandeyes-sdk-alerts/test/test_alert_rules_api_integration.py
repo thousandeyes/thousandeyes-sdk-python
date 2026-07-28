@@ -97,80 +97,83 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;severity&quot; : &quot;major&quot;,
-                  &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                  &quot;alertType&quot; : &quot;http-server&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "severity" : "major",
+                  "expression" : "((hops((hopDelay >= 100 ms))))",
+                  "alertType" : "http-server",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;includeCoveredPrefixes&quot; : true,
-                  &quot;visitedSitesFilter&quot; : [ &quot;app.thousandeyes.com&quot; ],
-                  &quot;description&quot; : &quot;A rule description string&quot;,
-                  &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                  &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                  &quot;alertGroupType&quot; : &quot;endpoint&quot;,
-                  &quot;notifyOnClear&quot; : true,
-                  &quot;testIds&quot; : [ &quot;281474976710706&quot;, &quot;271659&quot; ],
-                  &quot;roundsViolatingOutOf&quot; : 5,
-                  &quot;roundsViolatingRequired&quot; : 2,
-                  &quot;isDefault&quot; : true,
-                  &quot;endpointAgentIds&quot; : [ &quot;281474976710706&quot;, &quot;281474976710706&quot; ],
-                  &quot;minimumSourcesPct&quot; : 99,
-                  &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                  &quot;endpointLabelIds&quot; : [ &quot;123456&quot;, &quot;123456&quot; ],
-                  &quot;minimumSources&quot; : 10,
-                  &quot;ruleId&quot; : &quot;127094&quot;,
-                  &quot;notifications&quot; : {
-                    &quot;thirdParty&quot; : [ {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationId&quot; : &quot;sl-101&quot;
+                  "includeCoveredPrefixes" : true,
+                  "visitedSitesFilter" : [ "app.thousandeyes.com" ],
+                  "description" : "A rule description string",
+                  "roundsViolatingMode" : "exact",
+                  "sensitivityLevel" : "medium",
+                  "alertGroupType" : "endpoint",
+                  "notifyOnClear" : true,
+                  "testIds" : [ "281474976710706", "271659" ],
+                  "roundsViolatingOutOf" : 5,
+                  "roundsViolatingRequired" : 2,
+                  "isDefault" : true,
+                  "endpointAgentIds" : [ "281474976710706", "281474976710706" ],
+                  "minimumSourcesPct" : 99,
+                  "ruleName" : "The End of the Internet",
+                  "endpointLabelIds" : [ "123456", "123456" ],
+                  "minimumSources" : 10,
+                  "ruleId" : "127094",
+                  "notifications" : {
+                    "thirdParty" : [ {
+                      "integrationType" : "slack",
+                      "integrationId" : "sl-101"
                     }, {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationId&quot; : &quot;sl-101&quot;
+                      "integrationType" : "slack",
+                      "integrationId" : "sl-101"
                     } ],
-                    &quot;webhook&quot; : [ {
-                      &quot;integrationType&quot; : &quot;webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;wb-201&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                    "webhook" : [ {
+                      "integrationType" : "webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "wb-201",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     }, {
-                      &quot;integrationType&quot; : &quot;webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;wb-201&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                      "integrationType" : "webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "wb-201",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     } ],
-                    &quot;email&quot; : {
-                      &quot;recipients&quot; : [ &quot;noreply@thousandeyes.com&quot; ],
-                      &quot;message&quot; : &quot;Notification message&quot;
+                    "email" : {
+                      "recipients" : [ "noreply@thousandeyes.com" ],
+                      "message" : "Notification message"
                     },
-                    &quot;customWebhook&quot; : [ {
-                      &quot;integrationType&quot; : &quot;custom-webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;6e069ae9-8537-4120-b988-61bf8e0d8b87&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                    "customWebhook" : [ {
+                      "integrationType" : "custom-webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     }, {
-                      &quot;integrationType&quot; : &quot;custom-webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;6e069ae9-8537-4120-b988-61bf8e0d8b87&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                      "integrationType" : "custom-webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     } ]
                   },
-                  &quot;direction&quot; : &quot;to-target&quot;
+                  "direction" : "to-target"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_alert_rule(
+
             rule_detail_update=rule_detail_update,
+
             aid=aid,
+
             _headers=self.te_headers("create_alert_rule"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -265,8 +268,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_alert_rule(
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_alert_rule", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -349,8 +355,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_alert_rule(
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_alert_rule", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -436,8 +445,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_alert_rule(
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_alert_rule", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -523,8 +535,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_alert_rule(
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_alert_rule", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -610,8 +625,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_alert_rule(
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_alert_rule", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -697,8 +715,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_alert_rule(
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_alert_rule", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -711,8 +732,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
         rule_id = '127094'
         aid = '1234'
         response = self.api.delete_alert_rule_with_http_info(
+
             rule_id=rule_id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_alert_rule"),
         )
         self.assertEqual(204, response.status_code)
@@ -746,8 +770,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_rule", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -768,8 +795,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_rule", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -793,8 +823,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_rule", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -818,8 +851,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_rule", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -843,8 +879,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_rule", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -868,8 +907,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_rule", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -883,143 +925,146 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;severity&quot; : &quot;major&quot;,
-                  &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                  &quot;alertType&quot; : &quot;http-server&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "severity" : "major",
+                  "expression" : "((hops((hopDelay >= 100 ms))))",
+                  "alertType" : "http-server",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;includeCoveredPrefixes&quot; : true,
-                  &quot;visitedSitesFilter&quot; : [ &quot;app.thousandeyes.com&quot; ],
-                  &quot;description&quot; : &quot;A rule description string&quot;,
-                  &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                  &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                  &quot;alertGroupType&quot; : &quot;endpoint&quot;,
-                  &quot;notifyOnClear&quot; : true,
-                  &quot;testIds&quot; : [ &quot;281474976710706&quot;, &quot;271659&quot; ],
-                  &quot;roundsViolatingOutOf&quot; : 5,
-                  &quot;roundsViolatingRequired&quot; : 2,
-                  &quot;isDefault&quot; : true,
-                  &quot;endpointAgentIds&quot; : [ &quot;281474976710706&quot;, &quot;281474976710706&quot; ],
-                  &quot;tests&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "includeCoveredPrefixes" : true,
+                  "visitedSitesFilter" : [ "app.thousandeyes.com" ],
+                  "description" : "A rule description string",
+                  "roundsViolatingMode" : "exact",
+                  "sensitivityLevel" : "medium",
+                  "alertGroupType" : "endpoint",
+                  "notifyOnClear" : true,
+                  "testIds" : [ "281474976710706", "271659" ],
+                  "roundsViolatingOutOf" : 5,
+                  "roundsViolatingRequired" : 2,
+                  "isDefault" : true,
+                  "endpointAgentIds" : [ "281474976710706", "281474976710706" ],
+                  "tests" : [ {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   } ],
-                  &quot;minimumSourcesPct&quot; : 99,
-                  &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                  &quot;endpointLabelIds&quot; : [ &quot;123456&quot;, &quot;123456&quot; ],
-                  &quot;minimumSources&quot; : 10,
-                  &quot;ruleId&quot; : &quot;127094&quot;,
-                  &quot;notifications&quot; : {
-                    &quot;thirdParty&quot; : [ {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationId&quot; : &quot;sl-101&quot;
+                  "minimumSourcesPct" : 99,
+                  "ruleName" : "The End of the Internet",
+                  "endpointLabelIds" : [ "123456", "123456" ],
+                  "minimumSources" : 10,
+                  "ruleId" : "127094",
+                  "notifications" : {
+                    "thirdParty" : [ {
+                      "integrationType" : "slack",
+                      "integrationId" : "sl-101"
                     }, {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationId&quot; : &quot;sl-101&quot;
+                      "integrationType" : "slack",
+                      "integrationId" : "sl-101"
                     } ],
-                    &quot;webhook&quot; : [ {
-                      &quot;integrationType&quot; : &quot;webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;wb-201&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                    "webhook" : [ {
+                      "integrationType" : "webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "wb-201",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     }, {
-                      &quot;integrationType&quot; : &quot;webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;wb-201&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                      "integrationType" : "webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "wb-201",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     } ],
-                    &quot;email&quot; : {
-                      &quot;recipients&quot; : [ &quot;noreply@thousandeyes.com&quot; ],
-                      &quot;message&quot; : &quot;Notification message&quot;
+                    "email" : {
+                      "recipients" : [ "noreply@thousandeyes.com" ],
+                      "message" : "Notification message"
                     },
-                    &quot;customWebhook&quot; : [ {
-                      &quot;integrationType&quot; : &quot;custom-webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;6e069ae9-8537-4120-b988-61bf8e0d8b87&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                    "customWebhook" : [ {
+                      "integrationType" : "custom-webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     }, {
-                      &quot;integrationType&quot; : &quot;custom-webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;6e069ae9-8537-4120-b988-61bf8e0d8b87&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                      "integrationType" : "custom-webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     } ]
                   },
-                  &quot;direction&quot; : &quot;to-target&quot;
+                  "direction" : "to-target"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_alert_rule(
+
             rule_id=rule_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_alert_rule"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1040,8 +1085,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_rule", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1065,8 +1113,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_rule", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1090,8 +1141,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_rule", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1115,8 +1169,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_rule", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1140,8 +1197,11 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_alert_rule(
+
                 rule_id=rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_rule", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1154,66 +1214,68 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;alertRules&quot; : [ {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;includeCoveredPrefixes&quot; : true,
-                    &quot;visitedSitesFilter&quot; : [ &quot;app.thousandeyes.com&quot; ],
-                    &quot;description&quot; : &quot;A rule description string&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;alertGroupType&quot; : &quot;endpoint&quot;,
-                    &quot;notifyOnClear&quot; : true,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;endpointAgentIds&quot; : [ &quot;281474976710706&quot;, &quot;281474976710706&quot; ],
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;endpointLabelIds&quot; : [ &quot;123456&quot;, &quot;123456&quot; ],
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                  "alertRules" : [ {
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "includeCoveredPrefixes" : true,
+                    "visitedSitesFilter" : [ "app.thousandeyes.com" ],
+                    "description" : "A rule description string",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "alertGroupType" : "endpoint",
+                    "notifyOnClear" : true,
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "endpointAgentIds" : [ "281474976710706", "281474976710706" ],
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "endpointLabelIds" : [ "123456", "123456" ],
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   }, {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;includeCoveredPrefixes&quot; : true,
-                    &quot;visitedSitesFilter&quot; : [ &quot;app.thousandeyes.com&quot; ],
-                    &quot;description&quot; : &quot;A rule description string&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;alertGroupType&quot; : &quot;endpoint&quot;,
-                    &quot;notifyOnClear&quot; : true,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;endpointAgentIds&quot; : [ &quot;281474976710706&quot;, &quot;281474976710706&quot; ],
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;endpointLabelIds&quot; : [ &quot;123456&quot;, &quot;123456&quot; ],
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "includeCoveredPrefixes" : true,
+                    "visitedSitesFilter" : [ "app.thousandeyes.com" ],
+                    "description" : "A rule description string",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "alertGroupType" : "endpoint",
+                    "notifyOnClear" : true,
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "endpointAgentIds" : [ "281474976710706", "281474976710706" ],
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "endpointLabelIds" : [ "123456", "123456" ],
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_alerts_rules(
+
             aid=aid,
+
             _headers=self.te_headers("get_alerts_rules"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1233,7 +1295,9 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_alerts_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1256,7 +1320,9 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_alerts_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1279,7 +1345,9 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_alerts_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1302,7 +1370,9 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_alerts_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1325,7 +1395,9 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_alerts_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1402,81 +1474,85 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;severity&quot; : &quot;major&quot;,
-                  &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                  &quot;alertType&quot; : &quot;http-server&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "severity" : "major",
+                  "expression" : "((hops((hopDelay >= 100 ms))))",
+                  "alertType" : "http-server",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;includeCoveredPrefixes&quot; : true,
-                  &quot;visitedSitesFilter&quot; : [ &quot;app.thousandeyes.com&quot; ],
-                  &quot;description&quot; : &quot;A rule description string&quot;,
-                  &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                  &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                  &quot;alertGroupType&quot; : &quot;endpoint&quot;,
-                  &quot;notifyOnClear&quot; : true,
-                  &quot;testIds&quot; : [ &quot;281474976710706&quot;, &quot;271659&quot; ],
-                  &quot;roundsViolatingOutOf&quot; : 5,
-                  &quot;roundsViolatingRequired&quot; : 2,
-                  &quot;isDefault&quot; : true,
-                  &quot;endpointAgentIds&quot; : [ &quot;281474976710706&quot;, &quot;281474976710706&quot; ],
-                  &quot;minimumSourcesPct&quot; : 99,
-                  &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                  &quot;endpointLabelIds&quot; : [ &quot;123456&quot;, &quot;123456&quot; ],
-                  &quot;minimumSources&quot; : 10,
-                  &quot;ruleId&quot; : &quot;127094&quot;,
-                  &quot;notifications&quot; : {
-                    &quot;thirdParty&quot; : [ {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationId&quot; : &quot;sl-101&quot;
+                  "includeCoveredPrefixes" : true,
+                  "visitedSitesFilter" : [ "app.thousandeyes.com" ],
+                  "description" : "A rule description string",
+                  "roundsViolatingMode" : "exact",
+                  "sensitivityLevel" : "medium",
+                  "alertGroupType" : "endpoint",
+                  "notifyOnClear" : true,
+                  "testIds" : [ "281474976710706", "271659" ],
+                  "roundsViolatingOutOf" : 5,
+                  "roundsViolatingRequired" : 2,
+                  "isDefault" : true,
+                  "endpointAgentIds" : [ "281474976710706", "281474976710706" ],
+                  "minimumSourcesPct" : 99,
+                  "ruleName" : "The End of the Internet",
+                  "endpointLabelIds" : [ "123456", "123456" ],
+                  "minimumSources" : 10,
+                  "ruleId" : "127094",
+                  "notifications" : {
+                    "thirdParty" : [ {
+                      "integrationType" : "slack",
+                      "integrationId" : "sl-101"
                     }, {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationId&quot; : &quot;sl-101&quot;
+                      "integrationType" : "slack",
+                      "integrationId" : "sl-101"
                     } ],
-                    &quot;webhook&quot; : [ {
-                      &quot;integrationType&quot; : &quot;webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;wb-201&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                    "webhook" : [ {
+                      "integrationType" : "webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "wb-201",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     }, {
-                      &quot;integrationType&quot; : &quot;webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;wb-201&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                      "integrationType" : "webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "wb-201",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     } ],
-                    &quot;email&quot; : {
-                      &quot;recipients&quot; : [ &quot;noreply@thousandeyes.com&quot; ],
-                      &quot;message&quot; : &quot;Notification message&quot;
+                    "email" : {
+                      "recipients" : [ "noreply@thousandeyes.com" ],
+                      "message" : "Notification message"
                     },
-                    &quot;customWebhook&quot; : [ {
-                      &quot;integrationType&quot; : &quot;custom-webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;6e069ae9-8537-4120-b988-61bf8e0d8b87&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                    "customWebhook" : [ {
+                      "integrationType" : "custom-webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     }, {
-                      &quot;integrationType&quot; : &quot;custom-webhook&quot;,
-                      &quot;integrationName&quot; : &quot;My webhook&quot;,
-                      &quot;integrationId&quot; : &quot;6e069ae9-8537-4120-b988-61bf8e0d8b87&quot;,
-                      &quot;target&quot; : &quot;https://example.com/test/webhooks/notifications&quot;
+                      "integrationType" : "custom-webhook",
+                      "integrationName" : "My webhook",
+                      "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
+                      "target" : "https://example.com/test/webhooks/notifications"
                     } ]
                   },
-                  &quot;direction&quot; : &quot;to-target&quot;
+                  "direction" : "to-target"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_alert_rule(
+
             rule_id=rule_id,
+
             rule_detail_update=rule_detail_update,
+
             aid=aid,
+
             _headers=self.te_headers("update_alert_rule"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1572,9 +1648,13 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_alert_rule(
+
                 rule_id=rule_id,
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_alert_rule", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1658,9 +1738,13 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_alert_rule(
+
                 rule_id=rule_id,
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_alert_rule", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1747,9 +1831,13 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_alert_rule(
+
                 rule_id=rule_id,
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_alert_rule", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1836,9 +1924,13 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_alert_rule(
+
                 rule_id=rule_id,
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_alert_rule", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1925,9 +2017,13 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_alert_rule(
+
                 rule_id=rule_id,
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_alert_rule", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2014,9 +2110,13 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_alert_rule(
+
                 rule_id=rule_id,
+
                 rule_detail_update=rule_detail_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_alert_rule", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

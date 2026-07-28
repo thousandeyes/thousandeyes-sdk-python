@@ -68,363 +68,368 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         response_body_json = """
                 {
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;dnsServerTest&quot; : {
-                      &quot;resolutionTime&quot; : 3
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "dnsServerTest" : {
+                      "resolutionTime" : 3
                     },
-                    &quot;isIcmpBlocked&quot; : true,
-                    &quot;gatewayScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "isIcmpBlocked" : true,
+                    "gatewayScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;tcpConnect&quot; : {
-                      &quot;rtt&quot; : 77.777,
-                      &quot;errorCode&quot; : &quot;ERR_TIMED_OUT&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                    "tcpConnect" : {
+                      "rtt" : 77.777,
+                      "errorCode" : "ERR_TIMED_OUT",
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
-                    &quot;vpnScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "vpnScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;proxyScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "proxyScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;type&quot; : &quot;vpn&quot;,
-                    &quot;targetPort&quot; : 80,
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;target&quot; : &quot;10.0.2.2&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "type" : "vpn",
+                    "targetPort" : 80,
+                    "platform" : "mac",
+                    "target" : "10.0.2.2",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;systemMetricDetails&quot; : {
-                      &quot;topCpuApplications&quot; : [ {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                    "systemMetricDetails" : {
+                      "topCpuApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       }, {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       } ],
-                      &quot;topMemoryApplications&quot; : [ {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                      "topMemoryApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       }, {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       } ]
                     },
-                    &quot;connectionScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "connectionScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;icmpPing&quot; : {
-                      &quot;maxRtt&quot; : 66,
-                      &quot;loss&quot; : 1,
-                      &quot;pktsReceived&quot; : 10,
-                      &quot;avgRtt&quot; : 7,
-                      &quot;meanDevRtt&quot; : 11,
-                      &quot;minRtt&quot; : 1,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;pktsSent&quot; : 10
+                    "icmpPing" : {
+                      "maxRtt" : 66,
+                      "loss" : 1,
+                      "pktsReceived" : 10,
+                      "avgRtt" : 7,
+                      "meanDevRtt" : 11,
+                      "minRtt" : 1,
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "pktsSent" : 10
                     },
-                    &quot;networkTopologyId&quot; : &quot;00160:54c3a4b180c6:1490536500:c7a58c49&quot;,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;agentScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
+                    "roundId" : 1384309800,
+                    "agentScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     }
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;dnsServerTest&quot; : {
-                      &quot;resolutionTime&quot; : 3
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "dnsServerTest" : {
+                      "resolutionTime" : 3
                     },
-                    &quot;isIcmpBlocked&quot; : true,
-                    &quot;gatewayScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "isIcmpBlocked" : true,
+                    "gatewayScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;tcpConnect&quot; : {
-                      &quot;rtt&quot; : 77.777,
-                      &quot;errorCode&quot; : &quot;ERR_TIMED_OUT&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                    "tcpConnect" : {
+                      "rtt" : 77.777,
+                      "errorCode" : "ERR_TIMED_OUT",
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
-                    &quot;vpnScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "vpnScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;proxyScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "proxyScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;type&quot; : &quot;vpn&quot;,
-                    &quot;targetPort&quot; : 80,
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;target&quot; : &quot;10.0.2.2&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "type" : "vpn",
+                    "targetPort" : 80,
+                    "platform" : "mac",
+                    "target" : "10.0.2.2",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;systemMetricDetails&quot; : {
-                      &quot;topCpuApplications&quot; : [ {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                    "systemMetricDetails" : {
+                      "topCpuApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       }, {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       } ],
-                      &quot;topMemoryApplications&quot; : [ {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                      "topMemoryApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       }, {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       } ]
                     },
-                    &quot;connectionScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "connectionScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;icmpPing&quot; : {
-                      &quot;maxRtt&quot; : 66,
-                      &quot;loss&quot; : 1,
-                      &quot;pktsReceived&quot; : 10,
-                      &quot;avgRtt&quot; : 7,
-                      &quot;meanDevRtt&quot; : 11,
-                      &quot;minRtt&quot; : 1,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;pktsSent&quot; : 10
+                    "icmpPing" : {
+                      "maxRtt" : 66,
+                      "loss" : 1,
+                      "pktsReceived" : 10,
+                      "avgRtt" : 7,
+                      "meanDevRtt" : 11,
+                      "minRtt" : 1,
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "pktsSent" : 10
                     },
-                    &quot;networkTopologyId&quot; : &quot;00160:54c3a4b180c6:1490536500:c7a58c49&quot;,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;agentScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
+                    "roundId" : 1384309800,
+                    "agentScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     }
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.filter_local_networks_test_results_topologies(
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
-            expand=expand,
+
             endpoint_network_topology_result_request=endpoint_network_topology_result_request,
+
             _headers=self.te_headers("filter_local_networks_test_results_topologies"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -469,7 +474,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -493,13 +497,19 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.filter_local_networks_test_results_topologies(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_network_topology_result_request=endpoint_network_topology_result_request,
+
                 _headers=self.te_headers("filter_local_networks_test_results_topologies", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -544,7 +554,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -556,13 +565,19 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.filter_local_networks_test_results_topologies(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_network_topology_result_request=endpoint_network_topology_result_request,
+
                 _headers=self.te_headers("filter_local_networks_test_results_topologies", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -607,7 +622,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -622,13 +636,19 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.filter_local_networks_test_results_topologies(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_network_topology_result_request=endpoint_network_topology_result_request,
+
                 _headers=self.te_headers("filter_local_networks_test_results_topologies", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -673,7 +693,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -688,13 +707,19 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.filter_local_networks_test_results_topologies(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_network_topology_result_request=endpoint_network_topology_result_request,
+
                 _headers=self.te_headers("filter_local_networks_test_results_topologies", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -739,7 +764,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -754,13 +778,19 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.filter_local_networks_test_results_topologies(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_network_topology_result_request=endpoint_network_topology_result_request,
+
                 _headers=self.te_headers("filter_local_networks_test_results_topologies", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -805,7 +835,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -820,13 +849,19 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.filter_local_networks_test_results_topologies(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_network_topology_result_request=endpoint_network_topology_result_request,
+
                 _headers=self.te_headers("filter_local_networks_test_results_topologies", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -871,7 +906,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -886,13 +920,19 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.filter_local_networks_test_results_topologies(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_network_topology_result_request=endpoint_network_topology_result_request,
+
                 _headers=self.te_headers("filter_local_networks_test_results_topologies", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -905,34 +945,36 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;localNetworks&quot; : [ {
-                    &quot;publicIpRange&quot; : &quot;178.216.56.0-178.216.63.255&quot;,
-                    &quot;networkName&quot; : &quot;10.5.51.0 (in 178.216.56.0/21)&quot;,
-                    &quot;networkId&quot; : &quot;006c4fa7a054&quot;,
-                    &quot;localPrefix&quot; : &quot;10.5.51.0&quot;
+                  "localNetworks" : [ {
+                    "publicIpRange" : "178.216.56.0-178.216.63.255",
+                    "networkName" : "10.5.51.0 (in 178.216.56.0/21)",
+                    "networkId" : "006c4fa7a054",
+                    "localPrefix" : "10.5.51.0"
                   }, {
-                    &quot;publicIpRange&quot; : &quot;178.216.56.0-178.216.63.255&quot;,
-                    &quot;networkName&quot; : &quot;10.5.51.0 (in 178.216.56.0/21)&quot;,
-                    &quot;networkId&quot; : &quot;006c4fa7a054&quot;,
-                    &quot;localPrefix&quot; : &quot;10.5.51.0&quot;
+                    "publicIpRange" : "178.216.56.0-178.216.63.255",
+                    "networkName" : "10.5.51.0 (in 178.216.56.0/21)",
+                    "networkId" : "006c4fa7a054",
+                    "localPrefix" : "10.5.51.0"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_local_networks_test_results(
+
             aid=aid,
+
             _headers=self.te_headers("get_local_networks_test_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -952,7 +994,9 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_local_networks_test_results(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_local_networks_test_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -975,7 +1019,9 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_local_networks_test_results(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_local_networks_test_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -998,7 +1044,9 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_local_networks_test_results(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_local_networks_test_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1021,7 +1069,9 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_local_networks_test_results(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_local_networks_test_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1044,7 +1094,9 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_local_networks_test_results(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_local_networks_test_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1067,7 +1119,9 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_local_networks_test_results(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_local_networks_test_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1079,597 +1133,598 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         """Integration test for get_local_networks_test_results_topology success path"""
         network_topology_id = '00160:39c518560de9:1491651900:236e6f18'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;dnsServerTest&quot; : {
-                      &quot;resolutionTime&quot; : 3
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "dnsServerTest" : {
+                      "resolutionTime" : 3
                     },
-                    &quot;vpnScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "vpnScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;type&quot; : &quot;vpn&quot;,
-                    &quot;targetPort&quot; : 80,
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "type" : "vpn",
+                    "targetPort" : 80,
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;icmpTraceroute&quot; : {
-                      &quot;destination&quot; : &quot;13.32.22.232&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                    "icmpTraceroute" : {
+                      "destination" : "13.32.22.232",
+                      "hops" : [ {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       }, {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       } ],
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;internalErrors&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;agentScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "roundId" : 1384309800,
+                    "agentScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;isIcmpBlocked&quot; : true,
-                    &quot;gatewayScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "isIcmpBlocked" : true,
+                    "gatewayScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;tcpConnect&quot; : {
-                      &quot;rtt&quot; : 77.777,
-                      &quot;errorCode&quot; : &quot;ERR_TIMED_OUT&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                    "tcpConnect" : {
+                      "rtt" : 77.777,
+                      "errorCode" : "ERR_TIMED_OUT",
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
-                    &quot;proxyScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "proxyScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 46.0552778,
-                      &quot;location&quot; : &quot;Slovenia&quot;,
-                      &quot;longitude&quot; : 14.5144444
+                    "coordinates" : {
+                      "latitude" : 46.0552778,
+                      "location" : "Slovenia",
+                      "longitude" : 14.5144444
                     },
-                    &quot;icmpTraceroutes&quot; : [ {
-                      &quot;destination&quot; : &quot;13.32.22.232&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                    "icmpTraceroutes" : [ {
+                      "destination" : "13.32.22.232",
+                      "hops" : [ {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       }, {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       } ],
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;internalErrors&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     }, {
-                      &quot;destination&quot; : &quot;13.32.22.232&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                      "destination" : "13.32.22.232",
+                      "hops" : [ {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       }, {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       } ],
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;internalErrors&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     } ],
-                    &quot;target&quot; : &quot;10.0.2.2&quot;,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "target" : "10.0.2.2",
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;systemMetricDetails&quot; : {
-                      &quot;topCpuApplications&quot; : [ {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                    "systemMetricDetails" : {
+                      "topCpuApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       }, {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       } ],
-                      &quot;topMemoryApplications&quot; : [ {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                      "topMemoryApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       }, {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       } ]
                     },
-                    &quot;connectionScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "connectionScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;icmpPing&quot; : {
-                      &quot;maxRtt&quot; : 66,
-                      &quot;loss&quot; : 1,
-                      &quot;pktsReceived&quot; : 10,
-                      &quot;avgRtt&quot; : 7,
-                      &quot;meanDevRtt&quot; : 11,
-                      &quot;minRtt&quot; : 1,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;pktsSent&quot; : 10
+                    "icmpPing" : {
+                      "maxRtt" : 66,
+                      "loss" : 1,
+                      "pktsReceived" : 10,
+                      "avgRtt" : 7,
+                      "meanDevRtt" : 11,
+                      "minRtt" : 1,
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "pktsSent" : 10
                     },
-                    &quot;networkTopologyId&quot; : &quot;00160:54c3a4b180c6:1490536500:c7a58c49&quot;
+                    "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49"
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;dnsServerTest&quot; : {
-                      &quot;resolutionTime&quot; : 3
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "dnsServerTest" : {
+                      "resolutionTime" : 3
                     },
-                    &quot;vpnScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "vpnScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;type&quot; : &quot;vpn&quot;,
-                    &quot;targetPort&quot; : 80,
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "type" : "vpn",
+                    "targetPort" : 80,
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;icmpTraceroute&quot; : {
-                      &quot;destination&quot; : &quot;13.32.22.232&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                    "icmpTraceroute" : {
+                      "destination" : "13.32.22.232",
+                      "hops" : [ {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       }, {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       } ],
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;internalErrors&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;agentScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "roundId" : 1384309800,
+                    "agentScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;isIcmpBlocked&quot; : true,
-                    &quot;gatewayScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "isIcmpBlocked" : true,
+                    "gatewayScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;tcpConnect&quot; : {
-                      &quot;rtt&quot; : 77.777,
-                      &quot;errorCode&quot; : &quot;ERR_TIMED_OUT&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                    "tcpConnect" : {
+                      "rtt" : 77.777,
+                      "errorCode" : "ERR_TIMED_OUT",
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     },
-                    &quot;proxyScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "proxyScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 46.0552778,
-                      &quot;location&quot; : &quot;Slovenia&quot;,
-                      &quot;longitude&quot; : 14.5144444
+                    "coordinates" : {
+                      "latitude" : 46.0552778,
+                      "location" : "Slovenia",
+                      "longitude" : 14.5144444
                     },
-                    &quot;icmpTraceroutes&quot; : [ {
-                      &quot;destination&quot; : &quot;13.32.22.232&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                    "icmpTraceroutes" : [ {
+                      "destination" : "13.32.22.232",
+                      "hops" : [ {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       }, {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       } ],
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;internalErrors&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     }, {
-                      &quot;destination&quot; : &quot;13.32.22.232&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                      "destination" : "13.32.22.232",
+                      "hops" : [ {
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       }, {
-                        &quot;delay&quot; : 5,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;name&quot; : &quot;89-210-88-65.access.t-2.net&quot;,
-                        &quot;mpls&quot; : [ &quot;L&#x3D;301472,E&#x3D;0,S&#x3D;1,T&#x3D;1&quot; ],
-                        &quot;asn&quot; : 34779
+                        "delay" : 5,
+                        "prefix" : "196.40.96.0/20",
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "name" : "89-210-88-65.access.t-2.net",
+                        "mpls" : [ "L=301472,E=0,S=1,T=1" ],
+                        "asn" : 34779
                       } ],
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;internalErrors&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ]
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "internalErrors" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ]
                     } ],
-                    &quot;target&quot; : &quot;10.0.2.2&quot;,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "target" : "10.0.2.2",
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;systemMetricDetails&quot; : {
-                      &quot;topCpuApplications&quot; : [ {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                    "systemMetricDetails" : {
+                      "topCpuApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       }, {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       } ],
-                      &quot;topMemoryApplications&quot; : [ {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                      "topMemoryApplications" : [ {
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       }, {
-                        &quot;totalMemoryBytes&quot; : 1023334,
-                        &quot;processes&quot; : [ {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                        "totalMemoryBytes" : 1023334,
+                        "processes" : [ {
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         }, {
-                          &quot;memoryBytes&quot; : 1023334,
-                          &quot;memoryPercentage&quot; : 0.22,
-                          &quot;name&quot; : &quot;Webex background&quot;,
-                          &quot;cpu&quot; : 0.5,
-                          &quot;pid&quot; : 15632
+                          "memoryBytes" : 1023334,
+                          "memoryPercentage" : 0.22,
+                          "name" : "Webex background",
+                          "cpu" : 0.5,
+                          "pid" : 15632
                         } ],
-                        &quot;totalCpu&quot; : 0.5,
-                        &quot;name&quot; : &quot;Webex&quot;,
-                        &quot;totalMemoryPercentage&quot; : 0.22
+                        "totalCpu" : 0.5,
+                        "name" : "Webex",
+                        "totalMemoryPercentage" : 0.22
                       } ]
                     },
-                    &quot;connectionScore&quot; : {
-                      &quot;score&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "connectionScore" : {
+                      "score" : 100,
+                      "quality" : "great"
                     },
-                    &quot;icmpPing&quot; : {
-                      &quot;maxRtt&quot; : 66,
-                      &quot;loss&quot; : 1,
-                      &quot;pktsReceived&quot; : 10,
-                      &quot;avgRtt&quot; : 7,
-                      &quot;meanDevRtt&quot; : 11,
-                      &quot;minRtt&quot; : 1,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;infoFlags&quot; : [ &quot;TE_INFO_ICMP_BLOCKED_BY_FIREWALL&quot; ],
-                      &quot;pktsSent&quot; : 10
+                    "icmpPing" : {
+                      "maxRtt" : 66,
+                      "loss" : 1,
+                      "pktsReceived" : 10,
+                      "avgRtt" : 7,
+                      "meanDevRtt" : 11,
+                      "minRtt" : 1,
+                      "error" : "An operation timed out.",
+                      "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
+                      "pktsSent" : 10
                     },
-                    &quot;networkTopologyId&quot; : &quot;00160:54c3a4b180c6:1490536500:c7a58c49&quot;
+                    "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_local_networks_test_results_topology(
+
             network_topology_id=network_topology_id,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("get_local_networks_test_results_topology"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1679,7 +1734,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         """Integration test for get_local_networks_test_results_topology error path (HTTP 401)"""
         network_topology_id = '00160:39c518560de9:1491651900:236e6f18'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1691,9 +1745,11 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_local_networks_test_results_topology(
+
                 network_topology_id=network_topology_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_local_networks_test_results_topology", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1703,7 +1759,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         """Integration test for get_local_networks_test_results_topology error path (HTTP 403)"""
         network_topology_id = '00160:39c518560de9:1491651900:236e6f18'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1718,9 +1773,11 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_local_networks_test_results_topology(
+
                 network_topology_id=network_topology_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_local_networks_test_results_topology", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1730,7 +1787,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         """Integration test for get_local_networks_test_results_topology error path (HTTP 404)"""
         network_topology_id = '00160:39c518560de9:1491651900:236e6f18'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1745,9 +1801,11 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_local_networks_test_results_topology(
+
                 network_topology_id=network_topology_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_local_networks_test_results_topology", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1757,7 +1815,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         """Integration test for get_local_networks_test_results_topology error path (HTTP 429)"""
         network_topology_id = '00160:39c518560de9:1491651900:236e6f18'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1772,9 +1829,11 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_local_networks_test_results_topology(
+
                 network_topology_id=network_topology_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_local_networks_test_results_topology", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1784,7 +1843,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         """Integration test for get_local_networks_test_results_topology error path (HTTP 500)"""
         network_topology_id = '00160:39c518560de9:1491651900:236e6f18'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1799,9 +1857,11 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_local_networks_test_results_topology(
+
                 network_topology_id=network_topology_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_local_networks_test_results_topology", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1811,7 +1871,6 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
         """Integration test for get_local_networks_test_results_topology error path (HTTP 502)"""
         network_topology_id = '00160:39c518560de9:1491651900:236e6f18'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandLocalNetworkTopologyOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1826,9 +1885,11 @@ class TestLocalNetworkEndpointTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_local_networks_test_results_topology(
+
                 network_topology_id=network_topology_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_local_networks_test_results_topology", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

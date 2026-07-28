@@ -66,37 +66,40 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;My operation&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;type&quot; : &quot;webhook&quot;,
-                  &quot;secrets&quot; : [ {
-                    &quot;secretKey&quot; : &quot;secret/key&quot;,
-                    &quot;name&quot; : &quot;secret_name&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                  "name" : "My operation",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "type" : "webhook",
+                  "secrets" : [ {
+                    "secretKey" : "secret/key",
+                    "name" : "secret_name",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                   }, {
-                    &quot;secretKey&quot; : &quot;secret/key&quot;,
-                    &quot;name&quot; : &quot;secret_name&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                    "secretKey" : "secret/key",
+                    "name" : "secret_name",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                   } ],
-                  &quot;status&quot; : &quot;pending&quot;
+                  "status" : "pending"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_credential_vault_operation(
+
             credential_vault_operation=credential_vault_operation,
+
             aid=aid,
+
             _headers=self.te_headers("create_credential_vault_operation"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -160,8 +163,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_credential_vault_operation(
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential_vault_operation", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -213,8 +219,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_credential_vault_operation(
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential_vault_operation", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -269,8 +278,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_credential_vault_operation(
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential_vault_operation", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -325,8 +337,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_credential_vault_operation(
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential_vault_operation", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -381,8 +396,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_credential_vault_operation(
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential_vault_operation", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -396,9 +414,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
         confirm_disabled_objects = False
         aid = '1234'
         response = self.api.delete_credential_vault_operation_with_http_info(
+
             id=id,
+
             confirm_disabled_objects=confirm_disabled_objects,
+
             aid=aid,
+
             _headers=self.te_headers("delete_credential_vault_operation"),
         )
         self.assertEqual(204, response.status_code)
@@ -433,9 +455,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_credential_vault_operation(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential_vault_operation", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -457,9 +483,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_credential_vault_operation(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential_vault_operation", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -484,9 +514,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_credential_vault_operation(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential_vault_operation", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -511,9 +545,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_credential_vault_operation(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential_vault_operation", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -538,9 +576,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_credential_vault_operation(
+
                 id=id,
+
                 confirm_disabled_objects=confirm_disabled_objects,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential_vault_operation", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -554,37 +596,40 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;My operation&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;type&quot; : &quot;webhook&quot;,
-                  &quot;secrets&quot; : [ {
-                    &quot;secretKey&quot; : &quot;secret/key&quot;,
-                    &quot;name&quot; : &quot;secret_name&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                  "name" : "My operation",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "type" : "webhook",
+                  "secrets" : [ {
+                    "secretKey" : "secret/key",
+                    "name" : "secret_name",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                   }, {
-                    &quot;secretKey&quot; : &quot;secret/key&quot;,
-                    &quot;name&quot; : &quot;secret_name&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                    "secretKey" : "secret/key",
+                    "name" : "secret_name",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                   } ],
-                  &quot;status&quot; : &quot;pending&quot;
+                  "status" : "pending"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_credential_vault_operation(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_credential_vault_operation"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -617,8 +662,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_credential_vault_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operation", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -639,8 +687,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_credential_vault_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operation", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -664,8 +715,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_credential_vault_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operation", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -689,8 +743,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_credential_vault_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operation", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -714,8 +771,11 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_credential_vault_operation(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operation", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -728,76 +788,78 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;items&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "items" : [ {
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;My operation&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                    &quot;type&quot; : &quot;webhook&quot;,
-                    &quot;secrets&quot; : [ {
-                      &quot;secretKey&quot; : &quot;secret/key&quot;,
-                      &quot;name&quot; : &quot;secret_name&quot;,
-                      &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                    "name" : "My operation",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                    "type" : "webhook",
+                    "secrets" : [ {
+                      "secretKey" : "secret/key",
+                      "name" : "secret_name",
+                      "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                     }, {
-                      &quot;secretKey&quot; : &quot;secret/key&quot;,
-                      &quot;name&quot; : &quot;secret_name&quot;,
-                      &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                      "secretKey" : "secret/key",
+                      "name" : "secret_name",
+                      "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                     } ],
-                    &quot;status&quot; : &quot;pending&quot;
+                    "status" : "pending"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;My operation&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                    &quot;type&quot; : &quot;webhook&quot;,
-                    &quot;secrets&quot; : [ {
-                      &quot;secretKey&quot; : &quot;secret/key&quot;,
-                      &quot;name&quot; : &quot;secret_name&quot;,
-                      &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                    "name" : "My operation",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                    "type" : "webhook",
+                    "secrets" : [ {
+                      "secretKey" : "secret/key",
+                      "name" : "secret_name",
+                      "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                     }, {
-                      &quot;secretKey&quot; : &quot;secret/key&quot;,
-                      &quot;name&quot; : &quot;secret_name&quot;,
-                      &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                      "secretKey" : "secret/key",
+                      "name" : "secret_name",
+                      "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                     } ],
-                    &quot;status&quot; : &quot;pending&quot;
+                    "status" : "pending"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_credential_vault_operations(
+
             aid=aid,
+
             _headers=self.te_headers("get_credential_vault_operations"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -829,7 +891,9 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_credential_vault_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operations", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -849,7 +913,9 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_credential_vault_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operations", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -872,7 +938,9 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_credential_vault_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operations", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -895,7 +963,9 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_credential_vault_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operations", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -918,7 +988,9 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_credential_vault_operations(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential_vault_operations", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -964,38 +1036,42 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;My operation&quot;,
-                  &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;,
-                  &quot;type&quot; : &quot;webhook&quot;,
-                  &quot;secrets&quot; : [ {
-                    &quot;secretKey&quot; : &quot;secret/key&quot;,
-                    &quot;name&quot; : &quot;secret_name&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                  "name" : "My operation",
+                  "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf",
+                  "type" : "webhook",
+                  "secrets" : [ {
+                    "secretKey" : "secret/key",
+                    "name" : "secret_name",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                   }, {
-                    &quot;secretKey&quot; : &quot;secret/key&quot;,
-                    &quot;name&quot; : &quot;secret_name&quot;,
-                    &quot;id&quot; : &quot;cb1b8033-ea2d-4e9b-a920-fe87850693cf&quot;
+                    "secretKey" : "secret/key",
+                    "name" : "secret_name",
+                    "id" : "cb1b8033-ea2d-4e9b-a920-fe87850693cf"
                   } ],
-                  &quot;status&quot; : &quot;pending&quot;
+                  "status" : "pending"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_credential_vault_operation(
+
             id=id,
+
             credential_vault_operation=credential_vault_operation,
+
             aid=aid,
+
             _headers=self.te_headers("update_credential_vault_operation"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1060,9 +1136,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_credential_vault_operation(
+
                 id=id,
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential_vault_operation", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1115,9 +1195,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_credential_vault_operation(
+
                 id=id,
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential_vault_operation", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1173,9 +1257,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_credential_vault_operation(
+
                 id=id,
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential_vault_operation", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1231,9 +1319,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_credential_vault_operation(
+
                 id=id,
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential_vault_operation", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1289,9 +1381,13 @@ class TestCredentialVaultOperationsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_credential_vault_operation(
+
                 id=id,
+
                 credential_vault_operation=credential_vault_operation,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential_vault_operation", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

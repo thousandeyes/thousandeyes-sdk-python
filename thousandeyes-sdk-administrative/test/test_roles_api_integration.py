@@ -43,38 +43,41 @@ class TestRolesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;roleId&quot; : &quot;35&quot;,
-                  &quot;permissions&quot; : [ {
-                    &quot;label&quot; : &quot;View reports&quot;,
-                    &quot;permissionId&quot; : &quot;1&quot;,
-                    &quot;isManagementPermission&quot; : true,
-                    &quot;permission&quot; : &quot;REPORT_READ&quot;
+                  "roleId" : "35",
+                  "permissions" : [ {
+                    "label" : "View reports",
+                    "permissionId" : "1",
+                    "isManagementPermission" : true,
+                    "permission" : "REPORT_READ"
                   }, {
-                    &quot;label&quot; : &quot;View snapshots&quot;,
-                    &quot;permissionId&quot; : &quot;51&quot;,
-                    &quot;isManagementPermission&quot; : false,
-                    &quot;permission&quot; : &quot;REPORT_SNAPSHOTS_READ&quot;
+                    "label" : "View snapshots",
+                    "permissionId" : "51",
+                    "isManagementPermission" : false,
+                    "permission" : "REPORT_SNAPSHOTS_READ"
                   } ],
-                  &quot;name&quot; : &quot;Organization Admin&quot;,
-                  &quot;isBuiltin&quot; : true
+                  "name" : "Organization Admin",
+                  "isBuiltin" : true
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_role(
+
             role_request_body=role_request_body,
+
             aid=aid,
+
             _headers=self.te_headers("create_role"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -115,8 +118,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_role(
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_role", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -145,8 +151,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_role(
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_role", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -178,8 +187,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_role(
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_role", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -211,8 +223,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_role(
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_role", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -244,8 +259,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_role(
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_role", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -277,8 +295,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_role(
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_role", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -291,8 +312,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
         id = '23'
         aid = '1234'
         response = self.api.delete_role_with_http_info(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_role"),
         )
         self.assertEqual(204, response.status_code)
@@ -326,8 +350,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_role", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -348,8 +375,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_role", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -373,8 +403,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_role", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -398,8 +431,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_role", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -423,8 +459,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_role", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -448,8 +487,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_role", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -463,38 +505,41 @@ class TestRolesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;roleId&quot; : &quot;35&quot;,
-                  &quot;permissions&quot; : [ {
-                    &quot;label&quot; : &quot;View reports&quot;,
-                    &quot;permissionId&quot; : &quot;1&quot;,
-                    &quot;isManagementPermission&quot; : true,
-                    &quot;permission&quot; : &quot;REPORT_READ&quot;
+                  "roleId" : "35",
+                  "permissions" : [ {
+                    "label" : "View reports",
+                    "permissionId" : "1",
+                    "isManagementPermission" : true,
+                    "permission" : "REPORT_READ"
                   }, {
-                    &quot;label&quot; : &quot;View snapshots&quot;,
-                    &quot;permissionId&quot; : &quot;51&quot;,
-                    &quot;isManagementPermission&quot; : false,
-                    &quot;permission&quot; : &quot;REPORT_SNAPSHOTS_READ&quot;
+                    "label" : "View snapshots",
+                    "permissionId" : "51",
+                    "isManagementPermission" : false,
+                    "permission" : "REPORT_SNAPSHOTS_READ"
                   } ],
-                  &quot;name&quot; : &quot;Organization Admin&quot;,
-                  &quot;isBuiltin&quot; : true
+                  "name" : "Organization Admin",
+                  "isBuiltin" : true
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_role(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_role"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -527,8 +572,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_role", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -549,8 +597,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_role", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -574,8 +625,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_role", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -599,8 +653,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_role", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -624,8 +681,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_role", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -649,8 +709,11 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_role(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_role", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -663,34 +726,36 @@ class TestRolesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;roles&quot; : [ {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                  "roles" : [ {
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   }, {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_roles(
+
             aid=aid,
+
             _headers=self.te_headers("get_roles"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -722,7 +787,9 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_roles(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_roles", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -742,7 +809,9 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_roles(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_roles", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -765,7 +834,9 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_roles(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_roles", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -788,7 +859,9 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_roles(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_roles", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -811,7 +884,9 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_roles(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_roles", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -834,7 +909,9 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_roles(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_roles", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -857,39 +934,43 @@ class TestRolesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;roleId&quot; : &quot;35&quot;,
-                  &quot;permissions&quot; : [ {
-                    &quot;label&quot; : &quot;View reports&quot;,
-                    &quot;permissionId&quot; : &quot;1&quot;,
-                    &quot;isManagementPermission&quot; : true,
-                    &quot;permission&quot; : &quot;REPORT_READ&quot;
+                  "roleId" : "35",
+                  "permissions" : [ {
+                    "label" : "View reports",
+                    "permissionId" : "1",
+                    "isManagementPermission" : true,
+                    "permission" : "REPORT_READ"
                   }, {
-                    &quot;label&quot; : &quot;View snapshots&quot;,
-                    &quot;permissionId&quot; : &quot;51&quot;,
-                    &quot;isManagementPermission&quot; : false,
-                    &quot;permission&quot; : &quot;REPORT_SNAPSHOTS_READ&quot;
+                    "label" : "View snapshots",
+                    "permissionId" : "51",
+                    "isManagementPermission" : false,
+                    "permission" : "REPORT_SNAPSHOTS_READ"
                   } ],
-                  &quot;name&quot; : &quot;Organization Admin&quot;,
-                  &quot;isBuiltin&quot; : true
+                  "name" : "Organization Admin",
+                  "isBuiltin" : true
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_role(
+
             id=id,
+
             role_request_body=role_request_body,
+
             aid=aid,
+
             _headers=self.te_headers("update_role"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -931,9 +1012,13 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_role(
+
                 id=id,
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_role", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -963,9 +1048,13 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_role(
+
                 id=id,
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_role", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -998,9 +1087,13 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_role(
+
                 id=id,
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_role", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1033,9 +1126,13 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_role(
+
                 id=id,
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_role", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1068,9 +1165,13 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_role(
+
                 id=id,
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_role", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1103,9 +1204,13 @@ class TestRolesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_role(
+
                 id=id,
+
                 role_request_body=role_request_body,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_role", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

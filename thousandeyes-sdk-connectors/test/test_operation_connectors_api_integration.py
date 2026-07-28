@@ -36,26 +36,30 @@ class TestOperationConnectorsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;items&quot; : [ &quot;ca39314d-eb4f-496f-9435-b5d20b1bfbff&quot;, &quot;ca39314d-eb4f-496f-9435-b5d20b1bfbff&quot; ]
+                  "items" : [ "ca39314d-eb4f-496f-9435-b5d20b1bfbff", "ca39314d-eb4f-496f-9435-b5d20b1bfbff" ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_operation_connectors(
+
             type=type,
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_operation_connectors"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -89,9 +93,13 @@ class TestOperationConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_operation_connectors(
+
                 type=type,
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_operation_connectors", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -113,9 +121,13 @@ class TestOperationConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_operation_connectors(
+
                 type=type,
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_operation_connectors", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -140,9 +152,13 @@ class TestOperationConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_operation_connectors(
+
                 type=type,
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_operation_connectors", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -167,9 +183,13 @@ class TestOperationConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_operation_connectors(
+
                 type=type,
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_operation_connectors", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -194,9 +214,13 @@ class TestOperationConnectorsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_operation_connectors(
+
                 type=type,
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_operation_connectors", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

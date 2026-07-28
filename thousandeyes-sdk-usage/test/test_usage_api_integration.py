@@ -36,60 +36,64 @@ class TestUsageApiIntegration(IntegrationTestBase):
         cursor = 'cursor_example'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;breakdowns&quot; : [ {
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;agentId&quot; : &quot;123456&quot;,
-                    &quot;accountGroupName&quot; : &quot;Support&quot;,
-                    &quot;agentName&quot; : &quot;TEVA-test-agent&quot;,
-                    &quot;enterpriseUnitsUsed&quot; : 599878,
-                    &quot;enterpriseUnitsProjected&quot; : 597808
+                  "breakdowns" : [ {
+                    "aid" : "1234",
+                    "agentId" : "123456",
+                    "accountGroupName" : "Support",
+                    "agentName" : "TEVA-test-agent",
+                    "enterpriseUnitsUsed" : 599878,
+                    "enterpriseUnitsProjected" : 597808
                   }, {
-                    &quot;aid&quot; : &quot;315&quot;,
-                    &quot;agentId&quot; : &quot;789&quot;,
-                    &quot;accountGroupName&quot; : &quot;Documentation&quot;,
-                    &quot;agentName&quot; : &quot;lab-physical-appliance-1&quot;,
-                    &quot;enterpriseUnitsUsed&quot; : 597123,
-                    &quot;enterpriseUnitsProjected&quot; : 597808
+                    "aid" : "315",
+                    "agentId" : "789",
+                    "accountGroupName" : "Documentation",
+                    "agentName" : "lab-physical-appliance-1",
+                    "enterpriseUnitsUsed" : 597123,
+                    "enterpriseUnitsProjected" : 597808
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_enterprise_agents_units_usage(
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
+
             _headers=self.te_headers("get_enterprise_agents_units_usage"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -123,9 +127,13 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_enterprise_agents_units_usage(
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_enterprise_agents_units_usage", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -147,9 +155,13 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_enterprise_agents_units_usage(
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_enterprise_agents_units_usage", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -174,9 +186,13 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_enterprise_agents_units_usage(
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_enterprise_agents_units_usage", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -201,9 +217,13 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_enterprise_agents_units_usage(
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_enterprise_agents_units_usage", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -228,9 +248,13 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_enterprise_agents_units_usage(
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_enterprise_agents_units_usage", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -255,9 +279,13 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_enterprise_agents_units_usage(
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_enterprise_agents_units_usage", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -273,67 +301,72 @@ class TestUsageApiIntegration(IntegrationTestBase):
         cursor = 'cursor_example'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;breakdowns&quot; : [ {
-                    &quot;testId&quot; : &quot;1158&quot;,
-                    &quot;testName&quot; : &quot;https://app.thousandeyes.com&quot;,
-                    &quot;testType&quot; : &quot;Web-Page Load&quot;,
-                    &quot;enterpriseUnitsUsed&quot; : 14050,
-                    &quot;enterpriseUnitsProjected&quot; : 340674,
-                    &quot;cloudUnitsUsed&quot; : 10000,
-                    &quot;cloudUnitsProjected&quot; : 12000,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;accountGroupName&quot; : &quot;Support&quot;
+                  "breakdowns" : [ {
+                    "testId" : "1158",
+                    "testName" : "https://app.thousandeyes.com",
+                    "testType" : "Web-Page Load",
+                    "enterpriseUnitsUsed" : 14050,
+                    "enterpriseUnitsProjected" : 340674,
+                    "cloudUnitsUsed" : 10000,
+                    "cloudUnitsProjected" : 12000,
+                    "aid" : "1234",
+                    "accountGroupName" : "Support"
                   }, {
-                    &quot;testId&quot; : &quot;1221&quot;,
-                    &quot;testName&quot; : &quot;https://app.thousandeyes.com&quot;,
-                    &quot;testType&quot; : &quot;Web - HTTP Server&quot;,
-                    &quot;enterpriseUnitsUsed&quot; : 194051,
-                    &quot;enterpriseUnitsProjected&quot; : 30622,
-                    &quot;cloudUnitsUsed&quot; : 12000,
-                    &quot;cloudUnitsProjected&quot; : 13000,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;accountGroupName&quot; : &quot;Support&quot;
+                    "testId" : "1221",
+                    "testName" : "https://app.thousandeyes.com",
+                    "testType" : "Web - HTTP Server",
+                    "enterpriseUnitsUsed" : 194051,
+                    "enterpriseUnitsProjected" : 30622,
+                    "cloudUnitsUsed" : 12000,
+                    "cloudUnitsProjected" : 13000,
+                    "aid" : "1234",
+                    "accountGroupName" : "Support"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_tests_units_usage(
+
             aid=aid,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
+
             _headers=self.te_headers("get_tests_units_usage"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -368,10 +401,15 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_tests_units_usage(
+
                 aid=aid,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_tests_units_usage", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -394,10 +432,15 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_tests_units_usage(
+
                 aid=aid,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_tests_units_usage", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -423,10 +466,15 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_tests_units_usage(
+
                 aid=aid,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_tests_units_usage", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -452,10 +500,15 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_tests_units_usage(
+
                 aid=aid,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_tests_units_usage", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -481,10 +534,15 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_tests_units_usage(
+
                 aid=aid,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_tests_units_usage", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -510,10 +568,15 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_tests_units_usage(
+
                 aid=aid,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_tests_units_usage", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -524,128 +587,128 @@ class TestUsageApiIntegration(IntegrationTestBase):
     def test_get_usage_happy_path(self) -> None:
         """Integration test for get_usage success path"""
         aid = '1234'
-        expand = [thousandeyes_sdk.usage.ExpandUsageOptions()]
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;usage&quot; : {
-                    &quot;cloudUnitsProjected&quot; : 20993812,
-                    &quot;connectedDevicesUnitsUsed&quot; : 79640902,
-                    &quot;enterpriseAgentsUsed&quot; : 58,
-                    &quot;endpointAgents&quot; : [ {
-                      &quot;aid&quot; : &quot;1234&quot;,
-                      &quot;accountGroupName&quot; : &quot;Support&quot;,
-                      &quot;endpointAgentsUsed&quot; : 22
+                  "usage" : {
+                    "cloudUnitsProjected" : 20993812,
+                    "connectedDevicesUnitsUsed" : 79640902,
+                    "enterpriseAgentsUsed" : 58,
+                    "endpointAgents" : [ {
+                      "aid" : "1234",
+                      "accountGroupName" : "Support",
+                      "endpointAgentsUsed" : 22
                     }, {
-                      &quot;aid&quot; : &quot;12345&quot;,
-                      &quot;accountGroupName&quot; : &quot;Documentation&quot;,
-                      &quot;endpointAgentsUsed&quot; : 14
+                      "aid" : "12345",
+                      "accountGroupName" : "Documentation",
+                      "endpointAgentsUsed" : 14
                     } ],
-                    &quot;cloudUnitsNextBillingPeriod&quot; : 25123456,
-                    &quot;enterpriseUnitsNextBillingPeriod&quot; : 0,
-                    &quot;endpointAgentsUsed&quot; : 42,
-                    &quot;enterpriseUnitsUsed&quot; : 79640902,
-                    &quot;cloudUnitsUsed&quot; : 8500489,
-                    &quot;connectedDevicesUnitsNextBillingPeriod&quot; : 0,
-                    &quot;connectedDevicesUnitsProjected&quot; : 108016317,
-                    &quot;tests&quot; : [ {
-                      &quot;aid&quot; : &quot;1234&quot;,
-                      &quot;testId&quot; : &quot;1158&quot;,
-                      &quot;accountGroupName&quot; : &quot;Documentation&quot;,
-                      &quot;testName&quot; : &quot;https://app.thousandeyes.com&quot;,
-                      &quot;testType&quot; : &quot;Web-Page Load&quot;,
-                      &quot;cloudUnitsUsed&quot; : 14050,
-                      &quot;cloudUnitsProjected&quot; : 340674
+                    "cloudUnitsNextBillingPeriod" : 25123456,
+                    "enterpriseUnitsNextBillingPeriod" : 0,
+                    "endpointAgentsUsed" : 42,
+                    "enterpriseUnitsUsed" : 79640902,
+                    "cloudUnitsUsed" : 8500489,
+                    "connectedDevicesUnitsNextBillingPeriod" : 0,
+                    "connectedDevicesUnitsProjected" : 108016317,
+                    "tests" : [ {
+                      "aid" : "1234",
+                      "testId" : "1158",
+                      "accountGroupName" : "Documentation",
+                      "testName" : "https://app.thousandeyes.com",
+                      "testType" : "Web-Page Load",
+                      "cloudUnitsUsed" : 14050,
+                      "cloudUnitsProjected" : 340674
                     }, {
-                      &quot;aid&quot; : &quot;12345&quot;,
-                      &quot;testId&quot; : &quot;1159&quot;,
-                      &quot;accountGroupName&quot; : &quot;Documentation&quot;,
-                      &quot;testName&quot; : &quot;https://support.thousandeyes.com&quot;,
-                      &quot;testType&quot; : &quot;Web - HTTP Server&quot;,
-                      &quot;cloudUnitsUsed&quot; : 64390,
-                      &quot;cloudUnitsProjected&quot; : 164457
+                      "aid" : "12345",
+                      "testId" : "1159",
+                      "accountGroupName" : "Documentation",
+                      "testName" : "https://support.thousandeyes.com",
+                      "testType" : "Web - HTTP Server",
+                      "cloudUnitsUsed" : 64390,
+                      "cloudUnitsProjected" : 164457
                     } ],
-                    &quot;endpointAgentsEmbedded&quot; : [ {
-                      &quot;aid&quot; : &quot;1234&quot;,
-                      &quot;accountGroupName&quot; : &quot;Support&quot;,
-                      &quot;endpointAgentsEmbeddedUsed&quot; : 2
+                    "endpointAgentsEmbedded" : [ {
+                      "aid" : "1234",
+                      "accountGroupName" : "Support",
+                      "endpointAgentsEmbeddedUsed" : 2
                     }, {
-                      &quot;aid&quot; : &quot;12345&quot;,
-                      &quot;accountGroupName&quot; : &quot;Documentation&quot;,
-                      &quot;endpointAgentsEmbeddedUsed&quot; : 3
+                      "aid" : "12345",
+                      "accountGroupName" : "Documentation",
+                      "endpointAgentsEmbeddedUsed" : 3
                     } ],
-                    &quot;allocations&quot; : {
-                      &quot;used&quot; : 1000,
-                      &quot;projected&quot; : 1000,
-                      &quot;allocations&quot; : [ {
-                        &quot;productName&quot; : &quot;Some Product Name&quot;,
-                        &quot;allocatedUnits&quot; : 600
+                    "allocations" : {
+                      "used" : 1000,
+                      "projected" : 1000,
+                      "allocations" : [ {
+                        "productName" : "Some Product Name",
+                        "allocatedUnits" : 600
                       } ]
                     },
-                    &quot;endpointAgentsEssentialsUsed&quot; : 5,
-                    &quot;quota&quot; : {
-                      &quot;monthEnd&quot; : &quot;2020-02-05T08:00:00Z&quot;,
-                      &quot;endpointAgentsEmbeddedIncluded&quot; : 10,
-                      &quot;enterpriseAgentsIncluded&quot; : 25,
-                      &quot;monthStart&quot; : &quot;2020-01-05T08:00:00Z&quot;,
-                      &quot;cloudUnitsIncluded&quot; : 4320000000,
-                      &quot;deviceAgentsIncluded&quot; : 100,
-                      &quot;endpointAgentsIncluded&quot; : 200,
-                      &quot;endpointAgentsEssentialsIncluded&quot; : 10
+                    "endpointAgentsEssentialsUsed" : 5,
+                    "quota" : {
+                      "monthEnd" : "2020-02-05T08:00:00Z",
+                      "endpointAgentsEmbeddedIncluded" : 10,
+                      "enterpriseAgentsIncluded" : 25,
+                      "monthStart" : "2020-01-05T08:00:00Z",
+                      "cloudUnitsIncluded" : 4320000000,
+                      "deviceAgentsIncluded" : 100,
+                      "endpointAgentsIncluded" : 200,
+                      "endpointAgentsEssentialsIncluded" : 10
                     },
-                    &quot;enterpriseUnitsProjected&quot; : 108016317,
-                    &quot;endpointAgentsEmbeddedUsed&quot; : 5,
-                    &quot;enterpriseAgents&quot; : [ {
-                      &quot;aid&quot; : &quot;1234&quot;,
-                      &quot;accountGroupName&quot; : &quot;Support&quot;,
-                      &quot;enterpriseAgentsUsed&quot; : 7
+                    "enterpriseUnitsProjected" : 108016317,
+                    "endpointAgentsEmbeddedUsed" : 5,
+                    "enterpriseAgents" : [ {
+                      "aid" : "1234",
+                      "accountGroupName" : "Support",
+                      "enterpriseAgentsUsed" : 7
                     }, {
-                      &quot;aid&quot; : &quot;12345&quot;,
-                      &quot;accountGroupName&quot; : &quot;Documentation&quot;,
-                      &quot;enterpriseAgentsUsed&quot; : 1
+                      "aid" : "12345",
+                      "accountGroupName" : "Documentation",
+                      "enterpriseAgentsUsed" : 1
                     } ],
-                    &quot;enterpriseAgentUnits&quot; : [ {
-                      &quot;aid&quot; : &quot;1234&quot;,
-                      &quot;agentId&quot; : &quot;123456&quot;,
-                      &quot;accountGroupName&quot; : &quot;Support&quot;,
-                      &quot;agentName&quot; : &quot;TEVA-test-agent&quot;,
-                      &quot;enterpriseUnitsUsed&quot; : 599878,
-                      &quot;enterpriseUnitsProjected&quot; : 597808
+                    "enterpriseAgentUnits" : [ {
+                      "aid" : "1234",
+                      "agentId" : "123456",
+                      "accountGroupName" : "Support",
+                      "agentName" : "TEVA-test-agent",
+                      "enterpriseUnitsUsed" : 599878,
+                      "enterpriseUnitsProjected" : 597808
                     }, {
-                      &quot;aid&quot; : &quot;315&quot;,
-                      &quot;agentId&quot; : &quot;789&quot;,
-                      &quot;accountGroupName&quot; : &quot;Documentation&quot;,
-                      &quot;agentName&quot; : &quot;lab-physical-appliance-1&quot;,
-                      &quot;enterpriseUnitsUsed&quot; : 597123,
-                      &quot;enterpriseUnitsProjected&quot; : 597808
+                      "aid" : "315",
+                      "agentId" : "789",
+                      "accountGroupName" : "Documentation",
+                      "agentName" : "lab-physical-appliance-1",
+                      "enterpriseUnitsUsed" : 597123,
+                      "enterpriseUnitsProjected" : 597808
                     } ],
-                    &quot;endpointAgentsEssentials&quot; : [ {
-                      &quot;aid&quot; : &quot;1234&quot;,
-                      &quot;accountGroupName&quot; : &quot;Support&quot;,
-                      &quot;endpointAgentsEssentialsUsed&quot; : 2
+                    "endpointAgentsEssentials" : [ {
+                      "aid" : "1234",
+                      "accountGroupName" : "Support",
+                      "endpointAgentsEssentialsUsed" : 2
                     }, {
-                      &quot;aid&quot; : &quot;12345&quot;,
-                      &quot;accountGroupName&quot; : &quot;Documentation&quot;,
-                      &quot;endpointAgentsEssentialsUsed&quot; : 3
+                      "aid" : "12345",
+                      "accountGroupName" : "Documentation",
+                      "endpointAgentsEssentialsUsed" : 3
                     } ]
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_usage(
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("get_usage"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -654,7 +717,6 @@ class TestUsageApiIntegration(IntegrationTestBase):
     def test_get_usage_error_400(self) -> None:
         """Integration test for get_usage error path (HTTP 400)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.usage.ExpandUsageOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -678,8 +740,9 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_usage(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_usage", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -688,7 +751,6 @@ class TestUsageApiIntegration(IntegrationTestBase):
     def test_get_usage_error_401(self) -> None:
         """Integration test for get_usage error path (HTTP 401)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.usage.ExpandUsageOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -700,8 +762,9 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_usage(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_usage", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -710,7 +773,6 @@ class TestUsageApiIntegration(IntegrationTestBase):
     def test_get_usage_error_403(self) -> None:
         """Integration test for get_usage error path (HTTP 403)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.usage.ExpandUsageOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -725,8 +787,9 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_usage(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_usage", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -735,7 +798,6 @@ class TestUsageApiIntegration(IntegrationTestBase):
     def test_get_usage_error_404(self) -> None:
         """Integration test for get_usage error path (HTTP 404)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.usage.ExpandUsageOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -750,8 +812,9 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_usage(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_usage", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -760,7 +823,6 @@ class TestUsageApiIntegration(IntegrationTestBase):
     def test_get_usage_error_429(self) -> None:
         """Integration test for get_usage error path (HTTP 429)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.usage.ExpandUsageOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -775,8 +837,9 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_usage(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_usage", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -785,7 +848,6 @@ class TestUsageApiIntegration(IntegrationTestBase):
     def test_get_usage_error_500(self) -> None:
         """Integration test for get_usage error path (HTTP 500)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.usage.ExpandUsageOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -800,8 +862,9 @@ class TestUsageApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_usage(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_usage", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

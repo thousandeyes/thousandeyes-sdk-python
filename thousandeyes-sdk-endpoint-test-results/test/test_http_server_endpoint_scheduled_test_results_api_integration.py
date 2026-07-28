@@ -37,364 +37,369 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;server&quot; : &quot;www.example.com&quot;,
-                    &quot;isSavedEvent&quot; : false,
-                    &quot;sslVersion&quot; : &quot;Auto&quot;,
-                    &quot;useNtlm&quot; : false,
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter&quot;
+                  "test" : {
+                    "server" : "www.example.com",
+                    "isSavedEvent" : false,
+                    "sslVersion" : "Auto",
+                    "useNtlm" : false,
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;isPrioritized&quot; : false,
-                    &quot;httpTimeLimit&quot; : 5000,
-                    &quot;type&quot; : &quot;http-server&quot;,
-                    &quot;protocol&quot; : &quot;icmp&quot;,
-                    &quot;httpVersion&quot; : 2,
-                    &quot;followRedirects&quot; : true,
-                    &quot;authType&quot; : &quot;none&quot;,
-                    &quot;testName&quot; : &quot;Test name&quot;,
-                    &quot;verifyCertificate&quot; : true,
-                    &quot;networkMeasurements&quot; : true,
-                    &quot;tcpProbeMode&quot; : &quot;auto&quot;,
-                    &quot;url&quot; : &quot;https://example.com:443&quot;,
-                    &quot;labels&quot; : [ {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                    "isPrioritized" : false,
+                    "httpTimeLimit" : 5000,
+                    "type" : "http-server",
+                    "protocol" : "icmp",
+                    "httpVersion" : 2,
+                    "followRedirects" : true,
+                    "authType" : "none",
+                    "testName" : "Test name",
+                    "verifyCertificate" : true,
+                    "networkMeasurements" : true,
+                    "tcpProbeMode" : "auto",
+                    "url" : "https://example.com:443",
+                    "labels" : [ {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     }, {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     } ],
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;ipVersion&quot; : &quot;V4_ONLY&quot;,
-                    &quot;port&quot; : 443,
-                    &quot;isEnabled&quot; : true,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;agentSelectorConfig&quot; : {
-                      &quot;agentSelectorType&quot; : &quot;all-agents&quot;,
-                      &quot;maxMachines&quot; : 25
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "ipVersion" : "V4_ONLY",
+                    "port" : 443,
+                    "isEnabled" : true,
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "testId" : "281474976710706",
+                    "aid" : "1234",
+                    "agentSelectorConfig" : {
+                      "agentSelectorType" : "all-agents",
+                      "maxMachines" : 25
                     },
-                    &quot;hasPathTraceInSession&quot; : true,
-                    &quot;httpTargetTime&quot; : 100,
-                    &quot;username&quot; : &quot;username&quot;,
-                    &quot;sslVersionId&quot; : &quot;0&quot;
+                    "hasPathTraceInSession" : true,
+                    "httpTargetTime" : 100,
+                    "username" : "username",
+                    "sslVersionId" : "0"
                   },
-                  &quot;totalHits&quot; : 12,
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "totalHits" : 12,
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                  "results" : [ {
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;numRedirects&quot; : 0,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "numRedirects" : 0,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;errorType&quot; : &quot;connect&quot;,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;responseCode&quot; : 200,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;connectTime&quot; : 2,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "connectTime" : 2,
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;throughput&quot; : 190,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;headers&quot; : {
-                      &quot;requestHeaders&quot; : &quot;GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n&quot;,
-                      &quot;responseHeaders&quot; : &quot;HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset&#x3D;UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age&#x3D;600, must-revalidate\\r\\nStrict-Transport-Security: max-age&#x3D;31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode&#x3D;block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA&#x3D;&#x3D;\\r\\nAge: 132\\r\\n&quot;
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
                     },
-                    &quot;redirectTime&quot; : 10,
-                    &quot;responseTime&quot; : 14,
-                    &quot;totalTime&quot; : 15,
-                    &quot;receiveTime&quot; : 1,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;dnsTime&quot; : 0,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;sslTime&quot; : 9,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;waitTime&quot; : 3,
-                    &quot;errorDetails&quot; : &quot;errorDetails&quot;,
-                    &quot;wireSize&quot; : 9993
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
+                    "testId" : "584739201",
+                    "sslTime" : 9,
+                    "aid" : "1234",
+                    "waitTime" : 3,
+                    "errorDetails" : "errorDetails",
+                    "wireSize" : 9993
                   }, {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;numRedirects&quot; : 0,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "numRedirects" : 0,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;errorType&quot; : &quot;connect&quot;,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;responseCode&quot; : 200,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;connectTime&quot; : 2,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "connectTime" : 2,
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;throughput&quot; : 190,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;headers&quot; : {
-                      &quot;requestHeaders&quot; : &quot;GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n&quot;,
-                      &quot;responseHeaders&quot; : &quot;HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset&#x3D;UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age&#x3D;600, must-revalidate\\r\\nStrict-Transport-Security: max-age&#x3D;31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode&#x3D;block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA&#x3D;&#x3D;\\r\\nAge: 132\\r\\n&quot;
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
                     },
-                    &quot;redirectTime&quot; : 10,
-                    &quot;responseTime&quot; : 14,
-                    &quot;totalTime&quot; : 15,
-                    &quot;receiveTime&quot; : 1,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;dnsTime&quot; : 0,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;sslTime&quot; : 9,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;waitTime&quot; : 3,
-                    &quot;errorDetails&quot; : &quot;errorDetails&quot;,
-                    &quot;wireSize&quot; : 9993
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
+                    "testId" : "584739201",
+                    "sslTime" : 9,
+                    "aid" : "1234",
+                    "waitTime" : 3,
+                    "errorDetails" : "errorDetails",
+                    "wireSize" : 9993
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_http_server_scheduled_test_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
-            expand=expand,
+
             _headers=self.te_headers("get_http_server_scheduled_test_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -408,7 +413,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -420,13 +424,19 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_http_server_scheduled_test_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -440,7 +450,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -455,13 +464,19 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_http_server_scheduled_test_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -475,7 +490,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -490,13 +504,19 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_http_server_scheduled_test_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -510,7 +530,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -525,13 +544,19 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_http_server_scheduled_test_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -545,7 +570,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -560,13 +584,19 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_http_server_scheduled_test_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -580,7 +610,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -595,13 +624,19 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 _headers=self.te_headers("get_http_server_scheduled_test_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -648,305 +683,311 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         response_body_json = """
                 {
-                  &quot;totalHits&quot; : 12,
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "totalHits" : 12,
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                  "results" : [ {
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;numRedirects&quot; : 0,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "numRedirects" : 0,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;errorType&quot; : &quot;connect&quot;,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;responseCode&quot; : 200,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;connectTime&quot; : 2,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "connectTime" : 2,
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;throughput&quot; : 190,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;headers&quot; : {
-                      &quot;requestHeaders&quot; : &quot;GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n&quot;,
-                      &quot;responseHeaders&quot; : &quot;HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset&#x3D;UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age&#x3D;600, must-revalidate\\r\\nStrict-Transport-Security: max-age&#x3D;31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode&#x3D;block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA&#x3D;&#x3D;\\r\\nAge: 132\\r\\n&quot;
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
                     },
-                    &quot;redirectTime&quot; : 10,
-                    &quot;responseTime&quot; : 14,
-                    &quot;totalTime&quot; : 15,
-                    &quot;receiveTime&quot; : 1,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;dnsTime&quot; : 0,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;sslTime&quot; : 9,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;waitTime&quot; : 3,
-                    &quot;errorDetails&quot; : &quot;errorDetails&quot;,
-                    &quot;wireSize&quot; : 9993
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
+                    "testId" : "584739201",
+                    "sslTime" : 9,
+                    "aid" : "1234",
+                    "waitTime" : 3,
+                    "errorDetails" : "errorDetails",
+                    "wireSize" : 9993
                   }, {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;numRedirects&quot; : 0,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "numRedirects" : 0,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;errorType&quot; : &quot;connect&quot;,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;responseCode&quot; : 200,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;connectTime&quot; : 2,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "connectTime" : 2,
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;throughput&quot; : 190,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;headers&quot; : {
-                      &quot;requestHeaders&quot; : &quot;GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n&quot;,
-                      &quot;responseHeaders&quot; : &quot;HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset&#x3D;UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age&#x3D;600, must-revalidate\\r\\nStrict-Transport-Security: max-age&#x3D;31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode&#x3D;block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA&#x3D;&#x3D;\\r\\nAge: 132\\r\\n&quot;
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
                     },
-                    &quot;redirectTime&quot; : 10,
-                    &quot;responseTime&quot; : 14,
-                    &quot;totalTime&quot; : 15,
-                    &quot;receiveTime&quot; : 1,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;dnsTime&quot; : 0,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;sslTime&quot; : 9,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;waitTime&quot; : 3,
-                    &quot;errorDetails&quot; : &quot;errorDetails&quot;,
-                    &quot;wireSize&quot; : 9993
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
+                    "testId" : "584739201",
+                    "sslTime" : 9,
+                    "aid" : "1234",
+                    "waitTime" : 3,
+                    "errorDetails" : "errorDetails",
+                    "wireSize" : 9993
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_multi_test_filtered_http_server_scheduled_test_results(
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
+
             use_all_permitted_aids=use_all_permitted_aids,
-            expand=expand,
+
             http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
             _headers=self.te_headers("get_multi_test_filtered_http_server_scheduled_test_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -991,7 +1032,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1015,14 +1055,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_multi_test_filtered_http_server_scheduled_test_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_multi_test_filtered_http_server_scheduled_test_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1067,7 +1114,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1079,14 +1125,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_multi_test_filtered_http_server_scheduled_test_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_multi_test_filtered_http_server_scheduled_test_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1131,7 +1184,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1146,14 +1198,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_multi_test_filtered_http_server_scheduled_test_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_multi_test_filtered_http_server_scheduled_test_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1198,7 +1257,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1213,14 +1271,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_multi_test_filtered_http_server_scheduled_test_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_multi_test_filtered_http_server_scheduled_test_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1265,7 +1330,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1280,14 +1344,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_multi_test_filtered_http_server_scheduled_test_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_multi_test_filtered_http_server_scheduled_test_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1332,7 +1403,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1347,14 +1417,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_multi_test_filtered_http_server_scheduled_test_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_multi_test_filtered_http_server_scheduled_test_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1399,7 +1476,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1414,14 +1490,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_multi_test_filtered_http_server_scheduled_test_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_multi_test_filtered_http_server_scheduled_test_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1468,305 +1551,311 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         response_body_json = """
                 {
-                  &quot;totalHits&quot; : 12,
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "totalHits" : 12,
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                  "results" : [ {
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;numRedirects&quot; : 0,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "numRedirects" : 0,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;errorType&quot; : &quot;connect&quot;,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;responseCode&quot; : 200,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;connectTime&quot; : 2,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "connectTime" : 2,
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;throughput&quot; : 190,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;headers&quot; : {
-                      &quot;requestHeaders&quot; : &quot;GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n&quot;,
-                      &quot;responseHeaders&quot; : &quot;HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset&#x3D;UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age&#x3D;600, must-revalidate\\r\\nStrict-Transport-Security: max-age&#x3D;31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode&#x3D;block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA&#x3D;&#x3D;\\r\\nAge: 132\\r\\n&quot;
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
                     },
-                    &quot;redirectTime&quot; : 10,
-                    &quot;responseTime&quot; : 14,
-                    &quot;totalTime&quot; : 15,
-                    &quot;receiveTime&quot; : 1,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;dnsTime&quot; : 0,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;sslTime&quot; : 9,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;waitTime&quot; : 3,
-                    &quot;errorDetails&quot; : &quot;errorDetails&quot;,
-                    &quot;wireSize&quot; : 9993
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
+                    "testId" : "584739201",
+                    "sslTime" : 9,
+                    "aid" : "1234",
+                    "waitTime" : 3,
+                    "errorDetails" : "errorDetails",
+                    "wireSize" : 9993
                   }, {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;numRedirects&quot; : 0,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "numRedirects" : 0,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;errorType&quot; : &quot;connect&quot;,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "errorType" : "connect",
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;responseCode&quot; : 200,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "responseCode" : 200,
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;connectTime&quot; : 2,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "connectTime" : 2,
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;throughput&quot; : 190,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;headers&quot; : {
-                      &quot;requestHeaders&quot; : &quot;GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n&quot;,
-                      &quot;responseHeaders&quot; : &quot;HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset&#x3D;UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age&#x3D;600, must-revalidate\\r\\nStrict-Transport-Security: max-age&#x3D;31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode&#x3D;block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA&#x3D;&#x3D;\\r\\nAge: 132\\r\\n&quot;
+                    "throughput" : 190,
+                    "roundId" : 1384309800,
+                    "headers" : {
+                      "requestHeaders" : "GET / HTTP/1.1\\r\\nHost: www.thousandeyes.com\\r\\nUser-Agent: curl/7.58.0-DEV\\r\\nAccept: */*\\r\\nAccept-Encoding: deflate, gzip\\r\\nX-ThousandEyes-Agent: yes\\r\\n",
+                      "responseHeaders" : "HTTP/1.1 200 OK\\r\\nContent-Type: text/html;charset=UTF-8\\r\\nContent-Length: 9993\\r\\nConnection: keep-alive\\r\\nDate: Mon, 04 May 2020 16:13:00 GMT\\r\\nServer: Apache\\r\\nContent-Language: en-US\\r\\nContent-Encoding: gzip\\r\\nX-Frame-Options: sameorigin\\r\\nCache-Control: max-age=600, must-revalidate\\r\\nStrict-Transport-Security: max-age=31536000\\r\\nX-Content-Type-Options: nosniff\\r\\nX-XSS-Protection: 1; mode=block\\r\\nVary: Accept-Encoding\\r\\nX-Cache: Hit from cloudfront\\r\\nVia: 1.1 7ba3caf71ae7a52dd411d1a543e80cd8.cloudfront.net (CloudFront)\\r\\nX-Amz-Cf-Pop: SFO5-C3\\r\\nX-Amz-Cf-Id: w4h42tkoJD-rEpkRDZUvnQBmy26GVGe6pUsuRr1Dphf7oajYbjXaOA==\\r\\nAge: 132\\r\\n"
                     },
-                    &quot;redirectTime&quot; : 10,
-                    &quot;responseTime&quot; : 14,
-                    &quot;totalTime&quot; : 15,
-                    &quot;receiveTime&quot; : 1,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "redirectTime" : 10,
+                    "responseTime" : 14,
+                    "totalTime" : 15,
+                    "receiveTime" : 1,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;dnsTime&quot; : 0,
-                    &quot;serverIp&quot; : &quot;193.2.1.88&quot;,
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;sslTime&quot; : 9,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;waitTime&quot; : 3,
-                    &quot;errorDetails&quot; : &quot;errorDetails&quot;,
-                    &quot;wireSize&quot; : 9993
+                    "dnsTime" : 0,
+                    "serverIp" : "193.2.1.88",
+                    "testId" : "584739201",
+                    "sslTime" : 9,
+                    "aid" : "1234",
+                    "waitTime" : 3,
+                    "errorDetails" : "errorDetails",
+                    "wireSize" : 9993
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_single_test_filtered_http_server_scheduled_test_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
-            expand=expand,
+
             http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
             _headers=self.te_headers("get_single_test_filtered_http_server_scheduled_test_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1811,7 +1900,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1835,14 +1923,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_single_test_filtered_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_single_test_filtered_http_server_scheduled_test_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1887,7 +1982,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1899,14 +1993,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_single_test_filtered_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_single_test_filtered_http_server_scheduled_test_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1951,7 +2052,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1966,14 +2066,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_single_test_filtered_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_single_test_filtered_http_server_scheduled_test_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2018,7 +2125,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2033,14 +2139,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_single_test_filtered_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_single_test_filtered_http_server_scheduled_test_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2085,7 +2198,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2100,14 +2212,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_single_test_filtered_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_single_test_filtered_http_server_scheduled_test_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2152,7 +2271,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2167,14 +2285,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_single_test_filtered_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_single_test_filtered_http_server_scheduled_test_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2219,7 +2344,6 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointHttpServerOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2234,14 +2358,21 @@ class TestHTTPServerEndpointScheduledTestResultsApiIntegration(IntegrationTestBa
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_single_test_filtered_http_server_scheduled_test_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 http_endpoint_tests_data_rounds_search=http_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("get_single_test_filtered_http_server_scheduled_test_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

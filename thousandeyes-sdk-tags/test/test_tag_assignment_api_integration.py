@@ -49,33 +49,37 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;assignments&quot; : [ {
-                    &quot;id&quot; : &quot;123&quot;,
-                    &quot;type&quot; : &quot;test&quot;
+                  "assignments" : [ {
+                    "id" : "123",
+                    "type" : "test"
                   }, {
-                    &quot;id&quot; : &quot;123&quot;,
-                    &quot;type&quot; : &quot;test&quot;
+                    "id" : "123",
+                    "type" : "test"
                   } ],
-                  &quot;tagId&quot; : &quot;c6b78e57-81a2-4c5f-a11a-d96c3c664d55&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.assign_tag(
+
             id=id,
+
             tag_assignment=tag_assignment,
+
             aid=aid,
+
             _headers=self.te_headers("assign_tag"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -110,9 +114,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.assign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tag", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -150,9 +158,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.assign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tag", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -190,9 +202,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.assign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tag", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -230,9 +246,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.assign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tag", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -269,9 +289,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.assign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tag", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -346,58 +370,58 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;tags&quot; : [ {
-                    &quot;assignments&quot; : [ {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                  "tags" : [ {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
                     }, {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                      "id" : "123",
+                      "type" : "test"
                     } ],
-                    &quot;tagId&quot; : &quot;c6b78e57-81a2-4c5f-a11a-d96c3c664d55&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     }
                   }, {
-                    &quot;assignments&quot; : [ {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
                     }, {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                      "id" : "123",
+                      "type" : "test"
                     } ],
-                    &quot;tagId&quot; : &quot;c6b78e57-81a2-4c5f-a11a-d96c3c664d55&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     }
                   } ]
@@ -405,8 +429,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.assign_tags(
+
             bulk_tag_assignments=bulk_tag_assignments,
+
             aid=aid,
+
             _headers=self.te_headers("assign_tags"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -488,8 +515,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.assign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tags", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -574,8 +604,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.assign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tags", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -660,8 +693,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.assign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tags", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -746,8 +782,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.assign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tags", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -831,8 +870,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.assign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("assign_tags", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -859,9 +901,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
         id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55'
         aid = '1234'
         response = self.api.unassign_tag_with_http_info(
+
             id=id,
+
             tag_assignment=tag_assignment,
+
             aid=aid,
+
             _headers=self.te_headers("unassign_tag"),
         )
         self.assertEqual(204, response.status_code)
@@ -897,9 +943,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.unassign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tag", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -937,9 +987,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.unassign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tag", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -977,9 +1031,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.unassign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tag", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1017,9 +1075,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.unassign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tag", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1056,9 +1118,13 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.unassign_tag(
+
                 id=id,
+
                 tag_assignment=tag_assignment,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tag", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1133,58 +1199,58 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;tags&quot; : [ {
-                    &quot;assignments&quot; : [ {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                  "tags" : [ {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
                     }, {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                      "id" : "123",
+                      "type" : "test"
                     } ],
-                    &quot;tagId&quot; : &quot;c6b78e57-81a2-4c5f-a11a-d96c3c664d55&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     }
                   }, {
-                    &quot;assignments&quot; : [ {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
                     }, {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                      "id" : "123",
+                      "type" : "test"
                     } ],
-                    &quot;tagId&quot; : &quot;c6b78e57-81a2-4c5f-a11a-d96c3c664d55&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "tagId" : "c6b78e57-81a2-4c5f-a11a-d96c3c664d55",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     }
                   } ]
@@ -1192,8 +1258,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.unassign_tags(
+
             bulk_tag_assignments=bulk_tag_assignments,
+
             aid=aid,
+
             _headers=self.te_headers("unassign_tags"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1275,8 +1344,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.unassign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tags", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1361,8 +1433,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.unassign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tags", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1447,8 +1522,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.unassign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tags", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1533,8 +1611,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.unassign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tags", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1618,8 +1699,11 @@ class TestTagAssignmentApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.unassign_tags(
+
                 bulk_tag_assignments=bulk_tag_assignments,
+
                 aid=aid,
+
                 _headers=self.te_headers("unassign_tags", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

@@ -52,76 +52,79 @@ class TestUsersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;loginAccountGroup&quot; : {
-                    &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "loginAccountGroup" : {
+                    "accountGroupName" : "Account A",
+                    "aid" : "1234"
                   },
-                  &quot;uid&quot; : &quot;245&quot;,
-                  &quot;allAccountGroupRoles&quot; : [ {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                  "uid" : "245",
+                  "allAccountGroupRoles" : [ {
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   }, {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;accountGroupRoles&quot; : [ {
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                  "accountGroupRoles" : [ {
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;accountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }
                   }, {
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;accountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }
                   } ],
-                  &quot;name&quot; : &quot;User X&quot;,
-                  &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                  &quot;dateRegistered&quot; : &quot;2020-07-17T22:00:54Z&quot;
+                  "name" : "User X",
+                  "email" : "userx@thousandeyes.com",
+                  "dateRegistered" : "2020-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_user(
+
             user_request=user_request,
+
             aid=aid,
+
             _headers=self.te_headers("create_user"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -171,8 +174,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_user(
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_user", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -210,8 +216,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_user(
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_user", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -252,8 +261,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_user(
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_user", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -294,8 +306,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_user(
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_user", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -336,8 +351,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_user(
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_user", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -378,8 +396,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_user(
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_user", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -392,8 +413,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
         id = '1234'
         aid = '1234'
         response = self.api.delete_user_with_http_info(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_user"),
         )
         self.assertEqual(204, response.status_code)
@@ -427,8 +451,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_user", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -449,8 +476,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_user", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -474,8 +504,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_user", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -499,8 +532,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_user", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -524,8 +560,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_user", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -549,8 +588,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_user", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -562,75 +604,76 @@ class TestUsersApiIntegration(IntegrationTestBase):
         """Integration test for get_current_user success path"""
         response_body_json = """
                 {
-                  &quot;loginAccountGroup&quot; : {
-                    &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "loginAccountGroup" : {
+                    "accountGroupName" : "Account A",
+                    "aid" : "1234"
                   },
-                  &quot;uid&quot; : &quot;245&quot;,
-                  &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;allAccountGroupRoles&quot; : [ {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                  "uid" : "245",
+                  "lastLogin" : "2022-07-17T22:00:54Z",
+                  "allAccountGroupRoles" : [ {
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   }, {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;accountGroupRoles&quot; : [ {
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                  "accountGroupRoles" : [ {
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;accountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }
                   }, {
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;accountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }
                   } ],
-                  &quot;name&quot; : &quot;User X&quot;,
-                  &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                  &quot;dateRegistered&quot; : &quot;2020-07-17T22:00:54Z&quot;
+                  "name" : "User X",
+                  "email" : "userx@thousandeyes.com",
+                  "dateRegistered" : "2020-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_current_user(
+
             _headers=self.te_headers("get_current_user"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -661,6 +704,7 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_current_user(
+
                 _headers=self.te_headers("get_current_user", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -679,6 +723,7 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_current_user(
+
                 _headers=self.te_headers("get_current_user", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -700,6 +745,7 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_current_user(
+
                 _headers=self.te_headers("get_current_user", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -721,6 +767,7 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_current_user(
+
                 _headers=self.te_headers("get_current_user", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -742,6 +789,7 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_current_user(
+
                 _headers=self.te_headers("get_current_user", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -763,6 +811,7 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_current_user(
+
                 _headers=self.te_headers("get_current_user", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -776,77 +825,80 @@ class TestUsersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;loginAccountGroup&quot; : {
-                    &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "loginAccountGroup" : {
+                    "accountGroupName" : "Account A",
+                    "aid" : "1234"
                   },
-                  &quot;uid&quot; : &quot;245&quot;,
-                  &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;allAccountGroupRoles&quot; : [ {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                  "uid" : "245",
+                  "lastLogin" : "2022-07-17T22:00:54Z",
+                  "allAccountGroupRoles" : [ {
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   }, {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;accountGroupRoles&quot; : [ {
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                  "accountGroupRoles" : [ {
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;accountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }
                   }, {
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;accountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }
                   } ],
-                  &quot;name&quot; : &quot;User X&quot;,
-                  &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                  &quot;dateRegistered&quot; : &quot;2020-07-17T22:00:54Z&quot;
+                  "name" : "User X",
+                  "email" : "userx@thousandeyes.com",
+                  "dateRegistered" : "2020-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_user(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_user"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -879,8 +931,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -901,8 +956,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -926,8 +984,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -951,8 +1012,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -976,8 +1040,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1001,8 +1068,11 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_user(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_user", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1015,44 +1085,46 @@ class TestUsersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;users&quot; : [ {
-                    &quot;loginAccountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                  "users" : [ {
+                    "loginAccountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     },
-                    &quot;uid&quot; : &quot;245&quot;,
-                    &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;name&quot; : &quot;User X&quot;,
-                    &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                    &quot;dateRegistered&quot; : &quot;2020-07-17T22:00:54Z&quot;
+                    "uid" : "245",
+                    "lastLogin" : "2022-07-17T22:00:54Z",
+                    "name" : "User X",
+                    "email" : "userx@thousandeyes.com",
+                    "dateRegistered" : "2020-07-17T22:00:54Z"
                   }, {
-                    &quot;loginAccountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "loginAccountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     },
-                    &quot;uid&quot; : &quot;245&quot;,
-                    &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;name&quot; : &quot;User X&quot;,
-                    &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                    &quot;dateRegistered&quot; : &quot;2020-07-17T22:00:54Z&quot;
+                    "uid" : "245",
+                    "lastLogin" : "2022-07-17T22:00:54Z",
+                    "name" : "User X",
+                    "email" : "userx@thousandeyes.com",
+                    "dateRegistered" : "2020-07-17T22:00:54Z"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_users(
+
             aid=aid,
+
             _headers=self.te_headers("get_users"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1084,7 +1156,9 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_users(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_users", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1104,7 +1178,9 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_users(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_users", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1127,7 +1203,9 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_users(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_users", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1150,7 +1228,9 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_users(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_users", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1173,7 +1253,9 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_users(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_users", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1196,7 +1278,9 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_users(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_users", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1228,78 +1312,82 @@ class TestUsersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;loginAccountGroup&quot; : {
-                    &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "loginAccountGroup" : {
+                    "accountGroupName" : "Account A",
+                    "aid" : "1234"
                   },
-                  &quot;uid&quot; : &quot;245&quot;,
-                  &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;allAccountGroupRoles&quot; : [ {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                  "uid" : "245",
+                  "lastLogin" : "2022-07-17T22:00:54Z",
+                  "allAccountGroupRoles" : [ {
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   }, {
-                    &quot;roleId&quot; : &quot;35&quot;,
-                    &quot;name&quot; : &quot;Organization Admin&quot;,
-                    &quot;isBuiltin&quot; : true,
-                    &quot;hasManagementPermissions&quot; : true
+                    "roleId" : "35",
+                    "name" : "Organization Admin",
+                    "isBuiltin" : true,
+                    "hasManagementPermissions" : true
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;accountGroupRoles&quot; : [ {
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                  "accountGroupRoles" : [ {
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;accountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }
                   }, {
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;accountGroup&quot; : {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "accountGroup" : {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }
                   } ],
-                  &quot;name&quot; : &quot;User X&quot;,
-                  &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                  &quot;dateRegistered&quot; : &quot;2020-07-17T22:00:54Z&quot;
+                  "name" : "User X",
+                  "email" : "userx@thousandeyes.com",
+                  "dateRegistered" : "2020-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_user(
+
             id=id,
+
             user_request=user_request,
+
             aid=aid,
+
             _headers=self.te_headers("update_user"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1350,9 +1438,13 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_user(
+
                 id=id,
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_user", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1391,9 +1483,13 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_user(
+
                 id=id,
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_user", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1435,9 +1531,13 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_user(
+
                 id=id,
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_user", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1479,9 +1579,13 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_user(
+
                 id=id,
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_user", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1523,9 +1627,13 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_user(
+
                 id=id,
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_user", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1567,9 +1675,13 @@ class TestUsersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_user(
+
                 id=id,
+
                 user_request=user_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_user", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

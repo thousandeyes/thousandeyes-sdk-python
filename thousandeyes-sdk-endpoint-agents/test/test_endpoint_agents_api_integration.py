@@ -33,11 +33,12 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for delete_endpoint_agent success path"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         response = self.api.delete_endpoint_agent_with_http_info(
+
             agent_id=agent_id,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("delete_endpoint_agent"),
         )
         self.assertEqual(204, response.status_code)
@@ -48,7 +49,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for delete_endpoint_agent error path (HTTP 401)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -60,9 +60,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("delete_endpoint_agent", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -72,7 +74,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for delete_endpoint_agent error path (HTTP 403)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -87,9 +88,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("delete_endpoint_agent", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -99,7 +102,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for delete_endpoint_agent error path (HTTP 404)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -114,9 +116,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("delete_endpoint_agent", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -126,7 +130,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for delete_endpoint_agent error path (HTTP 429)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -141,9 +144,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("delete_endpoint_agent", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -157,190 +162,193 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;npcapVersion&quot; : &quot;npcapVersion&quot;,
-                  &quot;asnDetails&quot; : {
-                    &quot;asName&quot; : &quot;Virgin Media Limited&quot;,
-                    &quot;asNumber&quot; : 5089
+                  "npcapVersion" : "npcapVersion",
+                  "asnDetails" : {
+                    "asName" : "Virgin Media Limited",
+                    "asNumber" : 5089
                   },
-                  &quot;clients&quot; : [ {
-                    &quot;browserExtensions&quot; : [ {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                  "clients" : [ {
+                    "browserExtensions" : [ {
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     }, {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     } ],
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     }
                   }, {
-                    &quot;browserExtensions&quot; : [ {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                    "browserExtensions" : [ {
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     }, {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     } ],
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     }
                   } ],
-                  &quot;agentType&quot; : &quot;endpoint&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "agentType" : "endpoint",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;batteryMetrics&quot; : {
-                    &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                    &quot;batteryLevel&quot; : &quot;medium&quot;,
-                    &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                  "batteryMetrics" : {
+                    "batteryHealthNormalizedPercent" : 0.92,
+                    "batteryLevel" : "medium",
+                    "batteryLevelNormalizedPercent" : 0.3
                   },
-                  &quot;publicIP&quot; : &quot;88.45.2.123&quot;,
-                  &quot;tcpDriverAvailable&quot; : true,
-                  &quot;platform&quot; : &quot;mac&quot;,
-                  &quot;manufacturer&quot; : &quot;Apple, Inc.&quot;,
-                  &quot;targetVersion&quot; : &quot;0.123.4&quot;,
-                  &quot;cellularProfile&quot; : {
-                    &quot;rssi&quot; : -10,
-                    &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                    &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                    &quot;rsrq&quot; : -30,
-                    &quot;rsrp&quot; : -30,
-                    &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                    &quot;rscp&quot; : -30,
-                    &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                    &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                    &quot;sinr&quot; : 20
+                  "publicIP" : "88.45.2.123",
+                  "tcpDriverAvailable" : true,
+                  "platform" : "mac",
+                  "manufacturer" : "Apple, Inc.",
+                  "targetVersion" : "0.123.4",
+                  "cellularProfile" : {
+                    "rssi" : -10,
+                    "advertisedNetworkSubtype" : "LTE/HSPA",
+                    "carrierName" : "T-Mobile",
+                    "rsrq" : -30,
+                    "rsrp" : -30,
+                    "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                    "rscp" : -30,
+                    "networkGen" : "2g, 3g, 4g, 5g",
+                    "networkSubtype" : "LTE/HSPA",
+                    "sinr" : 20
                   },
-                  &quot;nicModel&quot; : &quot;Intel(R) Wi-Fi 6 AX200 160MHz&quot;,
-                  &quot;createdAt&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                  &quot;numberOfClients&quot; : 3,
-                  &quot;licenseType&quot; : &quot;essentials&quot;,
-                  &quot;osVersion&quot; : &quot;Version 10.15.2 (Build 19C57)&quot;,
-                  &quot;computerName&quot; : &quot;DESKJET-123&quot;,
-                  &quot;freeDiskSpaceNormalized&quot; : 0.41,
-                  &quot;model&quot; : &quot;MacBookAir7,2&quot;,
-                  &quot;id&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                  &quot;nicDriverVersion&quot; : &quot;22.250.0.9&quot;,
-                  &quot;serialNumber&quot; : &quot;xaab2ba4-d40f-4e80-9363-7e4826556055&quot;,
-                  &quot;externalMetadata&quot; : [ {
-                    &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                    &quot;value&quot; : &quot;DF434343D&quot;
+                  "nicModel" : "Intel(R) Wi-Fi 6 AX200 160MHz",
+                  "createdAt" : "2022-05-26T23:37:16Z",
+                  "numberOfClients" : 3,
+                  "licenseType" : "essentials",
+                  "osVersion" : "Version 10.15.2 (Build 19C57)",
+                  "computerName" : "DESKJET-123",
+                  "freeDiskSpaceNormalized" : 0.41,
+                  "model" : "MacBookAir7,2",
+                  "id" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                  "nicDriverVersion" : "22.250.0.9",
+                  "serialNumber" : "xaab2ba4-d40f-4e80-9363-7e4826556055",
+                  "externalMetadata" : [ {
+                    "key" : "anyConnectDeviceId",
+                    "value" : "DF434343D"
                   }, {
-                    &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                    &quot;value&quot; : &quot;DF434343D&quot;
+                    "key" : "anyConnectDeviceId",
+                    "value" : "DF434343D"
                   } ],
-                  &quot;version&quot; : &quot;0.123.4&quot;,
-                  &quot;vpnProfiles&quot; : [ {
-                    &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                    &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                    &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                    &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                    &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                  "version" : "0.123.4",
+                  "vpnProfiles" : [ {
+                    "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                    "vpnGatewayAddress" : "vpnGatewayAddress",
+                    "vpnType" : "cisco-anyconnect",
+                    "interfaceName" : "interfaceName",
+                    "vpnClientAddresses" : [ "10.100.0.10" ]
                   }, {
-                    &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                    &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                    &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                    &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                    &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                    "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                    "vpnGatewayAddress" : "vpnGatewayAddress",
+                    "vpnType" : "cisco-anyconnect",
+                    "interfaceName" : "interfaceName",
+                    "vpnClientAddresses" : [ "10.100.0.10" ]
                   } ],
-                  &quot;lastSeen&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                  &quot;deleted&quot; : true,
-                  &quot;totalMemory&quot; : &quot;16384 MB&quot;,
-                  &quot;kernelVersion&quot; : &quot;Darwin 19.2.0&quot;,
-                  &quot;name&quot; : &quot;Office Printer&quot;,
-                  &quot;location&quot; : {
-                    &quot;locationName&quot; : &quot;London&quot;,
-                    &quot;latitude&quot; : 51.51279,
-                    &quot;longitude&quot; : -0.09184
+                  "lastSeen" : "2022-05-26T23:37:16Z",
+                  "deleted" : true,
+                  "totalMemory" : "16384 MB",
+                  "kernelVersion" : "Darwin 19.2.0",
+                  "name" : "Office Printer",
+                  "location" : {
+                    "locationName" : "London",
+                    "latitude" : 51.51279,
+                    "longitude" : -0.09184
                   },
-                  &quot;aid&quot; : &quot;&quot;,
-                  &quot;status&quot; : &quot;enabled&quot;,
-                  &quot;networkInterfaceProfiles&quot; : [ {
-                    &quot;ethernetProfile&quot; : {
-                      &quot;linkSpeed&quot; : 0
+                  "aid" : "",
+                  "status" : "enabled",
+                  "networkInterfaceProfiles" : [ {
+                    "ethernetProfile" : {
+                      "linkSpeed" : 0
                     },
-                    &quot;hardwareType&quot; : &quot;wireless&quot;,
-                    &quot;interfaceName&quot; : &quot;en0&quot;,
-                    &quot;addressProfiles&quot; : [ {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                    "hardwareType" : "wireless",
+                    "interfaceName" : "en0",
+                    "addressProfiles" : [ {
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     }, {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     } ],
-                    &quot;wirelessProfile&quot; : {
-                      &quot;rssi&quot; : -36,
-                      &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                      &quot;channel&quot; : 48,
-                      &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                      &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                    "wirelessProfile" : {
+                      "rssi" : -36,
+                      "bssid" : "00:11:22:aa:bb:cc",
+                      "channel" : 48,
+                      "phyMode" : "802.11ac",
+                      "ssid" : "GuestWiFi"
                     }
                   }, {
-                    &quot;ethernetProfile&quot; : {
-                      &quot;linkSpeed&quot; : 0
+                    "ethernetProfile" : {
+                      "linkSpeed" : 0
                     },
-                    &quot;hardwareType&quot; : &quot;wireless&quot;,
-                    &quot;interfaceName&quot; : &quot;en0&quot;,
-                    &quot;addressProfiles&quot; : [ {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                    "hardwareType" : "wireless",
+                    "interfaceName" : "en0",
+                    "addressProfiles" : [ {
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     }, {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     } ],
-                    &quot;wirelessProfile&quot; : {
-                      &quot;rssi&quot; : -36,
-                      &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                      &quot;channel&quot; : 48,
-                      &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                      &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                    "wirelessProfile" : {
+                      "rssi" : -36,
+                      "bssid" : "00:11:22:aa:bb:cc",
+                      "channel" : 48,
+                      "phyMode" : "802.11ac",
+                      "ssid" : "GuestWiFi"
                     }
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.disable_endpoint_agent(
+
             agent_id=agent_id,
+
             aid=aid,
+
             _headers=self.te_headers("disable_endpoint_agent"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -361,8 +369,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.disable_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("disable_endpoint_agent", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -386,8 +397,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.disable_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("disable_endpoint_agent", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -411,8 +425,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.disable_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("disable_endpoint_agent", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -436,8 +453,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.disable_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("disable_endpoint_agent", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -451,190 +471,193 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;npcapVersion&quot; : &quot;npcapVersion&quot;,
-                  &quot;asnDetails&quot; : {
-                    &quot;asName&quot; : &quot;Virgin Media Limited&quot;,
-                    &quot;asNumber&quot; : 5089
+                  "npcapVersion" : "npcapVersion",
+                  "asnDetails" : {
+                    "asName" : "Virgin Media Limited",
+                    "asNumber" : 5089
                   },
-                  &quot;clients&quot; : [ {
-                    &quot;browserExtensions&quot; : [ {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                  "clients" : [ {
+                    "browserExtensions" : [ {
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     }, {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     } ],
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     }
                   }, {
-                    &quot;browserExtensions&quot; : [ {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                    "browserExtensions" : [ {
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     }, {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     } ],
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     }
                   } ],
-                  &quot;agentType&quot; : &quot;endpoint&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "agentType" : "endpoint",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;batteryMetrics&quot; : {
-                    &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                    &quot;batteryLevel&quot; : &quot;medium&quot;,
-                    &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                  "batteryMetrics" : {
+                    "batteryHealthNormalizedPercent" : 0.92,
+                    "batteryLevel" : "medium",
+                    "batteryLevelNormalizedPercent" : 0.3
                   },
-                  &quot;publicIP&quot; : &quot;88.45.2.123&quot;,
-                  &quot;tcpDriverAvailable&quot; : true,
-                  &quot;platform&quot; : &quot;mac&quot;,
-                  &quot;manufacturer&quot; : &quot;Apple, Inc.&quot;,
-                  &quot;targetVersion&quot; : &quot;0.123.4&quot;,
-                  &quot;cellularProfile&quot; : {
-                    &quot;rssi&quot; : -10,
-                    &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                    &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                    &quot;rsrq&quot; : -30,
-                    &quot;rsrp&quot; : -30,
-                    &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                    &quot;rscp&quot; : -30,
-                    &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                    &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                    &quot;sinr&quot; : 20
+                  "publicIP" : "88.45.2.123",
+                  "tcpDriverAvailable" : true,
+                  "platform" : "mac",
+                  "manufacturer" : "Apple, Inc.",
+                  "targetVersion" : "0.123.4",
+                  "cellularProfile" : {
+                    "rssi" : -10,
+                    "advertisedNetworkSubtype" : "LTE/HSPA",
+                    "carrierName" : "T-Mobile",
+                    "rsrq" : -30,
+                    "rsrp" : -30,
+                    "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                    "rscp" : -30,
+                    "networkGen" : "2g, 3g, 4g, 5g",
+                    "networkSubtype" : "LTE/HSPA",
+                    "sinr" : 20
                   },
-                  &quot;nicModel&quot; : &quot;Intel(R) Wi-Fi 6 AX200 160MHz&quot;,
-                  &quot;createdAt&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                  &quot;numberOfClients&quot; : 3,
-                  &quot;licenseType&quot; : &quot;essentials&quot;,
-                  &quot;osVersion&quot; : &quot;Version 10.15.2 (Build 19C57)&quot;,
-                  &quot;computerName&quot; : &quot;DESKJET-123&quot;,
-                  &quot;freeDiskSpaceNormalized&quot; : 0.41,
-                  &quot;model&quot; : &quot;MacBookAir7,2&quot;,
-                  &quot;id&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                  &quot;nicDriverVersion&quot; : &quot;22.250.0.9&quot;,
-                  &quot;serialNumber&quot; : &quot;xaab2ba4-d40f-4e80-9363-7e4826556055&quot;,
-                  &quot;externalMetadata&quot; : [ {
-                    &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                    &quot;value&quot; : &quot;DF434343D&quot;
+                  "nicModel" : "Intel(R) Wi-Fi 6 AX200 160MHz",
+                  "createdAt" : "2022-05-26T23:37:16Z",
+                  "numberOfClients" : 3,
+                  "licenseType" : "essentials",
+                  "osVersion" : "Version 10.15.2 (Build 19C57)",
+                  "computerName" : "DESKJET-123",
+                  "freeDiskSpaceNormalized" : 0.41,
+                  "model" : "MacBookAir7,2",
+                  "id" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                  "nicDriverVersion" : "22.250.0.9",
+                  "serialNumber" : "xaab2ba4-d40f-4e80-9363-7e4826556055",
+                  "externalMetadata" : [ {
+                    "key" : "anyConnectDeviceId",
+                    "value" : "DF434343D"
                   }, {
-                    &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                    &quot;value&quot; : &quot;DF434343D&quot;
+                    "key" : "anyConnectDeviceId",
+                    "value" : "DF434343D"
                   } ],
-                  &quot;version&quot; : &quot;0.123.4&quot;,
-                  &quot;vpnProfiles&quot; : [ {
-                    &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                    &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                    &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                    &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                    &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                  "version" : "0.123.4",
+                  "vpnProfiles" : [ {
+                    "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                    "vpnGatewayAddress" : "vpnGatewayAddress",
+                    "vpnType" : "cisco-anyconnect",
+                    "interfaceName" : "interfaceName",
+                    "vpnClientAddresses" : [ "10.100.0.10" ]
                   }, {
-                    &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                    &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                    &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                    &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                    &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                    "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                    "vpnGatewayAddress" : "vpnGatewayAddress",
+                    "vpnType" : "cisco-anyconnect",
+                    "interfaceName" : "interfaceName",
+                    "vpnClientAddresses" : [ "10.100.0.10" ]
                   } ],
-                  &quot;lastSeen&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                  &quot;deleted&quot; : true,
-                  &quot;totalMemory&quot; : &quot;16384 MB&quot;,
-                  &quot;kernelVersion&quot; : &quot;Darwin 19.2.0&quot;,
-                  &quot;name&quot; : &quot;Office Printer&quot;,
-                  &quot;location&quot; : {
-                    &quot;locationName&quot; : &quot;London&quot;,
-                    &quot;latitude&quot; : 51.51279,
-                    &quot;longitude&quot; : -0.09184
+                  "lastSeen" : "2022-05-26T23:37:16Z",
+                  "deleted" : true,
+                  "totalMemory" : "16384 MB",
+                  "kernelVersion" : "Darwin 19.2.0",
+                  "name" : "Office Printer",
+                  "location" : {
+                    "locationName" : "London",
+                    "latitude" : 51.51279,
+                    "longitude" : -0.09184
                   },
-                  &quot;aid&quot; : &quot;&quot;,
-                  &quot;status&quot; : &quot;enabled&quot;,
-                  &quot;networkInterfaceProfiles&quot; : [ {
-                    &quot;ethernetProfile&quot; : {
-                      &quot;linkSpeed&quot; : 0
+                  "aid" : "",
+                  "status" : "enabled",
+                  "networkInterfaceProfiles" : [ {
+                    "ethernetProfile" : {
+                      "linkSpeed" : 0
                     },
-                    &quot;hardwareType&quot; : &quot;wireless&quot;,
-                    &quot;interfaceName&quot; : &quot;en0&quot;,
-                    &quot;addressProfiles&quot; : [ {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                    "hardwareType" : "wireless",
+                    "interfaceName" : "en0",
+                    "addressProfiles" : [ {
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     }, {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     } ],
-                    &quot;wirelessProfile&quot; : {
-                      &quot;rssi&quot; : -36,
-                      &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                      &quot;channel&quot; : 48,
-                      &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                      &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                    "wirelessProfile" : {
+                      "rssi" : -36,
+                      "bssid" : "00:11:22:aa:bb:cc",
+                      "channel" : 48,
+                      "phyMode" : "802.11ac",
+                      "ssid" : "GuestWiFi"
                     }
                   }, {
-                    &quot;ethernetProfile&quot; : {
-                      &quot;linkSpeed&quot; : 0
+                    "ethernetProfile" : {
+                      "linkSpeed" : 0
                     },
-                    &quot;hardwareType&quot; : &quot;wireless&quot;,
-                    &quot;interfaceName&quot; : &quot;en0&quot;,
-                    &quot;addressProfiles&quot; : [ {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                    "hardwareType" : "wireless",
+                    "interfaceName" : "en0",
+                    "addressProfiles" : [ {
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     }, {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     } ],
-                    &quot;wirelessProfile&quot; : {
-                      &quot;rssi&quot; : -36,
-                      &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                      &quot;channel&quot; : 48,
-                      &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                      &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                    "wirelessProfile" : {
+                      "rssi" : -36,
+                      "bssid" : "00:11:22:aa:bb:cc",
+                      "channel" : 48,
+                      "phyMode" : "802.11ac",
+                      "ssid" : "GuestWiFi"
                     }
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.enable_endpoint_agent(
+
             agent_id=agent_id,
+
             aid=aid,
+
             _headers=self.te_headers("enable_endpoint_agent"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -655,8 +678,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.enable_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("enable_endpoint_agent", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -680,8 +706,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.enable_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("enable_endpoint_agent", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -705,8 +734,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.enable_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("enable_endpoint_agent", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -730,8 +762,11 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.enable_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("enable_endpoint_agent", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -785,379 +820,378 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;totalAgents&quot; : 1,
-                  &quot;agents&quot; : [ {
-                    &quot;npcapVersion&quot; : &quot;npcapVersion&quot;,
-                    &quot;asnDetails&quot; : {
-                      &quot;asName&quot; : &quot;Virgin Media Limited&quot;,
-                      &quot;asNumber&quot; : 5089
+                  "totalAgents" : 1,
+                  "agents" : [ {
+                    "npcapVersion" : "npcapVersion",
+                    "asnDetails" : {
+                      "asName" : "Virgin Media Limited",
+                      "asNumber" : 5089
                     },
-                    &quot;clients&quot; : [ {
-                      &quot;browserExtensions&quot; : [ {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                    "clients" : [ {
+                      "browserExtensions" : [ {
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       }, {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       } ],
-                      &quot;userProfile&quot; : {
-                        &quot;userName&quot; : &quot;joeblogs32&quot;,
-                        &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                      "userProfile" : {
+                        "userName" : "joeblogs32",
+                        "userPrincipalName" : "joeblogs32@c.com"
                       }
                     }, {
-                      &quot;browserExtensions&quot; : [ {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                      "browserExtensions" : [ {
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       }, {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       } ],
-                      &quot;userProfile&quot; : {
-                        &quot;userName&quot; : &quot;joeblogs32&quot;,
-                        &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                      "userProfile" : {
+                        "userName" : "joeblogs32",
+                        "userPrincipalName" : "joeblogs32@c.com"
                       }
                     } ],
-                    &quot;agentType&quot; : &quot;endpoint&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "agentType" : "endpoint",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;publicIP&quot; : &quot;88.45.2.123&quot;,
-                    &quot;tcpDriverAvailable&quot; : true,
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;manufacturer&quot; : &quot;Apple, Inc.&quot;,
-                    &quot;targetVersion&quot; : &quot;0.123.4&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "publicIP" : "88.45.2.123",
+                    "tcpDriverAvailable" : true,
+                    "platform" : "mac",
+                    "manufacturer" : "Apple, Inc.",
+                    "targetVersion" : "0.123.4",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;nicModel&quot; : &quot;Intel(R) Wi-Fi 6 AX200 160MHz&quot;,
-                    &quot;createdAt&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                    &quot;numberOfClients&quot; : 3,
-                    &quot;licenseType&quot; : &quot;essentials&quot;,
-                    &quot;osVersion&quot; : &quot;Version 10.15.2 (Build 19C57)&quot;,
-                    &quot;computerName&quot; : &quot;DESKJET-123&quot;,
-                    &quot;freeDiskSpaceNormalized&quot; : 0.41,
-                    &quot;model&quot; : &quot;MacBookAir7,2&quot;,
-                    &quot;id&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;nicDriverVersion&quot; : &quot;22.250.0.9&quot;,
-                    &quot;serialNumber&quot; : &quot;xaab2ba4-d40f-4e80-9363-7e4826556055&quot;,
-                    &quot;externalMetadata&quot; : [ {
-                      &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                      &quot;value&quot; : &quot;DF434343D&quot;
+                    "nicModel" : "Intel(R) Wi-Fi 6 AX200 160MHz",
+                    "createdAt" : "2022-05-26T23:37:16Z",
+                    "numberOfClients" : 3,
+                    "licenseType" : "essentials",
+                    "osVersion" : "Version 10.15.2 (Build 19C57)",
+                    "computerName" : "DESKJET-123",
+                    "freeDiskSpaceNormalized" : 0.41,
+                    "model" : "MacBookAir7,2",
+                    "id" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "nicDriverVersion" : "22.250.0.9",
+                    "serialNumber" : "xaab2ba4-d40f-4e80-9363-7e4826556055",
+                    "externalMetadata" : [ {
+                      "key" : "anyConnectDeviceId",
+                      "value" : "DF434343D"
                     }, {
-                      &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                      &quot;value&quot; : &quot;DF434343D&quot;
+                      "key" : "anyConnectDeviceId",
+                      "value" : "DF434343D"
                     } ],
-                    &quot;version&quot; : &quot;0.123.4&quot;,
-                    &quot;vpnProfiles&quot; : [ {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                    "version" : "0.123.4",
+                    "vpnProfiles" : [ {
+                      "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                      "vpnGatewayAddress" : "vpnGatewayAddress",
+                      "vpnType" : "cisco-anyconnect",
+                      "interfaceName" : "interfaceName",
+                      "vpnClientAddresses" : [ "10.100.0.10" ]
                     }, {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                      "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                      "vpnGatewayAddress" : "vpnGatewayAddress",
+                      "vpnType" : "cisco-anyconnect",
+                      "interfaceName" : "interfaceName",
+                      "vpnClientAddresses" : [ "10.100.0.10" ]
                     } ],
-                    &quot;lastSeen&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                    &quot;deleted&quot; : true,
-                    &quot;totalMemory&quot; : &quot;16384 MB&quot;,
-                    &quot;kernelVersion&quot; : &quot;Darwin 19.2.0&quot;,
-                    &quot;name&quot; : &quot;Office Printer&quot;,
-                    &quot;location&quot; : {
-                      &quot;locationName&quot; : &quot;London&quot;,
-                      &quot;latitude&quot; : 51.51279,
-                      &quot;longitude&quot; : -0.09184
+                    "lastSeen" : "2022-05-26T23:37:16Z",
+                    "deleted" : true,
+                    "totalMemory" : "16384 MB",
+                    "kernelVersion" : "Darwin 19.2.0",
+                    "name" : "Office Printer",
+                    "location" : {
+                      "locationName" : "London",
+                      "latitude" : 51.51279,
+                      "longitude" : -0.09184
                     },
-                    &quot;aid&quot; : &quot;&quot;,
-                    &quot;status&quot; : &quot;enabled&quot;,
-                    &quot;networkInterfaceProfiles&quot; : [ {
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 0
+                    "aid" : "",
+                    "status" : "enabled",
+                    "networkInterfaceProfiles" : [ {
+                      "ethernetProfile" : {
+                        "linkSpeed" : 0
                       },
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;addressProfiles&quot; : [ {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "hardwareType" : "wireless",
+                      "interfaceName" : "en0",
+                      "addressProfiles" : [ {
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       }, {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       } ],
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -36,
-                        &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                        &quot;channel&quot; : 48,
-                        &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                        &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                      "wirelessProfile" : {
+                        "rssi" : -36,
+                        "bssid" : "00:11:22:aa:bb:cc",
+                        "channel" : 48,
+                        "phyMode" : "802.11ac",
+                        "ssid" : "GuestWiFi"
                       }
                     }, {
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 0
+                      "ethernetProfile" : {
+                        "linkSpeed" : 0
                       },
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;addressProfiles&quot; : [ {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "hardwareType" : "wireless",
+                      "interfaceName" : "en0",
+                      "addressProfiles" : [ {
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       }, {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       } ],
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -36,
-                        &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                        &quot;channel&quot; : 48,
-                        &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                        &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                      "wirelessProfile" : {
+                        "rssi" : -36,
+                        "bssid" : "00:11:22:aa:bb:cc",
+                        "channel" : 48,
+                        "phyMode" : "802.11ac",
+                        "ssid" : "GuestWiFi"
                       }
                     } ]
                   }, {
-                    &quot;npcapVersion&quot; : &quot;npcapVersion&quot;,
-                    &quot;asnDetails&quot; : {
-                      &quot;asName&quot; : &quot;Virgin Media Limited&quot;,
-                      &quot;asNumber&quot; : 5089
+                    "npcapVersion" : "npcapVersion",
+                    "asnDetails" : {
+                      "asName" : "Virgin Media Limited",
+                      "asNumber" : 5089
                     },
-                    &quot;clients&quot; : [ {
-                      &quot;browserExtensions&quot; : [ {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                    "clients" : [ {
+                      "browserExtensions" : [ {
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       }, {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       } ],
-                      &quot;userProfile&quot; : {
-                        &quot;userName&quot; : &quot;joeblogs32&quot;,
-                        &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                      "userProfile" : {
+                        "userName" : "joeblogs32",
+                        "userPrincipalName" : "joeblogs32@c.com"
                       }
                     }, {
-                      &quot;browserExtensions&quot; : [ {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                      "browserExtensions" : [ {
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       }, {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       } ],
-                      &quot;userProfile&quot; : {
-                        &quot;userName&quot; : &quot;joeblogs32&quot;,
-                        &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                      "userProfile" : {
+                        "userName" : "joeblogs32",
+                        "userPrincipalName" : "joeblogs32@c.com"
                       }
                     } ],
-                    &quot;agentType&quot; : &quot;endpoint&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "agentType" : "endpoint",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;publicIP&quot; : &quot;88.45.2.123&quot;,
-                    &quot;tcpDriverAvailable&quot; : true,
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;manufacturer&quot; : &quot;Apple, Inc.&quot;,
-                    &quot;targetVersion&quot; : &quot;0.123.4&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "publicIP" : "88.45.2.123",
+                    "tcpDriverAvailable" : true,
+                    "platform" : "mac",
+                    "manufacturer" : "Apple, Inc.",
+                    "targetVersion" : "0.123.4",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;nicModel&quot; : &quot;Intel(R) Wi-Fi 6 AX200 160MHz&quot;,
-                    &quot;createdAt&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                    &quot;numberOfClients&quot; : 3,
-                    &quot;licenseType&quot; : &quot;essentials&quot;,
-                    &quot;osVersion&quot; : &quot;Version 10.15.2 (Build 19C57)&quot;,
-                    &quot;computerName&quot; : &quot;DESKJET-123&quot;,
-                    &quot;freeDiskSpaceNormalized&quot; : 0.41,
-                    &quot;model&quot; : &quot;MacBookAir7,2&quot;,
-                    &quot;id&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;nicDriverVersion&quot; : &quot;22.250.0.9&quot;,
-                    &quot;serialNumber&quot; : &quot;xaab2ba4-d40f-4e80-9363-7e4826556055&quot;,
-                    &quot;externalMetadata&quot; : [ {
-                      &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                      &quot;value&quot; : &quot;DF434343D&quot;
+                    "nicModel" : "Intel(R) Wi-Fi 6 AX200 160MHz",
+                    "createdAt" : "2022-05-26T23:37:16Z",
+                    "numberOfClients" : 3,
+                    "licenseType" : "essentials",
+                    "osVersion" : "Version 10.15.2 (Build 19C57)",
+                    "computerName" : "DESKJET-123",
+                    "freeDiskSpaceNormalized" : 0.41,
+                    "model" : "MacBookAir7,2",
+                    "id" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "nicDriverVersion" : "22.250.0.9",
+                    "serialNumber" : "xaab2ba4-d40f-4e80-9363-7e4826556055",
+                    "externalMetadata" : [ {
+                      "key" : "anyConnectDeviceId",
+                      "value" : "DF434343D"
                     }, {
-                      &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                      &quot;value&quot; : &quot;DF434343D&quot;
+                      "key" : "anyConnectDeviceId",
+                      "value" : "DF434343D"
                     } ],
-                    &quot;version&quot; : &quot;0.123.4&quot;,
-                    &quot;vpnProfiles&quot; : [ {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                    "version" : "0.123.4",
+                    "vpnProfiles" : [ {
+                      "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                      "vpnGatewayAddress" : "vpnGatewayAddress",
+                      "vpnType" : "cisco-anyconnect",
+                      "interfaceName" : "interfaceName",
+                      "vpnClientAddresses" : [ "10.100.0.10" ]
                     }, {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                      "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                      "vpnGatewayAddress" : "vpnGatewayAddress",
+                      "vpnType" : "cisco-anyconnect",
+                      "interfaceName" : "interfaceName",
+                      "vpnClientAddresses" : [ "10.100.0.10" ]
                     } ],
-                    &quot;lastSeen&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                    &quot;deleted&quot; : true,
-                    &quot;totalMemory&quot; : &quot;16384 MB&quot;,
-                    &quot;kernelVersion&quot; : &quot;Darwin 19.2.0&quot;,
-                    &quot;name&quot; : &quot;Office Printer&quot;,
-                    &quot;location&quot; : {
-                      &quot;locationName&quot; : &quot;London&quot;,
-                      &quot;latitude&quot; : 51.51279,
-                      &quot;longitude&quot; : -0.09184
+                    "lastSeen" : "2022-05-26T23:37:16Z",
+                    "deleted" : true,
+                    "totalMemory" : "16384 MB",
+                    "kernelVersion" : "Darwin 19.2.0",
+                    "name" : "Office Printer",
+                    "location" : {
+                      "locationName" : "London",
+                      "latitude" : 51.51279,
+                      "longitude" : -0.09184
                     },
-                    &quot;aid&quot; : &quot;&quot;,
-                    &quot;status&quot; : &quot;enabled&quot;,
-                    &quot;networkInterfaceProfiles&quot; : [ {
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 0
+                    "aid" : "",
+                    "status" : "enabled",
+                    "networkInterfaceProfiles" : [ {
+                      "ethernetProfile" : {
+                        "linkSpeed" : 0
                       },
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;addressProfiles&quot; : [ {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "hardwareType" : "wireless",
+                      "interfaceName" : "en0",
+                      "addressProfiles" : [ {
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       }, {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       } ],
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -36,
-                        &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                        &quot;channel&quot; : 48,
-                        &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                        &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                      "wirelessProfile" : {
+                        "rssi" : -36,
+                        "bssid" : "00:11:22:aa:bb:cc",
+                        "channel" : 48,
+                        "phyMode" : "802.11ac",
+                        "ssid" : "GuestWiFi"
                       }
                     }, {
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 0
+                      "ethernetProfile" : {
+                        "linkSpeed" : 0
                       },
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;addressProfiles&quot; : [ {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "hardwareType" : "wireless",
+                      "interfaceName" : "en0",
+                      "addressProfiles" : [ {
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       }, {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       } ],
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -36,
-                        &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                        &quot;channel&quot; : 48,
-                        &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                        &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                      "wirelessProfile" : {
+                        "rssi" : -36,
+                        "bssid" : "00:11:22:aa:bb:cc",
+                        "channel" : 48,
+                        "phyMode" : "802.11ac",
+                        "ssid" : "GuestWiFi"
                       }
                     } ]
                   } ]
@@ -1165,12 +1199,17 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.filter_endpoint_agents(
+
             agent_search_request=agent_search_request,
+
             max=max,
+
             cursor=cursor,
+
             aid=aid,
-            expand=expand,
+
             include_deleted=include_deleted,
+
             _headers=self.te_headers("filter_endpoint_agents"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1222,7 +1261,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         error_body_json = """
                 {
@@ -1247,12 +1285,17 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.filter_endpoint_agents(
+
                 agent_search_request=agent_search_request,
+
                 max=max,
+
                 cursor=cursor,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 _headers=self.te_headers("filter_endpoint_agents", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1304,7 +1347,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         error_body_json = """
                 {
@@ -1317,12 +1359,17 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.filter_endpoint_agents(
+
                 agent_search_request=agent_search_request,
+
                 max=max,
+
                 cursor=cursor,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 _headers=self.te_headers("filter_endpoint_agents", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1374,7 +1421,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         error_body_json = """
                 {
@@ -1390,12 +1436,17 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.filter_endpoint_agents(
+
                 agent_search_request=agent_search_request,
+
                 max=max,
+
                 cursor=cursor,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 _headers=self.te_headers("filter_endpoint_agents", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1447,7 +1498,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         error_body_json = """
                 {
@@ -1463,12 +1513,17 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.filter_endpoint_agents(
+
                 agent_search_request=agent_search_request,
+
                 max=max,
+
                 cursor=cursor,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 _headers=self.te_headers("filter_endpoint_agents", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1480,196 +1535,198 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent success path"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         response_body_json = """
                 {
-                  &quot;npcapVersion&quot; : &quot;npcapVersion&quot;,
-                  &quot;asnDetails&quot; : {
-                    &quot;asName&quot; : &quot;Virgin Media Limited&quot;,
-                    &quot;asNumber&quot; : 5089
+                  "npcapVersion" : "npcapVersion",
+                  "asnDetails" : {
+                    "asName" : "Virgin Media Limited",
+                    "asNumber" : 5089
                   },
-                  &quot;clients&quot; : [ {
-                    &quot;browserExtensions&quot; : [ {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                  "clients" : [ {
+                    "browserExtensions" : [ {
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     }, {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     } ],
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     }
                   }, {
-                    &quot;browserExtensions&quot; : [ {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                    "browserExtensions" : [ {
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     }, {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     } ],
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     }
                   } ],
-                  &quot;agentType&quot; : &quot;endpoint&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "agentType" : "endpoint",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;batteryMetrics&quot; : {
-                    &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                    &quot;batteryLevel&quot; : &quot;medium&quot;,
-                    &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                  "batteryMetrics" : {
+                    "batteryHealthNormalizedPercent" : 0.92,
+                    "batteryLevel" : "medium",
+                    "batteryLevelNormalizedPercent" : 0.3
                   },
-                  &quot;publicIP&quot; : &quot;88.45.2.123&quot;,
-                  &quot;tcpDriverAvailable&quot; : true,
-                  &quot;platform&quot; : &quot;mac&quot;,
-                  &quot;manufacturer&quot; : &quot;Apple, Inc.&quot;,
-                  &quot;targetVersion&quot; : &quot;0.123.4&quot;,
-                  &quot;cellularProfile&quot; : {
-                    &quot;rssi&quot; : -10,
-                    &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                    &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                    &quot;rsrq&quot; : -30,
-                    &quot;rsrp&quot; : -30,
-                    &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                    &quot;rscp&quot; : -30,
-                    &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                    &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                    &quot;sinr&quot; : 20
+                  "publicIP" : "88.45.2.123",
+                  "tcpDriverAvailable" : true,
+                  "platform" : "mac",
+                  "manufacturer" : "Apple, Inc.",
+                  "targetVersion" : "0.123.4",
+                  "cellularProfile" : {
+                    "rssi" : -10,
+                    "advertisedNetworkSubtype" : "LTE/HSPA",
+                    "carrierName" : "T-Mobile",
+                    "rsrq" : -30,
+                    "rsrp" : -30,
+                    "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                    "rscp" : -30,
+                    "networkGen" : "2g, 3g, 4g, 5g",
+                    "networkSubtype" : "LTE/HSPA",
+                    "sinr" : 20
                   },
-                  &quot;nicModel&quot; : &quot;Intel(R) Wi-Fi 6 AX200 160MHz&quot;,
-                  &quot;createdAt&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                  &quot;numberOfClients&quot; : 3,
-                  &quot;licenseType&quot; : &quot;essentials&quot;,
-                  &quot;osVersion&quot; : &quot;Version 10.15.2 (Build 19C57)&quot;,
-                  &quot;computerName&quot; : &quot;DESKJET-123&quot;,
-                  &quot;freeDiskSpaceNormalized&quot; : 0.41,
-                  &quot;model&quot; : &quot;MacBookAir7,2&quot;,
-                  &quot;id&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                  &quot;nicDriverVersion&quot; : &quot;22.250.0.9&quot;,
-                  &quot;serialNumber&quot; : &quot;xaab2ba4-d40f-4e80-9363-7e4826556055&quot;,
-                  &quot;externalMetadata&quot; : [ {
-                    &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                    &quot;value&quot; : &quot;DF434343D&quot;
+                  "nicModel" : "Intel(R) Wi-Fi 6 AX200 160MHz",
+                  "createdAt" : "2022-05-26T23:37:16Z",
+                  "numberOfClients" : 3,
+                  "licenseType" : "essentials",
+                  "osVersion" : "Version 10.15.2 (Build 19C57)",
+                  "computerName" : "DESKJET-123",
+                  "freeDiskSpaceNormalized" : 0.41,
+                  "model" : "MacBookAir7,2",
+                  "id" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                  "nicDriverVersion" : "22.250.0.9",
+                  "serialNumber" : "xaab2ba4-d40f-4e80-9363-7e4826556055",
+                  "externalMetadata" : [ {
+                    "key" : "anyConnectDeviceId",
+                    "value" : "DF434343D"
                   }, {
-                    &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                    &quot;value&quot; : &quot;DF434343D&quot;
+                    "key" : "anyConnectDeviceId",
+                    "value" : "DF434343D"
                   } ],
-                  &quot;version&quot; : &quot;0.123.4&quot;,
-                  &quot;vpnProfiles&quot; : [ {
-                    &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                    &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                    &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                    &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                    &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                  "version" : "0.123.4",
+                  "vpnProfiles" : [ {
+                    "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                    "vpnGatewayAddress" : "vpnGatewayAddress",
+                    "vpnType" : "cisco-anyconnect",
+                    "interfaceName" : "interfaceName",
+                    "vpnClientAddresses" : [ "10.100.0.10" ]
                   }, {
-                    &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                    &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                    &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                    &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                    &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                    "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                    "vpnGatewayAddress" : "vpnGatewayAddress",
+                    "vpnType" : "cisco-anyconnect",
+                    "interfaceName" : "interfaceName",
+                    "vpnClientAddresses" : [ "10.100.0.10" ]
                   } ],
-                  &quot;lastSeen&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                  &quot;deleted&quot; : true,
-                  &quot;totalMemory&quot; : &quot;16384 MB&quot;,
-                  &quot;kernelVersion&quot; : &quot;Darwin 19.2.0&quot;,
-                  &quot;name&quot; : &quot;Office Printer&quot;,
-                  &quot;location&quot; : {
-                    &quot;locationName&quot; : &quot;London&quot;,
-                    &quot;latitude&quot; : 51.51279,
-                    &quot;longitude&quot; : -0.09184
+                  "lastSeen" : "2022-05-26T23:37:16Z",
+                  "deleted" : true,
+                  "totalMemory" : "16384 MB",
+                  "kernelVersion" : "Darwin 19.2.0",
+                  "name" : "Office Printer",
+                  "location" : {
+                    "locationName" : "London",
+                    "latitude" : 51.51279,
+                    "longitude" : -0.09184
                   },
-                  &quot;aid&quot; : &quot;&quot;,
-                  &quot;status&quot; : &quot;enabled&quot;,
-                  &quot;networkInterfaceProfiles&quot; : [ {
-                    &quot;ethernetProfile&quot; : {
-                      &quot;linkSpeed&quot; : 0
+                  "aid" : "",
+                  "status" : "enabled",
+                  "networkInterfaceProfiles" : [ {
+                    "ethernetProfile" : {
+                      "linkSpeed" : 0
                     },
-                    &quot;hardwareType&quot; : &quot;wireless&quot;,
-                    &quot;interfaceName&quot; : &quot;en0&quot;,
-                    &quot;addressProfiles&quot; : [ {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                    "hardwareType" : "wireless",
+                    "interfaceName" : "en0",
+                    "addressProfiles" : [ {
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     }, {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     } ],
-                    &quot;wirelessProfile&quot; : {
-                      &quot;rssi&quot; : -36,
-                      &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                      &quot;channel&quot; : 48,
-                      &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                      &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                    "wirelessProfile" : {
+                      "rssi" : -36,
+                      "bssid" : "00:11:22:aa:bb:cc",
+                      "channel" : 48,
+                      "phyMode" : "802.11ac",
+                      "ssid" : "GuestWiFi"
                     }
                   }, {
-                    &quot;ethernetProfile&quot; : {
-                      &quot;linkSpeed&quot; : 0
+                    "ethernetProfile" : {
+                      "linkSpeed" : 0
                     },
-                    &quot;hardwareType&quot; : &quot;wireless&quot;,
-                    &quot;interfaceName&quot; : &quot;en0&quot;,
-                    &quot;addressProfiles&quot; : [ {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                    "hardwareType" : "wireless",
+                    "interfaceName" : "en0",
+                    "addressProfiles" : [ {
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     }, {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     } ],
-                    &quot;wirelessProfile&quot; : {
-                      &quot;rssi&quot; : -36,
-                      &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                      &quot;channel&quot; : 48,
-                      &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                      &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                    "wirelessProfile" : {
+                      "rssi" : -36,
+                      "bssid" : "00:11:22:aa:bb:cc",
+                      "channel" : 48,
+                      "phyMode" : "802.11ac",
+                      "ssid" : "GuestWiFi"
                     }
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_endpoint_agent(
+
             agent_id=agent_id,
+
             aid=aid,
-            expand=expand,
+
             include_deleted=include_deleted,
+
             _headers=self.te_headers("get_endpoint_agent"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1679,7 +1736,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent error path (HTTP 401)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         error_body_json = """
                 {
@@ -1692,10 +1748,13 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 _headers=self.te_headers("get_endpoint_agent", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1705,7 +1764,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent error path (HTTP 403)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         error_body_json = """
                 {
@@ -1721,10 +1779,13 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 _headers=self.te_headers("get_endpoint_agent", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1734,7 +1795,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent error path (HTTP 404)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         error_body_json = """
                 {
@@ -1750,10 +1810,13 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 _headers=self.te_headers("get_endpoint_agent", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1763,7 +1826,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_agent error path (HTTP 429)"""
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         error_body_json = """
                 {
@@ -1779,10 +1841,13 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 _headers=self.te_headers("get_endpoint_agent", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1795,392 +1860,391 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         use_all_permitted_aids = False
         agent_name = 'agent_name_example'
         computer_name = 'computer_name_example'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;totalAgents&quot; : 1,
-                  &quot;agents&quot; : [ {
-                    &quot;npcapVersion&quot; : &quot;npcapVersion&quot;,
-                    &quot;asnDetails&quot; : {
-                      &quot;asName&quot; : &quot;Virgin Media Limited&quot;,
-                      &quot;asNumber&quot; : 5089
+                  "totalAgents" : 1,
+                  "agents" : [ {
+                    "npcapVersion" : "npcapVersion",
+                    "asnDetails" : {
+                      "asName" : "Virgin Media Limited",
+                      "asNumber" : 5089
                     },
-                    &quot;clients&quot; : [ {
-                      &quot;browserExtensions&quot; : [ {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                    "clients" : [ {
+                      "browserExtensions" : [ {
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       }, {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       } ],
-                      &quot;userProfile&quot; : {
-                        &quot;userName&quot; : &quot;joeblogs32&quot;,
-                        &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                      "userProfile" : {
+                        "userName" : "joeblogs32",
+                        "userPrincipalName" : "joeblogs32@c.com"
                       }
                     }, {
-                      &quot;browserExtensions&quot; : [ {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                      "browserExtensions" : [ {
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       }, {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       } ],
-                      &quot;userProfile&quot; : {
-                        &quot;userName&quot; : &quot;joeblogs32&quot;,
-                        &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                      "userProfile" : {
+                        "userName" : "joeblogs32",
+                        "userPrincipalName" : "joeblogs32@c.com"
                       }
                     } ],
-                    &quot;agentType&quot; : &quot;endpoint&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "agentType" : "endpoint",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;publicIP&quot; : &quot;88.45.2.123&quot;,
-                    &quot;tcpDriverAvailable&quot; : true,
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;manufacturer&quot; : &quot;Apple, Inc.&quot;,
-                    &quot;targetVersion&quot; : &quot;0.123.4&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "publicIP" : "88.45.2.123",
+                    "tcpDriverAvailable" : true,
+                    "platform" : "mac",
+                    "manufacturer" : "Apple, Inc.",
+                    "targetVersion" : "0.123.4",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;nicModel&quot; : &quot;Intel(R) Wi-Fi 6 AX200 160MHz&quot;,
-                    &quot;createdAt&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                    &quot;numberOfClients&quot; : 3,
-                    &quot;licenseType&quot; : &quot;essentials&quot;,
-                    &quot;osVersion&quot; : &quot;Version 10.15.2 (Build 19C57)&quot;,
-                    &quot;computerName&quot; : &quot;DESKJET-123&quot;,
-                    &quot;freeDiskSpaceNormalized&quot; : 0.41,
-                    &quot;model&quot; : &quot;MacBookAir7,2&quot;,
-                    &quot;id&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;nicDriverVersion&quot; : &quot;22.250.0.9&quot;,
-                    &quot;serialNumber&quot; : &quot;xaab2ba4-d40f-4e80-9363-7e4826556055&quot;,
-                    &quot;externalMetadata&quot; : [ {
-                      &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                      &quot;value&quot; : &quot;DF434343D&quot;
+                    "nicModel" : "Intel(R) Wi-Fi 6 AX200 160MHz",
+                    "createdAt" : "2022-05-26T23:37:16Z",
+                    "numberOfClients" : 3,
+                    "licenseType" : "essentials",
+                    "osVersion" : "Version 10.15.2 (Build 19C57)",
+                    "computerName" : "DESKJET-123",
+                    "freeDiskSpaceNormalized" : 0.41,
+                    "model" : "MacBookAir7,2",
+                    "id" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "nicDriverVersion" : "22.250.0.9",
+                    "serialNumber" : "xaab2ba4-d40f-4e80-9363-7e4826556055",
+                    "externalMetadata" : [ {
+                      "key" : "anyConnectDeviceId",
+                      "value" : "DF434343D"
                     }, {
-                      &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                      &quot;value&quot; : &quot;DF434343D&quot;
+                      "key" : "anyConnectDeviceId",
+                      "value" : "DF434343D"
                     } ],
-                    &quot;version&quot; : &quot;0.123.4&quot;,
-                    &quot;vpnProfiles&quot; : [ {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                    "version" : "0.123.4",
+                    "vpnProfiles" : [ {
+                      "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                      "vpnGatewayAddress" : "vpnGatewayAddress",
+                      "vpnType" : "cisco-anyconnect",
+                      "interfaceName" : "interfaceName",
+                      "vpnClientAddresses" : [ "10.100.0.10" ]
                     }, {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                      "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                      "vpnGatewayAddress" : "vpnGatewayAddress",
+                      "vpnType" : "cisco-anyconnect",
+                      "interfaceName" : "interfaceName",
+                      "vpnClientAddresses" : [ "10.100.0.10" ]
                     } ],
-                    &quot;lastSeen&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                    &quot;deleted&quot; : true,
-                    &quot;totalMemory&quot; : &quot;16384 MB&quot;,
-                    &quot;kernelVersion&quot; : &quot;Darwin 19.2.0&quot;,
-                    &quot;name&quot; : &quot;Office Printer&quot;,
-                    &quot;location&quot; : {
-                      &quot;locationName&quot; : &quot;London&quot;,
-                      &quot;latitude&quot; : 51.51279,
-                      &quot;longitude&quot; : -0.09184
+                    "lastSeen" : "2022-05-26T23:37:16Z",
+                    "deleted" : true,
+                    "totalMemory" : "16384 MB",
+                    "kernelVersion" : "Darwin 19.2.0",
+                    "name" : "Office Printer",
+                    "location" : {
+                      "locationName" : "London",
+                      "latitude" : 51.51279,
+                      "longitude" : -0.09184
                     },
-                    &quot;aid&quot; : &quot;&quot;,
-                    &quot;status&quot; : &quot;enabled&quot;,
-                    &quot;networkInterfaceProfiles&quot; : [ {
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 0
+                    "aid" : "",
+                    "status" : "enabled",
+                    "networkInterfaceProfiles" : [ {
+                      "ethernetProfile" : {
+                        "linkSpeed" : 0
                       },
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;addressProfiles&quot; : [ {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "hardwareType" : "wireless",
+                      "interfaceName" : "en0",
+                      "addressProfiles" : [ {
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       }, {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       } ],
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -36,
-                        &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                        &quot;channel&quot; : 48,
-                        &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                        &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                      "wirelessProfile" : {
+                        "rssi" : -36,
+                        "bssid" : "00:11:22:aa:bb:cc",
+                        "channel" : 48,
+                        "phyMode" : "802.11ac",
+                        "ssid" : "GuestWiFi"
                       }
                     }, {
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 0
+                      "ethernetProfile" : {
+                        "linkSpeed" : 0
                       },
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;addressProfiles&quot; : [ {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "hardwareType" : "wireless",
+                      "interfaceName" : "en0",
+                      "addressProfiles" : [ {
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       }, {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       } ],
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -36,
-                        &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                        &quot;channel&quot; : 48,
-                        &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                        &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                      "wirelessProfile" : {
+                        "rssi" : -36,
+                        "bssid" : "00:11:22:aa:bb:cc",
+                        "channel" : 48,
+                        "phyMode" : "802.11ac",
+                        "ssid" : "GuestWiFi"
                       }
                     } ]
                   }, {
-                    &quot;npcapVersion&quot; : &quot;npcapVersion&quot;,
-                    &quot;asnDetails&quot; : {
-                      &quot;asName&quot; : &quot;Virgin Media Limited&quot;,
-                      &quot;asNumber&quot; : 5089
+                    "npcapVersion" : "npcapVersion",
+                    "asnDetails" : {
+                      "asName" : "Virgin Media Limited",
+                      "asNumber" : 5089
                     },
-                    &quot;clients&quot; : [ {
-                      &quot;browserExtensions&quot; : [ {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                    "clients" : [ {
+                      "browserExtensions" : [ {
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       }, {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       } ],
-                      &quot;userProfile&quot; : {
-                        &quot;userName&quot; : &quot;joeblogs32&quot;,
-                        &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                      "userProfile" : {
+                        "userName" : "joeblogs32",
+                        "userPrincipalName" : "joeblogs32@c.com"
                       }
                     }, {
-                      &quot;browserExtensions&quot; : [ {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                      "browserExtensions" : [ {
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       }, {
-                        &quot;browser&quot; : &quot;edge&quot;,
-                        &quot;profile&quot; : &quot;Profile 1&quot;,
-                        &quot;active&quot; : true,
-                        &quot;error&quot; : &quot;&quot;,
-                        &quot;version&quot; : &quot;0.123.0&quot;,
-                        &quot;enabled&quot; : true
+                        "browser" : "edge",
+                        "profile" : "Profile 1",
+                        "active" : true,
+                        "error" : "",
+                        "version" : "0.123.0",
+                        "enabled" : true
                       } ],
-                      &quot;userProfile&quot; : {
-                        &quot;userName&quot; : &quot;joeblogs32&quot;,
-                        &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                      "userProfile" : {
+                        "userName" : "joeblogs32",
+                        "userPrincipalName" : "joeblogs32@c.com"
                       }
                     } ],
-                    &quot;agentType&quot; : &quot;endpoint&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "agentType" : "endpoint",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;publicIP&quot; : &quot;88.45.2.123&quot;,
-                    &quot;tcpDriverAvailable&quot; : true,
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;manufacturer&quot; : &quot;Apple, Inc.&quot;,
-                    &quot;targetVersion&quot; : &quot;0.123.4&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "publicIP" : "88.45.2.123",
+                    "tcpDriverAvailable" : true,
+                    "platform" : "mac",
+                    "manufacturer" : "Apple, Inc.",
+                    "targetVersion" : "0.123.4",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;nicModel&quot; : &quot;Intel(R) Wi-Fi 6 AX200 160MHz&quot;,
-                    &quot;createdAt&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                    &quot;numberOfClients&quot; : 3,
-                    &quot;licenseType&quot; : &quot;essentials&quot;,
-                    &quot;osVersion&quot; : &quot;Version 10.15.2 (Build 19C57)&quot;,
-                    &quot;computerName&quot; : &quot;DESKJET-123&quot;,
-                    &quot;freeDiskSpaceNormalized&quot; : 0.41,
-                    &quot;model&quot; : &quot;MacBookAir7,2&quot;,
-                    &quot;id&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;nicDriverVersion&quot; : &quot;22.250.0.9&quot;,
-                    &quot;serialNumber&quot; : &quot;xaab2ba4-d40f-4e80-9363-7e4826556055&quot;,
-                    &quot;externalMetadata&quot; : [ {
-                      &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                      &quot;value&quot; : &quot;DF434343D&quot;
+                    "nicModel" : "Intel(R) Wi-Fi 6 AX200 160MHz",
+                    "createdAt" : "2022-05-26T23:37:16Z",
+                    "numberOfClients" : 3,
+                    "licenseType" : "essentials",
+                    "osVersion" : "Version 10.15.2 (Build 19C57)",
+                    "computerName" : "DESKJET-123",
+                    "freeDiskSpaceNormalized" : 0.41,
+                    "model" : "MacBookAir7,2",
+                    "id" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "nicDriverVersion" : "22.250.0.9",
+                    "serialNumber" : "xaab2ba4-d40f-4e80-9363-7e4826556055",
+                    "externalMetadata" : [ {
+                      "key" : "anyConnectDeviceId",
+                      "value" : "DF434343D"
                     }, {
-                      &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                      &quot;value&quot; : &quot;DF434343D&quot;
+                      "key" : "anyConnectDeviceId",
+                      "value" : "DF434343D"
                     } ],
-                    &quot;version&quot; : &quot;0.123.4&quot;,
-                    &quot;vpnProfiles&quot; : [ {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                    "version" : "0.123.4",
+                    "vpnProfiles" : [ {
+                      "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                      "vpnGatewayAddress" : "vpnGatewayAddress",
+                      "vpnType" : "cisco-anyconnect",
+                      "interfaceName" : "interfaceName",
+                      "vpnClientAddresses" : [ "10.100.0.10" ]
                     }, {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                      "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                      "vpnGatewayAddress" : "vpnGatewayAddress",
+                      "vpnType" : "cisco-anyconnect",
+                      "interfaceName" : "interfaceName",
+                      "vpnClientAddresses" : [ "10.100.0.10" ]
                     } ],
-                    &quot;lastSeen&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                    &quot;deleted&quot; : true,
-                    &quot;totalMemory&quot; : &quot;16384 MB&quot;,
-                    &quot;kernelVersion&quot; : &quot;Darwin 19.2.0&quot;,
-                    &quot;name&quot; : &quot;Office Printer&quot;,
-                    &quot;location&quot; : {
-                      &quot;locationName&quot; : &quot;London&quot;,
-                      &quot;latitude&quot; : 51.51279,
-                      &quot;longitude&quot; : -0.09184
+                    "lastSeen" : "2022-05-26T23:37:16Z",
+                    "deleted" : true,
+                    "totalMemory" : "16384 MB",
+                    "kernelVersion" : "Darwin 19.2.0",
+                    "name" : "Office Printer",
+                    "location" : {
+                      "locationName" : "London",
+                      "latitude" : 51.51279,
+                      "longitude" : -0.09184
                     },
-                    &quot;aid&quot; : &quot;&quot;,
-                    &quot;status&quot; : &quot;enabled&quot;,
-                    &quot;networkInterfaceProfiles&quot; : [ {
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 0
+                    "aid" : "",
+                    "status" : "enabled",
+                    "networkInterfaceProfiles" : [ {
+                      "ethernetProfile" : {
+                        "linkSpeed" : 0
                       },
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;addressProfiles&quot; : [ {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "hardwareType" : "wireless",
+                      "interfaceName" : "en0",
+                      "addressProfiles" : [ {
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       }, {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       } ],
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -36,
-                        &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                        &quot;channel&quot; : 48,
-                        &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                        &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                      "wirelessProfile" : {
+                        "rssi" : -36,
+                        "bssid" : "00:11:22:aa:bb:cc",
+                        "channel" : 48,
+                        "phyMode" : "802.11ac",
+                        "ssid" : "GuestWiFi"
                       }
                     }, {
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 0
+                      "ethernetProfile" : {
+                        "linkSpeed" : 0
                       },
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;addressProfiles&quot; : [ {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "hardwareType" : "wireless",
+                      "interfaceName" : "en0",
+                      "addressProfiles" : [ {
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       }, {
-                        &quot;prefixLength&quot; : 24,
-                        &quot;addressType&quot; : &quot;unique-local&quot;,
-                        &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                        &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                        &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                        "prefixLength" : 24,
+                        "addressType" : "unique-local",
+                        "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                        "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                        "gateway" : "192.168.0.254"
                       } ],
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -36,
-                        &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                        &quot;channel&quot; : 48,
-                        &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                        &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                      "wirelessProfile" : {
+                        "rssi" : -36,
+                        "bssid" : "00:11:22:aa:bb:cc",
+                        "channel" : 48,
+                        "phyMode" : "802.11ac",
+                        "ssid" : "GuestWiFi"
                       }
                     } ]
                   } ]
@@ -2188,14 +2252,21 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_endpoint_agents(
+
             max=max,
+
             cursor=cursor,
+
             aid=aid,
-            expand=expand,
+
             include_deleted=include_deleted,
+
             use_all_permitted_aids=use_all_permitted_aids,
+
             agent_name=agent_name,
+
             computer_name=computer_name,
+
             _headers=self.te_headers("get_endpoint_agents"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -2206,7 +2277,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         use_all_permitted_aids = False
         agent_name = 'agent_name_example'
@@ -2222,14 +2292,21 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_endpoint_agents(
+
                 max=max,
+
                 cursor=cursor,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 use_all_permitted_aids=use_all_permitted_aids,
+
                 agent_name=agent_name,
+
                 computer_name=computer_name,
+
                 _headers=self.te_headers("get_endpoint_agents", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2240,7 +2317,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         use_all_permitted_aids = False
         agent_name = 'agent_name_example'
@@ -2259,14 +2335,21 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_endpoint_agents(
+
                 max=max,
+
                 cursor=cursor,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 use_all_permitted_aids=use_all_permitted_aids,
+
                 agent_name=agent_name,
+
                 computer_name=computer_name,
+
                 _headers=self.te_headers("get_endpoint_agents", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2277,7 +2360,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         max = 5
         cursor = 'cursor_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         include_deleted = false
         use_all_permitted_aids = False
         agent_name = 'agent_name_example'
@@ -2296,14 +2378,21 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_endpoint_agents(
+
                 max=max,
+
                 cursor=cursor,
+
                 aid=aid,
-                expand=expand,
+
                 include_deleted=include_deleted,
+
                 use_all_permitted_aids=use_all_permitted_aids,
+
                 agent_name=agent_name,
+
                 computer_name=computer_name,
+
                 _headers=self.te_headers("get_endpoint_agents", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2316,24 +2405,26 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;connectionString&quot; : &quot;D2xZSLlqo64Xe2EnYisklA&#x3D;&#x3D;&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "connectionString" : "D2xZSLlqo64Xe2EnYisklA==",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_endpoint_agents_connection_string(
+
             aid=aid,
+
             _headers=self.te_headers("get_endpoint_agents_connection_string"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -2353,7 +2444,9 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_endpoint_agents_connection_string(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_agents_connection_string", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2376,7 +2469,9 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_endpoint_agents_connection_string(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_agents_connection_string", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2399,7 +2494,9 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_endpoint_agents_connection_string(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_agents_connection_string", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2420,195 +2517,197 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         endpoint_agent_update = thousandeyes_sdk.endpoint_agents.models.EndpointAgentUpdate.from_json(request_body_json)
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         response_body_json = """
                 {
-                  &quot;npcapVersion&quot; : &quot;npcapVersion&quot;,
-                  &quot;asnDetails&quot; : {
-                    &quot;asName&quot; : &quot;Virgin Media Limited&quot;,
-                    &quot;asNumber&quot; : 5089
+                  "npcapVersion" : "npcapVersion",
+                  "asnDetails" : {
+                    "asName" : "Virgin Media Limited",
+                    "asNumber" : 5089
                   },
-                  &quot;clients&quot; : [ {
-                    &quot;browserExtensions&quot; : [ {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                  "clients" : [ {
+                    "browserExtensions" : [ {
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     }, {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     } ],
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     }
                   }, {
-                    &quot;browserExtensions&quot; : [ {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                    "browserExtensions" : [ {
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     }, {
-                      &quot;browser&quot; : &quot;edge&quot;,
-                      &quot;profile&quot; : &quot;Profile 1&quot;,
-                      &quot;active&quot; : true,
-                      &quot;error&quot; : &quot;&quot;,
-                      &quot;version&quot; : &quot;0.123.0&quot;,
-                      &quot;enabled&quot; : true
+                      "browser" : "edge",
+                      "profile" : "Profile 1",
+                      "active" : true,
+                      "error" : "",
+                      "version" : "0.123.0",
+                      "enabled" : true
                     } ],
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     }
                   } ],
-                  &quot;agentType&quot; : &quot;endpoint&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "agentType" : "endpoint",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;batteryMetrics&quot; : {
-                    &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                    &quot;batteryLevel&quot; : &quot;medium&quot;,
-                    &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                  "batteryMetrics" : {
+                    "batteryHealthNormalizedPercent" : 0.92,
+                    "batteryLevel" : "medium",
+                    "batteryLevelNormalizedPercent" : 0.3
                   },
-                  &quot;publicIP&quot; : &quot;88.45.2.123&quot;,
-                  &quot;tcpDriverAvailable&quot; : true,
-                  &quot;platform&quot; : &quot;mac&quot;,
-                  &quot;manufacturer&quot; : &quot;Apple, Inc.&quot;,
-                  &quot;targetVersion&quot; : &quot;0.123.4&quot;,
-                  &quot;cellularProfile&quot; : {
-                    &quot;rssi&quot; : -10,
-                    &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                    &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                    &quot;rsrq&quot; : -30,
-                    &quot;rsrp&quot; : -30,
-                    &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                    &quot;rscp&quot; : -30,
-                    &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                    &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                    &quot;sinr&quot; : 20
+                  "publicIP" : "88.45.2.123",
+                  "tcpDriverAvailable" : true,
+                  "platform" : "mac",
+                  "manufacturer" : "Apple, Inc.",
+                  "targetVersion" : "0.123.4",
+                  "cellularProfile" : {
+                    "rssi" : -10,
+                    "advertisedNetworkSubtype" : "LTE/HSPA",
+                    "carrierName" : "T-Mobile",
+                    "rsrq" : -30,
+                    "rsrp" : -30,
+                    "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                    "rscp" : -30,
+                    "networkGen" : "2g, 3g, 4g, 5g",
+                    "networkSubtype" : "LTE/HSPA",
+                    "sinr" : 20
                   },
-                  &quot;nicModel&quot; : &quot;Intel(R) Wi-Fi 6 AX200 160MHz&quot;,
-                  &quot;createdAt&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                  &quot;numberOfClients&quot; : 3,
-                  &quot;licenseType&quot; : &quot;essentials&quot;,
-                  &quot;osVersion&quot; : &quot;Version 10.15.2 (Build 19C57)&quot;,
-                  &quot;computerName&quot; : &quot;DESKJET-123&quot;,
-                  &quot;freeDiskSpaceNormalized&quot; : 0.41,
-                  &quot;model&quot; : &quot;MacBookAir7,2&quot;,
-                  &quot;id&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                  &quot;nicDriverVersion&quot; : &quot;22.250.0.9&quot;,
-                  &quot;serialNumber&quot; : &quot;xaab2ba4-d40f-4e80-9363-7e4826556055&quot;,
-                  &quot;externalMetadata&quot; : [ {
-                    &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                    &quot;value&quot; : &quot;DF434343D&quot;
+                  "nicModel" : "Intel(R) Wi-Fi 6 AX200 160MHz",
+                  "createdAt" : "2022-05-26T23:37:16Z",
+                  "numberOfClients" : 3,
+                  "licenseType" : "essentials",
+                  "osVersion" : "Version 10.15.2 (Build 19C57)",
+                  "computerName" : "DESKJET-123",
+                  "freeDiskSpaceNormalized" : 0.41,
+                  "model" : "MacBookAir7,2",
+                  "id" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                  "nicDriverVersion" : "22.250.0.9",
+                  "serialNumber" : "xaab2ba4-d40f-4e80-9363-7e4826556055",
+                  "externalMetadata" : [ {
+                    "key" : "anyConnectDeviceId",
+                    "value" : "DF434343D"
                   }, {
-                    &quot;key&quot; : &quot;anyConnectDeviceId&quot;,
-                    &quot;value&quot; : &quot;DF434343D&quot;
+                    "key" : "anyConnectDeviceId",
+                    "value" : "DF434343D"
                   } ],
-                  &quot;version&quot; : &quot;0.123.4&quot;,
-                  &quot;vpnProfiles&quot; : [ {
-                    &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                    &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                    &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                    &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                    &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                  "version" : "0.123.4",
+                  "vpnProfiles" : [ {
+                    "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                    "vpnGatewayAddress" : "vpnGatewayAddress",
+                    "vpnType" : "cisco-anyconnect",
+                    "interfaceName" : "interfaceName",
+                    "vpnClientAddresses" : [ "10.100.0.10" ]
                   }, {
-                    &quot;vpnClientNetworkRange&quot; : [ &quot;10.100.0.0/22&quot; ],
-                    &quot;vpnGatewayAddress&quot; : &quot;vpnGatewayAddress&quot;,
-                    &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                    &quot;interfaceName&quot; : &quot;interfaceName&quot;,
-                    &quot;vpnClientAddresses&quot; : [ &quot;10.100.0.10&quot; ]
+                    "vpnClientNetworkRange" : [ "10.100.0.0/22" ],
+                    "vpnGatewayAddress" : "vpnGatewayAddress",
+                    "vpnType" : "cisco-anyconnect",
+                    "interfaceName" : "interfaceName",
+                    "vpnClientAddresses" : [ "10.100.0.10" ]
                   } ],
-                  &quot;lastSeen&quot; : &quot;2022-05-26T23:37:16Z&quot;,
-                  &quot;deleted&quot; : true,
-                  &quot;totalMemory&quot; : &quot;16384 MB&quot;,
-                  &quot;kernelVersion&quot; : &quot;Darwin 19.2.0&quot;,
-                  &quot;name&quot; : &quot;Office Printer&quot;,
-                  &quot;location&quot; : {
-                    &quot;locationName&quot; : &quot;London&quot;,
-                    &quot;latitude&quot; : 51.51279,
-                    &quot;longitude&quot; : -0.09184
+                  "lastSeen" : "2022-05-26T23:37:16Z",
+                  "deleted" : true,
+                  "totalMemory" : "16384 MB",
+                  "kernelVersion" : "Darwin 19.2.0",
+                  "name" : "Office Printer",
+                  "location" : {
+                    "locationName" : "London",
+                    "latitude" : 51.51279,
+                    "longitude" : -0.09184
                   },
-                  &quot;aid&quot; : &quot;&quot;,
-                  &quot;status&quot; : &quot;enabled&quot;,
-                  &quot;networkInterfaceProfiles&quot; : [ {
-                    &quot;ethernetProfile&quot; : {
-                      &quot;linkSpeed&quot; : 0
+                  "aid" : "",
+                  "status" : "enabled",
+                  "networkInterfaceProfiles" : [ {
+                    "ethernetProfile" : {
+                      "linkSpeed" : 0
                     },
-                    &quot;hardwareType&quot; : &quot;wireless&quot;,
-                    &quot;interfaceName&quot; : &quot;en0&quot;,
-                    &quot;addressProfiles&quot; : [ {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                    "hardwareType" : "wireless",
+                    "interfaceName" : "en0",
+                    "addressProfiles" : [ {
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     }, {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     } ],
-                    &quot;wirelessProfile&quot; : {
-                      &quot;rssi&quot; : -36,
-                      &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                      &quot;channel&quot; : 48,
-                      &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                      &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                    "wirelessProfile" : {
+                      "rssi" : -36,
+                      "bssid" : "00:11:22:aa:bb:cc",
+                      "channel" : 48,
+                      "phyMode" : "802.11ac",
+                      "ssid" : "GuestWiFi"
                     }
                   }, {
-                    &quot;ethernetProfile&quot; : {
-                      &quot;linkSpeed&quot; : 0
+                    "ethernetProfile" : {
+                      "linkSpeed" : 0
                     },
-                    &quot;hardwareType&quot; : &quot;wireless&quot;,
-                    &quot;interfaceName&quot; : &quot;en0&quot;,
-                    &quot;addressProfiles&quot; : [ {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                    "hardwareType" : "wireless",
+                    "interfaceName" : "en0",
+                    "addressProfiles" : [ {
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     }, {
-                      &quot;prefixLength&quot; : 24,
-                      &quot;addressType&quot; : &quot;unique-local&quot;,
-                      &quot;ipAddress&quot; : &quot;2001:db8:3333:4444:5555:6666:7777:8888&quot;,
-                      &quot;routerHardwareAddress&quot; : &quot;5c:b1:3e:46:1c:84&quot;,
-                      &quot;gateway&quot; : &quot;192.168.0.254&quot;
+                      "prefixLength" : 24,
+                      "addressType" : "unique-local",
+                      "ipAddress" : "2001:db8:3333:4444:5555:6666:7777:8888",
+                      "routerHardwareAddress" : "5c:b1:3e:46:1c:84",
+                      "gateway" : "192.168.0.254"
                     } ],
-                    &quot;wirelessProfile&quot; : {
-                      &quot;rssi&quot; : -36,
-                      &quot;bssid&quot; : &quot;00:11:22:aa:bb:cc&quot;,
-                      &quot;channel&quot; : 48,
-                      &quot;phyMode&quot; : &quot;802.11ac&quot;,
-                      &quot;ssid&quot; : &quot;GuestWiFi&quot;
+                    "wirelessProfile" : {
+                      "rssi" : -36,
+                      "bssid" : "00:11:22:aa:bb:cc",
+                      "channel" : 48,
+                      "phyMode" : "802.11ac",
+                      "ssid" : "GuestWiFi"
                     }
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_endpoint_agent(
+
             agent_id=agent_id,
+
             aid=aid,
-            expand=expand,
+
             endpoint_agent_update=endpoint_agent_update,
+
             _headers=self.te_headers("update_endpoint_agent"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -2627,7 +2726,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         endpoint_agent_update = thousandeyes_sdk.endpoint_agents.models.EndpointAgentUpdate.from_json(request_body_json)
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -2639,10 +2737,13 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 endpoint_agent_update=endpoint_agent_update,
+
                 _headers=self.te_headers("update_endpoint_agent", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2661,7 +2762,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         endpoint_agent_update = thousandeyes_sdk.endpoint_agents.models.EndpointAgentUpdate.from_json(request_body_json)
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2676,10 +2776,13 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 endpoint_agent_update=endpoint_agent_update,
+
                 _headers=self.te_headers("update_endpoint_agent", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2698,7 +2801,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         endpoint_agent_update = thousandeyes_sdk.endpoint_agents.models.EndpointAgentUpdate.from_json(request_body_json)
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2713,10 +2815,13 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 endpoint_agent_update=endpoint_agent_update,
+
                 _headers=self.te_headers("update_endpoint_agent", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2735,7 +2840,6 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
         endpoint_agent_update = thousandeyes_sdk.endpoint_agents.models.EndpointAgentUpdate.from_json(request_body_json)
         agent_id = 'agent_id_example'
         aid = '1234'
-        expand = [thousandeyes_sdk.endpoint_agents.ExpandEndpointAgentOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2750,10 +2854,13 @@ class TestEndpointAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_endpoint_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 endpoint_agent_update=endpoint_agent_update,
+
                 _headers=self.te_headers("update_endpoint_agent", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

@@ -93,170 +93,171 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
                 """
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;alertRules&quot; : [ {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                  "alertRules" : [ {
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   }, {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   } ],
-                  &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;type&quot; : &quot;voice&quot;,
-                  &quot;usePublicBgp&quot; : true,
-                  &quot;enabled&quot; : true,
-                  &quot;jitterBuffer&quot; : 40,
-                  &quot;dscpId&quot; : &quot;0&quot;,
-                  &quot;duration&quot; : 5,
-                  &quot;dscp&quot; : &quot;Best Effort (DSCP 0)&quot;,
-                  &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                  &quot;alertsEnabled&quot; : true,
-                  &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;numPathTraces&quot; : 3,
-                  &quot;bgpMeasurements&quot; : true,
-                  &quot;liveShare&quot; : false,
-                  &quot;savedEvent&quot; : true,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "description" : "ThousandEyes Test",
+                  "type" : "voice",
+                  "usePublicBgp" : true,
+                  "enabled" : true,
+                  "jitterBuffer" : 40,
+                  "dscpId" : "0",
+                  "duration" : 5,
+                  "dscp" : "Best Effort (DSCP 0)",
+                  "modifiedBy" : "user@user.com",
+                  "alertsEnabled" : true,
+                  "testName" : "ThousandEyes Test",
+                  "numPathTraces" : 3,
+                  "bgpMeasurements" : true,
+                  "liveShare" : false,
+                  "savedEvent" : true,
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   } ],
-                  &quot;codec&quot; : &quot;G.711 @ 64 Kbps&quot;,
-                  &quot;codecId&quot; : &quot;0&quot;,
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                  &quot;port&quot; : 1024,
-                  &quot;randomizedStartTime&quot; : false,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;targetAgentId&quot; : &quot;281474976710706&quot;,
-                  &quot;interval&quot; : 60,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;sharedWithAccounts&quot; : [ {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "codec" : "G.711 @ 64 Kbps",
+                  "codecId" : "0",
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "createdBy" : "user@user.com",
+                  "port" : 1024,
+                  "randomizedStartTime" : false,
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "targetAgentId" : "281474976710706",
+                  "interval" : 60,
+                  "testId" : "281474976710706",
+                  "sharedWithAccounts" : [ {
+                    "name" : "Account name",
+                    "aid" : "1234"
                   }, {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Account name",
+                    "aid" : "1234"
                   } ],
-                  &quot;monitors&quot; : [ {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                  "monitors" : [ {
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   }, {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_voice_test(
+
             voice_test_request=voice_test_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("create_voice_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -326,7 +327,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
                 """
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -350,9 +350,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_voice_test(
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_voice_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -422,7 +424,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
                 """
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -434,9 +435,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_voice_test(
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_voice_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -506,7 +509,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
                 """
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -521,9 +523,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_voice_test(
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_voice_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -593,7 +597,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
                 """
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -608,9 +611,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_voice_test(
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_voice_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -680,7 +685,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
                 """
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -695,9 +699,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_voice_test(
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_voice_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -767,7 +773,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
                 """
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -782,9 +787,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_voice_test(
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_voice_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -854,7 +861,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
                 """
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -869,9 +875,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.create_voice_test(
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_voice_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -884,8 +892,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         test_id = '202701'
         aid = '1234'
         response = self.api.delete_voice_test_with_http_info(
+
             test_id=test_id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_voice_test"),
         )
         self.assertEqual(204, response.status_code)
@@ -907,8 +918,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_voice_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -932,8 +946,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_voice_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -957,8 +974,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_voice_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -982,8 +1002,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_voice_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1007,8 +1030,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_voice_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1032,8 +1058,11 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.delete_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_voice_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1046,171 +1075,173 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         test_id = '202701'
         aid = '1234'
         version_id = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;alertRules&quot; : [ {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                  "alertRules" : [ {
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   }, {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   } ],
-                  &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;type&quot; : &quot;voice&quot;,
-                  &quot;usePublicBgp&quot; : true,
-                  &quot;enabled&quot; : true,
-                  &quot;jitterBuffer&quot; : 40,
-                  &quot;dscpId&quot; : &quot;0&quot;,
-                  &quot;duration&quot; : 5,
-                  &quot;dscp&quot; : &quot;Best Effort (DSCP 0)&quot;,
-                  &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                  &quot;alertsEnabled&quot; : true,
-                  &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;numPathTraces&quot; : 3,
-                  &quot;bgpMeasurements&quot; : true,
-                  &quot;liveShare&quot; : false,
-                  &quot;savedEvent&quot; : true,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "description" : "ThousandEyes Test",
+                  "type" : "voice",
+                  "usePublicBgp" : true,
+                  "enabled" : true,
+                  "jitterBuffer" : 40,
+                  "dscpId" : "0",
+                  "duration" : 5,
+                  "dscp" : "Best Effort (DSCP 0)",
+                  "modifiedBy" : "user@user.com",
+                  "alertsEnabled" : true,
+                  "testName" : "ThousandEyes Test",
+                  "numPathTraces" : 3,
+                  "bgpMeasurements" : true,
+                  "liveShare" : false,
+                  "savedEvent" : true,
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   } ],
-                  &quot;codec&quot; : &quot;G.711 @ 64 Kbps&quot;,
-                  &quot;codecId&quot; : &quot;0&quot;,
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                  &quot;port&quot; : 1024,
-                  &quot;randomizedStartTime&quot; : false,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;targetAgentId&quot; : &quot;281474976710706&quot;,
-                  &quot;interval&quot; : 60,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;sharedWithAccounts&quot; : [ {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "codec" : "G.711 @ 64 Kbps",
+                  "codecId" : "0",
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "createdBy" : "user@user.com",
+                  "port" : 1024,
+                  "randomizedStartTime" : false,
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "targetAgentId" : "281474976710706",
+                  "interval" : 60,
+                  "testId" : "281474976710706",
+                  "sharedWithAccounts" : [ {
+                    "name" : "Account name",
+                    "aid" : "1234"
                   }, {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Account name",
+                    "aid" : "1234"
                   } ],
-                  &quot;monitors&quot; : [ {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                  "monitors" : [ {
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   }, {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_voice_test(
+
             test_id=test_id,
+
             aid=aid,
+
             version_id=version_id,
-            expand=expand,
+
             _headers=self.te_headers("get_voice_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1221,7 +1252,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         test_id = '202701'
         aid = '1234'
         version_id = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1233,10 +1263,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 version_id=version_id,
-                expand=expand,
+
                 _headers=self.te_headers("get_voice_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1247,7 +1280,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         test_id = '202701'
         aid = '1234'
         version_id = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1262,10 +1294,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 version_id=version_id,
-                expand=expand,
+
                 _headers=self.te_headers("get_voice_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1276,7 +1311,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         test_id = '202701'
         aid = '1234'
         version_id = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1291,10 +1325,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 version_id=version_id,
-                expand=expand,
+
                 _headers=self.te_headers("get_voice_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1305,7 +1342,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         test_id = '202701'
         aid = '1234'
         version_id = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1320,10 +1356,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 version_id=version_id,
-                expand=expand,
+
                 _headers=self.te_headers("get_voice_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1334,7 +1373,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         test_id = '202701'
         aid = '1234'
         version_id = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1349,10 +1387,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 version_id=version_id,
-                expand=expand,
+
                 _headers=self.te_headers("get_voice_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1363,7 +1404,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         test_id = '202701'
         aid = '1234'
         version_id = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1378,10 +1418,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_voice_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 version_id=version_id,
-                expand=expand,
+
                 _headers=self.te_headers("get_voice_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1394,110 +1437,112 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;tests&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "tests" : [ {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;voice&quot;,
-                    &quot;usePublicBgp&quot; : true,
-                    &quot;enabled&quot; : true,
-                    &quot;jitterBuffer&quot; : 40,
-                    &quot;dscpId&quot; : &quot;0&quot;,
-                    &quot;duration&quot; : 5,
-                    &quot;dscp&quot; : &quot;Best Effort (DSCP 0)&quot;,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;numPathTraces&quot; : 3,
-                    &quot;bgpMeasurements&quot; : true,
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;codec&quot; : &quot;G.711 @ 64 Kbps&quot;,
-                    &quot;codecId&quot; : &quot;0&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;port&quot; : 1024,
-                    &quot;randomizedStartTime&quot; : false,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;targetAgentId&quot; : &quot;281474976710706&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;testId&quot; : &quot;281474976710706&quot;
+                    "description" : "ThousandEyes Test",
+                    "type" : "voice",
+                    "usePublicBgp" : true,
+                    "enabled" : true,
+                    "jitterBuffer" : 40,
+                    "dscpId" : "0",
+                    "duration" : 5,
+                    "dscp" : "Best Effort (DSCP 0)",
+                    "modifiedBy" : "user@user.com",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test",
+                    "numPathTraces" : 3,
+                    "bgpMeasurements" : true,
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "codec" : "G.711 @ 64 Kbps",
+                    "codecId" : "0",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "port" : 1024,
+                    "randomizedStartTime" : false,
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "targetAgentId" : "281474976710706",
+                    "interval" : 60,
+                    "testId" : "281474976710706"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;voice&quot;,
-                    &quot;usePublicBgp&quot; : true,
-                    &quot;enabled&quot; : true,
-                    &quot;jitterBuffer&quot; : 40,
-                    &quot;dscpId&quot; : &quot;0&quot;,
-                    &quot;duration&quot; : 5,
-                    &quot;dscp&quot; : &quot;Best Effort (DSCP 0)&quot;,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;numPathTraces&quot; : 3,
-                    &quot;bgpMeasurements&quot; : true,
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;codec&quot; : &quot;G.711 @ 64 Kbps&quot;,
-                    &quot;codecId&quot; : &quot;0&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;port&quot; : 1024,
-                    &quot;randomizedStartTime&quot; : false,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;targetAgentId&quot; : &quot;281474976710706&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;testId&quot; : &quot;281474976710706&quot;
+                    "description" : "ThousandEyes Test",
+                    "type" : "voice",
+                    "usePublicBgp" : true,
+                    "enabled" : true,
+                    "jitterBuffer" : 40,
+                    "dscpId" : "0",
+                    "duration" : 5,
+                    "dscp" : "Best Effort (DSCP 0)",
+                    "modifiedBy" : "user@user.com",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test",
+                    "numPathTraces" : 3,
+                    "bgpMeasurements" : true,
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "codec" : "G.711 @ 64 Kbps",
+                    "codecId" : "0",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "port" : 1024,
+                    "randomizedStartTime" : false,
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "targetAgentId" : "281474976710706",
+                    "interval" : 60,
+                    "testId" : "281474976710706"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_voice_tests(
+
             aid=aid,
+
             _headers=self.te_headers("get_voice_tests"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1517,7 +1562,9 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_voice_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_voice_tests", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1540,7 +1587,9 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_voice_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_voice_tests", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1563,7 +1612,9 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_voice_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_voice_tests", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1586,7 +1637,9 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_voice_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_voice_tests", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1609,7 +1662,9 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_voice_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_voice_tests", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1632,7 +1687,9 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_voice_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_voice_tests", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1705,171 +1762,173 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;alertRules&quot; : [ {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                  "alertRules" : [ {
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   }, {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   } ],
-                  &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;type&quot; : &quot;voice&quot;,
-                  &quot;usePublicBgp&quot; : true,
-                  &quot;enabled&quot; : true,
-                  &quot;jitterBuffer&quot; : 40,
-                  &quot;dscpId&quot; : &quot;0&quot;,
-                  &quot;duration&quot; : 5,
-                  &quot;dscp&quot; : &quot;Best Effort (DSCP 0)&quot;,
-                  &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                  &quot;alertsEnabled&quot; : true,
-                  &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;numPathTraces&quot; : 3,
-                  &quot;bgpMeasurements&quot; : true,
-                  &quot;liveShare&quot; : false,
-                  &quot;savedEvent&quot; : true,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "description" : "ThousandEyes Test",
+                  "type" : "voice",
+                  "usePublicBgp" : true,
+                  "enabled" : true,
+                  "jitterBuffer" : 40,
+                  "dscpId" : "0",
+                  "duration" : 5,
+                  "dscp" : "Best Effort (DSCP 0)",
+                  "modifiedBy" : "user@user.com",
+                  "alertsEnabled" : true,
+                  "testName" : "ThousandEyes Test",
+                  "numPathTraces" : 3,
+                  "bgpMeasurements" : true,
+                  "liveShare" : false,
+                  "savedEvent" : true,
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   } ],
-                  &quot;codec&quot; : &quot;G.711 @ 64 Kbps&quot;,
-                  &quot;codecId&quot; : &quot;0&quot;,
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                  &quot;port&quot; : 1024,
-                  &quot;randomizedStartTime&quot; : false,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;targetAgentId&quot; : &quot;281474976710706&quot;,
-                  &quot;interval&quot; : 60,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;sharedWithAccounts&quot; : [ {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "codec" : "G.711 @ 64 Kbps",
+                  "codecId" : "0",
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "createdBy" : "user@user.com",
+                  "port" : 1024,
+                  "randomizedStartTime" : false,
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "targetAgentId" : "281474976710706",
+                  "interval" : 60,
+                  "testId" : "281474976710706",
+                  "sharedWithAccounts" : [ {
+                    "name" : "Account name",
+                    "aid" : "1234"
                   }, {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Account name",
+                    "aid" : "1234"
                   } ],
-                  &quot;monitors&quot; : [ {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                  "monitors" : [ {
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   }, {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_voice_test(
+
             test_id=test_id,
+
             voice_test_request=voice_test_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("update_voice_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1940,7 +1999,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1964,10 +2022,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_voice_test(
+
                 test_id=test_id,
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_voice_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2038,7 +2099,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -2050,10 +2110,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_voice_test(
+
                 test_id=test_id,
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_voice_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2124,7 +2187,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2139,10 +2201,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_voice_test(
+
                 test_id=test_id,
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_voice_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2213,7 +2278,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2228,10 +2292,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_voice_test(
+
                 test_id=test_id,
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_voice_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2302,7 +2369,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2317,10 +2383,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_voice_test(
+
                 test_id=test_id,
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_voice_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2391,7 +2460,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2406,10 +2474,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_voice_test(
+
                 test_id=test_id,
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_voice_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2480,7 +2551,6 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
         voice_test_request = thousandeyes_sdk.tests.models.VoiceTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2495,10 +2565,13 @@ class TestVoiceTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.update_voice_test(
+
                 test_id=test_id,
+
                 voice_test_request=voice_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_voice_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

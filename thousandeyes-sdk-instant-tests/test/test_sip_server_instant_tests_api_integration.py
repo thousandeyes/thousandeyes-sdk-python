@@ -96,129 +96,130 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         sip_server_instant_test_request = thousandeyes_sdk.instant_tests.models.SipServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         response_body_json = """
                 {
-                  &quot;mtuMeasurements&quot; : false,
-                  &quot;ipv6Policy&quot; : &quot;use-agent-policy&quot;,
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "mtuMeasurements" : false,
+                  "ipv6Policy" : "use-agent-policy",
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;registerEnabled&quot; : false,
-                  &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;probeMode&quot; : &quot;auto&quot;,
-                  &quot;type&quot; : &quot;sip-server&quot;,
-                  &quot;authUser&quot; : &quot;username&quot;,
-                  &quot;fixedPacketRate&quot; : 50,
-                  &quot;password&quot; : &quot;password&quot;,
-                  &quot;protocol&quot; : &quot;tcp&quot;,
-                  &quot;pathTraceMode&quot; : &quot;classic&quot;,
-                  &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                  &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;sipTargetTime&quot; : 1000,
-                  &quot;numPathTraces&quot; : 3,
-                  &quot;optionsRegex&quot; : &quot;[\&quot;a-z\&quot;]&quot;,
-                  &quot;liveShare&quot; : false,
-                  &quot;savedEvent&quot; : true,
-                  &quot;sipRegistrar&quot; : &quot;voice.thousandeyes.com&quot;,
-                  &quot;networkMeasurements&quot; : true,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "registerEnabled" : false,
+                  "description" : "ThousandEyes Test",
+                  "probeMode" : "auto",
+                  "type" : "sip-server",
+                  "authUser" : "username",
+                  "fixedPacketRate" : 50,
+                  "password" : "password",
+                  "protocol" : "tcp",
+                  "pathTraceMode" : "classic",
+                  "modifiedBy" : "user@user.com",
+                  "testName" : "ThousandEyes Test",
+                  "sipTargetTime" : 1000,
+                  "numPathTraces" : 3,
+                  "optionsRegex" : "[\\"a-z\\"]",
+                  "liveShare" : false,
+                  "savedEvent" : true,
+                  "sipRegistrar" : "voice.thousandeyes.com",
+                  "networkMeasurements" : true,
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   } ],
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                  &quot;randomizedStartTime&quot; : false,
-                  &quot;port&quot; : 49153,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;sipTimeLimit&quot; : 5,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;sharedWithAccounts&quot; : [ {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "createdBy" : "user@user.com",
+                  "randomizedStartTime" : false,
+                  "port" : 49153,
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "sipTimeLimit" : 5,
+                  "testId" : "281474976710706",
+                  "sharedWithAccounts" : [ {
+                    "name" : "Account name",
+                    "aid" : "1234"
                   }, {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Account name",
+                    "aid" : "1234"
                   } ],
-                  &quot;user&quot; : &quot;username&quot;
+                  "user" : "username"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_sip_server_instant_test(
+
             sip_server_instant_test_request=sip_server_instant_test_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("create_sip_server_instant_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -291,7 +292,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         sip_server_instant_test_request = thousandeyes_sdk.instant_tests.models.SipServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -315,9 +315,11 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_sip_server_instant_test(
+
                 sip_server_instant_test_request=sip_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_sip_server_instant_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -390,7 +392,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         sip_server_instant_test_request = thousandeyes_sdk.instant_tests.models.SipServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -402,9 +403,11 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_sip_server_instant_test(
+
                 sip_server_instant_test_request=sip_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_sip_server_instant_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -477,7 +480,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         sip_server_instant_test_request = thousandeyes_sdk.instant_tests.models.SipServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -492,9 +494,11 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_sip_server_instant_test(
+
                 sip_server_instant_test_request=sip_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_sip_server_instant_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -567,7 +571,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         sip_server_instant_test_request = thousandeyes_sdk.instant_tests.models.SipServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -582,9 +585,11 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_sip_server_instant_test(
+
                 sip_server_instant_test_request=sip_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_sip_server_instant_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -657,7 +662,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         sip_server_instant_test_request = thousandeyes_sdk.instant_tests.models.SipServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -672,9 +676,11 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_sip_server_instant_test(
+
                 sip_server_instant_test_request=sip_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_sip_server_instant_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -747,7 +753,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         sip_server_instant_test_request = thousandeyes_sdk.instant_tests.models.SipServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -762,9 +767,11 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_sip_server_instant_test(
+
                 sip_server_instant_test_request=sip_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_sip_server_instant_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -837,7 +844,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                 """
         sip_server_instant_test_request = thousandeyes_sdk.instant_tests.models.SipServerInstantTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -852,9 +858,11 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.create_sip_server_instant_test(
+
                 sip_server_instant_test_request=sip_server_instant_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_sip_server_instant_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

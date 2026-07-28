@@ -43,26 +43,29 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;Example Credential&quot;,
-                  &quot;id&quot; : &quot;3247&quot;
+                  "name" : "Example Credential",
+                  "id" : "3247"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_credential(
+
             credential_request=credential_request,
+
             aid=aid,
+
             _headers=self.te_headers("create_credential"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -103,8 +106,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_credential(
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -133,8 +139,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_credential(
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -166,8 +175,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_credential(
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -199,8 +211,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_credential(
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -232,8 +247,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_credential(
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -265,8 +283,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_credential(
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_credential", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -279,8 +300,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
         id = '3247'
         aid = '1234'
         response = self.api.delete_credential_with_http_info(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_credential"),
         )
         self.assertEqual(204, response.status_code)
@@ -302,8 +326,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -327,8 +354,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -352,8 +382,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -377,8 +410,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -402,8 +438,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_credential", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -417,27 +456,30 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;Example Credential&quot;,
-                  &quot;id&quot; : &quot;3247&quot;,
-                  &quot;value&quot; : &quot;rwhR12uDm1Im47p5IVXgzz4ORgC7m48ajzzeWVUt&quot;
+                  "name" : "Example Credential",
+                  "id" : "3247",
+                  "value" : "rwhR12uDm1Im47p5IVXgzz4ORgC7m48ajzzeWVUt"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_credential(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_credential"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -470,8 +512,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -492,8 +537,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -517,8 +565,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -542,8 +593,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -567,8 +621,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -592,8 +649,11 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_credential(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credential", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -606,56 +666,58 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;credentials&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "credentials" : [ {
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;Example Credential&quot;,
-                    &quot;id&quot; : &quot;3247&quot;,
-                    &quot;value&quot; : &quot;rwhR12uDm1Im47p5IVXgzz4ORgC7m48ajzzeWVUt&quot;
+                    "name" : "Example Credential",
+                    "id" : "3247",
+                    "value" : "rwhR12uDm1Im47p5IVXgzz4ORgC7m48ajzzeWVUt"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;name&quot; : &quot;Example Credential&quot;,
-                    &quot;id&quot; : &quot;3247&quot;,
-                    &quot;value&quot; : &quot;rwhR12uDm1Im47p5IVXgzz4ORgC7m48ajzzeWVUt&quot;
+                    "name" : "Example Credential",
+                    "id" : "3247",
+                    "value" : "rwhR12uDm1Im47p5IVXgzz4ORgC7m48ajzzeWVUt"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_credentials(
+
             aid=aid,
+
             _headers=self.te_headers("get_credentials"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -675,7 +737,9 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_credentials(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credentials", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -698,7 +762,9 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_credentials(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credentials", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -721,7 +787,9 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_credentials(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credentials", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -744,7 +812,9 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_credentials(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credentials", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -767,7 +837,9 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_credentials(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_credentials", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -790,27 +862,31 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;name&quot; : &quot;Example Credential&quot;,
-                  &quot;id&quot; : &quot;3247&quot;
+                  "name" : "Example Credential",
+                  "id" : "3247"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_credential(
+
             id=id,
+
             credential_request=credential_request,
+
             aid=aid,
+
             _headers=self.te_headers("update_credential"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -852,9 +928,13 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_credential(
+
                 id=id,
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -884,9 +964,13 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_credential(
+
                 id=id,
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -919,9 +1003,13 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_credential(
+
                 id=id,
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -954,9 +1042,13 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_credential(
+
                 id=id,
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -989,9 +1081,13 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_credential(
+
                 id=id,
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1024,9 +1120,13 @@ class TestCredentialsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_credential(
+
                 id=id,
+
                 credential_request=credential_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_credential", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

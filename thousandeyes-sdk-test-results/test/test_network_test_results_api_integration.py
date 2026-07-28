@@ -37,169 +37,174 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.TestDirection()
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "test" : {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   },
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;server&quot; : &quot;www.thousandeyes.com:80&quot;,
-                    &quot;availableBandwidth&quot; : 9.100464,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "server" : "www.thousandeyes.com:80",
+                    "availableBandwidth" : 9.100464,
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;packetsBySecond&quot; : [ [ ], [ 0 ], [ 2 ], [ 2, 1 ], [ 1, 1 ] ],
-                    &quot;avgLatency&quot; : 167.04,
-                    &quot;bandwidth&quot; : 4.3313155,
-                    &quot;minLatency&quot; : 167,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "packetsBySecond" : [ [ ], [ 0 ], [ 2 ], [ 2, 1 ], [ 1, 1 ] ],
+                    "avgLatency" : 167.04,
+                    "bandwidth" : 4.3313155,
+                    "minLatency" : 167,
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;maxLatency&quot; : 168,
-                    &quot;proxyJitter&quot; : 1.2,
-                    &quot;proxyAverageLatency&quot; : 45,
-                    &quot;proxyLoss&quot; : 2.5,
-                    &quot;healthScore&quot; : 0.98,
-                    &quot;capacity&quot; : 210.10854,
-                    &quot;loss&quot; : 0,
-                    &quot;proxyMinLatency&quot; : 40,
-                    &quot;jitter&quot; : 0.076808,
-                    &quot;serverIp&quot; : &quot;50.18.127.223&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;proxyMaxLatency&quot; : 50,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "maxLatency" : 168,
+                    "proxyJitter" : 1.2,
+                    "proxyAverageLatency" : 45,
+                    "proxyLoss" : 2.5,
+                    "healthScore" : 0.98,
+                    "capacity" : 210.10854,
+                    "loss" : 0,
+                    "proxyMinLatency" : 40,
+                    "jitter" : 0.076808,
+                    "serverIp" : "50.18.127.223",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "proxyMaxLatency" : 50,
+                    "roundId" : 1384309800,
+                    "direction" : "to-target"
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;server&quot; : &quot;www.thousandeyes.com:80&quot;,
-                    &quot;availableBandwidth&quot; : 9.100464,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "date" : "2022-07-17T22:00:54Z",
+                    "server" : "www.thousandeyes.com:80",
+                    "availableBandwidth" : 9.100464,
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;packetsBySecond&quot; : [ [ ], [ 0 ], [ 2 ], [ 2, 1 ], [ 1, 1 ] ],
-                    &quot;avgLatency&quot; : 167.04,
-                    &quot;bandwidth&quot; : 4.3313155,
-                    &quot;minLatency&quot; : 167,
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "packetsBySecond" : [ [ ], [ 0 ], [ 2 ], [ 2, 1 ], [ 1, 1 ] ],
+                    "avgLatency" : 167.04,
+                    "bandwidth" : 4.3313155,
+                    "minLatency" : 167,
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;maxLatency&quot; : 168,
-                    &quot;proxyJitter&quot; : 1.2,
-                    &quot;proxyAverageLatency&quot; : 45,
-                    &quot;proxyLoss&quot; : 2.5,
-                    &quot;healthScore&quot; : 0.98,
-                    &quot;capacity&quot; : 210.10854,
-                    &quot;loss&quot; : 0,
-                    &quot;proxyMinLatency&quot; : 40,
-                    &quot;jitter&quot; : 0.076808,
-                    &quot;serverIp&quot; : &quot;50.18.127.223&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;proxyMaxLatency&quot; : 50,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "maxLatency" : 168,
+                    "proxyJitter" : 1.2,
+                    "proxyAverageLatency" : 45,
+                    "proxyLoss" : 2.5,
+                    "healthScore" : 0.98,
+                    "capacity" : 210.10854,
+                    "loss" : 0,
+                    "proxyMinLatency" : 40,
+                    "jitter" : 0.076808,
+                    "serverIp" : "50.18.127.223",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "proxyMaxLatency" : 50,
+                    "roundId" : 1384309800,
+                    "direction" : "to-target"
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_test_network_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
-            direction=direction,
+
             _headers=self.te_headers("get_test_network_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -213,7 +218,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.TestDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -237,13 +241,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_network_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -257,7 +267,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.TestDirection()
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -269,13 +278,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_network_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -289,7 +304,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.TestDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -304,13 +318,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_network_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -324,7 +344,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.TestDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -339,13 +358,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_network_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -359,7 +384,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.TestDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -374,13 +398,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_network_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -394,7 +424,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.TestDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -409,13 +438,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_network_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -429,7 +464,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.TestDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -444,13 +478,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_network_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -464,207 +504,210 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         agent_id = '11'
         round_id = '1384309800'
         aid = '1234'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "test" : {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   },
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;server&quot; : &quot;www.google.com:443&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "server" : "www.google.com:443",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;targetIsProxy&quot; : true,
-                    &quot;sourcePrefix&quot; : &quot;196.40.96.0/20&quot;,
-                    &quot;sourceIp&quot; : &quot;196.40.106.237&quot;,
-                    &quot;pathTraces&quot; : [ {
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;mpls&quot; : &quot;mpls&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                    "targetIsProxy" : true,
+                    "sourcePrefix" : "196.40.96.0/20",
+                    "sourceIp" : "196.40.106.237",
+                    "pathTraces" : [ {
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "mpls" : "mpls",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;mpls&quot; : &quot;mpls&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "mpls" : "mpls",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803"
                     }, {
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;mpls&quot; : &quot;mpls&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "mpls" : "mpls",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;mpls&quot; : &quot;mpls&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "mpls" : "mpls",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803"
                     } ],
-                    &quot;serverIp&quot; : &quot;172.217.170.68&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "serverIp" : "172.217.170.68",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "roundId" : 1384309800,
+                    "direction" : "to-target"
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;server&quot; : &quot;www.google.com:443&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "date" : "2022-07-17T22:00:54Z",
+                    "server" : "www.google.com:443",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;targetIsProxy&quot; : true,
-                    &quot;sourcePrefix&quot; : &quot;196.40.96.0/20&quot;,
-                    &quot;sourceIp&quot; : &quot;196.40.106.237&quot;,
-                    &quot;pathTraces&quot; : [ {
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;mpls&quot; : &quot;mpls&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                    "targetIsProxy" : true,
+                    "sourcePrefix" : "196.40.96.0/20",
+                    "sourceIp" : "196.40.106.237",
+                    "pathTraces" : [ {
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "mpls" : "mpls",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;mpls&quot; : &quot;mpls&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "mpls" : "mpls",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803"
                     }, {
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;mpls&quot; : &quot;mpls&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "mpls" : "mpls",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;mpls&quot; : &quot;mpls&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "mpls" : "mpls",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803"
                     } ],
-                    &quot;serverIp&quot; : &quot;172.217.170.68&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "serverIp" : "172.217.170.68",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "roundId" : 1384309800,
+                    "direction" : "to-target"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_test_path_vis_agent_round_results(
+
             test_id=test_id,
+
             agent_id=agent_id,
+
             round_id=round_id,
+
             aid=aid,
-            direction=direction,
+
             _headers=self.te_headers("get_test_path_vis_agent_round_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -676,7 +719,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         agent_id = '11'
         round_id = '1384309800'
         aid = '1234'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -700,11 +742,15 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_agent_round_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -716,7 +762,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         agent_id = '11'
         round_id = '1384309800'
         aid = '1234'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -728,11 +773,15 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_agent_round_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -744,7 +793,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         agent_id = '11'
         round_id = '1384309800'
         aid = '1234'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -759,11 +807,15 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_agent_round_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -775,7 +827,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         agent_id = '11'
         round_id = '1384309800'
         aid = '1234'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -790,11 +841,15 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_agent_round_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -806,7 +861,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         agent_id = '11'
         round_id = '1384309800'
         aid = '1234'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -821,11 +875,15 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_agent_round_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -837,7 +895,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         agent_id = '11'
         round_id = '1384309800'
         aid = '1234'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -852,11 +909,15 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_agent_round_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -868,7 +929,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         agent_id = '11'
         round_id = '1384309800'
         aid = '1234'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -883,11 +943,15 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_agent_round_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -903,175 +967,180 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "test" : {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   },
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;server&quot; : &quot;www.google.com:443&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "server" : "www.google.com:443",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;targetIsProxy&quot; : true,
-                    &quot;sourcePrefix&quot; : &quot;196.40.96.0/20&quot;,
-                    &quot;sourceIp&quot; : &quot;196.40.106.237&quot;,
-                    &quot;pathTraces&quot; : [ {
-                      &quot;numberOfHops&quot; : 15,
-                      &quot;responseTime&quot; : 1500,
-                      &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                      &quot;pathMtu&quot; : 1500,
-                      &quot;pathId&quot; : &quot;1230899668701775614109128428722974545787322404682781961521&quot;,
-                      &quot;mss&quot; : 1460
+                    "targetIsProxy" : true,
+                    "sourcePrefix" : "196.40.96.0/20",
+                    "sourceIp" : "196.40.106.237",
+                    "pathTraces" : [ {
+                      "numberOfHops" : 15,
+                      "responseTime" : 1500,
+                      "ipAddress" : "196.40.106.237",
+                      "pathMtu" : 1500,
+                      "pathId" : "1230899668701775614109128428722974545787322404682781961521",
+                      "mss" : 1460
                     }, {
-                      &quot;numberOfHops&quot; : 15,
-                      &quot;responseTime&quot; : 1500,
-                      &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                      &quot;pathMtu&quot; : 1500,
-                      &quot;pathId&quot; : &quot;1230899668701775614109128428722974545787322404682781961521&quot;,
-                      &quot;mss&quot; : 1460
+                      "numberOfHops" : 15,
+                      "responseTime" : 1500,
+                      "ipAddress" : "196.40.106.237",
+                      "pathMtu" : 1500,
+                      "pathId" : "1230899668701775614109128428722974545787322404682781961521",
+                      "mss" : 1460
                     } ],
-                    &quot;serverIp&quot; : &quot;172.217.170.68&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "serverIp" : "172.217.170.68",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "roundId" : 1384309800,
+                    "direction" : "to-target"
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;server&quot; : &quot;www.google.com:443&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "date" : "2022-07-17T22:00:54Z",
+                    "server" : "www.google.com:443",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;targetIsProxy&quot; : true,
-                    &quot;sourcePrefix&quot; : &quot;196.40.96.0/20&quot;,
-                    &quot;sourceIp&quot; : &quot;196.40.106.237&quot;,
-                    &quot;pathTraces&quot; : [ {
-                      &quot;numberOfHops&quot; : 15,
-                      &quot;responseTime&quot; : 1500,
-                      &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                      &quot;pathMtu&quot; : 1500,
-                      &quot;pathId&quot; : &quot;1230899668701775614109128428722974545787322404682781961521&quot;,
-                      &quot;mss&quot; : 1460
+                    "targetIsProxy" : true,
+                    "sourcePrefix" : "196.40.96.0/20",
+                    "sourceIp" : "196.40.106.237",
+                    "pathTraces" : [ {
+                      "numberOfHops" : 15,
+                      "responseTime" : 1500,
+                      "ipAddress" : "196.40.106.237",
+                      "pathMtu" : 1500,
+                      "pathId" : "1230899668701775614109128428722974545787322404682781961521",
+                      "mss" : 1460
                     }, {
-                      &quot;numberOfHops&quot; : 15,
-                      &quot;responseTime&quot; : 1500,
-                      &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                      &quot;pathMtu&quot; : 1500,
-                      &quot;pathId&quot; : &quot;1230899668701775614109128428722974545787322404682781961521&quot;,
-                      &quot;mss&quot; : 1460
+                      "numberOfHops" : 15,
+                      "responseTime" : 1500,
+                      "ipAddress" : "196.40.106.237",
+                      "pathMtu" : 1500,
+                      "pathId" : "1230899668701775614109128428722974545787322404682781961521",
+                      "mss" : 1460
                     } ],
-                    &quot;serverIp&quot; : &quot;172.217.170.68&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "serverIp" : "172.217.170.68",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "roundId" : 1384309800,
+                    "direction" : "to-target"
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_test_path_vis_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
-            direction=direction,
+
             _headers=self.te_headers("get_test_path_vis_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1085,7 +1154,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1109,13 +1177,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1129,7 +1203,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1141,13 +1214,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1161,7 +1240,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1176,13 +1254,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1196,7 +1280,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1211,13 +1294,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1231,7 +1320,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1246,13 +1334,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1266,7 +1360,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1281,13 +1374,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1301,7 +1400,6 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        direction = thousandeyes_sdk.test_results.PathVisDirection()
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1316,13 +1414,19 @@ class TestNetworkTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                direction=direction,
+
                 _headers=self.te_headers("get_test_path_vis_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

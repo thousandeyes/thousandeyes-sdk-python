@@ -59,30 +59,32 @@ class TestQuotasApiIntegration(IntegrationTestBase):
         organizations_quotas_assign = thousandeyes_sdk.usage.models.OrganizationsQuotasAssign.from_json(request_body_json)
         response_body_json = """
                 {
-                  &quot;organizations&quot; : [ {
-                    &quot;orgId&quot; : &quot;1234&quot;,
-                    &quot;accountGroups&quot; : [ {
-                      &quot;value&quot; : 12000,
-                      &quot;aid&quot; : &quot;1234&quot;
+                  "organizations" : [ {
+                    "orgId" : "1234",
+                    "accountGroups" : [ {
+                      "value" : 12000,
+                      "aid" : "1234"
                     }, {
-                      &quot;value&quot; : 12000,
-                      &quot;aid&quot; : &quot;1234&quot;
+                      "value" : 12000,
+                      "aid" : "1234"
                     } ]
                   }, {
-                    &quot;orgId&quot; : &quot;1234&quot;,
-                    &quot;accountGroups&quot; : [ {
-                      &quot;value&quot; : 12000,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "orgId" : "1234",
+                    "accountGroups" : [ {
+                      "value" : 12000,
+                      "aid" : "1234"
                     }, {
-                      &quot;value&quot; : 12000,
-                      &quot;aid&quot; : &quot;1234&quot;
+                      "value" : 12000,
+                      "aid" : "1234"
                     } ]
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.assign_organizations_account_groups_quotas(
+
             organizations_quotas_assign=organizations_quotas_assign,
+
             _headers=self.te_headers("assign_organizations_account_groups_quotas"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -139,7 +141,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.assign_organizations_account_groups_quotas(
+
                 organizations_quotas_assign=organizations_quotas_assign,
+
                 _headers=self.te_headers("assign_organizations_account_groups_quotas", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -184,7 +188,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.assign_organizations_account_groups_quotas(
+
                 organizations_quotas_assign=organizations_quotas_assign,
+
                 _headers=self.te_headers("assign_organizations_account_groups_quotas", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -232,7 +238,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.assign_organizations_account_groups_quotas(
+
                 organizations_quotas_assign=organizations_quotas_assign,
+
                 _headers=self.te_headers("assign_organizations_account_groups_quotas", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -280,7 +288,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.assign_organizations_account_groups_quotas(
+
                 organizations_quotas_assign=organizations_quotas_assign,
+
                 _headers=self.te_headers("assign_organizations_account_groups_quotas", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -328,7 +338,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.assign_organizations_account_groups_quotas(
+
                 organizations_quotas_assign=organizations_quotas_assign,
+
                 _headers=self.te_headers("assign_organizations_account_groups_quotas", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -376,7 +388,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.assign_organizations_account_groups_quotas(
+
                 organizations_quotas_assign=organizations_quotas_assign,
+
                 _headers=self.te_headers("assign_organizations_account_groups_quotas", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -401,18 +415,20 @@ class TestQuotasApiIntegration(IntegrationTestBase):
         quotas_assign_request = thousandeyes_sdk.usage.models.QuotasAssignRequest.from_json(request_body_json)
         response_body_json = """
                 {
-                  &quot;organizations&quot; : [ {
-                    &quot;orgId&quot; : &quot;1234&quot;,
-                    &quot;value&quot; : 12000
+                  "organizations" : [ {
+                    "orgId" : "1234",
+                    "value" : 12000
                   }, {
-                    &quot;orgId&quot; : &quot;12345&quot;,
-                    &quot;value&quot; : 10000
+                    "orgId" : "12345",
+                    "value" : 10000
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.assign_organizations_quotas(
+
             quotas_assign_request=quotas_assign_request,
+
             _headers=self.te_headers("assign_organizations_quotas"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -456,7 +472,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.assign_organizations_quotas(
+
                 quotas_assign_request=quotas_assign_request,
+
                 _headers=self.te_headers("assign_organizations_quotas", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -488,7 +506,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.assign_organizations_quotas(
+
                 quotas_assign_request=quotas_assign_request,
+
                 _headers=self.te_headers("assign_organizations_quotas", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -523,7 +543,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.assign_organizations_quotas(
+
                 quotas_assign_request=quotas_assign_request,
+
                 _headers=self.te_headers("assign_organizations_quotas", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -558,7 +580,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.assign_organizations_quotas(
+
                 quotas_assign_request=quotas_assign_request,
+
                 _headers=self.te_headers("assign_organizations_quotas", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -593,7 +617,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.assign_organizations_quotas(
+
                 quotas_assign_request=quotas_assign_request,
+
                 _headers=self.te_headers("assign_organizations_quotas", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -628,7 +654,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.assign_organizations_quotas(
+
                 quotas_assign_request=quotas_assign_request,
+
                 _headers=self.te_headers("assign_organizations_quotas", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -640,47 +668,48 @@ class TestQuotasApiIntegration(IntegrationTestBase):
         """Integration test for get_quotas success path"""
         response_body_json = """
                 {
-                  &quot;quotas&quot; : [ {
-                    &quot;accountGroupQuotas&quot; : [ {
-                      &quot;value&quot; : 12000,
-                      &quot;aid&quot; : &quot;1234&quot;
+                  "quotas" : [ {
+                    "accountGroupQuotas" : [ {
+                      "value" : 12000,
+                      "aid" : "1234"
                     }, {
-                      &quot;value&quot; : 10000,
-                      &quot;aid&quot; : &quot;12345&quot;
+                      "value" : 10000,
+                      "aid" : "12345"
                     } ],
-                    &quot;organizationQuota&quot; : {
-                      &quot;value&quot; : 22500,
-                      &quot;orgId&quot; : &quot;10&quot;
+                    "organizationQuota" : {
+                      "value" : 22500,
+                      "orgId" : "10"
                     }
                   }, {
-                    &quot;accountGroupQuotas&quot; : [ {
-                      &quot;value&quot; : 12000,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "accountGroupQuotas" : [ {
+                      "value" : 12000,
+                      "aid" : "1234"
                     }, {
-                      &quot;value&quot; : 10000,
-                      &quot;aid&quot; : &quot;12345&quot;
+                      "value" : 10000,
+                      "aid" : "12345"
                     } ],
-                    &quot;organizationQuota&quot; : {
-                      &quot;value&quot; : 22500,
-                      &quot;orgId&quot; : &quot;10&quot;
+                    "organizationQuota" : {
+                      "value" : 22500,
+                      "orgId" : "10"
                     }
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_quotas(
+
             _headers=self.te_headers("get_quotas"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -711,6 +740,7 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_quotas(
+
                 _headers=self.te_headers("get_quotas", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -729,6 +759,7 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_quotas(
+
                 _headers=self.te_headers("get_quotas", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -750,6 +781,7 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_quotas(
+
                 _headers=self.te_headers("get_quotas", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -771,6 +803,7 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_quotas(
+
                 _headers=self.te_headers("get_quotas", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -792,6 +825,7 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_quotas(
+
                 _headers=self.te_headers("get_quotas", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -813,6 +847,7 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_quotas(
+
                 _headers=self.te_headers("get_quotas", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -837,7 +872,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
                 """
         organizations_quotas_unassign = thousandeyes_sdk.usage.models.OrganizationsQuotasUnassign.from_json(request_body_json)
         response = self.api.unassign_organizations_account_groups_quotas_with_http_info(
+
             organizations_quotas_unassign=organizations_quotas_unassign,
+
             _headers=self.te_headers("unassign_organizations_account_groups_quotas"),
         )
         self.assertEqual(204, response.status_code)
@@ -883,7 +920,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.unassign_organizations_account_groups_quotas(
+
                 organizations_quotas_unassign=organizations_quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_account_groups_quotas", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -916,7 +955,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.unassign_organizations_account_groups_quotas(
+
                 organizations_quotas_unassign=organizations_quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_account_groups_quotas", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -952,7 +993,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.unassign_organizations_account_groups_quotas(
+
                 organizations_quotas_unassign=organizations_quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_account_groups_quotas", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -988,7 +1031,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.unassign_organizations_account_groups_quotas(
+
                 organizations_quotas_unassign=organizations_quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_account_groups_quotas", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1024,7 +1069,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.unassign_organizations_account_groups_quotas(
+
                 organizations_quotas_unassign=organizations_quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_account_groups_quotas", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1060,7 +1107,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.unassign_organizations_account_groups_quotas(
+
                 organizations_quotas_unassign=organizations_quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_account_groups_quotas", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1079,7 +1128,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
                 """
         quotas_unassign = thousandeyes_sdk.usage.models.QuotasUnassign.from_json(request_body_json)
         response = self.api.unassign_organizations_quotas_with_http_info(
+
             quotas_unassign=quotas_unassign,
+
             _headers=self.te_headers("unassign_organizations_quotas"),
         )
         self.assertEqual(204, response.status_code)
@@ -1119,7 +1170,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.unassign_organizations_quotas(
+
                 quotas_unassign=quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_quotas", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1146,7 +1199,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.unassign_organizations_quotas(
+
                 quotas_unassign=quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_quotas", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1176,7 +1231,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.unassign_organizations_quotas(
+
                 quotas_unassign=quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_quotas", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1206,7 +1263,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.unassign_organizations_quotas(
+
                 quotas_unassign=quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_quotas", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1236,7 +1295,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.unassign_organizations_quotas(
+
                 quotas_unassign=quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_quotas", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1266,7 +1327,9 @@ class TestQuotasApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.unassign_organizations_quotas(
+
                 quotas_unassign=quotas_unassign,
+
                 _headers=self.te_headers("unassign_organizations_quotas", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

@@ -34,8 +34,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         agent_id = '281474976710706'
         aid = '1234'
         response = self.api.delete_agent_with_http_info(
+
             agent_id=agent_id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_agent"),
         )
         self.assertEqual(204, response.status_code)
@@ -57,8 +60,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -82,8 +88,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -107,8 +116,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -132,8 +144,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -157,8 +172,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -182,8 +200,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.delete_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -195,127 +216,128 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_agent success path"""
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         response_body_json = """
                 {
-                  &quot;agentId&quot; : &quot;281474976710706&quot;,
-                  &quot;agentType&quot; : &quot;cloud&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "agentId" : "281474976710706",
+                  "agentType" : "cloud",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                  &quot;coordinates&quot; : {
-                    &quot;latitude&quot; : 37.77493,
-                    &quot;longitude&quot; : -122.41942
+                  "prefix" : "99.128.0.0/11",
+                  "coordinates" : {
+                    "latitude" : 37.77493,
+                    "longitude" : -122.41942
                   },
-                  &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                  &quot;networkProviderInfo&quot; : {
-                    &quot;asn&quot; : 7018,
-                    &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                    &quot;type&quot; : &quot;isp&quot;
+                  "agentName" : "thousandeyes-stg-va-254",
+                  "networkProviderInfo" : {
+                    "asn" : 7018,
+                    "name" : "AT&T Services, Inc.",
+                    "type" : "isp"
                   },
-                  &quot;countryId&quot; : &quot;US&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;11&quot;,
-                    &quot;name&quot; : &quot;Label name&quot;
+                  "countryId" : "US",
+                  "enabled" : true,
+                  "network" : "AT&T Services, Inc. (AS 7018)",
+                  "labels" : [ {
+                    "labelId" : "11",
+                    "name" : "Label name"
                   }, {
-                    &quot;labelId&quot; : &quot;11&quot;,
-                    &quot;name&quot; : &quot;Label name&quot;
+                    "labelId" : "11",
+                    "name" : "Label name"
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;tests&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "tests" : [ {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   } ],
-                  &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                  &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                  &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                  &quot;verifySslCertificates&quot; : true
+                  "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                  "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                  "location" : "San Francisco Bay Area",
+                  "verifySslCertificates" : true
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_agent(
+
             agent_id=agent_id,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("get_agent"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -325,7 +347,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_agent error path (HTTP 401)"""
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -337,9 +358,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_agent", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -349,7 +372,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_agent error path (HTTP 403)"""
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -364,9 +386,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_agent", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -376,7 +400,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_agent error path (HTTP 404)"""
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -391,9 +414,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_agent", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -403,7 +428,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_agent error path (HTTP 429)"""
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -418,9 +442,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_agent", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -430,7 +456,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_agent error path (HTTP 500)"""
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -445,9 +470,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_agent", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -457,7 +484,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         """Integration test for get_agent error path (HTTP 502)"""
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -472,9 +498,11 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_agent(
+
                 agent_id=agent_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_agent", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -485,76 +513,76 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
     def test_get_agents_happy_path(self) -> None:
         """Integration test for get_agents success path"""
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentListExpand()]
-        agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()]
         labels = ['[\"myCustomLabeledAgent\"]']
         tag_keys = ['tag_keys_example']
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_agents(
+
             aid=aid,
-            expand=expand,
-            agent_types=agent_types,
+
             labels=labels,
+
             tag_keys=tag_keys,
+
             _headers=self.te_headers("get_agents"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -563,8 +591,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
     def test_get_agents_error_401(self) -> None:
         """Integration test for get_agents error path (HTTP 401)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentListExpand()]
-        agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()]
         labels = ['[\"myCustomLabeledAgent\"]']
         tag_keys = ['tag_keys_example']
         error_body_json = """
@@ -578,11 +604,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_agents(
+
                 aid=aid,
-                expand=expand,
-                agent_types=agent_types,
+
                 labels=labels,
+
                 tag_keys=tag_keys,
+
                 _headers=self.te_headers("get_agents", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -591,8 +619,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
     def test_get_agents_error_403(self) -> None:
         """Integration test for get_agents error path (HTTP 403)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentListExpand()]
-        agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()]
         labels = ['[\"myCustomLabeledAgent\"]']
         tag_keys = ['tag_keys_example']
         error_body_json = """
@@ -609,11 +635,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_agents(
+
                 aid=aid,
-                expand=expand,
-                agent_types=agent_types,
+
                 labels=labels,
+
                 tag_keys=tag_keys,
+
                 _headers=self.te_headers("get_agents", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -622,8 +650,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
     def test_get_agents_error_404(self) -> None:
         """Integration test for get_agents error path (HTTP 404)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentListExpand()]
-        agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()]
         labels = ['[\"myCustomLabeledAgent\"]']
         tag_keys = ['tag_keys_example']
         error_body_json = """
@@ -640,11 +666,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_agents(
+
                 aid=aid,
-                expand=expand,
-                agent_types=agent_types,
+
                 labels=labels,
+
                 tag_keys=tag_keys,
+
                 _headers=self.te_headers("get_agents", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -653,8 +681,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
     def test_get_agents_error_429(self) -> None:
         """Integration test for get_agents error path (HTTP 429)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentListExpand()]
-        agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()]
         labels = ['[\"myCustomLabeledAgent\"]']
         tag_keys = ['tag_keys_example']
         error_body_json = """
@@ -671,11 +697,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_agents(
+
                 aid=aid,
-                expand=expand,
-                agent_types=agent_types,
+
                 labels=labels,
+
                 tag_keys=tag_keys,
+
                 _headers=self.te_headers("get_agents", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -684,8 +712,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
     def test_get_agents_error_500(self) -> None:
         """Integration test for get_agents error path (HTTP 500)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentListExpand()]
-        agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()]
         labels = ['[\"myCustomLabeledAgent\"]']
         tag_keys = ['tag_keys_example']
         error_body_json = """
@@ -702,11 +728,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_agents(
+
                 aid=aid,
-                expand=expand,
-                agent_types=agent_types,
+
                 labels=labels,
+
                 tag_keys=tag_keys,
+
                 _headers=self.te_headers("get_agents", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -715,8 +743,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
     def test_get_agents_error_502(self) -> None:
         """Integration test for get_agents error path (HTTP 502)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentListExpand()]
-        agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()]
         labels = ['[\"myCustomLabeledAgent\"]']
         tag_keys = ['tag_keys_example']
         error_body_json = """
@@ -733,11 +759,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_agents(
+
                 aid=aid,
-                expand=expand,
-                agent_types=agent_types,
+
                 labels=labels,
+
                 tag_keys=tag_keys,
+
                 _headers=self.te_headers("get_agents", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -764,128 +792,130 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         agent_request = thousandeyes_sdk.agents.models.AgentRequest.from_json(request_body_json)
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         response_body_json = """
                 {
-                  &quot;agentId&quot; : &quot;281474976710706&quot;,
-                  &quot;agentType&quot; : &quot;cloud&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "agentId" : "281474976710706",
+                  "agentType" : "cloud",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                  &quot;coordinates&quot; : {
-                    &quot;latitude&quot; : 37.77493,
-                    &quot;longitude&quot; : -122.41942
+                  "prefix" : "99.128.0.0/11",
+                  "coordinates" : {
+                    "latitude" : 37.77493,
+                    "longitude" : -122.41942
                   },
-                  &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                  &quot;networkProviderInfo&quot; : {
-                    &quot;asn&quot; : 7018,
-                    &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                    &quot;type&quot; : &quot;isp&quot;
+                  "agentName" : "thousandeyes-stg-va-254",
+                  "networkProviderInfo" : {
+                    "asn" : 7018,
+                    "name" : "AT&T Services, Inc.",
+                    "type" : "isp"
                   },
-                  &quot;countryId&quot; : &quot;US&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;11&quot;,
-                    &quot;name&quot; : &quot;Label name&quot;
+                  "countryId" : "US",
+                  "enabled" : true,
+                  "network" : "AT&T Services, Inc. (AS 7018)",
+                  "labels" : [ {
+                    "labelId" : "11",
+                    "name" : "Label name"
                   }, {
-                    &quot;labelId&quot; : &quot;11&quot;,
-                    &quot;name&quot; : &quot;Label name&quot;
+                    "labelId" : "11",
+                    "name" : "Label name"
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;tests&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "tests" : [ {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   } ],
-                  &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                  &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                  &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                  &quot;verifySslCertificates&quot; : true
+                  "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                  "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                  "location" : "San Francisco Bay Area",
+                  "verifySslCertificates" : true
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_agent(
+
             agent_id=agent_id,
+
             agent_request=agent_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("update_agent"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -910,7 +940,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         agent_request = thousandeyes_sdk.agents.models.AgentRequest.from_json(request_body_json)
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -934,10 +963,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_agent(
+
                 agent_id=agent_id,
+
                 agent_request=agent_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_agent", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -962,7 +994,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         agent_request = thousandeyes_sdk.agents.models.AgentRequest.from_json(request_body_json)
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -974,10 +1005,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_agent(
+
                 agent_id=agent_id,
+
                 agent_request=agent_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_agent", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1002,7 +1036,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         agent_request = thousandeyes_sdk.agents.models.AgentRequest.from_json(request_body_json)
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1017,10 +1050,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_agent(
+
                 agent_id=agent_id,
+
                 agent_request=agent_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_agent", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1045,7 +1081,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         agent_request = thousandeyes_sdk.agents.models.AgentRequest.from_json(request_body_json)
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1060,10 +1095,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_agent(
+
                 agent_id=agent_id,
+
                 agent_request=agent_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_agent", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1088,7 +1126,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         agent_request = thousandeyes_sdk.agents.models.AgentRequest.from_json(request_body_json)
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1103,10 +1140,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_agent(
+
                 agent_id=agent_id,
+
                 agent_request=agent_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_agent", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1131,7 +1171,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         agent_request = thousandeyes_sdk.agents.models.AgentRequest.from_json(request_body_json)
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1146,10 +1185,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_agent(
+
                 agent_id=agent_id,
+
                 agent_request=agent_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_agent", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1174,7 +1216,6 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         agent_request = thousandeyes_sdk.agents.models.AgentRequest.from_json(request_body_json)
         agent_id = '281474976710706'
         aid = '1234'
-        expand = [thousandeyes_sdk.agents.AgentDetailsExpand()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1189,10 +1230,13 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.update_agent(
+
                 agent_id=agent_id,
+
                 agent_request=agent_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_agent", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

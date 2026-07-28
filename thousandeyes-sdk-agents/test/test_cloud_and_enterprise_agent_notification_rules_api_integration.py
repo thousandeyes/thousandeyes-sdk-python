@@ -35,116 +35,119 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;isDefault&quot; : false,
-                  &quot;expression&quot; : &quot;((lastContact &gt;&#x3D; 30 min))&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "isDefault" : false,
+                  "expression" : "((lastContact >= 30 min))",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;ruleName&quot; : &quot;Default Agent Offline Notification&quot;,
-                  &quot;ruleId&quot; : &quot;281474976710706&quot;,
-                  &quot;notifications&quot; : {
-                    &quot;thirdParty&quot; : [ {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationName&quot; : &quot;integrationSlack1&quot;,
-                      &quot;authToken&quot; : &quot;0VqDYEpidpHVAK397x8PBsmZ&quot;,
-                      &quot;channel&quot; : &quot;#slackChannel&quot;,
-                      &quot;integrationId&quot; : &quot;wb-78&quot;,
-                      &quot;authMethod&quot; : &quot;Basic&quot;,
-                      &quot;authUser&quot; : &quot;user123&quot;,
-                      &quot;target&quot; : &quot;https://hooks.slack.com/services/asd/0VqDYEpidpHVAK397x8PBsmZ&quot;
+                  "ruleName" : "Default Agent Offline Notification",
+                  "ruleId" : "281474976710706",
+                  "notifications" : {
+                    "thirdParty" : [ {
+                      "integrationType" : "slack",
+                      "integrationName" : "integrationSlack1",
+                      "authToken" : "0VqDYEpidpHVAK397x8PBsmZ",
+                      "channel" : "#slackChannel",
+                      "integrationId" : "wb-78",
+                      "authMethod" : "Basic",
+                      "authUser" : "user123",
+                      "target" : "https://hooks.slack.com/services/asd/0VqDYEpidpHVAK397x8PBsmZ"
                     }, {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationName&quot; : &quot;integrationSlack1&quot;,
-                      &quot;authToken&quot; : &quot;0VqDYEpidpHVAK397x8PBsmZ&quot;,
-                      &quot;channel&quot; : &quot;#slackChannel&quot;,
-                      &quot;integrationId&quot; : &quot;wb-78&quot;,
-                      &quot;authMethod&quot; : &quot;Basic&quot;,
-                      &quot;authUser&quot; : &quot;user123&quot;,
-                      &quot;target&quot; : &quot;https://hooks.slack.com/services/asd/0VqDYEpidpHVAK397x8PBsmZ&quot;
+                      "integrationType" : "slack",
+                      "integrationName" : "integrationSlack1",
+                      "authToken" : "0VqDYEpidpHVAK397x8PBsmZ",
+                      "channel" : "#slackChannel",
+                      "integrationId" : "wb-78",
+                      "authMethod" : "Basic",
+                      "authUser" : "user123",
+                      "target" : "https://hooks.slack.com/services/asd/0VqDYEpidpHVAK397x8PBsmZ"
                     } ],
-                    &quot;webhook&quot; : [ {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationName&quot; : &quot;integrationSlack1&quot;,
-                      &quot;authToken&quot; : &quot;0VqDYEpidpHVAK397x8PBsmZ&quot;,
-                      &quot;channel&quot; : &quot;#slackChannel&quot;,
-                      &quot;integrationId&quot; : &quot;wb-78&quot;,
-                      &quot;authMethod&quot; : &quot;Basic&quot;,
-                      &quot;authUser&quot; : &quot;user123&quot;,
-                      &quot;target&quot; : &quot;https://hooks.slack.com/services/asd/0VqDYEpidpHVAK397x8PBsmZ&quot;
+                    "webhook" : [ {
+                      "integrationType" : "slack",
+                      "integrationName" : "integrationSlack1",
+                      "authToken" : "0VqDYEpidpHVAK397x8PBsmZ",
+                      "channel" : "#slackChannel",
+                      "integrationId" : "wb-78",
+                      "authMethod" : "Basic",
+                      "authUser" : "user123",
+                      "target" : "https://hooks.slack.com/services/asd/0VqDYEpidpHVAK397x8PBsmZ"
                     }, {
-                      &quot;integrationType&quot; : &quot;slack&quot;,
-                      &quot;integrationName&quot; : &quot;integrationSlack1&quot;,
-                      &quot;authToken&quot; : &quot;0VqDYEpidpHVAK397x8PBsmZ&quot;,
-                      &quot;channel&quot; : &quot;#slackChannel&quot;,
-                      &quot;integrationId&quot; : &quot;wb-78&quot;,
-                      &quot;authMethod&quot; : &quot;Basic&quot;,
-                      &quot;authUser&quot; : &quot;user123&quot;,
-                      &quot;target&quot; : &quot;https://hooks.slack.com/services/asd/0VqDYEpidpHVAK397x8PBsmZ&quot;
+                      "integrationType" : "slack",
+                      "integrationName" : "integrationSlack1",
+                      "authToken" : "0VqDYEpidpHVAK397x8PBsmZ",
+                      "channel" : "#slackChannel",
+                      "integrationId" : "wb-78",
+                      "authMethod" : "Basic",
+                      "authUser" : "user123",
+                      "target" : "https://hooks.slack.com/services/asd/0VqDYEpidpHVAK397x8PBsmZ"
                     } ],
-                    &quot;email&quot; : {
-                      &quot;recipients&quot; : [ &quot;user1@thousandeyes.com&quot;, &quot;user2@cisco.com&quot; ],
-                      &quot;message&quot; : &quot;This test is failing, check as soon as possible.&quot;
+                    "email" : {
+                      "recipients" : [ "user1@thousandeyes.com", "user2@cisco.com" ],
+                      "message" : "This test is failing, check as soon as possible."
                     }
                   },
-                  &quot;notifyOnClear&quot; : true,
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                  "notifyOnClear" : true,
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "prefix" : "99.128.0.0/11",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;verifySslCertificates&quot; : true
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "verifySslCertificates" : true
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_agents_notification_rule(
+
             notification_rule_id=notification_rule_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_agents_notification_rule"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -165,8 +168,11 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_agents_notification_rule(
+
                 notification_rule_id=notification_rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rule", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -190,8 +196,11 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_agents_notification_rule(
+
                 notification_rule_id=notification_rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rule", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -215,8 +224,11 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_agents_notification_rule(
+
                 notification_rule_id=notification_rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rule", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -240,8 +252,11 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_agents_notification_rule(
+
                 notification_rule_id=notification_rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rule", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -265,8 +280,11 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_agents_notification_rule(
+
                 notification_rule_id=notification_rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rule", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -290,8 +308,11 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_agents_notification_rule(
+
                 notification_rule_id=notification_rule_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rule", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -304,36 +325,38 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;agentAlertRules&quot; : [ {
-                    &quot;ruleId&quot; : &quot;281474976710706&quot;,
-                    &quot;ruleName&quot; : &quot;Default Agent Offline Notification&quot;,
-                    &quot;expression&quot; : &quot;((lastContact &gt;&#x3D; 30 min))&quot;,
-                    &quot;notifyOnClear&quot; : true,
-                    &quot;isDefault&quot; : false
+                  "agentAlertRules" : [ {
+                    "ruleId" : "281474976710706",
+                    "ruleName" : "Default Agent Offline Notification",
+                    "expression" : "((lastContact >= 30 min))",
+                    "notifyOnClear" : true,
+                    "isDefault" : false
                   }, {
-                    &quot;ruleId&quot; : &quot;281474976710709&quot;,
-                    &quot;ruleName&quot; : &quot;Test Rule&quot;,
-                    &quot;expression&quot; : &quot;((lastContact &gt;&#x3D; 40 min))&quot;,
-                    &quot;notifyOnClear&quot; : true,
-                    &quot;isDefault&quot; : true
+                    "ruleId" : "281474976710709",
+                    "ruleName" : "Test Rule",
+                    "expression" : "((lastContact >= 40 min))",
+                    "notifyOnClear" : true,
+                    "isDefault" : true
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_agents_notification_rules(
+
             aid=aid,
+
             _headers=self.te_headers("get_agents_notification_rules"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -353,7 +376,9 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_agents_notification_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rules", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -376,7 +401,9 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_agents_notification_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rules", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -399,7 +426,9 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_agents_notification_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rules", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -422,7 +451,9 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_agents_notification_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rules", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -445,7 +476,9 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_agents_notification_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rules", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -468,7 +501,9 @@ class TestCloudAndEnterpriseAgentNotificationRulesApiIntegration(IntegrationTest
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_agents_notification_rules(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agents_notification_rules", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

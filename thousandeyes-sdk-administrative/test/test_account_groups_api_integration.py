@@ -40,68 +40,68 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
         
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         response_body_json = """
                 {
-                  &quot;isCurrentAccountGroup&quot; : true,
-                  &quot;organizationName&quot; : &quot;organizationName&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "isCurrentAccountGroup" : true,
+                  "organizationName" : "organizationName",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                  &quot;isDefaultAccountGroup&quot; : true,
-                  &quot;aid&quot; : &quot;1234&quot;,
-                  &quot;orgId&quot; : &quot;12345&quot;,
-                  &quot;users&quot; : [ {
-                    &quot;uid&quot; : &quot;235&quot;,
-                    &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                  "accountGroupName" : "Account A",
+                  "isDefaultAccountGroup" : true,
+                  "aid" : "1234",
+                  "orgId" : "12345",
+                  "users" : [ {
+                    "uid" : "235",
+                    "lastLogin" : "2022-07-17T22:00:54Z",
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;name&quot; : &quot;User X&quot;,
-                    &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                    &quot;dateRegistered&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                    "name" : "User X",
+                    "email" : "userx@thousandeyes.com",
+                    "dateRegistered" : "2022-07-17T22:00:54Z"
                   }, {
-                    &quot;uid&quot; : &quot;235&quot;,
-                    &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                    "uid" : "235",
+                    "lastLogin" : "2022-07-17T22:00:54Z",
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;name&quot; : &quot;User X&quot;,
-                    &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                    &quot;dateRegistered&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                    "name" : "User X",
+                    "email" : "userx@thousandeyes.com",
+                    "dateRegistered" : "2022-07-17T22:00:54Z"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_account_group(
+
             account_group_request=account_group_request,
-            expand=expand,
+
             _headers=self.te_headers("create_account_group"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -118,7 +118,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
         
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -142,8 +141,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_account_group(
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("create_account_group", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -160,7 +160,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
         
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -172,8 +171,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_account_group(
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("create_account_group", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -190,7 +190,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
         
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -205,8 +204,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_account_group(
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("create_account_group", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -223,7 +223,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
         
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -238,8 +237,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_account_group(
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("create_account_group", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -256,7 +256,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
         
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -271,8 +270,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_account_group(
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("create_account_group", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -289,7 +289,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
         
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -304,8 +303,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_account_group(
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("create_account_group", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -317,7 +317,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
         """Integration test for delete_account_group success path"""
         id = '1234'
         response = self.api.delete_account_group_with_http_info(
+
             id=id,
+
             _headers=self.te_headers("delete_account_group"),
         )
         self.assertEqual(204, response.status_code)
@@ -350,7 +352,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_account_group(
+
                 id=id,
+
                 _headers=self.te_headers("delete_account_group", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -370,7 +374,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_account_group(
+
                 id=id,
+
                 _headers=self.te_headers("delete_account_group", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -393,7 +399,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_account_group(
+
                 id=id,
+
                 _headers=self.te_headers("delete_account_group", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -416,7 +424,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_account_group(
+
                 id=id,
+
                 _headers=self.te_headers("delete_account_group", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -439,7 +449,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_account_group(
+
                 id=id,
+
                 _headers=self.te_headers("delete_account_group", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -462,7 +474,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_account_group(
+
                 id=id,
+
                 _headers=self.te_headers("delete_account_group", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -473,376 +487,376 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
     def test_get_account_group_happy_path(self) -> None:
         """Integration test for get_account_group success path"""
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         response_body_json = """
                 {
-                  &quot;isCurrentAccountGroup&quot; : true,
-                  &quot;organizationName&quot; : &quot;organizationName&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "isCurrentAccountGroup" : true,
+                  "organizationName" : "organizationName",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                  &quot;isDefaultAccountGroup&quot; : true,
-                  &quot;accountToken&quot; : &quot;accountToken&quot;,
-                  &quot;aid&quot; : &quot;1234&quot;,
-                  &quot;orgId&quot; : &quot;12345&quot;,
-                  &quot;users&quot; : [ {
-                    &quot;uid&quot; : &quot;235&quot;,
-                    &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                  "accountGroupName" : "Account A",
+                  "isDefaultAccountGroup" : true,
+                  "accountToken" : "accountToken",
+                  "aid" : "1234",
+                  "orgId" : "12345",
+                  "users" : [ {
+                    "uid" : "235",
+                    "lastLogin" : "2022-07-17T22:00:54Z",
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;name&quot; : &quot;User X&quot;,
-                    &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                    &quot;dateRegistered&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                    "name" : "User X",
+                    "email" : "userx@thousandeyes.com",
+                    "dateRegistered" : "2022-07-17T22:00:54Z"
                   }, {
-                    &quot;uid&quot; : &quot;235&quot;,
-                    &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                    "uid" : "235",
+                    "lastLogin" : "2022-07-17T22:00:54Z",
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;name&quot; : &quot;User X&quot;,
-                    &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                    &quot;dateRegistered&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                    "name" : "User X",
+                    "email" : "userx@thousandeyes.com",
+                    "dateRegistered" : "2022-07-17T22:00:54Z"
                   } ],
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;ipv6Policy&quot; : &quot;force-ipv4&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "ipv6Policy" : "force-ipv4",
+                    "prefix" : "99.128.0.0/11",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;hostname&quot; : &quot;thousandeyes.com&quot;,
-                    &quot;keepBrowserCache&quot; : true,
-                    &quot;agentState&quot; : &quot;online&quot;,
-                    &quot;localResolutionPrefixes&quot; : [ &quot;10.2.3.3/24&quot;, &quot;10.2.3.3/24&quot; ],
-                    &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "hostname" : "thousandeyes.com",
+                    "keepBrowserCache" : true,
+                    "agentState" : "online",
+                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
+                    "serialNumber" : "FOC2218ABCD",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;utilization&quot; : 25,
-                    &quot;testIds&quot; : [ 281474976710706 ],
-                    &quot;clusterMembers&quot; : [ {
-                      &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                      &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                      &quot;agentState&quot; : &quot;online&quot;,
-                      &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                      &quot;name&quot; : &quot;Cluster member name&quot;,
-                      &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                      &quot;utilization&quot; : 25,
-                      &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                      &quot;memberId&quot; : &quot;10&quot;,
-                      &quot;errorDetails&quot; : [ {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "utilization" : 25,
+                    "testIds" : [ 281474976710706 ],
+                    "clusterMembers" : [ {
+                      "lastSeen" : "2022-07-17T22:00:54Z",
+                      "serialNumber" : "FOC2218ABCD",
+                      "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                      "agentState" : "online",
+                      "targetForTests" : "1.1.1.1",
+                      "name" : "Cluster member name",
+                      "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                      "utilization" : 25,
+                      "network" : "AT&T Services, Inc. (AS 7018)",
+                      "memberId" : "10",
+                      "errorDetails" : [ {
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       }, {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     }, {
-                      &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                      &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                      &quot;agentState&quot; : &quot;online&quot;,
-                      &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                      &quot;name&quot; : &quot;Cluster member name&quot;,
-                      &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                      &quot;utilization&quot; : 25,
-                      &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                      &quot;memberId&quot; : &quot;10&quot;,
-                      &quot;errorDetails&quot; : [ {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                      "lastSeen" : "2022-07-17T22:00:54Z",
+                      "serialNumber" : "FOC2218ABCD",
+                      "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                      "agentState" : "online",
+                      "targetForTests" : "1.1.1.1",
+                      "name" : "Cluster member name",
+                      "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                      "utilization" : 25,
+                      "network" : "AT&T Services, Inc. (AS 7018)",
+                      "memberId" : "10",
+                      "errorDetails" : [ {
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       }, {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     } ],
-                    &quot;tests&quot; : [ {
-                      &quot;_links&quot; : {
-                        &quot;testResults&quot; : [ {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "tests" : [ {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                         }, {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                         } ],
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;liveShare&quot; : false,
-                      &quot;savedEvent&quot; : true,
-                      &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                      &quot;type&quot; : &quot;agent-to-server&quot;,
-                      &quot;enabled&quot; : true,
-                      &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                      &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;interval&quot; : 60,
-                      &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                      &quot;testId&quot; : &quot;281474976710706&quot;,
-                      &quot;alertsEnabled&quot; : true,
-                      &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
                     }, {
-                      &quot;_links&quot; : {
-                        &quot;testResults&quot; : [ {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                         }, {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                         } ],
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;liveShare&quot; : false,
-                      &quot;savedEvent&quot; : true,
-                      &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                      &quot;type&quot; : &quot;agent-to-server&quot;,
-                      &quot;enabled&quot; : true,
-                      &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                      &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;interval&quot; : 60,
-                      &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                      &quot;testId&quot; : &quot;281474976710706&quot;,
-                      &quot;alertsEnabled&quot; : true,
-                      &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
                     } ],
-                    &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;interfaceIpMapping&quot; : [ {
-                      &quot;ipAddresses&quot; : [ &quot;73.252.207.219&quot;, &quot;2601:646:300:3ae0::b977&quot; ],
-                      &quot;interfaceName&quot; : &quot;wlp4s0&quot;
+                    "lastSeen" : "2022-07-17T22:00:54Z",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "interfaceIpMapping" : [ {
+                      "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
+                      "interfaceName" : "wlp4s0"
                     }, {
-                      &quot;ipAddresses&quot; : [ &quot;73.252.207.219&quot;, &quot;2601:646:300:3ae0::b977&quot; ],
-                      &quot;interfaceName&quot; : &quot;wlp4s0&quot;
+                      "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
+                      "interfaceName" : "wlp4s0"
                     } ],
-                    &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;accountGroups&quot; : [ {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "targetForTests" : "1.1.1.1",
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "accountGroups" : [ {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }, {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     } ],
-                    &quot;verifySslCertificates&quot; : true,
-                    &quot;errorDetails&quot; : [ {
-                      &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                      &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                    "verifySslCertificates" : true,
+                    "errorDetails" : [ {
+                      "code" : "agent-version-outdated",
+                      "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     }, {
-                      &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                      &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                      "code" : "agent-version-outdated",
+                      "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     } ]
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;ipv6Policy&quot; : &quot;force-ipv4&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "ipv6Policy" : "force-ipv4",
+                    "prefix" : "99.128.0.0/11",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;hostname&quot; : &quot;thousandeyes.com&quot;,
-                    &quot;keepBrowserCache&quot; : true,
-                    &quot;agentState&quot; : &quot;online&quot;,
-                    &quot;localResolutionPrefixes&quot; : [ &quot;10.2.3.3/24&quot;, &quot;10.2.3.3/24&quot; ],
-                    &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "hostname" : "thousandeyes.com",
+                    "keepBrowserCache" : true,
+                    "agentState" : "online",
+                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
+                    "serialNumber" : "FOC2218ABCD",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;utilization&quot; : 25,
-                    &quot;testIds&quot; : [ 281474976710706 ],
-                    &quot;clusterMembers&quot; : [ {
-                      &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                      &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                      &quot;agentState&quot; : &quot;online&quot;,
-                      &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                      &quot;name&quot; : &quot;Cluster member name&quot;,
-                      &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                      &quot;utilization&quot; : 25,
-                      &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                      &quot;memberId&quot; : &quot;10&quot;,
-                      &quot;errorDetails&quot; : [ {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "utilization" : 25,
+                    "testIds" : [ 281474976710706 ],
+                    "clusterMembers" : [ {
+                      "lastSeen" : "2022-07-17T22:00:54Z",
+                      "serialNumber" : "FOC2218ABCD",
+                      "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                      "agentState" : "online",
+                      "targetForTests" : "1.1.1.1",
+                      "name" : "Cluster member name",
+                      "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                      "utilization" : 25,
+                      "network" : "AT&T Services, Inc. (AS 7018)",
+                      "memberId" : "10",
+                      "errorDetails" : [ {
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       }, {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     }, {
-                      &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                      &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                      &quot;agentState&quot; : &quot;online&quot;,
-                      &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                      &quot;name&quot; : &quot;Cluster member name&quot;,
-                      &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                      &quot;utilization&quot; : 25,
-                      &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                      &quot;memberId&quot; : &quot;10&quot;,
-                      &quot;errorDetails&quot; : [ {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                      "lastSeen" : "2022-07-17T22:00:54Z",
+                      "serialNumber" : "FOC2218ABCD",
+                      "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                      "agentState" : "online",
+                      "targetForTests" : "1.1.1.1",
+                      "name" : "Cluster member name",
+                      "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                      "utilization" : 25,
+                      "network" : "AT&T Services, Inc. (AS 7018)",
+                      "memberId" : "10",
+                      "errorDetails" : [ {
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       }, {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     } ],
-                    &quot;tests&quot; : [ {
-                      &quot;_links&quot; : {
-                        &quot;testResults&quot; : [ {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "tests" : [ {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                         }, {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                         } ],
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;liveShare&quot; : false,
-                      &quot;savedEvent&quot; : true,
-                      &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                      &quot;type&quot; : &quot;agent-to-server&quot;,
-                      &quot;enabled&quot; : true,
-                      &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                      &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;interval&quot; : 60,
-                      &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                      &quot;testId&quot; : &quot;281474976710706&quot;,
-                      &quot;alertsEnabled&quot; : true,
-                      &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
                     }, {
-                      &quot;_links&quot; : {
-                        &quot;testResults&quot; : [ {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                         }, {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                         } ],
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;liveShare&quot; : false,
-                      &quot;savedEvent&quot; : true,
-                      &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                      &quot;type&quot; : &quot;agent-to-server&quot;,
-                      &quot;enabled&quot; : true,
-                      &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                      &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;interval&quot; : 60,
-                      &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                      &quot;testId&quot; : &quot;281474976710706&quot;,
-                      &quot;alertsEnabled&quot; : true,
-                      &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
                     } ],
-                    &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;interfaceIpMapping&quot; : [ {
-                      &quot;ipAddresses&quot; : [ &quot;73.252.207.219&quot;, &quot;2601:646:300:3ae0::b977&quot; ],
-                      &quot;interfaceName&quot; : &quot;wlp4s0&quot;
+                    "lastSeen" : "2022-07-17T22:00:54Z",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "interfaceIpMapping" : [ {
+                      "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
+                      "interfaceName" : "wlp4s0"
                     }, {
-                      &quot;ipAddresses&quot; : [ &quot;73.252.207.219&quot;, &quot;2601:646:300:3ae0::b977&quot; ],
-                      &quot;interfaceName&quot; : &quot;wlp4s0&quot;
+                      "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
+                      "interfaceName" : "wlp4s0"
                     } ],
-                    &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;accountGroups&quot; : [ {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "targetForTests" : "1.1.1.1",
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "accountGroups" : [ {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }, {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     } ],
-                    &quot;verifySslCertificates&quot; : true,
-                    &quot;errorDetails&quot; : [ {
-                      &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                      &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                    "verifySslCertificates" : true,
+                    "errorDetails" : [ {
+                      "code" : "agent-version-outdated",
+                      "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     }, {
-                      &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                      &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                      "code" : "agent-version-outdated",
+                      "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     } ]
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_account_group(
+
             id=id,
-            expand=expand,
+
             _headers=self.te_headers("get_account_group"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -851,7 +865,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
     def test_get_account_group_error_400(self) -> None:
         """Integration test for get_account_group error path (HTTP 400)"""
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -875,8 +888,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_account_group(
+
                 id=id,
-                expand=expand,
+
                 _headers=self.te_headers("get_account_group", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -885,7 +899,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
     def test_get_account_group_error_401(self) -> None:
         """Integration test for get_account_group error path (HTTP 401)"""
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -897,8 +910,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_account_group(
+
                 id=id,
-                expand=expand,
+
                 _headers=self.te_headers("get_account_group", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -907,7 +921,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
     def test_get_account_group_error_403(self) -> None:
         """Integration test for get_account_group error path (HTTP 403)"""
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -922,8 +935,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_account_group(
+
                 id=id,
-                expand=expand,
+
                 _headers=self.te_headers("get_account_group", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -932,7 +946,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
     def test_get_account_group_error_404(self) -> None:
         """Integration test for get_account_group error path (HTTP 404)"""
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -947,8 +960,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_account_group(
+
                 id=id,
-                expand=expand,
+
                 _headers=self.te_headers("get_account_group", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -957,7 +971,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
     def test_get_account_group_error_429(self) -> None:
         """Integration test for get_account_group error path (HTTP 429)"""
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -972,8 +985,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_account_group(
+
                 id=id,
-                expand=expand,
+
                 _headers=self.te_headers("get_account_group", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -982,7 +996,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
     def test_get_account_group_error_500(self) -> None:
         """Integration test for get_account_group error path (HTTP 500)"""
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -997,8 +1010,9 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_account_group(
+
                 id=id,
-                expand=expand,
+
                 _headers=self.te_headers("get_account_group", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1010,37 +1024,38 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
         """Integration test for get_account_groups success path"""
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;accountGroups&quot; : [ {
-                    &quot;isCurrentAccountGroup&quot; : true,
-                    &quot;organizationName&quot; : &quot;organizationName&quot;,
-                    &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                    &quot;isDefaultAccountGroup&quot; : true,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;orgId&quot; : &quot;12345&quot;
+                  "accountGroups" : [ {
+                    "isCurrentAccountGroup" : true,
+                    "organizationName" : "organizationName",
+                    "accountGroupName" : "Account A",
+                    "isDefaultAccountGroup" : true,
+                    "aid" : "1234",
+                    "orgId" : "12345"
                   }, {
-                    &quot;isCurrentAccountGroup&quot; : true,
-                    &quot;organizationName&quot; : &quot;organizationName&quot;,
-                    &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                    &quot;isDefaultAccountGroup&quot; : true,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;orgId&quot; : &quot;12345&quot;
+                    "isCurrentAccountGroup" : true,
+                    "organizationName" : "organizationName",
+                    "accountGroupName" : "Account A",
+                    "isDefaultAccountGroup" : true,
+                    "aid" : "1234",
+                    "orgId" : "12345"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_account_groups(
+
             _headers=self.te_headers("get_account_groups"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1071,6 +1086,7 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_account_groups(
+
                 _headers=self.te_headers("get_account_groups", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1089,6 +1105,7 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_account_groups(
+
                 _headers=self.te_headers("get_account_groups", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1110,6 +1127,7 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_account_groups(
+
                 _headers=self.te_headers("get_account_groups", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1131,6 +1149,7 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_account_groups(
+
                 _headers=self.te_headers("get_account_groups", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1152,6 +1171,7 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_account_groups(
+
                 _headers=self.te_headers("get_account_groups", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1173,6 +1193,7 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_account_groups(
+
                 _headers=self.te_headers("get_account_groups", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1192,377 +1213,378 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         response_body_json = """
                 {
-                  &quot;isCurrentAccountGroup&quot; : true,
-                  &quot;organizationName&quot; : &quot;organizationName&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "isCurrentAccountGroup" : true,
+                  "organizationName" : "organizationName",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                  &quot;isDefaultAccountGroup&quot; : true,
-                  &quot;accountToken&quot; : &quot;accountToken&quot;,
-                  &quot;aid&quot; : &quot;1234&quot;,
-                  &quot;orgId&quot; : &quot;12345&quot;,
-                  &quot;users&quot; : [ {
-                    &quot;uid&quot; : &quot;235&quot;,
-                    &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                  "accountGroupName" : "Account A",
+                  "isDefaultAccountGroup" : true,
+                  "accountToken" : "accountToken",
+                  "aid" : "1234",
+                  "orgId" : "12345",
+                  "users" : [ {
+                    "uid" : "235",
+                    "lastLogin" : "2022-07-17T22:00:54Z",
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;name&quot; : &quot;User X&quot;,
-                    &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                    &quot;dateRegistered&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                    "name" : "User X",
+                    "email" : "userx@thousandeyes.com",
+                    "dateRegistered" : "2022-07-17T22:00:54Z"
                   }, {
-                    &quot;uid&quot; : &quot;235&quot;,
-                    &quot;lastLogin&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;roles&quot; : [ {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                    "uid" : "235",
+                    "lastLogin" : "2022-07-17T22:00:54Z",
+                    "roles" : [ {
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     }, {
-                      &quot;roleId&quot; : &quot;35&quot;,
-                      &quot;name&quot; : &quot;Organization Admin&quot;,
-                      &quot;isBuiltin&quot; : true,
-                      &quot;hasManagementPermissions&quot; : true
+                      "roleId" : "35",
+                      "name" : "Organization Admin",
+                      "isBuiltin" : true,
+                      "hasManagementPermissions" : true
                     } ],
-                    &quot;name&quot; : &quot;User X&quot;,
-                    &quot;email&quot; : &quot;userx@thousandeyes.com&quot;,
-                    &quot;dateRegistered&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                    "name" : "User X",
+                    "email" : "userx@thousandeyes.com",
+                    "dateRegistered" : "2022-07-17T22:00:54Z"
                   } ],
-                  &quot;agents&quot; : [ {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;ipv6Policy&quot; : &quot;force-ipv4&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                  "agents" : [ {
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "ipv6Policy" : "force-ipv4",
+                    "prefix" : "99.128.0.0/11",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;hostname&quot; : &quot;thousandeyes.com&quot;,
-                    &quot;keepBrowserCache&quot; : true,
-                    &quot;agentState&quot; : &quot;online&quot;,
-                    &quot;localResolutionPrefixes&quot; : [ &quot;10.2.3.3/24&quot;, &quot;10.2.3.3/24&quot; ],
-                    &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "hostname" : "thousandeyes.com",
+                    "keepBrowserCache" : true,
+                    "agentState" : "online",
+                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
+                    "serialNumber" : "FOC2218ABCD",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;utilization&quot; : 25,
-                    &quot;testIds&quot; : [ 281474976710706 ],
-                    &quot;clusterMembers&quot; : [ {
-                      &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                      &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                      &quot;agentState&quot; : &quot;online&quot;,
-                      &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                      &quot;name&quot; : &quot;Cluster member name&quot;,
-                      &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                      &quot;utilization&quot; : 25,
-                      &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                      &quot;memberId&quot; : &quot;10&quot;,
-                      &quot;errorDetails&quot; : [ {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "utilization" : 25,
+                    "testIds" : [ 281474976710706 ],
+                    "clusterMembers" : [ {
+                      "lastSeen" : "2022-07-17T22:00:54Z",
+                      "serialNumber" : "FOC2218ABCD",
+                      "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                      "agentState" : "online",
+                      "targetForTests" : "1.1.1.1",
+                      "name" : "Cluster member name",
+                      "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                      "utilization" : 25,
+                      "network" : "AT&T Services, Inc. (AS 7018)",
+                      "memberId" : "10",
+                      "errorDetails" : [ {
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       }, {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     }, {
-                      &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                      &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                      &quot;agentState&quot; : &quot;online&quot;,
-                      &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                      &quot;name&quot; : &quot;Cluster member name&quot;,
-                      &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                      &quot;utilization&quot; : 25,
-                      &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                      &quot;memberId&quot; : &quot;10&quot;,
-                      &quot;errorDetails&quot; : [ {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                      "lastSeen" : "2022-07-17T22:00:54Z",
+                      "serialNumber" : "FOC2218ABCD",
+                      "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                      "agentState" : "online",
+                      "targetForTests" : "1.1.1.1",
+                      "name" : "Cluster member name",
+                      "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                      "utilization" : 25,
+                      "network" : "AT&T Services, Inc. (AS 7018)",
+                      "memberId" : "10",
+                      "errorDetails" : [ {
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       }, {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     } ],
-                    &quot;tests&quot; : [ {
-                      &quot;_links&quot; : {
-                        &quot;testResults&quot; : [ {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "tests" : [ {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                         }, {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                         } ],
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;liveShare&quot; : false,
-                      &quot;savedEvent&quot; : true,
-                      &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                      &quot;type&quot; : &quot;agent-to-server&quot;,
-                      &quot;enabled&quot; : true,
-                      &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                      &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;interval&quot; : 60,
-                      &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                      &quot;testId&quot; : &quot;281474976710706&quot;,
-                      &quot;alertsEnabled&quot; : true,
-                      &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
                     }, {
-                      &quot;_links&quot; : {
-                        &quot;testResults&quot; : [ {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                         }, {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                         } ],
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;liveShare&quot; : false,
-                      &quot;savedEvent&quot; : true,
-                      &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                      &quot;type&quot; : &quot;agent-to-server&quot;,
-                      &quot;enabled&quot; : true,
-                      &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                      &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;interval&quot; : 60,
-                      &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                      &quot;testId&quot; : &quot;281474976710706&quot;,
-                      &quot;alertsEnabled&quot; : true,
-                      &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
                     } ],
-                    &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;interfaceIpMapping&quot; : [ {
-                      &quot;ipAddresses&quot; : [ &quot;73.252.207.219&quot;, &quot;2601:646:300:3ae0::b977&quot; ],
-                      &quot;interfaceName&quot; : &quot;wlp4s0&quot;
+                    "lastSeen" : "2022-07-17T22:00:54Z",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "interfaceIpMapping" : [ {
+                      "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
+                      "interfaceName" : "wlp4s0"
                     }, {
-                      &quot;ipAddresses&quot; : [ &quot;73.252.207.219&quot;, &quot;2601:646:300:3ae0::b977&quot; ],
-                      &quot;interfaceName&quot; : &quot;wlp4s0&quot;
+                      "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
+                      "interfaceName" : "wlp4s0"
                     } ],
-                    &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;accountGroups&quot; : [ {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "targetForTests" : "1.1.1.1",
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "accountGroups" : [ {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }, {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     } ],
-                    &quot;verifySslCertificates&quot; : true,
-                    &quot;errorDetails&quot; : [ {
-                      &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                      &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                    "verifySslCertificates" : true,
+                    "errorDetails" : [ {
+                      "code" : "agent-version-outdated",
+                      "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     }, {
-                      &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                      &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                      "code" : "agent-version-outdated",
+                      "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     } ]
                   }, {
-                    &quot;agentId&quot; : &quot;281474976710706&quot;,
-                    &quot;agentType&quot; : &quot;enterprise-cluster&quot;,
-                    &quot;ipv6Policy&quot; : &quot;force-ipv4&quot;,
-                    &quot;prefix&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;networkProviderInfo&quot; : {
-                      &quot;asn&quot; : 7018,
-                      &quot;name&quot; : &quot;AT&amp;T Services, Inc.&quot;,
-                      &quot;type&quot; : &quot;isp&quot;
+                    "agentId" : "281474976710706",
+                    "agentType" : "enterprise-cluster",
+                    "ipv6Policy" : "force-ipv4",
+                    "prefix" : "99.128.0.0/11",
+                    "networkProviderInfo" : {
+                      "asn" : 7018,
+                      "name" : "AT&T Services, Inc.",
+                      "type" : "isp"
                     },
-                    &quot;countryId&quot; : &quot;US&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                    &quot;hostname&quot; : &quot;thousandeyes.com&quot;,
-                    &quot;keepBrowserCache&quot; : true,
-                    &quot;agentState&quot; : &quot;online&quot;,
-                    &quot;localResolutionPrefixes&quot; : [ &quot;10.2.3.3/24&quot;, &quot;10.2.3.3/24&quot; ],
-                    &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                    &quot;coordinates&quot; : {
-                      &quot;latitude&quot; : 37.77493,
-                      &quot;longitude&quot; : -122.41942
+                    "countryId" : "US",
+                    "enabled" : true,
+                    "network" : "AT&T Services, Inc. (AS 7018)",
+                    "hostname" : "thousandeyes.com",
+                    "keepBrowserCache" : true,
+                    "agentState" : "online",
+                    "localResolutionPrefixes" : [ "10.2.3.3/24", "10.2.3.3/24" ],
+                    "serialNumber" : "FOC2218ABCD",
+                    "coordinates" : {
+                      "latitude" : 37.77493,
+                      "longitude" : -122.41942
                     },
-                    &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                    &quot;utilization&quot; : 25,
-                    &quot;testIds&quot; : [ 281474976710706 ],
-                    &quot;clusterMembers&quot; : [ {
-                      &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                      &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                      &quot;agentState&quot; : &quot;online&quot;,
-                      &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                      &quot;name&quot; : &quot;Cluster member name&quot;,
-                      &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                      &quot;utilization&quot; : 25,
-                      &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                      &quot;memberId&quot; : &quot;10&quot;,
-                      &quot;errorDetails&quot; : [ {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                    "agentName" : "thousandeyes-stg-va-254",
+                    "utilization" : 25,
+                    "testIds" : [ 281474976710706 ],
+                    "clusterMembers" : [ {
+                      "lastSeen" : "2022-07-17T22:00:54Z",
+                      "serialNumber" : "FOC2218ABCD",
+                      "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                      "agentState" : "online",
+                      "targetForTests" : "1.1.1.1",
+                      "name" : "Cluster member name",
+                      "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                      "utilization" : 25,
+                      "network" : "AT&T Services, Inc. (AS 7018)",
+                      "memberId" : "10",
+                      "errorDetails" : [ {
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       }, {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     }, {
-                      &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;serialNumber&quot; : &quot;FOC2218ABCD&quot;,
-                      &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                      &quot;agentState&quot; : &quot;online&quot;,
-                      &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                      &quot;name&quot; : &quot;Cluster member name&quot;,
-                      &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                      &quot;utilization&quot; : 25,
-                      &quot;network&quot; : &quot;AT&amp;T Services, Inc. (AS 7018)&quot;,
-                      &quot;memberId&quot; : &quot;10&quot;,
-                      &quot;errorDetails&quot; : [ {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                      "lastSeen" : "2022-07-17T22:00:54Z",
+                      "serialNumber" : "FOC2218ABCD",
+                      "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                      "agentState" : "online",
+                      "targetForTests" : "1.1.1.1",
+                      "name" : "Cluster member name",
+                      "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                      "utilization" : 25,
+                      "network" : "AT&T Services, Inc. (AS 7018)",
+                      "memberId" : "10",
+                      "errorDetails" : [ {
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       }, {
-                        &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                        &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                        "code" : "agent-version-outdated",
+                        "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                       } ]
                     } ],
-                    &quot;tests&quot; : [ {
-                      &quot;_links&quot; : {
-                        &quot;testResults&quot; : [ {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "tests" : [ {
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                         }, {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                         } ],
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;liveShare&quot; : false,
-                      &quot;savedEvent&quot; : true,
-                      &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                      &quot;type&quot; : &quot;agent-to-server&quot;,
-                      &quot;enabled&quot; : true,
-                      &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                      &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;interval&quot; : 60,
-                      &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                      &quot;testId&quot; : &quot;281474976710706&quot;,
-                      &quot;alertsEnabled&quot; : true,
-                      &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
                     }, {
-                      &quot;_links&quot; : {
-                        &quot;testResults&quot; : [ {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                      "_links" : {
+                        "testResults" : [ {
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                         }, {
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                          "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                         } ],
-                        &quot;self&quot; : {
-                          &quot;hreflang&quot; : &quot;hreflang&quot;,
-                          &quot;templated&quot; : true,
-                          &quot;profile&quot; : &quot;profile&quot;,
-                          &quot;name&quot; : &quot;name&quot;,
-                          &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                          &quot;type&quot; : &quot;type&quot;,
-                          &quot;deprecation&quot; : &quot;deprecation&quot;,
-                          &quot;title&quot; : &quot;title&quot;
+                        "self" : {
+                          "hreflang" : "hreflang",
+                          "templated" : true,
+                          "profile" : "profile",
+                          "name" : "name",
+                          "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                          "type" : "type",
+                          "deprecation" : "deprecation",
+                          "title" : "title"
                         }
                       },
-                      &quot;liveShare&quot; : false,
-                      &quot;savedEvent&quot; : true,
-                      &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                      &quot;type&quot; : &quot;agent-to-server&quot;,
-                      &quot;enabled&quot; : true,
-                      &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                      &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                      &quot;interval&quot; : 60,
-                      &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                      &quot;testId&quot; : &quot;281474976710706&quot;,
-                      &quot;alertsEnabled&quot; : true,
-                      &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                      "liveShare" : false,
+                      "savedEvent" : true,
+                      "description" : "ThousandEyes Test",
+                      "type" : "agent-to-server",
+                      "enabled" : true,
+                      "createdDate" : "2022-07-17T22:00:54Z",
+                      "createdBy" : "user@user.com",
+                      "modifiedDate" : "2022-07-17T22:00:54Z",
+                      "interval" : 60,
+                      "modifiedBy" : "user@user.com",
+                      "testId" : "281474976710706",
+                      "alertsEnabled" : true,
+                      "testName" : "ThousandEyes Test"
                     } ],
-                    &quot;lastSeen&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;publicIpAddresses&quot; : [ &quot;192.168.1.78&quot;, &quot;f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c&quot; ],
-                    &quot;interfaceIpMapping&quot; : [ {
-                      &quot;ipAddresses&quot; : [ &quot;73.252.207.219&quot;, &quot;2601:646:300:3ae0::b977&quot; ],
-                      &quot;interfaceName&quot; : &quot;wlp4s0&quot;
+                    "lastSeen" : "2022-07-17T22:00:54Z",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "publicIpAddresses" : [ "192.168.1.78", "f9b2:3a21:f25c:d300:03f4:586d:f8d6:4e1c" ],
+                    "interfaceIpMapping" : [ {
+                      "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
+                      "interfaceName" : "wlp4s0"
                     }, {
-                      &quot;ipAddresses&quot; : [ &quot;73.252.207.219&quot;, &quot;2601:646:300:3ae0::b977&quot; ],
-                      &quot;interfaceName&quot; : &quot;wlp4s0&quot;
+                      "ipAddresses" : [ "73.252.207.219", "2601:646:300:3ae0::b977" ],
+                      "interfaceName" : "wlp4s0"
                     } ],
-                    &quot;targetForTests&quot; : &quot;1.1.1.1&quot;,
-                    &quot;ipAddresses&quot; : [ &quot;99.139.65.220&quot;, &quot;9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce&quot; ],
-                    &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                    &quot;accountGroups&quot; : [ {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                    "targetForTests" : "1.1.1.1",
+                    "ipAddresses" : [ "99.139.65.220", "9bbd:8a0a:a257:5876:288b:6cb2:3f36:64ce" ],
+                    "location" : "San Francisco Bay Area",
+                    "accountGroups" : [ {
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     }, {
-                      &quot;accountGroupName&quot; : &quot;Account A&quot;,
-                      &quot;aid&quot; : &quot;1234&quot;
+                      "accountGroupName" : "Account A",
+                      "aid" : "1234"
                     } ],
-                    &quot;verifySslCertificates&quot; : true,
-                    &quot;errorDetails&quot; : [ {
-                      &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                      &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                    "verifySslCertificates" : true,
+                    "errorDetails" : [ {
+                      "code" : "agent-version-outdated",
+                      "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     }, {
-                      &quot;code&quot; : &quot;agent-version-outdated&quot;,
-                      &quot;description&quot; : &quot;Agent Version 0.1.1 (latest: 1.0.0)&quot;
+                      "code" : "agent-version-outdated",
+                      "description" : "Agent Version 0.1.1 (latest: 1.0.0)"
                     } ]
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_account_group(
+
             id=id,
+
             account_group_request=account_group_request,
-            expand=expand,
+
             _headers=self.te_headers("update_account_group"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1580,7 +1602,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1604,9 +1625,11 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_account_group(
+
                 id=id,
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("update_account_group", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1624,7 +1647,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1636,9 +1658,11 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_account_group(
+
                 id=id,
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("update_account_group", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1656,7 +1680,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1671,9 +1694,11 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_account_group(
+
                 id=id,
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("update_account_group", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1691,7 +1716,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1706,9 +1730,11 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_account_group(
+
                 id=id,
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("update_account_group", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1726,7 +1752,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1741,9 +1766,11 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_account_group(
+
                 id=id,
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("update_account_group", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1761,7 +1788,6 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
                 """
         account_group_request = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         id = '1234'
-        expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1776,9 +1802,11 @@ class TestAccountGroupsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_account_group(
+
                 id=id,
+
                 account_group_request=account_group_request,
-                expand=expand,
+
                 _headers=self.te_headers("update_account_group", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

@@ -57,108 +57,109 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
                 """
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         response_body_json = """
                 {
-                  &quot;duration&quot; : 0,
-                  &quot;alertSuppressionWindowId&quot; : &quot;2411&quot;,
-                  &quot;tests&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "duration" : 0,
+                  "alertSuppressionWindowId" : "2411",
+                  "tests" : [ {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;isEnabled&quot; : false,
-                  &quot;repeat&quot; : {
-                    &quot;intervalType&quot; : &quot;day&quot;,
-                    &quot;intervalLength&quot; : 2,
-                    &quot;type&quot; : &quot;week&quot;,
-                    &quot;daysOfWeek&quot; : [ &quot;sun&quot;, &quot;sun&quot; ]
+                  "isEnabled" : false,
+                  "repeat" : {
+                    "intervalType" : "day",
+                    "intervalLength" : 2,
+                    "type" : "week",
+                    "daysOfWeek" : [ "sun", "sun" ]
                   },
-                  &quot;endRepeat&quot; : {
-                    &quot;date&quot; : &quot;2017-07-01&quot;,
-                    &quot;count&quot; : 3,
-                    &quot;type&quot; : &quot;never&quot;
+                  "endRepeat" : {
+                    "date" : "2017-07-01",
+                    "count" : 3,
+                    "type" : "never"
                   },
-                  &quot;name&quot; : &quot;Monthly maintenance&quot;,
-                  &quot;startDate&quot; : &quot;2017-07-01T05:00:00Z&quot;,
-                  &quot;status&quot; : &quot;ended&quot;
+                  "name" : "Monthly maintenance",
+                  "startDate" : "2017-07-01T05:00:00Z",
+                  "status" : "ended"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_alert_suppression_window(
+
             alert_suppression_window_request=alert_suppression_window_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("create_alert_suppression_window"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -192,7 +193,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
                 """
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -216,9 +216,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_alert_suppression_window(
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_alert_suppression_window", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -252,7 +254,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
                 """
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -264,9 +265,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_alert_suppression_window(
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_alert_suppression_window", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -300,7 +303,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
                 """
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -315,9 +317,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_alert_suppression_window(
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_alert_suppression_window", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -351,7 +355,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
                 """
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -366,9 +369,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_alert_suppression_window(
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_alert_suppression_window", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -402,7 +407,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
                 """
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -417,9 +421,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_alert_suppression_window(
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_alert_suppression_window", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -453,7 +459,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
                 """
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -468,9 +473,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_alert_suppression_window(
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_alert_suppression_window", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -483,8 +490,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         window_id = '2411'
         aid = '1234'
         response = self.api.delete_alert_suppression_window_with_http_info(
+
             window_id=window_id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_alert_suppression_window"),
         )
         self.assertEqual(204, response.status_code)
@@ -518,8 +528,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_suppression_window", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -540,8 +553,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_suppression_window", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -565,8 +581,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_suppression_window", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -590,8 +609,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_suppression_window", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -615,8 +637,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_suppression_window", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -640,8 +665,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_alert_suppression_window", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -653,108 +681,109 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         """Integration test for get_alert_suppression_window success path"""
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         response_body_json = """
                 {
-                  &quot;duration&quot; : 0,
-                  &quot;alertSuppressionWindowId&quot; : &quot;2411&quot;,
-                  &quot;tests&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "duration" : 0,
+                  "alertSuppressionWindowId" : "2411",
+                  "tests" : [ {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;isEnabled&quot; : false,
-                  &quot;repeat&quot; : {
-                    &quot;intervalType&quot; : &quot;day&quot;,
-                    &quot;intervalLength&quot; : 2,
-                    &quot;type&quot; : &quot;week&quot;,
-                    &quot;daysOfWeek&quot; : [ &quot;sun&quot;, &quot;sun&quot; ]
+                  "isEnabled" : false,
+                  "repeat" : {
+                    "intervalType" : "day",
+                    "intervalLength" : 2,
+                    "type" : "week",
+                    "daysOfWeek" : [ "sun", "sun" ]
                   },
-                  &quot;endRepeat&quot; : {
-                    &quot;date&quot; : &quot;2017-07-01&quot;,
-                    &quot;count&quot; : 3,
-                    &quot;type&quot; : &quot;never&quot;
+                  "endRepeat" : {
+                    "date" : "2017-07-01",
+                    "count" : 3,
+                    "type" : "never"
                   },
-                  &quot;name&quot; : &quot;Monthly maintenance&quot;,
-                  &quot;startDate&quot; : &quot;2017-07-01T05:00:00Z&quot;,
-                  &quot;status&quot; : &quot;ended&quot;
+                  "name" : "Monthly maintenance",
+                  "startDate" : "2017-07-01T05:00:00Z",
+                  "status" : "ended"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_alert_suppression_window(
+
             window_id=window_id,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("get_alert_suppression_window"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -764,7 +793,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         """Integration test for get_alert_suppression_window error path (HTTP 401)"""
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -776,9 +804,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_alert_suppression_window", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -788,7 +818,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         """Integration test for get_alert_suppression_window error path (HTTP 403)"""
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -803,9 +832,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_alert_suppression_window", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -815,7 +846,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         """Integration test for get_alert_suppression_window error path (HTTP 404)"""
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -830,9 +860,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_alert_suppression_window", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -842,7 +874,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         """Integration test for get_alert_suppression_window error path (HTTP 429)"""
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -857,9 +888,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_alert_suppression_window", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -869,7 +902,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         """Integration test for get_alert_suppression_window error path (HTTP 500)"""
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -884,9 +916,11 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_alert_suppression_window(
+
                 window_id=window_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_alert_suppression_window", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -899,84 +933,86 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;alertSuppressionWindows&quot; : [ {
-                    &quot;duration&quot; : 0,
-                    &quot;alertSuppressionWindowId&quot; : &quot;2411&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "alertSuppressionWindows" : [ {
+                    "duration" : 0,
+                    "alertSuppressionWindowId" : "2411",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;isEnabled&quot; : false,
-                    &quot;repeat&quot; : {
-                      &quot;intervalType&quot; : &quot;day&quot;,
-                      &quot;intervalLength&quot; : 2,
-                      &quot;type&quot; : &quot;week&quot;,
-                      &quot;daysOfWeek&quot; : [ &quot;sun&quot;, &quot;sun&quot; ]
+                    "isEnabled" : false,
+                    "repeat" : {
+                      "intervalType" : "day",
+                      "intervalLength" : 2,
+                      "type" : "week",
+                      "daysOfWeek" : [ "sun", "sun" ]
                     },
-                    &quot;endRepeat&quot; : {
-                      &quot;date&quot; : &quot;2017-07-01&quot;,
-                      &quot;count&quot; : 3,
-                      &quot;type&quot; : &quot;never&quot;
+                    "endRepeat" : {
+                      "date" : "2017-07-01",
+                      "count" : 3,
+                      "type" : "never"
                     },
-                    &quot;name&quot; : &quot;Monthly maintenance&quot;,
-                    &quot;startDate&quot; : &quot;2017-07-01T05:00:00Z&quot;,
-                    &quot;status&quot; : &quot;ended&quot;
+                    "name" : "Monthly maintenance",
+                    "startDate" : "2017-07-01T05:00:00Z",
+                    "status" : "ended"
                   }, {
-                    &quot;duration&quot; : 0,
-                    &quot;alertSuppressionWindowId&quot; : &quot;2411&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "duration" : 0,
+                    "alertSuppressionWindowId" : "2411",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;isEnabled&quot; : false,
-                    &quot;repeat&quot; : {
-                      &quot;intervalType&quot; : &quot;day&quot;,
-                      &quot;intervalLength&quot; : 2,
-                      &quot;type&quot; : &quot;week&quot;,
-                      &quot;daysOfWeek&quot; : [ &quot;sun&quot;, &quot;sun&quot; ]
+                    "isEnabled" : false,
+                    "repeat" : {
+                      "intervalType" : "day",
+                      "intervalLength" : 2,
+                      "type" : "week",
+                      "daysOfWeek" : [ "sun", "sun" ]
                     },
-                    &quot;endRepeat&quot; : {
-                      &quot;date&quot; : &quot;2017-07-01&quot;,
-                      &quot;count&quot; : 3,
-                      &quot;type&quot; : &quot;never&quot;
+                    "endRepeat" : {
+                      "date" : "2017-07-01",
+                      "count" : 3,
+                      "type" : "never"
                     },
-                    &quot;name&quot; : &quot;Monthly maintenance&quot;,
-                    &quot;startDate&quot; : &quot;2017-07-01T05:00:00Z&quot;,
-                    &quot;status&quot; : &quot;ended&quot;
+                    "name" : "Monthly maintenance",
+                    "startDate" : "2017-07-01T05:00:00Z",
+                    "status" : "ended"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_alert_suppression_windows(
+
             aid=aid,
+
             _headers=self.te_headers("get_alert_suppression_windows"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -996,7 +1032,9 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_alert_suppression_windows(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_suppression_windows", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1019,7 +1057,9 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_alert_suppression_windows(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_suppression_windows", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1042,7 +1082,9 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_alert_suppression_windows(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_suppression_windows", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1065,7 +1107,9 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_alert_suppression_windows(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_suppression_windows", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1088,7 +1132,9 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_alert_suppression_windows(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_alert_suppression_windows", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1125,109 +1171,111 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         response_body_json = """
                 {
-                  &quot;duration&quot; : 0,
-                  &quot;alertSuppressionWindowId&quot; : &quot;2411&quot;,
-                  &quot;tests&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "duration" : 0,
+                  "alertSuppressionWindowId" : "2411",
+                  "tests" : [ {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;isEnabled&quot; : false,
-                  &quot;repeat&quot; : {
-                    &quot;intervalType&quot; : &quot;day&quot;,
-                    &quot;intervalLength&quot; : 2,
-                    &quot;type&quot; : &quot;week&quot;,
-                    &quot;daysOfWeek&quot; : [ &quot;sun&quot;, &quot;sun&quot; ]
+                  "isEnabled" : false,
+                  "repeat" : {
+                    "intervalType" : "day",
+                    "intervalLength" : 2,
+                    "type" : "week",
+                    "daysOfWeek" : [ "sun", "sun" ]
                   },
-                  &quot;endRepeat&quot; : {
-                    &quot;date&quot; : &quot;2017-07-01&quot;,
-                    &quot;count&quot; : 3,
-                    &quot;type&quot; : &quot;never&quot;
+                  "endRepeat" : {
+                    "date" : "2017-07-01",
+                    "count" : 3,
+                    "type" : "never"
                   },
-                  &quot;name&quot; : &quot;Monthly maintenance&quot;,
-                  &quot;startDate&quot; : &quot;2017-07-01T05:00:00Z&quot;,
-                  &quot;status&quot; : &quot;ended&quot;
+                  "name" : "Monthly maintenance",
+                  "startDate" : "2017-07-01T05:00:00Z",
+                  "status" : "ended"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_alert_suppression_window(
+
             window_id=window_id,
+
             alert_suppression_window_request=alert_suppression_window_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("update_alert_suppression_window"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1262,7 +1310,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1286,10 +1333,13 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_alert_suppression_window(
+
                 window_id=window_id,
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_alert_suppression_window", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1324,7 +1374,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1336,10 +1385,13 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_alert_suppression_window(
+
                 window_id=window_id,
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_alert_suppression_window", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1374,7 +1426,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1389,10 +1440,13 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_alert_suppression_window(
+
                 window_id=window_id,
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_alert_suppression_window", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1427,7 +1481,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1442,10 +1495,13 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_alert_suppression_window(
+
                 window_id=window_id,
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_alert_suppression_window", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1480,7 +1536,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1495,10 +1550,13 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_alert_suppression_window(
+
                 window_id=window_id,
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_alert_suppression_window", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1533,7 +1591,6 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
         alert_suppression_window_request = thousandeyes_sdk.alerts.models.AlertSuppressionWindowRequest.from_json(request_body_json)
         window_id = '2411'
         aid = '1234'
-        expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1548,10 +1605,13 @@ class TestAlertSuppressionWindowsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_alert_suppression_window(
+
                 window_id=window_id,
+
                 alert_suppression_window_request=alert_suppression_window_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_alert_suppression_window", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

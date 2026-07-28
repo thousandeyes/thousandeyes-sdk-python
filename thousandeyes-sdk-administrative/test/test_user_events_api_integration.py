@@ -39,74 +39,81 @@ class TestUserEventsApiIntegration(IntegrationTestBase):
         cursor = 'cursor_example'
         response_body_json = """
                 {
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;auditEvents&quot; : [ {
-                    &quot;accountGroupName&quot; : &quot;API Sandbox&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;date&quot; : &quot;2020-07-17T21:54:54Z&quot;,
-                    &quot;event&quot; : &quot;Report created.&quot;,
-                    &quot;ipAddress&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;uid&quot; : &quot;1234&quot;,
-                    &quot;user&quot; : &quot;API Sandbox User (noreply@thousandeyes.com)&quot;,
-                    &quot;resources&quot; : [ {
-                      &quot;name&quot; : &quot;My New report&quot;,
-                      &quot;type&quot; : &quot;reportTitle&quot;
+                  "auditEvents" : [ {
+                    "accountGroupName" : "API Sandbox",
+                    "aid" : "1234",
+                    "date" : "2020-07-17T21:54:54Z",
+                    "event" : "Report created.",
+                    "ipAddress" : "99.128.0.0/11",
+                    "uid" : "1234",
+                    "user" : "API Sandbox User (noreply@thousandeyes.com)",
+                    "resources" : [ {
+                      "name" : "My New report",
+                      "type" : "reportTitle"
                     }, {
-                      &quot;name&quot; : &quot;Other Report&quot;,
-                      &quot;type&quot; : &quot;testName&quot;
+                      "name" : "Other Report",
+                      "type" : "testName"
                     } ]
                   }, {
-                    &quot;accountGroupName&quot; : &quot;API Sandbox&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;date&quot; : &quot;2020-07-17T22:00:54Z&quot;,
-                    &quot;event&quot; : &quot;Login failed.&quot;,
-                    &quot;ipAddress&quot; : &quot;99.128.0.0/11&quot;,
-                    &quot;uid&quot; : &quot;1234&quot;,
-                    &quot;user&quot; : &quot;API Sandbox User (noreply@thousandeyes.com)&quot;
+                    "accountGroupName" : "API Sandbox",
+                    "aid" : "1234",
+                    "date" : "2020-07-17T22:00:54Z",
+                    "event" : "Login failed.",
+                    "ipAddress" : "99.128.0.0/11",
+                    "uid" : "1234",
+                    "user" : "API Sandbox User (noreply@thousandeyes.com)"
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_user_events(
+
             aid=aid,
+
             use_all_permitted_aids=use_all_permitted_aids,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
+
             _headers=self.te_headers("get_user_events"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -143,12 +150,19 @@ class TestUserEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_user_events(
+
                 aid=aid,
+
                 use_all_permitted_aids=use_all_permitted_aids,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_user_events", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -173,12 +187,19 @@ class TestUserEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_user_events(
+
                 aid=aid,
+
                 use_all_permitted_aids=use_all_permitted_aids,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_user_events", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -206,12 +227,19 @@ class TestUserEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_user_events(
+
                 aid=aid,
+
                 use_all_permitted_aids=use_all_permitted_aids,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_user_events", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -239,12 +267,19 @@ class TestUserEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_user_events(
+
                 aid=aid,
+
                 use_all_permitted_aids=use_all_permitted_aids,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_user_events", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -272,12 +307,19 @@ class TestUserEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_user_events(
+
                 aid=aid,
+
                 use_all_permitted_aids=use_all_permitted_aids,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_user_events", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -305,12 +347,19 @@ class TestUserEventsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_user_events(
+
                 aid=aid,
+
                 use_all_permitted_aids=use_all_permitted_aids,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_user_events", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

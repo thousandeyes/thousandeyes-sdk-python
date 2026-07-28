@@ -67,348 +67,354 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;server&quot; : &quot;www.example.com&quot;,
-                    &quot;isSavedEvent&quot; : false,
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter&quot;
+                  "test" : {
+                    "server" : "www.example.com",
+                    "isSavedEvent" : false,
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;isPrioritized&quot; : false,
-                    &quot;networkMeasurements&quot; : true,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;tcpProbeMode&quot; : &quot;auto&quot;,
-                    &quot;labels&quot; : [ {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                    "isPrioritized" : false,
+                    "networkMeasurements" : true,
+                    "type" : "agent-to-server",
+                    "tcpProbeMode" : "auto",
+                    "labels" : [ {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     }, {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     } ],
-                    &quot;protocol&quot; : &quot;icmp&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;ipVersion&quot; : &quot;V4_ONLY&quot;,
-                    &quot;port&quot; : 443,
-                    &quot;isEnabled&quot; : true,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;agentSelectorConfig&quot; : {
-                      &quot;agentSelectorType&quot; : &quot;all-agents&quot;,
-                      &quot;maxMachines&quot; : 25
+                    "protocol" : "icmp",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "ipVersion" : "V4_ONLY",
+                    "port" : 443,
+                    "isEnabled" : true,
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "testId" : "281474976710706",
+                    "aid" : "1234",
+                    "agentSelectorConfig" : {
+                      "agentSelectorType" : "all-agents",
+                      "maxMachines" : 25
                     },
-                    &quot;hasPathTraceInSession&quot; : true,
-                    &quot;testName&quot; : &quot;Test name&quot;
+                    "hasPathTraceInSession" : true,
+                    "testName" : "Test name"
                   },
-                  &quot;totalHits&quot; : 12,
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "totalHits" : 12,
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                  "results" : [ {
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;isIcmpBlocked&quot; : true,
-                    &quot;avgLatency&quot; : 167.04,
-                    &quot;minLatency&quot; : 167,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "isIcmpBlocked" : true,
+                    "avgLatency" : 167.04,
+                    "minLatency" : 167,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;maxLatency&quot; : 168,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "maxLatency" : 168,
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;loss&quot; : 0,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "loss" : 0,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;jitter&quot; : 0.076808,
-                    &quot;serverIp&quot; : &quot;185.199.108.153&quot;,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "jitter" : 0.076808,
+                    "serverIp" : "185.199.108.153",
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;ztaMetrics&quot; : [ {
-                      &quot;loss&quot; : 50,
-                      &quot;jitter&quot; : 5,
-                      &quot;avgLatency&quot; : 3,
-                      &quot;errorMessage&quot; : &quot;ERR_NAME_NOT_RESOLVED&quot;,
-                      &quot;type&quot; : &quot;zta_service&quot;
+                    "ztaMetrics" : [ {
+                      "loss" : 50,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
                     }, {
-                      &quot;loss&quot; : 50,
-                      &quot;jitter&quot; : 5,
-                      &quot;avgLatency&quot; : 3,
-                      &quot;errorMessage&quot; : &quot;ERR_NAME_NOT_RESOLVED&quot;,
-                      &quot;type&quot; : &quot;zta_service&quot;
+                      "loss" : 50,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
                     } ],
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;errorDetails&quot; : &quot;Error&quot;
+                    "testId" : "584739201",
+                    "aid" : "1234",
+                    "roundId" : 1384309800,
+                    "errorDetails" : "Error"
                   }, {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;isIcmpBlocked&quot; : true,
-                    &quot;avgLatency&quot; : 167.04,
-                    &quot;minLatency&quot; : 167,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "isIcmpBlocked" : true,
+                    "avgLatency" : 167.04,
+                    "minLatency" : 167,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;maxLatency&quot; : 168,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "maxLatency" : 168,
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;loss&quot; : 0,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "loss" : 0,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;jitter&quot; : 0.076808,
-                    &quot;serverIp&quot; : &quot;185.199.108.153&quot;,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "jitter" : 0.076808,
+                    "serverIp" : "185.199.108.153",
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;ztaMetrics&quot; : [ {
-                      &quot;loss&quot; : 50,
-                      &quot;jitter&quot; : 5,
-                      &quot;avgLatency&quot; : 3,
-                      &quot;errorMessage&quot; : &quot;ERR_NAME_NOT_RESOLVED&quot;,
-                      &quot;type&quot; : &quot;zta_service&quot;
+                    "ztaMetrics" : [ {
+                      "loss" : 50,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
                     }, {
-                      &quot;loss&quot; : 50,
-                      &quot;jitter&quot; : 5,
-                      &quot;avgLatency&quot; : 3,
-                      &quot;errorMessage&quot; : &quot;ERR_NAME_NOT_RESOLVED&quot;,
-                      &quot;type&quot; : &quot;zta_service&quot;
+                      "loss" : 50,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
                     } ],
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;errorDetails&quot; : &quot;Error&quot;
+                    "testId" : "584739201",
+                    "aid" : "1234",
+                    "roundId" : 1384309800,
+                    "errorDetails" : "Error"
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.filter_scheduled_test_network_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
-            expand=expand,
+
             endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search,
+
             _headers=self.te_headers("filter_scheduled_test_network_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -452,7 +458,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -464,14 +469,21 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.filter_scheduled_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_test_network_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -515,7 +527,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -530,14 +541,21 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.filter_scheduled_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_test_network_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -581,7 +599,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -596,14 +613,21 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.filter_scheduled_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_test_network_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -647,7 +671,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -662,14 +685,21 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.filter_scheduled_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_test_network_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -713,7 +743,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -728,14 +757,21 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.filter_scheduled_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_test_network_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -779,7 +815,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         start_date = '2022-07-17T22:00:54Z'
         end_date = '2022-07-18T22:00:54Z'
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -794,14 +829,21 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.filter_scheduled_test_network_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
-                expand=expand,
+
                 endpoint_tests_data_rounds_search=endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_test_network_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -848,300 +890,307 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         max = 5
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         response_body_json = """
                 {
-                  &quot;totalHits&quot; : 12,
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "totalHits" : 12,
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                  "results" : [ {
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;isIcmpBlocked&quot; : true,
-                    &quot;avgLatency&quot; : 167.04,
-                    &quot;minLatency&quot; : 167,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "isIcmpBlocked" : true,
+                    "avgLatency" : 167.04,
+                    "minLatency" : 167,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;maxLatency&quot; : 168,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "maxLatency" : 168,
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;loss&quot; : 0,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "loss" : 0,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;jitter&quot; : 0.076808,
-                    &quot;serverIp&quot; : &quot;185.199.108.153&quot;,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "jitter" : 0.076808,
+                    "serverIp" : "185.199.108.153",
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;ztaMetrics&quot; : [ {
-                      &quot;loss&quot; : 50,
-                      &quot;jitter&quot; : 5,
-                      &quot;avgLatency&quot; : 3,
-                      &quot;errorMessage&quot; : &quot;ERR_NAME_NOT_RESOLVED&quot;,
-                      &quot;type&quot; : &quot;zta_service&quot;
+                    "ztaMetrics" : [ {
+                      "loss" : 50,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
                     }, {
-                      &quot;loss&quot; : 50,
-                      &quot;jitter&quot; : 5,
-                      &quot;avgLatency&quot; : 3,
-                      &quot;errorMessage&quot; : &quot;ERR_NAME_NOT_RESOLVED&quot;,
-                      &quot;type&quot; : &quot;zta_service&quot;
+                      "loss" : 50,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
                     } ],
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;errorDetails&quot; : &quot;Error&quot;
+                    "testId" : "584739201",
+                    "aid" : "1234",
+                    "roundId" : 1384309800,
+                    "errorDetails" : "Error"
                   }, {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;isIcmpBlocked&quot; : true,
-                    &quot;avgLatency&quot; : 167.04,
-                    &quot;minLatency&quot; : 167,
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "isIcmpBlocked" : true,
+                    "avgLatency" : 167.04,
+                    "minLatency" : 167,
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;maxLatency&quot; : 168,
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "maxLatency" : 168,
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;score&quot; : {
-                      &quot;applicationScore&quot; : 100,
-                      &quot;quality&quot; : &quot;great&quot;
+                    "score" : {
+                      "applicationScore" : 100,
+                      "quality" : "great"
                     },
-                    &quot;loss&quot; : 0,
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "loss" : 0,
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;jitter&quot; : 0.076808,
-                    &quot;serverIp&quot; : &quot;185.199.108.153&quot;,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "jitter" : 0.076808,
+                    "serverIp" : "185.199.108.153",
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;ztaMetrics&quot; : [ {
-                      &quot;loss&quot; : 50,
-                      &quot;jitter&quot; : 5,
-                      &quot;avgLatency&quot; : 3,
-                      &quot;errorMessage&quot; : &quot;ERR_NAME_NOT_RESOLVED&quot;,
-                      &quot;type&quot; : &quot;zta_service&quot;
+                    "ztaMetrics" : [ {
+                      "loss" : 50,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
                     }, {
-                      &quot;loss&quot; : 50,
-                      &quot;jitter&quot; : 5,
-                      &quot;avgLatency&quot; : 3,
-                      &quot;errorMessage&quot; : &quot;ERR_NAME_NOT_RESOLVED&quot;,
-                      &quot;type&quot; : &quot;zta_service&quot;
+                      "loss" : 50,
+                      "jitter" : 5,
+                      "avgLatency" : 3,
+                      "errorMessage" : "ERR_NAME_NOT_RESOLVED",
+                      "type" : "zta_service"
                     } ],
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;errorDetails&quot; : &quot;Error&quot;
+                    "testId" : "584739201",
+                    "aid" : "1234",
+                    "roundId" : 1384309800,
+                    "errorDetails" : "Error"
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.filter_scheduled_tests_network_results(
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             max=max,
+
             cursor=cursor,
+
             use_all_permitted_aids=use_all_permitted_aids,
-            expand=expand,
+
             multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
+
             _headers=self.te_headers("filter_scheduled_tests_network_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1186,7 +1235,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         max = 5
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1198,15 +1246,23 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.filter_scheduled_tests_network_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_tests_network_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1251,7 +1307,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         max = 5
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1266,15 +1321,23 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.filter_scheduled_tests_network_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_tests_network_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1319,7 +1382,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         max = 5
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1334,15 +1396,23 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.filter_scheduled_tests_network_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_tests_network_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1387,7 +1457,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         max = 5
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1402,15 +1471,23 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.filter_scheduled_tests_network_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_tests_network_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1455,7 +1532,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         max = 5
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1470,15 +1546,23 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.filter_scheduled_tests_network_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_tests_network_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1523,7 +1607,6 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         max = 5
         cursor = 'cursor_example'
         use_all_permitted_aids = False
-        expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1538,15 +1621,23 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.filter_scheduled_tests_network_results(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 max=max,
+
                 cursor=cursor,
+
                 use_all_permitted_aids=use_all_permitted_aids,
-                expand=expand,
+
                 multi_test_id_endpoint_tests_data_rounds_search=multi_test_id_endpoint_tests_data_rounds_search,
+
                 _headers=self.te_headers("filter_scheduled_tests_network_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1562,484 +1653,489 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;server&quot; : &quot;www.example.com&quot;,
-                    &quot;isSavedEvent&quot; : false,
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter&quot;
+                  "test" : {
+                    "server" : "www.example.com",
+                    "isSavedEvent" : false,
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;isPrioritized&quot; : false,
-                    &quot;networkMeasurements&quot; : true,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;tcpProbeMode&quot; : &quot;auto&quot;,
-                    &quot;labels&quot; : [ {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                    "isPrioritized" : false,
+                    "networkMeasurements" : true,
+                    "type" : "agent-to-server",
+                    "tcpProbeMode" : "auto",
+                    "labels" : [ {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     }, {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     } ],
-                    &quot;protocol&quot; : &quot;icmp&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;ipVersion&quot; : &quot;V4_ONLY&quot;,
-                    &quot;port&quot; : 443,
-                    &quot;isEnabled&quot; : true,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;agentSelectorConfig&quot; : {
-                      &quot;agentSelectorType&quot; : &quot;all-agents&quot;,
-                      &quot;maxMachines&quot; : 25
+                    "protocol" : "icmp",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "ipVersion" : "V4_ONLY",
+                    "port" : 443,
+                    "isEnabled" : true,
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "testId" : "281474976710706",
+                    "aid" : "1234",
+                    "agentSelectorConfig" : {
+                      "agentSelectorType" : "all-agents",
+                      "maxMachines" : 25
                     },
-                    &quot;hasPathTraceInSession&quot; : true,
-                    &quot;testName&quot; : &quot;Test name&quot;
+                    "hasPathTraceInSession" : true,
+                    "testName" : "Test name"
                   },
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                  "results" : [ {
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;server&quot; : &quot;www.google.com:443&quot;,
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;asnDetails&quot; : {
-                      &quot;asName&quot; : &quot;ThousandEyes, Inc&quot;,
-                      &quot;asNumber&quot; : 394101
+                    "server" : "www.google.com:443",
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "asnDetails" : {
+                      "asName" : "ThousandEyes, Inc",
+                      "asNumber" : 394101
                     },
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;sourcePrefix&quot; : &quot;196.40.96.0/20&quot;,
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;sourceIp&quot; : &quot;196.40.106.237&quot;,
-                    &quot;pathTraces&quot; : [ {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                    "sourceIp" : "196.40.106.237",
+                    "pathTraces" : [ {
+                      "protocol" : "tcp",
+                      "udpPathTraceMode" : "unknown",
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803",
+                      "tcpPathTraceMode" : "syn-pcap"
                     }, {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                      "protocol" : "tcp",
+                      "udpPathTraceMode" : "unknown",
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803",
+                      "tcpPathTraceMode" : "syn-pcap"
                     } ],
-                    &quot;vpnPathTraces&quot; : [ {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                    "vpnPathTraces" : [ {
+                      "protocol" : "tcp",
+                      "udpPathTraceMode" : "unknown",
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803",
+                      "tcpPathTraceMode" : "syn-pcap"
                     }, {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                      "protocol" : "tcp",
+                      "udpPathTraceMode" : "unknown",
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803",
+                      "tcpPathTraceMode" : "syn-pcap"
                     } ],
-                    &quot;serverIp&quot; : &quot;185.199.108.153&quot;,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "serverIp" : "185.199.108.153",
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;roundId&quot; : 1384309800
+                    "testId" : "584739201",
+                    "aid" : "1234",
+                    "roundId" : 1384309800
                   }, {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;server&quot; : &quot;www.google.com:443&quot;,
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;asnDetails&quot; : {
-                      &quot;asName&quot; : &quot;ThousandEyes, Inc&quot;,
-                      &quot;asNumber&quot; : 394101
+                    "server" : "www.google.com:443",
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "asnDetails" : {
+                      "asName" : "ThousandEyes, Inc",
+                      "asNumber" : 394101
                     },
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;sourcePrefix&quot; : &quot;196.40.96.0/20&quot;,
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;sourceIp&quot; : &quot;196.40.106.237&quot;,
-                    &quot;pathTraces&quot; : [ {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                    "sourceIp" : "196.40.106.237",
+                    "pathTraces" : [ {
+                      "protocol" : "tcp",
+                      "udpPathTraceMode" : "unknown",
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803",
+                      "tcpPathTraceMode" : "syn-pcap"
                     }, {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                      "protocol" : "tcp",
+                      "udpPathTraceMode" : "unknown",
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803",
+                      "tcpPathTraceMode" : "syn-pcap"
                     } ],
-                    &quot;vpnPathTraces&quot; : [ {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                    "vpnPathTraces" : [ {
+                      "protocol" : "tcp",
+                      "udpPathTraceMode" : "unknown",
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803",
+                      "tcpPathTraceMode" : "syn-pcap"
                     }, {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;hops&quot; : [ {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                      "protocol" : "tcp",
+                      "udpPathTraceMode" : "unknown",
+                      "hops" : [ {
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       }, {
-                        &quot;rdns&quot; : &quot;core-router1.cpt2.host-h.net&quot;,
-                        &quot;prefix&quot; : &quot;196.40.96.0/20&quot;,
-                        &quot;responseTime&quot; : 1,
-                        &quot;hop&quot; : 1,
-                        &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                        &quot;location&quot; : &quot;Cape Town, South Africa&quot;,
-                        &quot;network&quot; : &quot;HETZNER (Pty) Ltd (AS 37153)&quot;
+                        "rdns" : "core-router1.cpt2.host-h.net",
+                        "prefix" : "196.40.96.0/20",
+                        "responseTime" : 1,
+                        "hop" : 1,
+                        "ipAddress" : "196.40.106.237",
+                        "location" : "Cape Town, South Africa",
+                        "network" : "HETZNER (Pty) Ltd (AS 37153)"
                       } ],
-                      &quot;pathId&quot; : &quot;4711301366345855606023718047703941305741293841502186803&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "pathId" : "4711301366345855606023718047703941305741293841502186803",
+                      "tcpPathTraceMode" : "syn-pcap"
                     } ],
-                    &quot;serverIp&quot; : &quot;185.199.108.153&quot;,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "serverIp" : "185.199.108.153",
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;roundId&quot; : 1384309800
+                    "testId" : "584739201",
+                    "aid" : "1234",
+                    "roundId" : 1384309800
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_scheduled_test_path_vis_agent_round_results(
+
             test_id=test_id,
+
             agent_id=agent_id,
+
             round_id=round_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_scheduled_test_path_vis_agent_round_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -2062,10 +2158,15 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_scheduled_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_agent_round_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2091,10 +2192,15 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_scheduled_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_agent_round_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2120,10 +2226,15 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_scheduled_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_agent_round_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2149,10 +2260,15 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_scheduled_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_agent_round_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2178,10 +2294,15 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_scheduled_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_agent_round_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2207,10 +2328,15 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_scheduled_test_path_vis_agent_round_results(
+
                 test_id=test_id,
+
                 agent_id=agent_id,
+
                 round_id=round_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_agent_round_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2228,354 +2354,361 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
         cursor = 'cursor_example'
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;server&quot; : &quot;www.example.com&quot;,
-                    &quot;isSavedEvent&quot; : false,
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter&quot;
+                  "test" : {
+                    "server" : "www.example.com",
+                    "isSavedEvent" : false,
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;isPrioritized&quot; : false,
-                    &quot;networkMeasurements&quot; : true,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;tcpProbeMode&quot; : &quot;auto&quot;,
-                    &quot;labels&quot; : [ {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                    "isPrioritized" : false,
+                    "networkMeasurements" : true,
+                    "type" : "agent-to-server",
+                    "tcpProbeMode" : "auto",
+                    "labels" : [ {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     }, {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     } ],
-                    &quot;protocol&quot; : &quot;icmp&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;ipVersion&quot; : &quot;V4_ONLY&quot;,
-                    &quot;port&quot; : 443,
-                    &quot;isEnabled&quot; : true,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;agentSelectorConfig&quot; : {
-                      &quot;agentSelectorType&quot; : &quot;all-agents&quot;,
-                      &quot;maxMachines&quot; : 25
+                    "protocol" : "icmp",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "ipVersion" : "V4_ONLY",
+                    "port" : 443,
+                    "isEnabled" : true,
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "testId" : "281474976710706",
+                    "aid" : "1234",
+                    "agentSelectorConfig" : {
+                      "agentSelectorType" : "all-agents",
+                      "maxMachines" : 25
                     },
-                    &quot;hasPathTraceInSession&quot; : true,
-                    &quot;testName&quot; : &quot;Test name&quot;
+                    "hasPathTraceInSession" : true,
+                    "testName" : "Test name"
                   },
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                  "results" : [ {
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;server&quot; : &quot;www.google.com:443&quot;,
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;asnDetails&quot; : {
-                      &quot;asName&quot; : &quot;ThousandEyes, Inc&quot;,
-                      &quot;asNumber&quot; : 394101
+                    "server" : "www.google.com:443",
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "asnDetails" : {
+                      "asName" : "ThousandEyes, Inc",
+                      "asNumber" : 394101
                     },
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;sourcePrefix&quot; : &quot;196.40.96.0/20&quot;,
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;sourceIp&quot; : &quot;196.40.106.237&quot;,
-                    &quot;pathTraces&quot; : [ {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;numberOfHops&quot; : 15,
-                      &quot;responseTime&quot; : 1500,
-                      &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;pathId&quot; : &quot;1230899668701775614109128428722974545787322404682781961521&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                    "sourceIp" : "196.40.106.237",
+                    "pathTraces" : [ {
+                      "protocol" : "tcp",
+                      "numberOfHops" : 15,
+                      "responseTime" : 1500,
+                      "ipAddress" : "196.40.106.237",
+                      "udpPathTraceMode" : "unknown",
+                      "pathId" : "1230899668701775614109128428722974545787322404682781961521",
+                      "tcpPathTraceMode" : "syn-pcap"
                     }, {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;numberOfHops&quot; : 15,
-                      &quot;responseTime&quot; : 1500,
-                      &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;pathId&quot; : &quot;1230899668701775614109128428722974545787322404682781961521&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "protocol" : "tcp",
+                      "numberOfHops" : 15,
+                      "responseTime" : 1500,
+                      "ipAddress" : "196.40.106.237",
+                      "udpPathTraceMode" : "unknown",
+                      "pathId" : "1230899668701775614109128428722974545787322404682781961521",
+                      "tcpPathTraceMode" : "syn-pcap"
                     } ],
-                    &quot;serverIp&quot; : &quot;185.199.108.153&quot;,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "serverIp" : "185.199.108.153",
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;location&quot; : &quot;San Francisco Area&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;roundId&quot; : 1384309800
+                    "testId" : "584739201",
+                    "location" : "San Francisco Area",
+                    "aid" : "1234",
+                    "roundId" : 1384309800
                   }, {
-                    &quot;originalTargetProfile&quot; : {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;remotePort&quot; : 80,
-                      &quot;remoteIpAddress&quot; : &quot;120.98.134.7&quot;
+                    "originalTargetProfile" : {
+                      "protocol" : "tcp",
+                      "remotePort" : 80,
+                      "remoteIpAddress" : "120.98.134.7"
                     },
-                    &quot;server&quot; : &quot;www.google.com:443&quot;,
-                    &quot;agentId&quot; : &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;,
-                    &quot;asnDetails&quot; : {
-                      &quot;asName&quot; : &quot;ThousandEyes, Inc&quot;,
-                      &quot;asNumber&quot; : 394101
+                    "server" : "www.google.com:443",
+                    "agentId" : "861b7557-cd57-4bbb-b648-00bddf88ef49",
+                    "asnDetails" : {
+                      "asName" : "ThousandEyes, Inc",
+                      "asNumber" : 394101
                     },
-                    &quot;vpnProfile&quot; : {
-                      &quot;vpnClientNetworkRange&quot; : [ &quot;9.88.37.27&quot;, &quot;9.88.37.27&quot; ],
-                      &quot;vpnGatewayAddress&quot; : &quot;120.98.134.7&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnClientAddresses&quot; : [ &quot;184.81.113.85&quot;, &quot;13.129.91.62&quot; ]
+                    "vpnProfile" : {
+                      "vpnClientNetworkRange" : [ "9.88.37.27", "9.88.37.27" ],
+                      "vpnGatewayAddress" : "120.98.134.7",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnClientAddresses" : [ "184.81.113.85", "13.129.91.62" ]
                     },
-                    &quot;batteryMetrics&quot; : {
-                      &quot;batteryHealthNormalizedPercent&quot; : 0.92,
-                      &quot;batteryLevel&quot; : &quot;medium&quot;,
-                      &quot;batteryLevelNormalizedPercent&quot; : 0.3
+                    "batteryMetrics" : {
+                      "batteryHealthNormalizedPercent" : 0.92,
+                      "batteryLevel" : "medium",
+                      "batteryLevelNormalizedPercent" : 0.3
                     },
-                    &quot;sourcePrefix&quot; : &quot;196.40.96.0/20&quot;,
-                    &quot;userProfile&quot; : {
-                      &quot;userName&quot; : &quot;joeblogs32&quot;,
-                      &quot;userPrincipalName&quot; : &quot;joeblogs32@c.com&quot;
+                    "sourcePrefix" : "196.40.96.0/20",
+                    "userProfile" : {
+                      "userName" : "joeblogs32",
+                      "userPrincipalName" : "joeblogs32@c.com"
                     },
-                    &quot;platform&quot; : &quot;mac&quot;,
-                    &quot;cellularProfile&quot; : {
-                      &quot;rssi&quot; : -10,
-                      &quot;advertisedNetworkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;carrierName&quot; : &quot;T-Mobile&quot;,
-                      &quot;rsrq&quot; : -30,
-                      &quot;rsrp&quot; : -30,
-                      &quot;advertisedNetworkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;rscp&quot; : -30,
-                      &quot;networkGen&quot; : &quot;2g, 3g, 4g, 5g&quot;,
-                      &quot;networkSubtype&quot; : &quot;LTE/HSPA&quot;,
-                      &quot;sinr&quot; : 20
+                    "platform" : "mac",
+                    "cellularProfile" : {
+                      "rssi" : -10,
+                      "advertisedNetworkSubtype" : "LTE/HSPA",
+                      "carrierName" : "T-Mobile",
+                      "rsrq" : -30,
+                      "rsrp" : -30,
+                      "advertisedNetworkGen" : "2g, 3g, 4g, 5g",
+                      "rscp" : -30,
+                      "networkGen" : "2g, 3g, 4g, 5g",
+                      "networkSubtype" : "LTE/HSPA",
+                      "sinr" : 20
                     },
-                    &quot;systemMetrics&quot; : {
-                      &quot;cpuUtilization&quot; : {
-                        &quot;min&quot; : 0.22,
-                        &quot;median&quot; : 0.61,
-                        &quot;max&quot; : 0.75,
-                        &quot;mean&quot; : 0.55,
-                        &quot;count&quot; : 150,
-                        &quot;stdDev&quot; : 0.01
+                    "systemMetrics" : {
+                      "cpuUtilization" : {
+                        "min" : 0.22,
+                        "median" : 0.61,
+                        "max" : 0.75,
+                        "mean" : 0.55,
+                        "count" : 150,
+                        "stdDev" : 0.01
                       },
-                      &quot;physicalMemoryTotalBytes&quot; : 1024,
-                      &quot;startTimeMs&quot; : 1581508857327,
-                      &quot;physicalMemoryUsedBytes&quot; : {
-                        &quot;min&quot; : 1.2,
-                        &quot;median&quot; : 1.85,
-                        &quot;max&quot; : 2.5,
-                        &quot;mean&quot; : 1.77,
-                        &quot;count&quot; : 155,
-                        &quot;stdDev&quot; : 0.25
+                      "physicalMemoryTotalBytes" : 1024,
+                      "startTimeMs" : 1581508857327,
+                      "physicalMemoryUsedBytes" : {
+                        "min" : 1.2,
+                        "median" : 1.85,
+                        "max" : 2.5,
+                        "mean" : 1.77,
+                        "count" : 155,
+                        "stdDev" : 0.25
                       },
-                      &quot;endTimeMs&quot; : 1581508867333
+                      "endTimeMs" : 1581508867333
                     },
-                    &quot;sourceIp&quot; : &quot;196.40.106.237&quot;,
-                    &quot;pathTraces&quot; : [ {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;numberOfHops&quot; : 15,
-                      &quot;responseTime&quot; : 1500,
-                      &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;pathId&quot; : &quot;1230899668701775614109128428722974545787322404682781961521&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                    "sourceIp" : "196.40.106.237",
+                    "pathTraces" : [ {
+                      "protocol" : "tcp",
+                      "numberOfHops" : 15,
+                      "responseTime" : 1500,
+                      "ipAddress" : "196.40.106.237",
+                      "udpPathTraceMode" : "unknown",
+                      "pathId" : "1230899668701775614109128428722974545787322404682781961521",
+                      "tcpPathTraceMode" : "syn-pcap"
                     }, {
-                      &quot;protocol&quot; : &quot;tcp&quot;,
-                      &quot;numberOfHops&quot; : 15,
-                      &quot;responseTime&quot; : 1500,
-                      &quot;ipAddress&quot; : &quot;196.40.106.237&quot;,
-                      &quot;udpPathTraceMode&quot; : &quot;unknown&quot;,
-                      &quot;pathId&quot; : &quot;1230899668701775614109128428722974545787322404682781961521&quot;,
-                      &quot;tcpPathTraceMode&quot; : &quot;syn-pcap&quot;
+                      "protocol" : "tcp",
+                      "numberOfHops" : 15,
+                      "responseTime" : 1500,
+                      "ipAddress" : "196.40.106.237",
+                      "udpPathTraceMode" : "unknown",
+                      "pathId" : "1230899668701775614109128428722974545787322404682781961521",
+                      "tcpPathTraceMode" : "syn-pcap"
                     } ],
-                    &quot;serverIp&quot; : &quot;185.199.108.153&quot;,
-                    &quot;networkProfile&quot; : {
-                      &quot;previousInterface&quot; : {
-                        &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                        &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                        &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                        &quot;hardwareType&quot; : &quot;wireless&quot;,
-                        &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                        &quot;interfaceName&quot; : &quot;en0&quot;,
-                        &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                        &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ]
+                    "serverIp" : "185.199.108.153",
+                    "networkProfile" : {
+                      "previousInterface" : {
+                        "publicIpAddress" : "84.255.241.1",
+                        "publicIpRange" : "84.255.241.0-84.255.241.255",
+                        "ipAddress" : "10.0.0.13",
+                        "hardwareType" : "wireless",
+                        "localPrefix" : "10.0.0.0",
+                        "interfaceName" : "en0",
+                        "subnetMask" : "255.255.255.0",
+                        "dnsServers" : [ "8.8.8.8", "8.8.8.4" ]
                       },
-                      &quot;ethernetProfile&quot; : {
-                        &quot;linkSpeed&quot; : 860
+                      "ethernetProfile" : {
+                        "linkSpeed" : 860
                       },
-                      &quot;publicIpAddress&quot; : &quot;84.255.241.1&quot;,
-                      &quot;publicIpRange&quot; : &quot;84.255.241.0-84.255.241.255&quot;,
-                      &quot;ipAddress&quot; : &quot;10.0.0.13&quot;,
-                      &quot;hardwareType&quot; : &quot;wireless&quot;,
-                      &quot;localPrefix&quot; : &quot;10.0.0.0&quot;,
-                      &quot;proxyProfile&quot; : {
-                        &quot;method&quot; : &quot;System&quot;,
-                        &quot;proxies&quot; : [ {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                      "publicIpAddress" : "84.255.241.1",
+                      "publicIpRange" : "84.255.241.0-84.255.241.255",
+                      "ipAddress" : "10.0.0.13",
+                      "hardwareType" : "wireless",
+                      "localPrefix" : "10.0.0.0",
+                      "proxyProfile" : {
+                        "method" : "System",
+                        "proxies" : [ {
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         }, {
-                          &quot;bypass&quot; : &quot;*.local;169.254/16&quot;,
-                          &quot;proxy&quot; : &quot;&lt;direct&gt;&quot;
+                          "bypass" : "*.local;169.254/16",
+                          "proxy" : "<direct>"
                         } ]
                       },
-                      &quot;subnetMask&quot; : &quot;255.255.255.0&quot;,
-                      &quot;error&quot; : &quot;An operation timed out.&quot;,
-                      &quot;wirelessProfile&quot; : {
-                        &quot;rssi&quot; : -38,
-                        &quot;bssid&quot; : &quot;4c:ba:ba:f4:fa:fa&quot;,
-                        &quot;snr&quot; : 57,
-                        &quot;vendor&quot; : &quot;Cisco&quot;,
-                        &quot;txRate&quot; : 130,
-                        &quot;channel&quot; : 1,
-                        &quot;noise&quot; : -95,
-                        &quot;phyMode&quot; : &quot;802.11n&quot;,
-                        &quot;ssid&quot; : &quot;Internet for the masses&quot;,
-                        &quot;quality&quot; : 100
+                      "subnetMask" : "255.255.255.0",
+                      "error" : "An operation timed out.",
+                      "wirelessProfile" : {
+                        "rssi" : -38,
+                        "bssid" : "4c:ba:ba:f4:fa:fa",
+                        "snr" : 57,
+                        "vendor" : "Cisco",
+                        "txRate" : 130,
+                        "channel" : 1,
+                        "noise" : -95,
+                        "phyMode" : "802.11n",
+                        "ssid" : "Internet for the masses",
+                        "quality" : 100
                       },
-                      &quot;interfaceName&quot; : &quot;en0&quot;,
-                      &quot;dnsServers&quot; : [ &quot;8.8.8.8&quot;, &quot;8.8.8.4&quot; ],
-                      &quot;gateway&quot; : &quot;10.0.0.1&quot;
+                      "interfaceName" : "en0",
+                      "dnsServers" : [ "8.8.8.8", "8.8.8.4" ],
+                      "gateway" : "10.0.0.1"
                     },
-                    &quot;testId&quot; : &quot;584739201&quot;,
-                    &quot;location&quot; : &quot;San Francisco Area&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;roundId&quot; : 1384309800
+                    "testId" : "584739201",
+                    "location" : "San Francisco Area",
+                    "aid" : "1234",
+                    "roundId" : 1384309800
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_scheduled_test_path_vis_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
+
             _headers=self.te_headers("get_scheduled_test_path_vis_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -2600,12 +2733,19 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_scheduled_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2633,12 +2773,19 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_scheduled_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2666,12 +2813,19 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_scheduled_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2699,12 +2853,19 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_scheduled_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2732,12 +2893,19 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_scheduled_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2765,12 +2933,19 @@ class TestNetworkEndpointScheduledTestResultsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_scheduled_test_path_vis_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_scheduled_test_path_vis_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

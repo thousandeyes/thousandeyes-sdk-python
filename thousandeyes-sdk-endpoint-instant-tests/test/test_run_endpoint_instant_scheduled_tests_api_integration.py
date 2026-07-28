@@ -35,13 +35,16 @@ class TestRunEndpointInstantScheduledTestsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;message&quot; : &quot;Successfully reran the instant scheduled test with testId&#x3D;765231567&quot;
+                  "message" : "Successfully reran the instant scheduled test with testId=765231567"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.run_endpoint_scheduled_instant_test(
+
             test_id=test_id,
+
             aid=aid,
+
             _headers=self.te_headers("run_endpoint_scheduled_instant_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -74,8 +77,11 @@ class TestRunEndpointInstantScheduledTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.run_endpoint_scheduled_instant_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("run_endpoint_scheduled_instant_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -96,8 +102,11 @@ class TestRunEndpointInstantScheduledTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.run_endpoint_scheduled_instant_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("run_endpoint_scheduled_instant_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -121,8 +130,11 @@ class TestRunEndpointInstantScheduledTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.run_endpoint_scheduled_instant_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("run_endpoint_scheduled_instant_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -146,8 +158,11 @@ class TestRunEndpointInstantScheduledTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.run_endpoint_scheduled_instant_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("run_endpoint_scheduled_instant_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -171,8 +186,11 @@ class TestRunEndpointInstantScheduledTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.run_endpoint_scheduled_instant_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("run_endpoint_scheduled_instant_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -196,8 +214,11 @@ class TestRunEndpointInstantScheduledTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.run_endpoint_scheduled_instant_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("run_endpoint_scheduled_instant_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -221,8 +242,11 @@ class TestRunEndpointInstantScheduledTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.run_endpoint_scheduled_instant_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("run_endpoint_scheduled_instant_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

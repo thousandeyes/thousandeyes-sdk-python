@@ -66,61 +66,64 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;createdDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                  &quot;createdBy&quot; : {
-                    &quot;uid&quot; : &quot;1&quot;,
-                    &quot;name&quot; : &quot;Test User&quot;
+                  "createdDate" : "2024-02-01T22:19:19Z",
+                  "createdBy" : {
+                    "uid" : "1",
+                    "name" : "Test User"
                   },
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;context&quot; : [ {
-                    &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                  "context" : [ {
+                    "dataSourceId" : "VIRTUAL_AGENT",
+                    "filters" : [ {
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     }, {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     } ]
                   }, {
-                    &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                    "dataSourceId" : "VIRTUAL_AGENT",
+                    "filters" : [ {
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     }, {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     } ]
                   } ],
-                  &quot;name&quot; : &quot;cea-filter&quot;,
-                  &quot;modifiedDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                  &quot;description&quot; : &quot;Global filter for CEA widgets&quot;,
-                  &quot;modifiedBy&quot; : {
-                    &quot;uid&quot; : &quot;1&quot;,
-                    &quot;name&quot; : &quot;Test User&quot;
+                  "name" : "cea-filter",
+                  "modifiedDate" : "2024-02-01T22:19:19Z",
+                  "description" : "Global filter for CEA widgets",
+                  "modifiedBy" : {
+                    "uid" : "1",
+                    "name" : "Test User"
                   },
-                  &quot;id&quot; : &quot;65bc18e8f2073a4a469cd958&quot;,
-                  &quot;aid&quot; : &quot;11&quot;
+                  "id" : "65bc18e8f2073a4a469cd958",
+                  "aid" : "11"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_dashboard_filter(
+
             api_context_filter_request=api_context_filter_request,
+
             aid=aid,
+
             _headers=self.te_headers("create_dashboard_filter"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -184,8 +187,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_dashboard_filter(
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_filter", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -237,8 +243,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_dashboard_filter(
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_filter", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -293,8 +302,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_dashboard_filter(
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_filter", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -349,8 +361,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_dashboard_filter(
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_filter", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -405,8 +420,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_dashboard_filter(
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_filter", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -461,8 +479,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_dashboard_filter(
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_dashboard_filter", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -475,8 +496,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
         id = '65bc18e8f2073a4a469cd958'
         aid = '1234'
         response = self.api.delete_dashboard_filter_with_http_info(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_dashboard_filter"),
         )
         self.assertEqual(204, response.status_code)
@@ -510,8 +534,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_filter", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -532,8 +559,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_filter", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -557,8 +587,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_filter", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -582,8 +615,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_filter", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -607,8 +643,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_filter", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -632,8 +671,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_dashboard_filter", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -647,61 +689,64 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;createdDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                  &quot;createdBy&quot; : {
-                    &quot;uid&quot; : &quot;1&quot;,
-                    &quot;name&quot; : &quot;Test User&quot;
+                  "createdDate" : "2024-02-01T22:19:19Z",
+                  "createdBy" : {
+                    "uid" : "1",
+                    "name" : "Test User"
                   },
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;context&quot; : [ {
-                    &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                  "context" : [ {
+                    "dataSourceId" : "VIRTUAL_AGENT",
+                    "filters" : [ {
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     }, {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     } ]
                   }, {
-                    &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                    "dataSourceId" : "VIRTUAL_AGENT",
+                    "filters" : [ {
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     }, {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     } ]
                   } ],
-                  &quot;name&quot; : &quot;cea-filter&quot;,
-                  &quot;modifiedDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                  &quot;description&quot; : &quot;Global filter for CEA widgets&quot;,
-                  &quot;modifiedBy&quot; : {
-                    &quot;uid&quot; : &quot;1&quot;,
-                    &quot;name&quot; : &quot;Test User&quot;
+                  "name" : "cea-filter",
+                  "modifiedDate" : "2024-02-01T22:19:19Z",
+                  "description" : "Global filter for CEA widgets",
+                  "modifiedBy" : {
+                    "uid" : "1",
+                    "name" : "Test User"
                   },
-                  &quot;id&quot; : &quot;65bc18e8f2073a4a469cd958&quot;,
-                  &quot;aid&quot; : &quot;11&quot;
+                  "id" : "65bc18e8f2073a4a469cd958",
+                  "aid" : "11"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_dashboard_filter(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("get_dashboard_filter"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -734,8 +779,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_filter", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -756,8 +804,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_filter", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -781,8 +832,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_filter", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -806,8 +860,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_filter", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -831,8 +888,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_filter", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -856,8 +916,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_dashboard_filter(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboard_filter", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -871,113 +934,116 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;dashboardFilters&quot; : [ {
-                    &quot;createdDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                    &quot;createdBy&quot; : {
-                      &quot;uid&quot; : &quot;1&quot;,
-                      &quot;name&quot; : &quot;Test User&quot;
+                  "dashboardFilters" : [ {
+                    "createdDate" : "2024-02-01T22:19:19Z",
+                    "createdBy" : {
+                      "uid" : "1",
+                      "name" : "Test User"
                     },
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;context&quot; : [ {
-                      &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                      &quot;filters&quot; : [ {
-                        &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                        &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                        &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                    "context" : [ {
+                      "dataSourceId" : "VIRTUAL_AGENT",
+                      "filters" : [ {
+                        "filterId" : "TEST_LABEL",
+                        "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                        "values" : [ "45862", "59749" ]
                       }, {
-                        &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                        &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                        &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                        "filterId" : "TEST_LABEL",
+                        "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                        "values" : [ "45862", "59749" ]
                       } ]
                     }, {
-                      &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                      &quot;filters&quot; : [ {
-                        &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                        &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                        &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                      "dataSourceId" : "VIRTUAL_AGENT",
+                      "filters" : [ {
+                        "filterId" : "TEST_LABEL",
+                        "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                        "values" : [ "45862", "59749" ]
                       }, {
-                        &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                        &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                        &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                        "filterId" : "TEST_LABEL",
+                        "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                        "values" : [ "45862", "59749" ]
                       } ]
                     } ],
-                    &quot;name&quot; : &quot;cea-filter&quot;,
-                    &quot;modifiedDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                    &quot;description&quot; : &quot;Global filter for CEA widgets&quot;,
-                    &quot;modifiedBy&quot; : {
-                      &quot;uid&quot; : &quot;1&quot;,
-                      &quot;name&quot; : &quot;Test User&quot;
+                    "name" : "cea-filter",
+                    "modifiedDate" : "2024-02-01T22:19:19Z",
+                    "description" : "Global filter for CEA widgets",
+                    "modifiedBy" : {
+                      "uid" : "1",
+                      "name" : "Test User"
                     },
-                    &quot;id&quot; : &quot;65bc18e8f2073a4a469cd958&quot;,
-                    &quot;aid&quot; : &quot;11&quot;
+                    "id" : "65bc18e8f2073a4a469cd958",
+                    "aid" : "11"
                   }, {
-                    &quot;createdDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                    &quot;createdBy&quot; : {
-                      &quot;uid&quot; : &quot;1&quot;,
-                      &quot;name&quot; : &quot;Test User&quot;
+                    "createdDate" : "2024-02-01T22:19:19Z",
+                    "createdBy" : {
+                      "uid" : "1",
+                      "name" : "Test User"
                     },
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;context&quot; : [ {
-                      &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                      &quot;filters&quot; : [ {
-                        &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                        &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                        &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                    "context" : [ {
+                      "dataSourceId" : "VIRTUAL_AGENT",
+                      "filters" : [ {
+                        "filterId" : "TEST_LABEL",
+                        "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                        "values" : [ "45862", "59749" ]
                       }, {
-                        &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                        &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                        &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                        "filterId" : "TEST_LABEL",
+                        "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                        "values" : [ "45862", "59749" ]
                       } ]
                     }, {
-                      &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                      &quot;filters&quot; : [ {
-                        &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                        &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                        &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                      "dataSourceId" : "VIRTUAL_AGENT",
+                      "filters" : [ {
+                        "filterId" : "TEST_LABEL",
+                        "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                        "values" : [ "45862", "59749" ]
                       }, {
-                        &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                        &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                        &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                        "filterId" : "TEST_LABEL",
+                        "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                        "values" : [ "45862", "59749" ]
                       } ]
                     } ],
-                    &quot;name&quot; : &quot;cea-filter&quot;,
-                    &quot;modifiedDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                    &quot;description&quot; : &quot;Global filter for CEA widgets&quot;,
-                    &quot;modifiedBy&quot; : {
-                      &quot;uid&quot; : &quot;1&quot;,
-                      &quot;name&quot; : &quot;Test User&quot;
+                    "name" : "cea-filter",
+                    "modifiedDate" : "2024-02-01T22:19:19Z",
+                    "description" : "Global filter for CEA widgets",
+                    "modifiedBy" : {
+                      "uid" : "1",
+                      "name" : "Test User"
                     },
-                    &quot;id&quot; : &quot;65bc18e8f2073a4a469cd958&quot;,
-                    &quot;aid&quot; : &quot;11&quot;
+                    "id" : "65bc18e8f2073a4a469cd958",
+                    "aid" : "11"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_dashboards_filters(
+
             search_pattern=search_pattern,
+
             aid=aid,
+
             _headers=self.te_headers("get_dashboards_filters"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1010,8 +1076,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_dashboards_filters(
+
                 search_pattern=search_pattern,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboards_filters", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1032,8 +1101,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_dashboards_filters(
+
                 search_pattern=search_pattern,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboards_filters", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1057,8 +1129,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_dashboards_filters(
+
                 search_pattern=search_pattern,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboards_filters", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1082,8 +1157,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_dashboards_filters(
+
                 search_pattern=search_pattern,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboards_filters", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1107,8 +1185,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_dashboards_filters(
+
                 search_pattern=search_pattern,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboards_filters", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1132,8 +1213,11 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_dashboards_filters(
+
                 search_pattern=search_pattern,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_dashboards_filters", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1179,62 +1263,66 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;createdDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                  &quot;createdBy&quot; : {
-                    &quot;uid&quot; : &quot;1&quot;,
-                    &quot;name&quot; : &quot;Test User&quot;
+                  "createdDate" : "2024-02-01T22:19:19Z",
+                  "createdBy" : {
+                    "uid" : "1",
+                    "name" : "Test User"
                   },
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;context&quot; : [ {
-                    &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                  "context" : [ {
+                    "dataSourceId" : "VIRTUAL_AGENT",
+                    "filters" : [ {
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     }, {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     } ]
                   }, {
-                    &quot;dataSourceId&quot; : &quot;VIRTUAL_AGENT&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                    "dataSourceId" : "VIRTUAL_AGENT",
+                    "filters" : [ {
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     }, {
-                      &quot;filterId&quot; : &quot;TEST_LABEL&quot;,
-                      &quot;metricIds&quot; : [ &quot;WEB_PAGE_LOAD_COMPLETION_RATE&quot;, &quot;WEB_TTFB&quot;, &quot;WEB_AVAILABILITY&quot; ],
-                      &quot;values&quot; : [ &quot;45862&quot;, &quot;59749&quot; ]
+                      "filterId" : "TEST_LABEL",
+                      "metricIds" : [ "WEB_PAGE_LOAD_COMPLETION_RATE", "WEB_TTFB", "WEB_AVAILABILITY" ],
+                      "values" : [ "45862", "59749" ]
                     } ]
                   } ],
-                  &quot;name&quot; : &quot;cea-filter&quot;,
-                  &quot;modifiedDate&quot; : &quot;2024-02-01T22:19:19Z&quot;,
-                  &quot;description&quot; : &quot;Global filter for CEA widgets&quot;,
-                  &quot;modifiedBy&quot; : {
-                    &quot;uid&quot; : &quot;1&quot;,
-                    &quot;name&quot; : &quot;Test User&quot;
+                  "name" : "cea-filter",
+                  "modifiedDate" : "2024-02-01T22:19:19Z",
+                  "description" : "Global filter for CEA widgets",
+                  "modifiedBy" : {
+                    "uid" : "1",
+                    "name" : "Test User"
                   },
-                  &quot;id&quot; : &quot;65bc18e8f2073a4a469cd958&quot;,
-                  &quot;aid&quot; : &quot;11&quot;
+                  "id" : "65bc18e8f2073a4a469cd958",
+                  "aid" : "11"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_dashboard_filter(
+
             id=id,
+
             api_context_filter_request=api_context_filter_request,
+
             aid=aid,
+
             _headers=self.te_headers("update_dashboard_filter"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1299,9 +1387,13 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_dashboard_filter(
+
                 id=id,
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_filter", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1354,9 +1446,13 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_dashboard_filter(
+
                 id=id,
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_filter", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1412,9 +1508,13 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_dashboard_filter(
+
                 id=id,
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_filter", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1470,9 +1570,13 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_dashboard_filter(
+
                 id=id,
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_filter", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1528,9 +1632,13 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_dashboard_filter(
+
                 id=id,
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_filter", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1586,9 +1694,13 @@ class TestDashboardsFiltersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_dashboard_filter(
+
                 id=id,
+
                 api_context_filter_request=api_context_filter_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_dashboard_filter", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

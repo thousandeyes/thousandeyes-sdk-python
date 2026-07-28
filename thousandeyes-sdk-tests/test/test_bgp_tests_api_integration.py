@@ -76,117 +76,118 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
                 """
         bgp_test_request = thousandeyes_sdk.tests.models.BgpTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;liveShare&quot; : false,
-                  &quot;prefix&quot; : &quot;prefix&quot;,
-                  &quot;savedEvent&quot; : true,
-                  &quot;includeCoveredPrefixes&quot; : true,
-                  &quot;alertRules&quot; : [ {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                  "liveShare" : false,
+                  "prefix" : "prefix",
+                  "savedEvent" : true,
+                  "includeCoveredPrefixes" : true,
+                  "alertRules" : [ {
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   }, {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   } ],
-                  &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;type&quot; : &quot;bgp&quot;,
-                  &quot;usePublicBgp&quot; : true,
-                  &quot;enabled&quot; : true,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "description" : "ThousandEyes Test",
+                  "type" : "bgp",
+                  "usePublicBgp" : true,
+                  "enabled" : true,
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;sharedWithAccounts&quot; : [ {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "createdBy" : "user@user.com",
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "modifiedBy" : "user@user.com",
+                  "testId" : "281474976710706",
+                  "sharedWithAccounts" : [ {
+                    "name" : "Account name",
+                    "aid" : "1234"
                   }, {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Account name",
+                    "aid" : "1234"
                   } ],
-                  &quot;alertsEnabled&quot; : true,
-                  &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;monitors&quot; : [ {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                  "alertsEnabled" : true,
+                  "testName" : "ThousandEyes Test",
+                  "monitors" : [ {
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   }, {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_bgp_test(
+
             bgp_test_request=bgp_test_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("create_bgp_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -239,7 +240,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
                 """
         bgp_test_request = thousandeyes_sdk.tests.models.BgpTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -263,9 +263,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_bgp_test(
+
                 bgp_test_request=bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_bgp_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -318,7 +320,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
                 """
         bgp_test_request = thousandeyes_sdk.tests.models.BgpTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -330,9 +331,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_bgp_test(
+
                 bgp_test_request=bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_bgp_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -385,7 +388,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
                 """
         bgp_test_request = thousandeyes_sdk.tests.models.BgpTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -400,9 +402,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_bgp_test(
+
                 bgp_test_request=bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_bgp_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -455,7 +459,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
                 """
         bgp_test_request = thousandeyes_sdk.tests.models.BgpTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -470,9 +473,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_bgp_test(
+
                 bgp_test_request=bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_bgp_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -525,7 +530,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
                 """
         bgp_test_request = thousandeyes_sdk.tests.models.BgpTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -540,9 +544,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_bgp_test(
+
                 bgp_test_request=bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_bgp_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -595,7 +601,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
                 """
         bgp_test_request = thousandeyes_sdk.tests.models.BgpTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -610,9 +615,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_bgp_test(
+
                 bgp_test_request=bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_bgp_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -665,7 +672,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
                 """
         bgp_test_request = thousandeyes_sdk.tests.models.BgpTestRequest.from_json(request_body_json)
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -680,9 +686,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.create_bgp_test(
+
                 bgp_test_request=bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("create_bgp_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -695,8 +703,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         test_id = '202701'
         aid = '1234'
         response = self.api.delete_bgp_test_with_http_info(
+
             test_id=test_id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_bgp_test"),
         )
         self.assertEqual(204, response.status_code)
@@ -718,8 +729,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_bgp_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -743,8 +757,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_bgp_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -768,8 +785,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_bgp_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -793,8 +813,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_bgp_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -818,8 +841,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_bgp_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -843,8 +869,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.delete_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_bgp_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -856,117 +885,118 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         """Integration test for get_bgp_test success path"""
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;liveShare&quot; : false,
-                  &quot;prefix&quot; : &quot;prefix&quot;,
-                  &quot;savedEvent&quot; : true,
-                  &quot;includeCoveredPrefixes&quot; : true,
-                  &quot;alertRules&quot; : [ {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                  "liveShare" : false,
+                  "prefix" : "prefix",
+                  "savedEvent" : true,
+                  "includeCoveredPrefixes" : true,
+                  "alertRules" : [ {
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   }, {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   } ],
-                  &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;type&quot; : &quot;bgp&quot;,
-                  &quot;usePublicBgp&quot; : true,
-                  &quot;enabled&quot; : true,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "description" : "ThousandEyes Test",
+                  "type" : "bgp",
+                  "usePublicBgp" : true,
+                  "enabled" : true,
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;sharedWithAccounts&quot; : [ {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "createdBy" : "user@user.com",
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "modifiedBy" : "user@user.com",
+                  "testId" : "281474976710706",
+                  "sharedWithAccounts" : [ {
+                    "name" : "Account name",
+                    "aid" : "1234"
                   }, {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Account name",
+                    "aid" : "1234"
                   } ],
-                  &quot;alertsEnabled&quot; : true,
-                  &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;monitors&quot; : [ {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                  "alertsEnabled" : true,
+                  "testName" : "ThousandEyes Test",
+                  "monitors" : [ {
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   }, {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_bgp_test(
+
             test_id=test_id,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("get_bgp_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -976,7 +1006,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         """Integration test for get_bgp_test error path (HTTP 401)"""
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -988,9 +1017,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_bgp_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1000,7 +1031,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         """Integration test for get_bgp_test error path (HTTP 403)"""
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1015,9 +1045,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_bgp_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1027,7 +1059,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         """Integration test for get_bgp_test error path (HTTP 404)"""
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1042,9 +1073,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_bgp_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1054,7 +1087,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         """Integration test for get_bgp_test error path (HTTP 429)"""
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1069,9 +1101,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_bgp_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1081,7 +1115,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         """Integration test for get_bgp_test error path (HTTP 500)"""
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1096,9 +1129,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_bgp_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1108,7 +1143,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         """Integration test for get_bgp_test error path (HTTP 502)"""
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1123,9 +1157,11 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_bgp_test(
+
                 test_id=test_id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_bgp_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1138,90 +1174,92 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;tests&quot; : [ {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "tests" : [ {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;prefix&quot; : &quot;prefix&quot;,
-                    &quot;savedEvent&quot; : true,
-                    &quot;includeCoveredPrefixes&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;bgp&quot;,
-                    &quot;usePublicBgp&quot; : true,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "prefix" : "prefix",
+                    "savedEvent" : true,
+                    "includeCoveredPrefixes" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "bgp",
+                    "usePublicBgp" : true,
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   }, {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;prefix&quot; : &quot;prefix&quot;,
-                    &quot;savedEvent&quot; : true,
-                    &quot;includeCoveredPrefixes&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;bgp&quot;,
-                    &quot;usePublicBgp&quot; : true,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "prefix" : "prefix",
+                    "savedEvent" : true,
+                    "includeCoveredPrefixes" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "bgp",
+                    "usePublicBgp" : true,
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_bgp_tests(
+
             aid=aid,
+
             _headers=self.te_headers("get_bgp_tests"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1241,7 +1279,9 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_bgp_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_bgp_tests", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1264,7 +1304,9 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_bgp_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_bgp_tests", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1287,7 +1329,9 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_bgp_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_bgp_tests", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1310,7 +1354,9 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_bgp_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_bgp_tests", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1333,7 +1379,9 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_bgp_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_bgp_tests", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1356,7 +1404,9 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_bgp_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_bgp_tests", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1411,118 +1461,120 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         update_bgp_test_request = thousandeyes_sdk.tests.models.UpdateBgpTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;liveShare&quot; : false,
-                  &quot;prefix&quot; : &quot;prefix&quot;,
-                  &quot;savedEvent&quot; : true,
-                  &quot;includeCoveredPrefixes&quot; : true,
-                  &quot;alertRules&quot; : [ {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                  "liveShare" : false,
+                  "prefix" : "prefix",
+                  "savedEvent" : true,
+                  "includeCoveredPrefixes" : true,
+                  "alertRules" : [ {
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   }, {
-                    &quot;severity&quot; : &quot;major&quot;,
-                    &quot;expression&quot; : &quot;((hops((hopDelay &gt;&#x3D; 100 ms))))&quot;,
-                    &quot;alertType&quot; : &quot;http-server&quot;,
-                    &quot;roundsViolatingMode&quot; : &quot;exact&quot;,
-                    &quot;sensitivityLevel&quot; : &quot;medium&quot;,
-                    &quot;roundsViolatingOutOf&quot; : 5,
-                    &quot;roundsViolatingRequired&quot; : 2,
-                    &quot;isDefault&quot; : true,
-                    &quot;minimumSourcesPct&quot; : 99,
-                    &quot;ruleName&quot; : &quot;The End of the Internet&quot;,
-                    &quot;minimumSources&quot; : 10,
-                    &quot;ruleId&quot; : &quot;127094&quot;,
-                    &quot;direction&quot; : &quot;to-target&quot;
+                    "severity" : "major",
+                    "expression" : "((hops((hopDelay >= 100 ms))))",
+                    "alertType" : "http-server",
+                    "roundsViolatingMode" : "exact",
+                    "sensitivityLevel" : "medium",
+                    "roundsViolatingOutOf" : 5,
+                    "roundsViolatingRequired" : 2,
+                    "isDefault" : true,
+                    "minimumSourcesPct" : 99,
+                    "ruleName" : "The End of the Internet",
+                    "minimumSources" : 10,
+                    "ruleId" : "127094",
+                    "direction" : "to-target"
                   } ],
-                  &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;type&quot; : &quot;bgp&quot;,
-                  &quot;usePublicBgp&quot; : true,
-                  &quot;enabled&quot; : true,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "description" : "ThousandEyes Test",
+                  "type" : "bgp",
+                  "usePublicBgp" : true,
+                  "enabled" : true,
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                  "tags" : [ {
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   }, {
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;value&quot; : &quot;San Francisco&quot;,
-                    &quot;key&quot; : &quot;Location&quot;
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "value" : "San Francisco",
+                    "key" : "Location"
                   } ],
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;sharedWithAccounts&quot; : [ {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "createdBy" : "user@user.com",
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "modifiedBy" : "user@user.com",
+                  "testId" : "281474976710706",
+                  "sharedWithAccounts" : [ {
+                    "name" : "Account name",
+                    "aid" : "1234"
                   }, {
-                    &quot;name&quot; : &quot;Account name&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Account name",
+                    "aid" : "1234"
                   } ],
-                  &quot;alertsEnabled&quot; : true,
-                  &quot;testName&quot; : &quot;ThousandEyes Test&quot;,
-                  &quot;monitors&quot; : [ {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                  "alertsEnabled" : true,
+                  "testName" : "ThousandEyes Test",
+                  "monitors" : [ {
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   }, {
-                    &quot;monitorType&quot; : &quot;public&quot;,
-                    &quot;monitorId&quot; : &quot;1234&quot;,
-                    &quot;monitorName&quot; : &quot;Seattle, WA&quot;,
-                    &quot;ipAddress&quot; : &quot;4.69.184.193&quot;,
-                    &quot;countryId&quot; : &quot;GB&quot;,
-                    &quot;network&quot; : &quot;Level 3 Communications, Inc. (AS 3356)&quot;
+                    "monitorType" : "public",
+                    "monitorId" : "1234",
+                    "monitorName" : "Seattle, WA",
+                    "ipAddress" : "4.69.184.193",
+                    "countryId" : "GB",
+                    "network" : "Level 3 Communications, Inc. (AS 3356)"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_bgp_test(
+
             test_id=test_id,
+
             update_bgp_test_request=update_bgp_test_request,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("update_bgp_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1575,7 +1627,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         update_bgp_test_request = thousandeyes_sdk.tests.models.UpdateBgpTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1599,10 +1650,13 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_bgp_test(
+
                 test_id=test_id,
+
                 update_bgp_test_request=update_bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_bgp_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1655,7 +1709,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         update_bgp_test_request = thousandeyes_sdk.tests.models.UpdateBgpTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1667,10 +1720,13 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_bgp_test(
+
                 test_id=test_id,
+
                 update_bgp_test_request=update_bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_bgp_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1723,7 +1779,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         update_bgp_test_request = thousandeyes_sdk.tests.models.UpdateBgpTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1738,10 +1793,13 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_bgp_test(
+
                 test_id=test_id,
+
                 update_bgp_test_request=update_bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_bgp_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1794,7 +1852,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         update_bgp_test_request = thousandeyes_sdk.tests.models.UpdateBgpTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1809,10 +1866,13 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_bgp_test(
+
                 test_id=test_id,
+
                 update_bgp_test_request=update_bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_bgp_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1865,7 +1925,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         update_bgp_test_request = thousandeyes_sdk.tests.models.UpdateBgpTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1880,10 +1939,13 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_bgp_test(
+
                 test_id=test_id,
+
                 update_bgp_test_request=update_bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_bgp_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1936,7 +1998,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         update_bgp_test_request = thousandeyes_sdk.tests.models.UpdateBgpTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1951,10 +2012,13 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_bgp_test(
+
                 test_id=test_id,
+
                 update_bgp_test_request=update_bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_bgp_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2007,7 +2071,6 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
         update_bgp_test_request = thousandeyes_sdk.tests.models.UpdateBgpTestRequest.from_json(request_body_json)
         test_id = '202701'
         aid = '1234'
-        expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -2022,10 +2085,13 @@ class TestBGPTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.update_bgp_test(
+
                 test_id=test_id,
+
                 update_bgp_test_request=update_bgp_test_request,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("update_bgp_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

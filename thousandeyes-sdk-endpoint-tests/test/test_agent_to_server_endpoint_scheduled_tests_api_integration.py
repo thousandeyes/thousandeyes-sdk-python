@@ -54,59 +54,62 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;server&quot; : &quot;www.example.com&quot;,
-                  &quot;isSavedEvent&quot; : false,
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter&quot;
+                  "server" : "www.example.com",
+                  "isSavedEvent" : false,
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;isPrioritized&quot; : false,
-                  &quot;networkMeasurements&quot; : true,
-                  &quot;type&quot; : &quot;agent-to-server&quot;,
-                  &quot;tcpProbeMode&quot; : &quot;auto&quot;,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "isPrioritized" : false,
+                  "networkMeasurements" : true,
+                  "type" : "agent-to-server",
+                  "tcpProbeMode" : "auto",
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;protocol&quot; : &quot;icmp&quot;,
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;ipVersion&quot; : &quot;V4_ONLY&quot;,
-                  &quot;port&quot; : 443,
-                  &quot;isEnabled&quot; : true,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;interval&quot; : 60,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;aid&quot; : &quot;1234&quot;,
-                  &quot;agentSelectorConfig&quot; : {
-                    &quot;agentSelectorType&quot; : &quot;all-agents&quot;,
-                    &quot;maxMachines&quot; : 25
+                  "protocol" : "icmp",
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "ipVersion" : "V4_ONLY",
+                  "port" : 443,
+                  "isEnabled" : true,
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "interval" : 60,
+                  "testId" : "281474976710706",
+                  "aid" : "1234",
+                  "agentSelectorConfig" : {
+                    "agentSelectorType" : "all-agents",
+                    "maxMachines" : 25
                   },
-                  &quot;hasPathTraceInSession&quot; : true,
-                  &quot;testName&quot; : &quot;Test name&quot;
+                  "hasPathTraceInSession" : true,
+                  "testName" : "Test name"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_agent_to_server_endpoint_scheduled_test(
+
             endpoint_agent_to_server_test_request=endpoint_agent_to_server_test_request,
+
             aid=aid,
+
             _headers=self.te_headers("create_agent_to_server_endpoint_scheduled_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -158,8 +161,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_agent_to_server_endpoint_scheduled_test(
+
                 endpoint_agent_to_server_test_request=endpoint_agent_to_server_test_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_agent_to_server_endpoint_scheduled_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -199,8 +205,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_agent_to_server_endpoint_scheduled_test(
+
                 endpoint_agent_to_server_test_request=endpoint_agent_to_server_test_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_agent_to_server_endpoint_scheduled_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -243,8 +252,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_agent_to_server_endpoint_scheduled_test(
+
                 endpoint_agent_to_server_test_request=endpoint_agent_to_server_test_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_agent_to_server_endpoint_scheduled_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -287,8 +299,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.create_agent_to_server_endpoint_scheduled_test(
+
                 endpoint_agent_to_server_test_request=endpoint_agent_to_server_test_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_agent_to_server_endpoint_scheduled_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -331,8 +346,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_agent_to_server_endpoint_scheduled_test(
+
                 endpoint_agent_to_server_test_request=endpoint_agent_to_server_test_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_agent_to_server_endpoint_scheduled_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -375,8 +393,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_agent_to_server_endpoint_scheduled_test(
+
                 endpoint_agent_to_server_test_request=endpoint_agent_to_server_test_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_agent_to_server_endpoint_scheduled_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -419,8 +440,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.create_agent_to_server_endpoint_scheduled_test(
+
                 endpoint_agent_to_server_test_request=endpoint_agent_to_server_test_request,
+
                 aid=aid,
+
                 _headers=self.te_headers("create_agent_to_server_endpoint_scheduled_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -433,8 +457,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
         test_id = '584739201'
         aid = '1234'
         response = self.api.delete_agent_to_server_endpoint_scheduled_test_with_http_info(
+
             test_id=test_id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_agent_to_server_endpoint_scheduled_test"),
         )
         self.assertEqual(204, response.status_code)
@@ -468,8 +495,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.delete_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent_to_server_endpoint_scheduled_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -490,8 +520,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent_to_server_endpoint_scheduled_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -515,8 +548,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent_to_server_endpoint_scheduled_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -540,8 +576,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent_to_server_endpoint_scheduled_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -565,8 +604,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent_to_server_endpoint_scheduled_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -590,8 +632,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent_to_server_endpoint_scheduled_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -615,8 +660,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.delete_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_agent_to_server_endpoint_scheduled_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -630,59 +678,62 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;server&quot; : &quot;www.example.com&quot;,
-                  &quot;isSavedEvent&quot; : false,
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter&quot;
+                  "server" : "www.example.com",
+                  "isSavedEvent" : false,
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;isPrioritized&quot; : false,
-                  &quot;networkMeasurements&quot; : true,
-                  &quot;type&quot; : &quot;agent-to-server&quot;,
-                  &quot;tcpProbeMode&quot; : &quot;auto&quot;,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "isPrioritized" : false,
+                  "networkMeasurements" : true,
+                  "type" : "agent-to-server",
+                  "tcpProbeMode" : "auto",
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;protocol&quot; : &quot;icmp&quot;,
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;ipVersion&quot; : &quot;V4_ONLY&quot;,
-                  &quot;port&quot; : 443,
-                  &quot;isEnabled&quot; : true,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;interval&quot; : 60,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;aid&quot; : &quot;1234&quot;,
-                  &quot;agentSelectorConfig&quot; : {
-                    &quot;agentSelectorType&quot; : &quot;all-agents&quot;,
-                    &quot;maxMachines&quot; : 25
+                  "protocol" : "icmp",
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "ipVersion" : "V4_ONLY",
+                  "port" : 443,
+                  "isEnabled" : true,
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "interval" : 60,
+                  "testId" : "281474976710706",
+                  "aid" : "1234",
+                  "agentSelectorConfig" : {
+                    "agentSelectorType" : "all-agents",
+                    "maxMachines" : 25
                   },
-                  &quot;hasPathTraceInSession&quot; : true,
-                  &quot;testName&quot; : &quot;Test name&quot;
+                  "hasPathTraceInSession" : true,
+                  "testName" : "Test name"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_agent_to_server_endpoint_scheduled_test(
+
             test_id=test_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -703,8 +754,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -728,8 +782,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -753,8 +810,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -778,8 +838,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -803,8 +866,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -828,8 +894,11 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -842,120 +911,122 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;tests&quot; : [ {
-                    &quot;server&quot; : &quot;www.example.com&quot;,
-                    &quot;isSavedEvent&quot; : false,
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter&quot;
+                  "tests" : [ {
+                    "server" : "www.example.com",
+                    "isSavedEvent" : false,
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;isPrioritized&quot; : false,
-                    &quot;networkMeasurements&quot; : true,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;tcpProbeMode&quot; : &quot;auto&quot;,
-                    &quot;labels&quot; : [ {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                    "isPrioritized" : false,
+                    "networkMeasurements" : true,
+                    "type" : "agent-to-server",
+                    "tcpProbeMode" : "auto",
+                    "labels" : [ {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     }, {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     } ],
-                    &quot;protocol&quot; : &quot;icmp&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;ipVersion&quot; : &quot;V4_ONLY&quot;,
-                    &quot;port&quot; : 443,
-                    &quot;isEnabled&quot; : true,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;agentSelectorConfig&quot; : {
-                      &quot;agentSelectorType&quot; : &quot;all-agents&quot;,
-                      &quot;maxMachines&quot; : 25
+                    "protocol" : "icmp",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "ipVersion" : "V4_ONLY",
+                    "port" : 443,
+                    "isEnabled" : true,
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "testId" : "281474976710706",
+                    "aid" : "1234",
+                    "agentSelectorConfig" : {
+                      "agentSelectorType" : "all-agents",
+                      "maxMachines" : 25
                     },
-                    &quot;hasPathTraceInSession&quot; : true,
-                    &quot;testName&quot; : &quot;Test name&quot;
+                    "hasPathTraceInSession" : true,
+                    "testName" : "Test name"
                   }, {
-                    &quot;server&quot; : &quot;www.example.com&quot;,
-                    &quot;isSavedEvent&quot; : false,
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter&quot;
+                    "server" : "www.example.com",
+                    "isSavedEvent" : false,
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;isPrioritized&quot; : false,
-                    &quot;networkMeasurements&quot; : true,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;tcpProbeMode&quot; : &quot;auto&quot;,
-                    &quot;labels&quot; : [ {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                    "isPrioritized" : false,
+                    "networkMeasurements" : true,
+                    "type" : "agent-to-server",
+                    "tcpProbeMode" : "auto",
+                    "labels" : [ {
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     }, {
-                      &quot;labelId&quot; : &quot;961&quot;,
-                      &quot;name&quot; : &quot;Artem label&quot;,
-                      &quot;isBuiltin&quot; : false
+                      "labelId" : "961",
+                      "name" : "Artem label",
+                      "isBuiltin" : false
                     } ],
-                    &quot;protocol&quot; : &quot;icmp&quot;,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;ipVersion&quot; : &quot;V4_ONLY&quot;,
-                    &quot;port&quot; : 443,
-                    &quot;isEnabled&quot; : true,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;aid&quot; : &quot;1234&quot;,
-                    &quot;agentSelectorConfig&quot; : {
-                      &quot;agentSelectorType&quot; : &quot;all-agents&quot;,
-                      &quot;maxMachines&quot; : 25
+                    "protocol" : "icmp",
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "ipVersion" : "V4_ONLY",
+                    "port" : 443,
+                    "isEnabled" : true,
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "testId" : "281474976710706",
+                    "aid" : "1234",
+                    "agentSelectorConfig" : {
+                      "agentSelectorType" : "all-agents",
+                      "maxMachines" : 25
                     },
-                    &quot;hasPathTraceInSession&quot; : true,
-                    &quot;testName&quot; : &quot;Test name&quot;
+                    "hasPathTraceInSession" : true,
+                    "testName" : "Test name"
                   } ],
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_agent_to_server_endpoint_scheduled_tests(
+
             aid=aid,
+
             _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_tests"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -975,7 +1046,9 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_tests", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -998,7 +1071,9 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_tests", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1021,7 +1096,9 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_tests", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1044,7 +1121,9 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_tests", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1067,7 +1146,9 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_agent_to_server_endpoint_scheduled_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_agent_to_server_endpoint_scheduled_tests", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1095,60 +1176,64 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;server&quot; : &quot;www.example.com&quot;,
-                  &quot;isSavedEvent&quot; : false,
-                  &quot;_links&quot; : {
-                    &quot;testResults&quot; : [ {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter&quot;
+                  "server" : "www.example.com",
+                  "isSavedEvent" : false,
+                  "_links" : {
+                    "testResults" : [ {
+                      "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
                     }, {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis&quot;
+                      "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
                     } ],
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;isPrioritized&quot; : false,
-                  &quot;networkMeasurements&quot; : true,
-                  &quot;type&quot; : &quot;agent-to-server&quot;,
-                  &quot;tcpProbeMode&quot; : &quot;auto&quot;,
-                  &quot;labels&quot; : [ {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                  "isPrioritized" : false,
+                  "networkMeasurements" : true,
+                  "type" : "agent-to-server",
+                  "tcpProbeMode" : "auto",
+                  "labels" : [ {
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   }, {
-                    &quot;labelId&quot; : &quot;961&quot;,
-                    &quot;name&quot; : &quot;Artem label&quot;,
-                    &quot;isBuiltin&quot; : false
+                    "labelId" : "961",
+                    "name" : "Artem label",
+                    "isBuiltin" : false
                   } ],
-                  &quot;protocol&quot; : &quot;icmp&quot;,
-                  &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;ipVersion&quot; : &quot;V4_ONLY&quot;,
-                  &quot;port&quot; : 443,
-                  &quot;isEnabled&quot; : true,
-                  &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                  &quot;interval&quot; : 60,
-                  &quot;testId&quot; : &quot;281474976710706&quot;,
-                  &quot;aid&quot; : &quot;1234&quot;,
-                  &quot;agentSelectorConfig&quot; : {
-                    &quot;agentSelectorType&quot; : &quot;all-agents&quot;,
-                    &quot;maxMachines&quot; : 25
+                  "protocol" : "icmp",
+                  "createdDate" : "2022-07-17T22:00:54Z",
+                  "ipVersion" : "V4_ONLY",
+                  "port" : 443,
+                  "isEnabled" : true,
+                  "modifiedDate" : "2022-07-17T22:00:54Z",
+                  "interval" : 60,
+                  "testId" : "281474976710706",
+                  "aid" : "1234",
+                  "agentSelectorConfig" : {
+                    "agentSelectorType" : "all-agents",
+                    "maxMachines" : 25
                   },
-                  &quot;hasPathTraceInSession&quot; : true,
-                  &quot;testName&quot; : &quot;Test name&quot;
+                  "hasPathTraceInSession" : true,
+                  "testName" : "Test name"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_agent_to_server_endpoint_scheduled_test(
+
             test_id=test_id,
+
             endpoint_network_test_update=endpoint_network_test_update,
+
             aid=aid,
+
             _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1195,9 +1280,13 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 endpoint_network_test_update=endpoint_network_test_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1232,9 +1321,13 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 endpoint_network_test_update=endpoint_network_test_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1272,9 +1365,13 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 endpoint_network_test_update=endpoint_network_test_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1312,9 +1409,13 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 endpoint_network_test_update=endpoint_network_test_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1352,9 +1453,13 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 endpoint_network_test_update=endpoint_network_test_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1392,9 +1497,13 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 endpoint_network_test_update=endpoint_network_test_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1432,9 +1541,13 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.update_agent_to_server_endpoint_scheduled_test(
+
                 test_id=test_id,
+
                 endpoint_network_test_update=endpoint_network_test_update,
+
                 aid=aid,
+
                 _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

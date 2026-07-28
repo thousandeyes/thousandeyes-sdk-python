@@ -34,36 +34,38 @@ class TestEndpointProxiesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;proxies&quot; : [ {
-                    &quot;testIds&quot; : [ &quot;9923667&quot;, &quot;9923667&quot; ],
-                    &quot;agentIds&quot; : [ &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;, &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot; ],
-                    &quot;pac&quot; : &quot;https://example.com/proxy.pac&quot;,
-                    &quot;port&quot; : 8080,
-                    &quot;name&quot; : &quot;Local Mitmproxy&quot;,
-                    &quot;host&quot; : &quot;localhost&quot;,
-                    &quot;type&quot; : &quot;static&quot;,
-                    &quot;userName&quot; : &quot;endpoint-proxy-user&quot;,
-                    &quot;authType&quot; : &quot;none&quot;,
-                    &quot;bypassList&quot; : &quot;localhost,127.0.0.1&quot;,
-                    &quot;proxyId&quot; : &quot;101498&quot;
+                  "proxies" : [ {
+                    "testIds" : [ "9923667", "9923667" ],
+                    "agentIds" : [ "861b7557-cd57-4bbb-b648-00bddf88ef49", "861b7557-cd57-4bbb-b648-00bddf88ef49" ],
+                    "pac" : "https://example.com/proxy.pac",
+                    "port" : 8080,
+                    "name" : "Local Mitmproxy",
+                    "host" : "localhost",
+                    "type" : "static",
+                    "userName" : "endpoint-proxy-user",
+                    "authType" : "none",
+                    "bypassList" : "localhost,127.0.0.1",
+                    "proxyId" : "101498"
                   }, {
-                    &quot;testIds&quot; : [ &quot;9923667&quot;, &quot;9923667&quot; ],
-                    &quot;agentIds&quot; : [ &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot;, &quot;861b7557-cd57-4bbb-b648-00bddf88ef49&quot; ],
-                    &quot;pac&quot; : &quot;https://example.com/proxy.pac&quot;,
-                    &quot;port&quot; : 8080,
-                    &quot;name&quot; : &quot;Local Mitmproxy&quot;,
-                    &quot;host&quot; : &quot;localhost&quot;,
-                    &quot;type&quot; : &quot;static&quot;,
-                    &quot;userName&quot; : &quot;endpoint-proxy-user&quot;,
-                    &quot;authType&quot; : &quot;none&quot;,
-                    &quot;bypassList&quot; : &quot;localhost,127.0.0.1&quot;,
-                    &quot;proxyId&quot; : &quot;101498&quot;
+                    "testIds" : [ "9923667", "9923667" ],
+                    "agentIds" : [ "861b7557-cd57-4bbb-b648-00bddf88ef49", "861b7557-cd57-4bbb-b648-00bddf88ef49" ],
+                    "pac" : "https://example.com/proxy.pac",
+                    "port" : 8080,
+                    "name" : "Local Mitmproxy",
+                    "host" : "localhost",
+                    "type" : "static",
+                    "userName" : "endpoint-proxy-user",
+                    "authType" : "none",
+                    "bypassList" : "localhost,127.0.0.1",
+                    "proxyId" : "101498"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_endpoint_proxies(
+
             aid=aid,
+
             _headers=self.te_headers("get_endpoint_proxies"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -83,7 +85,9 @@ class TestEndpointProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_endpoint_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_proxies", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -106,7 +110,9 @@ class TestEndpointProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_endpoint_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_proxies", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -129,7 +135,9 @@ class TestEndpointProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_endpoint_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_proxies", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -152,7 +160,9 @@ class TestEndpointProxiesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_endpoint_proxies(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_proxies", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

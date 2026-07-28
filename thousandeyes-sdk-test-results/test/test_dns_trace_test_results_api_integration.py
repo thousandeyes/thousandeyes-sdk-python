@@ -39,143 +39,150 @@ class TestDNSTraceTestResultsApiIntegration(IntegrationTestBase):
         cursor = 'cursor_example'
         response_body_json = """
                 {
-                  &quot;test&quot; : {
-                    &quot;_links&quot; : {
-                      &quot;testResults&quot; : [ {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/network&quot;
+                  "test" : {
+                    "_links" : {
+                      "testResults" : [ {
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/network"
                       }, {
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis&quot;
+                        "href" : "https://api.thousandeyes.com/v7/test-results/281474976710706/path-vis"
                       } ],
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;liveShare&quot; : false,
-                    &quot;savedEvent&quot; : true,
-                    &quot;description&quot; : &quot;ThousandEyes Test&quot;,
-                    &quot;type&quot; : &quot;agent-to-server&quot;,
-                    &quot;enabled&quot; : true,
-                    &quot;createdDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;createdBy&quot; : &quot;user@user.com&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;interval&quot; : 60,
-                    &quot;modifiedBy&quot; : &quot;user@user.com&quot;,
-                    &quot;testId&quot; : &quot;281474976710706&quot;,
-                    &quot;alertsEnabled&quot; : true,
-                    &quot;testName&quot; : &quot;ThousandEyes Test&quot;
+                    "liveShare" : false,
+                    "savedEvent" : true,
+                    "description" : "ThousandEyes Test",
+                    "type" : "agent-to-server",
+                    "enabled" : true,
+                    "createdDate" : "2022-07-17T22:00:54Z",
+                    "createdBy" : "user@user.com",
+                    "modifiedDate" : "2022-07-17T22:00:54Z",
+                    "interval" : 60,
+                    "modifiedBy" : "user@user.com",
+                    "testId" : "281474976710706",
+                    "alertsEnabled" : true,
+                    "testName" : "ThousandEyes Test"
                   },
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;previous&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "previous" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;results&quot; : [ {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                  "results" : [ {
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;finalServerQueried&quot; : &quot;a1.verisigndns.com.&quot;,
-                    &quot;finalQueryTime&quot; : 178,
-                    &quot;queries&quot; : 3,
-                    &quot;failedQueries&quot; : 0,
-                    &quot;output&quot; : &quot;com.\\t172800\\tIN\\tNS\\ta.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tf.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tc.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tb.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\td.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\te.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tg.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tm.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\th.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tj.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\ti.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tl.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tk.gtld-servers.net.\\n;; Received 498 bytes from 199.7.91.13(d.root-servers.net.) in 119 ms\\n\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta1.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta2.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta3.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\tu1.verisigndns.com.\\n;; Received 266 bytes from 192.5.6.30(a.gtld-servers.net.) in 178 ms\\n\\napp.thousandeyes.com.\\t300\\tIN\\tCNAME\\tweb.thousandeyes.com.\\nweb.thousandeyes.com.\\t300\\tIN\\tCNAME\\tlb-app.thousandeyes.com.\\nlb-app.thousandeyes.com.\\t3600\\tIN\\tA\\t208.185.7.120\\n;; Received 173 bytes from 209.112.113.33(a1.verisigndns.com.) in 178 ms\\n\\n&quot;,
-                    &quot;mappings&quot; : &quot;208.185.7.120&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;errorDetails&quot; : &quot;Connection error&quot;
+                    "finalServerQueried" : "a1.verisigndns.com.",
+                    "finalQueryTime" : 178,
+                    "queries" : 3,
+                    "failedQueries" : 0,
+                    "output" : "com.\\t172800\\tIN\\tNS\\ta.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tf.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tc.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tb.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\td.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\te.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tg.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tm.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\th.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tj.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\ti.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tl.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tk.gtld-servers.net.\\n;; Received 498 bytes from 199.7.91.13(d.root-servers.net.) in 119 ms\\n\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta1.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta2.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta3.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\tu1.verisigndns.com.\\n;; Received 266 bytes from 192.5.6.30(a.gtld-servers.net.) in 178 ms\\n\\napp.thousandeyes.com.\\t300\\tIN\\tCNAME\\tweb.thousandeyes.com.\\nweb.thousandeyes.com.\\t300\\tIN\\tCNAME\\tlb-app.thousandeyes.com.\\nlb-app.thousandeyes.com.\\t3600\\tIN\\tA\\t208.185.7.120\\n;; Received 173 bytes from 209.112.113.33(a1.verisigndns.com.) in 178 ms\\n\\n",
+                    "mappings" : "208.185.7.120",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "roundId" : 1384309800,
+                    "errorDetails" : "Connection error"
                   }, {
-                    &quot;date&quot; : &quot;2022-07-17T22:00:54Z&quot;,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "date" : "2022-07-17T22:00:54Z",
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;_links&quot; : {
-                      &quot;appLink&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;finalServerQueried&quot; : &quot;a1.verisigndns.com.&quot;,
-                    &quot;finalQueryTime&quot; : 178,
-                    &quot;queries&quot; : 3,
-                    &quot;failedQueries&quot; : 0,
-                    &quot;output&quot; : &quot;com.\\t172800\\tIN\\tNS\\ta.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tf.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tc.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tb.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\td.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\te.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tg.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tm.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\th.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tj.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\ti.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tl.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tk.gtld-servers.net.\\n;; Received 498 bytes from 199.7.91.13(d.root-servers.net.) in 119 ms\\n\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta1.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta2.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta3.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\tu1.verisigndns.com.\\n;; Received 266 bytes from 192.5.6.30(a.gtld-servers.net.) in 178 ms\\n\\napp.thousandeyes.com.\\t300\\tIN\\tCNAME\\tweb.thousandeyes.com.\\nweb.thousandeyes.com.\\t300\\tIN\\tCNAME\\tlb-app.thousandeyes.com.\\nlb-app.thousandeyes.com.\\t3600\\tIN\\tA\\t208.185.7.120\\n;; Received 173 bytes from 209.112.113.33(a1.verisigndns.com.) in 178 ms\\n\\n&quot;,
-                    &quot;mappings&quot; : &quot;208.185.7.120&quot;,
-                    &quot;startTime&quot; : 1384309800,
-                    &quot;endTime&quot; : 1384309800,
-                    &quot;roundId&quot; : 1384309800,
-                    &quot;errorDetails&quot; : &quot;Connection error&quot;
+                    "finalServerQueried" : "a1.verisigndns.com.",
+                    "finalQueryTime" : 178,
+                    "queries" : 3,
+                    "failedQueries" : 0,
+                    "output" : "com.\\t172800\\tIN\\tNS\\ta.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tf.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tc.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tb.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\td.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\te.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tg.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tm.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\th.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tj.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\ti.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tl.gtld-servers.net.\\ncom.\\t172800\\tIN\\tNS\\tk.gtld-servers.net.\\n;; Received 498 bytes from 199.7.91.13(d.root-servers.net.) in 119 ms\\n\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta1.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta2.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\ta3.verisigndns.com.\\nthousandeyes.com.\\t172800\\tIN\\tNS\\tu1.verisigndns.com.\\n;; Received 266 bytes from 192.5.6.30(a.gtld-servers.net.) in 178 ms\\n\\napp.thousandeyes.com.\\t300\\tIN\\tCNAME\\tweb.thousandeyes.com.\\nweb.thousandeyes.com.\\t300\\tIN\\tCNAME\\tlb-app.thousandeyes.com.\\nlb-app.thousandeyes.com.\\t3600\\tIN\\tA\\t208.185.7.120\\n;; Received 173 bytes from 209.112.113.33(a1.verisigndns.com.) in 178 ms\\n\\n",
+                    "mappings" : "208.185.7.120",
+                    "startTime" : 1384309800,
+                    "endTime" : 1384309800,
+                    "roundId" : 1384309800,
+                    "errorDetails" : "Connection error"
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_test_dns_trace_results(
+
             test_id=test_id,
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             cursor=cursor,
+
             _headers=self.te_headers("get_test_dns_trace_results"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -212,12 +219,19 @@ class TestDNSTraceTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_test_dns_trace_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_dns_trace_results", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -242,12 +256,19 @@ class TestDNSTraceTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_test_dns_trace_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_dns_trace_results", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -275,12 +296,19 @@ class TestDNSTraceTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_test_dns_trace_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_dns_trace_results", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -308,12 +336,19 @@ class TestDNSTraceTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_test_dns_trace_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_dns_trace_results", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -341,12 +376,19 @@ class TestDNSTraceTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_test_dns_trace_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_dns_trace_results", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -374,12 +416,19 @@ class TestDNSTraceTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_test_dns_trace_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_dns_trace_results", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -407,12 +456,19 @@ class TestDNSTraceTestResultsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_test_dns_trace_results(
+
                 test_id=test_id,
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 cursor=cursor,
+
                 _headers=self.te_headers("get_test_dns_trace_results", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

@@ -47,71 +47,74 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;providers&quot; : [ {
-                    &quot;interfacesCount&quot; : 15,
-                    &quot;locationsCount&quot; : 50,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "providers" : [ {
+                    "interfacesCount" : 15,
+                    "locationsCount" : 50,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;countriesCount&quot; : 2,
-                    &quot;dataType&quot; : &quot;Application&quot;,
-                    &quot;id&quot; : &quot;85602a0a-54a7-4e97-946e-67492ef1fa26&quot;,
-                    &quot;region&quot; : &quot;North America&quot;,
-                    &quot;asnsCount&quot; : 10,
-                    &quot;included&quot; : true,
-                    &quot;providerName&quot; : &quot;Amazon Web Services&quot;,
-                    &quot;providerType&quot; : &quot;IAAS&quot;
+                    "countriesCount" : 2,
+                    "dataType" : "Application",
+                    "id" : "85602a0a-54a7-4e97-946e-67492ef1fa26",
+                    "region" : "North America",
+                    "asnsCount" : 10,
+                    "included" : true,
+                    "providerName" : "Amazon Web Services",
+                    "providerType" : "IAAS"
                   }, {
-                    &quot;interfacesCount&quot; : 15,
-                    &quot;locationsCount&quot; : 50,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "interfacesCount" : 15,
+                    "locationsCount" : 50,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;countriesCount&quot; : 2,
-                    &quot;dataType&quot; : &quot;Application&quot;,
-                    &quot;id&quot; : &quot;85602a0a-54a7-4e97-946e-67492ef1fa26&quot;,
-                    &quot;region&quot; : &quot;North America&quot;,
-                    &quot;asnsCount&quot; : 10,
-                    &quot;included&quot; : true,
-                    &quot;providerName&quot; : &quot;Amazon Web Services&quot;,
-                    &quot;providerType&quot; : &quot;IAAS&quot;
+                    "countriesCount" : 2,
+                    "dataType" : "Application",
+                    "id" : "85602a0a-54a7-4e97-946e-67492ef1fa26",
+                    "region" : "North America",
+                    "asnsCount" : 10,
+                    "included" : true,
+                    "providerName" : "Amazon Web Services",
+                    "providerType" : "IAAS"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.filter_catalog_providers(
+
             api_catalog_provider_filter=api_catalog_provider_filter,
+
             aid=aid,
+
             _headers=self.te_headers("filter_catalog_providers"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -156,8 +159,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.filter_catalog_providers(
+
                 api_catalog_provider_filter=api_catalog_provider_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_catalog_providers", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -190,8 +196,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.filter_catalog_providers(
+
                 api_catalog_provider_filter=api_catalog_provider_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_catalog_providers", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -227,8 +236,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.filter_catalog_providers(
+
                 api_catalog_provider_filter=api_catalog_provider_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_catalog_providers", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -264,8 +276,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.filter_catalog_providers(
+
                 api_catalog_provider_filter=api_catalog_provider_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_catalog_providers", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -301,8 +316,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.filter_catalog_providers(
+
                 api_catalog_provider_filter=api_catalog_provider_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_catalog_providers", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -338,8 +356,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.filter_catalog_providers(
+
                 api_catalog_provider_filter=api_catalog_provider_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_catalog_providers", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -375,8 +396,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.filter_catalog_providers(
+
                 api_catalog_provider_filter=api_catalog_provider_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_catalog_providers", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -390,43 +414,46 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;dataType&quot; : &quot;Application&quot;,
-                  &quot;asns&quot; : [ {
-                    &quot;name&quot; : &quot;LVLT-1 - Level 3 Communications, Inc.&quot;,
-                    &quot;id&quot; : 1
+                  "dataType" : "Application",
+                  "asns" : [ {
+                    "name" : "LVLT-1 - Level 3 Communications, Inc.",
+                    "id" : 1
                   }, {
-                    &quot;name&quot; : &quot;LVLT-1 - Level 3 Communications, Inc.&quot;,
-                    &quot;id&quot; : 1
+                    "name" : "LVLT-1 - Level 3 Communications, Inc.",
+                    "id" : 1
                   } ],
-                  &quot;locations&quot; : [ {
-                    &quot;interfacesCount&quot; : 5,
-                    &quot;location&quot; : &quot;San Jose, US&quot;
+                  "locations" : [ {
+                    "interfacesCount" : 5,
+                    "location" : "San Jose, US"
                   }, {
-                    &quot;interfacesCount&quot; : 5,
-                    &quot;location&quot; : &quot;San Jose, US&quot;
+                    "interfacesCount" : 5,
+                    "location" : "San Jose, US"
                   } ],
-                  &quot;id&quot; : &quot;85602a0a-54a7-4e97-946e-67492ef1fa26&quot;,
-                  &quot;region&quot; : &quot;North America&quot;,
-                  &quot;providerName&quot; : &quot;Amazon Web Services&quot;,
-                  &quot;providerType&quot; : &quot;IAAS&quot;
+                  "id" : "85602a0a-54a7-4e97-946e-67492ef1fa26",
+                  "region" : "North America",
+                  "providerName" : "Amazon Web Services",
+                  "providerType" : "IAAS"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_catalog_provider(
+
             provider_id=provider_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_catalog_provider"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -459,8 +486,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_catalog_provider(
+
                 provider_id=provider_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_catalog_provider", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -481,8 +511,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_catalog_provider(
+
                 provider_id=provider_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_catalog_provider", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -506,8 +539,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_catalog_provider(
+
                 provider_id=provider_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_catalog_provider", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -531,8 +567,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_catalog_provider(
+
                 provider_id=provider_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_catalog_provider", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -556,8 +595,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_catalog_provider(
+
                 provider_id=provider_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_catalog_provider", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -581,8 +623,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_catalog_provider(
+
                 provider_id=provider_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_catalog_provider", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -606,8 +651,11 @@ class TestInternetInsightsCatalogProvidersApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_catalog_provider(
+
                 provider_id=provider_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_catalog_provider", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

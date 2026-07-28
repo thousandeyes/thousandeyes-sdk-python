@@ -74,57 +74,60 @@ class TestTagsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;assignments&quot; : [ {
-                    &quot;id&quot; : &quot;123&quot;,
-                    &quot;type&quot; : &quot;test&quot;
+                  "assignments" : [ {
+                    "id" : "123",
+                    "type" : "test"
                   }, {
-                    &quot;id&quot; : &quot;123&quot;,
-                    &quot;type&quot; : &quot;test&quot;
+                    "id" : "123",
+                    "type" : "test"
                   } ],
-                  &quot;color&quot; : &quot;#FF0000&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "color" : "#FF0000",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;matchType&quot; : &quot;and&quot;,
-                  &quot;builtIn&quot; : true,
-                  &quot;icon&quot; : &quot;icon&quot;,
-                  &quot;description&quot; : &quot;To tag assets in San Francisco&quot;,
-                  &quot;filters&quot; : [ {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;scope&quot; : &quot;custom&quot;,
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                  "matchType" : "and",
+                  "builtIn" : true,
+                  "icon" : "icon",
+                  "description" : "To tag assets in San Francisco",
+                  "filters" : [ {
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
+                    "key" : "vpn-client-network"
                   }, {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;scope&quot; : &quot;custom&quot;,
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
+                    "key" : "vpn-client-network"
                   } ],
-                  &quot;type&quot; : &quot;static&quot;,
-                  &quot;objectType&quot; : &quot;test&quot;,
-                  &quot;accessType&quot; : &quot;all&quot;,
-                  &quot;modifiedDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                  &quot;legacyId&quot; : 0.8008281904610115,
-                  &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                  &quot;aid&quot; : 1234,
-                  &quot;value&quot; : &quot;sfo&quot;,
-                  &quot;key&quot; : &quot;branch&quot;,
-                  &quot;createDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                  "type" : "static",
+                  "objectType" : "test",
+                  "accessType" : "all",
+                  "modifiedDate" : "2022-03-01T23:31:11Z",
+                  "legacyId" : 0.8008281904610115,
+                  "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                  "aid" : 1234,
+                  "value" : "sfo",
+                  "key" : "branch",
+                  "createDate" : "2022-03-01T23:31:11Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_tag(
+
             aid=aid,
+
             tag_info=tag_info,
+
             _headers=self.te_headers("create_tag"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -196,8 +199,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_tag(
+
                 aid=aid,
+
                 tag_info=tag_info,
+
                 _headers=self.te_headers("create_tag", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -257,8 +263,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_tag(
+
                 aid=aid,
+
                 tag_info=tag_info,
+
                 _headers=self.te_headers("create_tag", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -320,8 +329,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_tag(
+
                 aid=aid,
+
                 tag_info=tag_info,
+
                 _headers=self.te_headers("create_tag", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -527,198 +539,201 @@ class TestTagsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;errors&quot; : [ {
-                    &quot;tag&quot; : {
-                      &quot;key&quot; : {
-                        &quot;assignments&quot; : [ {
-                          &quot;id&quot; : &quot;123&quot;,
-                          &quot;type&quot; : &quot;test&quot;
+                  "errors" : [ {
+                    "tag" : {
+                      "key" : {
+                        "assignments" : [ {
+                          "id" : "123",
+                          "type" : "test"
                         }, {
-                          &quot;id&quot; : &quot;123&quot;,
-                          &quot;type&quot; : &quot;test&quot;
+                          "id" : "123",
+                          "type" : "test"
                         } ],
-                        &quot;color&quot; : &quot;#FF0000&quot;,
-                        &quot;matchType&quot; : &quot;and&quot;,
-                        &quot;builtIn&quot; : true,
-                        &quot;icon&quot; : &quot;icon&quot;,
-                        &quot;description&quot; : &quot;To tag assets in San Francisco&quot;,
-                        &quot;filters&quot; : [ {
-                          &quot;mode&quot; : &quot;in&quot;,
-                          &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                          &quot;scope&quot; : &quot;custom&quot;,
-                          &quot;key&quot; : &quot;vpn-client-network&quot;
+                        "color" : "#FF0000",
+                        "matchType" : "and",
+                        "builtIn" : true,
+                        "icon" : "icon",
+                        "description" : "To tag assets in San Francisco",
+                        "filters" : [ {
+                          "mode" : "in",
+                          "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
+                          "key" : "vpn-client-network"
                         }, {
-                          &quot;mode&quot; : &quot;in&quot;,
-                          &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                          &quot;scope&quot; : &quot;custom&quot;,
-                          &quot;key&quot; : &quot;vpn-client-network&quot;
+                          "mode" : "in",
+                          "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
+                          "key" : "vpn-client-network"
                         } ],
-                        &quot;type&quot; : &quot;static&quot;,
-                        &quot;objectType&quot; : &quot;test&quot;,
-                        &quot;accessType&quot; : &quot;all&quot;,
-                        &quot;modifiedDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                        &quot;legacyId&quot; : 0.8008281904610115,
-                        &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                        &quot;aid&quot; : 1234,
-                        &quot;value&quot; : &quot;sfo&quot;,
-                        &quot;key&quot; : &quot;branch&quot;,
-                        &quot;createDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                        "type" : "static",
+                        "objectType" : "test",
+                        "accessType" : "all",
+                        "modifiedDate" : "2022-03-01T23:31:11Z",
+                        "legacyId" : 0.8008281904610115,
+                        "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                        "aid" : 1234,
+                        "value" : "sfo",
+                        "key" : "branch",
+                        "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    &quot;message&quot; : &quot;Object successfully created&quot;,
-                    &quot;responseCode&quot; : 200
+                    "message" : "Object successfully created",
+                    "responseCode" : 200
                   }, {
-                    &quot;tag&quot; : {
-                      &quot;key&quot; : {
-                        &quot;assignments&quot; : [ {
-                          &quot;id&quot; : &quot;123&quot;,
-                          &quot;type&quot; : &quot;test&quot;
+                    "tag" : {
+                      "key" : {
+                        "assignments" : [ {
+                          "id" : "123",
+                          "type" : "test"
                         }, {
-                          &quot;id&quot; : &quot;123&quot;,
-                          &quot;type&quot; : &quot;test&quot;
+                          "id" : "123",
+                          "type" : "test"
                         } ],
-                        &quot;color&quot; : &quot;#FF0000&quot;,
-                        &quot;matchType&quot; : &quot;and&quot;,
-                        &quot;builtIn&quot; : true,
-                        &quot;icon&quot; : &quot;icon&quot;,
-                        &quot;description&quot; : &quot;To tag assets in San Francisco&quot;,
-                        &quot;filters&quot; : [ {
-                          &quot;mode&quot; : &quot;in&quot;,
-                          &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                          &quot;scope&quot; : &quot;custom&quot;,
-                          &quot;key&quot; : &quot;vpn-client-network&quot;
+                        "color" : "#FF0000",
+                        "matchType" : "and",
+                        "builtIn" : true,
+                        "icon" : "icon",
+                        "description" : "To tag assets in San Francisco",
+                        "filters" : [ {
+                          "mode" : "in",
+                          "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
+                          "key" : "vpn-client-network"
                         }, {
-                          &quot;mode&quot; : &quot;in&quot;,
-                          &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                          &quot;scope&quot; : &quot;custom&quot;,
-                          &quot;key&quot; : &quot;vpn-client-network&quot;
+                          "mode" : "in",
+                          "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
+                          "key" : "vpn-client-network"
                         } ],
-                        &quot;type&quot; : &quot;static&quot;,
-                        &quot;objectType&quot; : &quot;test&quot;,
-                        &quot;accessType&quot; : &quot;all&quot;,
-                        &quot;modifiedDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                        &quot;legacyId&quot; : 0.8008281904610115,
-                        &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                        &quot;aid&quot; : 1234,
-                        &quot;value&quot; : &quot;sfo&quot;,
-                        &quot;key&quot; : &quot;branch&quot;,
-                        &quot;createDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                        "type" : "static",
+                        "objectType" : "test",
+                        "accessType" : "all",
+                        "modifiedDate" : "2022-03-01T23:31:11Z",
+                        "legacyId" : 0.8008281904610115,
+                        "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                        "aid" : 1234,
+                        "value" : "sfo",
+                        "key" : "branch",
+                        "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    &quot;message&quot; : &quot;Object successfully created&quot;,
-                    &quot;responseCode&quot; : 200
+                    "message" : "Object successfully created",
+                    "responseCode" : 200
                   } ],
-                  &quot;tags&quot; : [ {
-                    &quot;assignments&quot; : [ {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                  "tags" : [ {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
                     }, {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                      "id" : "123",
+                      "type" : "test"
                     } ],
-                    &quot;color&quot; : &quot;#FF0000&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;matchType&quot; : &quot;and&quot;,
-                    &quot;builtIn&quot; : true,
-                    &quot;icon&quot; : &quot;icon&quot;,
-                    &quot;description&quot; : &quot;To tag assets in San Francisco&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;scope&quot; : &quot;custom&quot;,
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "matchType" : "and",
+                    "builtIn" : true,
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "filters" : [ {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
                     }, {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;scope&quot; : &quot;custom&quot;,
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
                     } ],
-                    &quot;type&quot; : &quot;static&quot;,
-                    &quot;objectType&quot; : &quot;test&quot;,
-                    &quot;accessType&quot; : &quot;all&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                    &quot;legacyId&quot; : 0.8008281904610115,
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;aid&quot; : 1234,
-                    &quot;value&quot; : &quot;sfo&quot;,
-                    &quot;key&quot; : &quot;branch&quot;,
-                    &quot;createDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                    "type" : "static",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
                   }, {
-                    &quot;assignments&quot; : [ {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
                     }, {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                      "id" : "123",
+                      "type" : "test"
                     } ],
-                    &quot;color&quot; : &quot;#FF0000&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;matchType&quot; : &quot;and&quot;,
-                    &quot;builtIn&quot; : true,
-                    &quot;icon&quot; : &quot;icon&quot;,
-                    &quot;description&quot; : &quot;To tag assets in San Francisco&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;scope&quot; : &quot;custom&quot;,
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "matchType" : "and",
+                    "builtIn" : true,
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "filters" : [ {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
                     }, {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;scope&quot; : &quot;custom&quot;,
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
                     } ],
-                    &quot;type&quot; : &quot;static&quot;,
-                    &quot;objectType&quot; : &quot;test&quot;,
-                    &quot;accessType&quot; : &quot;all&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                    &quot;legacyId&quot; : 0.8008281904610115,
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;aid&quot; : 1234,
-                    &quot;value&quot; : &quot;sfo&quot;,
-                    &quot;key&quot; : &quot;branch&quot;,
-                    &quot;createDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                    "type" : "static",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_tags(
+
             aid=aid,
+
             bulk_tag_response=bulk_tag_response,
+
             _headers=self.te_headers("create_tags"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -943,8 +958,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_tags(
+
                 aid=aid,
+
                 bulk_tag_response=bulk_tag_response,
+
                 _headers=self.te_headers("create_tags", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1157,8 +1175,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_tags(
+
                 aid=aid,
+
                 bulk_tag_response=bulk_tag_response,
+
                 _headers=self.te_headers("create_tags", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1373,8 +1394,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_tags(
+
                 aid=aid,
+
                 bulk_tag_response=bulk_tag_response,
+
                 _headers=self.te_headers("create_tags", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1387,8 +1411,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
         id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55'
         aid = '1234'
         response = self.api.delete_tag_with_http_info(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_tag"),
         )
         self.assertEqual(204, response.status_code)
@@ -1410,8 +1437,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_tag(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_tag", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1435,8 +1465,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_tag(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_tag", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1460,8 +1493,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_tag(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_tag", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1485,8 +1521,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_tag(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_tag", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1509,8 +1548,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_tag(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_tag", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1522,61 +1564,62 @@ class TestTagsApiIntegration(IntegrationTestBase):
         """Integration test for get_tag success path"""
         id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55'
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         response_body_json = """
                 {
-                  &quot;assignments&quot; : [ {
-                    &quot;id&quot; : &quot;123&quot;,
-                    &quot;type&quot; : &quot;test&quot;
+                  "assignments" : [ {
+                    "id" : "123",
+                    "type" : "test"
                   }, {
-                    &quot;id&quot; : &quot;123&quot;,
-                    &quot;type&quot; : &quot;test&quot;
+                    "id" : "123",
+                    "type" : "test"
                   } ],
-                  &quot;color&quot; : &quot;#FF0000&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "color" : "#FF0000",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;matchType&quot; : &quot;and&quot;,
-                  &quot;builtIn&quot; : true,
-                  &quot;icon&quot; : &quot;icon&quot;,
-                  &quot;description&quot; : &quot;To tag assets in San Francisco&quot;,
-                  &quot;filters&quot; : [ {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;scope&quot; : &quot;custom&quot;,
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                  "matchType" : "and",
+                  "builtIn" : true,
+                  "icon" : "icon",
+                  "description" : "To tag assets in San Francisco",
+                  "filters" : [ {
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
+                    "key" : "vpn-client-network"
                   }, {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;scope&quot; : &quot;custom&quot;,
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
+                    "key" : "vpn-client-network"
                   } ],
-                  &quot;type&quot; : &quot;static&quot;,
-                  &quot;objectType&quot; : &quot;test&quot;,
-                  &quot;accessType&quot; : &quot;all&quot;,
-                  &quot;modifiedDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                  &quot;legacyId&quot; : 0.8008281904610115,
-                  &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                  &quot;aid&quot; : 1234,
-                  &quot;value&quot; : &quot;sfo&quot;,
-                  &quot;key&quot; : &quot;branch&quot;,
-                  &quot;createDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                  "type" : "static",
+                  "objectType" : "test",
+                  "accessType" : "all",
+                  "modifiedDate" : "2022-03-01T23:31:11Z",
+                  "legacyId" : 0.8008281904610115,
+                  "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                  "aid" : 1234,
+                  "value" : "sfo",
+                  "key" : "branch",
+                  "createDate" : "2022-03-01T23:31:11Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_tag(
+
             id=id,
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("get_tag"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1586,7 +1629,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
         """Integration test for get_tag error path (HTTP 401)"""
         id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55'
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1598,9 +1640,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_tag(
+
                 id=id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tag", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1610,7 +1654,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
         """Integration test for get_tag error path (HTTP 403)"""
         id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55'
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1625,9 +1668,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_tag(
+
                 id=id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tag", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1637,7 +1682,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
         """Integration test for get_tag error path (HTTP 404)"""
         id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55'
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1652,9 +1696,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_tag(
+
                 id=id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tag", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1664,7 +1710,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
         """Integration test for get_tag error path (HTTP 429)"""
         id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55'
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1679,9 +1724,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_tag(
+
                 id=id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tag", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1691,7 +1738,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
         """Integration test for get_tag error path (HTTP 500)"""
         id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55'
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "path" : "https://api.thousandeyes.com/v7/request/path",
@@ -1705,9 +1751,11 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_tag(
+
                 id=id,
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tag", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1718,120 +1766,120 @@ class TestTagsApiIntegration(IntegrationTestBase):
     def test_get_tags_happy_path(self) -> None:
         """Integration test for get_tags success path"""
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;tags&quot; : [ {
-                    &quot;assignments&quot; : [ {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                  "tags" : [ {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
                     }, {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                      "id" : "123",
+                      "type" : "test"
                     } ],
-                    &quot;color&quot; : &quot;#FF0000&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;matchType&quot; : &quot;and&quot;,
-                    &quot;builtIn&quot; : true,
-                    &quot;icon&quot; : &quot;icon&quot;,
-                    &quot;description&quot; : &quot;To tag assets in San Francisco&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;scope&quot; : &quot;custom&quot;,
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "matchType" : "and",
+                    "builtIn" : true,
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "filters" : [ {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
                     }, {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;scope&quot; : &quot;custom&quot;,
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
                     } ],
-                    &quot;type&quot; : &quot;static&quot;,
-                    &quot;objectType&quot; : &quot;test&quot;,
-                    &quot;accessType&quot; : &quot;all&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                    &quot;legacyId&quot; : 0.8008281904610115,
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;aid&quot; : 1234,
-                    &quot;value&quot; : &quot;sfo&quot;,
-                    &quot;key&quot; : &quot;branch&quot;,
-                    &quot;createDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                    "type" : "static",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
                   }, {
-                    &quot;assignments&quot; : [ {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
                     }, {
-                      &quot;id&quot; : &quot;123&quot;,
-                      &quot;type&quot; : &quot;test&quot;
+                      "id" : "123",
+                      "type" : "test"
                     } ],
-                    &quot;color&quot; : &quot;#FF0000&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;matchType&quot; : &quot;and&quot;,
-                    &quot;builtIn&quot; : true,
-                    &quot;icon&quot; : &quot;icon&quot;,
-                    &quot;description&quot; : &quot;To tag assets in San Francisco&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;scope&quot; : &quot;custom&quot;,
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "matchType" : "and",
+                    "builtIn" : true,
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "filters" : [ {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
                     }, {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;scope&quot; : &quot;custom&quot;,
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
                     } ],
-                    &quot;type&quot; : &quot;static&quot;,
-                    &quot;objectType&quot; : &quot;test&quot;,
-                    &quot;accessType&quot; : &quot;all&quot;,
-                    &quot;modifiedDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                    &quot;legacyId&quot; : 0.8008281904610115,
-                    &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                    &quot;aid&quot; : 1234,
-                    &quot;value&quot; : &quot;sfo&quot;,
-                    &quot;key&quot; : &quot;branch&quot;,
-                    &quot;createDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                    "type" : "static",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_tags(
+
             aid=aid,
-            expand=expand,
+
             _headers=self.te_headers("get_tags"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1840,7 +1888,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
     def test_get_tags_error_401(self) -> None:
         """Integration test for get_tags error path (HTTP 401)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1852,8 +1899,9 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_tags(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tags", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1862,7 +1910,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
     def test_get_tags_error_403(self) -> None:
         """Integration test for get_tags error path (HTTP 403)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1877,8 +1924,9 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_tags(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tags", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1887,7 +1935,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
     def test_get_tags_error_404(self) -> None:
         """Integration test for get_tags error path (HTTP 404)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1902,8 +1949,9 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_tags(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tags", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1912,7 +1960,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
     def test_get_tags_error_429(self) -> None:
         """Integration test for get_tags error path (HTTP 429)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1927,8 +1974,9 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_tags(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tags", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1937,7 +1985,6 @@ class TestTagsApiIntegration(IntegrationTestBase):
     def test_get_tags_error_500(self) -> None:
         """Integration test for get_tags error path (HTTP 500)"""
         aid = '1234'
-        expand = [thousandeyes_sdk.tags.ExpandTagsOptions()]
         error_body_json = """
                 {
                   "path" : "https://api.thousandeyes.com/v7/request/path",
@@ -1951,8 +1998,9 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_tags(
+
                 aid=aid,
-                expand=expand,
+
                 _headers=self.te_headers("get_tags", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2006,58 +2054,62 @@ class TestTagsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;assignments&quot; : [ {
-                    &quot;id&quot; : &quot;123&quot;,
-                    &quot;type&quot; : &quot;test&quot;
+                  "assignments" : [ {
+                    "id" : "123",
+                    "type" : "test"
                   }, {
-                    &quot;id&quot; : &quot;123&quot;,
-                    &quot;type&quot; : &quot;test&quot;
+                    "id" : "123",
+                    "type" : "test"
                   } ],
-                  &quot;color&quot; : &quot;#FF0000&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "color" : "#FF0000",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;matchType&quot; : &quot;and&quot;,
-                  &quot;builtIn&quot; : true,
-                  &quot;icon&quot; : &quot;icon&quot;,
-                  &quot;description&quot; : &quot;To tag assets in San Francisco&quot;,
-                  &quot;filters&quot; : [ {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;scope&quot; : &quot;custom&quot;,
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                  "matchType" : "and",
+                  "builtIn" : true,
+                  "icon" : "icon",
+                  "description" : "To tag assets in San Francisco",
+                  "filters" : [ {
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
+                    "key" : "vpn-client-network"
                   }, {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;scope&quot; : &quot;custom&quot;,
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
+                    "key" : "vpn-client-network"
                   } ],
-                  &quot;type&quot; : &quot;static&quot;,
-                  &quot;objectType&quot; : &quot;test&quot;,
-                  &quot;accessType&quot; : &quot;all&quot;,
-                  &quot;modifiedDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                  &quot;legacyId&quot; : 0.8008281904610115,
-                  &quot;id&quot; : &quot;5aeab5d5-0d34-4d44-a7ac-fb440185295c&quot;,
-                  &quot;aid&quot; : 1234,
-                  &quot;value&quot; : &quot;sfo&quot;,
-                  &quot;key&quot; : &quot;branch&quot;,
-                  &quot;createDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                  "type" : "static",
+                  "objectType" : "test",
+                  "accessType" : "all",
+                  "modifiedDate" : "2022-03-01T23:31:11Z",
+                  "legacyId" : 0.8008281904610115,
+                  "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                  "aid" : 1234,
+                  "value" : "sfo",
+                  "key" : "branch",
+                  "createDate" : "2022-03-01T23:31:11Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_tag(
+
             id=id,
+
             aid=aid,
+
             tag_info=tag_info,
+
             _headers=self.te_headers("update_tag"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -2118,9 +2170,13 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_tag(
+
                 id=id,
+
                 aid=aid,
+
                 tag_info=tag_info,
+
                 _headers=self.te_headers("update_tag", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2184,9 +2240,13 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_tag(
+
                 id=id,
+
                 aid=aid,
+
                 tag_info=tag_info,
+
                 _headers=self.te_headers("update_tag", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2250,9 +2310,13 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_tag(
+
                 id=id,
+
                 aid=aid,
+
                 tag_info=tag_info,
+
                 _headers=self.te_headers("update_tag", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2316,9 +2380,13 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_tag(
+
                 id=id,
+
                 aid=aid,
+
                 tag_info=tag_info,
+
                 _headers=self.te_headers("update_tag", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -2381,9 +2449,13 @@ class TestTagsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_tag(
+
                 id=id,
+
                 aid=aid,
+
                 tag_info=tag_info,
+
                 _headers=self.te_headers("update_tag", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

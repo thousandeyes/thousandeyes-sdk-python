@@ -34,36 +34,38 @@ class TestEndpointRealUserTestsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;realUserTests&quot; : [ {
-                    &quot;includedDomains&quot; : [ &quot;example.com&quot;, &quot;example.com&quot; ],
-                    &quot;profileId&quot; : &quot;73421&quot;,
-                    &quot;monitoringSettings&quot; : {
-                      &quot;monitoringSettingsId&quot; : &quot;1f5c1b5d-8a0d-4d6b-a3be-56b060f7f2c9&quot;,
-                      &quot;monitoringSettingsType&quot; : &quot;agent-tags&quot;,
-                      &quot;tagIds&quot; : [ &quot;49d9e7d2-7df5-43df-9b37-aa596b929062&quot; ],
-                      &quot;labelIds&quot; : [ &quot;567&quot; ]
+                  "realUserTests" : [ {
+                    "includedDomains" : [ "example.com", "example.com" ],
+                    "profileId" : "73421",
+                    "monitoringSettings" : {
+                      "monitoringSettingsId" : "1f5c1b5d-8a0d-4d6b-a3be-56b060f7f2c9",
+                      "monitoringSettingsType" : "agent-tags",
+                      "tagIds" : [ "49d9e7d2-7df5-43df-9b37-aa596b929062" ],
+                      "labelIds" : [ "567" ]
                     },
-                    &quot;name&quot; : &quot;Corporate domains&quot;,
-                    &quot;excludedDomains&quot; : [ &quot;static.example.com&quot;, &quot;static.example.com&quot; ],
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Corporate domains",
+                    "excludedDomains" : [ "static.example.com", "static.example.com" ],
+                    "aid" : "1234"
                   }, {
-                    &quot;includedDomains&quot; : [ &quot;example.com&quot;, &quot;example.com&quot; ],
-                    &quot;profileId&quot; : &quot;73421&quot;,
-                    &quot;monitoringSettings&quot; : {
-                      &quot;monitoringSettingsId&quot; : &quot;1f5c1b5d-8a0d-4d6b-a3be-56b060f7f2c9&quot;,
-                      &quot;monitoringSettingsType&quot; : &quot;agent-tags&quot;,
-                      &quot;tagIds&quot; : [ &quot;49d9e7d2-7df5-43df-9b37-aa596b929062&quot; ],
-                      &quot;labelIds&quot; : [ &quot;567&quot; ]
+                    "includedDomains" : [ "example.com", "example.com" ],
+                    "profileId" : "73421",
+                    "monitoringSettings" : {
+                      "monitoringSettingsId" : "1f5c1b5d-8a0d-4d6b-a3be-56b060f7f2c9",
+                      "monitoringSettingsType" : "agent-tags",
+                      "tagIds" : [ "49d9e7d2-7df5-43df-9b37-aa596b929062" ],
+                      "labelIds" : [ "567" ]
                     },
-                    &quot;name&quot; : &quot;Corporate domains&quot;,
-                    &quot;excludedDomains&quot; : [ &quot;static.example.com&quot;, &quot;static.example.com&quot; ],
-                    &quot;aid&quot; : &quot;1234&quot;
+                    "name" : "Corporate domains",
+                    "excludedDomains" : [ "static.example.com", "static.example.com" ],
+                    "aid" : "1234"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_endpoint_real_user_tests(
+
             aid=aid,
+
             _headers=self.te_headers("get_endpoint_real_user_tests"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -83,7 +85,9 @@ class TestEndpointRealUserTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_endpoint_real_user_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_real_user_tests", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -106,7 +110,9 @@ class TestEndpointRealUserTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_endpoint_real_user_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_real_user_tests", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -129,7 +135,9 @@ class TestEndpointRealUserTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_endpoint_real_user_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_real_user_tests", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -152,7 +160,9 @@ class TestEndpointRealUserTestsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_endpoint_real_user_tests(
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_real_user_tests", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

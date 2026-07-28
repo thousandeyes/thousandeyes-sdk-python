@@ -54,37 +54,40 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;color&quot; : &quot;#ff3333&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "color" : "#ff3333",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;matchType&quot; : &quot;and&quot;,
-                  &quot;name&quot; : &quot;Head office meeting rooms&quot;,
-                  &quot;id&quot; : &quot;abc-123-def&quot;,
-                  &quot;filters&quot; : [ {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                  "matchType" : "and",
+                  "name" : "Head office meeting rooms",
+                  "id" : "abc-123-def",
+                  "filters" : [ {
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "key" : "vpn-client-network"
                   }, {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "key" : "vpn-client-network"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_endpoint_label(
+
             aid=aid,
+
             label_request=label_request,
+
             _headers=self.te_headers("create_endpoint_label"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -136,8 +139,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_endpoint_label(
+
                 aid=aid,
+
                 label_request=label_request,
+
                 _headers=self.te_headers("create_endpoint_label", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -177,8 +183,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_endpoint_label(
+
                 aid=aid,
+
                 label_request=label_request,
+
                 _headers=self.te_headers("create_endpoint_label", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -221,8 +230,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.create_endpoint_label(
+
                 aid=aid,
+
                 label_request=label_request,
+
                 _headers=self.te_headers("create_endpoint_label", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -265,8 +277,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.create_endpoint_label(
+
                 aid=aid,
+
                 label_request=label_request,
+
                 _headers=self.te_headers("create_endpoint_label", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -279,8 +294,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
         id = 'id_example'
         aid = '1234'
         response = self.api.delete_endpoint_label_with_http_info(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_endpoint_label"),
         )
         self.assertEqual(204, response.status_code)
@@ -302,8 +320,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_endpoint_label(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_endpoint_label", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -327,8 +348,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.delete_endpoint_label(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_endpoint_label", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -352,8 +376,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.delete_endpoint_label(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_endpoint_label", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -377,8 +404,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.delete_endpoint_label(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_endpoint_label", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -389,42 +419,43 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
     def test_get_endpoint_label_happy_path(self) -> None:
         """Integration test for get_endpoint_label success path"""
         id = 'id_example'
-        expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()]
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;color&quot; : &quot;#ff3333&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "color" : "#ff3333",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;matchType&quot; : &quot;and&quot;,
-                  &quot;name&quot; : &quot;Head office meeting rooms&quot;,
-                  &quot;id&quot; : &quot;abc-123-def&quot;,
-                  &quot;filters&quot; : [ {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                  "matchType" : "and",
+                  "name" : "Head office meeting rooms",
+                  "id" : "abc-123-def",
+                  "filters" : [ {
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "key" : "vpn-client-network"
                   }, {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "key" : "vpn-client-network"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_endpoint_label(
+
             id=id,
-            expand=expand,
+
             aid=aid,
+
             _headers=self.te_headers("get_endpoint_label"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -433,7 +464,6 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
     def test_get_endpoint_label_error_401(self) -> None:
         """Integration test for get_endpoint_label error path (HTTP 401)"""
         id = 'id_example'
-        expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()]
         aid = '1234'
         error_body_json = """
                 {
@@ -446,9 +476,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_endpoint_label(
+
                 id=id,
-                expand=expand,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_label", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -457,7 +489,6 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
     def test_get_endpoint_label_error_403(self) -> None:
         """Integration test for get_endpoint_label error path (HTTP 403)"""
         id = 'id_example'
-        expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()]
         aid = '1234'
         error_body_json = """
                 {
@@ -473,9 +504,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_endpoint_label(
+
                 id=id,
-                expand=expand,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_label", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -484,7 +517,6 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
     def test_get_endpoint_label_error_404(self) -> None:
         """Integration test for get_endpoint_label error path (HTTP 404)"""
         id = 'id_example'
-        expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()]
         aid = '1234'
         error_body_json = """
                 {
@@ -500,9 +532,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_endpoint_label(
+
                 id=id,
-                expand=expand,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_label", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -511,7 +545,6 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
     def test_get_endpoint_label_error_429(self) -> None:
         """Integration test for get_endpoint_label error path (HTTP 429)"""
         id = 'id_example'
-        expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()]
         aid = '1234'
         error_body_json = """
                 {
@@ -527,9 +560,11 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_endpoint_label(
+
                 id=id,
-                expand=expand,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_label", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -541,93 +576,95 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_labels success path"""
         max = 5
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()]
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;labels&quot; : [ {
-                    &quot;color&quot; : &quot;#ff3333&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "labels" : [ {
+                    "color" : "#ff3333",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;matchType&quot; : &quot;and&quot;,
-                    &quot;name&quot; : &quot;Head office meeting rooms&quot;,
-                    &quot;id&quot; : &quot;abc-123-def&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "matchType" : "and",
+                    "name" : "Head office meeting rooms",
+                    "id" : "abc-123-def",
+                    "filters" : [ {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "key" : "vpn-client-network"
                     }, {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "key" : "vpn-client-network"
                     } ]
                   }, {
-                    &quot;color&quot; : &quot;#ff3333&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "color" : "#ff3333",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;matchType&quot; : &quot;and&quot;,
-                    &quot;name&quot; : &quot;Head office meeting rooms&quot;,
-                    &quot;id&quot; : &quot;abc-123-def&quot;,
-                    &quot;filters&quot; : [ {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "matchType" : "and",
+                    "name" : "Head office meeting rooms",
+                    "id" : "abc-123-def",
+                    "filters" : [ {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "key" : "vpn-client-network"
                     }, {
-                      &quot;mode&quot; : &quot;in&quot;,
-                      &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                      &quot;key&quot; : &quot;vpn-client-network&quot;
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "key" : "vpn-client-network"
                     } ]
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_endpoint_labels(
+
             max=max,
+
             cursor=cursor,
-            expand=expand,
+
             aid=aid,
+
             _headers=self.te_headers("get_endpoint_labels"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -637,7 +674,6 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_labels error path (HTTP 401)"""
         max = 5
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()]
         aid = '1234'
         error_body_json = """
                 {
@@ -650,10 +686,13 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_endpoint_labels(
+
                 max=max,
+
                 cursor=cursor,
-                expand=expand,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_labels", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -663,7 +702,6 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_labels error path (HTTP 403)"""
         max = 5
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()]
         aid = '1234'
         error_body_json = """
                 {
@@ -679,10 +717,13 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_endpoint_labels(
+
                 max=max,
+
                 cursor=cursor,
-                expand=expand,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_labels", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -692,7 +733,6 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
         """Integration test for get_endpoint_labels error path (HTTP 429)"""
         max = 5
         cursor = 'cursor_example'
-        expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()]
         aid = '1234'
         error_body_json = """
                 {
@@ -708,10 +748,13 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_endpoint_labels(
+
                 max=max,
+
                 cursor=cursor,
-                expand=expand,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_endpoint_labels", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -745,38 +788,42 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;color&quot; : &quot;#ff3333&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "color" : "#ff3333",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;matchType&quot; : &quot;and&quot;,
-                  &quot;name&quot; : &quot;Head office meeting rooms&quot;,
-                  &quot;id&quot; : &quot;abc-123-def&quot;,
-                  &quot;filters&quot; : [ {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                  "matchType" : "and",
+                  "name" : "Head office meeting rooms",
+                  "id" : "abc-123-def",
+                  "filters" : [ {
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "key" : "vpn-client-network"
                   }, {
-                    &quot;mode&quot; : &quot;in&quot;,
-                    &quot;values&quot; : [ &quot;10.1.1.0/24&quot;, &quot;192.168.1.0/24&quot; ],
-                    &quot;key&quot; : &quot;vpn-client-network&quot;
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "key" : "vpn-client-network"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_endpoint_label(
+
             id=id,
+
             aid=aid,
+
             label=label,
+
             _headers=self.te_headers("update_endpoint_label"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -829,9 +876,13 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_endpoint_label(
+
                 id=id,
+
                 aid=aid,
+
                 label=label,
+
                 _headers=self.te_headers("update_endpoint_label", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -872,9 +923,13 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_endpoint_label(
+
                 id=id,
+
                 aid=aid,
+
                 label=label,
+
                 _headers=self.te_headers("update_endpoint_label", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -918,9 +973,13 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.update_endpoint_label(
+
                 id=id,
+
                 aid=aid,
+
                 label=label,
+
                 _headers=self.te_headers("update_endpoint_label", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -964,9 +1023,13 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.update_endpoint_label(
+
                 id=id,
+
                 aid=aid,
+
                 label=label,
+
                 _headers=self.te_headers("update_endpoint_label", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1010,9 +1073,13 @@ class TestEndpointAgentLabelsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.update_endpoint_label(
+
                 id=id,
+
                 aid=aid,
+
                 label=label,
+
                 _headers=self.te_headers("update_endpoint_label", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

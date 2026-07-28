@@ -40,102 +40,110 @@ class TestEndpointAgentLogItemsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;next&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "next" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     },
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;logs&quot; : [ {
-                    &quot;wifiLogItem&quot; : {
-                      &quot;bssidFrom&quot; : &quot;00:11:22:33:44:54&quot;,
-                      &quot;bssid&quot; : &quot;00:11:22:33:44:55&quot;,
-                      &quot;failure&quot; : {
-                        &quot;code&quot; : 4,
-                        &quot;context&quot; : &quot;WPA authentication failed&quot;,
-                        &quot;type&quot; : &quot;auth&quot;
+                  "logs" : [ {
+                    "wifiLogItem" : {
+                      "bssidFrom" : "00:11:22:33:44:54",
+                      "bssid" : "00:11:22:33:44:55",
+                      "failure" : {
+                        "code" : 4,
+                        "context" : "WPA authentication failed",
+                        "type" : "auth"
                       },
-                      &quot;logItemType&quot; : &quot;wifi-connect&quot;,
-                      &quot;channel&quot; : &quot;36&quot;,
-                      &quot;physicalMode&quot; : &quot;802.11ac&quot;,
-                      &quot;physicalModeFrom&quot; : &quot;802.11n&quot;,
-                      &quot;ssid&quot; : &quot;CorpWiFi&quot;,
-                      &quot;channelFrom&quot; : &quot;11&quot;
+                      "logItemType" : "wifi-connect",
+                      "channel" : "36",
+                      "physicalMode" : "802.11ac",
+                      "physicalModeFrom" : "802.11n",
+                      "ssid" : "CorpWiFi",
+                      "channelFrom" : "11"
                     },
-                    &quot;agentLogItemType&quot; : &quot;wifi&quot;,
-                    &quot;onlineOfflineLogItem&quot; : {
-                      &quot;logItemType&quot; : &quot;online&quot;
+                    "agentLogItemType" : "wifi",
+                    "onlineOfflineLogItem" : {
+                      "logItemType" : "online"
                     },
-                    &quot;id&quot; : &quot;8d23f1b7-74ef-4e0c-925c-58601fc0662d&quot;,
-                    &quot;vpnLogItem&quot; : {
-                      &quot;logItemType&quot; : &quot;vpn-connect&quot;,
-                      &quot;vpnServerName&quot; : &quot;vpn-us-west&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnServerAddress&quot; : &quot;192.0.2.10&quot;
+                    "id" : "8d23f1b7-74ef-4e0c-925c-58601fc0662d",
+                    "vpnLogItem" : {
+                      "logItemType" : "vpn-connect",
+                      "vpnServerName" : "vpn-us-west",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnServerAddress" : "192.0.2.10"
                     },
-                    &quot;stateChangesLogItem&quot; : {
-                      &quot;logItemType&quot; : &quot;enabled&quot;
+                    "stateChangesLogItem" : {
+                      "logItemType" : "enabled"
                     },
-                    &quot;timestampMs&quot; : 1709240000000
+                    "timestampMs" : 1709240000000
                   }, {
-                    &quot;wifiLogItem&quot; : {
-                      &quot;bssidFrom&quot; : &quot;00:11:22:33:44:54&quot;,
-                      &quot;bssid&quot; : &quot;00:11:22:33:44:55&quot;,
-                      &quot;failure&quot; : {
-                        &quot;code&quot; : 4,
-                        &quot;context&quot; : &quot;WPA authentication failed&quot;,
-                        &quot;type&quot; : &quot;auth&quot;
+                    "wifiLogItem" : {
+                      "bssidFrom" : "00:11:22:33:44:54",
+                      "bssid" : "00:11:22:33:44:55",
+                      "failure" : {
+                        "code" : 4,
+                        "context" : "WPA authentication failed",
+                        "type" : "auth"
                       },
-                      &quot;logItemType&quot; : &quot;wifi-connect&quot;,
-                      &quot;channel&quot; : &quot;36&quot;,
-                      &quot;physicalMode&quot; : &quot;802.11ac&quot;,
-                      &quot;physicalModeFrom&quot; : &quot;802.11n&quot;,
-                      &quot;ssid&quot; : &quot;CorpWiFi&quot;,
-                      &quot;channelFrom&quot; : &quot;11&quot;
+                      "logItemType" : "wifi-connect",
+                      "channel" : "36",
+                      "physicalMode" : "802.11ac",
+                      "physicalModeFrom" : "802.11n",
+                      "ssid" : "CorpWiFi",
+                      "channelFrom" : "11"
                     },
-                    &quot;agentLogItemType&quot; : &quot;wifi&quot;,
-                    &quot;onlineOfflineLogItem&quot; : {
-                      &quot;logItemType&quot; : &quot;online&quot;
+                    "agentLogItemType" : "wifi",
+                    "onlineOfflineLogItem" : {
+                      "logItemType" : "online"
                     },
-                    &quot;id&quot; : &quot;8d23f1b7-74ef-4e0c-925c-58601fc0662d&quot;,
-                    &quot;vpnLogItem&quot; : {
-                      &quot;logItemType&quot; : &quot;vpn-connect&quot;,
-                      &quot;vpnServerName&quot; : &quot;vpn-us-west&quot;,
-                      &quot;vpnType&quot; : &quot;cisco-anyconnect&quot;,
-                      &quot;vpnServerAddress&quot; : &quot;192.0.2.10&quot;
+                    "id" : "8d23f1b7-74ef-4e0c-925c-58601fc0662d",
+                    "vpnLogItem" : {
+                      "logItemType" : "vpn-connect",
+                      "vpnServerName" : "vpn-us-west",
+                      "vpnType" : "cisco-anyconnect",
+                      "vpnServerAddress" : "192.0.2.10"
                     },
-                    &quot;stateChangesLogItem&quot; : {
-                      &quot;logItemType&quot; : &quot;enabled&quot;
+                    "stateChangesLogItem" : {
+                      "logItemType" : "enabled"
                     },
-                    &quot;timestampMs&quot; : 1709240000000
+                    "timestampMs" : 1709240000000
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_endpoint_agent_log_items(
+
             agent_id=agent_id,
+
             aid=aid,
+
             max=max,
+
             cursor=cursor,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             _headers=self.te_headers("get_endpoint_agent_log_items"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -173,13 +181,21 @@ class TestEndpointAgentLogItemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_endpoint_agent_log_items(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 max=max,
+
                 cursor=cursor,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_endpoint_agent_log_items", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -205,13 +221,21 @@ class TestEndpointAgentLogItemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_endpoint_agent_log_items(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 max=max,
+
                 cursor=cursor,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_endpoint_agent_log_items", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -240,13 +264,21 @@ class TestEndpointAgentLogItemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_endpoint_agent_log_items(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 max=max,
+
                 cursor=cursor,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_endpoint_agent_log_items", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -275,13 +307,21 @@ class TestEndpointAgentLogItemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_endpoint_agent_log_items(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 max=max,
+
                 cursor=cursor,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_endpoint_agent_log_items", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -310,13 +350,21 @@ class TestEndpointAgentLogItemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_endpoint_agent_log_items(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 max=max,
+
                 cursor=cursor,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_endpoint_agent_log_items", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -345,13 +393,21 @@ class TestEndpointAgentLogItemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_endpoint_agent_log_items(
+
                 agent_id=agent_id,
+
                 aid=aid,
+
                 max=max,
+
                 cursor=cursor,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_endpoint_agent_log_items", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

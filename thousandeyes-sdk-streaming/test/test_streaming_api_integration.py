@@ -96,82 +96,85 @@ class TestStreamingApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;endpointAgentLabel&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;
+                  "endpointAgentLabel" : [ {
+                    "id" : "1234"
                   }, {
-                    &quot;id&quot; : &quot;1234&quot;
+                    "id" : "1234"
                   } ],
-                  &quot;endpointType&quot; : &quot;grpc&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799&quot;
+                  "endpointType" : "grpc",
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799"
                     }
                   },
-                  &quot;streamEndpointUrl&quot; : &quot;https://api.thousandeyes.otel-collector&quot;,
-                  &quot;exporterConfig&quot; : {
-                    &quot;authorization&quot; : {
-                      &quot;oAuth2&quot; : {
-                        &quot;clientId&quot; : &quot;1234567890&quot;,
-                        &quot;tokenUrl&quot; : &quot;https://example.com/token&quot;,
-                        &quot;clientSecret&quot; : &quot;1234567890&quot;,
-                        &quot;scopes&quot; : [ &quot;read&quot;, &quot;write&quot; ]
+                  "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "authorization" : {
+                      "oAuth2" : {
+                        "clientId" : "1234567890",
+                        "tokenUrl" : "https://example.com/token",
+                        "clientSecret" : "1234567890",
+                        "scopes" : [ "read", "write" ]
                       }
                     },
-                    &quot;splunkHec&quot; : {
-                      &quot;sourceType&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;index&quot; : &quot;thousandeyes_otel_events_index&quot;,
-                      &quot;source&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;token&quot; : &quot;d0a91307-be2f-4218-a9f8-71c02d98846b&quot;
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
                     }
                   },
-                  &quot;filters&quot; : {
-                    &quot;testTypes&quot; : {
-                      &quot;values&quot; : [ &quot;agent-to-server&quot;, &quot;bgp&quot;, &quot;http-server&quot; ]
+                  "filters" : {
+                    "testTypes" : {
+                      "values" : [ "agent-to-server", "bgp", "http-server" ]
                     }
                   },
-                  &quot;type&quot; : &quot;opentelemetry&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;dataModelVersion&quot; : &quot;v2&quot;,
-                  &quot;endpointAgentTag&quot; : [ {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                  "type" : "opentelemetry",
+                  "enabled" : true,
+                  "dataModelVersion" : "v2",
+                  "endpointAgentTag" : [ {
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   }, {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   } ],
-                  &quot;testMatch&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;,
-                    &quot;domain&quot; : &quot;cea&quot;
+                  "testMatch" : [ {
+                    "id" : "1234",
+                    "domain" : "cea"
                   }, {
-                    &quot;id&quot; : &quot;5678&quot;,
-                    &quot;domain&quot; : &quot;endpoint&quot;
+                    "id" : "5678",
+                    "domain" : "endpoint"
                   } ],
-                  &quot;tagMatch&quot; : [ {
-                    &quot;key&quot; : &quot;keyA&quot;,
-                    &quot;value&quot; : &quot;valueA&quot;
+                  "tagMatch" : [ {
+                    "key" : "keyA",
+                    "value" : "valueA"
                   }, {
-                    &quot;key&quot; : &quot;keyB&quot;,
-                    &quot;value&quot; : &quot;valueB&quot;
+                    "key" : "keyB",
+                    "value" : "valueB"
                   } ],
-                  &quot;id&quot; : &quot;342ieu09&quot;,
-                  &quot;streamStatus&quot; : {
-                    &quot;lastSuccess&quot; : 1679677853573,
-                    &quot;lastFailure&quot; : 1679677853573,
-                    &quot;status&quot; : &quot;connected&quot;
+                  "id" : "342ieu09",
+                  "streamStatus" : {
+                    "lastSuccess" : 1679677853573,
+                    "lastFailure" : 1679677853573,
+                    "status" : "connected"
                   },
-                  &quot;signal&quot; : &quot;metric&quot;,
-                  &quot;auditOperation&quot; : {
-                    &quot;createdDate&quot; : 1679677853573,
-                    &quot;createdBy&quot; : 3962
+                  "signal" : "metric",
+                  "auditOperation" : {
+                    "createdDate" : 1679677853573,
+                    "createdBy" : 3962
                   },
-                  &quot;customHeaders&quot; : {
-                    &quot;Authorization&quot; : &quot;*****&quot;,
-                    &quot;Content-Type&quot; : &quot;*****&quot;
+                  "customHeaders" : {
+                    "Authorization" : "*****",
+                    "Content-Type" : "*****"
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.create_stream(
+
             aid=aid,
+
             stream=stream,
+
             _headers=self.te_headers("create_stream"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -255,8 +258,11 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.create_stream(
+
                 aid=aid,
+
                 stream=stream,
+
                 _headers=self.te_headers("create_stream", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -338,8 +344,11 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.create_stream(
+
                 aid=aid,
+
                 stream=stream,
+
                 _headers=self.te_headers("create_stream", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -423,8 +432,11 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(412)
         ) as context:
             self.api.create_stream(
+
                 aid=aid,
+
                 stream=stream,
+
                 _headers=self.te_headers("create_stream", error_status="412"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -508,8 +520,11 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.create_stream(
+
                 aid=aid,
+
                 stream=stream,
+
                 _headers=self.te_headers("create_stream", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -522,8 +537,11 @@ class TestStreamingApiIntegration(IntegrationTestBase):
         id = 'id_example'
         aid = '1234'
         response = self.api.delete_stream_with_http_info(
+
             id=id,
+
             aid=aid,
+
             _headers=self.te_headers("delete_stream"),
         )
         self.assertEqual(204, response.status_code)
@@ -545,8 +563,11 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.delete_stream(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_stream", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -569,8 +590,11 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.delete_stream(
+
                 id=id,
+
                 aid=aid,
+
                 _headers=self.te_headers("delete_stream", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -582,88 +606,89 @@ class TestStreamingApiIntegration(IntegrationTestBase):
         """Integration test for get_stream success path"""
         id = 'id_example'
         aid = '1234'
-        type = thousandeyes_sdk.streaming.StreamType()
         response_body_json = """
                 {
-                  &quot;endpointAgentLabel&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;
+                  "endpointAgentLabel" : [ {
+                    "id" : "1234"
                   }, {
-                    &quot;id&quot; : &quot;1234&quot;
+                    "id" : "1234"
                   } ],
-                  &quot;endpointType&quot; : &quot;grpc&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799&quot;
+                  "endpointType" : "grpc",
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799"
                     }
                   },
-                  &quot;streamEndpointUrl&quot; : &quot;https://api.thousandeyes.otel-collector&quot;,
-                  &quot;exporterConfig&quot; : {
-                    &quot;authorization&quot; : {
-                      &quot;oAuth2&quot; : {
-                        &quot;clientId&quot; : &quot;1234567890&quot;,
-                        &quot;tokenUrl&quot; : &quot;https://example.com/token&quot;,
-                        &quot;clientSecret&quot; : &quot;1234567890&quot;,
-                        &quot;scopes&quot; : [ &quot;read&quot;, &quot;write&quot; ]
+                  "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "authorization" : {
+                      "oAuth2" : {
+                        "clientId" : "1234567890",
+                        "tokenUrl" : "https://example.com/token",
+                        "clientSecret" : "1234567890",
+                        "scopes" : [ "read", "write" ]
                       }
                     },
-                    &quot;splunkHec&quot; : {
-                      &quot;sourceType&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;index&quot; : &quot;thousandeyes_otel_events_index&quot;,
-                      &quot;source&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;token&quot; : &quot;d0a91307-be2f-4218-a9f8-71c02d98846b&quot;
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
                     }
                   },
-                  &quot;filters&quot; : {
-                    &quot;testTypes&quot; : {
-                      &quot;values&quot; : [ &quot;agent-to-server&quot;, &quot;bgp&quot;, &quot;http-server&quot; ]
+                  "filters" : {
+                    "testTypes" : {
+                      "values" : [ "agent-to-server", "bgp", "http-server" ]
                     }
                   },
-                  &quot;type&quot; : &quot;opentelemetry&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;dataModelVersion&quot; : &quot;v2&quot;,
-                  &quot;endpointAgentTag&quot; : [ {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                  "type" : "opentelemetry",
+                  "enabled" : true,
+                  "dataModelVersion" : "v2",
+                  "endpointAgentTag" : [ {
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   }, {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   } ],
-                  &quot;testMatch&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;,
-                    &quot;domain&quot; : &quot;cea&quot;
+                  "testMatch" : [ {
+                    "id" : "1234",
+                    "domain" : "cea"
                   }, {
-                    &quot;id&quot; : &quot;5678&quot;,
-                    &quot;domain&quot; : &quot;endpoint&quot;
+                    "id" : "5678",
+                    "domain" : "endpoint"
                   } ],
-                  &quot;tagMatch&quot; : [ {
-                    &quot;key&quot; : &quot;keyA&quot;,
-                    &quot;value&quot; : &quot;valueA&quot;
+                  "tagMatch" : [ {
+                    "key" : "keyA",
+                    "value" : "valueA"
                   }, {
-                    &quot;key&quot; : &quot;keyB&quot;,
-                    &quot;value&quot; : &quot;valueB&quot;
+                    "key" : "keyB",
+                    "value" : "valueB"
                   } ],
-                  &quot;id&quot; : &quot;342ieu09&quot;,
-                  &quot;streamStatus&quot; : {
-                    &quot;lastSuccess&quot; : 1679677853573,
-                    &quot;lastFailure&quot; : 1679677853573,
-                    &quot;status&quot; : &quot;connected&quot;
+                  "id" : "342ieu09",
+                  "streamStatus" : {
+                    "lastSuccess" : 1679677853573,
+                    "lastFailure" : 1679677853573,
+                    "status" : "connected"
                   },
-                  &quot;signal&quot; : &quot;metric&quot;,
-                  &quot;auditOperation&quot; : {
-                    &quot;createdDate&quot; : 1679677853573,
-                    &quot;updatedBy&quot; : 3962,
-                    &quot;createdBy&quot; : 3962,
-                    &quot;updatedDate&quot; : 1679677853573
+                  "signal" : "metric",
+                  "auditOperation" : {
+                    "createdDate" : 1679677853573,
+                    "updatedBy" : 3962,
+                    "createdBy" : 3962,
+                    "updatedDate" : 1679677853573
                   },
-                  &quot;customHeaders&quot; : {
-                    &quot;Authorization&quot; : &quot;*****&quot;,
-                    &quot;Content-Type&quot; : &quot;*****&quot;
+                  "customHeaders" : {
+                    "Authorization" : "*****",
+                    "Content-Type" : "*****"
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_stream(
+
             id=id,
+
             aid=aid,
-            type=type,
+
             _headers=self.te_headers("get_stream"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -673,7 +698,6 @@ class TestStreamingApiIntegration(IntegrationTestBase):
         """Integration test for get_stream error path (HTTP 401)"""
         id = 'id_example'
         aid = '1234'
-        type = thousandeyes_sdk.streaming.StreamType()
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -685,9 +709,11 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_stream(
+
                 id=id,
+
                 aid=aid,
-                type=type,
+
                 _headers=self.te_headers("get_stream", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -697,7 +723,6 @@ class TestStreamingApiIntegration(IntegrationTestBase):
         """Integration test for get_stream error path (HTTP 500)"""
         id = 'id_example'
         aid = '1234'
-        type = thousandeyes_sdk.streaming.StreamType()
         error_body_json = """
                 {
                   "path" : "https://api.thousandeyes.com/v7/request/path",
@@ -711,9 +736,11 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_stream(
+
                 id=id,
+
                 aid=aid,
-                type=type,
+
                 _headers=self.te_headers("get_stream", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -724,160 +751,160 @@ class TestStreamingApiIntegration(IntegrationTestBase):
     def test_get_streams_happy_path(self) -> None:
         """Integration test for get_streams success path"""
         aid = '1234'
-        type = thousandeyes_sdk.streaming.StreamType()
         response_body_json = """
                 [ {
-                  &quot;endpointAgentLabel&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;
+                  "endpointAgentLabel" : [ {
+                    "id" : "1234"
                   }, {
-                    &quot;id&quot; : &quot;1234&quot;
+                    "id" : "1234"
                   } ],
-                  &quot;endpointType&quot; : &quot;grpc&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799&quot;
+                  "endpointType" : "grpc",
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799"
                     }
                   },
-                  &quot;streamEndpointUrl&quot; : &quot;https://api.thousandeyes.otel-collector&quot;,
-                  &quot;exporterConfig&quot; : {
-                    &quot;authorization&quot; : {
-                      &quot;oAuth2&quot; : {
-                        &quot;clientId&quot; : &quot;1234567890&quot;,
-                        &quot;tokenUrl&quot; : &quot;https://example.com/token&quot;,
-                        &quot;clientSecret&quot; : &quot;1234567890&quot;,
-                        &quot;scopes&quot; : [ &quot;read&quot;, &quot;write&quot; ]
+                  "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "authorization" : {
+                      "oAuth2" : {
+                        "clientId" : "1234567890",
+                        "tokenUrl" : "https://example.com/token",
+                        "clientSecret" : "1234567890",
+                        "scopes" : [ "read", "write" ]
                       }
                     },
-                    &quot;splunkHec&quot; : {
-                      &quot;sourceType&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;index&quot; : &quot;thousandeyes_otel_events_index&quot;,
-                      &quot;source&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;token&quot; : &quot;d0a91307-be2f-4218-a9f8-71c02d98846b&quot;
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
                     }
                   },
-                  &quot;filters&quot; : {
-                    &quot;testTypes&quot; : {
-                      &quot;values&quot; : [ &quot;agent-to-server&quot;, &quot;bgp&quot;, &quot;http-server&quot; ]
+                  "filters" : {
+                    "testTypes" : {
+                      "values" : [ "agent-to-server", "bgp", "http-server" ]
                     }
                   },
-                  &quot;type&quot; : &quot;opentelemetry&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;dataModelVersion&quot; : &quot;v2&quot;,
-                  &quot;endpointAgentTag&quot; : [ {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                  "type" : "opentelemetry",
+                  "enabled" : true,
+                  "dataModelVersion" : "v2",
+                  "endpointAgentTag" : [ {
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   }, {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   } ],
-                  &quot;testMatch&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;,
-                    &quot;domain&quot; : &quot;cea&quot;
+                  "testMatch" : [ {
+                    "id" : "1234",
+                    "domain" : "cea"
                   }, {
-                    &quot;id&quot; : &quot;5678&quot;,
-                    &quot;domain&quot; : &quot;endpoint&quot;
+                    "id" : "5678",
+                    "domain" : "endpoint"
                   } ],
-                  &quot;tagMatch&quot; : [ {
-                    &quot;key&quot; : &quot;keyA&quot;,
-                    &quot;value&quot; : &quot;valueA&quot;
+                  "tagMatch" : [ {
+                    "key" : "keyA",
+                    "value" : "valueA"
                   }, {
-                    &quot;key&quot; : &quot;keyB&quot;,
-                    &quot;value&quot; : &quot;valueB&quot;
+                    "key" : "keyB",
+                    "value" : "valueB"
                   } ],
-                  &quot;id&quot; : &quot;342ieu09&quot;,
-                  &quot;streamStatus&quot; : {
-                    &quot;lastSuccess&quot; : 1679677853573,
-                    &quot;lastFailure&quot; : 1679677853573,
-                    &quot;status&quot; : &quot;connected&quot;
+                  "id" : "342ieu09",
+                  "streamStatus" : {
+                    "lastSuccess" : 1679677853573,
+                    "lastFailure" : 1679677853573,
+                    "status" : "connected"
                   },
-                  &quot;signal&quot; : &quot;metric&quot;,
-                  &quot;auditOperation&quot; : {
-                    &quot;createdDate&quot; : 1679677853573,
-                    &quot;updatedBy&quot; : 3962,
-                    &quot;createdBy&quot; : 3962,
-                    &quot;updatedDate&quot; : 1679677853573
+                  "signal" : "metric",
+                  "auditOperation" : {
+                    "createdDate" : 1679677853573,
+                    "updatedBy" : 3962,
+                    "createdBy" : 3962,
+                    "updatedDate" : 1679677853573
                   },
-                  &quot;customHeaders&quot; : {
-                    &quot;Authorization&quot; : &quot;*****&quot;,
-                    &quot;Content-Type&quot; : &quot;*****&quot;
+                  "customHeaders" : {
+                    "Authorization" : "*****",
+                    "Content-Type" : "*****"
                   }
                 }, {
-                  &quot;endpointAgentLabel&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;
+                  "endpointAgentLabel" : [ {
+                    "id" : "1234"
                   }, {
-                    &quot;id&quot; : &quot;1234&quot;
+                    "id" : "1234"
                   } ],
-                  &quot;endpointType&quot; : &quot;grpc&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799&quot;
+                  "endpointType" : "grpc",
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799"
                     }
                   },
-                  &quot;streamEndpointUrl&quot; : &quot;https://api.thousandeyes.otel-collector&quot;,
-                  &quot;exporterConfig&quot; : {
-                    &quot;authorization&quot; : {
-                      &quot;oAuth2&quot; : {
-                        &quot;clientId&quot; : &quot;1234567890&quot;,
-                        &quot;tokenUrl&quot; : &quot;https://example.com/token&quot;,
-                        &quot;clientSecret&quot; : &quot;1234567890&quot;,
-                        &quot;scopes&quot; : [ &quot;read&quot;, &quot;write&quot; ]
+                  "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "authorization" : {
+                      "oAuth2" : {
+                        "clientId" : "1234567890",
+                        "tokenUrl" : "https://example.com/token",
+                        "clientSecret" : "1234567890",
+                        "scopes" : [ "read", "write" ]
                       }
                     },
-                    &quot;splunkHec&quot; : {
-                      &quot;sourceType&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;index&quot; : &quot;thousandeyes_otel_events_index&quot;,
-                      &quot;source&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;token&quot; : &quot;d0a91307-be2f-4218-a9f8-71c02d98846b&quot;
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
                     }
                   },
-                  &quot;filters&quot; : {
-                    &quot;testTypes&quot; : {
-                      &quot;values&quot; : [ &quot;agent-to-server&quot;, &quot;bgp&quot;, &quot;http-server&quot; ]
+                  "filters" : {
+                    "testTypes" : {
+                      "values" : [ "agent-to-server", "bgp", "http-server" ]
                     }
                   },
-                  &quot;type&quot; : &quot;opentelemetry&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;dataModelVersion&quot; : &quot;v2&quot;,
-                  &quot;endpointAgentTag&quot; : [ {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                  "type" : "opentelemetry",
+                  "enabled" : true,
+                  "dataModelVersion" : "v2",
+                  "endpointAgentTag" : [ {
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   }, {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   } ],
-                  &quot;testMatch&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;,
-                    &quot;domain&quot; : &quot;cea&quot;
+                  "testMatch" : [ {
+                    "id" : "1234",
+                    "domain" : "cea"
                   }, {
-                    &quot;id&quot; : &quot;5678&quot;,
-                    &quot;domain&quot; : &quot;endpoint&quot;
+                    "id" : "5678",
+                    "domain" : "endpoint"
                   } ],
-                  &quot;tagMatch&quot; : [ {
-                    &quot;key&quot; : &quot;keyA&quot;,
-                    &quot;value&quot; : &quot;valueA&quot;
+                  "tagMatch" : [ {
+                    "key" : "keyA",
+                    "value" : "valueA"
                   }, {
-                    &quot;key&quot; : &quot;keyB&quot;,
-                    &quot;value&quot; : &quot;valueB&quot;
+                    "key" : "keyB",
+                    "value" : "valueB"
                   } ],
-                  &quot;id&quot; : &quot;342ieu09&quot;,
-                  &quot;streamStatus&quot; : {
-                    &quot;lastSuccess&quot; : 1679677853573,
-                    &quot;lastFailure&quot; : 1679677853573,
-                    &quot;status&quot; : &quot;connected&quot;
+                  "id" : "342ieu09",
+                  "streamStatus" : {
+                    "lastSuccess" : 1679677853573,
+                    "lastFailure" : 1679677853573,
+                    "status" : "connected"
                   },
-                  &quot;signal&quot; : &quot;metric&quot;,
-                  &quot;auditOperation&quot; : {
-                    &quot;createdDate&quot; : 1679677853573,
-                    &quot;updatedBy&quot; : 3962,
-                    &quot;createdBy&quot; : 3962,
-                    &quot;updatedDate&quot; : 1679677853573
+                  "signal" : "metric",
+                  "auditOperation" : {
+                    "createdDate" : 1679677853573,
+                    "updatedBy" : 3962,
+                    "createdBy" : 3962,
+                    "updatedDate" : 1679677853573
                   },
-                  &quot;customHeaders&quot; : {
-                    &quot;Authorization&quot; : &quot;*****&quot;,
-                    &quot;Content-Type&quot; : &quot;*****&quot;
+                  "customHeaders" : {
+                    "Authorization" : "*****",
+                    "Content-Type" : "*****"
                   }
                 } ]
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_streams(
+
             aid=aid,
-            type=type,
+
             _headers=self.te_headers("get_streams"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -886,7 +913,6 @@ class TestStreamingApiIntegration(IntegrationTestBase):
     def test_get_streams_error_400(self) -> None:
         """Integration test for get_streams error path (HTTP 400)"""
         aid = '1234'
-        type = thousandeyes_sdk.streaming.StreamType()
         error_body_json = """
                 {
                   "path" : "https://api.thousandeyes.com/v7/streams",
@@ -900,8 +926,9 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_streams(
+
                 aid=aid,
-                type=type,
+
                 _headers=self.te_headers("get_streams", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -910,7 +937,6 @@ class TestStreamingApiIntegration(IntegrationTestBase):
     def test_get_streams_error_401(self) -> None:
         """Integration test for get_streams error path (HTTP 401)"""
         aid = '1234'
-        type = thousandeyes_sdk.streaming.StreamType()
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -922,8 +948,9 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_streams(
+
                 aid=aid,
-                type=type,
+
                 _headers=self.te_headers("get_streams", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -932,7 +959,6 @@ class TestStreamingApiIntegration(IntegrationTestBase):
     def test_get_streams_error_500(self) -> None:
         """Integration test for get_streams error path (HTTP 500)"""
         aid = '1234'
-        type = thousandeyes_sdk.streaming.StreamType()
         error_body_json = """
                 {
                   "path" : "https://api.thousandeyes.com/v7/request/path",
@@ -946,8 +972,9 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_streams(
+
                 aid=aid,
-                type=type,
+
                 _headers=self.te_headers("get_streams", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1019,85 +1046,89 @@ class TestStreamingApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;endpointAgentLabel&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;
+                  "endpointAgentLabel" : [ {
+                    "id" : "1234"
                   }, {
-                    &quot;id&quot; : &quot;1234&quot;
+                    "id" : "1234"
                   } ],
-                  &quot;endpointType&quot; : &quot;grpc&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799&quot;
+                  "endpointType" : "grpc",
+                  "_links" : {
+                    "self" : {
+                      "href" : "https://api.thousandeyes.com/v7/streams/575766da-9664-4e85-94fe-facbe1154799"
                     }
                   },
-                  &quot;streamEndpointUrl&quot; : &quot;https://api.thousandeyes.otel-collector&quot;,
-                  &quot;exporterConfig&quot; : {
-                    &quot;authorization&quot; : {
-                      &quot;oAuth2&quot; : {
-                        &quot;clientId&quot; : &quot;1234567890&quot;,
-                        &quot;tokenUrl&quot; : &quot;https://example.com/token&quot;,
-                        &quot;clientSecret&quot; : &quot;1234567890&quot;,
-                        &quot;scopes&quot; : [ &quot;read&quot;, &quot;write&quot; ]
+                  "streamEndpointUrl" : "https://api.thousandeyes.otel-collector",
+                  "exporterConfig" : {
+                    "authorization" : {
+                      "oAuth2" : {
+                        "clientId" : "1234567890",
+                        "tokenUrl" : "https://example.com/token",
+                        "clientSecret" : "1234567890",
+                        "scopes" : [ "read", "write" ]
                       }
                     },
-                    &quot;splunkHec&quot; : {
-                      &quot;sourceType&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;index&quot; : &quot;thousandeyes_otel_events_index&quot;,
-                      &quot;source&quot; : &quot;ThousandEyesOTel&quot;,
-                      &quot;token&quot; : &quot;d0a91307-be2f-4218-a9f8-71c02d98846b&quot;
+                    "splunkHec" : {
+                      "sourceType" : "ThousandEyesOTel",
+                      "index" : "thousandeyes_otel_events_index",
+                      "source" : "ThousandEyesOTel",
+                      "token" : "d0a91307-be2f-4218-a9f8-71c02d98846b"
                     }
                   },
-                  &quot;filters&quot; : {
-                    &quot;testTypes&quot; : {
-                      &quot;values&quot; : [ &quot;agent-to-server&quot;, &quot;bgp&quot;, &quot;http-server&quot; ]
+                  "filters" : {
+                    "testTypes" : {
+                      "values" : [ "agent-to-server", "bgp", "http-server" ]
                     }
                   },
-                  &quot;type&quot; : &quot;opentelemetry&quot;,
-                  &quot;enabled&quot; : true,
-                  &quot;dataModelVersion&quot; : &quot;v2&quot;,
-                  &quot;endpointAgentTag&quot; : [ {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                  "type" : "opentelemetry",
+                  "enabled" : true,
+                  "dataModelVersion" : "v2",
+                  "endpointAgentTag" : [ {
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   }, {
-                    &quot;id&quot; : &quot;91863f70-e5a6-4a1c-a266-caf02db3607d&quot;
+                    "id" : "91863f70-e5a6-4a1c-a266-caf02db3607d"
                   } ],
-                  &quot;testMatch&quot; : [ {
-                    &quot;id&quot; : &quot;1234&quot;,
-                    &quot;domain&quot; : &quot;cea&quot;
+                  "testMatch" : [ {
+                    "id" : "1234",
+                    "domain" : "cea"
                   }, {
-                    &quot;id&quot; : &quot;5678&quot;,
-                    &quot;domain&quot; : &quot;endpoint&quot;
+                    "id" : "5678",
+                    "domain" : "endpoint"
                   } ],
-                  &quot;tagMatch&quot; : [ {
-                    &quot;key&quot; : &quot;keyA&quot;,
-                    &quot;value&quot; : &quot;valueA&quot;
+                  "tagMatch" : [ {
+                    "key" : "keyA",
+                    "value" : "valueA"
                   }, {
-                    &quot;key&quot; : &quot;keyB&quot;,
-                    &quot;value&quot; : &quot;valueB&quot;
+                    "key" : "keyB",
+                    "value" : "valueB"
                   } ],
-                  &quot;id&quot; : &quot;342ieu09&quot;,
-                  &quot;streamStatus&quot; : {
-                    &quot;lastSuccess&quot; : 1679677853573,
-                    &quot;lastFailure&quot; : 1679677853573,
-                    &quot;status&quot; : &quot;connected&quot;
+                  "id" : "342ieu09",
+                  "streamStatus" : {
+                    "lastSuccess" : 1679677853573,
+                    "lastFailure" : 1679677853573,
+                    "status" : "connected"
                   },
-                  &quot;signal&quot; : &quot;metric&quot;,
-                  &quot;auditOperation&quot; : {
-                    &quot;createdDate&quot; : 1679677853573,
-                    &quot;updatedBy&quot; : 3962,
-                    &quot;createdBy&quot; : 3962,
-                    &quot;updatedDate&quot; : 1679677853573
+                  "signal" : "metric",
+                  "auditOperation" : {
+                    "createdDate" : 1679677853573,
+                    "updatedBy" : 3962,
+                    "createdBy" : 3962,
+                    "updatedDate" : 1679677853573
                   },
-                  &quot;customHeaders&quot; : {
-                    &quot;Authorization&quot; : &quot;*****&quot;,
-                    &quot;Content-Type&quot; : &quot;*****&quot;
+                  "customHeaders" : {
+                    "Authorization" : "*****",
+                    "Content-Type" : "*****"
                   }
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.update_stream(
+
             id=id,
+
             aid=aid,
+
             put_stream=put_stream,
+
             _headers=self.te_headers("update_stream"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1178,9 +1209,13 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.update_stream(
+
                 id=id,
+
                 aid=aid,
+
                 put_stream=put_stream,
+
                 _headers=self.te_headers("update_stream", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1259,9 +1294,13 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.update_stream(
+
                 id=id,
+
                 aid=aid,
+
                 put_stream=put_stream,
+
                 _headers=self.te_headers("update_stream", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1342,9 +1381,13 @@ class TestStreamingApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.update_stream(
+
                 id=id,
+
                 aid=aid,
+
                 put_stream=put_stream,
+
                 _headers=self.te_headers("update_stream", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

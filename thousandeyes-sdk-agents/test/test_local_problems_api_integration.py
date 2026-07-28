@@ -37,51 +37,56 @@ class TestLocalProblemsApiIntegration(IntegrationTestBase):
         end_date = '2022-07-18T22:00:54Z'
         response_body_json = """
                 {
-                  &quot;endDate&quot; : &quot;2022-07-18T22:00:54Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2022-07-18T22:00:54Z",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;localProblems&quot; : [ {
-                    &quot;duration&quot; : 480,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                  "localProblems" : [ {
+                    "duration" : 480,
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;endDate&quot; : &quot;2026-05-18T03:22:00Z&quot;,
-                    &quot;active&quot; : false,
-                    &quot;startDate&quot; : &quot;2026-05-18T03:14:00Z&quot;
+                    "endDate" : "2026-05-18T03:22:00Z",
+                    "active" : false,
+                    "startDate" : "2026-05-18T03:14:00Z"
                   }, {
-                    &quot;duration&quot; : 480,
-                    &quot;agent&quot; : {
-                      &quot;agentId&quot; : &quot;281474976710706&quot;,
-                      &quot;agentName&quot; : &quot;thousandeyes-stg-va-254&quot;,
-                      &quot;location&quot; : &quot;San Francisco Bay Area&quot;,
-                      &quot;countryId&quot; : &quot;US&quot;
+                    "duration" : 480,
+                    "agent" : {
+                      "agentId" : "281474976710706",
+                      "agentName" : "thousandeyes-stg-va-254",
+                      "location" : "San Francisco Bay Area",
+                      "countryId" : "US"
                     },
-                    &quot;endDate&quot; : &quot;2026-05-18T03:22:00Z&quot;,
-                    &quot;active&quot; : false,
-                    &quot;startDate&quot; : &quot;2026-05-18T03:14:00Z&quot;
+                    "endDate" : "2026-05-18T03:22:00Z",
+                    "active" : false,
+                    "startDate" : "2026-05-18T03:14:00Z"
                   } ],
-                  &quot;startDate&quot; : &quot;2022-07-17T22:00:54Z&quot;
+                  "startDate" : "2022-07-17T22:00:54Z"
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_agents_local_problems(
+
             aid=aid,
+
             window=window,
+
             start_date=start_date,
+
             end_date=end_date,
+
             _headers=self.te_headers("get_agents_local_problems"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -116,10 +121,15 @@ class TestLocalProblemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_agents_local_problems(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_agents_local_problems", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -142,10 +152,15 @@ class TestLocalProblemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_agents_local_problems(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_agents_local_problems", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -171,10 +186,15 @@ class TestLocalProblemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_agents_local_problems(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_agents_local_problems", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -200,10 +220,15 @@ class TestLocalProblemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_agents_local_problems(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_agents_local_problems", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -229,10 +254,15 @@ class TestLocalProblemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_agents_local_problems(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_agents_local_problems", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -258,10 +288,15 @@ class TestLocalProblemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_agents_local_problems(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_agents_local_problems", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -287,10 +322,15 @@ class TestLocalProblemsApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_agents_local_problems(
+
                 aid=aid,
+
                 window=window,
+
                 start_date=start_date,
+
                 end_date=end_date,
+
                 _headers=self.te_headers("get_agents_local_problems", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)

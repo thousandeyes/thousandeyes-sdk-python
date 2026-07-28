@@ -47,81 +47,84 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;outages&quot; : [ {
-                    &quot;affectedInterfacesCount&quot; : 1,
-                    &quot;endDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                  "outages" : [ {
+                    "affectedInterfacesCount" : 1,
+                    "endDate" : "2022-03-01T23:31:11Z",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;affectedLocationsCount&quot; : 1,
-                    &quot;endRoundId&quot; : 1646177700,
-                    &quot;affectedTestsCount&quot; : 1,
-                    &quot;type&quot; : &quot;app&quot;,
-                    &quot;providerType&quot; : &quot;SAAS&quot;,
-                    &quot;duration&quot; : 214,
-                    &quot;startRoundId&quot; : 1646177400,
-                    &quot;name&quot; : &quot;Google&quot;,
-                    &quot;id&quot; : &quot;xxxxxxxxxxxxxxxxxx1&quot;,
-                    &quot;affectedServersCount&quot; : 2,
-                    &quot;asn&quot; : 19994,
-                    &quot;providerName&quot; : &quot;Google&quot;,
-                    &quot;startDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                    "affectedLocationsCount" : 1,
+                    "endRoundId" : 1646177700,
+                    "affectedTestsCount" : 1,
+                    "type" : "app",
+                    "providerType" : "SAAS",
+                    "duration" : 214,
+                    "startRoundId" : 1646177400,
+                    "name" : "Google",
+                    "id" : "xxxxxxxxxxxxxxxxxx1",
+                    "affectedServersCount" : 2,
+                    "asn" : 19994,
+                    "providerName" : "Google",
+                    "startDate" : "2022-03-01T23:31:11Z"
                   }, {
-                    &quot;affectedInterfacesCount&quot; : 1,
-                    &quot;endDate&quot; : &quot;2022-03-01T23:31:11Z&quot;,
-                    &quot;_links&quot; : {
-                      &quot;self&quot; : {
-                        &quot;hreflang&quot; : &quot;hreflang&quot;,
-                        &quot;templated&quot; : true,
-                        &quot;profile&quot; : &quot;profile&quot;,
-                        &quot;name&quot; : &quot;name&quot;,
-                        &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                        &quot;type&quot; : &quot;type&quot;,
-                        &quot;deprecation&quot; : &quot;deprecation&quot;,
-                        &quot;title&quot; : &quot;title&quot;
+                    "affectedInterfacesCount" : 1,
+                    "endDate" : "2022-03-01T23:31:11Z",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
                       }
                     },
-                    &quot;affectedLocationsCount&quot; : 1,
-                    &quot;endRoundId&quot; : 1646177700,
-                    &quot;affectedTestsCount&quot; : 1,
-                    &quot;type&quot; : &quot;app&quot;,
-                    &quot;providerType&quot; : &quot;SAAS&quot;,
-                    &quot;duration&quot; : 214,
-                    &quot;startRoundId&quot; : 1646177400,
-                    &quot;name&quot; : &quot;Google&quot;,
-                    &quot;id&quot; : &quot;xxxxxxxxxxxxxxxxxx1&quot;,
-                    &quot;affectedServersCount&quot; : 2,
-                    &quot;asn&quot; : 19994,
-                    &quot;providerName&quot; : &quot;Google&quot;,
-                    &quot;startDate&quot; : &quot;2022-03-01T23:31:11Z&quot;
+                    "affectedLocationsCount" : 1,
+                    "endRoundId" : 1646177700,
+                    "affectedTestsCount" : 1,
+                    "type" : "app",
+                    "providerType" : "SAAS",
+                    "duration" : 214,
+                    "startRoundId" : 1646177400,
+                    "name" : "Google",
+                    "id" : "xxxxxxxxxxxxxxxxxx1",
+                    "affectedServersCount" : 2,
+                    "asn" : 19994,
+                    "providerName" : "Google",
+                    "startDate" : "2022-03-01T23:31:11Z"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.filter_outages(
+
             api_outage_filter=api_outage_filter,
+
             aid=aid,
+
             _headers=self.te_headers("filter_outages"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -166,8 +169,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.filter_outages(
+
                 api_outage_filter=api_outage_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_outages", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -200,8 +206,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.filter_outages(
+
                 api_outage_filter=api_outage_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_outages", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -237,8 +246,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.filter_outages(
+
                 api_outage_filter=api_outage_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_outages", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -274,8 +286,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.filter_outages(
+
                 api_outage_filter=api_outage_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_outages", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -311,8 +326,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.filter_outages(
+
                 api_outage_filter=api_outage_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_outages", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -348,8 +366,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.filter_outages(
+
                 api_outage_filter=api_outage_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_outages", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -385,8 +406,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.filter_outages(
+
                 api_outage_filter=api_outage_filter,
+
                 aid=aid,
+
                 _headers=self.te_headers("filter_outages", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -400,68 +424,71 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;affectedDomains&quot; : [ &quot;amazon.com&quot;, &quot;amazon.com&quot; ],
-                  &quot;affectedTests&quot; : [ {
-                    &quot;name&quot; : &quot;amazon-test2&quot;,
-                    &quot;id&quot; : 5
+                  "affectedDomains" : [ "amazon.com", "amazon.com" ],
+                  "affectedTests" : [ {
+                    "name" : "amazon-test2",
+                    "id" : 5
                   }, {
-                    &quot;name&quot; : &quot;amazon-test2&quot;,
-                    &quot;id&quot; : 5
+                    "name" : "amazon-test2",
+                    "id" : 5
                   } ],
-                  &quot;endDate&quot; : &quot;2023-01-27T20:53:51.256Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2023-01-27T20:53:51.256Z",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;endRoundId&quot; : 1674852600,
-                  &quot;providerType&quot; : &quot;SAAS&quot;,
-                  &quot;duration&quot; : 180,
-                  &quot;startRoundId&quot; : 1674852600,
-                  &quot;affectedAgents&quot; : [ {
-                    &quot;name&quot; : &quot;London, England&quot;,
-                    &quot;id&quot; : 11
+                  "endRoundId" : 1674852600,
+                  "providerType" : "SAAS",
+                  "duration" : 180,
+                  "startRoundId" : 1674852600,
+                  "affectedAgents" : [ {
+                    "name" : "London, England",
+                    "id" : 11
                   }, {
-                    &quot;name&quot; : &quot;London, England&quot;,
-                    &quot;id&quot; : 11
+                    "name" : "London, England",
+                    "id" : 11
                   } ],
-                  &quot;id&quot; : &quot;0CC4C4209887126DE42E92252FB43962CBB3193147F318EA&quot;,
-                  &quot;providerName&quot; : &quot;Amazon Web Services&quot;,
-                  &quot;applicationName&quot; : &quot;Amazon Web Services&quot;,
-                  &quot;startDate&quot; : &quot;2023-01-27T20:50:51.256Z&quot;,
-                  &quot;errors&quot; : [ &quot;HTTP_SERVER_TIMEOUT&quot;, &quot;HTTP_SERVER_TIMEOUT&quot; ],
-                  &quot;affectedLocations&quot; : [ {
-                    &quot;location&quot; : &quot;Chicago, Illinois, US&quot;,
-                    &quot;affectedServers&quot; : [ {
-                      &quot;prefix&quot; : &quot;123.176.185.0/23&quot;,
-                      &quot;domain&quot; : &quot;amazon.com&quot;
+                  "id" : "0CC4C4209887126DE42E92252FB43962CBB3193147F318EA",
+                  "providerName" : "Amazon Web Services",
+                  "applicationName" : "Amazon Web Services",
+                  "startDate" : "2023-01-27T20:50:51.256Z",
+                  "errors" : [ "HTTP_SERVER_TIMEOUT", "HTTP_SERVER_TIMEOUT" ],
+                  "affectedLocations" : [ {
+                    "location" : "Chicago, Illinois, US",
+                    "affectedServers" : [ {
+                      "prefix" : "123.176.185.0/23",
+                      "domain" : "amazon.com"
                     }, {
-                      &quot;prefix&quot; : &quot;123.176.185.0/23&quot;,
-                      &quot;domain&quot; : &quot;amazon.com&quot;
+                      "prefix" : "123.176.185.0/23",
+                      "domain" : "amazon.com"
                     } ]
                   }, {
-                    &quot;location&quot; : &quot;Chicago, Illinois, US&quot;,
-                    &quot;affectedServers&quot; : [ {
-                      &quot;prefix&quot; : &quot;123.176.185.0/23&quot;,
-                      &quot;domain&quot; : &quot;amazon.com&quot;
+                    "location" : "Chicago, Illinois, US",
+                    "affectedServers" : [ {
+                      "prefix" : "123.176.185.0/23",
+                      "domain" : "amazon.com"
                     }, {
-                      &quot;prefix&quot; : &quot;123.176.185.0/23&quot;,
-                      &quot;domain&quot; : &quot;amazon.com&quot;
+                      "prefix" : "123.176.185.0/23",
+                      "domain" : "amazon.com"
                     } ]
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_app_outage(
+
             outage_id=outage_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_app_outage"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -494,8 +521,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_app_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_app_outage", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -516,8 +546,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_app_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_app_outage", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -541,8 +574,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_app_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_app_outage", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -566,8 +602,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_app_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_app_outage", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -591,8 +630,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_app_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_app_outage", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -616,8 +658,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_app_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_app_outage", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -641,8 +686,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_app_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_app_outage", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -656,56 +704,59 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  &quot;affectedDomains&quot; : [ &quot;periodic-failure.com&quot;, &quot;periodic-failure.com&quot; ],
-                  &quot;affectedTests&quot; : [ {
-                    &quot;name&quot; : &quot;amazon-test2&quot;,
-                    &quot;id&quot; : 5
+                  "affectedDomains" : [ "periodic-failure.com", "periodic-failure.com" ],
+                  "affectedTests" : [ {
+                    "name" : "amazon-test2",
+                    "id" : 5
                   }, {
-                    &quot;name&quot; : &quot;amazon-test2&quot;,
-                    &quot;id&quot; : 5
+                    "name" : "amazon-test2",
+                    "id" : 5
                   } ],
-                  &quot;endDate&quot; : &quot;2023-01-27T20:53:51.256Z&quot;,
-                  &quot;_links&quot; : {
-                    &quot;self&quot; : {
-                      &quot;hreflang&quot; : &quot;hreflang&quot;,
-                      &quot;templated&quot; : true,
-                      &quot;profile&quot; : &quot;profile&quot;,
-                      &quot;name&quot; : &quot;name&quot;,
-                      &quot;href&quot; : &quot;https://api.thousandeyes.com/v7/link/to/resource/id&quot;,
-                      &quot;type&quot; : &quot;type&quot;,
-                      &quot;deprecation&quot; : &quot;deprecation&quot;,
-                      &quot;title&quot; : &quot;title&quot;
+                  "endDate" : "2023-01-27T20:53:51.256Z",
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
                     }
                   },
-                  &quot;networkName&quot; : &quot;Rackspace Hosting&quot;,
-                  &quot;endRoundId&quot; : 1674852600,
-                  &quot;providerType&quot; : &quot;IAAS&quot;,
-                  &quot;duration&quot; : 180,
-                  &quot;startRoundId&quot; : 1674852600,
-                  &quot;affectedAgents&quot; : [ {
-                    &quot;name&quot; : &quot;London, England&quot;,
-                    &quot;id&quot; : 11
+                  "networkName" : "Rackspace Hosting",
+                  "endRoundId" : 1674852600,
+                  "providerType" : "IAAS",
+                  "duration" : 180,
+                  "startRoundId" : 1674852600,
+                  "affectedAgents" : [ {
+                    "name" : "London, England",
+                    "id" : 11
                   }, {
-                    &quot;name&quot; : &quot;London, England&quot;,
-                    &quot;id&quot; : 11
+                    "name" : "London, England",
+                    "id" : 11
                   } ],
-                  &quot;id&quot; : &quot;8EF2760862C705783A2F8BCBAAABB44F28DBC670DBA3B610&quot;,
-                  &quot;asn&quot; : 19994,
-                  &quot;providerName&quot; : &quot;Rackspace&quot;,
-                  &quot;startDate&quot; : &quot;2023-01-27T20:50:51.256Z&quot;,
-                  &quot;affectedLocations&quot; : [ {
-                    &quot;affectedInterfaces&quot; : [ &quot;50.51.52.53&quot;, &quot;50.51.52.53&quot; ],
-                    &quot;location&quot; : &quot;Chicago, Illinois, US&quot;
+                  "id" : "8EF2760862C705783A2F8BCBAAABB44F28DBC670DBA3B610",
+                  "asn" : 19994,
+                  "providerName" : "Rackspace",
+                  "startDate" : "2023-01-27T20:50:51.256Z",
+                  "affectedLocations" : [ {
+                    "affectedInterfaces" : [ "50.51.52.53", "50.51.52.53" ],
+                    "location" : "Chicago, Illinois, US"
                   }, {
-                    &quot;affectedInterfaces&quot; : [ &quot;50.51.52.53&quot;, &quot;50.51.52.53&quot; ],
-                    &quot;location&quot; : &quot;Chicago, Illinois, US&quot;
+                    "affectedInterfaces" : [ "50.51.52.53", "50.51.52.53" ],
+                    "location" : "Chicago, Illinois, US"
                   } ]
                 }
                 """
         expected_response = json.loads(response_body_json)
         response = self.api.get_network_outage(
+
             outage_id=outage_id,
+
             aid=aid,
+
             _headers=self.te_headers("get_network_outage"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -738,8 +789,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(400)
         ) as context:
             self.api.get_network_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_network_outage", error_status="400"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -760,8 +814,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(401)
         ) as context:
             self.api.get_network_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_network_outage", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -785,8 +842,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(403)
         ) as context:
             self.api.get_network_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_network_outage", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -810,8 +870,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(404)
         ) as context:
             self.api.get_network_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_network_outage", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -835,8 +898,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(429)
         ) as context:
             self.api.get_network_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_network_outage", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -860,8 +926,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(500)
         ) as context:
             self.api.get_network_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_network_outage", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -885,8 +954,11 @@ class TestInternetInsightsOutagesApiIntegration(IntegrationTestBase):
             ApiException.exception_class_for_http_status(502)
         ) as context:
             self.api.get_network_outage(
+
                 outage_id=outage_id,
+
                 aid=aid,
+
                 _headers=self.te_headers("get_network_outage", error_status="502"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
