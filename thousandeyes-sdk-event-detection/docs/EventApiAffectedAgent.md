@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** | The ID of the virtual agent. | [optional] [readonly] 
-**type** | [**CloudEnterpriseAgentType**](CloudEnterpriseAgentType.md) |  | [optional] 
+**type** | [**EventAffectedAgentType**](EventAffectedAgentType.md) |  | [optional] 
 **name** | **str** | The name of the agent as defined in settings. | [optional] [readonly] 
 **location** | **str** | The name of the agent&#39;s location. | [optional] [readonly] 
 **country_code** | **str** | The country code of the agent&#39;s location . | [optional] [readonly] 

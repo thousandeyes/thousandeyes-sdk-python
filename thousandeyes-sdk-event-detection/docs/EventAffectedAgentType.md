@@ -1,6 +1,6 @@
-# CloudEnterpriseAgentType
+# EventAffectedAgentType
 
-Type of the agent.
+Type of the affected agent.
 
 ## Properties
 
