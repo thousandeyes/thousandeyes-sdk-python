@@ -19,7 +19,7 @@ from typing_extensions import Self
 
 class EventType(str, Enum):
     """
-    Specifies the event type in a machine-readable and backwards-compatible format. Allowed values are: `agent-local`, `network-pop`, `network`, `dns`, `target`, and `proxy`.
+    Specifies the event type in a machine-readable and backwards-compatible format, such as `agent` or `target`.
     """
 
     """
@@ -32,6 +32,16 @@ class EventType(str, Enum):
     TARGET = 'target'
     TARGET_MINUS_NETWORK = 'target-network'
     PROXY = 'proxy'
+    AGENT = 'agent'
+    APPLICATION = 'application'
+    WIRELESS = 'wireless'
+    GATEWAY = 'gateway'
+    DNS_MINUS_SERVER = 'dns-server'
+    DNS_MINUS_NAME = 'dns-name'
+    VPN = 'vpn'
+    AGENT_MINUS_BRANCH = 'agent-branch'
+    DOMAIN = 'domain'
+    NAME_MINUS_SERVER = 'name-server'
     UNKNOWN = 'unknown'
 
     @classmethod

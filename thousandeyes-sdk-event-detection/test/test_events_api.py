@@ -35,6 +35,7 @@ class TestEventsApi(unittest.TestCase):
                 {
                   "severity" : "medium",
                   "summary" : "Significant number of issues detected with 66.29.146.15",
+                  "agentType" : "cloud-enterprise-agent",
                   "affectedTests" : {
                     "total" : 5,
                     "tests" : [ {
@@ -134,7 +135,7 @@ class TestEventsApi(unittest.TestCase):
                       "name" : "São Paulo, Brazil - agent",
                       "location" : "São Paulo, Brazil",
                       "affectedTestIds" : [ "2954", "2953" ],
-                      "type" : "enterprise-cluster"
+                      "type" : "enterprise"
                     }, {
                       "affectedTargetIds" : [ "123", "1234" ],
                       "agentId" : "2954",
@@ -154,7 +155,7 @@ class TestEventsApi(unittest.TestCase):
                       "name" : "São Paulo, Brazil - agent",
                       "location" : "São Paulo, Brazil",
                       "affectedTestIds" : [ "2954", "2953" ],
-                      "type" : "enterprise-cluster"
+                      "type" : "enterprise"
                     } ]
                   },
                   "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
@@ -199,6 +200,7 @@ class TestEventsApi(unittest.TestCase):
                   "startDate" : "2022-07-17T22:00:54Z",
                   "events" : [ {
                     "severity" : "medium",
+                    "agentType" : "cloud-enterprise-agent",
                     "affectedTests" : {
                       "total" : 5,
                       "inAccountGroup" : 2
@@ -216,22 +218,23 @@ class TestEventsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
-                    "affectedAgents" : {
-                      "total" : 5,
-                      "inAccountGroup" : 2
-                    },
                     "typeName" : "Network Issue",
-                    "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
-                    "state" : "resolved",
                     "title" : "Affecting destinations in google.com",
                     "type" : "target",
                     "affectedTargets" : {
                       "total" : 5,
                       "inAccountGroup" : 2
                     },
+                    "affectedAgents" : {
+                      "total" : 5,
+                      "inAccountGroup" : 2
+                    },
+                    "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                    "state" : "resolved",
                     "startDate" : "2020-04-23T13:43:16Z"
                   }, {
                     "severity" : "medium",
+                    "agentType" : "cloud-enterprise-agent",
                     "affectedTests" : {
                       "total" : 5,
                       "inAccountGroup" : 2
@@ -249,19 +252,19 @@ class TestEventsApi(unittest.TestCase):
                         "title" : "title"
                       }
                     },
-                    "affectedAgents" : {
-                      "total" : 5,
-                      "inAccountGroup" : 2
-                    },
                     "typeName" : "Network Issue",
-                    "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
-                    "state" : "resolved",
                     "title" : "Affecting destinations in google.com",
                     "type" : "target",
                     "affectedTargets" : {
                       "total" : 5,
                       "inAccountGroup" : 2
                     },
+                    "affectedAgents" : {
+                      "total" : 5,
+                      "inAccountGroup" : 2
+                    },
+                    "id" : "e9c3bf02-a48c-4aa8-9e5f-898800d6f569",
+                    "state" : "resolved",
                     "startDate" : "2020-04-23T13:43:16Z"
                   } ]
                 }"""
