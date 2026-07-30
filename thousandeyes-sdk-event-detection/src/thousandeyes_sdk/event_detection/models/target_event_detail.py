@@ -23,6 +23,7 @@ from typing_extensions import Annotated
 from thousandeyes_sdk.event_detection.models.affected_agents import AffectedAgents
 from thousandeyes_sdk.event_detection.models.affected_targets import AffectedTargets
 from thousandeyes_sdk.event_detection.models.affected_tests import AffectedTests
+from thousandeyes_sdk.event_detection.models.event_agent_type import EventAgentType
 from thousandeyes_sdk.event_detection.models.event_alert_severity import EventAlertSeverity
 from thousandeyes_sdk.event_detection.models.event_state import EventState
 from thousandeyes_sdk.event_detection.models.self_links import SelfLinks
@@ -38,10 +39,11 @@ class TargetEventDetail(BaseModel):
     type_name: Optional[StrictStr] = Field(default=None, description="Event type name. Examples include, Local Agent Issue, Network Path Issue, Network Outage, DNS Issue, Server Issue, and Proxy Issue.", alias="typeName")
     state: Optional[EventState] = None
     start_date: Optional[datetime] = Field(default=None, description="The start date and time (in UTC, ISO 8601 format) when the event was first detected.", alias="startDate")
-    end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is populated for \"ongoing\" events.", alias="endDate")
+    end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is null for \"ongoing\" (active) events and is populated once the event is resolved.", alias="endDate")
     severity: Optional[EventAlertSeverity] = None
     aid: Optional[StrictStr] = Field(default=None, description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint.")
     summary: Optional[StrictStr] = Field(default=None, description="A brief summary describing the cause of the event.")
+    agent_type: Optional[EventAgentType] = Field(default=None, alias="agentType")
     affected_tests: Optional[AffectedTests] = Field(default=None, alias="affectedTests")
     affected_targets: Optional[AffectedTargets] = Field(default=None, alias="affectedTargets")
     affected_agents: Optional[AffectedAgents] = Field(default=None, alias="affectedAgents")
@@ -49,7 +51,7 @@ class TargetEventDetail(BaseModel):
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
     type: Annotated[str, Field(strict=True)] = Field(description="Target event type.")
     grouping: Optional[TargetEventGrouping] = None
-    __properties: ClassVar[List[str]] = ["id", "typeName", "state", "startDate", "endDate", "severity", "aid", "summary", "affectedTests", "affectedTargets", "affectedAgents", "cause", "_links", "type", "grouping"]
+    __properties: ClassVar[List[str]] = ["id", "typeName", "state", "startDate", "endDate", "severity", "aid", "summary", "agentType", "affectedTests", "affectedTargets", "affectedAgents", "cause", "_links", "type", "grouping"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
@@ -148,6 +150,7 @@ class TargetEventDetail(BaseModel):
             "severity": obj.get("severity"),
             "aid": obj.get("aid"),
             "summary": obj.get("summary"),
+            "agentType": obj.get("agentType"),
             "affectedTests": AffectedTests.from_dict(obj["affectedTests"]) if obj.get("affectedTests") is not None else None,
             "affectedTargets": AffectedTargets.from_dict(obj["affectedTargets"]) if obj.get("affectedTargets") is not None else None,
             "affectedAgents": AffectedAgents.from_dict(obj["affectedAgents"]) if obj.get("affectedAgents") is not None else None,

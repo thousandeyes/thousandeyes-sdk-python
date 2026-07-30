@@ -72,5 +72,9 @@ src/thousandeyes_sdk/streaming/models/test_type.py
 src/thousandeyes_sdk/streaming/models/unauthorized_error.py
 src/thousandeyes_sdk/streaming/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_streaming_api.py
+test/test_streaming_api_integration.py
 test/test_utils.py

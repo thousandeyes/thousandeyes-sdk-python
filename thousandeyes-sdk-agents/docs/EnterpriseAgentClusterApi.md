@@ -48,9 +48,9 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.agents.EnterpriseAgentClusterApi(api_client)
     agent_id = '281474976710706' # str | Unique ID for the Enterprise Agent cluster to add new agents to.
-    agent_cluster_assign_request = thousandeyes_sdk.agents.AgentClusterAssignRequest() # AgentClusterAssignRequest | 
+    agent_cluster_assign_request =  # AgentClusterAssignRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.agents.AgentDetailsExpand()] # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
+    expand =  # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
 
     try:
         # Add member to Enterprise Agent cluster
@@ -142,9 +142,9 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.agents.EnterpriseAgentClusterApi(api_client)
     agent_id = '281474976710706' # str | Unique ID for the Enterprise Agent cluster to remove agents from.
-    agent_cluster_unassign_request = thousandeyes_sdk.agents.AgentClusterUnassignRequest() # AgentClusterUnassignRequest | 
+    agent_cluster_unassign_request =  # AgentClusterUnassignRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.agents.AgentDetailsExpand()] # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
+    expand =  # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
 
     try:
         # Remove member from Enterprise Agent cluster

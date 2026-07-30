@@ -50,7 +50,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardSnapshotsApi(api_client)
-    generate_dashboard_snapshot_request = thousandeyes_sdk.dashboards.GenerateDashboardSnapshotRequest() # GenerateDashboardSnapshotRequest | Request body schema to create a dashboard snapshot.
+    generate_dashboard_snapshot_request =  # GenerateDashboardSnapshotRequest | Request body schema to create a dashboard snapshot.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -482,7 +482,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardSnapshotsApi(api_client)
     snapshot_id = 'd28bb71f-5a47-4783-8f12-d4b115e61b0c' # str | A Identifier for a dashboard snapshot which can be obtained from the `/dashboards-snapshots` endpoint.
-    update_snapshot_expiration_date_api_request = thousandeyes_sdk.dashboards.UpdateSnapshotExpirationDateApiRequest() # UpdateSnapshotExpirationDateApiRequest | Request body schema to update a snapshot expiration.
+    update_snapshot_expiration_date_api_request =  # UpdateSnapshotExpirationDateApiRequest | Request body schema to update a snapshot expiration.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:

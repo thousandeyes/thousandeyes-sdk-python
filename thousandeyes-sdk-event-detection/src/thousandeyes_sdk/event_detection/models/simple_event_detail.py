@@ -32,7 +32,7 @@ class SimpleEventDetail(BaseModel):
     type_name: Optional[StrictStr] = Field(default=None, description="Event type name. Examples include, Local Agent Issue, Network Path Issue, Network Outage, DNS Issue, Server Issue, and Proxy Issue.", alias="typeName")
     state: Optional[EventState] = None
     start_date: Optional[datetime] = Field(default=None, description="The start date and time (in UTC, ISO 8601 format) when the event was first detected.", alias="startDate")
-    end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is populated for \"ongoing\" events.", alias="endDate")
+    end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is null for \"ongoing\" (active) events and is populated once the event is resolved.", alias="endDate")
     severity: Optional[EventAlertSeverity] = None
     __properties: ClassVar[List[str]] = ["id", "typeName", "state", "startDate", "endDate", "severity"]
 

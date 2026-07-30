@@ -74,7 +74,13 @@ src/thousandeyes_sdk/endpoint_instant_tests/models/validation_error.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/validation_error_item.py
 src/thousandeyes_sdk/endpoint_instant_tests/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_agent_to_server_endpoint_instant_scheduled_tests_api.py
+test/test_agent_to_server_endpoint_instant_scheduled_tests_api_integration.py
 test/test_http_server_endpoint_instant_scheduled_tests_api.py
+test/test_http_server_endpoint_instant_scheduled_tests_api_integration.py
 test/test_run_endpoint_instant_scheduled_tests_api.py
+test/test_run_endpoint_instant_scheduled_tests_api_integration.py
 test/test_utils.py
