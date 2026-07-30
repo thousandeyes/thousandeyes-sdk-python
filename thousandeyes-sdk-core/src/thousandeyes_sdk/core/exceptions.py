@@ -14,7 +14,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-from typing import Any, Optional
+from typing import Any, Optional, Type
 
 from typing_extensions import Self
 
@@ -136,6 +136,22 @@ class ApiException(OpenApiException):
             self.headers = http_resp.getheaders()
 
     @classmethod
+    def exception_class_for_http_status(cls, status: int) -> Type["ApiException"]:
+        if status == 400:
+            return BadRequestException
+        if status == 401:
+            return UnauthorizedException
+        if status == 403:
+            return ForbiddenException
+        if status == 404:
+            return NotFoundException
+        if status == 429:
+            return TooManyRequestsException
+        if 500 <= status <= 599:
+            return ServiceException
+        return ApiException
+
+    @classmethod
     def from_response(
             cls,
             *,
@@ -143,24 +159,8 @@ class ApiException(OpenApiException):
             body: Optional[str],
             data: Optional[Any],
     ) -> Self:
-        if http_resp.status == 400:
-            raise BadRequestException(http_resp=http_resp, body=body, data=data)
-
-        if http_resp.status == 401:
-            raise UnauthorizedException(http_resp=http_resp, body=body, data=data)
-
-        if http_resp.status == 403:
-            raise ForbiddenException(http_resp=http_resp, body=body, data=data)
-
-        if http_resp.status == 404:
-            raise NotFoundException(http_resp=http_resp, body=body, data=data)
-
-        if http_resp.status == 429:
-            raise TooManyRequestsException(http_resp=http_resp, body=body, data=data)
-
-        if 500 <= http_resp.status <= 599:
-            raise ServiceException(http_resp=http_resp, body=body, data=data)
-        raise ApiException(http_resp=http_resp, body=body, data=data)
+        exc_class = cls.exception_class_for_http_status(http_resp.status)
+        raise exc_class(http_resp=http_resp, body=body, data=data)
 
     def __str__(self):
         """Custom error messages for exception"""
