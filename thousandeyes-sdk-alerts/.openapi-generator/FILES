@@ -134,7 +134,13 @@ src/thousandeyes_sdk/alerts/models/validation_error_item.py
 src/thousandeyes_sdk/alerts/models/webhook_integration_type.py
 src/thousandeyes_sdk/alerts/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_alert_rules_api.py
+test/test_alert_rules_api_integration.py
 test/test_alert_suppression_windows_api.py
+test/test_alert_suppression_windows_api_integration.py
 test/test_alerts_api.py
+test/test_alerts_api_integration.py
 test/test_utils.py

@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **type_name** | **str** | Event type name. Examples include, Local Agent Issue, Network Path Issue, Network Outage, DNS Issue, Server Issue, and Proxy Issue. | [optional] [readonly] 
 **state** | [**EventState**](EventState.md) |  | [optional] 
 **start_date** | **datetime** | The start date and time (in UTC, ISO 8601 format) when the event was first detected. | [optional] [readonly] 
-**end_date** | **datetime** | The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is populated for \&quot;ongoing\&quot; events. | [optional] [readonly] 
+**end_date** | **datetime** | The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is null for \&quot;ongoing\&quot; (active) events and is populated once the event is resolved. | [optional] [readonly] 
 **severity** | [**EventAlertSeverity**](EventAlertSeverity.md) |  | [optional] 
 
 ## Example
