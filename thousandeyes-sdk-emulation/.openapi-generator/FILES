@@ -32,5 +32,9 @@ src/thousandeyes_sdk/emulation/models/user_agent.py
 src/thousandeyes_sdk/emulation/models/user_agents.py
 src/thousandeyes_sdk/emulation/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_emulation_api.py
+test/test_emulation_api_integration.py
 test/test_utils.py

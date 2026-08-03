@@ -76,9 +76,17 @@ src/thousandeyes_sdk/connectors/models/webhook_operation.py
 src/thousandeyes_sdk/connectors/models/webhook_operations.py
 src/thousandeyes_sdk/connectors/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_credential_vault_operations_api.py
+test/test_credential_vault_operations_api_integration.py
 test/test_cyber_ark_conjur_connectors_api.py
+test/test_cyber_ark_conjur_connectors_api_integration.py
 test/test_generic_connectors_api.py
+test/test_generic_connectors_api_integration.py
 test/test_operation_connectors_api.py
+test/test_operation_connectors_api_integration.py
 test/test_utils.py
 test/test_webhook_operations_api.py
+test/test_webhook_operations_api_integration.py

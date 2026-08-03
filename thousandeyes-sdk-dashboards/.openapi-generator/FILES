@@ -246,7 +246,13 @@ src/thousandeyes_sdk/dashboards/models/widget_measure_type.py
 src/thousandeyes_sdk/dashboards/models/widget_position.py
 src/thousandeyes_sdk/dashboards/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_dashboard_snapshots_api.py
+test/test_dashboard_snapshots_api_integration.py
 test/test_dashboards_api.py
+test/test_dashboards_api_integration.py
 test/test_dashboards_filters_api.py
+test/test_dashboards_filters_api_integration.py
 test/test_utils.py
