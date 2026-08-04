@@ -46,7 +46,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.snapshots.TestSnapshotsApi(api_client)
     test_id = '202701' # str | Test ID
-    snapshot_request = thousandeyes_sdk.snapshots.SnapshotRequest() # SnapshotRequest | 
+    snapshot_request =  # SnapshotRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:

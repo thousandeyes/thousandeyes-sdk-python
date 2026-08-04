@@ -50,8 +50,9 @@ Name | Type | Description | Notes
 **show_submetrics** | **bool** | Controls how metrics with submetric components are displayed. If &#x60;true&#x60; (default), the widget displays one chart per group. If &#x60;false&#x60;, the widget displays all submetrics in a single chart. For metrics without submetric components, this field is ignored and returned as &#x60;null&#x60;. | [optional] [default to True]
 **filter** | [**ApiWidgetFilterApiTestTableFilterKey**](ApiWidgetFilterApiTestTableFilterKey.md) |  | [optional] 
 **exclude** | [**ApiWidgetFilterApiTestTableFilterKey**](ApiWidgetFilterApiTestTableFilterKey.md) |  | [optional] 
-**show_timeseries_overall_baseline** | **bool** | Displays the overall baseline if set to &#x60;true&#x60;. | [optional] 
-**is_timeseries_one_chart_per_line** | **bool** | Displays a separate chart for each line if set to &#x60;true&#x60;. | [optional] 
+**show_timeseries_overall_baseline** | **bool** | Displays the overall baseline when set to &#x60;true&#x60;. | [optional] [default to False]
+**is_timeseries_one_chart_per_line** | **bool** | Displays a separate chart for each line when set to &#x60;true&#x60;. | [optional] [default to False]
+**show_zoom_slider** | **bool** | Displays the zoom slider on the time axis when set to &#x60;true&#x60;. | [optional] [default to False]
 
 ## Example
 

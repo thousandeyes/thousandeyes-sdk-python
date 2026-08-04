@@ -17,22 +17,21 @@ from enum import Enum
 from typing_extensions import Self
 
 
-class CloudEnterpriseAgentType(str, Enum):
+class EventAgentType(str, Enum):
     """
-    Type of the agent.
+    Specifies the agent type associated with the event. Allowed values are `cloud-enterprise-agent` and `endpoint-agent`.
     """
 
     """
     allowed enum values
     """
-    CLOUD = 'cloud'
-    ENTERPRISE_MINUS_CLUSTER = 'enterprise-cluster'
-    ENTERPRISE = 'enterprise'
+    CLOUD_MINUS_ENTERPRISE_MINUS_AGENT = 'cloud-enterprise-agent'
+    ENDPOINT_MINUS_AGENT = 'endpoint-agent'
     UNKNOWN = 'unknown'
 
     @classmethod
     def from_json(cls, json_str: str) -> Self:
-        """Create an instance of CloudEnterpriseAgentType from a JSON string"""
+        """Create an instance of EventAgentType from a JSON string"""
         return cls(json.loads(json_str))
 
     @classmethod

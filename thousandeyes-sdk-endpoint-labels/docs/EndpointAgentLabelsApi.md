@@ -50,7 +50,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_labels.EndpointAgentLabelsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    label_request = thousandeyes_sdk.endpoint_labels.LabelRequest() # LabelRequest | Label settings (optional)
+    label_request =  # LabelRequest | Label settings (optional)
 
     try:
         # Create label
@@ -216,7 +216,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_labels.EndpointAgentLabelsApi(api_client)
     id = 'id_example' # str | The unique identifier of the label to operate on.
-    expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()] # List[ExpandLabelOptions] | This parameter is optional and determines whether to include additional details in the response. To specify multiple expansions, you can either separate the values with commas or specify the parameter multiple times. (optional)
+    expand =  # List[ExpandLabelOptions] | This parameter is optional and determines whether to include additional details in the response. To specify multiple expansions, you can either separate the values with commas or specify the parameter multiple times. (optional)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -304,7 +304,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.endpoint_labels.EndpointAgentLabelsApi(api_client)
     max = 5 # int | (Optional) Maximum number of objects to return. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
-    expand = [thousandeyes_sdk.endpoint_labels.ExpandLabelOptions()] # List[ExpandLabelOptions] | This parameter is optional and determines whether to include additional details in the response. To specify multiple expansions, you can either separate the values with commas or specify the parameter multiple times. (optional)
+    expand =  # List[ExpandLabelOptions] | This parameter is optional and determines whether to include additional details in the response. To specify multiple expansions, you can either separate the values with commas or specify the parameter multiple times. (optional)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -392,7 +392,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.endpoint_labels.EndpointAgentLabelsApi(api_client)
     id = 'id_example' # str | The unique identifier of the label to operate on.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    label = thousandeyes_sdk.endpoint_labels.Label() # Label | Fields to change on the agent (optional)
+    label =  # Label | Fields to change on the agent (optional)
 
     try:
         # Update label

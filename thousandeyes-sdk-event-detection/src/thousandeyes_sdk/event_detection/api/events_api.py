@@ -19,7 +19,7 @@ from importlib.metadata import version
 import thousandeyes_sdk.event_detection.models
 
 from datetime import datetime
-from pydantic import Field, StrictInt, StrictStr, field_validator
+from pydantic import Field, StrictBool, StrictInt, StrictStr, field_validator
 from typing import Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.event_detection.models.event_detail import EventDetail
@@ -350,6 +350,7 @@ class EventsApi:
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        ongoing: Annotated[Optional[StrictBool], Field(description="When set to `true`, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to `false`, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -379,6 +380,8 @@ class EventsApi:
         :type max: int
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param ongoing: When set to `true`, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to `false`, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response.
+        :type ongoing: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -403,7 +406,7 @@ class EventsApi:
         return PaginationIterable(
             self.get_events,
             lambda data: data.events if data and data.events else [],
-            aid = aid, window = window, start_date = start_date, end_date = end_date, max = max, cursor = cursor,
+            aid = aid, window = window, start_date = start_date, end_date = end_date, max = max, cursor = cursor, ongoing = ongoing,
             _request_timeout=_request_timeout,
             _request_auth=_request_auth,
             _content_type=_content_type,
@@ -421,6 +424,7 @@ class EventsApi:
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        ongoing: Annotated[Optional[StrictBool], Field(description="When set to `true`, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to `false`, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -450,6 +454,8 @@ class EventsApi:
         :type max: int
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param ongoing: When set to `true`, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to `false`, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response.
+        :type ongoing: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -479,6 +485,7 @@ class EventsApi:
             end_date=end_date,
             max=max,
             cursor=cursor,
+            ongoing=ongoing,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -516,6 +523,7 @@ class EventsApi:
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        ongoing: Annotated[Optional[StrictBool], Field(description="When set to `true`, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to `false`, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -545,6 +553,8 @@ class EventsApi:
         :type max: int
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param ongoing: When set to `true`, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to `false`, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response.
+        :type ongoing: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -574,6 +584,7 @@ class EventsApi:
             end_date=end_date,
             max=max,
             cursor=cursor,
+            ongoing=ongoing,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -611,6 +622,7 @@ class EventsApi:
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[StrictInt], Field(description="(Optional) Maximum number of objects to return.")] = None,
         cursor: Annotated[Optional[StrictStr], Field(description="(Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.")] = None,
+        ongoing: Annotated[Optional[StrictBool], Field(description="When set to `true`, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to `false`, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response.")] = None,
         _request_timeout: Union[
             None,
             Annotated[StrictFloat, Field(gt=0)],
@@ -640,6 +652,8 @@ class EventsApi:
         :type max: int
         :param cursor: (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter.
         :type cursor: str
+        :param ongoing: When set to `true`, only ongoing (active) events whose start date is within the specified time window are included in the response. When set to `false`, ongoing events are excluded from the response. If not set, both ongoing and concluded events appear in the response.
+        :type ongoing: bool
         :param _request_timeout: timeout setting for this request. If one
                                  number provided, it will be total request
                                  timeout. It can also be a pair (tuple) of
@@ -669,6 +683,7 @@ class EventsApi:
             end_date=end_date,
             max=max,
             cursor=cursor,
+            ongoing=ongoing,
             _request_auth=_request_auth,
             _content_type=_content_type,
             _headers=_headers,
@@ -700,6 +715,7 @@ class EventsApi:
         end_date,
         max,
         cursor,
+        ongoing,
         _request_auth,
         _content_type,
         _headers,
@@ -761,6 +777,10 @@ class EventsApi:
         if cursor is not None:
             
             _query_params.append(('cursor', cursor))
+            
+        if ongoing is not None:
+            
+            _query_params.append(('ongoing', ongoing))
             
         # process the header parameters
         # process the form parameters

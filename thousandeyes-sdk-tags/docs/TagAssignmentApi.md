@@ -49,7 +49,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
     id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
-    tag_assignment = thousandeyes_sdk.tags.TagAssignment() # TagAssignment | 
+    tag_assignment =  # TagAssignment | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -83,7 +83,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json, application/problem+json
+ - **Accept**: application/json, application/hal+json, application/problem+json
 
 ### HTTP response details
 
@@ -135,7 +135,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
-    bulk_tag_assignments = thousandeyes_sdk.tags.BulkTagAssignments() # BulkTagAssignments | 
+    bulk_tag_assignments =  # BulkTagAssignments | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -168,7 +168,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json, application/problem+json
+ - **Accept**: application/json, application/hal+json, application/problem+json
 
 ### HTTP response details
 
@@ -221,7 +221,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
     id = 'c6b78e57-81a2-4c5f-a11a-d96c3c664d55' # str | Tag ID
-    tag_assignment = thousandeyes_sdk.tags.TagAssignment() # TagAssignment | 
+    tag_assignment =  # TagAssignment | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -305,7 +305,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.tags.TagAssignmentApi(api_client)
-    bulk_tag_assignments = thousandeyes_sdk.tags.BulkTagAssignments() # BulkTagAssignments | 
+    bulk_tag_assignments =  # BulkTagAssignments | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -338,7 +338,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
- - **Accept**: application/hal+json, application/json, application/problem+json
+ - **Accept**: application/json, application/hal+json, application/problem+json
 
 ### HTTP response details
 

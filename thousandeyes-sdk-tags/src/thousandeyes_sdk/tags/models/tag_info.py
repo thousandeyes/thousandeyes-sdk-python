@@ -119,6 +119,11 @@ class TagInfo(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['filters'] = _items
+        # set to None if aid (nullable) is None
+        # and model_fields_set contains the field
+        if self.aid is None and "aid" in self.model_fields_set:
+            _dict['aid'] = None
+
         # set to None if icon (nullable) is None
         # and model_fields_set contains the field
         if self.icon is None and "icon" in self.model_fields_set:

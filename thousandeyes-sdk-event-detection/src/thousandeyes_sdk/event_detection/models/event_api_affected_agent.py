@@ -19,7 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.event_detection.models.agent_links import AgentLinks
-from thousandeyes_sdk.event_detection.models.cloud_enterprise_agent_type import CloudEnterpriseAgentType
+from thousandeyes_sdk.event_detection.models.event_affected_agent_type import EventAffectedAgentType
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -28,7 +28,7 @@ class EventApiAffectedAgent(BaseModel):
     EventApiAffectedAgent
     """ # noqa: E501
     agent_id: Optional[StrictStr] = Field(default=None, description="The ID of the virtual agent.", alias="agentId")
-    type: Optional[CloudEnterpriseAgentType] = None
+    type: Optional[EventAffectedAgentType] = None
     name: Optional[StrictStr] = Field(default=None, description="The name of the agent as defined in settings.")
     location: Optional[StrictStr] = Field(default=None, description="The name of the agent's location.")
     country_code: Optional[StrictStr] = Field(default=None, description="The country code of the agent's location .", alias="countryCode")
