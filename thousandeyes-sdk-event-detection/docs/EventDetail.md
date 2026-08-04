@@ -9,17 +9,18 @@ Name | Type | Description | Notes
 **type_name** | **str** | Event type name. Examples include, Local Agent Issue, Network Path Issue, Network Outage, DNS Issue, Server Issue, and Proxy Issue. | [optional] [readonly] 
 **state** | [**EventState**](EventState.md) |  | [optional] 
 **start_date** | **datetime** | The start date and time (in UTC, ISO 8601 format) when the event was first detected. | [optional] [readonly] 
-**end_date** | **datetime** | The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is populated for \&quot;ongoing\&quot; events. | [optional] [readonly] 
+**end_date** | **datetime** | The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is null for \&quot;ongoing\&quot; (active) events and is populated once the event is resolved. | [optional] [readonly] 
 **severity** | [**EventAlertSeverity**](EventAlertSeverity.md) |  | [optional] 
 **aid** | **str** | A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. | [optional] 
 **summary** | **str** | A brief summary describing the cause of the event. | [optional] [readonly] 
+**agent_type** | [**EventAgentType**](EventAgentType.md) |  | [optional] 
 **affected_tests** | [**AffectedTests**](AffectedTests.md) |  | [optional] 
 **affected_targets** | [**AffectedTargets**](AffectedTargets.md) |  | [optional] 
 **affected_agents** | [**AffectedAgents**](AffectedAgents.md) |  | [optional] 
 **cause** | **List[str]** | The cause of the error. | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
-**type** | **str** | Network pop event type. | 
-**grouping** | [**NetworkEventGrouping**](NetworkEventGrouping.md) |  | [optional] 
+**type** | **str** | Name server event type. | 
+**grouping** | [**NameServerEventGrouping**](NameServerEventGrouping.md) |  | [optional] 
 
 ## Example
 

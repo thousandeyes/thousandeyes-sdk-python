@@ -5,5 +5,6 @@ from thousandeyes_sdk.connectors.api.credential_vault_operations_api import Cred
 from thousandeyes_sdk.connectors.api.cyber_ark_conjur_connectors_api import CyberArkConjurConnectorsApi
 from thousandeyes_sdk.connectors.api.generic_connectors_api import GenericConnectorsApi
 from thousandeyes_sdk.connectors.api.operation_connectors_api import OperationConnectorsApi
+from thousandeyes_sdk.connectors.api.panorama_connectors_api import PanoramaConnectorsApi
 from thousandeyes_sdk.connectors.api.webhook_operations_api import WebhookOperationsApi
 

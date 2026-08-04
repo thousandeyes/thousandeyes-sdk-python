@@ -46,7 +46,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_agents.EndpointAgentsTransferApi(api_client)
     agent_id = 'agent_id_example' # str | The identifier of the agent to operate on.
-    agent_transfer_request = thousandeyes_sdk.endpoint_agents.AgentTransferRequest() # AgentTransferRequest | The request to move an agent between accounts.
+    agent_transfer_request =  # AgentTransferRequest | The request to move an agent between accounts.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -131,7 +131,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_agents.EndpointAgentsTransferApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    bulk_agent_transfer_request = thousandeyes_sdk.endpoint_agents.BulkAgentTransferRequest() # BulkAgentTransferRequest | A collection of `AgentTransfers`. (optional)
+    bulk_agent_transfer_request =  # BulkAgentTransferRequest | A collection of `AgentTransfers`. (optional)
 
     try:
         # Bulk transfer agents

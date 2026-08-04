@@ -37,7 +37,9 @@ class EndpointResultRequestFilter(BaseModel):
     network_id: Optional[List[StrictStr]] = Field(default=None, description="Network ID.", alias="networkId")
     ssid: Optional[List[StrictStr]] = Field(default=None, description="WiFi SSID.")
     bssid: Optional[List[StrictStr]] = Field(default=None, description="WiFi BSSID.")
-    __properties: ClassVar[List[str]] = ["location", "connection", "platform", "gateway", "proxyTarget", "vpnTarget", "agentId", "networkId", "ssid", "bssid"]
+    nic_model: Optional[List[StrictStr]] = Field(default=None, description="Filters results to NIC models that exactly match one of the provided values. Matching is case-sensitive.", alias="nicModel")
+    nic_driver_version: Optional[List[StrictStr]] = Field(default=None, description="Filters results to NIC driver versions that exactly match one of the provided values. Matching is case-sensitive.", alias="nicDriverVersion")
+    __properties: ClassVar[List[str]] = ["location", "connection", "platform", "gateway", "proxyTarget", "vpnTarget", "agentId", "networkId", "ssid", "bssid", "nicModel", "nicDriverVersion"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -100,7 +102,9 @@ class EndpointResultRequestFilter(BaseModel):
             "agentId": obj.get("agentId"),
             "networkId": obj.get("networkId"),
             "ssid": obj.get("ssid"),
-            "bssid": obj.get("bssid")
+            "bssid": obj.get("bssid"),
+            "nicModel": obj.get("nicModel"),
+            "nicDriverVersion": obj.get("nicDriverVersion")
         })
         return _obj
 

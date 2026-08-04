@@ -124,6 +124,11 @@ class Tag(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
+        # set to None if aid (nullable) is None
+        # and model_fields_set contains the field
+        if self.aid is None and "aid" in self.model_fields_set:
+            _dict['aid'] = None
+
         # set to None if icon (nullable) is None
         # and model_fields_set contains the field
         if self.icon is None and "icon" in self.model_fields_set:

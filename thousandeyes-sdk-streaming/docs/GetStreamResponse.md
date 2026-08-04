@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **tag_match** | [**List[TagMatch]**](TagMatch.md) | A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics. Tags are invalid if the tag key includes characters that are not allowed by the [OpenTelemetry naming recommendations for attributes](https://opentelemetry.io/docs/specs/semconv/general/naming/#recommendations-for-application-developers). | [optional] 
 **test_match** | [**List[TestMatch]**](TestMatch.md) | A collection of tests to be included in the data stream. | [optional] 
 **filters** | [**Filters**](Filters.md) |  | [optional] 
+**input_config** | [**InputConfig**](InputConfig.md) |  | [optional] 
 **exporter_config** | [**ExporterConfig**](ExporterConfig.md) |  | [optional] 
 **endpoint_agent_label** | [**List[EndpointAgentLabel]**](EndpointAgentLabel.md) | A collection of Endpoint Agent label IDs that determines what local network data is included in the data stream. &#x60;endpointAgentLabel&#x60; and &#x60;endpointAgentTag&#x60; represent the same data. Configure only one; both are synchronized. | [optional] 
 **endpoint_agent_tag** | [**List[EndpointAgentTag]**](EndpointAgentTag.md) | A collection of Endpoint Agent Tag IDs that determines what local network data is included in the data stream. &#x60;endpointAgentLabel&#x60; and &#x60;endpointAgentTag&#x60; represent the same data. Configure only one; both are synchronized. | [optional] 

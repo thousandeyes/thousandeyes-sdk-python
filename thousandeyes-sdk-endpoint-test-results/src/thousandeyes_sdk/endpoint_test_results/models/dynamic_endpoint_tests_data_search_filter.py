@@ -27,10 +27,12 @@ class DynamicEndpointTestsDataSearchFilter(BaseModel):
     """ # noqa: E501
     agent_id: Optional[List[StrictStr]] = Field(default=None, description="Filter using the `agent-id`.", alias="agentId")
     user_principal_name: Optional[List[StrictStr]] = Field(default=None, description="Filters results based on an array of `userPrincipalName` values.", alias="userPrincipalName")
+    nic_model: Optional[List[StrictStr]] = Field(default=None, description="Filters results to NIC models that exactly match one of the provided values. Matching is case-sensitive.", alias="nicModel")
+    nic_driver_version: Optional[List[StrictStr]] = Field(default=None, description="Filters results to NIC driver versions that exactly match one of the provided values. Matching is case-sensitive.", alias="nicDriverVersion")
     webex_conference_id: Optional[List[StrictStr]] = Field(default=None, description="Filter using the `conference-id` of the Webex call.", alias="webexConferenceId")
     webex_correlation_id: Optional[List[StrictStr]] = Field(default=None, description="Filter using the `correlation-id` of the Webex call.", alias="webexCorrelationId")
     webex_local_sip_session_id: Optional[List[StrictStr]] = Field(default=None, description="Filter using the `local-sip-session-id` of the Webex call.", alias="webexLocalSipSessionId")
-    __properties: ClassVar[List[str]] = ["agentId", "userPrincipalName", "webexConferenceId", "webexCorrelationId", "webexLocalSipSessionId"]
+    __properties: ClassVar[List[str]] = ["agentId", "userPrincipalName", "nicModel", "nicDriverVersion", "webexConferenceId", "webexCorrelationId", "webexLocalSipSessionId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -86,6 +88,8 @@ class DynamicEndpointTestsDataSearchFilter(BaseModel):
         _obj = cls.model_validate({
             "agentId": obj.get("agentId"),
             "userPrincipalName": obj.get("userPrincipalName"),
+            "nicModel": obj.get("nicModel"),
+            "nicDriverVersion": obj.get("nicDriverVersion"),
             "webexConferenceId": obj.get("webexConferenceId"),
             "webexCorrelationId": obj.get("webexCorrelationId"),
             "webexLocalSipSessionId": obj.get("webexLocalSipSessionId")

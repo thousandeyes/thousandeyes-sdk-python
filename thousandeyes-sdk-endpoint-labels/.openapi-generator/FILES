@@ -42,5 +42,9 @@ src/thousandeyes_sdk/endpoint_labels/models/validation_error.py
 src/thousandeyes_sdk/endpoint_labels/models/validation_error_item.py
 src/thousandeyes_sdk/endpoint_labels/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_endpoint_agent_labels_api.py
+test/test_endpoint_agent_labels_api_integration.py
 test/test_utils.py

@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **bandwidth** | **float** |  | [optional] [readonly] 
 **capacity** | **float** | The capacity from the client to the server measured in Mbps. This value is not available if bandwidth testing is disabled, if no value could be calculated, or if the target is a proxy. | [optional] [readonly] 
 **jitter** | **float** | Standard deviation of latency | [optional] [readonly] 
-**loss** | **float** | Percentage of packets not reaching destination | [optional] [readonly] 
+**loss** | **float** | Percentage of packets not reaching the destination. This field is omitted when no loss measurement is available. | [optional] [readonly] 
 **max_latency** | **float** | Maximum RTT for packets sent to destination | [optional] [readonly] 
 **min_latency** | **float** | Minimum RTT for packets sent to destination | [optional] [readonly] 
 **proxy_loss** | **float** | Percentage of packets not reaching proxy. | [optional] [readonly] 
@@ -29,6 +29,7 @@ Name | Type | Description | Notes
 **server** | **str** | Target server, including port (if method used is TCP) | [optional] [readonly] 
 **health_score** | **float** | A normalized value (0.0-1.0) representing the network connection health of the test target. Returns negative values as error codes. -1.0 indicates there was insufficient data to calculate the health score. | [optional] 
 **direction** | [**TestDirection**](TestDirection.md) |  | [optional] 
+**error_details** | **str** | Error details. This field is omitted when no error occurs. | [optional] [readonly] 
 
 ## Example
 

@@ -427,11 +427,13 @@ class TestEndpointAgentsApi(unittest.TestCase):
                     "agentName" : [ "myagent-1234", "myagent-1234" ],
                     "locationSubdivision1Code" : [ "ENG", "ENG" ],
                     "platform" : [ "mac", "mac" ],
+                    "nicModel" : [ "Intel(R) Wi-Fi 6 AX200 160MHz", "Intel(R) Wi-Fi 6 AX200 160MHz" ],
                     "licenseType" : [ "essentials", "essentials" ],
                     "osVersion" : [ "Version 10.15.2", "Version 10.15.2" ],
                     "computerName" : [ "DESKTOP-45AE8", "DESKTOP-45AE8" ],
                     "locationCountryISO" : [ "FR", "FR" ],
                     "id" : [ "861b7557-cd57-4bbb-b648-00bddf88ef49", "861b7557-cd57-4bbb-b648-00bddf88ef49" ],
+                    "nicDriverVersion" : [ "22.250.0.9", "22.250.0.9" ],
                     "userPrincipalName" : [ "picard@c.com" ],
                     "locationCity" : [ "Paris", "Paris" ],
                     "username" : [ "picard" ]

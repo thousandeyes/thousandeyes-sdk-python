@@ -50,8 +50,8 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
-    account_group_request = thousandeyes_sdk.administrative.AccountGroupRequest() # AccountGroupRequest | 
-    expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()] # List[ExpandAccountGroupOptions] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    account_group_request =  # AccountGroupRequest | 
+    expand =  # List[ExpandAccountGroupOptions] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Create account group
@@ -219,7 +219,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
     id = '1234' # str | Identifier for the account group.
-    expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()] # List[ExpandAccountGroupOptions] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    expand =  # List[ExpandAccountGroupOptions] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Retrieve account group
@@ -387,8 +387,8 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.administrative.AccountGroupsApi(api_client)
     id = '1234' # str | Identifier for the account group.
-    account_group_request = thousandeyes_sdk.administrative.AccountGroupRequest() # AccountGroupRequest | 
-    expand = [thousandeyes_sdk.administrative.ExpandAccountGroupOptions()] # List[ExpandAccountGroupOptions] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
+    account_group_request =  # AccountGroupRequest | 
+    expand =  # List[ExpandAccountGroupOptions] | Optional parameter that specifies whether or not account group related resources should be expanded. By default, no expansion takes place if the query parameter is not passed. For example, to expand the `users` resource, pass the `?expand=user` query. (optional)
 
     try:
         # Update account group

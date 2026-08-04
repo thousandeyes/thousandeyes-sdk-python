@@ -44,6 +44,9 @@ from thousandeyes_sdk.dashboards.models.api_graphlet_point import ApiGraphletPoi
 from thousandeyes_sdk.dashboards.models.api_grouped_barchart_widget import ApiGroupedBarchartWidget
 from thousandeyes_sdk.dashboards.models.api_heatmap_widget import ApiHeatmapWidget
 from thousandeyes_sdk.dashboards.models.api_list_widget import ApiListWidget
+from thousandeyes_sdk.dashboards.models.api_list_widget_row import ApiListWidgetRow
+from thousandeyes_sdk.dashboards.models.api_list_widget_row_links import ApiListWidgetRowLinks
+from thousandeyes_sdk.dashboards.models.api_list_widget_row_value import ApiListWidgetRowValue
 from thousandeyes_sdk.dashboards.models.api_multi_metric_column import ApiMultiMetricColumn
 from thousandeyes_sdk.dashboards.models.api_multi_metric_column_data import ApiMultiMetricColumnData
 from thousandeyes_sdk.dashboards.models.api_multi_metric_table_widget import ApiMultiMetricTableWidget
@@ -64,6 +67,7 @@ from thousandeyes_sdk.dashboards.models.api_test_table_data import ApiTestTableD
 from thousandeyes_sdk.dashboards.models.api_test_table_graphlets_data import ApiTestTableGraphletsData
 from thousandeyes_sdk.dashboards.models.api_test_table_widget import ApiTestTableWidget
 from thousandeyes_sdk.dashboards.models.api_timeseries_widget import ApiTimeseriesWidget
+from thousandeyes_sdk.dashboards.models.api_timeseries_widget_properties import ApiTimeseriesWidgetProperties
 from thousandeyes_sdk.dashboards.models.api_widget import ApiWidget
 from thousandeyes_sdk.dashboards.models.api_widget_data import ApiWidgetData
 from thousandeyes_sdk.dashboards.models.api_widget_data_point import ApiWidgetDataPoint
@@ -112,6 +116,7 @@ from thousandeyes_sdk.dashboards.models.multi_metrics_table_datasource import Mu
 from thousandeyes_sdk.dashboards.models.numbers_card_datasource import NumbersCardDatasource
 from thousandeyes_sdk.dashboards.models.pagination_links import PaginationLinks
 from thousandeyes_sdk.dashboards.models.pie_chart_datasource import PieChartDatasource
+from thousandeyes_sdk.dashboards.models.refresh_rate import RefreshRate
 from thousandeyes_sdk.dashboards.models.scalable_widget import ScalableWidget
 from thousandeyes_sdk.dashboards.models.self_links import SelfLinks
 from thousandeyes_sdk.dashboards.models.stacked_area_chart_datasource import StackedAreaChartDatasource

@@ -23,6 +23,7 @@ from thousandeyes_sdk.dashboards.models.api_widget import ApiWidget
 from thousandeyes_sdk.dashboards.models.dashboard_layout import DashboardLayout
 from thousandeyes_sdk.dashboards.models.dashboard_links import DashboardLinks
 from thousandeyes_sdk.dashboards.models.default_timespan import DefaultTimespan
+from thousandeyes_sdk.dashboards.models.refresh_rate import RefreshRate
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -47,8 +48,9 @@ class Dashboard(BaseModel):
     is_global_override: Optional[StrictBool] = Field(default=None, description="When set to `true`, the defaultTimespan is used and overrides the widget's timespan. If set to `false`, the the widget's timespan is used.", alias="isGlobalOverride")
     is_migrated_report: Optional[StrictBool] = Field(default=None, description="True if this dashboard was previously a report.", alias="isMigratedReport")
     layout: Optional[DashboardLayout] = None
+    refresh_rate: Optional[RefreshRate] = Field(default=None, alias="refreshRate")
     links: Optional[DashboardLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["globalFilterId", "dashboardId", "title", "isBuiltIn", "aid", "createdBy", "modifiedBy", "modifiedDate", "isPrivate", "isDefaultForUser", "isDefaultForAccount", "widgets", "description", "defaultTimespan", "isGlobalOverride", "isMigratedReport", "layout", "_links"]
+    __properties: ClassVar[List[str]] = ["globalFilterId", "dashboardId", "title", "isBuiltIn", "aid", "createdBy", "modifiedBy", "modifiedDate", "isPrivate", "isDefaultForUser", "isDefaultForAccount", "widgets", "description", "defaultTimespan", "isGlobalOverride", "isMigratedReport", "layout", "refreshRate", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -153,6 +155,7 @@ class Dashboard(BaseModel):
             "isGlobalOverride": obj.get("isGlobalOverride"),
             "isMigratedReport": obj.get("isMigratedReport"),
             "layout": DashboardLayout.from_dict(obj["layout"]) if obj.get("layout") is not None else None,
+            "refreshRate": obj.get("refreshRate"),
             "_links": DashboardLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj

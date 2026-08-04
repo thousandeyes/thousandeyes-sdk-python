@@ -47,7 +47,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.emulation.EmulationApi(api_client)
-    emulated_device = thousandeyes_sdk.emulation.EmulatedDevice() # EmulatedDevice | 
+    emulated_device =  # EmulatedDevice | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -133,7 +133,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.emulation.EmulationApi(api_client)
-    expand = [thousandeyes_sdk.emulation.ExpandEmulatedDeviceOptions()] # List[ExpandEmulatedDeviceOptions] | Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request.  (optional)
+    expand =  # List[ExpandEmulatedDeviceOptions] | Optional query parameter that controls whether user-agent templates are included in the response. By default, user-agent templates are not included. To include them, add `?expand=user-agent` to the request.  (optional)
 
     try:
         # List emulated devices
