@@ -260,7 +260,7 @@ class TestGenericConnectorsApi(unittest.TestCase):
     def test_set_generic_connector_operations_models_validation(self) -> None:
         """Test case for set_generic_connector_operations request and response models"""
         request_body_json = """
-                ["ca39314d-eb4f-496f-9435-b5d20b1bfbff","a32cfbab-32f6-41d8-9027-7127cba965dd"]
+                none
                 """
 
         request_loaded_json = json.loads(request_body_json)

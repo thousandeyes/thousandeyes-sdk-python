@@ -51,6 +51,7 @@ Name | Type | Description | Notes
 **browser_language** | **str** | Set one of the available browser language that you want to use to configure the browser. | [optional] 
 **chrome_options** | **str** | Command-line options passed to Chrome when running the test. | [optional] [default to '']
 **chrome_policies** | **str** | JSON string of Chrome policy settings to apply. | [optional] [default to '{}']
+**chromium_track** | [**TestChromiumTrack**](TestChromiumTrack.md) |  | [optional] 
 **page_loading_strategy** | [**TestPageLoadingStrategy**](TestPageLoadingStrategy.md) |  | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **type** | **str** |  | [optional] [readonly] 

@@ -22,6 +22,7 @@ from thousandeyes_sdk.dashboards.models.api_agent_status_agent import ApiAgentSt
 from thousandeyes_sdk.dashboards.models.api_agent_status_summary import ApiAgentStatusSummary
 from thousandeyes_sdk.dashboards.models.api_alert_list_alert import ApiAlertListAlert
 from thousandeyes_sdk.dashboards.models.api_dashboard_asw import ApiDashboardAsw
+from thousandeyes_sdk.dashboards.models.api_list_widget_row import ApiListWidgetRow
 from thousandeyes_sdk.dashboards.models.api_multi_metric_column_data import ApiMultiMetricColumnData
 from thousandeyes_sdk.dashboards.models.api_numbers_card_data import ApiNumbersCardData
 from thousandeyes_sdk.dashboards.models.api_test_table_data import ApiTestTableData
@@ -44,8 +45,10 @@ class ApiWidgetsDataV2(BaseModel):
     alerts: Optional[List[ApiAlertListAlert]] = None
     summary: Optional[ApiAgentStatusSummary] = None
     agents: Optional[List[ApiAgentStatusAgent]] = None
+    rows: Optional[List[ApiListWidgetRow]] = Field(default=None, description="Detailed information about each row in the **List** widget.")
+    legend: Optional[Dict[str, StrictInt]] = Field(default=None, description="Map of legend labels to their counts for the **List** widget.")
     status: Optional[StrictStr] = Field(default=None, description="Message for not fully configured card or no data.")
-    __properties: ClassVar[List[str]] = ["cards", "columns", "points", "tests", "startRound", "alertSuppressionWindows", "totalAlerts", "activeAlerts", "alerts", "summary", "agents", "status"]
+    __properties: ClassVar[List[str]] = ["cards", "columns", "points", "tests", "startRound", "alertSuppressionWindows", "totalAlerts", "activeAlerts", "alerts", "summary", "agents", "rows", "legend", "status"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -139,6 +142,13 @@ class ApiWidgetsDataV2(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['agents'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in rows (list)
+        _items = []
+        if self.rows:
+            for _item in self.rows:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['rows'] = _items
         return _dict
 
     @classmethod
@@ -162,6 +172,8 @@ class ApiWidgetsDataV2(BaseModel):
             "alerts": [ApiAlertListAlert.from_dict(_item) for _item in obj["alerts"]] if obj.get("alerts") is not None else None,
             "summary": ApiAgentStatusSummary.from_dict(obj["summary"]) if obj.get("summary") is not None else None,
             "agents": [ApiAgentStatusAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
+            "rows": [ApiListWidgetRow.from_dict(_item) for _item in obj["rows"]] if obj.get("rows") is not None else None,
+            "legend": obj.get("legend"),
             "status": obj.get("status")
         })
         return _obj

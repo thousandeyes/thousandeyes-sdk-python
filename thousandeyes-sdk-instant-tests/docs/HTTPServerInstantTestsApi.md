@@ -46,9 +46,9 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.instant_tests.HTTPServerInstantTestsApi(api_client)
-    http_server_instant_test_request = thousandeyes_sdk.instant_tests.HttpServerInstantTestRequest() # HttpServerInstantTestRequest | 
+    http_server_instant_test_request =  # HttpServerInstantTestRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.instant_tests.ExpandInstantTestOptions()] # List[ExpandInstantTestOptions] | (Optional) Indicates if the test sub-resources should be expanded. Defaults to no expansion. To expand the `agents` sub-resource, use the query `?expand=agent`. (optional)
+    expand =  # List[ExpandInstantTestOptions] | (Optional) Indicates if the test sub-resources should be expanded. Defaults to no expansion. To expand the `agents` sub-resource, use the query `?expand=agent`. (optional)
 
     try:
         # Create HTTP server instant test

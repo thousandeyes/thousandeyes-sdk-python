@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **List[str]** | Filter using the &#x60;agent-id&#x60;. | [optional] 
 **test_id** | **List[str]** |  | [optional] 
+**nic_model** | **List[str]** | Filters results to NIC models that exactly match one of the provided values. Matching is case-sensitive. | [optional] 
+**nic_driver_version** | **List[str]** | Filters results to NIC driver versions that exactly match one of the provided values. Matching is case-sensitive. | [optional] 
 
 ## Example
 

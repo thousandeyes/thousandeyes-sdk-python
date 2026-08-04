@@ -6,6 +6,7 @@ docs/ApiErrorIntegrationLimits.md
 docs/AuditOperation.md
 docs/AuditOperationWithUpdate.md
 docs/BadRequestError.md
+docs/ConnectedDevices.md
 docs/CreateStreamResponse.md
 docs/DataModelVersion.md
 docs/EndpointAgentLabel.md
@@ -18,6 +19,8 @@ docs/ExporterConfigSplunkHec.md
 docs/Filters.md
 docs/FiltersTestTypes.md
 docs/GetStreamResponse.md
+docs/InputConfig.md
+docs/InputConfigMetric.md
 docs/PutStream.md
 docs/Signal.md
 docs/Stream.md
@@ -44,6 +47,7 @@ src/thousandeyes_sdk/streaming/models/api_error_integration_limits.py
 src/thousandeyes_sdk/streaming/models/audit_operation.py
 src/thousandeyes_sdk/streaming/models/audit_operation_with_update.py
 src/thousandeyes_sdk/streaming/models/bad_request_error.py
+src/thousandeyes_sdk/streaming/models/connected_devices.py
 src/thousandeyes_sdk/streaming/models/create_stream_response.py
 src/thousandeyes_sdk/streaming/models/data_model_version.py
 src/thousandeyes_sdk/streaming/models/endpoint_agent_label.py
@@ -56,6 +60,8 @@ src/thousandeyes_sdk/streaming/models/exporter_config_splunk_hec.py
 src/thousandeyes_sdk/streaming/models/filters.py
 src/thousandeyes_sdk/streaming/models/filters_test_types.py
 src/thousandeyes_sdk/streaming/models/get_stream_response.py
+src/thousandeyes_sdk/streaming/models/input_config.py
+src/thousandeyes_sdk/streaming/models/input_config_metric.py
 src/thousandeyes_sdk/streaming/models/put_stream.py
 src/thousandeyes_sdk/streaming/models/signal.py
 src/thousandeyes_sdk/streaming/models/stream.py
@@ -72,5 +78,9 @@ src/thousandeyes_sdk/streaming/models/test_type.py
 src/thousandeyes_sdk/streaming/models/unauthorized_error.py
 src/thousandeyes_sdk/streaming/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_streaming_api.py
+test/test_streaming_api_integration.py
 test/test_utils.py

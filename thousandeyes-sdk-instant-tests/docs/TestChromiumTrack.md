@@ -1,6 +1,6 @@
-# CloudEnterpriseAgentType
+# TestChromiumTrack
 
-Type of the agent.
+* `stable`: Uses the default Chromium version. * `latest`: Uses the newest Chromium version available from ThousandEyes as soon as it is available. Performance may differ from tests using the default Chromium version. 
 
 ## Properties
 
