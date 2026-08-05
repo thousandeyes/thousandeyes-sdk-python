@@ -49,7 +49,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.AgentToServerEndpointDynamicTestsApi(api_client)
-    dynamic_test_request = thousandeyes_sdk.endpoint_tests.DynamicTestRequest() # DynamicTestRequest | 
+    dynamic_test_request =  # DynamicTestRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -395,7 +395,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.AgentToServerEndpointDynamicTestsApi(api_client)
     test_id = '584739201' # str | Unique ID of endpoint test.
-    endpoint_dynamic_test_update = thousandeyes_sdk.endpoint_tests.EndpointDynamicTestUpdate() # EndpointDynamicTestUpdate | 
+    endpoint_dynamic_test_update =  # EndpointDynamicTestUpdate | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:

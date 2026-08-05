@@ -40,9 +40,11 @@ class TestNetworkDynamicEndpointTestResultsApi(unittest.TestCase):
                     "order" : "desc"
                   } ],
                   "searchFilters" : {
+                    "nicModel" : [ "Intel(R) Wi-Fi 6 AX200 160MHz", "Intel(R) Wi-Fi 6 AX200 160MHz" ],
                     "agentId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ],
                     "webexConferenceId" : [ "719057112996612360", "719057112996612360" ],
                     "webexLocalSipSessionId" : [ "c124ba2b012050008000aa0c26c4bf0f", "c124ba2b012050008000aa0c26c4bf0f" ],
+                    "nicDriverVersion" : [ "22.250.0.9", "22.250.0.9" ],
                     "userPrincipalName" : [ "joeblogs32@c.com", "joeblogs32@c.com" ],
                     "webexCorrelationId" : [ "f7d73641-8673-4547-be62-9521f78d9888", "f7d73641-8673-4547-be62-9521f78d9888" ]
                   },

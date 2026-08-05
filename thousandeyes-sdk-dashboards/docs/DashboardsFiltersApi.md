@@ -49,7 +49,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsFiltersApi(api_client)
-    api_context_filter_request = thousandeyes_sdk.dashboards.ApiContextFilterRequest() # ApiContextFilterRequest | Dashboard filter object to be created and saved
+    api_context_filter_request =  # ApiContextFilterRequest | Dashboard filter object to be created and saved
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -392,7 +392,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.dashboards.DashboardsFiltersApi(api_client)
     id = '65bc18e8f2073a4a469cd958' # str | Unique dashboard filter ID.
-    api_context_filter_request = thousandeyes_sdk.dashboards.ApiContextFilterRequest() # ApiContextFilterRequest | Updated dashboard filter context object
+    api_context_filter_request =  # ApiContextFilterRequest | Updated dashboard filter context object
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:

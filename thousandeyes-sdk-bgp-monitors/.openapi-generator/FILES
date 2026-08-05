@@ -24,5 +24,9 @@ src/thousandeyes_sdk/bgp_monitors/models/self_links.py
 src/thousandeyes_sdk/bgp_monitors/models/unauthorized_error.py
 src/thousandeyes_sdk/bgp_monitors/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_bgp_monitors_api.py
+test/test_bgp_monitors_api_integration.py
 test/test_utils.py

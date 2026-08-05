@@ -16,18 +16,28 @@ import json
 import pprint
 from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
 from typing import Any, List, Optional
+from thousandeyes_sdk.event_detection.models.agent_branch_event_detail import AgentBranchEventDetail
+from thousandeyes_sdk.event_detection.models.agent_event_detail import AgentEventDetail
 from thousandeyes_sdk.event_detection.models.agent_local_event_detail import AgentLocalEventDetail
+from thousandeyes_sdk.event_detection.models.application_event_detail import ApplicationEventDetail
 from thousandeyes_sdk.event_detection.models.dns_event_detail import DnsEventDetail
+from thousandeyes_sdk.event_detection.models.dns_name_event_detail import DnsNameEventDetail
+from thousandeyes_sdk.event_detection.models.dns_server_event_detail import DnsServerEventDetail
+from thousandeyes_sdk.event_detection.models.domain_event_detail import DomainEventDetail
+from thousandeyes_sdk.event_detection.models.gateway_event_detail import GatewayEventDetail
+from thousandeyes_sdk.event_detection.models.name_server_event_detail import NameServerEventDetail
 from thousandeyes_sdk.event_detection.models.network_event_detail import NetworkEventDetail
 from thousandeyes_sdk.event_detection.models.network_pop_event_detail import NetworkPopEventDetail
 from thousandeyes_sdk.event_detection.models.proxy_event_detail import ProxyEventDetail
 from thousandeyes_sdk.event_detection.models.target_event_detail import TargetEventDetail
 from thousandeyes_sdk.event_detection.models.target_network_event_detail import TargetNetworkEventDetail
+from thousandeyes_sdk.event_detection.models.vpn_event_detail import VpnEventDetail
+from thousandeyes_sdk.event_detection.models.wireless_event_detail import WirelessEventDetail
 from pydantic import StrictStr, Field, model_serializer
 from typing import Union, List, Set, Optional, Dict
 from typing_extensions import Literal, Self
 
-EVENTDETAIL_ONE_OF_SCHEMAS = ["AgentLocalEventDetail", "DnsEventDetail", "NetworkEventDetail", "NetworkPopEventDetail", "ProxyEventDetail", "TargetEventDetail", "TargetNetworkEventDetail"]
+EVENTDETAIL_ONE_OF_SCHEMAS = ["AgentBranchEventDetail", "AgentEventDetail", "AgentLocalEventDetail", "ApplicationEventDetail", "DnsEventDetail", "DnsNameEventDetail", "DnsServerEventDetail", "DomainEventDetail", "GatewayEventDetail", "NameServerEventDetail", "NetworkEventDetail", "NetworkPopEventDetail", "ProxyEventDetail", "TargetEventDetail", "TargetNetworkEventDetail", "VpnEventDetail", "WirelessEventDetail"]
 
 class EventDetail(BaseModel):
     """
@@ -47,8 +57,28 @@ class EventDetail(BaseModel):
     oneof_schema_6_validator: Optional[NetworkEventDetail] = None
     # data type: NetworkPopEventDetail
     oneof_schema_7_validator: Optional[NetworkPopEventDetail] = None
-    actual_instance: Optional[Union[AgentLocalEventDetail, DnsEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail]] = None
-    one_of_schemas: Set[str] = { "AgentLocalEventDetail", "DnsEventDetail", "NetworkEventDetail", "NetworkPopEventDetail", "ProxyEventDetail", "TargetEventDetail", "TargetNetworkEventDetail" }
+    # data type: AgentEventDetail
+    oneof_schema_8_validator: Optional[AgentEventDetail] = None
+    # data type: ApplicationEventDetail
+    oneof_schema_9_validator: Optional[ApplicationEventDetail] = None
+    # data type: WirelessEventDetail
+    oneof_schema_10_validator: Optional[WirelessEventDetail] = None
+    # data type: GatewayEventDetail
+    oneof_schema_11_validator: Optional[GatewayEventDetail] = None
+    # data type: DnsServerEventDetail
+    oneof_schema_12_validator: Optional[DnsServerEventDetail] = None
+    # data type: DnsNameEventDetail
+    oneof_schema_13_validator: Optional[DnsNameEventDetail] = None
+    # data type: VpnEventDetail
+    oneof_schema_14_validator: Optional[VpnEventDetail] = None
+    # data type: AgentBranchEventDetail
+    oneof_schema_15_validator: Optional[AgentBranchEventDetail] = None
+    # data type: DomainEventDetail
+    oneof_schema_16_validator: Optional[DomainEventDetail] = None
+    # data type: NameServerEventDetail
+    oneof_schema_17_validator: Optional[NameServerEventDetail] = None
+    actual_instance: Optional[Union[AgentBranchEventDetail, AgentEventDetail, AgentLocalEventDetail, ApplicationEventDetail, DnsEventDetail, DnsNameEventDetail, DnsServerEventDetail, DomainEventDetail, GatewayEventDetail, NameServerEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail, VpnEventDetail, WirelessEventDetail]] = None
+    one_of_schemas: Set[str] = { "AgentBranchEventDetail", "AgentEventDetail", "AgentLocalEventDetail", "ApplicationEventDetail", "DnsEventDetail", "DnsNameEventDetail", "DnsServerEventDetail", "DomainEventDetail", "GatewayEventDetail", "NameServerEventDetail", "NetworkEventDetail", "NetworkPopEventDetail", "ProxyEventDetail", "TargetEventDetail", "TargetNetworkEventDetail", "VpnEventDetail", "WirelessEventDetail" }
 
     model_config = ConfigDict(
         validate_assignment=True,
@@ -109,12 +139,62 @@ class EventDetail(BaseModel):
             error_messages.append(f"Error! Input type `{type(v)}` is not `NetworkPopEventDetail`")
         else:
             match += 1
+        # validate data type: AgentEventDetail
+        if not isinstance(v, AgentEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AgentEventDetail`")
+        else:
+            match += 1
+        # validate data type: ApplicationEventDetail
+        if not isinstance(v, ApplicationEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `ApplicationEventDetail`")
+        else:
+            match += 1
+        # validate data type: WirelessEventDetail
+        if not isinstance(v, WirelessEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `WirelessEventDetail`")
+        else:
+            match += 1
+        # validate data type: GatewayEventDetail
+        if not isinstance(v, GatewayEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `GatewayEventDetail`")
+        else:
+            match += 1
+        # validate data type: DnsServerEventDetail
+        if not isinstance(v, DnsServerEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DnsServerEventDetail`")
+        else:
+            match += 1
+        # validate data type: DnsNameEventDetail
+        if not isinstance(v, DnsNameEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DnsNameEventDetail`")
+        else:
+            match += 1
+        # validate data type: VpnEventDetail
+        if not isinstance(v, VpnEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `VpnEventDetail`")
+        else:
+            match += 1
+        # validate data type: AgentBranchEventDetail
+        if not isinstance(v, AgentBranchEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `AgentBranchEventDetail`")
+        else:
+            match += 1
+        # validate data type: DomainEventDetail
+        if not isinstance(v, DomainEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `DomainEventDetail`")
+        else:
+            match += 1
+        # validate data type: NameServerEventDetail
+        if not isinstance(v, NameServerEventDetail):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `NameServerEventDetail`")
+        else:
+            match += 1
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when setting `actual_instance` in EventDetail with oneOf schemas: AgentLocalEventDetail, DnsEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when setting `actual_instance` in EventDetail with oneOf schemas: AgentBranchEventDetail, AgentEventDetail, AgentLocalEventDetail, ApplicationEventDetail, DnsEventDetail, DnsNameEventDetail, DnsServerEventDetail, DomainEventDetail, GatewayEventDetail, NameServerEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail, VpnEventDetail, WirelessEventDetail. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when setting `actual_instance` in EventDetail with oneOf schemas: AgentLocalEventDetail, DnsEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when setting `actual_instance` in EventDetail with oneOf schemas: AgentBranchEventDetail, AgentEventDetail, AgentLocalEventDetail, ApplicationEventDetail, DnsEventDetail, DnsNameEventDetail, DnsServerEventDetail, DomainEventDetail, GatewayEventDetail, NameServerEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail, VpnEventDetail, WirelessEventDetail. Details: " + ", ".join(error_messages))
         else:
             return v
 
@@ -171,13 +251,73 @@ class EventDetail(BaseModel):
             match += 1
         except (ValidationError, ValueError) as e:
             error_messages.append(str(e))
+        # deserialize data into AgentEventDetail
+        try:
+            instance.actual_instance = AgentEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into ApplicationEventDetail
+        try:
+            instance.actual_instance = ApplicationEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into WirelessEventDetail
+        try:
+            instance.actual_instance = WirelessEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into GatewayEventDetail
+        try:
+            instance.actual_instance = GatewayEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into DnsServerEventDetail
+        try:
+            instance.actual_instance = DnsServerEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into DnsNameEventDetail
+        try:
+            instance.actual_instance = DnsNameEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into VpnEventDetail
+        try:
+            instance.actual_instance = VpnEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into AgentBranchEventDetail
+        try:
+            instance.actual_instance = AgentBranchEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into DomainEventDetail
+        try:
+            instance.actual_instance = DomainEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into NameServerEventDetail
+        try:
+            instance.actual_instance = NameServerEventDetail.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
 
         if match > 1:
             # more than 1 match
-            raise ValueError("Multiple matches found when deserializing the JSON string into EventDetail with oneOf schemas: AgentLocalEventDetail, DnsEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail. Details: " + ", ".join(error_messages))
+            raise ValueError("Multiple matches found when deserializing the JSON string into EventDetail with oneOf schemas: AgentBranchEventDetail, AgentEventDetail, AgentLocalEventDetail, ApplicationEventDetail, DnsEventDetail, DnsNameEventDetail, DnsServerEventDetail, DomainEventDetail, GatewayEventDetail, NameServerEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail, VpnEventDetail, WirelessEventDetail. Details: " + ", ".join(error_messages))
         elif match == 0:
             # no match
-            raise ValueError("No match found when deserializing the JSON string into EventDetail with oneOf schemas: AgentLocalEventDetail, DnsEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail. Details: " + ", ".join(error_messages))
+            raise ValueError("No match found when deserializing the JSON string into EventDetail with oneOf schemas: AgentBranchEventDetail, AgentEventDetail, AgentLocalEventDetail, ApplicationEventDetail, DnsEventDetail, DnsNameEventDetail, DnsServerEventDetail, DomainEventDetail, GatewayEventDetail, NameServerEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail, VpnEventDetail, WirelessEventDetail. Details: " + ", ".join(error_messages))
         else:
             return instance
 
@@ -195,7 +335,7 @@ class EventDetail(BaseModel):
         else:
             return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Optional[Union[Dict[str, Any], AgentLocalEventDetail, DnsEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail]]:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], AgentBranchEventDetail, AgentEventDetail, AgentLocalEventDetail, ApplicationEventDetail, DnsEventDetail, DnsNameEventDetail, DnsServerEventDetail, DomainEventDetail, GatewayEventDetail, NameServerEventDetail, NetworkEventDetail, NetworkPopEventDetail, ProxyEventDetail, TargetEventDetail, TargetNetworkEventDetail, VpnEventDetail, WirelessEventDetail]]:
         """Returns the dict representation of the actual instance"""
         if self.actual_instance is None:
             return None
