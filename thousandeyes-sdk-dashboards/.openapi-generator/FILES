@@ -32,6 +32,9 @@ docs/ApiGraphletPoint.md
 docs/ApiGroupedBarchartWidget.md
 docs/ApiHeatmapWidget.md
 docs/ApiListWidget.md
+docs/ApiListWidgetRow.md
+docs/ApiListWidgetRowLinks.md
+docs/ApiListWidgetRowValue.md
 docs/ApiMultiMetricColumn.md
 docs/ApiMultiMetricColumnData.md
 docs/ApiMultiMetricTableWidget.md
@@ -52,6 +55,7 @@ docs/ApiTestTableData.md
 docs/ApiTestTableGraphletsData.md
 docs/ApiTestTableWidget.md
 docs/ApiTimeseriesWidget.md
+docs/ApiTimeseriesWidgetProperties.md
 docs/ApiWidget.md
 docs/ApiWidgetData.md
 docs/ApiWidgetDataPoint.md
@@ -103,6 +107,7 @@ docs/MultiMetricsTableDatasource.md
 docs/NumbersCardDatasource.md
 docs/PaginationLinks.md
 docs/PieChartDatasource.md
+docs/RefreshRate.md
 docs/ScalableWidget.md
 docs/SelfLinks.md
 docs/StackedAreaChartDatasource.md
@@ -159,6 +164,9 @@ src/thousandeyes_sdk/dashboards/models/api_graphlet_point.py
 src/thousandeyes_sdk/dashboards/models/api_grouped_barchart_widget.py
 src/thousandeyes_sdk/dashboards/models/api_heatmap_widget.py
 src/thousandeyes_sdk/dashboards/models/api_list_widget.py
+src/thousandeyes_sdk/dashboards/models/api_list_widget_row.py
+src/thousandeyes_sdk/dashboards/models/api_list_widget_row_links.py
+src/thousandeyes_sdk/dashboards/models/api_list_widget_row_value.py
 src/thousandeyes_sdk/dashboards/models/api_multi_metric_column.py
 src/thousandeyes_sdk/dashboards/models/api_multi_metric_column_data.py
 src/thousandeyes_sdk/dashboards/models/api_multi_metric_table_widget.py
@@ -179,6 +187,7 @@ src/thousandeyes_sdk/dashboards/models/api_test_table_data.py
 src/thousandeyes_sdk/dashboards/models/api_test_table_graphlets_data.py
 src/thousandeyes_sdk/dashboards/models/api_test_table_widget.py
 src/thousandeyes_sdk/dashboards/models/api_timeseries_widget.py
+src/thousandeyes_sdk/dashboards/models/api_timeseries_widget_properties.py
 src/thousandeyes_sdk/dashboards/models/api_widget.py
 src/thousandeyes_sdk/dashboards/models/api_widget_data.py
 src/thousandeyes_sdk/dashboards/models/api_widget_data_point.py
@@ -227,6 +236,7 @@ src/thousandeyes_sdk/dashboards/models/multi_metrics_table_datasource.py
 src/thousandeyes_sdk/dashboards/models/numbers_card_datasource.py
 src/thousandeyes_sdk/dashboards/models/pagination_links.py
 src/thousandeyes_sdk/dashboards/models/pie_chart_datasource.py
+src/thousandeyes_sdk/dashboards/models/refresh_rate.py
 src/thousandeyes_sdk/dashboards/models/scalable_widget.py
 src/thousandeyes_sdk/dashboards/models/self_links.py
 src/thousandeyes_sdk/dashboards/models/stacked_area_chart_datasource.py
@@ -246,7 +256,13 @@ src/thousandeyes_sdk/dashboards/models/widget_measure_type.py
 src/thousandeyes_sdk/dashboards/models/widget_position.py
 src/thousandeyes_sdk/dashboards/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_dashboard_snapshots_api.py
+test/test_dashboard_snapshots_api_integration.py
 test/test_dashboards_api.py
+test/test_dashboards_api_integration.py
 test/test_dashboards_filters_api.py
+test/test_dashboards_filters_api_integration.py
 test/test_utils.py

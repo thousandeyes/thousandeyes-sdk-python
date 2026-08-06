@@ -1,6 +1,6 @@
 # EventType
 
-Specifies the event type in a machine-readable and backwards-compatible format. Allowed values are: `agent-local`, `network-pop`, `network`, `dns`, `target`, and `proxy`.
+Specifies the event type in a machine-readable and backwards-compatible format, such as `agent` or `target`.
 
 ## Properties
 

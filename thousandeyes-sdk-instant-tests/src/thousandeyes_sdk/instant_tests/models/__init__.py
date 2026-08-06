@@ -90,6 +90,7 @@ from thousandeyes_sdk.instant_tests.models.sip_server_properties import SipServe
 from thousandeyes_sdk.instant_tests.models.sip_test_protocol import SipTestProtocol
 from thousandeyes_sdk.instant_tests.models.test_agent import TestAgent
 from thousandeyes_sdk.instant_tests.models.test_auth_type import TestAuthType
+from thousandeyes_sdk.instant_tests.models.test_chromium_track import TestChromiumTrack
 from thousandeyes_sdk.instant_tests.models.test_custom_headers import TestCustomHeaders
 from thousandeyes_sdk.instant_tests.models.test_direction import TestDirection
 from thousandeyes_sdk.instant_tests.models.test_dns_server import TestDnsServer

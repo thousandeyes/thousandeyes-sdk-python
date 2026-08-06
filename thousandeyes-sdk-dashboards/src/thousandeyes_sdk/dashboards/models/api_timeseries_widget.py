@@ -54,11 +54,12 @@ class ApiTimeseriesWidget(BaseModel):
     max_scale: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Maximum scale configured in the widget.", alias="maxScale")
     unit: Optional[ApiWidgetFixedYScalePrefix] = None
     type: Annotated[str, Field(strict=True)] = Field(description="Time Series: Line widget type.")
-    show_timeseries_overall_baseline: Optional[StrictBool] = Field(default=None, description="Displays the overall baseline if set to `true`.", alias="showTimeseriesOverallBaseline")
+    show_timeseries_overall_baseline: Optional[StrictBool] = Field(default=False, description="Displays the overall baseline when set to `true`.", alias="showTimeseriesOverallBaseline")
     group_by: Optional[ApiAggregateProperty] = Field(default=None, alias="groupBy")
-    is_timeseries_one_chart_per_line: Optional[StrictBool] = Field(default=None, description="Displays a separate chart for each line if set to `true`.", alias="isTimeseriesOneChartPerLine")
+    is_timeseries_one_chart_per_line: Optional[StrictBool] = Field(default=False, description="Displays a separate chart for each line when set to `true`.", alias="isTimeseriesOneChartPerLine")
+    show_zoom_slider: Optional[StrictBool] = Field(default=False, description="Displays the zoom slider on the time axis when set to `true`.", alias="showZoomSlider")
     data_source: Optional[TimeseriesDatasource] = Field(default=None, alias="dataSource")
-    __properties: ClassVar[List[str]] = ["id", "title", "visualMode", "embedUrl", "isEmbedded", "metricGroup", "direction", "metric", "filters", "measure", "fixedTimespan", "apiLink", "shouldExcludeAlertSuppressionWindows", "_links", "minScale", "maxScale", "unit", "type", "showTimeseriesOverallBaseline", "groupBy", "isTimeseriesOneChartPerLine", "dataSource"]
+    __properties: ClassVar[List[str]] = ["id", "title", "visualMode", "embedUrl", "isEmbedded", "metricGroup", "direction", "metric", "filters", "measure", "fixedTimespan", "apiLink", "shouldExcludeAlertSuppressionWindows", "_links", "minScale", "maxScale", "unit", "type", "showTimeseriesOverallBaseline", "groupBy", "isTimeseriesOneChartPerLine", "showZoomSlider", "dataSource"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
@@ -152,9 +153,10 @@ class ApiTimeseriesWidget(BaseModel):
             "maxScale": obj.get("maxScale"),
             "unit": obj.get("unit"),
             "type": obj.get("type"),
-            "showTimeseriesOverallBaseline": obj.get("showTimeseriesOverallBaseline"),
+            "showTimeseriesOverallBaseline": obj.get("showTimeseriesOverallBaseline") if obj.get("showTimeseriesOverallBaseline") is not None else False,
             "groupBy": obj.get("groupBy"),
-            "isTimeseriesOneChartPerLine": obj.get("isTimeseriesOneChartPerLine"),
+            "isTimeseriesOneChartPerLine": obj.get("isTimeseriesOneChartPerLine") if obj.get("isTimeseriesOneChartPerLine") is not None else False,
+            "showZoomSlider": obj.get("showZoomSlider") if obj.get("showZoomSlider") is not None else False,
             "dataSource": obj.get("dataSource")
         })
         return _obj

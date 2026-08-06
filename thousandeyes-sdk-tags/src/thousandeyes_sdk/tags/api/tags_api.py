@@ -308,8 +308,8 @@ class TagsApi:
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             [
-                'application/hal+json', 
                 'application/json', 
+                'application/hal+json', 
                 'application/problem+json'
             ]
         )
@@ -609,8 +609,8 @@ class TagsApi:
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             [
-                'application/hal+json', 
                 'application/json', 
+                'application/hal+json', 
                 'application/problem+json'
             ]
         )
@@ -1227,8 +1227,8 @@ class TagsApi:
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             [
-                'application/hal+json', 
                 'application/json', 
+                'application/hal+json', 
                 'application/problem+json'
             ]
         )
@@ -1524,8 +1524,8 @@ class TagsApi:
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             [
-                'application/hal+json', 
                 'application/json', 
+                'application/hal+json', 
                 'application/problem+json'
             ]
         )
@@ -1833,8 +1833,8 @@ class TagsApi:
         # set the HTTP header `Accept`
         _header_params['Accept'] = self.api_client.select_header_accept(
             [
-                'application/hal+json', 
                 'application/json', 
+                'application/hal+json', 
                 'application/problem+json'
             ]
         )

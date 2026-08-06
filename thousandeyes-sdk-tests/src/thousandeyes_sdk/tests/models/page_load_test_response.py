@@ -27,6 +27,7 @@ from thousandeyes_sdk.tests.models.monitor import Monitor
 from thousandeyes_sdk.tests.models.o_auth import OAuth
 from thousandeyes_sdk.tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.tests.models.test_auth_type import TestAuthType
+from thousandeyes_sdk.tests.models.test_chromium_track import TestChromiumTrack
 from thousandeyes_sdk.tests.models.test_custom_headers import TestCustomHeaders
 from thousandeyes_sdk.tests.models.test_http_interval import TestHttpInterval
 from thousandeyes_sdk.tests.models.test_interval import TestInterval
@@ -111,6 +112,7 @@ class PageLoadTestResponse(BaseModel):
     browser_language: Optional[StrictStr] = Field(default=None, description="Set one of the available browser language that you want to use to configure the browser.", alias="browserLanguage")
     chrome_options: Optional[StrictStr] = Field(default='', description="Command-line options passed to Chrome when running the test.", alias="chromeOptions")
     chrome_policies: Optional[StrictStr] = Field(default='{}', description="JSON string of Chrome policy settings to apply.", alias="chromePolicies")
+    chromium_track: Optional[TestChromiumTrack] = Field(default=None, alias="chromiumTrack")
     page_loading_strategy: Optional[TestPageLoadingStrategy] = Field(default=None, alias="pageLoadingStrategy")
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     identify_agent_traffic_with_user_agent: Optional[StrictBool] = Field(default=False, description="Determines how agent traffic is identified:  * `false`: Adds the `x-thousandeyes-agent: yes` header. * `true`: Appends `(ThousandEyes Agent)` to the `user-agent` header.  For more information, see [Notes on Agent ID Strategy](https://docs.thousandeyes.com/product-documentation/browser-synthetics/test-settings-page-load-transaction#notes-on-agent-id-strategy). ", alias="identifyAgentTrafficWithUserAgent")
@@ -120,7 +122,7 @@ class PageLoadTestResponse(BaseModel):
     http_interval: Optional[TestHttpInterval] = Field(default=None, alias="httpInterval")
     subinterval: Optional[TestSubInterval] = None
     agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent", "bgpMeasurements", "usePublicBgp", "monitors", "httpInterval", "subinterval", "agents"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "chromiumTrack", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent", "bgpMeasurements", "usePublicBgp", "monitors", "httpInterval", "subinterval", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -325,6 +327,7 @@ class PageLoadTestResponse(BaseModel):
             "browserLanguage": obj.get("browserLanguage"),
             "chromeOptions": obj.get("chromeOptions") if obj.get("chromeOptions") is not None else '',
             "chromePolicies": obj.get("chromePolicies") if obj.get("chromePolicies") is not None else '{}',
+            "chromiumTrack": obj.get("chromiumTrack"),
             "pageLoadingStrategy": obj.get("pageLoadingStrategy"),
             "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "identifyAgentTrafficWithUserAgent": obj.get("identifyAgentTrafficWithUserAgent") if obj.get("identifyAgentTrafficWithUserAgent") is not None else False,

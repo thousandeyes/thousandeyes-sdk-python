@@ -20,6 +20,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.event_detection.models.affected_count import AffectedCount
+from thousandeyes_sdk.event_detection.models.event_agent_type import EventAgentType
 from thousandeyes_sdk.event_detection.models.event_alert_severity import EventAlertSeverity
 from thousandeyes_sdk.event_detection.models.event_state import EventState
 from thousandeyes_sdk.event_detection.models.event_type import EventType
@@ -35,15 +36,16 @@ class Event(BaseModel):
     type_name: Optional[StrictStr] = Field(default=None, description="Event type name. Examples include, Local Agent Issue, Network Path Issue, Network Outage, DNS Issue, Server Issue, and Proxy Issue.", alias="typeName")
     state: Optional[EventState] = None
     start_date: Optional[datetime] = Field(default=None, description="The start date and time (in UTC, ISO 8601 format) when the event was first detected.", alias="startDate")
-    end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is populated for \"ongoing\" events.", alias="endDate")
+    end_date: Optional[datetime] = Field(default=None, description="The end date and time (in UTC, ISO 8601 format) when the event was resolved (due to timeout). This value is null for \"ongoing\" (active) events and is populated once the event is resolved.", alias="endDate")
     severity: Optional[EventAlertSeverity] = None
     title: Optional[StrictStr] = Field(default=None, description="Event title")
     type: Optional[EventType] = None
+    agent_type: Optional[EventAgentType] = Field(default=None, alias="agentType")
     affected_tests: Optional[AffectedCount] = Field(default=None, alias="affectedTests")
     affected_targets: Optional[AffectedCount] = Field(default=None, alias="affectedTargets")
     affected_agents: Optional[AffectedCount] = Field(default=None, alias="affectedAgents")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["id", "typeName", "state", "startDate", "endDate", "severity", "title", "type", "affectedTests", "affectedTargets", "affectedAgents", "_links"]
+    __properties: ClassVar[List[str]] = ["id", "typeName", "state", "startDate", "endDate", "severity", "title", "type", "agentType", "affectedTests", "affectedTargets", "affectedAgents", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -132,6 +134,7 @@ class Event(BaseModel):
             "severity": obj.get("severity"),
             "title": obj.get("title"),
             "type": obj.get("type"),
+            "agentType": obj.get("agentType"),
             "affectedTests": AffectedCount.from_dict(obj["affectedTests"]) if obj.get("affectedTests") is not None else None,
             "affectedTargets": AffectedCount.from_dict(obj["affectedTargets"]) if obj.get("affectedTargets") is not None else None,
             "affectedAgents": AffectedCount.from_dict(obj["affectedAgents"]) if obj.get("affectedAgents") is not None else None,

@@ -134,7 +134,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.agents.CloudAndEnterpriseAgentsApi(api_client)
     agent_id = '281474976710706' # str | Unique ID for the agent.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.agents.AgentDetailsExpand()] # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
+    expand = ["cluster-member"] # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
 
     try:
         # Retrieve Cloud and Enterprise Agent
@@ -224,8 +224,8 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.agents.CloudAndEnterpriseAgentsApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.agents.AgentListExpand()] # List[AgentListExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
-    agent_types = [thousandeyes_sdk.agents.CloudEnterpriseAgentType()] # List[CloudEnterpriseAgentType] | Specifies the type of agent to request. (optional)
+    expand = ["cluster-member"] # List[AgentListExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
+    agent_types = ["enterprise"] # List[CloudEnterpriseAgentType] | Specifies the type of agent to request. (optional)
     labels = ['[\"myCustomLabeledAgent\"]'] # List[str] | Specifies the labels of the agents to request. (optional)
     tag_keys = ['tag_keys_example'] # List[str] | Specifies which tag keys to request from the agents. (optional)
 
@@ -321,7 +321,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     agent_id = '281474976710706' # str | Unique ID for the agent.
     agent_request = thousandeyes_sdk.agents.AgentRequest() # AgentRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.agents.AgentDetailsExpand()] # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
+    expand = ["cluster-member"] # List[AgentDetailsExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
 
     try:
         # Update Enterprise Agent

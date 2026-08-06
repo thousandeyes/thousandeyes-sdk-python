@@ -152,8 +152,15 @@ src/thousandeyes_sdk/endpoint_agents/models/vpn_type.py
 src/thousandeyes_sdk/endpoint_agents/models/wireless_profile.py
 src/thousandeyes_sdk/endpoint_agents/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_endpoint_agent_log_items_api.py
+test/test_endpoint_agent_log_items_api_integration.py
 test/test_endpoint_agents_api.py
+test/test_endpoint_agents_api_integration.py
 test/test_endpoint_agents_transfer_api.py
+test/test_endpoint_agents_transfer_api_integration.py
 test/test_endpoint_proxies_api.py
+test/test_endpoint_proxies_api_integration.py
 test/test_utils.py

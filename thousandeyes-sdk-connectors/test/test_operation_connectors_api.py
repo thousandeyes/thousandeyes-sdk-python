@@ -55,7 +55,7 @@ class TestOperationConnectorsApi(unittest.TestCase):
     def test_set_operation_connectors_models_validation(self) -> None:
         """Test case for set_operation_connectors request and response models"""
         request_body_json = """
-                ["ca39314d-eb4f-496f-9435-b5d20b1bfbff"]
+                [ "ca39314d-eb4f-496f-9435-b5d20b1bfbff" ]
                 """
 
         request_loaded_json = json.loads(request_body_json)

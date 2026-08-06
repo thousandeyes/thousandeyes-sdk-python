@@ -52,7 +52,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.alerts.AlertSuppressionWindowsApi(api_client)
     alert_suppression_window_request = thousandeyes_sdk.alerts.AlertSuppressionWindowRequest() # AlertSuppressionWindowRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()] # List[ExpandAlertTestOptions] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
+    expand = ["test"] # List[ExpandAlertTestOptions] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
 
     try:
         # Create alert suppression window
@@ -224,7 +224,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.alerts.AlertSuppressionWindowsApi(api_client)
     window_id = '2411' # str | Unique window ID.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()] # List[ExpandAlertTestOptions] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
+    expand = ["test"] # List[ExpandAlertTestOptions] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
 
     try:
         # Retrieve alert suppression window
@@ -397,7 +397,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     window_id = '2411' # str | Unique window ID.
     alert_suppression_window_request = thousandeyes_sdk.alerts.AlertSuppressionWindowRequest() # AlertSuppressionWindowRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.alerts.ExpandAlertTestOptions()] # List[ExpandAlertTestOptions] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
+    expand = ["test"] # List[ExpandAlertTestOptions] | Optional parameter on whether or not to expand alert related resources.  Without this parameter, there's no default expansion. For example, to expand the \"tests\" resource, use the `?expand=test` query. (optional)
 
     try:
         # Update alert suppression window
