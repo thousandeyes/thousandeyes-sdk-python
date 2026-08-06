@@ -30,5 +30,9 @@ src/thousandeyes_sdk/credentials/models/validation_error.py
 src/thousandeyes_sdk/credentials/models/validation_error_item.py
 src/thousandeyes_sdk/credentials/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_credentials_api.py
+test/test_credentials_api_integration.py
 test/test_utils.py

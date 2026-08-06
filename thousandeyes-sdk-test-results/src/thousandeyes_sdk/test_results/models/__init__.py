@@ -27,6 +27,9 @@ from thousandeyes_sdk.test_results.models.bgp_test_result import BgpTestResult
 from thousandeyes_sdk.test_results.models.bgp_test_results import BgpTestResults
 from thousandeyes_sdk.test_results.models.bgp_test_route_information_result import BgpTestRouteInformationResult
 from thousandeyes_sdk.test_results.models.bgp_test_route_information_results import BgpTestRouteInformationResults
+from thousandeyes_sdk.test_results.models.console_logs import ConsoleLogs
+from thousandeyes_sdk.test_results.models.console_logs_result import ConsoleLogsResult
+from thousandeyes_sdk.test_results.models.console_logs_test_results import ConsoleLogsTestResults
 from thousandeyes_sdk.test_results.models.dns_measurement_protocol import DnsMeasurementProtocol
 from thousandeyes_sdk.test_results.models.dns_opcode import DnsOpcode
 from thousandeyes_sdk.test_results.models.dns_qr import DnsQr

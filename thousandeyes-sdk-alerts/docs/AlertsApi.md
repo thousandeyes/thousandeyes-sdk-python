@@ -136,7 +136,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     max = 5 # int | (Optional) Maximum number of objects to return. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
-    state = thousandeyes_sdk.alerts.State() # State | Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`. (optional)
+    state = 'trigger' # State | Optional parameter to match a specific alert state. If not specified, it defaults to `trigger`. (optional)
 
     try:
         # List alerts

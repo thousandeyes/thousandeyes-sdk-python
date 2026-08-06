@@ -395,8 +395,10 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     "order" : "desc"
                   } ],
                   "searchFilters" : {
+                    "nicModel" : [ "Intel(R) Wi-Fi 6 AX200 160MHz", "Intel(R) Wi-Fi 6 AX200 160MHz" ],
                     "agentId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ],
                     "testId" : [ "5", "5" ],
+                    "nicDriverVersion" : [ "22.250.0.9", "22.250.0.9" ],
                     "userPrincipalName" : [ "joeblogs32@c.com", "joeblogs32@c.com" ]
                   },
                   "thresholdFilter" : {
@@ -722,8 +724,10 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
                     "order" : "desc"
                   } ],
                   "searchFilters" : {
+                    "nicModel" : [ "Intel(R) Wi-Fi 6 AX200 160MHz", "Intel(R) Wi-Fi 6 AX200 160MHz" ],
                     "agentId" : [ "52455b09-ff1b-4849-8194-99026cc890e0", "52455b09-ff1b-4849-8194-99026cc890e0" ],
                     "testId" : [ "5", "5" ],
+                    "nicDriverVersion" : [ "22.250.0.9", "22.250.0.9" ],
                     "userPrincipalName" : [ "joeblogs32@c.com", "joeblogs32@c.com" ]
                   },
                   "thresholdFilter" : {

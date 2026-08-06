@@ -80,6 +80,11 @@ src/thousandeyes_sdk/usage/models/validation_error.py
 src/thousandeyes_sdk/usage/models/validation_error_item.py
 src/thousandeyes_sdk/usage/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_quotas_api.py
+test/test_quotas_api_integration.py
 test/test_usage_api.py
+test/test_usage_api_integration.py
 test/test_utils.py

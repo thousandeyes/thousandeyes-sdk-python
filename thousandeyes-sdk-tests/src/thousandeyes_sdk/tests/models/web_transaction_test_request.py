@@ -24,6 +24,7 @@ from thousandeyes_sdk.tests.models.agent_interfaces import AgentInterfaces
 from thousandeyes_sdk.tests.models.o_auth import OAuth
 from thousandeyes_sdk.tests.models.test_agent_request import TestAgentRequest
 from thousandeyes_sdk.tests.models.test_auth_type import TestAuthType
+from thousandeyes_sdk.tests.models.test_chromium_track import TestChromiumTrack
 from thousandeyes_sdk.tests.models.test_custom_headers import TestCustomHeaders
 from thousandeyes_sdk.tests.models.test_interval import TestInterval
 from thousandeyes_sdk.tests.models.test_links import TestLinks
@@ -95,6 +96,7 @@ class WebTransactionTestRequest(BaseModel):
     target_time: Optional[Annotated[int, Field(le=180, strict=True, ge=1)]] = Field(default=10, description="Target completion time, in seconds. Defaults to 10. Cannot exceed the `timeLimit` value.", alias="targetTime")
     time_limit: Optional[Annotated[int, Field(le=180, strict=True, ge=5)]] = Field(default=30, description="Time limit for transaction in seconds.", alias="timeLimit")
     transaction_script: StrictStr = Field(description="JavaScript of a web transaction test. Quotes must be escaped (precede \" characters with \\ ).", alias="transactionScript")
+    flag_collect_console_logs: Optional[StrictBool] = Field(default=False, description="Whether to collect console logs during script execution.", alias="flagCollectConsoleLogs")
     block_domains: Optional[StrictStr] = Field(default=None, description="Domains or full object URLs to be excluded from metrics and waterfall data for transaction tests.", alias="blockDomains")
     disable_screenshot: Optional[StrictBool] = Field(default=False, description="Enables or disables screenshots on error. Set true to not capture", alias="disableScreenshot")
     allow_mic_and_camera: Optional[StrictBool] = Field(default=False, description="Set true allow the use of a fake mic and camera in the browser.", alias="allowMicAndCamera")
@@ -102,6 +104,7 @@ class WebTransactionTestRequest(BaseModel):
     browser_language: Optional[StrictStr] = Field(default=None, description="Set one of the available browser language that you want to use to configure the browser.", alias="browserLanguage")
     chrome_options: Optional[StrictStr] = Field(default='', description="Command-line options passed to Chrome when running the test.", alias="chromeOptions")
     chrome_policies: Optional[StrictStr] = Field(default='{}', description="JSON string of Chrome policy settings to apply.", alias="chromePolicies")
+    chromium_track: Optional[TestChromiumTrack] = Field(default=None, alias="chromiumTrack")
     page_loading_strategy: Optional[TestPageLoadingStrategy] = Field(default=None, alias="pageLoadingStrategy")
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     identify_agent_traffic_with_user_agent: Optional[StrictBool] = Field(default=False, description="Determines how agent traffic is identified:  * `false`: Adds the `x-thousandeyes-agent: yes` header. * `true`: Appends `(ThousandEyes Agent)` to the `user-agent` header.  For more information, see [Notes on Agent ID Strategy](https://docs.thousandeyes.com/product-documentation/browser-synthetics/test-settings-page-load-transaction#notes-on-agent-id-strategy). ", alias="identifyAgentTrafficWithUserAgent")
@@ -115,7 +118,7 @@ class WebTransactionTestRequest(BaseModel):
     agents: List[TestAgentRequest] = Field(description="Contains list of Agent IDs (get `agentId` from `/agents` endpoint).")
     monitors: Optional[List[StrictStr]] = Field(default=None, description="Contains list of BGP monitor IDs (get `monitorId` from `/monitors` endpoint)")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "targetTime", "timeLimit", "transactionScript", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent", "subinterval", "bgpMeasurements", "usePublicBgp", "labels", "tags", "sharedWithAccounts", "alertRules", "agents", "monitors", "credentials"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "targetTime", "timeLimit", "transactionScript", "flagCollectConsoleLogs", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "chromiumTrack", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent", "subinterval", "bgpMeasurements", "usePublicBgp", "labels", "tags", "sharedWithAccounts", "alertRules", "agents", "monitors", "credentials"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -267,6 +270,7 @@ class WebTransactionTestRequest(BaseModel):
             "targetTime": obj.get("targetTime") if obj.get("targetTime") is not None else 10,
             "timeLimit": obj.get("timeLimit") if obj.get("timeLimit") is not None else 30,
             "transactionScript": obj.get("transactionScript"),
+            "flagCollectConsoleLogs": obj.get("flagCollectConsoleLogs") if obj.get("flagCollectConsoleLogs") is not None else False,
             "blockDomains": obj.get("blockDomains"),
             "disableScreenshot": obj.get("disableScreenshot") if obj.get("disableScreenshot") is not None else False,
             "allowMicAndCamera": obj.get("allowMicAndCamera") if obj.get("allowMicAndCamera") is not None else False,
@@ -274,6 +278,7 @@ class WebTransactionTestRequest(BaseModel):
             "browserLanguage": obj.get("browserLanguage"),
             "chromeOptions": obj.get("chromeOptions") if obj.get("chromeOptions") is not None else '',
             "chromePolicies": obj.get("chromePolicies") if obj.get("chromePolicies") is not None else '{}',
+            "chromiumTrack": obj.get("chromiumTrack"),
             "pageLoadingStrategy": obj.get("pageLoadingStrategy"),
             "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "identifyAgentTrafficWithUserAgent": obj.get("identifyAgentTrafficWithUserAgent") if obj.get("identifyAgentTrafficWithUserAgent") is not None else False,

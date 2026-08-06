@@ -15,6 +15,8 @@ Name | Type | Description | Notes
 **network_id** | **List[str]** | Network ID. | [optional] 
 **ssid** | **List[str]** | WiFi SSID. | [optional] 
 **bssid** | **List[str]** | WiFi BSSID. | [optional] 
+**nic_model** | **List[str]** | Filters results to NIC models that exactly match one of the provided values. Matching is case-sensitive. | [optional] 
+**nic_driver_version** | **List[str]** | Filters results to NIC driver versions that exactly match one of the provided values. Matching is case-sensitive. | [optional] 
 
 ## Example
 

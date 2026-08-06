@@ -39,7 +39,7 @@ class NetworkTestResult(BaseModel):
     bandwidth: Optional[Union[StrictFloat, StrictInt]] = None
     capacity: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="The capacity from the client to the server measured in Mbps. This value is not available if bandwidth testing is disabled, if no value could be calculated, or if the target is a proxy.")
     jitter: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Standard deviation of latency")
-    loss: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Percentage of packets not reaching destination")
+    loss: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Percentage of packets not reaching the destination. This field is omitted when no loss measurement is available.")
     max_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Maximum RTT for packets sent to destination", alias="maxLatency")
     min_latency: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Minimum RTT for packets sent to destination", alias="minLatency")
     proxy_loss: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="Percentage of packets not reaching proxy.", alias="proxyLoss")
@@ -53,7 +53,8 @@ class NetworkTestResult(BaseModel):
     server: Optional[StrictStr] = Field(default=None, description="Target server, including port (if method used is TCP)")
     health_score: Optional[Union[StrictFloat, StrictInt]] = Field(default=None, description="A normalized value (0.0-1.0) representing the network connection health of the test target. Returns negative values as error codes. -1.0 indicates there was insufficient data to calculate the health score.", alias="healthScore")
     direction: Optional[TestDirection] = None
-    __properties: ClassVar[List[str]] = ["date", "roundId", "_links", "startTime", "endTime", "availableBandwidth", "avgLatency", "bandwidth", "capacity", "jitter", "loss", "maxLatency", "minLatency", "proxyLoss", "proxyAverageLatency", "proxyMinLatency", "proxyMaxLatency", "proxyJitter", "packetsBySecond", "agent", "serverIp", "server", "healthScore", "direction"]
+    error_details: Optional[StrictStr] = Field(default=None, description="Error details. This field is omitted when no error occurs.", alias="errorDetails")
+    __properties: ClassVar[List[str]] = ["date", "roundId", "_links", "startTime", "endTime", "availableBandwidth", "avgLatency", "bandwidth", "capacity", "jitter", "loss", "maxLatency", "minLatency", "proxyLoss", "proxyAverageLatency", "proxyMinLatency", "proxyMaxLatency", "proxyJitter", "packetsBySecond", "agent", "serverIp", "server", "healthScore", "direction", "errorDetails"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +107,7 @@ class NetworkTestResult(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "var_date",
@@ -128,6 +130,7 @@ class NetworkTestResult(BaseModel):
             "packets_by_second",
             "server_ip",
             "server",
+            "error_details",
         ])
 
         _dict = self.model_dump(
@@ -176,7 +179,8 @@ class NetworkTestResult(BaseModel):
             "serverIp": obj.get("serverIp"),
             "server": obj.get("server"),
             "healthScore": obj.get("healthScore"),
-            "direction": obj.get("direction")
+            "direction": obj.get("direction"),
+            "errorDetails": obj.get("errorDetails")
         })
         return _obj
 

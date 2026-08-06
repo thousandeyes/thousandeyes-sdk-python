@@ -38,11 +38,13 @@ class RealUserEndpointTestResultRequestFilter(BaseModel):
     network_id: Optional[List[StrictStr]] = Field(default=None, description="Network ID.", alias="networkId")
     ssid: Optional[List[StrictStr]] = Field(default=None, description="WiFi SSID.")
     bssid: Optional[List[StrictStr]] = Field(default=None, description="WiFi BSSID.")
+    nic_model: Optional[List[StrictStr]] = Field(default=None, description="Filters results to NIC models that exactly match one of the provided values. Matching is case-sensitive.", alias="nicModel")
+    nic_driver_version: Optional[List[StrictStr]] = Field(default=None, description="Filters results to NIC driver versions that exactly match one of the provided values. Matching is case-sensitive.", alias="nicDriverVersion")
     destination_ip: Optional[List[StrictStr]] = Field(default=None, description="Web site destination IP address.", alias="destinationIp")
     domain: Optional[List[StrictStr]] = Field(default=None, description="Web site base domain visited during the session.")
     trigger: Optional[List[Trigger]] = Field(default=None, description="Real user test trigger.")
     visited_site: Optional[List[StrictStr]] = Field(default=None, description="Web site domain visited during the session.", alias="visitedSite")
-    __properties: ClassVar[List[str]] = ["location", "connection", "platform", "gateway", "proxyTarget", "vpnTarget", "agentId", "networkId", "ssid", "bssid", "destinationIp", "domain", "trigger", "visitedSite"]
+    __properties: ClassVar[List[str]] = ["location", "connection", "platform", "gateway", "proxyTarget", "vpnTarget", "agentId", "networkId", "ssid", "bssid", "nicModel", "nicDriverVersion", "destinationIp", "domain", "trigger", "visitedSite"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -106,6 +108,8 @@ class RealUserEndpointTestResultRequestFilter(BaseModel):
             "networkId": obj.get("networkId"),
             "ssid": obj.get("ssid"),
             "bssid": obj.get("bssid"),
+            "nicModel": obj.get("nicModel"),
+            "nicDriverVersion": obj.get("nicDriverVersion"),
             "destinationIp": obj.get("destinationIp"),
             "domain": obj.get("domain"),
             "trigger": obj.get("trigger"),
