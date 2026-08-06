@@ -48,7 +48,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.usage.QuotasApi(api_client)
-    organizations_quotas_assign = thousandeyes_sdk.usage.OrganizationsQuotasAssign() # OrganizationsQuotasAssign |  (optional)
+    organizations_quotas_assign =  # OrganizationsQuotasAssign |  (optional)
 
     try:
         # Create or update accout group quotas
@@ -133,7 +133,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.usage.QuotasApi(api_client)
-    quotas_assign_request = thousandeyes_sdk.usage.QuotasAssignRequest() # QuotasAssignRequest |  (optional)
+    quotas_assign_request =  # QuotasAssignRequest |  (optional)
 
     try:
         # Create or update organizations quotas
@@ -297,7 +297,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.usage.QuotasApi(api_client)
-    organizations_quotas_unassign = thousandeyes_sdk.usage.OrganizationsQuotasUnassign() # OrganizationsQuotasUnassign |  (optional)
+    organizations_quotas_unassign =  # OrganizationsQuotasUnassign |  (optional)
 
     try:
         # Remove account group quotas from organizations
@@ -379,7 +379,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.usage.QuotasApi(api_client)
-    quotas_unassign = thousandeyes_sdk.usage.QuotasUnassign() # QuotasUnassign |  (optional)
+    quotas_unassign =  # QuotasUnassign |  (optional)
 
     try:
         # Remove organization quotas

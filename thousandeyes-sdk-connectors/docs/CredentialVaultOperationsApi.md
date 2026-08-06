@@ -48,7 +48,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.connectors.CredentialVaultOperationsApi(api_client)
-    credential_vault_operation = thousandeyes_sdk.connectors.CredentialVaultOperation() # CredentialVaultOperation | 
+    credential_vault_operation =  # CredentialVaultOperation | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -386,7 +386,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.connectors.CredentialVaultOperationsApi(api_client)
     id = 'cb1b8033-ea2d-4e9b-a920-fe87850693cf' # str | The operation ID.
-    credential_vault_operation = thousandeyes_sdk.connectors.CredentialVaultOperation() # CredentialVaultOperation | 
+    credential_vault_operation =  # CredentialVaultOperation | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:

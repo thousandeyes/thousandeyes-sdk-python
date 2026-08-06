@@ -8,6 +8,8 @@ Name | Type | Description | Notes
 **test_id** | **List[str]** | Filter by test | [optional] 
 **agent_id** | **List[str]** | Filter using the &#x60;agent-id&#x60;. | [optional] 
 **user_principal_name** | **List[str]** | Filters results based on an array of &#x60;userPrincipalName&#x60; values. | [optional] 
+**nic_model** | **List[str]** | Filters results to NIC models that exactly match one of the provided values. Matching is case-sensitive. | [optional] 
+**nic_driver_version** | **List[str]** | Filters results to NIC driver versions that exactly match one of the provided values. Matching is case-sensitive. | [optional] 
 
 ## Example
 

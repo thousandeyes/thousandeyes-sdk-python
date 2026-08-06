@@ -49,7 +49,7 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.AgentToServerEndpointScheduledTestsApi(api_client)
-    endpoint_agent_to_server_test_request = thousandeyes_sdk.endpoint_tests.EndpointAgentToServerTestRequest() # EndpointAgentToServerTestRequest | 
+    endpoint_agent_to_server_test_request =  # EndpointAgentToServerTestRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
@@ -395,7 +395,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.AgentToServerEndpointScheduledTestsApi(api_client)
     test_id = '584739201' # str | Unique ID of endpoint test.
-    endpoint_network_test_update = thousandeyes_sdk.endpoint_tests.EndpointNetworkTestUpdate() # EndpointNetworkTestUpdate | 
+    endpoint_network_test_update =  # EndpointNetworkTestUpdate | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
