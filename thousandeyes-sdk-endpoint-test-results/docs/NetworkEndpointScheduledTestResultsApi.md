@@ -55,7 +55,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     start_date = '2022-07-17T22:00:54Z' # datetime | Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     end_date = '2022-07-18T22:00:54Z' # datetime | Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
-    expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()] # List[ExpandEndpointNetworkOptions] | This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query. (optional)
+    expand =  # List[ExpandEndpointNetworkOptions] | This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query. (optional)
     endpoint_tests_data_rounds_search = thousandeyes_sdk.endpoint_test_results.EndpointTestsDataRoundsSearch() # EndpointTestsDataRoundsSearch | Tests data search filters. (optional)
 
     try:
@@ -156,7 +156,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     max = 5 # int | (Optional) Maximum number of objects to return. (optional)
     cursor = 'cursor_example' # str | (Optional) Opaque cursor used for pagination. Clients should use `next` value from `_links` instead of this parameter. (optional)
     use_all_permitted_aids = False # bool | Set to `true` to load data from all accounts the user has access to. (optional) (default to False)
-    expand = [thousandeyes_sdk.endpoint_test_results.ExpandEndpointNetworkOptions()] # List[ExpandEndpointNetworkOptions] | This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query. (optional)
+    expand =  # List[ExpandEndpointNetworkOptions] | This parameter is optional and determines whether to expand resources related to test results. By default, no expansion occurs when this query parameter is omitted. To expand a specific resource, such as \"user-profile,\" append `?expand=user-profile` to the query. (optional)
     multi_test_id_endpoint_tests_data_rounds_search = thousandeyes_sdk.endpoint_test_results.MultiTestIdEndpointTestsDataRoundsSearch() # MultiTestIdEndpointTestsDataRoundsSearch | Test data search filters. (optional)
 
     try:

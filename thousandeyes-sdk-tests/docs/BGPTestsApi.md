@@ -52,7 +52,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.tests.BGPTestsApi(api_client)
     bgp_test_request = thousandeyes_sdk.tests.BgpTestRequest() # BgpTestRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()] # List[ExpandBgpTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion takes place if the query parameter is not present. To expand the `monitors` sub-resource, pass the `?expand=monitor` query. (optional)
+    expand =  # List[ExpandBgpTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion takes place if the query parameter is not present. To expand the `monitors` sub-resource, pass the `?expand=monitor` query. (optional)
 
     try:
         # Create BGP test
@@ -227,7 +227,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.tests.BGPTestsApi(api_client)
     test_id = '202701' # str | Test ID
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()] # List[ExpandBgpTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion takes place if the query parameter is not present. To expand the `monitors` sub-resource, pass the `?expand=monitor` query. (optional)
+    expand =  # List[ExpandBgpTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion takes place if the query parameter is not present. To expand the `monitors` sub-resource, pass the `?expand=monitor` query. (optional)
 
     try:
         # Get BGP test
@@ -404,7 +404,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     test_id = '202701' # str | Test ID
     update_bgp_test_request = thousandeyes_sdk.tests.UpdateBgpTestRequest() # UpdateBgpTestRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tests.ExpandBgpTestOptions()] # List[ExpandBgpTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion takes place if the query parameter is not present. To expand the `monitors` sub-resource, pass the `?expand=monitor` query. (optional)
+    expand =  # List[ExpandBgpTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion takes place if the query parameter is not present. To expand the `monitors` sub-resource, pass the `?expand=monitor` query. (optional)
 
     try:
         # Update BGP test

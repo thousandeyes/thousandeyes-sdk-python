@@ -27,7 +27,9 @@ class EndpointTestsDataSearchFilter(BaseModel):
     """ # noqa: E501
     agent_id: Optional[List[StrictStr]] = Field(default=None, description="Filter using the `agent-id`.", alias="agentId")
     user_principal_name: Optional[List[StrictStr]] = Field(default=None, description="Filters results based on an array of `userPrincipalName` values.", alias="userPrincipalName")
-    __properties: ClassVar[List[str]] = ["agentId", "userPrincipalName"]
+    nic_model: Optional[List[StrictStr]] = Field(default=None, description="Filters results to NIC models that exactly match one of the provided values. Matching is case-sensitive.", alias="nicModel")
+    nic_driver_version: Optional[List[StrictStr]] = Field(default=None, description="Filters results to NIC driver versions that exactly match one of the provided values. Matching is case-sensitive.", alias="nicDriverVersion")
+    __properties: ClassVar[List[str]] = ["agentId", "userPrincipalName", "nicModel", "nicDriverVersion"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -82,7 +84,9 @@ class EndpointTestsDataSearchFilter(BaseModel):
 
         _obj = cls.model_validate({
             "agentId": obj.get("agentId"),
-            "userPrincipalName": obj.get("userPrincipalName")
+            "userPrincipalName": obj.get("userPrincipalName"),
+            "nicModel": obj.get("nicModel"),
+            "nicDriverVersion": obj.get("nicDriverVersion")
         })
         return _obj
 

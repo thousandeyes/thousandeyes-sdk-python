@@ -52,7 +52,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     api_instance = thousandeyes_sdk.tests.SIPServerTestsApi(api_client)
     sip_server_test_request = thousandeyes_sdk.tests.SipServerTestRequest() # SipServerTestRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tests.ExpandTestOptions()] # List[ExpandTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query. (optional)
+    expand =  # List[ExpandTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query. (optional)
 
     try:
         # Create SIP Server test
@@ -226,7 +226,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     test_id = '202701' # str | Test ID
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
     version_id = '1234' # str | The unique identifier for a specific version of the test settings. If provided, returns the test configuration as it existed at that version. To retrieve available version IDs, use the `/tests/{testId}/history` endpoint. If not specified, the current version of the test settings is returned. (optional)
-    expand = [thousandeyes_sdk.tests.ExpandTestOptions()] # List[ExpandTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query. (optional)
+    expand =  # List[ExpandTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query. (optional)
 
     try:
         # Get SIP Server test
@@ -404,7 +404,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     test_id = '202701' # str | Test ID
     sip_server_test_request = thousandeyes_sdk.tests.SipServerTestRequest() # SipServerTestRequest | 
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
-    expand = [thousandeyes_sdk.tests.ExpandTestOptions()] # List[ExpandTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query. (optional)
+    expand =  # List[ExpandTestOptions] | Optional parameter on whether or not to expand the test sub-resources. By default no expansion is going to take place if the query parameter is not present. If the user wishes to expand the `agents` sub-resource, they need to pass the `?expand=agent` query. (optional)
 
     try:
         # Update SIP Server test

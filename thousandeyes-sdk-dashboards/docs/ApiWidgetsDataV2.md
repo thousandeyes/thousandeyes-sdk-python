@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **alerts** | [**List[ApiAlertListAlert]**](ApiAlertListAlert.md) |  | [optional] 
 **summary** | [**ApiAgentStatusSummary**](ApiAgentStatusSummary.md) |  | [optional] 
 **agents** | [**List[ApiAgentStatusAgent]**](ApiAgentStatusAgent.md) |  | [optional] 
+**rows** | [**List[ApiListWidgetRow]**](ApiListWidgetRow.md) | Detailed information about each row in the **List** widget. | [optional] 
+**legend** | **Dict[str, int]** | Map of legend labels to their counts for the **List** widget. | [optional] 
 **status** | **str** | Message for not fully configured card or no data. | [optional] 
 
 ## Example

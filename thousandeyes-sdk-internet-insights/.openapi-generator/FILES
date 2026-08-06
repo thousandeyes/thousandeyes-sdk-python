@@ -58,6 +58,11 @@ src/thousandeyes_sdk/internet_insights/models/validation_error.py
 src/thousandeyes_sdk/internet_insights/models/validation_error_item.py
 src/thousandeyes_sdk/internet_insights/py.typed
 test/__init__.py
+test/conftest.py
+test/integration_test_utils.py
+test/mock_manifest.py
 test/test_internet_insights_catalog_providers_api.py
+test/test_internet_insights_catalog_providers_api_integration.py
 test/test_internet_insights_outages_api.py
+test/test_internet_insights_outages_api_integration.py
 test/test_utils.py

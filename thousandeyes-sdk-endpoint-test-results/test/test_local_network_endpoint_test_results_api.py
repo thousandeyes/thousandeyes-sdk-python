@@ -35,15 +35,17 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
                   "searchFilters" : {
                     "agentId" : [ "3fde6422-f119-40e1-ae32-d08a1243c038", "236e6f18-9637-4a2f-b15f-7aa6a29c9fce" ],
                     "bssid" : [ "8c:68:c8:a5:0a:8c", "0c:51:01:e4:3e:d0" ],
+                    "type" : [ "vpn", "proxy" ],
+                    "ssid" : [ "wifi-name", "other-room-wifi" ],
+                    "platform" : [ "mac", "mac" ],
+                    "proxyTarget" : [ "78.153.54.204", "78.153.54.206" ],
+                    "nicModel" : [ "Intel(R) Wi-Fi 6 AX200 160MHz", "Intel(R) Wi-Fi 6 AX200 160MHz" ],
                     "location" : [ "San Francisco Bay Area", "Germany" ],
                     "connection" : [ "wireless", "wireless" ],
                     "vpnTarget" : [ "78.153.54.204", "78.153.54.206" ],
                     "networkId" : [ "660b34109d12", "660b34109d15" ],
-                    "type" : [ "vpn", "proxy" ],
-                    "ssid" : [ "wifi-name", "other-room-wifi" ],
-                    "platform" : [ "mac", "mac" ],
-                    "gateway" : [ "78.153.54.204", "78.153.54.206" ],
-                    "proxyTarget" : [ "78.153.54.204", "78.153.54.206" ]
+                    "nicDriverVersion" : [ "22.250.0.9", "22.250.0.9" ],
+                    "gateway" : [ "78.153.54.204", "78.153.54.206" ]
                   },
                   "thresholdFilter" : {
                     "conditionalOperator" : "and",

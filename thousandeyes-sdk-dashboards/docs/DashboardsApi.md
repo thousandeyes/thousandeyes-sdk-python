@@ -316,7 +316,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     max = 10 # float | Optionally specify the maximum number of objects to retrieve. This only applies to the **Alert List** and **Test Table** Widgets. * The default for the **Alert List** widget is set by its limitBy configuration. * The default value for the **Test Table** widget is 10. (optional)
     cursor = 'bGFzdFJvdW5kSWQ9MTY4MTQxMDQ4MA' # str | An optional pagination cursor. This parameter should not not be used directly. Instead, use the `_links` returned by the API. This feature is only available in the **Test Table** widget. (optional)
     sort = 'alertStatus' # str | Optional sorting parameter with attributes listed comma-separated. This only applies to the **Alert List** and **Test Table** Widgets. * For the **Alert List** widget, you can sort by `alertStatus` or `startTime`. The default is `alertStatus`. * For the **Test Table** widget, you can sort by `alertStatus`, `testName`, or `testType`. The sequence might vary from the web application. The default sort attribute is `alertStatus`. (optional)
-    order = thousandeyes_sdk.dashboards.DashboardOrder() # DashboardOrder | Optional sorting order parameter that accepts either `asc` (ascending) or `desc` (descending) values. This only applies to the **Alert List** and **Test Table** Widgets. (optional)
+    order =  # DashboardOrder | Optional sorting order parameter that accepts either `asc` (ascending) or `desc` (descending) values. This only applies to the **Alert List** and **Test Table** Widgets. (optional)
 
     try:
         # Retrieve dashboard widget data

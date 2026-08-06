@@ -24,9 +24,10 @@ Name | Type | Description | Notes
 **max_scale** | **float** | Maximum scale configured in the widget. | [optional] 
 **unit** | [**ApiWidgetFixedYScalePrefix**](ApiWidgetFixedYScalePrefix.md) |  | [optional] 
 **type** | **str** | Time Series: Line widget type. | 
-**show_timeseries_overall_baseline** | **bool** | Displays the overall baseline if set to &#x60;true&#x60;. | [optional] 
+**show_timeseries_overall_baseline** | **bool** | Displays the overall baseline when set to &#x60;true&#x60;. | [optional] [default to False]
 **group_by** | [**ApiAggregateProperty**](ApiAggregateProperty.md) |  | [optional] 
-**is_timeseries_one_chart_per_line** | **bool** | Displays a separate chart for each line if set to &#x60;true&#x60;. | [optional] 
+**is_timeseries_one_chart_per_line** | **bool** | Displays a separate chart for each line when set to &#x60;true&#x60;. | [optional] [default to False]
+**show_zoom_slider** | **bool** | Displays the zoom slider on the time axis when set to &#x60;true&#x60;. | [optional] [default to False]
 **data_source** | [**TimeseriesDatasource**](TimeseriesDatasource.md) |  | [optional] 
 
 ## Example
