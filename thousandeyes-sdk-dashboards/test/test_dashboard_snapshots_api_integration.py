@@ -735,6 +735,7 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
                         } ]
                       }
                     },
+                    "schedule" : "",
                     "accountId" : 1234,
                     "apiLink" : [ {
                       "key" : ""
@@ -1878,6 +1879,7 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
                           } ]
                         }
                       },
+                      "schedule" : "",
                       "accountId" : 1234,
                       "apiLink" : [ {
                         "key" : ""
@@ -2143,6 +2145,7 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
                           } ]
                         }
                       },
+                      "schedule" : "",
                       "accountId" : 1234,
                       "apiLink" : [ {
                         "key" : ""

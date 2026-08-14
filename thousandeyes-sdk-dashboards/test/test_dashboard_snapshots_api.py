@@ -325,6 +325,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
                         } ]
                       }
                     },
+                    "schedule" : "",
                     "accountId" : 1234,
                     "apiLink" : [ {
                       "key" : ""
@@ -1076,6 +1077,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
                           } ]
                         }
                       },
+                      "schedule" : "",
                       "accountId" : 1234,
                       "apiLink" : [ {
                         "key" : ""
@@ -1341,6 +1343,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
                           } ]
                         }
                       },
+                      "schedule" : "",
                       "accountId" : 1234,
                       "apiLink" : [ {
                         "key" : ""

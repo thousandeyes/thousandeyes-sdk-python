@@ -6,7 +6,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **results** | [**List[PathVisDetailEndpointTestResult]**](PathVisDetailEndpointTestResult.md) |  | [optional] 
-**test** | [**EndpointScheduledTest**](EndpointScheduledTest.md) |  | [optional] 
+**test** | [**EndpointScheduledTest**](EndpointScheduledTest.md) | The scheduled test configuration. Omitted when the user lacks the &#x60;View endpoint experience tests&#x60; permission. | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
