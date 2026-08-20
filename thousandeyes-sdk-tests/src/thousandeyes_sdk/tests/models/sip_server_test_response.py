@@ -20,11 +20,11 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.tests.models.alert_rule import AlertRule
 from thousandeyes_sdk.tests.models.monitor import Monitor
 from thousandeyes_sdk.tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.tests.models.sip_test_protocol import SipTestProtocol
+from thousandeyes_sdk.tests.models.test_agent_response import TestAgentResponse
 from thousandeyes_sdk.tests.models.test_interval import TestInterval
 from thousandeyes_sdk.tests.models.test_ipv6_policy import TestIpv6Policy
 from thousandeyes_sdk.tests.models.test_label import TestLabel
@@ -78,7 +78,7 @@ class SipServerTestResponse(BaseModel):
     protocol: Optional[SipTestProtocol] = None
     sip_registrar: Optional[StrictStr] = Field(default=None, description="SIP server to be tested, specified by domain name or IP address.", alias="sipRegistrar")
     user: Optional[StrictStr] = Field(default=None, description="Username for SIP registration, should be unique within a ThousandEyes account group.")
-    agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
+    agents: Optional[List[TestAgentResponse]] = Field(default=None, description="Contains list of agents.")
     __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "bgpMeasurements", "usePublicBgp", "monitors", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "mtuMeasurements", "networkMeasurements", "numPathTraces", "optionsRegex", "pathTraceMode", "probeMode", "randomizedStartTime", "registerEnabled", "sipTargetTime", "sipTimeLimit", "fixedPacketRate", "ipv6Policy", "authUser", "password", "port", "protocol", "sipRegistrar", "user", "agents"]
 
     model_config = ConfigDict(
@@ -241,7 +241,7 @@ class SipServerTestResponse(BaseModel):
             "protocol": obj.get("protocol"),
             "sipRegistrar": obj.get("sipRegistrar"),
             "user": obj.get("user"),
-            "agents": [AgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "agents": [TestAgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

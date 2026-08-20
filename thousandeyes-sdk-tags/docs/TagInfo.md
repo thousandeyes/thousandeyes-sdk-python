@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **type** | [**Type**](Type.md) |  | [optional] 
 **value** | **str** | The tag&#39;s value | [optional] 
 **match_type** | [**TagMatchType**](TagMatchType.md) |  | [optional] 
-**filters** | [**List[TagFilter]**](TagFilter.md) | The combination of filters (filter keys) dynamically assigned to an &#x60;endpoint-agent&#x60; as determined by the matching logic (&#x60;and&#x60; or &#x60;or&#x60;). For example, if you filter on &#x60;bssid&#x60; and &#x60;ssid&#x60; with a matching logic of &#x60;and&#x60;, both filters are assigned as tags to the &#x60;endpoint-agent&#x60;; &#x60;or&#x60; means either filter can be assigned. **Note:** filters currently only apply to &#x60;endpoint-agent&#x60; object types. | [optional] 
+**filters** | [**List[TagFilter]**](TagFilter.md) | Filter criteria used to dynamically assign the tag to endpoint agents. The matching logic determines how multiple filters are evaluated: &#x60;and&#x60; requires all filters to match, while &#x60;or&#x60; requires any filter to match. Filters are supported only for &#x60;endpoint-agent&#x60; object types. | [optional] 
 
 ## Example
 

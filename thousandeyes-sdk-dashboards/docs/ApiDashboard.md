@@ -30,6 +30,7 @@ Name | Type | Description | Notes
 **is_global_override** | **bool** | When set to &#x60;true&#x60;, the defaultTimespan is used and overrides the widget&#39;s timespan. If set to &#x60;false&#x60;, the the widget&#39;s timespan is used. | [optional] 
 **is_migrated_report** | **bool** | True if this dashboard was previously a report. | [optional] [readonly] 
 **layout** | [**DashboardLayout**](DashboardLayout.md) |  | [optional] 
+**schedule** | [**DashboardSchedule**](DashboardSchedule.md) |  | [optional] [readonly] 
 **refresh_rate** | [**RefreshRate**](RefreshRate.md) |  | [optional] 
 **links** | [**DashboardLinks**](DashboardLinks.md) |  | [optional] 
 

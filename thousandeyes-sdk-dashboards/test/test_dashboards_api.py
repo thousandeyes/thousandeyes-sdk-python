@@ -28,6 +28,191 @@ class TestDashboardsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_clone_dashboard_models_validation(self) -> None:
+        """Test case for clone_dashboard request and response models"""
+        request_body_json = """
+                {
+                  "isSharedWithAllAccountGroups" : false,
+                  "tagIds" : "",
+                  "isDefaultForAccount" : false,
+                  "description" : "Copy of the HTTP Server Widgets dashboard",
+                  "isDefaultForUser" : false,
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets Copy",
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "5m",
+                  "sharedAccountIds" : [ "1234", "5678" ],
+                  "isGlobalOverride" : false
+                }
+                """
+
+        request_loaded_json = json.loads(request_body_json)
+        request_from_json = thousandeyes_sdk.dashboards.models.CloneDashboardRequest.from_json(request_body_json)
+        assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
+
+        response_body_json = """
+                {
+                  "isMigratedReport" : false,
+                  "_links" : {
+                    "snapshots" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    },
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "isDefaultForAccount" : false,
+                  "isDefaultForUser" : true,
+                  "description" : "HTTP Server Widgets",
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets",
+                  "isBuiltIn" : true,
+                  "widgets" : [ {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  }, {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  } ],
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : "",
+                  "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
+                  "createdBy" : "1",
+                  "refreshRate" : "off",
+                  "modifiedDate" : "2023-05-16T10:14:28Z",
+                  "modifiedBy" : "1",
+                  "isGlobalOverride" : true,
+                  "aid" : "1234"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.dashboards.models.Dashboard.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+
     def test_create_dashboard_models_validation(self) -> None:
         """Test case for create_dashboard request and response models"""
         request_body_json = """
@@ -158,6 +343,7 @@ class TestDashboardsApi(unittest.TestCase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : "",
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -300,6 +486,7 @@ class TestDashboardsApi(unittest.TestCase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : "",
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -315,6 +502,10 @@ class TestDashboardsApi(unittest.TestCase):
 
     def test_delete_dashboard_models_validation(self) -> None:
         """Test case for delete_dashboard request and response models"""
+
+
+    def test_delete_dashboard_schedule_models_validation(self) -> None:
+        """Test case for delete_dashboard_schedule request and response models"""
 
 
     def test_get_dashboard_models_validation(self) -> None:
@@ -453,6 +644,7 @@ class TestDashboardsApi(unittest.TestCase):
                       } ]
                     }
                   },
+                  "schedule" : "",
                   "accountId" : 1234,
                   "apiLink" : [ {
                     "key" : ""
@@ -1068,6 +1260,7 @@ class TestDashboardsApi(unittest.TestCase):
                       } ]
                     }
                   },
+                  "schedule" : "",
                   "accountId" : 1234,
                   "apiLink" : [ {
                     "key" : ""
@@ -1213,6 +1406,7 @@ class TestDashboardsApi(unittest.TestCase):
                       } ]
                     }
                   },
+                  "schedule" : "",
                   "accountId" : 1234,
                   "apiLink" : [ {
                     "key" : ""
@@ -1485,6 +1679,7 @@ class TestDashboardsApi(unittest.TestCase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : "",
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -1627,6 +1822,7 @@ class TestDashboardsApi(unittest.TestCase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : "",
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -1638,6 +1834,192 @@ class TestDashboardsApi(unittest.TestCase):
 
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.Dashboard.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+
+    def test_update_dashboard_schedule_models_validation(self) -> None:
+        """Test case for update_dashboard_schedule request and response models"""
+        request_body_json = """
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+                """
+
+        request_loaded_json = json.loads(request_body_json)
+        request_from_json = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
+        assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
+
+        response_body_json = """
+                {
+                  "isMigratedReport" : false,
+                  "dashboardCreatedBy" : "1",
+                  "_links" : {
+                    "snapshots" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    },
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "isDefaultForUser" : true,
+                  "description" : "HTTP Server Widgets",
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets",
+                  "isBuiltIn" : true,
+                  "widgets" : [ {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  }, {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  } ],
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "off",
+                  "modifiedBy" : 1,
+                  "dashboardModifiedBy" : "1",
+                  "migratedReport" : false,
+                  "isDefaultForAccount" : false,
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "schedule" : "",
+                  "accountId" : 1234,
+                  "apiLink" : [ {
+                    "key" : ""
+                  }, {
+                    "key" : ""
+                  } ],
+                  "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
+                  "createdBy" : 1,
+                  "globalOverride" : true,
+                  "modifiedDate" : "2023-05-16 10:14:28",
+                  "isGlobalOverride" : true,
+                  "aid" : "1234",
+                  "dashboardModifiedDate" : "2023-05-16T10:14:28Z"
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.dashboards.models.ApiDashboard.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
 
 

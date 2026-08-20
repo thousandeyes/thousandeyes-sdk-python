@@ -22,6 +22,7 @@ from typing import Any, ClassVar, Dict, List, Optional
 from thousandeyes_sdk.dashboards.models.api_widget import ApiWidget
 from thousandeyes_sdk.dashboards.models.dashboard_layout import DashboardLayout
 from thousandeyes_sdk.dashboards.models.dashboard_links import DashboardLinks
+from thousandeyes_sdk.dashboards.models.dashboard_schedule import DashboardSchedule
 from thousandeyes_sdk.dashboards.models.default_timespan import DefaultTimespan
 from thousandeyes_sdk.dashboards.models.refresh_rate import RefreshRate
 from typing import Optional, Set
@@ -55,9 +56,10 @@ class ApiDashboard(BaseModel):
     is_global_override: Optional[StrictBool] = Field(default=None, description="When set to `true`, the defaultTimespan is used and overrides the widget's timespan. If set to `false`, the the widget's timespan is used.", alias="isGlobalOverride")
     is_migrated_report: Optional[StrictBool] = Field(default=None, description="True if this dashboard was previously a report.", alias="isMigratedReport")
     layout: Optional[DashboardLayout] = None
+    schedule: Optional[DashboardSchedule] = None
     refresh_rate: Optional[RefreshRate] = Field(default=None, alias="refreshRate")
     links: Optional[DashboardLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["globalFilterId", "accountId", "createdBy", "modifiedBy", "modifiedDate", "globalOverride", "migratedReport", "apiLink", "dashboardId", "title", "isBuiltIn", "aid", "dashboardCreatedBy", "dashboardModifiedBy", "dashboardModifiedDate", "isPrivate", "isDefaultForUser", "isDefaultForAccount", "widgets", "description", "defaultTimespan", "isGlobalOverride", "isMigratedReport", "layout", "refreshRate", "_links"]
+    __properties: ClassVar[List[str]] = ["globalFilterId", "accountId", "createdBy", "modifiedBy", "modifiedDate", "globalOverride", "migratedReport", "apiLink", "dashboardId", "title", "isBuiltIn", "aid", "dashboardCreatedBy", "dashboardModifiedBy", "dashboardModifiedDate", "isPrivate", "isDefaultForUser", "isDefaultForAccount", "widgets", "description", "defaultTimespan", "isGlobalOverride", "isMigratedReport", "layout", "schedule", "refreshRate", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -104,6 +106,7 @@ class ApiDashboard(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "account_id",
@@ -120,6 +123,7 @@ class ApiDashboard(BaseModel):
             "is_default_for_user",
             "is_default_for_account",
             "is_migrated_report",
+            "schedule",
         ])
 
         _dict = self.model_dump(
@@ -140,6 +144,9 @@ class ApiDashboard(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of layout
         if self.layout:
             _dict['layout'] = self.layout.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of schedule
+        if self.schedule:
+            _dict['schedule'] = self.schedule.to_dict()
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
@@ -179,6 +186,7 @@ class ApiDashboard(BaseModel):
             "isGlobalOverride": obj.get("isGlobalOverride"),
             "isMigratedReport": obj.get("isMigratedReport"),
             "layout": DashboardLayout.from_dict(obj["layout"]) if obj.get("layout") is not None else None,
+            "schedule": DashboardSchedule.from_dict(obj["schedule"]) if obj.get("schedule") is not None else None,
             "refreshRate": obj.get("refreshRate"),
             "_links": DashboardLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

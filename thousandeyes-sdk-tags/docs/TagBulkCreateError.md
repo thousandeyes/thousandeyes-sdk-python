@@ -6,8 +6,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **tag** | [**Dict[str, TagInfo]**](TagInfo.md) |  | [optional] 
-**response_code** | **int** | HTTP response code | [optional] 
-**message** | **str** | Status / error message | [optional] 
+**response_code** | **int** | HTTP response code. | [optional] 
+**message** | **str** | Status or error message. | [optional] 
 
 ## Example
 
