@@ -29,7 +29,7 @@ class PathVisDetailEndpointTestResults(BaseModel):
     PathVisDetailEndpointTestResults
     """ # noqa: E501
     results: Optional[List[PathVisDetailEndpointTestResult]] = None
-    test: Optional[EndpointScheduledTest] = None
+    test: Optional[EndpointScheduledTest] = Field(default=None, description="The scheduled test configuration. Omitted when the user lacks the `View endpoint experience tests` permission.")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
     __properties: ClassVar[List[str]] = ["results", "test", "_links"]
 

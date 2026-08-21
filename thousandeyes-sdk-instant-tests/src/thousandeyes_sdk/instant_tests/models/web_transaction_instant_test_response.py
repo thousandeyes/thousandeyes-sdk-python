@@ -21,9 +21,9 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.instant_tests.models.agent_interfaces import AgentInterfaces
-from thousandeyes_sdk.instant_tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.instant_tests.models.o_auth import OAuth
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
+from thousandeyes_sdk.instant_tests.models.test_agent_response import TestAgentResponse
 from thousandeyes_sdk.instant_tests.models.test_auth_type import TestAuthType
 from thousandeyes_sdk.instant_tests.models.test_chromium_track import TestChromiumTrack
 from thousandeyes_sdk.instant_tests.models.test_custom_headers import TestCustomHeaders
@@ -110,7 +110,7 @@ class WebTransactionInstantTestResponse(BaseModel):
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     identify_agent_traffic_with_user_agent: Optional[StrictBool] = Field(default=False, description="Determines how agent traffic is identified:  * `false`: Adds the `x-thousandeyes-agent: yes` header. * `true`: Appends `(ThousandEyes Agent)` to the `user-agent` header.  For more information, see [Notes on Agent ID Strategy](https://docs.thousandeyes.com/product-documentation/browser-synthetics/test-settings-page-load-transaction#notes-on-agent-id-strategy). ", alias="identifyAgentTrafficWithUserAgent")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
-    agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
+    agents: Optional[List[TestAgentResponse]] = Field(default=None, description="Contains list of agents.")
     __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "targetTime", "timeLimit", "transactionScript", "flagCollectConsoleLogs", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "chromiumTrack", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent", "credentials", "agents"]
 
     model_config = ConfigDict(
@@ -303,7 +303,7 @@ class WebTransactionInstantTestResponse(BaseModel):
             "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "identifyAgentTrafficWithUserAgent": obj.get("identifyAgentTrafficWithUserAgent") if obj.get("identifyAgentTrafficWithUserAgent") is not None else False,
             "credentials": obj.get("credentials"),
-            "agents": [AgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "agents": [TestAgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

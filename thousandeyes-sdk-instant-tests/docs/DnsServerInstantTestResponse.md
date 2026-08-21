@@ -34,7 +34,7 @@ Name | Type | Description | Notes
 **ipv6_policy** | [**TestIpv6Policy**](TestIpv6Policy.md) |  | [optional] 
 **fixed_packet_rate** | **int** | Sets packets rate sent to measure the network in packets per second. | [optional] 
 **dns_query_class** | [**DnsQueryClass**](DnsQueryClass.md) |  | [optional] 
-**agents** | [**List[AgentResponse]**](AgentResponse.md) | Contains list of agents. | [optional] 
+**agents** | [**List[TestAgentResponse]**](TestAgentResponse.md) | Contains list of agents. | [optional] 
 
 ## Example
 

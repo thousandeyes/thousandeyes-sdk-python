@@ -20,9 +20,9 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.instant_tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.instant_tests.models.agent_to_agent_test_protocol import AgentToAgentTestProtocol
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
+from thousandeyes_sdk.instant_tests.models.test_agent_response import TestAgentResponse
 from thousandeyes_sdk.instant_tests.models.test_direction import TestDirection
 from thousandeyes_sdk.instant_tests.models.test_dscp_id import TestDscpId
 from thousandeyes_sdk.instant_tests.models.test_label import TestLabel
@@ -64,7 +64,7 @@ class AgentToAgentInstantTestResponse(BaseModel):
     throughput_duration: Optional[Annotated[int, Field(le=30000, strict=True, ge=5000)]] = Field(default=10000, description="The throughput duration.", alias="throughputDuration")
     throughput_rate: Optional[Annotated[int, Field(le=1000, strict=True, ge=8)]] = Field(default=None, description="The throughput rate, only applicable for UDP protocol.", alias="throughputRate")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
-    agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
+    agents: Optional[List[TestAgentResponse]] = Field(default=None, description="Contains list of agents.")
     __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "direction", "dscp", "dscpId", "mss", "numPathTraces", "pathTraceMode", "port", "protocol", "randomizedStartTime", "targetAgentId", "throughputMeasurements", "throughputDuration", "throughputRate", "fixedPacketRate", "agents"]
 
     model_config = ConfigDict(
@@ -202,7 +202,7 @@ class AgentToAgentInstantTestResponse(BaseModel):
             "throughputDuration": obj.get("throughputDuration") if obj.get("throughputDuration") is not None else 10000,
             "throughputRate": obj.get("throughputRate"),
             "fixedPacketRate": obj.get("fixedPacketRate"),
-            "agents": [AgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "agents": [TestAgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

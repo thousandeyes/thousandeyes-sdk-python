@@ -4,15 +4,107 @@ All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**clone_dashboard**](DashboardsApi.md#clone_dashboard) | **POST** /dashboards/{dashboardId}/clone | Clone dashboard
 [**create_dashboard**](DashboardsApi.md#create_dashboard) | **POST** /dashboards | Create dashboard
 [**delete_dashboard**](DashboardsApi.md#delete_dashboard) | **DELETE** /dashboards/{dashboardId} | Delete dashboard
+[**delete_dashboard_schedule**](DashboardsApi.md#delete_dashboard_schedule) | **DELETE** /dashboards/{dashboardId}/actions/schedule | Delete dashboard snapshot schedule
 [**get_dashboard**](DashboardsApi.md#get_dashboard) | **GET** /dashboards/{dashboardId} | Retrieve dashboard
 [**get_dashboard_widget_data**](DashboardsApi.md#get_dashboard_widget_data) | **GET** /dashboards/{dashboardId}/widgets/{widgetId} | Retrieve dashboard widget data
 [**get_dashboards**](DashboardsApi.md#get_dashboards) | **GET** /dashboards | List dashboards
 [**get_individual_card_data**](DashboardsApi.md#get_individual_card_data) | **GET** /dashboards/{dashboardId}/widgets/{widgetId}/cards/{cardId} | Retrieve individual card data from numbers widget
 [**get_individual_column_data**](DashboardsApi.md#get_individual_column_data) | **GET** /dashboards/{dashboardId}/widgets/{widgetId}/columns/{columnId} | Retrieve individual column data from multi-metric table widget
 [**update_dashboard**](DashboardsApi.md#update_dashboard) | **PUT** /dashboards/{dashboardId} | Update dashboard
+[**update_dashboard_schedule**](DashboardsApi.md#update_dashboard_schedule) | **PUT** /dashboards/{dashboardId}/actions/schedule | Create or update dashboard snapshot schedule
 
+
+# **clone_dashboard**
+> Dashboard clone_dashboard(dashboard_id, aid=aid, clone_dashboard_request=clone_dashboard_request)
+
+Clone dashboard
+
+Creates a dashboard by cloning an existing dashboard. By default, the clone inherits the source dashboard's widgets, layout, default timespan, tags, and other supported settings. Values provided in the request override the corresponding source dashboard settings. Sharing settings are not inherited. If `title` is omitted, the API generates a unique title for the clone.  **Note**: * Users with the `Edit dashboard templates for all users in account group` permission (Account Admin) can clone any dashboard they can view. * Users with the `Edit own dashboard templates` permission (Regular User) can clone dashboards they can view. The current user owns the cloned dashboard. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.dashboards
+from thousandeyes_sdk.dashboards.models.clone_dashboard_request import CloneDashboardRequest
+from thousandeyes_sdk.dashboards.models.dashboard import Dashboard
+from thousandeyes_sdk.dashboards.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.core.Configuration(
+    host = "https://api.thousandeyes.com/v7"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.core.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.dashboards.DashboardsApi(api_client)
+    dashboard_id = '646f4d2ce3c99b0536c3821e' # str | A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+    clone_dashboard_request = thousandeyes_sdk.dashboards.CloneDashboardRequest() # CloneDashboardRequest | Optional overrides for the cloned dashboard. (optional)
+
+    try:
+        # Clone dashboard
+        api_response = api_instance.clone_dashboard(dashboard_id, aid=aid, clone_dashboard_request=clone_dashboard_request)
+        print("The response of DashboardsApi->clone_dashboard:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DashboardsApi->clone_dashboard: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dashboard_id** | **str**| A Identifier for a dashboard which can be obtained from the &#x60;/dashboards&#x60; endpoint. | 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+ **clone_dashboard_request** | [**CloneDashboardRequest**](CloneDashboardRequest.md)| Optional overrides for the cloned dashboard. | [optional] 
+
+### Return type
+
+[**Dashboard**](Dashboard.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/hal+json, application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**201** | Dashboard cloned successfully. |  * Location -  <br>  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_dashboard**
 > Dashboard create_dashboard(dashboard, aid=aid)
@@ -178,6 +270,90 @@ void (empty response body)
 **401** | Unauthorized |  -  |
 **403** | Insufficient permissions to query endpoint |  -  |
 **404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **delete_dashboard_schedule**
+> delete_dashboard_schedule(dashboard_id, aid=aid)
+
+Delete dashboard snapshot schedule
+
+Removes the snapshot schedule from a dashboard. Existing snapshots are not deleted. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.dashboards
+from thousandeyes_sdk.dashboards.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.core.Configuration(
+    host = "https://api.thousandeyes.com/v7"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.core.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.dashboards.DashboardsApi(api_client)
+    dashboard_id = '646f4d2ce3c99b0536c3821e' # str | A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # Delete dashboard snapshot schedule
+        api_instance.delete_dashboard_schedule(dashboard_id, aid=aid)
+    except Exception as e:
+        print("Exception when calling DashboardsApi->delete_dashboard_schedule: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dashboard_id** | **str**| A Identifier for a dashboard which can be obtained from the &#x60;/dashboards&#x60; endpoint. | 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**204** | No content |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**409** | The dashboard changed while the schedule operation was being applied. |  -  |
 **429** | Exhausted rate limit for the organization |  -  |
 **500** | Internal server error |  -  |
 
@@ -731,6 +907,96 @@ Name | Type | Description  | Notes
 **401** | Unauthorized |  -  |
 **403** | Insufficient permissions to query endpoint |  -  |
 **404** | Not found |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **update_dashboard_schedule**
+> ApiDashboard update_dashboard_schedule(dashboard_id, dashboard_schedule_request, aid=aid)
+
+Create or update dashboard snapshot schedule
+
+Creates or replaces the snapshot schedule for a dashboard. Set `repeat` to `NONE` to generate one snapshot at `startTime`. Other `repeat` values create recurring snapshots. Schedule settings control when snapshots are generated, the data time range included in each snapshot, and email delivery options. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.dashboards
+from thousandeyes_sdk.dashboards.models.api_dashboard import ApiDashboard
+from thousandeyes_sdk.dashboards.models.dashboard_schedule_request import DashboardScheduleRequest
+from thousandeyes_sdk.dashboards.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.core.Configuration(
+    host = "https://api.thousandeyes.com/v7"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.core.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.dashboards.DashboardsApi(api_client)
+    dashboard_id = '646f4d2ce3c99b0536c3821e' # str | A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.
+    dashboard_schedule_request = thousandeyes_sdk.dashboards.DashboardScheduleRequest() # DashboardScheduleRequest | Snapshot schedule configuration.
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # Create or update dashboard snapshot schedule
+        api_response = api_instance.update_dashboard_schedule(dashboard_id, dashboard_schedule_request, aid=aid)
+        print("The response of DashboardsApi->update_dashboard_schedule:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling DashboardsApi->update_dashboard_schedule: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **dashboard_id** | **str**| A Identifier for a dashboard which can be obtained from the &#x60;/dashboards&#x60; endpoint. | 
+ **dashboard_schedule_request** | [**DashboardScheduleRequest**](DashboardScheduleRequest.md)| Snapshot schedule configuration. | 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+[**ApiDashboard**](ApiDashboard.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/hal+json, application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | OK |  -  |
+**400** | Bad Request |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**404** | Not found |  -  |
+**409** | The dashboard changed while the schedule operation was being applied. |  -  |
 **429** | Exhausted rate limit for the organization |  -  |
 **500** | Internal server error |  -  |
 

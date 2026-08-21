@@ -7,7 +7,7 @@ Console logs captured during script execution to help troubleshoot transaction i
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **level** | **str** | Severity level of the log, or UNKNOWN if the log is system-generated. | [optional] 
-**timestamp** | **str** | Unix epoch time, in milliseconds, when the log entry was captured. | [optional] 
+**timestamp** | **int** | Unix epoch time, in milliseconds, when the log entry was captured. | [optional] 
 **value** | **str** | Log message. | [optional] 
 
 ## Example

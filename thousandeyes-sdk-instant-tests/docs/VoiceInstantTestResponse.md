@@ -29,7 +29,7 @@ Name | Type | Description | Notes
 **port** | **int** | Port number for the chosen protocol. | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **target_agent_id** | **str** | Agent ID of the target agent for the test. | 
-**agents** | [**List[AgentResponse]**](AgentResponse.md) | Contains list of agents. | [optional] 
+**agents** | [**List[TestAgentResponse]**](TestAgentResponse.md) | Contains list of agents. | [optional] 
 
 ## Example
 

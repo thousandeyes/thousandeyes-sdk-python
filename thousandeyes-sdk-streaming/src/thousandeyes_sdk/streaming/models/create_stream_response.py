@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from thousandeyes_sdk.streaming.models.audit_operation import AuditOperation
 from thousandeyes_sdk.streaming.models.data_model_version import DataModelVersion
 from thousandeyes_sdk.streaming.models.endpoint_agent_label import EndpointAgentLabel
@@ -47,6 +48,7 @@ class CreateStreamResponse(BaseModel):
     endpoint_type: Optional[EndpointType] = Field(default=None, alias="endpointType")
     stream_endpoint_url: Optional[StrictStr] = Field(default=None, description="The URL ThousandEyes sends data stream to. For a URL to be valid, it needs to: - Be syntactically correct. - Be reachable. - Use the HTTPS protocol. - When using the `grpc` endpointType, streamEndpointUrl cannot contain paths:     - Valid . `grpc` - `https://example.com`     - Invalid . `grpc` - `https://example.com/collector`.     - Valid . `http` - `https://example.com/collector`.  - When using the `http` endpointType, the operation must match the exact final full URL (including the path if there is one) to which the data will be sent. Examples below:     - `https://api.honeycomb.io:443/v1/metrics`     - `https://ingest.eu0.signalfx.com/v2/datapoint/otlp`", alias="streamEndpointUrl")
     data_model_version: Optional[DataModelVersion] = Field(default=None, alias="dataModelVersion")
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=255)]] = Field(default=None, description="Name of the data stream. When omitted, a name is generated on creation and the existing name is preserved on update.")
     custom_headers: Optional[Dict[str, StrictStr]] = Field(default=None, description="Custom headers.", alias="customHeaders")
     tag_match: Optional[List[TagMatch]] = Field(default=None, description="A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics. Tags are invalid if the tag key includes characters that are not allowed by the [OpenTelemetry naming recommendations for attributes](https://opentelemetry.io/docs/specs/semconv/general/naming/#recommendations-for-application-developers).", alias="tagMatch")
     test_match: Optional[List[TestMatch]] = Field(default=None, description="A collection of tests to be included in the data stream.", alias="testMatch")
@@ -57,7 +59,7 @@ class CreateStreamResponse(BaseModel):
     endpoint_agent_tag: Optional[List[EndpointAgentTag]] = Field(default=None, description="A collection of Endpoint Agent Tag IDs that determines what local network data is included in the data stream. `endpointAgentLabel` and `endpointAgentTag` represent the same data. Configure only one; both are synchronized.", alias="endpointAgentTag")
     audit_operation: Optional[AuditOperation] = Field(default=None, alias="auditOperation")
     stream_status: Optional[StreamStatus] = Field(default=None, alias="streamStatus")
-    __properties: ClassVar[List[str]] = ["id", "enabled", "_links", "type", "signal", "endpointType", "streamEndpointUrl", "dataModelVersion", "customHeaders", "tagMatch", "testMatch", "filters", "inputConfig", "exporterConfig", "endpointAgentLabel", "endpointAgentTag", "auditOperation", "streamStatus"]
+    __properties: ClassVar[List[str]] = ["id", "enabled", "_links", "type", "signal", "endpointType", "streamEndpointUrl", "dataModelVersion", "name", "customHeaders", "tagMatch", "testMatch", "filters", "inputConfig", "exporterConfig", "endpointAgentLabel", "endpointAgentTag", "auditOperation", "streamStatus"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -167,6 +169,7 @@ class CreateStreamResponse(BaseModel):
             "endpointType": obj.get("endpointType"),
             "streamEndpointUrl": obj.get("streamEndpointUrl"),
             "dataModelVersion": obj.get("dataModelVersion"),
+            "name": obj.get("name"),
             "customHeaders": obj.get("customHeaders"),
             "tagMatch": [TagMatch.from_dict(_item) for _item in obj["tagMatch"]] if obj.get("tagMatch") is not None else None,
             "testMatch": [TestMatch.from_dict(_item) for _item in obj["testMatch"]] if obj.get("testMatch") is not None else None,
