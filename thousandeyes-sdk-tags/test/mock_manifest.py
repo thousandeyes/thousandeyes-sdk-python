@@ -752,6 +752,19 @@ OPERATION_MANIFEST = {
                 content_type="application/json",
             ),
 
+            "403": ErrorResponseExpectation(
+                status=403,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
             "500": ErrorResponseExpectation(
                 status=500,
                 body=json.loads("""
@@ -827,8 +840,8 @@ OPERATION_MANIFEST = {
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   }, {
                     "tag" : {
                       "key" : {
@@ -867,8 +880,8 @@ OPERATION_MANIFEST = {
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   } ],
                   "tags" : [ {
                     "assignments" : [ {
@@ -1022,8 +1035,8 @@ OPERATION_MANIFEST = {
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   }, {
                     "tag" : {
                       "key" : {
@@ -1062,8 +1075,8 @@ OPERATION_MANIFEST = {
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   } ],
                   "tags" : [ {
                     "assignments" : [ {
@@ -1191,6 +1204,19 @@ OPERATION_MANIFEST = {
                 {
                   "error_description" : "Invalid access token",
                   "error" : "invalid_token"
+                }"""),
+                content_type="application/json",
+            ),
+
+            "403": ErrorResponseExpectation(
+                status=403,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
                 }"""),
                 content_type="application/json",
             ),

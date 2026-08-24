@@ -33,6 +33,7 @@ from thousandeyes_sdk.endpoint_test_results.models.platform import Platform
 from thousandeyes_sdk.endpoint_test_results.models.system_metric_details import SystemMetricDetails
 from thousandeyes_sdk.endpoint_test_results.models.system_metrics import SystemMetrics
 from thousandeyes_sdk.endpoint_test_results.models.tcp_connect import TcpConnect
+from thousandeyes_sdk.endpoint_test_results.models.wireless_onboarding import WirelessOnboarding
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -57,11 +58,12 @@ class LocalNetworkTopologyResultBase(BaseModel):
     gateway_score: Optional[EndpointProbeGatewayScore] = Field(default=None, alias="gatewayScore")
     proxy_score: Optional[EndpointProbeProxyScore] = Field(default=None, alias="proxyScore")
     connection_score: Optional[EndpointProbeConnectionScore] = Field(default=None, alias="connectionScore")
+    wireless_onboarding: Optional[WirelessOnboarding] = Field(default=None, alias="wirelessOnboarding")
     agent_score: Optional[EndpointProbeAgentScore] = Field(default=None, alias="agentScore")
     battery_metrics: Optional[BatteryMetrics] = Field(default=None, alias="batteryMetrics")
     cellular_profile: Optional[CellularProfile] = Field(default=None, alias="cellularProfile")
     platform: Optional[Platform] = None
-    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "dnsServerTest", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails", "vpnScore", "gatewayScore", "proxyScore", "connectionScore", "agentScore", "batteryMetrics", "cellularProfile", "platform"]
+    __properties: ClassVar[List[str]] = ["agentId", "date", "networkTopologyId", "dnsServerTest", "roundId", "target", "targetPort", "type", "icmpPing", "isIcmpBlocked", "tcpConnect", "systemMetrics", "systemMetricDetails", "vpnScore", "gatewayScore", "proxyScore", "connectionScore", "wirelessOnboarding", "agentScore", "batteryMetrics", "cellularProfile", "platform"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -144,6 +146,9 @@ class LocalNetworkTopologyResultBase(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of connection_score
         if self.connection_score:
             _dict['connectionScore'] = self.connection_score.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of wireless_onboarding
+        if self.wireless_onboarding:
+            _dict['wirelessOnboarding'] = self.wireless_onboarding.to_dict()
         # override the default output from pydantic by calling `to_dict()` of agent_score
         if self.agent_score:
             _dict['agentScore'] = self.agent_score.to_dict()
@@ -182,6 +187,7 @@ class LocalNetworkTopologyResultBase(BaseModel):
             "gatewayScore": EndpointProbeGatewayScore.from_dict(obj["gatewayScore"]) if obj.get("gatewayScore") is not None else None,
             "proxyScore": EndpointProbeProxyScore.from_dict(obj["proxyScore"]) if obj.get("proxyScore") is not None else None,
             "connectionScore": EndpointProbeConnectionScore.from_dict(obj["connectionScore"]) if obj.get("connectionScore") is not None else None,
+            "wirelessOnboarding": WirelessOnboarding.from_dict(obj["wirelessOnboarding"]) if obj.get("wirelessOnboarding") is not None else None,
             "agentScore": EndpointProbeAgentScore.from_dict(obj["agentScore"]) if obj.get("agentScore") is not None else None,
             "batteryMetrics": BatteryMetrics.from_dict(obj["batteryMetrics"]) if obj.get("batteryMetrics") is not None else None,
             "cellularProfile": CellularProfile.from_dict(obj["cellularProfile"]) if obj.get("cellularProfile") is not None else None,

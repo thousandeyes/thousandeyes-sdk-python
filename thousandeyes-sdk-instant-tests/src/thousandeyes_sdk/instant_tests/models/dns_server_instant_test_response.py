@@ -20,9 +20,9 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.instant_tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.instant_tests.models.dns_query_class import DnsQueryClass
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
+from thousandeyes_sdk.instant_tests.models.test_agent_response import TestAgentResponse
 from thousandeyes_sdk.instant_tests.models.test_dns_server import TestDnsServer
 from thousandeyes_sdk.instant_tests.models.test_dns_transport_protocol import TestDnsTransportProtocol
 from thousandeyes_sdk.instant_tests.models.test_ipv6_policy import TestIpv6Policy
@@ -68,7 +68,7 @@ class DnsServerInstantTestResponse(BaseModel):
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
     fixed_packet_rate: Optional[Annotated[int, Field(le=100, strict=True, ge=0)]] = Field(default=None, description="Sets packets rate sent to measure the network in packets per second.", alias="fixedPacketRate")
     dns_query_class: Optional[DnsQueryClass] = Field(default=None, alias="dnsQueryClass")
-    agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
+    agents: Optional[List[TestAgentResponse]] = Field(default=None, description="Contains list of agents.")
     __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "bandwidthMeasurements", "dnsServers", "dnsTransportProtocol", "domain", "mtuMeasurements", "networkMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "recursiveQueries", "ipv6Policy", "fixedPacketRate", "dnsQueryClass", "agents"]
 
     model_config = ConfigDict(
@@ -212,7 +212,7 @@ class DnsServerInstantTestResponse(BaseModel):
             "ipv6Policy": obj.get("ipv6Policy"),
             "fixedPacketRate": obj.get("fixedPacketRate"),
             "dnsQueryClass": obj.get("dnsQueryClass"),
-            "agents": [AgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "agents": [TestAgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

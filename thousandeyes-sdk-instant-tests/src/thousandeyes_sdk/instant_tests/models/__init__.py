@@ -89,6 +89,8 @@ from thousandeyes_sdk.instant_tests.models.sip_server_instant_test_response impo
 from thousandeyes_sdk.instant_tests.models.sip_server_properties import SipServerProperties
 from thousandeyes_sdk.instant_tests.models.sip_test_protocol import SipTestProtocol
 from thousandeyes_sdk.instant_tests.models.test_agent import TestAgent
+from thousandeyes_sdk.instant_tests.models.test_agent_response import TestAgentResponse
+from thousandeyes_sdk.instant_tests.models.test_agent_response_properties import TestAgentResponseProperties
 from thousandeyes_sdk.instant_tests.models.test_auth_type import TestAuthType
 from thousandeyes_sdk.instant_tests.models.test_chromium_track import TestChromiumTrack
 from thousandeyes_sdk.instant_tests.models.test_custom_headers import TestCustomHeaders

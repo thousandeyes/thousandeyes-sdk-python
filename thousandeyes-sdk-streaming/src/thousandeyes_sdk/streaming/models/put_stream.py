@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from thousandeyes_sdk.streaming.models.endpoint_agent_label import EndpointAgentLabel
 from thousandeyes_sdk.streaming.models.endpoint_agent_tag import EndpointAgentTag
 from thousandeyes_sdk.streaming.models.exporter_config import ExporterConfig
@@ -32,6 +33,7 @@ class PutStream(BaseModel):
     """
     PutStream
     """ # noqa: E501
+    name: Optional[Annotated[str, Field(min_length=1, strict=True, max_length=255)]] = Field(default=None, description="Name of the data stream. When omitted, a name is generated on creation and the existing name is preserved on update.")
     custom_headers: Optional[Dict[str, StrictStr]] = Field(default=None, description="Custom headers.", alias="customHeaders")
     stream_endpoint_url: Optional[StrictStr] = Field(default=None, description="The URL ThousandEyes sends data stream to. For a URL to be valid, it needs to: - Be syntactically correct. - Be reachable. - Use the HTTPS protocol. - When using the `grpc` endpointType, streamEndpointUrl cannot contain paths:     - Valid . `grpc` - `https://example.com`     - Invalid . `grpc` - `https://example.com/collector`.     - Valid . `http` - `https://example.com/collector`.  - When using the `http` endpointType, the operation must match the exact final full URL (including the path if there is one) to which the data will be sent. Examples below:     - `https://api.honeycomb.io:443/v1/metrics`     - `https://ingest.eu0.signalfx.com/v2/datapoint/otlp`", alias="streamEndpointUrl")
     tag_match: Optional[List[TagMatch]] = Field(default=None, description="A collection of tags that determine what tests are included in the data stream. These tag values are also included as attributes in the data stream metrics. Tags are invalid if the tag key includes characters that are not allowed by the [OpenTelemetry naming recommendations for attributes](https://opentelemetry.io/docs/specs/semconv/general/naming/#recommendations-for-application-developers).", alias="tagMatch")
@@ -42,7 +44,7 @@ class PutStream(BaseModel):
     exporter_config: Optional[ExporterConfig] = Field(default=None, alias="exporterConfig")
     endpoint_agent_label: Optional[List[EndpointAgentLabel]] = Field(default=None, description="A collection of Endpoint Agent label IDs that determines what local network data is included in the data stream. `endpointAgentLabel` and `endpointAgentTag` represent the same data. Configure only one; both are synchronized.", alias="endpointAgentLabel")
     endpoint_agent_tag: Optional[List[EndpointAgentTag]] = Field(default=None, description="A collection of Endpoint Agent Tag IDs that determines what local network data is included in the data stream. `endpointAgentLabel` and `endpointAgentTag` represent the same data. Configure only one; both are synchronized.", alias="endpointAgentTag")
-    __properties: ClassVar[List[str]] = ["customHeaders", "streamEndpointUrl", "tagMatch", "testMatch", "enabled", "filters", "inputConfig", "exporterConfig", "endpointAgentLabel", "endpointAgentTag"]
+    __properties: ClassVar[List[str]] = ["name", "customHeaders", "streamEndpointUrl", "tagMatch", "testMatch", "enabled", "filters", "inputConfig", "exporterConfig", "endpointAgentLabel", "endpointAgentTag"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -133,6 +135,7 @@ class PutStream(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            "name": obj.get("name"),
             "customHeaders": obj.get("customHeaders"),
             "streamEndpointUrl": obj.get("streamEndpointUrl"),
             "tagMatch": [TagMatch.from_dict(_item) for _item in obj["tagMatch"]] if obj.get("tagMatch") is not None else None,

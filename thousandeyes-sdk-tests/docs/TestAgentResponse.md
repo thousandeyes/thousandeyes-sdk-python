@@ -1,0 +1,42 @@
+# TestAgentResponse
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**agent_type** | [**CloudEnterpriseAgentType**](CloudEnterpriseAgentType.md) |  | 
+**ip_addresses** | **List[str]** | Array of private IP addresses. | [optional] [readonly] 
+**public_ip_addresses** | **List[str]** | Array of public IP addresses. | [optional] [readonly] 
+**network** | **str** | Network (including ASN) of agent’s public IP. | [optional] [readonly] 
+**agent_id** | **str** | Unique ID of the agent. | [optional] [readonly] 
+**agent_name** | **str** | Name of the agent. | [optional] 
+**location** | **str** | Location of the agent. | [optional] [readonly] 
+**country_id** | **str** | 2-digit ISO country code | [optional] [readonly] 
+**coordinates** | [**Coordinates**](Coordinates.md) |  | [optional] 
+**network_provider_info** | [**SimpleAgentAllOfNetworkProviderInfo**](SimpleAgentAllOfNetworkProviderInfo.md) |  | [optional] 
+**enabled** | **bool** | Flag indicating if the agent is enabled. | [optional] 
+**verify_ssl_certificates** | **bool** | Flag indicating if has normal SSL operations or  if instead it&#39;s set to ignore SSL errors on browserbot-based tests. | [optional] [readonly] 
+**prefix** | **str** | Prefix containing agents public IP address. | [optional] [readonly] 
+**source_ip_address** | **str** | IP address of the agent interface used as the source for the test. Returned when a source interface is selected. | [optional] [readonly] 
+
+## Example
+
+```python
+from thousandeyes_sdk.tests.models.test_agent_response import TestAgentResponse
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of TestAgentResponse from a JSON string
+test_agent_response_instance = TestAgentResponse.from_json(json)
+# print the JSON string representation of the object
+print(TestAgentResponse.to_json())
+
+# convert the object into a dict
+test_agent_response_dict = test_agent_response_instance.to_dict()
+# create an instance of TestAgentResponse from a dict
+test_agent_response_from_dict = TestAgentResponse.from_dict(test_agent_response_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
