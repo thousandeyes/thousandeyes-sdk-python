@@ -203,6 +203,7 @@ class TestSIPServerTestsApiIntegration(IntegrationTestBase):
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
+                    "sourceIpAddress" : "1.1.1.1",
                     "networkProviderInfo" : {
                       "asn" : 7018,
                       "name" : "AT&T Services, Inc.",
@@ -224,6 +225,7 @@ class TestSIPServerTestsApiIntegration(IntegrationTestBase):
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
+                    "sourceIpAddress" : "1.1.1.1",
                     "networkProviderInfo" : {
                       "asn" : 7018,
                       "name" : "AT&T Services, Inc.",
@@ -1259,6 +1261,7 @@ class TestSIPServerTestsApiIntegration(IntegrationTestBase):
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
+                    "sourceIpAddress" : "1.1.1.1",
                     "networkProviderInfo" : {
                       "asn" : 7018,
                       "name" : "AT&T Services, Inc.",
@@ -1280,6 +1283,7 @@ class TestSIPServerTestsApiIntegration(IntegrationTestBase):
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
+                    "sourceIpAddress" : "1.1.1.1",
                     "networkProviderInfo" : {
                       "asn" : 7018,
                       "name" : "AT&T Services, Inc.",
@@ -2001,6 +2005,7 @@ class TestSIPServerTestsApiIntegration(IntegrationTestBase):
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
+                    "sourceIpAddress" : "1.1.1.1",
                     "networkProviderInfo" : {
                       "asn" : 7018,
                       "name" : "AT&T Services, Inc.",
@@ -2022,6 +2027,7 @@ class TestSIPServerTestsApiIntegration(IntegrationTestBase):
                       "longitude" : -122.41942
                     },
                     "agentName" : "thousandeyes-stg-va-254",
+                    "sourceIpAddress" : "1.1.1.1",
                     "networkProviderInfo" : {
                       "asn" : 7018,
                       "name" : "AT&T Services, Inc.",

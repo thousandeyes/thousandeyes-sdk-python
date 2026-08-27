@@ -1,6 +1,6 @@
 # EndpointAgentUpdate
 
-The `EndpointAgentUpdate` object contains supported fields for updates.
+Properties that can be updated for an Endpoint Agent. The `embed-wireless-advantage` and `embed-wireless-essentials` license types cannot be assigned through this endpoint. Requests that specify either license type are rejected. 
 
 ## Properties
 

@@ -28,6 +28,8 @@ class AgentLicenseType(str, Enum):
     ESSENTIALS = 'essentials'
     ADVANTAGE = 'advantage'
     EMBEDDED = 'embedded'
+    EMBED_MINUS_WIRELESS_MINUS_ADVANTAGE = 'embed-wireless-advantage'
+    EMBED_MINUS_WIRELESS_MINUS_ESSENTIALS = 'embed-wireless-essentials'
     UNKNOWN = 'unknown'
 
     @classmethod

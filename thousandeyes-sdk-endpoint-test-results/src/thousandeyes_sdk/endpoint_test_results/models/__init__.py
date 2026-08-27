@@ -173,3 +173,4 @@ from thousandeyes_sdk.endpoint_test_results.models.vpn_network_ping import VpnNe
 from thousandeyes_sdk.endpoint_test_results.models.vpn_profile import VpnProfile
 from thousandeyes_sdk.endpoint_test_results.models.vpn_traceroute import VpnTraceroute
 from thousandeyes_sdk.endpoint_test_results.models.vpn_type import VpnType
+from thousandeyes_sdk.endpoint_test_results.models.wireless_onboarding import WirelessOnboarding
