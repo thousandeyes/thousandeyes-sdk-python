@@ -735,6 +735,31 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
                         } ]
                       }
                     },
+                    "schedule" : {
+                      "expiresAfter" : 157680000,
+                      "cronSpec" : {
+                        "repeat" : "EVERY_WEEK",
+                        "endRepeat" : {
+                          "endConditionType" : "NEVER"
+                        },
+                        "startTime" : 1753200000,
+                        "zoneCode" : "America/Los_Angeles"
+                      },
+                      "flagLocked" : false,
+                      "recipients" : [ "alice@example.com", "bob@example.com" ],
+                      "flagAutoShare" : false,
+                      "dataTimespan" : {
+                        "period" : "WEEK",
+                        "n" : 1
+                      },
+                      "flagAttachPdfToEmail" : true,
+                      "dataSource" : {
+                        "name" : "Weekly network report"
+                      },
+                      "flagIsIncludePiiUserData" : false,
+                      "nextDate" : "2026-10-01T07:00:00Z",
+                      "flagEnabled" : true
+                    },
                     "accountId" : 1234,
                     "apiLink" : [ {
                       "key" : ""
@@ -1878,6 +1903,31 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
                           } ]
                         }
                       },
+                      "schedule" : {
+                        "expiresAfter" : 157680000,
+                        "cronSpec" : {
+                          "repeat" : "EVERY_WEEK",
+                          "endRepeat" : {
+                            "endConditionType" : "NEVER"
+                          },
+                          "startTime" : 1753200000,
+                          "zoneCode" : "America/Los_Angeles"
+                        },
+                        "flagLocked" : false,
+                        "recipients" : [ "alice@example.com", "bob@example.com" ],
+                        "flagAutoShare" : false,
+                        "dataTimespan" : {
+                          "period" : "WEEK",
+                          "n" : 1
+                        },
+                        "flagAttachPdfToEmail" : true,
+                        "dataSource" : {
+                          "name" : "Weekly network report"
+                        },
+                        "flagIsIncludePiiUserData" : false,
+                        "nextDate" : "2026-10-01T07:00:00Z",
+                        "flagEnabled" : true
+                      },
                       "accountId" : 1234,
                       "apiLink" : [ {
                         "key" : ""
@@ -2142,6 +2192,31 @@ class TestDashboardSnapshotsApiIntegration(IntegrationTestBase):
                             "id" : "widgetId-71lbb"
                           } ]
                         }
+                      },
+                      "schedule" : {
+                        "expiresAfter" : 157680000,
+                        "cronSpec" : {
+                          "repeat" : "EVERY_WEEK",
+                          "endRepeat" : {
+                            "endConditionType" : "NEVER"
+                          },
+                          "startTime" : 1753200000,
+                          "zoneCode" : "America/Los_Angeles"
+                        },
+                        "flagLocked" : false,
+                        "recipients" : [ "alice@example.com", "bob@example.com" ],
+                        "flagAutoShare" : false,
+                        "dataTimespan" : {
+                          "period" : "WEEK",
+                          "n" : 1
+                        },
+                        "flagAttachPdfToEmail" : true,
+                        "dataSource" : {
+                          "name" : "Weekly network report"
+                        },
+                        "flagIsIncludePiiUserData" : false,
+                        "nextDate" : "2026-10-01T07:00:00Z",
+                        "flagEnabled" : true
                       },
                       "accountId" : 1234,
                       "apiLink" : [ {

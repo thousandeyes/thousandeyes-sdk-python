@@ -60,7 +60,7 @@ Name | Type | Description | Notes
 **request_method** | [**RequestMethod**](RequestMethod.md) |  | [optional] 
 **post_body** | **str** | Enter the body for the HTTP POST request in this field. No special escaping is required. If content is provided and &#x60;requestMethod&#x60; is not specified, &#x60;requestMethod&#x60; is automatically set to &#x60;post&#x60;. | [optional] 
 **ipv6_policy** | [**TestIpv6Policy**](TestIpv6Policy.md) |  | [optional] 
-**agents** | [**List[AgentResponse]**](AgentResponse.md) | Contains list of agents. | [optional] 
+**agents** | [**List[TestAgentResponse]**](TestAgentResponse.md) | Contains list of agents. | [optional] 
 
 ## Example
 

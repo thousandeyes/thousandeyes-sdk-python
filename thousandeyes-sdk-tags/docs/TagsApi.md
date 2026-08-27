@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 Create tag
 
-Creates a new tag.
+Creates a new tag. Creating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. Requests missing any of these permissions return `403`.    For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
 ### Example
 
@@ -92,6 +92,7 @@ Name | Type | Description  | Notes
 **201** | item created |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
 **409** | An existing item already exists |  -  |
 **500** | Internal Server Error |  -  |
 
@@ -102,7 +103,7 @@ Name | Type | Description  | Notes
 
 Create multiple tags
 
-Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array.  
+Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array. Creating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. A tag that fails this permission check is reported as a per-item `403` in the `errors` array, while the top-level status remains `207`. If the caller does not have permission to create tags, the request returns a top-level `403`. For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
 ### Example
 
@@ -176,6 +177,7 @@ Name | Type | Description  | Notes
 **207** | Item created |  -  |
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -441,7 +443,7 @@ Name | Type | Description  | Notes
 
 Update tag
 
-Updates a tag.
+Updates a tag. Updating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. Requests missing any of these permissions return `403`. For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
 ### Example
 

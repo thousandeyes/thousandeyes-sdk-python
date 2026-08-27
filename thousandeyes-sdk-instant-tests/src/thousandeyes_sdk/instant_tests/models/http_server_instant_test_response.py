@@ -21,10 +21,10 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.instant_tests.models.agent_interfaces import AgentInterfaces
-from thousandeyes_sdk.instant_tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.instant_tests.models.o_auth import OAuth
 from thousandeyes_sdk.instant_tests.models.request_method import RequestMethod
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
+from thousandeyes_sdk.instant_tests.models.test_agent_response import TestAgentResponse
 from thousandeyes_sdk.instant_tests.models.test_auth_type import TestAuthType
 from thousandeyes_sdk.instant_tests.models.test_custom_headers import TestCustomHeaders
 from thousandeyes_sdk.instant_tests.models.test_ipv6_policy import TestIpv6Policy
@@ -98,7 +98,7 @@ class HttpServerInstantTestResponse(BaseModel):
     request_method: Optional[RequestMethod] = Field(default=None, alias="requestMethod")
     post_body: Optional[StrictStr] = Field(default=None, description="Enter the body for the HTTP POST request in this field. No special escaping is required. If content is provided and `requestMethod` is not specified, `requestMethod` is automatically set to `post`.", alias="postBody")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
-    agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
+    agents: Optional[List[TestAgentResponse]] = Field(default=None, description="Contains list of agents.")
     __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "headers", "randomizedStartTime", "requestMethod", "postBody", "ipv6Policy", "agents"]
 
     model_config = ConfigDict(
@@ -279,7 +279,7 @@ class HttpServerInstantTestResponse(BaseModel):
             "requestMethod": obj.get("requestMethod"),
             "postBody": obj.get("postBody"),
             "ipv6Policy": obj.get("ipv6Policy"),
-            "agents": [AgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "agents": [TestAgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

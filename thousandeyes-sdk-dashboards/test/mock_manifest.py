@@ -495,6 +495,31 @@ OPERATION_MANIFEST = {
                         } ]
                       }
                     },
+                    "schedule" : {
+                      "expiresAfter" : 157680000,
+                      "cronSpec" : {
+                        "repeat" : "EVERY_WEEK",
+                        "endRepeat" : {
+                          "endConditionType" : "NEVER"
+                        },
+                        "startTime" : 1753200000,
+                        "zoneCode" : "America/Los_Angeles"
+                      },
+                      "flagLocked" : false,
+                      "recipients" : [ "alice@example.com", "bob@example.com" ],
+                      "flagAutoShare" : false,
+                      "dataTimespan" : {
+                        "period" : "WEEK",
+                        "n" : 1
+                      },
+                      "flagAttachPdfToEmail" : true,
+                      "dataSource" : {
+                        "name" : "Weekly network report"
+                      },
+                      "flagIsIncludePiiUserData" : false,
+                      "nextDate" : "2026-10-01T07:00:00Z",
+                      "flagEnabled" : true
+                    },
                     "accountId" : 1234,
                     "apiLink" : [ {
                       "key" : ""
@@ -1438,6 +1463,31 @@ OPERATION_MANIFEST = {
                           } ]
                         }
                       },
+                      "schedule" : {
+                        "expiresAfter" : 157680000,
+                        "cronSpec" : {
+                          "repeat" : "EVERY_WEEK",
+                          "endRepeat" : {
+                            "endConditionType" : "NEVER"
+                          },
+                          "startTime" : 1753200000,
+                          "zoneCode" : "America/Los_Angeles"
+                        },
+                        "flagLocked" : false,
+                        "recipients" : [ "alice@example.com", "bob@example.com" ],
+                        "flagAutoShare" : false,
+                        "dataTimespan" : {
+                          "period" : "WEEK",
+                          "n" : 1
+                        },
+                        "flagAttachPdfToEmail" : true,
+                        "dataSource" : {
+                          "name" : "Weekly network report"
+                        },
+                        "flagIsIncludePiiUserData" : false,
+                        "nextDate" : "2026-10-01T07:00:00Z",
+                        "flagEnabled" : true
+                      },
                       "accountId" : 1234,
                       "apiLink" : [ {
                         "key" : ""
@@ -1703,6 +1753,31 @@ OPERATION_MANIFEST = {
                           } ]
                         }
                       },
+                      "schedule" : {
+                        "expiresAfter" : 157680000,
+                        "cronSpec" : {
+                          "repeat" : "EVERY_WEEK",
+                          "endRepeat" : {
+                            "endConditionType" : "NEVER"
+                          },
+                          "startTime" : 1753200000,
+                          "zoneCode" : "America/Los_Angeles"
+                        },
+                        "flagLocked" : false,
+                        "recipients" : [ "alice@example.com", "bob@example.com" ],
+                        "flagAutoShare" : false,
+                        "dataTimespan" : {
+                          "period" : "WEEK",
+                          "n" : 1
+                        },
+                        "flagAttachPdfToEmail" : true,
+                        "dataSource" : {
+                          "name" : "Weekly network report"
+                        },
+                        "flagIsIncludePiiUserData" : false,
+                        "nextDate" : "2026-10-01T07:00:00Z",
+                        "flagEnabled" : true
+                      },
                       "accountId" : 1234,
                       "apiLink" : [ {
                         "key" : ""
@@ -1830,6 +1905,308 @@ OPERATION_MANIFEST = {
                 {
                   "snapshotExpirationDate" : "2023-05-16T10:14:28Z",
                   "expirationDate" : "2023-05-16 10:14:28"
+                }
+
+                """),
+        error_responses={
+
+            "400": ErrorResponseExpectation(
+                status=400,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "401": ErrorResponseExpectation(
+                status=401,
+                body=json.loads("""
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }"""),
+                content_type="application/json",
+            ),
+
+            "403": ErrorResponseExpectation(
+                status=403,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "404": ErrorResponseExpectation(
+                status=404,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "429": ErrorResponseExpectation(
+                status=429,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "500": ErrorResponseExpectation(
+                status=500,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+        },
+    ),
+
+    "clone_dashboard": OperationExpectation(
+        operation_id="clone_dashboard",
+        method="POST",
+        path="/dashboards/{dashboardId}/clone",
+        path_param_examples={
+            "dashboardId": '646f4d2ce3c99b0536c3821e',
+        },
+        success_status=201,
+        success_body=json.loads("""
+
+                {
+                  "isMigratedReport" : false,
+                  "_links" : {
+                    "snapshots" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    },
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "isDefaultForAccount" : false,
+                  "isDefaultForUser" : true,
+                  "description" : "HTTP Server Widgets",
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets",
+                  "isBuiltIn" : true,
+                  "widgets" : [ {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  }, {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  } ],
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
+                  "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
+                  "createdBy" : "1",
+                  "refreshRate" : "off",
+                  "modifiedDate" : "2023-05-16T10:14:28Z",
+                  "modifiedBy" : "1",
+                  "isGlobalOverride" : true,
+                  "aid" : "1234"
+                }
+
+                """),
+
+        success_content_type="application/json",
+
+        request_body_example=json.loads("""
+
+                {
+                  "isSharedWithAllAccountGroups" : false,
+                  "tagIds" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "5aeab5d5-0d34-4d44-a7ac-fb440185295c" ],
+                  "isDefaultForAccount" : false,
+                  "description" : "Copy of the HTTP Server Widgets dashboard",
+                  "isDefaultForUser" : false,
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets Copy",
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "5m",
+                  "sharedAccountIds" : [ "1234", "5678" ],
+                  "isGlobalOverride" : false
                 }
 
                 """),
@@ -2058,6 +2435,31 @@ OPERATION_MANIFEST = {
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -2200,6 +2602,31 @@ OPERATION_MANIFEST = {
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -2399,6 +2826,119 @@ OPERATION_MANIFEST = {
         },
     ),
 
+    "delete_dashboard_schedule": OperationExpectation(
+        operation_id="delete_dashboard_schedule",
+        method="DELETE",
+        path="/dashboards/{dashboardId}/actions/schedule",
+        path_param_examples={
+            "dashboardId": '646f4d2ce3c99b0536c3821e',
+        },
+        success_status=204,
+        success_body=None,
+        success_content_type="application/json",
+        request_body_example=None,
+        error_responses={
+
+            "400": ErrorResponseExpectation(
+                status=400,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "401": ErrorResponseExpectation(
+                status=401,
+                body=json.loads("""
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }"""),
+                content_type="application/json",
+            ),
+
+            "403": ErrorResponseExpectation(
+                status=403,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "404": ErrorResponseExpectation(
+                status=404,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "409": ErrorResponseExpectation(
+                status=409,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "429": ErrorResponseExpectation(
+                status=429,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "500": ErrorResponseExpectation(
+                status=500,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+        },
+    ),
+
     "get_dashboard": OperationExpectation(
         operation_id="get_dashboard",
         method="GET",
@@ -2540,6 +3080,31 @@ OPERATION_MANIFEST = {
                         "id" : "widgetId-71lbb"
                       } ]
                     }
+                  },
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
                   },
                   "accountId" : 1234,
                   "apiLink" : [ {
@@ -3348,6 +3913,31 @@ OPERATION_MANIFEST = {
                       } ]
                     }
                   },
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "accountId" : 1234,
                   "apiLink" : [ {
                     "key" : ""
@@ -3492,6 +4082,31 @@ OPERATION_MANIFEST = {
                         "id" : "widgetId-71lbb"
                       } ]
                     }
+                  },
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
                   },
                   "accountId" : 1234,
                   "apiLink" : [ {
@@ -4055,6 +4670,31 @@ OPERATION_MANIFEST = {
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -4197,6 +4837,31 @@ OPERATION_MANIFEST = {
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -4256,6 +4921,322 @@ OPERATION_MANIFEST = {
 
             "404": ErrorResponseExpectation(
                 status=404,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "429": ErrorResponseExpectation(
+                status=429,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "500": ErrorResponseExpectation(
+                status=500,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+        },
+    ),
+
+    "update_dashboard_schedule": OperationExpectation(
+        operation_id="update_dashboard_schedule",
+        method="PUT",
+        path="/dashboards/{dashboardId}/actions/schedule",
+        path_param_examples={
+            "dashboardId": '646f4d2ce3c99b0536c3821e',
+        },
+        success_status=200,
+        success_body=json.loads("""
+
+                {
+                  "isMigratedReport" : false,
+                  "dashboardCreatedBy" : "1",
+                  "_links" : {
+                    "snapshots" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    },
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "isDefaultForUser" : true,
+                  "description" : "HTTP Server Widgets",
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets",
+                  "isBuiltIn" : true,
+                  "widgets" : [ {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  }, {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  } ],
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "off",
+                  "modifiedBy" : 1,
+                  "dashboardModifiedBy" : "1",
+                  "migratedReport" : false,
+                  "isDefaultForAccount" : false,
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
+                  "accountId" : 1234,
+                  "apiLink" : [ {
+                    "key" : ""
+                  }, {
+                    "key" : ""
+                  } ],
+                  "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
+                  "createdBy" : 1,
+                  "globalOverride" : true,
+                  "modifiedDate" : "2023-05-16 10:14:28",
+                  "isGlobalOverride" : true,
+                  "aid" : "1234",
+                  "dashboardModifiedDate" : "2023-05-16T10:14:28Z"
+                }
+
+                """),
+
+        success_content_type="application/json",
+
+        request_body_example=json.loads("""
+
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+
+                """),
+        error_responses={
+
+            "400": ErrorResponseExpectation(
+                status=400,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "401": ErrorResponseExpectation(
+                status=401,
+                body=json.loads("""
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }"""),
+                content_type="application/json",
+            ),
+
+            "403": ErrorResponseExpectation(
+                status=403,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "404": ErrorResponseExpectation(
+                status=404,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }"""),
+                content_type="application/json",
+            ),
+
+            "409": ErrorResponseExpectation(
+                status=409,
                 body=json.loads("""
                 {
                   "instance" : "instance",

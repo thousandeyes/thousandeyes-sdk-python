@@ -20,8 +20,8 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.instant_tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
+from thousandeyes_sdk.instant_tests.models.test_agent_response import TestAgentResponse
 from thousandeyes_sdk.instant_tests.models.test_dscp_id import TestDscpId
 from thousandeyes_sdk.instant_tests.models.test_label import TestLabel
 from thousandeyes_sdk.instant_tests.models.test_links import TestLinks
@@ -57,7 +57,7 @@ class VoiceInstantTestResponse(BaseModel):
     port: Optional[Annotated[int, Field(le=65535, strict=True, ge=1024)]] = Field(default=None, description="Port number for the chosen protocol.")
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     target_agent_id: StrictStr = Field(description="Agent ID of the target agent for the test.", alias="targetAgentId")
-    agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
+    agents: Optional[List[TestAgentResponse]] = Field(default=None, description="Contains list of agents.")
     __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "codec", "codecId", "dscp", "dscpId", "duration", "jitterBuffer", "numPathTraces", "port", "randomizedStartTime", "targetAgentId", "agents"]
 
     model_config = ConfigDict(
@@ -193,7 +193,7 @@ class VoiceInstantTestResponse(BaseModel):
             "port": obj.get("port"),
             "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "targetAgentId": obj.get("targetAgentId"),
-            "agents": [AgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "agents": [TestAgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

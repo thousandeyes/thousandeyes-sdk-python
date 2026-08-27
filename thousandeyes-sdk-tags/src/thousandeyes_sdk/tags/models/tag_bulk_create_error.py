@@ -27,8 +27,8 @@ class TagBulkCreateError(BaseModel):
     TagBulkCreateError
     """ # noqa: E501
     tag: Optional[Dict[str, TagInfo]] = None
-    response_code: Optional[StrictInt] = Field(default=None, description="HTTP response code", alias="responseCode")
-    message: Optional[StrictStr] = Field(default=None, description="Status / error message")
+    response_code: Optional[StrictInt] = Field(default=None, description="HTTP response code.", alias="responseCode")
+    message: Optional[StrictStr] = Field(default=None, description="Status or error message.")
     __properties: ClassVar[List[str]] = ["tag", "responseCode", "message"]
 
     model_config = ConfigDict(

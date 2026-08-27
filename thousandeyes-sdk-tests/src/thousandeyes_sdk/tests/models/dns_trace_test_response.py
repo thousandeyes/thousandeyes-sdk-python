@@ -19,10 +19,10 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.tests.models.alert_rule import AlertRule
 from thousandeyes_sdk.tests.models.dns_query_class import DnsQueryClass
 from thousandeyes_sdk.tests.models.shared_with_account import SharedWithAccount
+from thousandeyes_sdk.tests.models.test_agent_response import TestAgentResponse
 from thousandeyes_sdk.tests.models.test_dns_transport_protocol import TestDnsTransportProtocol
 from thousandeyes_sdk.tests.models.test_interval import TestInterval
 from thousandeyes_sdk.tests.models.test_label import TestLabel
@@ -57,7 +57,7 @@ class DnsTraceTestResponse(BaseModel):
     domain: StrictStr = Field(description="The target record for the test, with the record type suffixed. If no record type is specified, the test defaults to an ANY record.")
     dns_query_class: Optional[DnsQueryClass] = Field(default=None, alias="dnsQueryClass")
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
-    agents: Optional[List[AgentResponse]] = Field(default=None, description="Contains list of agents.")
+    agents: Optional[List[TestAgentResponse]] = Field(default=None, description="Contains list of agents.")
     __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "alertRules", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "dnsTransportProtocol", "domain", "dnsQueryClass", "randomizedStartTime", "agents"]
 
     model_config = ConfigDict(
@@ -194,7 +194,7 @@ class DnsTraceTestResponse(BaseModel):
             "domain": obj.get("domain"),
             "dnsQueryClass": obj.get("dnsQueryClass"),
             "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
-            "agents": [AgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "agents": [TestAgentResponse.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

@@ -139,7 +139,7 @@ class TestNetworkTestResultsApi(unittest.TestCase):
                     "serverIp" : "50.18.127.223",
                     "endTime" : 1384309800,
                     "proxyMaxLatency" : 50,
-                    "errorDetails" : ""
+                    "errorDetails" : "Connection error"
                   }, {
                     "date" : "2022-07-17T22:00:54Z",
                     "server" : "www.thousandeyes.com:80",
@@ -181,7 +181,7 @@ class TestNetworkTestResultsApi(unittest.TestCase):
                     "serverIp" : "50.18.127.223",
                     "endTime" : 1384309800,
                     "proxyMaxLatency" : 50,
-                    "errorDetails" : ""
+                    "errorDetails" : "Connection error"
                   } ],
                   "startDate" : "2022-07-17T22:00:54Z"
                 }"""
