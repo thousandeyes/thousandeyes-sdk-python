@@ -1322,6 +1322,7 @@ class StreamingApi:
             '401': "UnauthorizedError",
             '403': None,
             '404': None,
+            '409': None,
             '429': None,
             '500': "ApiError",
         }
@@ -1405,6 +1406,7 @@ class StreamingApi:
             '401': "UnauthorizedError",
             '403': None,
             '404': None,
+            '409': None,
             '429': None,
             '500': "ApiError",
         }
@@ -1488,6 +1490,7 @@ class StreamingApi:
             '401': "UnauthorizedError",
             '403': None,
             '404': None,
+            '409': None,
             '429': None,
             '500': "ApiError",
         }

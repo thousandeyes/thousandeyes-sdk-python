@@ -273,6 +273,73 @@ class TestTagsApiIntegration(IntegrationTestBase):
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
 
 
+    def test_create_tag_error_403(self) -> None:
+        """Integration test for create_tag error path (HTTP 403)"""
+        request_body_json = """
+        
+                {
+                  "assignments" : [ {
+                    "id" : "123",
+                    "type" : "test"
+                  }, {
+                    "id" : "123",
+                    "type" : "test"
+                  } ],
+                  "color" : "#FF0000",
+                  "matchType" : "and",
+                  "builtIn" : true,
+                  "icon" : "icon",
+                  "description" : "To tag assets in San Francisco",
+                  "filters" : [ {
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
+                    "key" : "vpn-client-network"
+                  }, {
+                    "mode" : "in",
+                    "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                    "scope" : "custom",
+                    "key" : "vpn-client-network"
+                  } ],
+                  "type" : "static",
+                  "objectType" : "test",
+                  "accessType" : "all",
+                  "modifiedDate" : "2022-03-01T23:31:11Z",
+                  "legacyId" : 0.8008281904610115,
+                  "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                  "aid" : 1234,
+                  "value" : "sfo",
+                  "key" : "branch",
+                  "createDate" : "2022-03-01T23:31:11Z"
+                }
+        
+                """
+        tag_info = thousandeyes_sdk.tags.models.TagInfo.from_json(request_body_json)
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(403)
+        ) as context:
+            self.api.create_tag(
+
+                aid=aid,
+
+                tag_info=tag_info,
+
+                _headers=self.te_headers("create_tag", error_status="403"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
     def test_create_tag_error_500(self) -> None:
         """Integration test for create_tag error path (HTTP 500)"""
         request_body_json = """
@@ -396,8 +463,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   }, {
                     "tag" : {
                       "key" : {
@@ -436,8 +503,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   } ],
                   "tags" : [ {
                     "assignments" : [ {
@@ -589,8 +656,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   }, {
                     "tag" : {
                       "key" : {
@@ -629,8 +696,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   } ],
                   "tags" : [ {
                     "assignments" : [ {
@@ -794,8 +861,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   }, {
                     "tag" : {
                       "key" : {
@@ -834,8 +901,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   } ],
                   "tags" : [ {
                     "assignments" : [ {
@@ -1023,8 +1090,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   }, {
                     "tag" : {
                       "key" : {
@@ -1063,8 +1130,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   } ],
                   "tags" : [ {
                     "assignments" : [ {
@@ -1185,6 +1252,226 @@ class TestTagsApiIntegration(IntegrationTestBase):
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
 
 
+    def test_create_tags_error_403(self) -> None:
+        """Integration test for create_tags error path (HTTP 403)"""
+        request_body_json = """
+        
+                {
+                  "_links" : {
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "errors" : [ {
+                    "tag" : {
+                      "key" : {
+                        "assignments" : [ {
+                          "id" : "123",
+                          "type" : "test"
+                        }, {
+                          "id" : "123",
+                          "type" : "test"
+                        } ],
+                        "color" : "#FF0000",
+                        "matchType" : "and",
+                        "builtIn" : true,
+                        "icon" : "icon",
+                        "description" : "To tag assets in San Francisco",
+                        "filters" : [ {
+                          "mode" : "in",
+                          "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
+                          "key" : "vpn-client-network"
+                        }, {
+                          "mode" : "in",
+                          "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
+                          "key" : "vpn-client-network"
+                        } ],
+                        "type" : "static",
+                        "objectType" : "test",
+                        "accessType" : "all",
+                        "modifiedDate" : "2022-03-01T23:31:11Z",
+                        "legacyId" : 0.8008281904610115,
+                        "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                        "aid" : 1234,
+                        "value" : "sfo",
+                        "key" : "branch",
+                        "createDate" : "2022-03-01T23:31:11Z"
+                      }
+                    },
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
+                  }, {
+                    "tag" : {
+                      "key" : {
+                        "assignments" : [ {
+                          "id" : "123",
+                          "type" : "test"
+                        }, {
+                          "id" : "123",
+                          "type" : "test"
+                        } ],
+                        "color" : "#FF0000",
+                        "matchType" : "and",
+                        "builtIn" : true,
+                        "icon" : "icon",
+                        "description" : "To tag assets in San Francisco",
+                        "filters" : [ {
+                          "mode" : "in",
+                          "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
+                          "key" : "vpn-client-network"
+                        }, {
+                          "mode" : "in",
+                          "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                          "scope" : "custom",
+                          "key" : "vpn-client-network"
+                        } ],
+                        "type" : "static",
+                        "objectType" : "test",
+                        "accessType" : "all",
+                        "modifiedDate" : "2022-03-01T23:31:11Z",
+                        "legacyId" : 0.8008281904610115,
+                        "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                        "aid" : 1234,
+                        "value" : "sfo",
+                        "key" : "branch",
+                        "createDate" : "2022-03-01T23:31:11Z"
+                      }
+                    },
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
+                  } ],
+                  "tags" : [ {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "matchType" : "and",
+                    "builtIn" : true,
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "filters" : [ {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
+                    }, {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
+                    } ],
+                    "type" : "static",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
+                  }, {
+                    "assignments" : [ {
+                      "id" : "123",
+                      "type" : "test"
+                    }, {
+                      "id" : "123",
+                      "type" : "test"
+                    } ],
+                    "color" : "#FF0000",
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "matchType" : "and",
+                    "builtIn" : true,
+                    "icon" : "icon",
+                    "description" : "To tag assets in San Francisco",
+                    "filters" : [ {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
+                    }, {
+                      "mode" : "in",
+                      "values" : [ "10.1.1.0/24", "192.168.1.0/24" ],
+                      "scope" : "custom",
+                      "key" : "vpn-client-network"
+                    } ],
+                    "type" : "static",
+                    "objectType" : "test",
+                    "accessType" : "all",
+                    "modifiedDate" : "2022-03-01T23:31:11Z",
+                    "legacyId" : 0.8008281904610115,
+                    "id" : "5aeab5d5-0d34-4d44-a7ac-fb440185295c",
+                    "aid" : 1234,
+                    "value" : "sfo",
+                    "key" : "branch",
+                    "createDate" : "2022-03-01T23:31:11Z"
+                  } ]
+                }
+        
+                """
+        bulk_tag_response = thousandeyes_sdk.tags.models.BulkTagResponse.from_json(request_body_json)
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(403)
+        ) as context:
+            self.api.create_tags(
+
+                aid=aid,
+
+                bulk_tag_response=bulk_tag_response,
+
+                _headers=self.te_headers("create_tags", error_status="403"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
     def test_create_tags_error_500(self) -> None:
         """Integration test for create_tags error path (HTTP 500)"""
         request_body_json = """
@@ -1240,8 +1527,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   }, {
                     "tag" : {
                       "key" : {
@@ -1280,8 +1567,8 @@ class TestTagsApiIntegration(IntegrationTestBase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   } ],
                   "tags" : [ {
                     "assignments" : [ {

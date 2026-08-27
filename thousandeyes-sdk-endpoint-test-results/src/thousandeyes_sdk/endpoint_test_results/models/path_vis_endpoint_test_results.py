@@ -30,7 +30,7 @@ class PathVisEndpointTestResults(BaseModel):
     PathVisEndpointTestResults
     """ # noqa: E501
     results: Optional[List[PathVisEndpointTestResult]] = None
-    test: Optional[EndpointScheduledTest] = None
+    test: Optional[EndpointScheduledTest] = Field(default=None, description="The scheduled test configuration. Omitted when the user lacks the `View endpoint experience tests` permission.")
     start_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `startDate` parameter,  the client will also receive the `startDate` field indicating the UTC start date of the data's time range being retrieved  (ISO date-time format).", alias="startDate")
     end_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `endDate` parameter,  the client will also receive the `endDate` field indicating the UTC end date of the data's time range being retrieved  (ISO date-time format).", alias="endDate")
     links: Optional[PaginationNextAndSelfLink] = Field(default=None, alias="_links")

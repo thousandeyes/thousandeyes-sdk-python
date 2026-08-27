@@ -26,8 +26,10 @@ from thousandeyes_sdk.dashboards.models.api_dashboard import ApiDashboard
 from thousandeyes_sdk.dashboards.models.api_multi_metric_column_data import ApiMultiMetricColumnData
 from thousandeyes_sdk.dashboards.models.api_numbers_card_data import ApiNumbersCardData
 from thousandeyes_sdk.dashboards.models.api_widget_data_response import ApiWidgetDataResponse
+from thousandeyes_sdk.dashboards.models.clone_dashboard_request import CloneDashboardRequest
 from thousandeyes_sdk.dashboards.models.dashboard import Dashboard
 from thousandeyes_sdk.dashboards.models.dashboard_order import DashboardOrder
+from thousandeyes_sdk.dashboards.models.dashboard_schedule_request import DashboardScheduleRequest
 
 from thousandeyes_sdk.core.api_client import ApiClient, RequestSerialized
 from thousandeyes_sdk.core.api_response import ApiResponse
@@ -47,6 +49,331 @@ class DashboardsApi:
             api_client = ApiClient.get_default()
         api_client.user_agent = "ThousandEyesSDK-Python/{0}".format(version("thousandeyes-sdk-dashboards"))
         self.api_client = api_client
+
+
+    @validate_call
+    def clone_dashboard(
+        self,
+        dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        clone_dashboard_request: Annotated[Optional[CloneDashboardRequest], Field(description="Optional overrides for the cloned dashboard.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> Dashboard:
+        """Clone dashboard
+
+        Creates a dashboard by cloning an existing dashboard. By default, the clone inherits the source dashboard's widgets, layout, default timespan, tags, and other supported settings. Values provided in the request override the corresponding source dashboard settings. Sharing settings are not inherited. If `title` is omitted, the API generates a unique title for the clone.  **Note**: * Users with the `Edit dashboard templates for all users in account group` permission (Account Admin) can clone any dashboard they can view. * Users with the `Edit own dashboard templates` permission (Regular User) can clone dashboards they can view. The current user owns the cloned dashboard. 
+
+        :param dashboard_id: A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint. (required)
+        :type dashboard_id: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param clone_dashboard_request: Optional overrides for the cloned dashboard.
+        :type clone_dashboard_request: CloneDashboardRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._clone_dashboard_serialize(
+            dashboard_id=dashboard_id,
+            aid=aid,
+            clone_dashboard_request=clone_dashboard_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '201': "Dashboard",
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '429': "Error",
+            '500': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+            models=thousandeyes_sdk.dashboards.models,
+        ).data
+
+
+    @validate_call
+    def clone_dashboard_with_http_info(
+        self,
+        dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        clone_dashboard_request: Annotated[Optional[CloneDashboardRequest], Field(description="Optional overrides for the cloned dashboard.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[Dashboard]:
+        """Clone dashboard
+
+        Creates a dashboard by cloning an existing dashboard. By default, the clone inherits the source dashboard's widgets, layout, default timespan, tags, and other supported settings. Values provided in the request override the corresponding source dashboard settings. Sharing settings are not inherited. If `title` is omitted, the API generates a unique title for the clone.  **Note**: * Users with the `Edit dashboard templates for all users in account group` permission (Account Admin) can clone any dashboard they can view. * Users with the `Edit own dashboard templates` permission (Regular User) can clone dashboards they can view. The current user owns the cloned dashboard. 
+
+        :param dashboard_id: A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint. (required)
+        :type dashboard_id: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param clone_dashboard_request: Optional overrides for the cloned dashboard.
+        :type clone_dashboard_request: CloneDashboardRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._clone_dashboard_serialize(
+            dashboard_id=dashboard_id,
+            aid=aid,
+            clone_dashboard_request=clone_dashboard_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '201': "Dashboard",
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '429': "Error",
+            '500': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+            models=thousandeyes_sdk.dashboards.models,
+        )
+
+
+    @validate_call
+    def clone_dashboard_without_preload_content(
+        self,
+        dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        clone_dashboard_request: Annotated[Optional[CloneDashboardRequest], Field(description="Optional overrides for the cloned dashboard.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Clone dashboard
+
+        Creates a dashboard by cloning an existing dashboard. By default, the clone inherits the source dashboard's widgets, layout, default timespan, tags, and other supported settings. Values provided in the request override the corresponding source dashboard settings. Sharing settings are not inherited. If `title` is omitted, the API generates a unique title for the clone.  **Note**: * Users with the `Edit dashboard templates for all users in account group` permission (Account Admin) can clone any dashboard they can view. * Users with the `Edit own dashboard templates` permission (Regular User) can clone dashboards they can view. The current user owns the cloned dashboard. 
+
+        :param dashboard_id: A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint. (required)
+        :type dashboard_id: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param clone_dashboard_request: Optional overrides for the cloned dashboard.
+        :type clone_dashboard_request: CloneDashboardRequest
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._clone_dashboard_serialize(
+            dashboard_id=dashboard_id,
+            aid=aid,
+            clone_dashboard_request=clone_dashboard_request,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '201': "Dashboard",
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '429': "Error",
+            '500': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _clone_dashboard_serialize(
+        self,
+        dashboard_id,
+        aid,
+        clone_dashboard_request,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if dashboard_id is not None:
+            _path_params['dashboardId'] = dashboard_id
+        # process the query parameters
+        if aid is not None:
+            
+            _query_params.append(('aid', aid))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if clone_dashboard_request is not None:
+            _body_params = clone_dashboard_request
+
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/hal+json', 
+                'application/json', 
+                'application/problem+json'
+            ]
+        )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='POST',
+            resource_path='/dashboards/{dashboardId}/clone',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
 
 
     @validate_call
@@ -640,6 +967,305 @@ class DashboardsApi:
         return self.api_client.param_serialize(
             method='DELETE',
             resource_path='/dashboards/{dashboardId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def delete_dashboard_schedule(
+        self,
+        dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> None:
+        """Delete dashboard snapshot schedule
+
+        Removes the snapshot schedule from a dashboard. Existing snapshots are not deleted. 
+
+        :param dashboard_id: A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint. (required)
+        :type dashboard_id: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_dashboard_schedule_serialize(
+            dashboard_id=dashboard_id,
+            aid=aid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '204': None,
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '409': "Error",
+            '429': "Error",
+            '500': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+            models=thousandeyes_sdk.dashboards.models,
+        ).data
+
+
+    @validate_call
+    def delete_dashboard_schedule_with_http_info(
+        self,
+        dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[None]:
+        """Delete dashboard snapshot schedule
+
+        Removes the snapshot schedule from a dashboard. Existing snapshots are not deleted. 
+
+        :param dashboard_id: A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint. (required)
+        :type dashboard_id: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_dashboard_schedule_serialize(
+            dashboard_id=dashboard_id,
+            aid=aid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '204': None,
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '409': "Error",
+            '429': "Error",
+            '500': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+            models=thousandeyes_sdk.dashboards.models,
+        )
+
+
+    @validate_call
+    def delete_dashboard_schedule_without_preload_content(
+        self,
+        dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Delete dashboard snapshot schedule
+
+        Removes the snapshot schedule from a dashboard. Existing snapshots are not deleted. 
+
+        :param dashboard_id: A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint. (required)
+        :type dashboard_id: str
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._delete_dashboard_schedule_serialize(
+            dashboard_id=dashboard_id,
+            aid=aid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '204': None,
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '409': "Error",
+            '429': "Error",
+            '500': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _delete_dashboard_schedule_serialize(
+        self,
+        dashboard_id,
+        aid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if dashboard_id is not None:
+            _path_params['dashboardId'] = dashboard_id
+        # process the query parameters
+        if aid is not None:
+            
+            _query_params.append(('aid', aid))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/json', 
+                'application/problem+json'
+            ]
+        )
+
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='DELETE',
+            resource_path='/dashboards/{dashboardId}/actions/schedule',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,
@@ -2785,6 +3411,334 @@ class DashboardsApi:
         return self.api_client.param_serialize(
             method='PUT',
             resource_path='/dashboards/{dashboardId}',
+            path_params=_path_params,
+            query_params=_query_params,
+            header_params=_header_params,
+            body=_body_params,
+            post_params=_form_params,
+            files=_files,
+            auth_settings=_auth_settings,
+            collection_formats=_collection_formats,
+            _host=_host,
+            _request_auth=_request_auth
+        )
+
+
+
+
+    @validate_call
+    def update_dashboard_schedule(
+        self,
+        dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
+        dashboard_schedule_request: Annotated[DashboardScheduleRequest, Field(description="Snapshot schedule configuration.")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiDashboard:
+        """Create or update dashboard snapshot schedule
+
+        Creates or replaces the snapshot schedule for a dashboard. Set `repeat` to `NONE` to generate one snapshot at `startTime`. Other `repeat` values create recurring snapshots. Schedule settings control when snapshots are generated, the data time range included in each snapshot, and email delivery options. 
+
+        :param dashboard_id: A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint. (required)
+        :type dashboard_id: str
+        :param dashboard_schedule_request: Snapshot schedule configuration. (required)
+        :type dashboard_schedule_request: DashboardScheduleRequest
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_dashboard_schedule_serialize(
+            dashboard_id=dashboard_id,
+            dashboard_schedule_request=dashboard_schedule_request,
+            aid=aid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiDashboard",
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '409': "Error",
+            '429': "Error",
+            '500': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+            models=thousandeyes_sdk.dashboards.models,
+        ).data
+
+
+    @validate_call
+    def update_dashboard_schedule_with_http_info(
+        self,
+        dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
+        dashboard_schedule_request: Annotated[DashboardScheduleRequest, Field(description="Snapshot schedule configuration.")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> ApiResponse[ApiDashboard]:
+        """Create or update dashboard snapshot schedule
+
+        Creates or replaces the snapshot schedule for a dashboard. Set `repeat` to `NONE` to generate one snapshot at `startTime`. Other `repeat` values create recurring snapshots. Schedule settings control when snapshots are generated, the data time range included in each snapshot, and email delivery options. 
+
+        :param dashboard_id: A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint. (required)
+        :type dashboard_id: str
+        :param dashboard_schedule_request: Snapshot schedule configuration. (required)
+        :type dashboard_schedule_request: DashboardScheduleRequest
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_dashboard_schedule_serialize(
+            dashboard_id=dashboard_id,
+            dashboard_schedule_request=dashboard_schedule_request,
+            aid=aid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiDashboard",
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '409': "Error",
+            '429': "Error",
+            '500': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        response_data.read()
+        return self.api_client.response_deserialize(
+            response_data=response_data,
+            response_types_map=_response_types_map,
+            models=thousandeyes_sdk.dashboards.models,
+        )
+
+
+    @validate_call
+    def update_dashboard_schedule_without_preload_content(
+        self,
+        dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
+        dashboard_schedule_request: Annotated[DashboardScheduleRequest, Field(description="Snapshot schedule configuration.")],
+        aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
+        _request_timeout: Union[
+            None,
+            Annotated[StrictFloat, Field(gt=0)],
+            Tuple[
+                Annotated[StrictFloat, Field(gt=0)],
+                Annotated[StrictFloat, Field(gt=0)]
+            ]
+        ] = None,
+        _request_auth: Optional[Dict[StrictStr, Any]] = None,
+        _content_type: Optional[StrictStr] = None,
+        _headers: Optional[Dict[StrictStr, Any]] = None,
+        _host_index: Annotated[StrictInt, Field(ge=0, le=0)] = 0,
+    ) -> RESTResponseType:
+        """Create or update dashboard snapshot schedule
+
+        Creates or replaces the snapshot schedule for a dashboard. Set `repeat` to `NONE` to generate one snapshot at `startTime`. Other `repeat` values create recurring snapshots. Schedule settings control when snapshots are generated, the data time range included in each snapshot, and email delivery options. 
+
+        :param dashboard_id: A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint. (required)
+        :type dashboard_id: str
+        :param dashboard_schedule_request: Snapshot schedule configuration. (required)
+        :type dashboard_schedule_request: DashboardScheduleRequest
+        :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
+        :type aid: str
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :type _request_timeout: int, tuple(int, int), optional
+        :param _request_auth: set to override the auth_settings for an a single
+                              request; this effectively ignores the
+                              authentication in the spec for a single request.
+        :type _request_auth: dict, optional
+        :param _content_type: force content-type for the request.
+        :type _content_type: str, Optional
+        :param _headers: set to override the headers for a single
+                         request; this effectively ignores the headers
+                         in the spec for a single request.
+        :type _headers: dict, optional
+        :param _host_index: set to override the host_index for a single
+                            request; this effectively ignores the host_index
+                            in the spec for a single request.
+        :type _host_index: int, optional
+        :return: Returns the result object.
+        """ # noqa: E501
+
+        _param = self._update_dashboard_schedule_serialize(
+            dashboard_id=dashboard_id,
+            dashboard_schedule_request=dashboard_schedule_request,
+            aid=aid,
+            _request_auth=_request_auth,
+            _content_type=_content_type,
+            _headers=_headers,
+            _host_index=_host_index
+        )
+
+        _response_types_map: Dict[str, Optional[str]] = {
+            '200': "ApiDashboard",
+            '400': "ValidationError",
+            '401': "UnauthorizedError",
+            '403': "Error",
+            '404': "Error",
+            '409': "Error",
+            '429': "Error",
+            '500': "Error",
+        }
+        response_data = self.api_client.call_api(
+            *_param,
+            _request_timeout=_request_timeout
+        )
+        return response_data.response
+
+
+    def _update_dashboard_schedule_serialize(
+        self,
+        dashboard_id,
+        dashboard_schedule_request,
+        aid,
+        _request_auth,
+        _content_type,
+        _headers,
+        _host_index,
+    ) -> RequestSerialized:
+
+        _host = None
+
+        _collection_formats: Dict[str, str] = {
+        }
+
+        _path_params: Dict[str, str] = {}
+        _query_params: List[Tuple[str, str]] = []
+        _header_params: Dict[str, Optional[str]] = _headers or {}
+        _form_params: List[Tuple[str, str]] = []
+        _files: Dict[str, Union[str, bytes]] = {}
+        _body_params: Optional[bytes] = None
+
+        # process the path parameters
+        if dashboard_id is not None:
+            _path_params['dashboardId'] = dashboard_id
+        # process the query parameters
+        if aid is not None:
+            
+            _query_params.append(('aid', aid))
+            
+        # process the header parameters
+        # process the form parameters
+        # process the body parameter
+        if dashboard_schedule_request is not None:
+            _body_params = dashboard_schedule_request
+
+
+        # set the HTTP header `Accept`
+        _header_params['Accept'] = self.api_client.select_header_accept(
+            [
+                'application/hal+json', 
+                'application/json', 
+                'application/problem+json'
+            ]
+        )
+
+        # set the HTTP header `Content-Type`
+        if _content_type:
+            _header_params['Content-Type'] = _content_type
+        else:
+            _default_content_type = (
+                self.api_client.select_header_content_type(
+                    [
+                        'application/json'
+                    ]
+                )
+            )
+            if _default_content_type is not None:
+                _header_params['Content-Type'] = _default_content_type
+
+        # authentication setting
+        _auth_settings: List[str] = [
+            'BearerAuth'
+        ]
+
+        return self.api_client.param_serialize(
+            method='PUT',
+            resource_path='/dashboards/{dashboardId}/actions/schedule',
             path_params=_path_params,
             query_params=_query_params,
             header_params=_header_params,

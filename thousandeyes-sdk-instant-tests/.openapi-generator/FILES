@@ -88,6 +88,8 @@ docs/SipServerInstantTestResponse.md
 docs/SipServerProperties.md
 docs/SipTestProtocol.md
 docs/TestAgent.md
+docs/TestAgentResponse.md
+docs/TestAgentResponseProperties.md
 docs/TestAuthType.md
 docs/TestChromiumTrack.md
 docs/TestCustomHeaders.md
@@ -217,6 +219,8 @@ src/thousandeyes_sdk/instant_tests/models/sip_server_instant_test_response.py
 src/thousandeyes_sdk/instant_tests/models/sip_server_properties.py
 src/thousandeyes_sdk/instant_tests/models/sip_test_protocol.py
 src/thousandeyes_sdk/instant_tests/models/test_agent.py
+src/thousandeyes_sdk/instant_tests/models/test_agent_response.py
+src/thousandeyes_sdk/instant_tests/models/test_agent_response_properties.py
 src/thousandeyes_sdk/instant_tests/models/test_auth_type.py
 src/thousandeyes_sdk/instant_tests/models/test_chromium_track.py
 src/thousandeyes_sdk/instant_tests/models/test_custom_headers.py

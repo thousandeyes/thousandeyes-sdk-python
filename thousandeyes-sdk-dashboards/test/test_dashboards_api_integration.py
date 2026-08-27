@@ -29,6 +29,647 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
         self.api = DashboardsApi(self.api_client)
 
 
+    def test_clone_dashboard_happy_path(self) -> None:
+        """Integration test for clone_dashboard success path"""
+        request_body_json = """
+        
+                {
+                  "isSharedWithAllAccountGroups" : false,
+                  "tagIds" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "5aeab5d5-0d34-4d44-a7ac-fb440185295c" ],
+                  "isDefaultForAccount" : false,
+                  "description" : "Copy of the HTTP Server Widgets dashboard",
+                  "isDefaultForUser" : false,
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets Copy",
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "5m",
+                  "sharedAccountIds" : [ "1234", "5678" ],
+                  "isGlobalOverride" : false
+                }
+        
+                """
+        clone_dashboard_request = thousandeyes_sdk.dashboards.models.CloneDashboardRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        response_body_json = """
+                {
+                  "isMigratedReport" : false,
+                  "_links" : {
+                    "snapshots" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    },
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "isDefaultForAccount" : false,
+                  "isDefaultForUser" : true,
+                  "description" : "HTTP Server Widgets",
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets",
+                  "isBuiltIn" : true,
+                  "widgets" : [ {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  }, {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  } ],
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
+                  "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
+                  "createdBy" : "1",
+                  "refreshRate" : "off",
+                  "modifiedDate" : "2023-05-16T10:14:28Z",
+                  "modifiedBy" : "1",
+                  "isGlobalOverride" : true,
+                  "aid" : "1234"
+                }
+                """
+        expected_response = json.loads(response_body_json)
+        response = self.api.clone_dashboard(
+
+            dashboard_id=dashboard_id,
+
+            aid=aid,
+
+            clone_dashboard_request=clone_dashboard_request,
+
+            _headers=self.te_headers("clone_dashboard"),
+        )
+        assert_constructed_model_matches_example_json(response, expected_response)
+
+
+    def test_clone_dashboard_error_400(self) -> None:
+        """Integration test for clone_dashboard error path (HTTP 400)"""
+        request_body_json = """
+        
+                {
+                  "isSharedWithAllAccountGroups" : false,
+                  "tagIds" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "5aeab5d5-0d34-4d44-a7ac-fb440185295c" ],
+                  "isDefaultForAccount" : false,
+                  "description" : "Copy of the HTTP Server Widgets dashboard",
+                  "isDefaultForUser" : false,
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets Copy",
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "5m",
+                  "sharedAccountIds" : [ "1234", "5678" ],
+                  "isGlobalOverride" : false
+                }
+        
+                """
+        clone_dashboard_request = thousandeyes_sdk.dashboards.models.CloneDashboardRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(400)
+        ) as context:
+            self.api.clone_dashboard(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                clone_dashboard_request=clone_dashboard_request,
+
+                _headers=self.te_headers("clone_dashboard", error_status="400"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_clone_dashboard_error_401(self) -> None:
+        """Integration test for clone_dashboard error path (HTTP 401)"""
+        request_body_json = """
+        
+                {
+                  "isSharedWithAllAccountGroups" : false,
+                  "tagIds" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "5aeab5d5-0d34-4d44-a7ac-fb440185295c" ],
+                  "isDefaultForAccount" : false,
+                  "description" : "Copy of the HTTP Server Widgets dashboard",
+                  "isDefaultForUser" : false,
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets Copy",
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "5m",
+                  "sharedAccountIds" : [ "1234", "5678" ],
+                  "isGlobalOverride" : false
+                }
+        
+                """
+        clone_dashboard_request = thousandeyes_sdk.dashboards.models.CloneDashboardRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(401)
+        ) as context:
+            self.api.clone_dashboard(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                clone_dashboard_request=clone_dashboard_request,
+
+                _headers=self.te_headers("clone_dashboard", error_status="401"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_clone_dashboard_error_403(self) -> None:
+        """Integration test for clone_dashboard error path (HTTP 403)"""
+        request_body_json = """
+        
+                {
+                  "isSharedWithAllAccountGroups" : false,
+                  "tagIds" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "5aeab5d5-0d34-4d44-a7ac-fb440185295c" ],
+                  "isDefaultForAccount" : false,
+                  "description" : "Copy of the HTTP Server Widgets dashboard",
+                  "isDefaultForUser" : false,
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets Copy",
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "5m",
+                  "sharedAccountIds" : [ "1234", "5678" ],
+                  "isGlobalOverride" : false
+                }
+        
+                """
+        clone_dashboard_request = thousandeyes_sdk.dashboards.models.CloneDashboardRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(403)
+        ) as context:
+            self.api.clone_dashboard(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                clone_dashboard_request=clone_dashboard_request,
+
+                _headers=self.te_headers("clone_dashboard", error_status="403"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_clone_dashboard_error_404(self) -> None:
+        """Integration test for clone_dashboard error path (HTTP 404)"""
+        request_body_json = """
+        
+                {
+                  "isSharedWithAllAccountGroups" : false,
+                  "tagIds" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "5aeab5d5-0d34-4d44-a7ac-fb440185295c" ],
+                  "isDefaultForAccount" : false,
+                  "description" : "Copy of the HTTP Server Widgets dashboard",
+                  "isDefaultForUser" : false,
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets Copy",
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "5m",
+                  "sharedAccountIds" : [ "1234", "5678" ],
+                  "isGlobalOverride" : false
+                }
+        
+                """
+        clone_dashboard_request = thousandeyes_sdk.dashboards.models.CloneDashboardRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(404)
+        ) as context:
+            self.api.clone_dashboard(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                clone_dashboard_request=clone_dashboard_request,
+
+                _headers=self.te_headers("clone_dashboard", error_status="404"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_clone_dashboard_error_429(self) -> None:
+        """Integration test for clone_dashboard error path (HTTP 429)"""
+        request_body_json = """
+        
+                {
+                  "isSharedWithAllAccountGroups" : false,
+                  "tagIds" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "5aeab5d5-0d34-4d44-a7ac-fb440185295c" ],
+                  "isDefaultForAccount" : false,
+                  "description" : "Copy of the HTTP Server Widgets dashboard",
+                  "isDefaultForUser" : false,
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets Copy",
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "5m",
+                  "sharedAccountIds" : [ "1234", "5678" ],
+                  "isGlobalOverride" : false
+                }
+        
+                """
+        clone_dashboard_request = thousandeyes_sdk.dashboards.models.CloneDashboardRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(429)
+        ) as context:
+            self.api.clone_dashboard(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                clone_dashboard_request=clone_dashboard_request,
+
+                _headers=self.te_headers("clone_dashboard", error_status="429"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_clone_dashboard_error_500(self) -> None:
+        """Integration test for clone_dashboard error path (HTTP 500)"""
+        request_body_json = """
+        
+                {
+                  "isSharedWithAllAccountGroups" : false,
+                  "tagIds" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "5aeab5d5-0d34-4d44-a7ac-fb440185295c" ],
+                  "isDefaultForAccount" : false,
+                  "description" : "Copy of the HTTP Server Widgets dashboard",
+                  "isDefaultForUser" : false,
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets Copy",
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "5m",
+                  "sharedAccountIds" : [ "1234", "5678" ],
+                  "isGlobalOverride" : false
+                }
+        
+                """
+        clone_dashboard_request = thousandeyes_sdk.dashboards.models.CloneDashboardRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(500)
+        ) as context:
+            self.api.clone_dashboard(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                clone_dashboard_request=clone_dashboard_request,
+
+                _headers=self.te_headers("clone_dashboard", error_status="500"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+
+
     def test_create_dashboard_happy_path(self) -> None:
         """Integration test for create_dashboard success path"""
         request_body_json = """
@@ -160,6 +801,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -300,6 +966,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -452,6 +1143,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -628,6 +1344,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -792,6 +1533,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -959,6 +1725,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -1126,6 +1917,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -1293,6 +2109,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -1523,6 +2364,226 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
 
 
 
+    def test_delete_dashboard_schedule_happy_path(self) -> None:
+        """Integration test for delete_dashboard_schedule success path"""
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        response = self.api.delete_dashboard_schedule_with_http_info(
+
+            dashboard_id=dashboard_id,
+
+            aid=aid,
+
+            _headers=self.te_headers("delete_dashboard_schedule"),
+        )
+        self.assertEqual(204, response.status_code)
+        self.assertIsNone(response.data)
+
+
+    def test_delete_dashboard_schedule_error_400(self) -> None:
+        """Integration test for delete_dashboard_schedule error path (HTTP 400)"""
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(400)
+        ) as context:
+            self.api.delete_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("delete_dashboard_schedule", error_status="400"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_delete_dashboard_schedule_error_401(self) -> None:
+        """Integration test for delete_dashboard_schedule error path (HTTP 401)"""
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(401)
+        ) as context:
+            self.api.delete_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("delete_dashboard_schedule", error_status="401"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_delete_dashboard_schedule_error_403(self) -> None:
+        """Integration test for delete_dashboard_schedule error path (HTTP 403)"""
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(403)
+        ) as context:
+            self.api.delete_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("delete_dashboard_schedule", error_status="403"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_delete_dashboard_schedule_error_404(self) -> None:
+        """Integration test for delete_dashboard_schedule error path (HTTP 404)"""
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(404)
+        ) as context:
+            self.api.delete_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("delete_dashboard_schedule", error_status="404"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_delete_dashboard_schedule_error_409(self) -> None:
+        """Integration test for delete_dashboard_schedule error path (HTTP 409)"""
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(409)
+        ) as context:
+            self.api.delete_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("delete_dashboard_schedule", error_status="409"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_delete_dashboard_schedule_error_429(self) -> None:
+        """Integration test for delete_dashboard_schedule error path (HTTP 429)"""
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(429)
+        ) as context:
+            self.api.delete_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("delete_dashboard_schedule", error_status="429"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_delete_dashboard_schedule_error_500(self) -> None:
+        """Integration test for delete_dashboard_schedule error path (HTTP 500)"""
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(500)
+        ) as context:
+            self.api.delete_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("delete_dashboard_schedule", error_status="500"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+
+
     def test_get_dashboard_happy_path(self) -> None:
         """Integration test for get_dashboard success path"""
         dashboard_id = '646f4d2ce3c99b0536c3821e'
@@ -1659,6 +2720,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                         "id" : "widgetId-71lbb"
                       } ]
                     }
+                  },
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
                   },
                   "accountId" : 1234,
                   "apiLink" : [ {
@@ -2812,6 +3898,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                       } ]
                     }
                   },
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "accountId" : 1234,
                   "apiLink" : [ {
                     "key" : ""
@@ -2956,6 +4067,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                         "id" : "widgetId-71lbb"
                       } ]
                     }
+                  },
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
                   },
                   "accountId" : 1234,
                   "apiLink" : [ {
@@ -3974,6 +5110,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -4115,6 +5276,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -4269,6 +5455,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -4448,6 +5659,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -4615,6 +5851,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -4785,6 +6046,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -4955,6 +6241,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -5125,6 +6436,31 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                     }
                   },
                   "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
                   "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
                   "createdBy" : "1",
                   "refreshRate" : "off",
@@ -5160,6 +6496,647 @@ class TestDashboardsApiIntegration(IntegrationTestBase):
                 aid=aid,
 
                 _headers=self.te_headers("update_dashboard", error_status="500"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+
+
+    def test_update_dashboard_schedule_happy_path(self) -> None:
+        """Integration test for update_dashboard_schedule success path"""
+        request_body_json = """
+        
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+        
+                """
+        dashboard_schedule_request = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        response_body_json = """
+                {
+                  "isMigratedReport" : false,
+                  "dashboardCreatedBy" : "1",
+                  "_links" : {
+                    "snapshots" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    },
+                    "self" : {
+                      "hreflang" : "hreflang",
+                      "templated" : true,
+                      "profile" : "profile",
+                      "name" : "name",
+                      "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                      "type" : "type",
+                      "deprecation" : "deprecation",
+                      "title" : "title"
+                    }
+                  },
+                  "isDefaultForUser" : true,
+                  "description" : "HTTP Server Widgets",
+                  "isPrivate" : true,
+                  "title" : "HTTP Server Widgets",
+                  "isBuiltIn" : true,
+                  "widgets" : [ {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  }, {
+                    "embedUrl" : "https://embed.thousandeyes.com/e/00aa:3039802d-5c76-42d2-9a93-c6e5f9d3122f",
+                    "shouldExcludeAlertSuppressionWindows" : true,
+                    "_links" : {
+                      "self" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "visualMode" : "Full",
+                    "filters" : {
+                      "TEST" : [ 5187, 5227 ],
+                      "ENDPOINT_MACHINE_ID" : [ "fbd0050c-07f7-43f7-9631-14b32f096962" ]
+                    },
+                    "title" : "Widget Title",
+                    "type" : "Agent Status",
+                    "metricGroup" : "BGP",
+                    "measure" : {
+                      "percentileValue" : 95,
+                      "type" : "MEAN"
+                    },
+                    "apiLink" : "apiLink",
+                    "metric" : "ENDPOINT_GATEWAY_CPU_LOAD_PERCENT",
+                    "isEmbedded" : true,
+                    "id" : "1234",
+                    "fixedTimespan" : {
+                      "unit" : "Days",
+                      "value" : 10
+                    },
+                    "dataSource" : "ENDPOINT_AGENTS",
+                    "direction" : "FROM_TARGET"
+                  } ],
+                  "globalFilterId" : "65babd9bb90bf55b17c96c8d",
+                  "refreshRate" : "off",
+                  "modifiedBy" : 1,
+                  "dashboardModifiedBy" : "1",
+                  "migratedReport" : false,
+                  "isDefaultForAccount" : false,
+                  "defaultTimespan" : {
+                    "duration" : 7200,
+                    "timespanDuration" : 7200,
+                    "start" : "2023-05-16T10:14:28Z",
+                    "end" : "2023-05-16T11:14:28Z",
+                    "timespanStart" : "2023-05-16 10:14:28",
+                    "timespanEnd" : "2023-05-16 11:14:28"
+                  },
+                  "layout" : {
+                    "layoutId" : "grid-layout-1",
+                    "type" : "grid",
+                    "details" : {
+                      "widgetPositioning" : [ {
+                        "x" : 0,
+                        "y" : 0,
+                        "w" : 9,
+                        "h" : 5,
+                        "id" : "widgetId-71lbb"
+                      } ]
+                    }
+                  },
+                  "schedule" : {
+                    "expiresAfter" : 157680000,
+                    "cronSpec" : {
+                      "repeat" : "EVERY_WEEK",
+                      "endRepeat" : {
+                        "endConditionType" : "NEVER"
+                      },
+                      "startTime" : 1753200000,
+                      "zoneCode" : "America/Los_Angeles"
+                    },
+                    "flagLocked" : false,
+                    "recipients" : [ "alice@example.com", "bob@example.com" ],
+                    "flagAutoShare" : false,
+                    "dataTimespan" : {
+                      "period" : "WEEK",
+                      "n" : 1
+                    },
+                    "flagAttachPdfToEmail" : true,
+                    "dataSource" : {
+                      "name" : "Weekly network report"
+                    },
+                    "flagIsIncludePiiUserData" : false,
+                    "nextDate" : "2026-10-01T07:00:00Z",
+                    "flagEnabled" : true
+                  },
+                  "accountId" : 1234,
+                  "apiLink" : [ {
+                    "key" : ""
+                  }, {
+                    "key" : ""
+                  } ],
+                  "dashboardId" : "5e1f7a99143ae6004fdc3bb4",
+                  "createdBy" : 1,
+                  "globalOverride" : true,
+                  "modifiedDate" : "2023-05-16 10:14:28",
+                  "isGlobalOverride" : true,
+                  "aid" : "1234",
+                  "dashboardModifiedDate" : "2023-05-16T10:14:28Z"
+                }
+                """
+        expected_response = json.loads(response_body_json)
+        response = self.api.update_dashboard_schedule(
+
+            dashboard_id=dashboard_id,
+
+            dashboard_schedule_request=dashboard_schedule_request,
+
+            aid=aid,
+
+            _headers=self.te_headers("update_dashboard_schedule"),
+        )
+        assert_constructed_model_matches_example_json(response, expected_response)
+
+
+    def test_update_dashboard_schedule_error_400(self) -> None:
+        """Integration test for update_dashboard_schedule error path (HTTP 400)"""
+        request_body_json = """
+        
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+        
+                """
+        dashboard_schedule_request = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(400)
+        ) as context:
+            self.api.update_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                dashboard_schedule_request=dashboard_schedule_request,
+
+                aid=aid,
+
+                _headers=self.te_headers("update_dashboard_schedule", error_status="400"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_update_dashboard_schedule_error_401(self) -> None:
+        """Integration test for update_dashboard_schedule error path (HTTP 401)"""
+        request_body_json = """
+        
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+        
+                """
+        dashboard_schedule_request = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(401)
+        ) as context:
+            self.api.update_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                dashboard_schedule_request=dashboard_schedule_request,
+
+                aid=aid,
+
+                _headers=self.te_headers("update_dashboard_schedule", error_status="401"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_update_dashboard_schedule_error_403(self) -> None:
+        """Integration test for update_dashboard_schedule error path (HTTP 403)"""
+        request_body_json = """
+        
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+        
+                """
+        dashboard_schedule_request = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(403)
+        ) as context:
+            self.api.update_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                dashboard_schedule_request=dashboard_schedule_request,
+
+                aid=aid,
+
+                _headers=self.te_headers("update_dashboard_schedule", error_status="403"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_update_dashboard_schedule_error_404(self) -> None:
+        """Integration test for update_dashboard_schedule error path (HTTP 404)"""
+        request_body_json = """
+        
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+        
+                """
+        dashboard_schedule_request = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(404)
+        ) as context:
+            self.api.update_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                dashboard_schedule_request=dashboard_schedule_request,
+
+                aid=aid,
+
+                _headers=self.te_headers("update_dashboard_schedule", error_status="404"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_update_dashboard_schedule_error_409(self) -> None:
+        """Integration test for update_dashboard_schedule error path (HTTP 409)"""
+        request_body_json = """
+        
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+        
+                """
+        dashboard_schedule_request = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(409)
+        ) as context:
+            self.api.update_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                dashboard_schedule_request=dashboard_schedule_request,
+
+                aid=aid,
+
+                _headers=self.te_headers("update_dashboard_schedule", error_status="409"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_update_dashboard_schedule_error_429(self) -> None:
+        """Integration test for update_dashboard_schedule error path (HTTP 429)"""
+        request_body_json = """
+        
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+        
+                """
+        dashboard_schedule_request = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(429)
+        ) as context:
+            self.api.update_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                dashboard_schedule_request=dashboard_schedule_request,
+
+                aid=aid,
+
+                _headers=self.te_headers("update_dashboard_schedule", error_status="429"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_update_dashboard_schedule_error_500(self) -> None:
+        """Integration test for update_dashboard_schedule error path (HTTP 500)"""
+        request_body_json = """
+        
+                {
+                  "expiresAfter" : 157680000,
+                  "cronSpec" : {
+                    "repeat" : "EVERY_WEEK",
+                    "endRepeat" : {
+                      "endConditionType" : "NEVER"
+                    },
+                    "startTime" : 1753200000,
+                    "zoneCode" : "America/Los_Angeles"
+                  },
+                  "flagLocked" : false,
+                  "recipients" : [ "alice@example.com", "bob@example.com" ],
+                  "flagAutoShare" : false,
+                  "dataTimespan" : {
+                    "period" : "WEEK",
+                    "n" : 1
+                  },
+                  "flagAttachPdfToEmail" : true,
+                  "dataSource" : {
+                    "name" : "Weekly network report"
+                  },
+                  "flagIsIncludePiiUserData" : false,
+                  "flagEnabled" : true
+                }
+        
+                """
+        dashboard_schedule_request = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
+        dashboard_id = '646f4d2ce3c99b0536c3821e'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 6
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(500)
+        ) as context:
+            self.api.update_dashboard_schedule(
+
+                dashboard_id=dashboard_id,
+
+                dashboard_schedule_request=dashboard_schedule_request,
+
+                aid=aid,
+
+                _headers=self.te_headers("update_dashboard_schedule", error_status="500"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
 

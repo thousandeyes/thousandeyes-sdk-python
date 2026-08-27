@@ -67,7 +67,7 @@ class TagsApi:
     ) -> Tag:
         """Create tag
 
-        Creates a new tag.
+        Creates a new tag. Creating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. Requests missing any of these permissions return `403`.    For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -108,6 +108,7 @@ class TagsApi:
             '201': "Tag",
             '400': "ValidationError",
             '401': "UnauthorizedError",
+            '403': "Error",
             '409': None,
             '500': "ApiError",
         }
@@ -143,7 +144,7 @@ class TagsApi:
     ) -> ApiResponse[Tag]:
         """Create tag
 
-        Creates a new tag.
+        Creates a new tag. Creating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. Requests missing any of these permissions return `403`.    For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -184,6 +185,7 @@ class TagsApi:
             '201': "Tag",
             '400': "ValidationError",
             '401': "UnauthorizedError",
+            '403': "Error",
             '409': None,
             '500': "ApiError",
         }
@@ -219,7 +221,7 @@ class TagsApi:
     ) -> RESTResponseType:
         """Create tag
 
-        Creates a new tag.
+        Creates a new tag. Creating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. Requests missing any of these permissions return `403`.    For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -260,6 +262,7 @@ class TagsApi:
             '201': "Tag",
             '400': "ValidationError",
             '401': "UnauthorizedError",
+            '403': "Error",
             '409': None,
             '500': "ApiError",
         }
@@ -371,7 +374,7 @@ class TagsApi:
     ) -> BulkTagResponse:
         """Create multiple tags
 
-        Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array.  
+        Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array. Creating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. A tag that fails this permission check is reported as a per-item `403` in the `errors` array, while the top-level status remains `207`. If the caller does not have permission to create tags, the request returns a top-level `403`. For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -412,6 +415,7 @@ class TagsApi:
             '207': "BulkTagResponse",
             '400': "ValidationError",
             '401': "UnauthorizedError",
+            '403': "Error",
             '500': "ApiError",
         }
         response_data = self.api_client.call_api(
@@ -446,7 +450,7 @@ class TagsApi:
     ) -> ApiResponse[BulkTagResponse]:
         """Create multiple tags
 
-        Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array.  
+        Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array. Creating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. A tag that fails this permission check is reported as a per-item `403` in the `errors` array, while the top-level status remains `207`. If the caller does not have permission to create tags, the request returns a top-level `403`. For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -487,6 +491,7 @@ class TagsApi:
             '207': "BulkTagResponse",
             '400': "ValidationError",
             '401': "UnauthorizedError",
+            '403': "Error",
             '500': "ApiError",
         }
         response_data = self.api_client.call_api(
@@ -521,7 +526,7 @@ class TagsApi:
     ) -> RESTResponseType:
         """Create multiple tags
 
-        Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array.  
+        Creates multiple tags. Note the response includes a `statuses` array. This array provides status information for each tag object, indexed 1:1 with the `tags` array. Creating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. A tag that fails this permission check is reported as a per-item `403` in the `errors` array, while the top-level status remains `207`. If the caller does not have permission to create tags, the request returns a top-level `403`. For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
@@ -562,6 +567,7 @@ class TagsApi:
             '207': "BulkTagResponse",
             '400': "ValidationError",
             '401': "UnauthorizedError",
+            '403': "Error",
             '500': "ApiError",
         }
         response_data = self.api_client.call_api(
@@ -1575,7 +1581,7 @@ class TagsApi:
     ) -> Tag:
         """Update tag
 
-        Updates a tag.
+        Updates a tag. Updating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. Requests missing any of these permissions return `403`. For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
         :param id: ID of tag to update (required)
         :type id: str
@@ -1656,7 +1662,7 @@ class TagsApi:
     ) -> ApiResponse[Tag]:
         """Update tag
 
-        Updates a tag.
+        Updates a tag. Updating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. Requests missing any of these permissions return `403`. For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
         :param id: ID of tag to update (required)
         :type id: str
@@ -1737,7 +1743,7 @@ class TagsApi:
     ) -> RESTResponseType:
         """Update tag
 
-        Updates a tag.
+        Updates a tag. Updating a dynamic endpoint-agent tag (`objectType: endpoint-agent`, `type: dynamic`) requires all Endpoint Agent PII view permissions. Requests missing any of these permissions return `403`. For more information, see [Endpoint Agent permissions](https://docs.thousandeyes.com/product-documentation/global-vantage-points/endpoint-agents#endpoint-agent-permissions).
 
         :param id: ID of tag to update (required)
         :type id: str

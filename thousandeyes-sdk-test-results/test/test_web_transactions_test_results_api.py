@@ -120,11 +120,11 @@ class TestWebTransactionsTestResultsApi(unittest.TestCase):
                     "consoleLogs" : [ {
                       "level" : "INFO",
                       "value" : "Uncaught TypeError: Cannot read property attr of undefined",
-                      "timestamp" : "1715880042123"
+                      "timestamp" : 1715880042123
                     }, {
                       "level" : "INFO",
                       "value" : "Uncaught TypeError: Cannot read property attr of undefined",
-                      "timestamp" : "1715880042123"
+                      "timestamp" : 1715880042123
                     } ],
                     "roundId" : 1384309800
                   }, {
@@ -150,11 +150,11 @@ class TestWebTransactionsTestResultsApi(unittest.TestCase):
                     "consoleLogs" : [ {
                       "level" : "INFO",
                       "value" : "Uncaught TypeError: Cannot read property attr of undefined",
-                      "timestamp" : "1715880042123"
+                      "timestamp" : 1715880042123
                     }, {
                       "level" : "INFO",
                       "value" : "Uncaught TypeError: Cannot read property attr of undefined",
-                      "timestamp" : "1715880042123"
+                      "timestamp" : 1715880042123
                     } ],
                     "roundId" : 1384309800
                   } ]

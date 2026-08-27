@@ -149,6 +149,8 @@ from thousandeyes_sdk.tests.models.sip_server_test_response import SipServerTest
 from thousandeyes_sdk.tests.models.sip_server_tests import SipServerTests
 from thousandeyes_sdk.tests.models.sip_test_protocol import SipTestProtocol
 from thousandeyes_sdk.tests.models.test_agent_request import TestAgentRequest
+from thousandeyes_sdk.tests.models.test_agent_response import TestAgentResponse
+from thousandeyes_sdk.tests.models.test_agent_response_properties import TestAgentResponseProperties
 from thousandeyes_sdk.tests.models.test_auth_type import TestAuthType
 from thousandeyes_sdk.tests.models.test_chromium_track import TestChromiumTrack
 from thousandeyes_sdk.tests.models.test_custom_headers import TestCustomHeaders
