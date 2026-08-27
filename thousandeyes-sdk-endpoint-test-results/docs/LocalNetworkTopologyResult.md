@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **gateway_score** | [**EndpointProbeGatewayScore**](EndpointProbeGatewayScore.md) |  | [optional] 
 **proxy_score** | [**EndpointProbeProxyScore**](EndpointProbeProxyScore.md) |  | [optional] 
 **connection_score** | [**EndpointProbeConnectionScore**](EndpointProbeConnectionScore.md) |  | [optional] 
+**wireless_onboarding** | [**WirelessOnboarding**](WirelessOnboarding.md) |  | [optional] 
 **agent_score** | [**EndpointProbeAgentScore**](EndpointProbeAgentScore.md) |  | [optional] 
 **battery_metrics** | [**BatteryMetrics**](BatteryMetrics.md) |  | [optional] 
 **cellular_profile** | [**CellularProfile**](CellularProfile.md) |  | [optional] 

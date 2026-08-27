@@ -166,6 +166,7 @@ docs/VpnNetworkPing.md
 docs/VpnProfile.md
 docs/VpnTraceroute.md
 docs/VpnType.md
+docs/WirelessOnboarding.md
 pyproject.toml
 setup.cfg
 src/thousandeyes_sdk/endpoint_test_results/__init__.py
@@ -336,6 +337,7 @@ src/thousandeyes_sdk/endpoint_test_results/models/vpn_network_ping.py
 src/thousandeyes_sdk/endpoint_test_results/models/vpn_profile.py
 src/thousandeyes_sdk/endpoint_test_results/models/vpn_traceroute.py
 src/thousandeyes_sdk/endpoint_test_results/models/vpn_type.py
+src/thousandeyes_sdk/endpoint_test_results/models/wireless_onboarding.py
 src/thousandeyes_sdk/endpoint_test_results/py.typed
 test/__init__.py
 test/conftest.py

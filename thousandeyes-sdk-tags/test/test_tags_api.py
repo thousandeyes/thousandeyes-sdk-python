@@ -179,8 +179,8 @@ class TestTagsApi(unittest.TestCase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   }, {
                     "tag" : {
                       "key" : {
@@ -219,8 +219,8 @@ class TestTagsApi(unittest.TestCase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   } ],
                   "tags" : [ {
                     "assignments" : [ {
@@ -374,8 +374,8 @@ class TestTagsApi(unittest.TestCase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   }, {
                     "tag" : {
                       "key" : {
@@ -414,8 +414,8 @@ class TestTagsApi(unittest.TestCase):
                         "createDate" : "2022-03-01T23:31:11Z"
                       }
                     },
-                    "message" : "Object successfully created",
-                    "responseCode" : 200
+                    "message" : "Duplicate tags are not allowed. You must change at least one of the following: key, value, or object type.",
+                    "responseCode" : 409
                   } ],
                   "tags" : [ {
                     "assignments" : [ {

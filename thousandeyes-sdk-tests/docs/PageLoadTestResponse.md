@@ -78,7 +78,7 @@ Name | Type | Description | Notes
 **monitors** | [**List[Monitor]**](Monitor.md) | Contains list of enabled BGP monitors. | [optional] [readonly] 
 **http_interval** | [**TestHttpInterval**](TestHttpInterval.md) |  | [optional] 
 **subinterval** | [**TestSubInterval**](TestSubInterval.md) |  | [optional] 
-**agents** | [**List[AgentResponse]**](AgentResponse.md) | Contains list of agents. | [optional] 
+**agents** | [**List[TestAgentResponse]**](TestAgentResponse.md) | Contains list of agents. | [optional] 
 
 ## Example
 

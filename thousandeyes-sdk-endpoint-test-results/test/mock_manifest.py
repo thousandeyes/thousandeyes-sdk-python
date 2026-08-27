@@ -1509,6 +1509,12 @@ OPERATION_MANIFEST = {
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "pktsSent" : 10
                     },
+                    "wirelessOnboarding" : {
+                      "dot11AuthTimeMs" : 12,
+                      "dot11AssocTimeMs" : 18,
+                      "dot1xAuthTimeMs" : 240,
+                      "eapolKeyTimeMs" : 31
+                    },
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
                     "roundId" : 1384309800,
                     "agentScore" : {
@@ -1672,6 +1678,12 @@ OPERATION_MANIFEST = {
                       "error" : "An operation timed out.",
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "pktsSent" : 10
+                    },
+                    "wirelessOnboarding" : {
+                      "dot11AuthTimeMs" : 12,
+                      "dot11AssocTimeMs" : 18,
+                      "dot1xAuthTimeMs" : 240,
+                      "eapolKeyTimeMs" : 31
                     },
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49",
                     "roundId" : 1384309800,
@@ -2248,6 +2260,12 @@ OPERATION_MANIFEST = {
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "pktsSent" : 10
                     },
+                    "wirelessOnboarding" : {
+                      "dot11AuthTimeMs" : 12,
+                      "dot11AssocTimeMs" : 18,
+                      "dot1xAuthTimeMs" : 240,
+                      "eapolKeyTimeMs" : 31
+                    },
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49"
                   }, {
                     "date" : "2022-07-17T22:00:54Z",
@@ -2531,6 +2549,12 @@ OPERATION_MANIFEST = {
                       "error" : "An operation timed out.",
                       "infoFlags" : [ "TE_INFO_ICMP_BLOCKED_BY_FIREWALL" ],
                       "pktsSent" : 10
+                    },
+                    "wirelessOnboarding" : {
+                      "dot11AuthTimeMs" : 12,
+                      "dot11AssocTimeMs" : 18,
+                      "dot1xAuthTimeMs" : 240,
+                      "eapolKeyTimeMs" : 31
                     },
                     "networkTopologyId" : "00160:54c3a4b180c6:1490536500:c7a58c49"
                   } ]

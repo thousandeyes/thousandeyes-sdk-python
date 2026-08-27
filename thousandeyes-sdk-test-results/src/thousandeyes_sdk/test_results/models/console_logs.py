@@ -16,7 +16,7 @@ import pprint
 import re  # noqa: F401
 import json
 
-from pydantic import BaseModel, ConfigDict, Field, StrictStr
+from pydantic import BaseModel, ConfigDict, Field, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,7 +26,7 @@ class ConsoleLogs(BaseModel):
     Console logs captured during script execution to help troubleshoot transaction issues.
     """ # noqa: E501
     level: Optional[StrictStr] = Field(default=None, description="Severity level of the log, or UNKNOWN if the log is system-generated.")
-    timestamp: Optional[StrictStr] = Field(default=None, description="Unix epoch time, in milliseconds, when the log entry was captured.")
+    timestamp: Optional[StrictInt] = Field(default=None, description="Unix epoch time, in milliseconds, when the log entry was captured.")
     value: Optional[StrictStr] = Field(default=None, description="Log message.")
     __properties: ClassVar[List[str]] = ["level", "timestamp", "value"]
 

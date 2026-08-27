@@ -37,7 +37,7 @@ Name | Type | Description | Notes
 **protocol** | [**SipTestProtocol**](SipTestProtocol.md) |  | [optional] 
 **sip_registrar** | **str** | SIP server to be tested, specified by domain name or IP address. | [optional] 
 **user** | **str** | Username for SIP registration, should be unique within a ThousandEyes account group. | [optional] 
-**agents** | [**List[AgentResponse]**](AgentResponse.md) | Contains list of agents. | [optional] 
+**agents** | [**List[TestAgentResponse]**](TestAgentResponse.md) | Contains list of agents. | [optional] 
 
 ## Example
 
