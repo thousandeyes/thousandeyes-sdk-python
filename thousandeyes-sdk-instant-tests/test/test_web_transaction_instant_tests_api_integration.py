@@ -79,10 +79,6 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
@@ -135,11 +131,7 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -206,10 +198,6 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -406,10 +394,6 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
@@ -462,11 +446,7 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -571,10 +551,6 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
@@ -627,11 +603,7 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -724,10 +696,6 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
@@ -780,11 +748,7 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -880,10 +844,6 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
@@ -936,11 +896,7 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -1036,10 +992,6 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
@@ -1092,11 +1044,7 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -1192,10 +1140,6 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
@@ -1248,11 +1192,7 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -1348,10 +1288,6 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
@@ -1404,11 +1340,7 @@ class TestWebTransactionInstantTestsApiIntegration(IntegrationTestBase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",

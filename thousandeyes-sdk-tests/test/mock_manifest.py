@@ -436,11 +436,7 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 19,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -1816,11 +1812,7 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 19,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -2160,9 +2152,6 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -3058,9 +3047,6 @@ OPERATION_MANIFEST = {
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -3400,9 +3386,6 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -4281,9 +4264,6 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -5567,11 +5547,7 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -6367,11 +6343,7 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -6719,11 +6691,7 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -7644,11 +7612,7 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -7944,11 +7908,7 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -8749,11 +8709,7 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -9101,9 +9057,6 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -10011,9 +9964,6 @@ OPERATION_MANIFEST = {
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -10182,10 +10132,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -10407,10 +10353,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "randomizedStartTime" : false,
@@ -10466,9 +10408,6 @@ OPERATION_MANIFEST = {
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -10728,10 +10667,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -11042,10 +10977,6 @@ OPERATION_MANIFEST = {
                     "verifyCertificate" : false,
                     "overrideAgentProxy" : false,
                     "liveShare" : false,
-                    "agentInterfaces" : {
-                      "agentId" : "2954",
-                      "ipAddress" : "192.1.1.0"
-                    },
                     "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
@@ -11145,10 +11076,6 @@ OPERATION_MANIFEST = {
                     "verifyCertificate" : false,
                     "overrideAgentProxy" : false,
                     "liveShare" : false,
-                    "agentInterfaces" : {
-                      "agentId" : "2954",
-                      "ipAddress" : "192.1.1.0"
-                    },
                     "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
@@ -11358,10 +11285,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -11583,10 +11506,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "randomizedStartTime" : false,
@@ -11642,9 +11561,6 @@ OPERATION_MANIFEST = {
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -11816,10 +11732,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -12052,10 +11964,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "httpInterval" : 120,
@@ -12116,11 +12024,7 @@ OPERATION_MANIFEST = {
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "disableScreenshot" : false,
@@ -12384,10 +12288,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -12709,10 +12609,6 @@ OPERATION_MANIFEST = {
                     "verifyCertificate" : false,
                     "overrideAgentProxy" : false,
                     "liveShare" : false,
-                    "agentInterfaces" : {
-                      "agentId" : "2954",
-                      "ipAddress" : "192.1.1.0"
-                    },
                     "httpInterval" : 120,
                     "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
@@ -12823,10 +12719,6 @@ OPERATION_MANIFEST = {
                     "verifyCertificate" : false,
                     "overrideAgentProxy" : false,
                     "liveShare" : false,
-                    "agentInterfaces" : {
-                      "agentId" : "2954",
-                      "ipAddress" : "192.1.1.0"
-                    },
                     "httpInterval" : 120,
                     "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
@@ -13047,10 +12939,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -13283,10 +13171,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "httpInterval" : 120,
@@ -13347,11 +13231,7 @@ OPERATION_MANIFEST = {
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "disableScreenshot" : false,
@@ -14182,9 +14062,6 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -15089,9 +14966,6 @@ OPERATION_MANIFEST = {
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -15685,9 +15559,6 @@ OPERATION_MANIFEST = {
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -16563,9 +16434,6 @@ OPERATION_MANIFEST = {
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "codec" : "G.711 @ 64 Kbps",
                   "codecId" : "0",
@@ -16739,10 +16607,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -16977,10 +16841,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "randomizedStartTime" : false,
@@ -17040,11 +16900,7 @@ OPERATION_MANIFEST = {
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",
@@ -17311,10 +17167,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -17638,10 +17490,6 @@ OPERATION_MANIFEST = {
                     "verifyCertificate" : false,
                     "overrideAgentProxy" : false,
                     "liveShare" : false,
-                    "agentInterfaces" : {
-                      "agentId" : "2954",
-                      "ipAddress" : "192.1.1.0"
-                    },
                     "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
@@ -17753,10 +17601,6 @@ OPERATION_MANIFEST = {
                     "verifyCertificate" : false,
                     "overrideAgentProxy" : false,
                     "liveShare" : false,
-                    "agentInterfaces" : {
-                      "agentId" : "2954",
-                      "ipAddress" : "192.1.1.0"
-                    },
                     "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
@@ -17978,10 +17822,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -18216,10 +18056,6 @@ OPERATION_MANIFEST = {
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "randomizedStartTime" : false,
@@ -18279,11 +18115,7 @@ OPERATION_MANIFEST = {
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "timeLimit" : 30,
                   "createdDate" : "2022-07-17T22:00:54Z",

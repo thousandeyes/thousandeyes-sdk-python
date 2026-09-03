@@ -19,7 +19,6 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.instant_tests.models.agent_interfaces import AgentInterfaces
 from thousandeyes_sdk.instant_tests.models.o_auth import OAuth
 from thousandeyes_sdk.instant_tests.models.test_auth_type import TestAuthType
 from thousandeyes_sdk.instant_tests.models.test_chromium_track import TestChromiumTrack
@@ -38,7 +37,6 @@ class PageLoadProperties(BaseModel):
     PageLoadProperties
     """ # noqa: E501
     auth_type: Optional[TestAuthType] = Field(default=None, alias="authType")
-    agent_interfaces: Optional[AgentInterfaces] = Field(default=None, alias="agentInterfaces")
     bandwidth_measurements: Optional[StrictBool] = Field(default=None, description="Set to `true` to enable bandwidth measurements, only applies to Enterprise agents assigned to the test.", alias="bandwidthMeasurements")
     client_certificate: Optional[StrictStr] = Field(default=None, description="String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate.", alias="clientCertificate")
     content_regex: Optional[StrictStr] = Field(default=None, description="Content regex, this field does not require escaping.", alias="contentRegex")
@@ -88,7 +86,7 @@ class PageLoadProperties(BaseModel):
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     type: Optional[StrictStr] = None
     identify_agent_traffic_with_user_agent: Optional[StrictBool] = Field(default=False, description="Determines how agent traffic is identified:  * `false`: Adds the `x-thousandeyes-agent: yes` header. * `true`: Appends `(ThousandEyes Agent)` to the `user-agent` header.  For more information, see [Notes on Agent ID Strategy](https://docs.thousandeyes.com/product-documentation/browser-synthetics/test-settings-page-load-transaction#notes-on-agent-id-strategy). ", alias="identifyAgentTrafficWithUserAgent")
-    __properties: ClassVar[List[str]] = ["authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "chromiumTrack", "pageLoadingStrategy", "randomizedStartTime", "type", "identifyAgentTrafficWithUserAgent"]
+    __properties: ClassVar[List[str]] = ["authType", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "chromiumTrack", "pageLoadingStrategy", "randomizedStartTime", "type", "identifyAgentTrafficWithUserAgent"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -134,9 +132,6 @@ class PageLoadProperties(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of agent_interfaces
-        if self.agent_interfaces:
-            _dict['agentInterfaces'] = self.agent_interfaces.to_dict()
         # override the default output from pydantic by calling `to_dict()` of custom_headers
         if self.custom_headers:
             _dict['customHeaders'] = self.custom_headers.to_dict()
@@ -163,7 +158,6 @@ class PageLoadProperties(BaseModel):
 
         _obj = cls.model_validate({
             "authType": obj.get("authType"),
-            "agentInterfaces": AgentInterfaces.from_dict(obj["agentInterfaces"]) if obj.get("agentInterfaces") is not None else None,
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "clientCertificate": obj.get("clientCertificate"),
             "contentRegex": obj.get("contentRegex"),

@@ -21,7 +21,7 @@ from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, Strict
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
 from thousandeyes_sdk.instant_tests.models.ftp_server_request_type import FtpServerRequestType
-from thousandeyes_sdk.instant_tests.models.test_agent import TestAgent
+from thousandeyes_sdk.instant_tests.models.test_agent_with_source_ip_address import TestAgentWithSourceIpAddress
 from thousandeyes_sdk.instant_tests.models.test_ipv6_policy import TestIpv6Policy
 from thousandeyes_sdk.instant_tests.models.test_links import TestLinks
 from thousandeyes_sdk.instant_tests.models.test_path_trace_mode import TestPathTraceMode
@@ -67,7 +67,7 @@ class FtpServerInstantTestRequest(BaseModel):
     labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
     tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
     shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
-    agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
+    agents: List[TestAgentWithSourceIpAddress] = Field(description="Agents assigned to the test. To select a source interface, set `sourceIpAddress` on the same object as its `agentId`.")
     __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "bandwidthMeasurements", "downloadLimit", "ftpTargetTime", "ftpTimeLimit", "mtuMeasurements", "networkMeasurements", "numPathTraces", "password", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "requestType", "url", "useActiveFtp", "useExplicitFtps", "username", "fixedPacketRate", "ipv6Policy", "labels", "tags", "sharedWithAccounts", "agents"]
 
     model_config = ConfigDict(
@@ -181,7 +181,7 @@ class FtpServerInstantTestRequest(BaseModel):
             "labels": obj.get("labels"),
             "tags": obj.get("tags"),
             "sharedWithAccounts": obj.get("sharedWithAccounts"),
-            "agents": [TestAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
+            "agents": [TestAgentWithSourceIpAddress.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None
         })
         return _obj
 

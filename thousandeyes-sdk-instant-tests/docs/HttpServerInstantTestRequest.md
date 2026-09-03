@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **type** | **str** |  | [optional] [readonly] 
 **links** | [**TestLinks**](TestLinks.md) |  | [optional] 
 **auth_type** | [**TestAuthType**](TestAuthType.md) |  | [optional] 
-**agent_interfaces** | [**AgentInterfaces**](AgentInterfaces.md) |  | [optional] 
 **bandwidth_measurements** | **bool** | Set to &#x60;true&#x60; to enable bandwidth measurements, only applies to Enterprise agents assigned to the test. | [optional] 
 **client_certificate** | **str** | String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate. | [optional] 
 **content_regex** | **str** | Content regex, this field does not require escaping. | [optional] 
@@ -60,7 +59,7 @@ Name | Type | Description | Notes
 **labels** | **List[str]** | A list of test label identifiers (get &#x60;labelId&#x60; from &#x60;/labels&#x60; endpoint). | [optional] 
 **tags** | **List[str]** | A list of test tag identifiers (get &#x60;id&#x60; from &#x60;/tags&#x60; endpoint). | [optional] 
 **shared_with_accounts** | **List[str]** | A list of account group identifiers that the test is shared with (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint). | [optional] 
-**agents** | [**List[TestAgent]**](TestAgent.md) | A list of objects with &#x60;agentId&#x60; (required) and &#x60;sourceIpAddress&#x60; (optional). | 
+**agents** | [**List[TestAgentWithSourceIpAddress]**](TestAgentWithSourceIpAddress.md) | Agents assigned to the test. To select a source interface, set &#x60;sourceIpAddress&#x60; on the same object as its &#x60;agentId&#x60;. | 
 
 ## Example
 

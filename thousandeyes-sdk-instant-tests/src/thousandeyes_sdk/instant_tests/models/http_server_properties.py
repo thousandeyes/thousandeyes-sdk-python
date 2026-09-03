@@ -19,7 +19,6 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.instant_tests.models.agent_interfaces import AgentInterfaces
 from thousandeyes_sdk.instant_tests.models.o_auth import OAuth
 from thousandeyes_sdk.instant_tests.models.request_method import RequestMethod
 from thousandeyes_sdk.instant_tests.models.test_auth_type import TestAuthType
@@ -38,7 +37,6 @@ class HttpServerProperties(BaseModel):
     HttpServerProperties
     """ # noqa: E501
     auth_type: Optional[TestAuthType] = Field(default=None, alias="authType")
-    agent_interfaces: Optional[AgentInterfaces] = Field(default=None, alias="agentInterfaces")
     bandwidth_measurements: Optional[StrictBool] = Field(default=None, description="Set to `true` to enable bandwidth measurements, only applies to Enterprise agents assigned to the test.", alias="bandwidthMeasurements")
     client_certificate: Optional[StrictStr] = Field(default=None, description="String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate.", alias="clientCertificate")
     content_regex: Optional[StrictStr] = Field(default=None, description="Content regex, this field does not require escaping.", alias="contentRegex")
@@ -79,7 +77,7 @@ class HttpServerProperties(BaseModel):
     post_body: Optional[StrictStr] = Field(default=None, description="Enter the body for the HTTP POST request in this field. No special escaping is required. If content is provided and `requestMethod` is not specified, `requestMethod` is automatically set to `post`.", alias="postBody")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
     type: Optional[StrictStr] = None
-    __properties: ClassVar[List[str]] = ["authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "headers", "randomizedStartTime", "requestMethod", "postBody", "ipv6Policy", "type"]
+    __properties: ClassVar[List[str]] = ["authType", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "headers", "randomizedStartTime", "requestMethod", "postBody", "ipv6Policy", "type"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -125,9 +123,6 @@ class HttpServerProperties(BaseModel):
             exclude=excluded_fields,
             exclude_none=True,
         )
-        # override the default output from pydantic by calling `to_dict()` of agent_interfaces
-        if self.agent_interfaces:
-            _dict['agentInterfaces'] = self.agent_interfaces.to_dict()
         # override the default output from pydantic by calling `to_dict()` of custom_headers
         if self.custom_headers:
             _dict['customHeaders'] = self.custom_headers.to_dict()
@@ -154,7 +149,6 @@ class HttpServerProperties(BaseModel):
 
         _obj = cls.model_validate({
             "authType": obj.get("authType"),
-            "agentInterfaces": AgentInterfaces.from_dict(obj["agentInterfaces"]) if obj.get("agentInterfaces") is not None else None,
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "clientCertificate": obj.get("clientCertificate"),
             "contentRegex": obj.get("contentRegex"),
