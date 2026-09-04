@@ -20,7 +20,6 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.instant_tests.models.agent_interfaces import AgentInterfaces
 from thousandeyes_sdk.instant_tests.models.o_auth import OAuth
 from thousandeyes_sdk.instant_tests.models.shared_with_account import SharedWithAccount
 from thousandeyes_sdk.instant_tests.models.test_agent_response import TestAgentResponse
@@ -58,7 +57,6 @@ class PageLoadInstantTestResponse(BaseModel):
     tags: Optional[List[TestTag]] = Field(default=None, description="Tags assigned to the test. Returned only when `expand=tag` is specified. This field is not returned for Instant Tests. For more information, see `/tags`.")
     shared_with_accounts: Optional[List[SharedWithAccount]] = Field(default=None, alias="sharedWithAccounts")
     auth_type: Optional[TestAuthType] = Field(default=None, alias="authType")
-    agent_interfaces: Optional[AgentInterfaces] = Field(default=None, alias="agentInterfaces")
     bandwidth_measurements: Optional[StrictBool] = Field(default=None, description="Set to `true` to enable bandwidth measurements, only applies to Enterprise agents assigned to the test.", alias="bandwidthMeasurements")
     client_certificate: Optional[StrictStr] = Field(default=None, description="String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate.", alias="clientCertificate")
     content_regex: Optional[StrictStr] = Field(default=None, description="Content regex, this field does not require escaping.", alias="contentRegex")
@@ -108,7 +106,7 @@ class PageLoadInstantTestResponse(BaseModel):
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     identify_agent_traffic_with_user_agent: Optional[StrictBool] = Field(default=False, description="Determines how agent traffic is identified:  * `false`: Adds the `x-thousandeyes-agent: yes` header. * `true`: Appends `(ThousandEyes Agent)` to the `user-agent` header.  For more information, see [Notes on Agent ID Strategy](https://docs.thousandeyes.com/product-documentation/browser-synthetics/test-settings-page-load-transaction#notes-on-agent-id-strategy). ", alias="identifyAgentTrafficWithUserAgent")
     agents: Optional[List[TestAgentResponse]] = Field(default=None, description="Contains list of agents.")
-    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "authType", "agentInterfaces", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "chromiumTrack", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent", "agents"]
+    __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "labels", "tags", "sharedWithAccounts", "authType", "bandwidthMeasurements", "clientCertificate", "contentRegex", "customHeaders", "desiredStatusCode", "distributedTracing", "downloadLimit", "dnsOverride", "httpTargetTime", "httpTimeLimit", "httpVersion", "includeHeaders", "mtuMeasurements", "networkMeasurements", "numPathTraces", "oAuth", "password", "pathTraceMode", "probeMode", "protocol", "sslVersion", "sslVersionId", "url", "useNtlm", "userAgent", "username", "verifyCertificate", "allowUnsafeLegacyRenegotiation", "followRedirects", "fixedPacketRate", "overrideAgentProxy", "overrideProxyId", "collectProxyNetworkData", "vaultCredentials", "emulatedDeviceId", "pageLoadTargetTime", "pageLoadTimeLimit", "blockDomains", "disableScreenshot", "allowMicAndCamera", "allowGeolocation", "browserLanguage", "chromeOptions", "chromePolicies", "chromiumTrack", "pageLoadingStrategy", "randomizedStartTime", "identifyAgentTrafficWithUserAgent", "agents"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -198,9 +196,6 @@ class PageLoadInstantTestResponse(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['sharedWithAccounts'] = _items
-        # override the default output from pydantic by calling `to_dict()` of agent_interfaces
-        if self.agent_interfaces:
-            _dict['agentInterfaces'] = self.agent_interfaces.to_dict()
         # override the default output from pydantic by calling `to_dict()` of custom_headers
         if self.custom_headers:
             _dict['customHeaders'] = self.custom_headers.to_dict()
@@ -248,7 +243,6 @@ class PageLoadInstantTestResponse(BaseModel):
             "tags": [TestTag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "sharedWithAccounts": [SharedWithAccount.from_dict(_item) for _item in obj["sharedWithAccounts"]] if obj.get("sharedWithAccounts") is not None else None,
             "authType": obj.get("authType"),
-            "agentInterfaces": AgentInterfaces.from_dict(obj["agentInterfaces"]) if obj.get("agentInterfaces") is not None else None,
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "clientCertificate": obj.get("clientCertificate"),
             "contentRegex": obj.get("contentRegex"),

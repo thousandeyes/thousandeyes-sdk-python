@@ -70,7 +70,7 @@ class ApiInstantTestRequest(BaseModel):
     labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
     tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
     shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
-    agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
+    agents: List[TestAgent] = Field(description="Agents assigned to the test.")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
     vault_credentials: Optional[List[TestVaultCredential]] = Field(default=None, description="List of credential IDs that are stored in an external vault.", alias="vaultCredentials")
     __properties: ClassVar[List[str]] = ["createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "clientCertificate", "clientCertDomainsAllowList", "collectProxyNetworkData", "distributedTracing", "followRedirects", "mtuMeasurements", "networkMeasurements", "numPathTraces", "overrideAgentProxy", "overrideProxyId", "pathTraceMode", "predefinedVariables", "probeMode", "protocol", "randomizedStartTime", "requests", "sslVersionId", "targetTime", "timeLimit", "url", "labels", "tags", "sharedWithAccounts", "agents", "credentials", "vaultCredentials"]

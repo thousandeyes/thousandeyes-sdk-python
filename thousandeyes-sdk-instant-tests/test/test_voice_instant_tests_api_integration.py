@@ -67,9 +67,6 @@ class TestVoiceInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "codec" : "G.711 @ 64 Kbps",
                   "codecId" : "0",
@@ -250,9 +247,6 @@ class TestVoiceInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "codec" : "G.711 @ 64 Kbps",
                   "codecId" : "0",
@@ -343,9 +337,6 @@ class TestVoiceInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "codec" : "G.711 @ 64 Kbps",
                   "codecId" : "0",
@@ -422,9 +413,6 @@ class TestVoiceInstantTestsApiIntegration(IntegrationTestBase):
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -508,9 +496,6 @@ class TestVoiceInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "codec" : "G.711 @ 64 Kbps",
                   "codecId" : "0",
@@ -590,9 +575,6 @@ class TestVoiceInstantTestsApiIntegration(IntegrationTestBase):
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -676,9 +658,6 @@ class TestVoiceInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "codec" : "G.711 @ 64 Kbps",
                   "codecId" : "0",
@@ -758,9 +737,6 @@ class TestVoiceInstantTestsApiIntegration(IntegrationTestBase):
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],

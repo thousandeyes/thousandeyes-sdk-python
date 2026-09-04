@@ -39,7 +39,7 @@ Name | Type | Description | Notes
 **labels** | **List[str]** | A list of test label identifiers (get &#x60;labelId&#x60; from &#x60;/labels&#x60; endpoint). | [optional] 
 **tags** | **List[str]** | A list of test tag identifiers (get &#x60;id&#x60; from &#x60;/tags&#x60; endpoint). | [optional] 
 **shared_with_accounts** | **List[str]** | A list of account group identifiers that the test is shared with (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint). | [optional] 
-**agents** | [**List[TestAgent]**](TestAgent.md) | A list of objects with &#x60;agentId&#x60; (required) and &#x60;sourceIpAddress&#x60; (optional). | 
+**agents** | [**List[TestAgent]**](TestAgent.md) | Agents assigned to the test. | 
 **credentials** | **List[str]** | Contains a list of credential IDs (get &#x60;credentialId&#x60; from &#x60;/credentials&#x60; endpoint). | [optional] 
 **vault_credentials** | [**List[TestVaultCredential]**](TestVaultCredential.md) | List of credential IDs that are stored in an external vault. | [optional] 
 
