@@ -21,13 +21,13 @@ from typing import Any, ClassVar, Dict, List, Optional
 from typing import Optional, Set
 from typing_extensions import Self
 
-class AgentInterfaces(BaseModel):
+class TestAgentWithSourceIpAddress(BaseModel):
     """
-    AgentInterfaces
+    TestAgentWithSourceIpAddress
     """ # noqa: E501
-    ip_address: Optional[StrictStr] = Field(default=None, description="IP address of the agent interface.", alias="ipAddress")
-    agent_id: Optional[StrictStr] = Field(default=None, description="The agent ID of the enterprise agent for the test.", alias="agentId")
-    __properties: ClassVar[List[str]] = ["ipAddress", "agentId"]
+    agent_id: Optional[StrictStr] = Field(default=None, description="Identifier for the agent (get `agentId` from `/agents` endpoint).", alias="agentId")
+    source_ip_address: Optional[StrictStr] = Field(default=None, description="The Enterprise Agent interface IP address to use as the source for the test. The address must be listed in the agent's `ipAddresses` field, available from the `/agents` endpoint. It is not supported for Cloud Agents or Enterprise Agent clusters.", alias="sourceIpAddress")
+    __properties: ClassVar[List[str]] = ["agentId", "sourceIpAddress"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -48,7 +48,7 @@ class AgentInterfaces(BaseModel):
 
     @classmethod
     def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of AgentInterfaces from a JSON string"""
+        """Create an instance of TestAgentWithSourceIpAddress from a JSON string"""
         return cls.from_dict(json.loads(json_str))
 
     def to_dict(self) -> Dict[str, Any]:
@@ -73,7 +73,7 @@ class AgentInterfaces(BaseModel):
 
     @classmethod
     def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of AgentInterfaces from a dict"""
+        """Create an instance of TestAgentWithSourceIpAddress from a dict"""
         if obj is None:
             return None
 
@@ -81,8 +81,8 @@ class AgentInterfaces(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "ipAddress": obj.get("ipAddress"),
-            "agentId": obj.get("agentId")
+            "agentId": obj.get("agentId"),
+            "sourceIpAddress": obj.get("sourceIpAddress")
         })
         return _obj
 

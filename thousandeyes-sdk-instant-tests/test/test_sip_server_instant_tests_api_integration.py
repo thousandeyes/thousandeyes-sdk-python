@@ -80,9 +80,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -281,9 +278,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -384,9 +378,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -473,9 +464,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -569,9 +557,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -661,9 +646,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],
@@ -757,9 +739,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -849,9 +828,6 @@ class TestSIPServerInstantTestsApiIntegration(IntegrationTestBase):
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
                   } ],

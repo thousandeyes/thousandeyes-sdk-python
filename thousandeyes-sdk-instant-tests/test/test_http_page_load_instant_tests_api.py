@@ -77,10 +77,6 @@ class TestHTTPPageLoadInstantTestsApi(unittest.TestCase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "c6b78e57-81a2-4c5f-a11a-d96c3c664d55" ],
                   "randomizedStartTime" : false,
@@ -133,11 +129,7 @@ class TestHTTPPageLoadInstantTestsApi(unittest.TestCase):
                   "networkMeasurements" : true,
                   "url" : "www.thousandeyes.com",
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "disableScreenshot" : false,
@@ -155,6 +147,7 @@ class TestHTTPPageLoadInstantTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.instant_tests.models.PageLoadInstantTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "clientCertificate" : "-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n",
@@ -202,10 +195,6 @@ class TestHTTPPageLoadInstantTestsApi(unittest.TestCase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -338,6 +327,7 @@ class TestHTTPPageLoadInstantTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.instant_tests.models.PageLoadInstantTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

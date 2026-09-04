@@ -43,6 +43,7 @@ class TestTestSnapshotsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.snapshots.models.SnapshotRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "shareDate" : "2023-06-06T00:00:00Z",
@@ -114,6 +115,7 @@ class TestTestSnapshotsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.snapshots.models.SnapshotResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

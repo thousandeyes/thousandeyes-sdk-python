@@ -52,6 +52,7 @@ class TestAgentToServerEndpointScheduledTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_tests.models.EndpointAgentToServerTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "server" : "www.example.com",
@@ -106,14 +107,17 @@ class TestAgentToServerEndpointScheduledTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_tests.models.EndpointAgentToServerTest.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_agent_to_server_endpoint_scheduled_test_models_validation(self) -> None:
         """Test case for delete_agent_to_server_endpoint_scheduled_test request and response models"""
 
+        
 
     def test_get_agent_to_server_endpoint_scheduled_test_models_validation(self) -> None:
         """Test case for get_agent_to_server_endpoint_scheduled_test request and response models"""
 
+        
         response_body_json = """
                 {
                   "server" : "www.example.com",
@@ -168,10 +172,12 @@ class TestAgentToServerEndpointScheduledTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_tests.models.EndpointAgentToServerTest.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_agent_to_server_endpoint_scheduled_tests_models_validation(self) -> None:
         """Test case for get_agent_to_server_endpoint_scheduled_tests request and response models"""
 
+        
         response_body_json = """
                 {
                   "tests" : [ {
@@ -288,6 +294,7 @@ class TestAgentToServerEndpointScheduledTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_tests.models.EndpointAgentToServerTests.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_agent_to_server_endpoint_scheduled_test_models_validation(self) -> None:
         """Test case for update_agent_to_server_endpoint_scheduled_test request and response models"""
@@ -307,6 +314,7 @@ class TestAgentToServerEndpointScheduledTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_tests.models.EndpointNetworkTestUpdate.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "server" : "www.example.com",
@@ -361,6 +369,7 @@ class TestAgentToServerEndpointScheduledTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_tests.models.EndpointAgentToServerTest.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

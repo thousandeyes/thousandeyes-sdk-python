@@ -71,6 +71,7 @@ class TestDashboardsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.dashboards.models.CloneDashboardRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "isMigratedReport" : false,
@@ -236,6 +237,7 @@ class TestDashboardsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.Dashboard.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_create_dashboard_models_validation(self) -> None:
         """Test case for create_dashboard request and response models"""
@@ -406,6 +408,7 @@ class TestDashboardsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.dashboards.models.Dashboard.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "isMigratedReport" : false,
@@ -571,18 +574,22 @@ class TestDashboardsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.Dashboard.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_dashboard_models_validation(self) -> None:
         """Test case for delete_dashboard request and response models"""
 
+        
 
     def test_delete_dashboard_schedule_models_validation(self) -> None:
         """Test case for delete_dashboard_schedule request and response models"""
 
+        
 
     def test_get_dashboard_models_validation(self) -> None:
         """Test case for get_dashboard request and response models"""
 
+        
         response_body_json = """
                 {
                   "isMigratedReport" : false,
@@ -759,10 +766,12 @@ class TestDashboardsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.ApiDashboard.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_dashboard_widget_data_models_validation(self) -> None:
         """Test case for get_dashboard_widget_data request and response models"""
 
+        
         response_body_json = """
                 {
                   "groupLabels" : [ {
@@ -1219,10 +1228,12 @@ class TestDashboardsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.ApiWidgetDataResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_dashboards_models_validation(self) -> None:
         """Test case for get_dashboards request and response models"""
 
+        
         response_body_json = """
                 [ {
                   "isMigratedReport" : false,
@@ -1572,10 +1583,12 @@ class TestDashboardsApi(unittest.TestCase):
         for index, element in enumerate(response_from_dict):
             self.assertIsNotNone(element)
             assert_constructed_model_matches_example_json(element, response_loaded_json[index])
+        
 
     def test_get_individual_card_data_models_validation(self) -> None:
         """Test case for get_individual_card_data request and response models"""
 
+        
         response_body_json = """
                 {
                   "numberOfDataPoints" : 24192,
@@ -1624,10 +1637,12 @@ class TestDashboardsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.ApiNumbersCardData.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_individual_column_data_models_validation(self) -> None:
         """Test case for get_individual_column_data request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -1692,6 +1707,7 @@ class TestDashboardsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.ApiMultiMetricColumnData.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_dashboard_models_validation(self) -> None:
         """Test case for update_dashboard request and response models"""
@@ -1862,6 +1878,7 @@ class TestDashboardsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.dashboards.models.Dashboard.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "isMigratedReport" : false,
@@ -2027,6 +2044,7 @@ class TestDashboardsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.Dashboard.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_dashboard_schedule_models_validation(self) -> None:
         """Test case for update_dashboard_schedule request and response models"""
@@ -2061,6 +2079,7 @@ class TestDashboardsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.dashboards.models.DashboardScheduleRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "isMigratedReport" : false,
@@ -2237,6 +2256,7 @@ class TestDashboardsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.ApiDashboard.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

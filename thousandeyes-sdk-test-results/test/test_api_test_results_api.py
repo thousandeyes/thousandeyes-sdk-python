@@ -31,6 +31,7 @@ class TestAPITestResultsApi(unittest.TestCase):
     def test_get_test_api_agent_round_results_models_validation(self) -> None:
         """Test case for get_test_api_agent_round_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "test" : {
@@ -255,10 +256,12 @@ class TestAPITestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.test_results.models.ApiDetailTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_test_api_results_models_validation(self) -> None:
         """Test case for get_test_api_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "test" : {
@@ -387,6 +390,7 @@ class TestAPITestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.test_results.models.ApiTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

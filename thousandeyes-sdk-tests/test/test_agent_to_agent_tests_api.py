@@ -76,9 +76,6 @@ class TestAgentToAgentTestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -97,6 +94,7 @@ class TestAgentToAgentTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.AgentToAgentTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -264,14 +262,17 @@ class TestAgentToAgentTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.AgentToAgentTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_agent_to_agent_test_models_validation(self) -> None:
         """Test case for delete_agent_to_agent_test request and response models"""
 
+        
 
     def test_get_agent_to_agent_test_models_validation(self) -> None:
         """Test case for get_agent_to_agent_test request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -439,10 +440,12 @@ class TestAgentToAgentTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.AgentToAgentTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_agent_to_agent_tests_models_validation(self) -> None:
         """Test case for get_agent_to_agent_tests request and response models"""
 
+        
         response_body_json = """
                 {
                   "tests" : [ {
@@ -557,6 +560,7 @@ class TestAgentToAgentTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.AgentToAgentTests.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_agent_to_agent_test_models_validation(self) -> None:
         """Test case for update_agent_to_agent_test request and response models"""
@@ -606,9 +610,6 @@ class TestAgentToAgentTestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -627,6 +628,7 @@ class TestAgentToAgentTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.AgentToAgentTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -794,6 +796,7 @@ class TestAgentToAgentTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.AgentToAgentTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

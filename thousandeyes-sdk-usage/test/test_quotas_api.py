@@ -58,6 +58,7 @@ class TestQuotasApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.usage.models.OrganizationsQuotasAssign.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "organizations" : [ {
@@ -84,6 +85,7 @@ class TestQuotasApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.usage.models.OrganizationsQuotasAssign.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_assign_organizations_quotas_models_validation(self) -> None:
         """Test case for assign_organizations_quotas request and response models"""
@@ -102,6 +104,7 @@ class TestQuotasApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.usage.models.QuotasAssignRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "organizations" : [ {
@@ -116,10 +119,12 @@ class TestQuotasApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.usage.models.QuotasAssignResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_quotas_models_validation(self) -> None:
         """Test case for get_quotas request and response models"""
 
+        
         response_body_json = """
                 {
                   "quotas" : [ {
@@ -164,6 +169,7 @@ class TestQuotasApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.usage.models.Quotas.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_unassign_organizations_account_groups_quotas_models_validation(self) -> None:
         """Test case for unassign_organizations_account_groups_quotas request and response models"""
@@ -183,6 +189,7 @@ class TestQuotasApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.usage.models.OrganizationsQuotasUnassign.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
 
     def test_unassign_organizations_quotas_models_validation(self) -> None:
         """Test case for unassign_organizations_quotas request and response models"""
@@ -196,6 +203,7 @@ class TestQuotasApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.usage.models.QuotasUnassign.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
 
 
 if __name__ == '__main__':

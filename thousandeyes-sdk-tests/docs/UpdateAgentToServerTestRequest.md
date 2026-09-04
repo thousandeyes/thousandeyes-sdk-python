@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 **ipv6_policy** | [**TestIpv6Policy**](TestIpv6Policy.md) |  | [optional] 
 **ping_payload_size** | **int** | Payload size (not total packet size) for the end-to-end metric&#39;s probes, ping payload size allows values from 0 to 1400 bytes. When set to null, payload sizes are 0 bytes for ICMP-based tests and 1 byte for TCP-based tests. | [optional] 
 **network_measurements** | **bool** | View packet loss in 1-second intervals. This is only available for 1-minute interval tests. Set to &#x60;true&#x60; to enable network measurements. | [optional] [default to False]
-**agents** | [**List[TestAgentRequest]**](TestAgentRequest.md) | Contains list of Agent IDs (get &#x60;agentId&#x60; from &#x60;/agents&#x60; endpoint). | [optional] 
+**agents** | [**List[TestAgentWithSourceIpRequest]**](TestAgentWithSourceIpRequest.md) | Agents assigned to the test. To select a source interface, set &#x60;sourceIpAddress&#x60; on the same object as its &#x60;agentId&#x60;. | [optional] 
 **interval** | [**TestInterval**](TestInterval.md) |  | [optional] 
 **alerts_enabled** | **bool** | Indicates if alerts are enabled. | [optional] 
 **enabled** | **bool** | Test is enabled. | [optional] [default to True]

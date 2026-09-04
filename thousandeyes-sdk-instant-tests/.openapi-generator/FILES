@@ -3,7 +3,6 @@ MANIFEST.in
 README.md
 docs/APIInstantTestsApi.md
 docs/AgentBase.md
-docs/AgentInterfaces.md
 docs/AgentResponse.md
 docs/AgentToAgentInstantTest.md
 docs/AgentToAgentInstantTestRequest.md
@@ -67,6 +66,7 @@ docs/HttpServerInstantTestResponse.md
 docs/HttpServerProperties.md
 docs/InstantTest.md
 docs/InstantTestRequest.md
+docs/InstantTestRequestProperties.md
 docs/InstantTestsApi.md
 docs/Link.md
 docs/NetworkProviderInfo.md
@@ -87,9 +87,11 @@ docs/SipServerInstantTestRequest.md
 docs/SipServerInstantTestResponse.md
 docs/SipServerProperties.md
 docs/SipTestProtocol.md
+docs/SourceInterfaceInstantTestRequest.md
 docs/TestAgent.md
 docs/TestAgentResponse.md
 docs/TestAgentResponseProperties.md
+docs/TestAgentWithSourceIpAddress.md
 docs/TestAuthType.md
 docs/TestChromiumTrack.md
 docs/TestCustomHeaders.md
@@ -144,7 +146,6 @@ src/thousandeyes_sdk/instant_tests/api/voice_instant_tests_api.py
 src/thousandeyes_sdk/instant_tests/api/web_transaction_instant_tests_api.py
 src/thousandeyes_sdk/instant_tests/models/__init__.py
 src/thousandeyes_sdk/instant_tests/models/agent_base.py
-src/thousandeyes_sdk/instant_tests/models/agent_interfaces.py
 src/thousandeyes_sdk/instant_tests/models/agent_response.py
 src/thousandeyes_sdk/instant_tests/models/agent_to_agent_instant_test.py
 src/thousandeyes_sdk/instant_tests/models/agent_to_agent_instant_test_request.py
@@ -200,6 +201,7 @@ src/thousandeyes_sdk/instant_tests/models/http_server_instant_test_response.py
 src/thousandeyes_sdk/instant_tests/models/http_server_properties.py
 src/thousandeyes_sdk/instant_tests/models/instant_test.py
 src/thousandeyes_sdk/instant_tests/models/instant_test_request.py
+src/thousandeyes_sdk/instant_tests/models/instant_test_request_properties.py
 src/thousandeyes_sdk/instant_tests/models/link.py
 src/thousandeyes_sdk/instant_tests/models/network_provider_info.py
 src/thousandeyes_sdk/instant_tests/models/network_provider_type.py
@@ -218,9 +220,11 @@ src/thousandeyes_sdk/instant_tests/models/sip_server_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/sip_server_instant_test_response.py
 src/thousandeyes_sdk/instant_tests/models/sip_server_properties.py
 src/thousandeyes_sdk/instant_tests/models/sip_test_protocol.py
+src/thousandeyes_sdk/instant_tests/models/source_interface_instant_test_request.py
 src/thousandeyes_sdk/instant_tests/models/test_agent.py
 src/thousandeyes_sdk/instant_tests/models/test_agent_response.py
 src/thousandeyes_sdk/instant_tests/models/test_agent_response_properties.py
+src/thousandeyes_sdk/instant_tests/models/test_agent_with_source_ip_address.py
 src/thousandeyes_sdk/instant_tests/models/test_auth_type.py
 src/thousandeyes_sdk/instant_tests/models/test_chromium_track.py
 src/thousandeyes_sdk/instant_tests/models/test_custom_headers.py

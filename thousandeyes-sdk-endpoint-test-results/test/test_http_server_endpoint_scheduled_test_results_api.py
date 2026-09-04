@@ -31,6 +31,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
     def test_get_http_server_scheduled_test_results_models_validation(self) -> None:
         """Test case for get_http_server_scheduled_test_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "test" : {
@@ -382,6 +383,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.HttpEndpointTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_multi_test_filtered_http_server_scheduled_test_results_models_validation(self) -> None:
         """Test case for get_multi_test_filtered_http_server_scheduled_test_results request and response models"""
@@ -420,6 +422,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.HttpEndpointTestsDataRoundsSearch.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "totalHits" : 12,
@@ -711,6 +714,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.HttpMultiEndpointTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_single_test_filtered_http_server_scheduled_test_results_models_validation(self) -> None:
         """Test case for get_single_test_filtered_http_server_scheduled_test_results request and response models"""
@@ -749,6 +753,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.HttpEndpointTestsDataRoundsSearch.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "totalHits" : 12,
@@ -1040,6 +1045,7 @@ class TestHTTPServerEndpointScheduledTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.HttpMultiEndpointTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

@@ -31,6 +31,7 @@ class TestBGPMonitorsApi(unittest.TestCase):
     def test_get_bgp_monitors_models_validation(self) -> None:
         """Test case for get_bgp_monitors request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -65,6 +66,7 @@ class TestBGPMonitorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.bgp_monitors.models.Monitors.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

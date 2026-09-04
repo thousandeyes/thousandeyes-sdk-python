@@ -31,6 +31,7 @@ class TestEndpointProxiesApi(unittest.TestCase):
     def test_get_endpoint_proxies_models_validation(self) -> None:
         """Test case for get_endpoint_proxies request and response models"""
 
+        
         response_body_json = """
                 {
                   "proxies" : [ {
@@ -63,6 +64,7 @@ class TestEndpointProxiesApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_agents.models.EndpointProxiesResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

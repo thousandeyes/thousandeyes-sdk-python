@@ -83,9 +83,6 @@ class TestSIPServerTestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -103,6 +100,7 @@ class TestSIPServerTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.SipServerTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "mtuMeasurements" : false,
@@ -274,14 +272,17 @@ class TestSIPServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.SipServerTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_sip_server_test_models_validation(self) -> None:
         """Test case for delete_sip_server_test request and response models"""
 
+        
 
     def test_get_sip_server_test_models_validation(self) -> None:
         """Test case for get_sip_server_test request and response models"""
 
+        
         response_body_json = """
                 {
                   "mtuMeasurements" : false,
@@ -453,10 +454,12 @@ class TestSIPServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.SipServerTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_sip_server_tests_models_validation(self) -> None:
         """Test case for get_sip_server_tests request and response models"""
 
+        
         response_body_json = """
                 {
                   "tests" : [ {
@@ -579,6 +582,7 @@ class TestSIPServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.SipServerTests.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_sip_server_test_models_validation(self) -> None:
         """Test case for update_sip_server_test request and response models"""
@@ -635,9 +639,6 @@ class TestSIPServerTestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -655,6 +656,7 @@ class TestSIPServerTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.SipServerTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "mtuMeasurements" : false,
@@ -826,6 +828,7 @@ class TestSIPServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.SipServerTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

@@ -64,6 +64,7 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.EndpointTestsDataRoundsSearch.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "test" : {
@@ -398,6 +399,7 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.NetworkEndpointTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_filter_scheduled_tests_network_results_models_validation(self) -> None:
         """Test case for filter_scheduled_tests_network_results request and response models"""
@@ -435,6 +437,7 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.MultiTestIdEndpointTestsDataRoundsSearch.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "totalHits" : 12,
@@ -720,10 +723,12 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.MultiTestIdNetworkEndpointTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_scheduled_test_path_vis_agent_round_results_models_validation(self) -> None:
         """Test case for get_scheduled_test_path_vis_agent_round_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "test" : {
@@ -1201,10 +1206,12 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.PathVisDetailEndpointTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_scheduled_test_path_vis_results_models_validation(self) -> None:
         """Test case for get_scheduled_test_path_vis_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "test" : {
@@ -1550,6 +1557,7 @@ class TestNetworkEndpointScheduledTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.PathVisEndpointTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

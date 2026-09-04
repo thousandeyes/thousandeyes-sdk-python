@@ -77,7 +77,7 @@ class ApiTestRequest(BaseModel):
     tags: Optional[List[StrictStr]] = Field(default=None, description="Contains list of test tag IDs (get `id` from `/tags` endpoint).")
     shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="Contains list of account group IDs. Test is shared with the listed account groups (get `aid` from `/account-groups` endpoint)", alias="sharedWithAccounts")
     alert_rules: Optional[List[StrictStr]] = Field(default=None, description="List of alert rules IDs to apply to the test (get `ruleId` from `/alerts/rules` endpoint. If `alertsEnabled` is set to `true` and `alertRules` is not included on test creation or update, applicable user default alert rules will be used)", alias="alertRules")
-    agents: List[TestAgentRequest] = Field(description="Contains list of Agent IDs (get `agentId` from `/agents` endpoint).")
+    agents: List[TestAgentRequest] = Field(description="Agents assigned to the test.")
     monitors: Optional[List[StrictStr]] = Field(default=None, description="Contains list of BGP monitor IDs (get `monitorId` from `/monitors` endpoint)")
     credentials: Optional[List[StrictStr]] = Field(default=None, description="Contains a list of credential IDs (get `credentialId` from `/credentials` endpoint).")
     vault_credentials: Optional[List[TestVaultCredential]] = Field(default=None, description="List of credential IDs that are stored in an external vault.", alias="vaultCredentials")

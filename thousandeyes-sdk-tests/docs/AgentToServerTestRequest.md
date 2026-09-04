@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 **tags** | **List[str]** | Contains list of test tag IDs (get &#x60;id&#x60; from &#x60;/tags&#x60; endpoint). | [optional] 
 **shared_with_accounts** | **List[str]** | Contains list of account group IDs. Test is shared with the listed account groups (get &#x60;aid&#x60; from &#x60;/account-groups&#x60; endpoint) | [optional] 
 **alert_rules** | **List[str]** | List of alert rules IDs to apply to the test (get &#x60;ruleId&#x60; from &#x60;/alerts/rules&#x60; endpoint. If &#x60;alertsEnabled&#x60; is set to &#x60;true&#x60; and &#x60;alertRules&#x60; is not included on test creation or update, applicable user default alert rules will be used) | [optional] 
-**agents** | [**List[TestAgentRequest]**](TestAgentRequest.md) | Contains list of Agent IDs (get &#x60;agentId&#x60; from &#x60;/agents&#x60; endpoint). | 
+**agents** | [**List[TestAgentWithSourceIpRequest]**](TestAgentWithSourceIpRequest.md) | Agents assigned to the test. To select a source interface, set &#x60;sourceIpAddress&#x60; on the same object as its &#x60;agentId&#x60;. | 
 **monitors** | **List[str]** | Contains list of BGP monitor IDs (get &#x60;monitorId&#x60; from &#x60;/monitors&#x60; endpoint) | [optional] 
 **port** | **int** | Port number to use for the test. The default port is 80. | [optional] 
 

@@ -42,6 +42,7 @@ class TestEmulationApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.emulation.models.EmulatedDevice.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "availableUserAgents" : [ "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Mobile Safari/537.36", "Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/118.0.5993.70 Safari/537.36" ],
@@ -57,10 +58,12 @@ class TestEmulationApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.emulation.models.EmulatedDeviceResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_emulated_devices_models_validation(self) -> None:
         """Test case for get_emulated_devices request and response models"""
 
+        
         response_body_json = """
                 {
                   "emulatedDevices" : [ {
@@ -99,10 +102,12 @@ class TestEmulationApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.emulation.models.EmulatedDeviceResponses.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_user_agents_models_validation(self) -> None:
         """Test case for get_user_agents request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -131,6 +136,7 @@ class TestEmulationApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.emulation.models.UserAgents.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

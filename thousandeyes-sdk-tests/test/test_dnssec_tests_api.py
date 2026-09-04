@@ -59,11 +59,7 @@ class TestDNSSECTestsApi(unittest.TestCase):
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -83,6 +79,7 @@ class TestDNSSECTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.DnsSecTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "dnsQueryClass" : "in",
@@ -222,14 +219,17 @@ class TestDNSSECTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.DnsSecTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_dns_sec_test_models_validation(self) -> None:
         """Test case for delete_dns_sec_test request and response models"""
 
+        
 
     def test_get_dns_sec_test_models_validation(self) -> None:
         """Test case for get_dns_sec_test request and response models"""
 
+        
         response_body_json = """
                 {
                   "dnsQueryClass" : "in",
@@ -369,10 +369,12 @@ class TestDNSSECTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.DnsSecTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_dns_sec_tests_models_validation(self) -> None:
         """Test case for get_dns_sec_tests request and response models"""
 
+        
         response_body_json = """
                 {
                   "tests" : [ {
@@ -461,6 +463,7 @@ class TestDNSSECTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.DnsSecTests.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_dns_sec_test_models_validation(self) -> None:
         """Test case for update_dns_sec_test request and response models"""
@@ -493,11 +496,7 @@ class TestDNSSECTestsApi(unittest.TestCase):
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "agents" : [ {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
+                    "agentId" : "125"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -517,6 +516,7 @@ class TestDNSSECTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.DnsSecTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "dnsQueryClass" : "in",
@@ -656,6 +656,7 @@ class TestDNSSECTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.DnsSecTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':
