@@ -46,6 +46,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.dashboards.models.GenerateDashboardSnapshotRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "snapshotId" : "d28bb71f-5a47-4783-8f12-d4b115e61b0c",
@@ -66,14 +67,17 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.DashboardSnapshotResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_dashboard_snapshot_models_validation(self) -> None:
         """Test case for delete_dashboard_snapshot request and response models"""
 
+        
 
     def test_get_dashboard_snapshot_models_validation(self) -> None:
         """Test case for get_dashboard_snapshot request and response models"""
 
+        
         response_body_json = """
                 {
                   "snapshotId" : "d28bb71f-5a47-4783-8f12-d4b115e61b0c",
@@ -370,10 +374,12 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.ApiDashboardSnapshot.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_dashboard_snapshot_widget_data_models_validation(self) -> None:
         """Test case for get_dashboard_snapshot_widget_data request and response models"""
 
+        
         response_body_json = """
                 {
                   "groupLabels" : [ {
@@ -810,10 +816,12 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.ApiWidgetDataSnapshotResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_dashboard_snapshots_models_validation(self) -> None:
         """Test case for get_dashboard_snapshots request and response models"""
 
+        
         response_body_json = """
                 {
                   "pages" : {
@@ -1437,6 +1445,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.dashboards.models.DashboardSnapshotsPage.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_dashboard_snapshot_expiration_date_models_validation(self) -> None:
         """Test case for update_dashboard_snapshot_expiration_date request and response models"""
@@ -1451,6 +1460,7 @@ class TestDashboardSnapshotsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.dashboards.models.UpdateSnapshotExpirationDateApiRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
 
 
 if __name__ == '__main__':

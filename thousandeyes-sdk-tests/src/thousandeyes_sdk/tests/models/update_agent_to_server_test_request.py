@@ -19,7 +19,7 @@ import json
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.tests.models.test_agent_request import TestAgentRequest
+from thousandeyes_sdk.tests.models.test_agent_with_source_ip_request import TestAgentWithSourceIpRequest
 from thousandeyes_sdk.tests.models.test_dscp_id import TestDscpId
 from thousandeyes_sdk.tests.models.test_interval import TestInterval
 from thousandeyes_sdk.tests.models.test_ipv6_policy import TestIpv6Policy
@@ -53,7 +53,7 @@ class UpdateAgentToServerTestRequest(BaseModel):
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
     ping_payload_size: Optional[Annotated[int, Field(le=1400, strict=True, ge=0)]] = Field(default=None, description="Payload size (not total packet size) for the end-to-end metric's probes, ping payload size allows values from 0 to 1400 bytes. When set to null, payload sizes are 0 bytes for ICMP-based tests and 1 byte for TCP-based tests.", alias="pingPayloadSize")
     network_measurements: Optional[StrictBool] = Field(default=False, description="View packet loss in 1-second intervals. This is only available for 1-minute interval tests. Set to `true` to enable network measurements.", alias="networkMeasurements")
-    agents: Optional[List[TestAgentRequest]] = Field(default=None, description="Contains list of Agent IDs (get `agentId` from `/agents` endpoint).")
+    agents: Optional[List[TestAgentWithSourceIpRequest]] = Field(default=None, description="Agents assigned to the test. To select a source interface, set `sourceIpAddress` on the same object as its `agentId`.")
     interval: Optional[TestInterval] = None
     alerts_enabled: Optional[StrictBool] = Field(default=None, description="Indicates if alerts are enabled.", alias="alertsEnabled")
     enabled: Optional[StrictBool] = Field(default=True, description="Test is enabled.")
@@ -145,7 +145,7 @@ class UpdateAgentToServerTestRequest(BaseModel):
             "ipv6Policy": obj.get("ipv6Policy"),
             "pingPayloadSize": obj.get("pingPayloadSize"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else False,
-            "agents": [TestAgentRequest.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
+            "agents": [TestAgentWithSourceIpRequest.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
             "interval": obj.get("interval"),
             "alertsEnabled": obj.get("alertsEnabled"),
             "enabled": obj.get("enabled") if obj.get("enabled") is not None else True,

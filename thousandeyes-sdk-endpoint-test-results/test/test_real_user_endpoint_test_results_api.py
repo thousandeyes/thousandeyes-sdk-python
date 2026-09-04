@@ -57,6 +57,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestResultsRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "endDate" : "2022-07-18T22:00:54Z",
@@ -167,6 +168,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestNetworkResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_filter_real_user_tests_results_models_validation(self) -> None:
         """Test case for filter_real_user_tests_results request and response models"""
@@ -197,6 +199,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestResultsRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "endDate" : "2022-07-18T22:00:54Z",
@@ -247,6 +250,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_filter_real_user_tests_visited_pages_results_models_validation(self) -> None:
         """Test case for filter_real_user_tests_visited_pages_results request and response models"""
@@ -275,6 +279,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestResultRequestFilter.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "endDate" : "2022-07-18T22:00:54Z",
@@ -367,10 +372,12 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestPageResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_real_user_test_page_results_models_validation(self) -> None:
         """Test case for get_real_user_test_page_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -613,10 +620,12 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestPageDetailResult.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_real_user_test_results_models_validation(self) -> None:
         """Test case for get_real_user_test_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -1027,6 +1036,7 @@ class TestRealUserEndpointTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.RealUserEndpointTestDetailResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

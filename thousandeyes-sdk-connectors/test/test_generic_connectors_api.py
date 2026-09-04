@@ -68,6 +68,7 @@ class TestGenericConnectorsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.connectors.models.GenericConnector.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "headers" : [ {
@@ -104,14 +105,17 @@ class TestGenericConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.GenericConnector.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_generic_connector_models_validation(self) -> None:
         """Test case for delete_generic_connector request and response models"""
 
+        
 
     def test_get_generic_connector_models_validation(self) -> None:
         """Test case for get_generic_connector request and response models"""
 
+        
         response_body_json = """
                 {
                   "headers" : [ {
@@ -148,10 +152,12 @@ class TestGenericConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.GenericConnector.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_generic_connectors_models_validation(self) -> None:
         """Test case for get_generic_connectors request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -232,10 +238,12 @@ class TestGenericConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.GenericConnectors.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_list_generic_connector_operations_models_validation(self) -> None:
         """Test case for list_generic_connector_operations request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -256,6 +264,7 @@ class TestGenericConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.Assignments.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_set_generic_connector_operations_models_validation(self) -> None:
         """Test case for set_generic_connector_operations request and response models"""
@@ -267,6 +276,7 @@ class TestGenericConnectorsApi(unittest.TestCase):
         request_from_json = json.loads(request_body_json)
         self.assertEqual(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -287,6 +297,7 @@ class TestGenericConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.Assignments.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_generic_connector_models_validation(self) -> None:
         """Test case for update_generic_connector request and response models"""
@@ -328,6 +339,7 @@ class TestGenericConnectorsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.connectors.models.GenericConnector.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "headers" : [ {
@@ -364,6 +376,7 @@ class TestGenericConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.GenericConnector.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

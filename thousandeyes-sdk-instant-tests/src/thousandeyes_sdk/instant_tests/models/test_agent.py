@@ -26,8 +26,7 @@ class TestAgent(BaseModel):
     TestAgent
     """ # noqa: E501
     agent_id: Optional[StrictStr] = Field(default=None, description="Identifier for the agent (get `agentId` from `/agents` endpoint).", alias="agentId")
-    source_ip_address: Optional[StrictStr] = Field(default=None, description="IP address from the agent's `ipAddresses` field (get `ipAddresses` from `/agents` endpoint). Used for interface selection.", alias="sourceIpAddress")
-    __properties: ClassVar[List[str]] = ["agentId", "sourceIpAddress"]
+    __properties: ClassVar[List[str]] = ["agentId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,8 +80,7 @@ class TestAgent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "agentId": obj.get("agentId"),
-            "sourceIpAddress": obj.get("sourceIpAddress")
+            "agentId": obj.get("agentId")
         })
         return _obj
 

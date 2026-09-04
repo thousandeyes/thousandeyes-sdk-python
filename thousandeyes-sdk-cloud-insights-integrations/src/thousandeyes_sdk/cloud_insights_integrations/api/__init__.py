@@ -1,0 +1,6 @@
+# flake8: noqa
+
+# import apis into api package
+from thousandeyes_sdk.cloud_insights_integrations.api.cloud_insights_integration_policy_settings_api import CloudInsightsIntegrationPolicySettingsApi
+from thousandeyes_sdk.cloud_insights_integrations.api.cloud_insights_integrations_api import CloudInsightsIntegrationsApi
+

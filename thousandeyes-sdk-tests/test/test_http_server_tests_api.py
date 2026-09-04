@@ -73,10 +73,6 @@ class TestHTTPServerTestsApi(unittest.TestCase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "randomizedStartTime" : false,
@@ -134,9 +130,6 @@ class TestHTTPServerTestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "postBody" : "{ \\"example\\" : \\"value\\"}",
@@ -153,6 +146,7 @@ class TestHTTPServerTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.HttpServerTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "clientCertificate" : "-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n",
@@ -196,10 +190,6 @@ class TestHTTPServerTestsApi(unittest.TestCase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -376,14 +366,17 @@ class TestHTTPServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.HttpServerTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_http_server_test_models_validation(self) -> None:
         """Test case for delete_http_server_test request and response models"""
 
+        
 
     def test_get_http_server_test_models_validation(self) -> None:
         """Test case for get_http_server_test request and response models"""
 
+        
         response_body_json = """
                 {
                   "clientCertificate" : "-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n",
@@ -427,10 +420,6 @@ class TestHTTPServerTestsApi(unittest.TestCase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -607,10 +596,12 @@ class TestHTTPServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.HttpServerTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_http_server_tests_models_validation(self) -> None:
         """Test case for get_http_server_tests request and response models"""
 
+        
         response_body_json = """
                 {
                   "tests" : [ {
@@ -655,10 +646,6 @@ class TestHTTPServerTestsApi(unittest.TestCase):
                     "verifyCertificate" : false,
                     "overrideAgentProxy" : false,
                     "liveShare" : false,
-                    "agentInterfaces" : {
-                      "agentId" : "2954",
-                      "ipAddress" : "192.1.1.0"
-                    },
                     "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
@@ -758,10 +745,6 @@ class TestHTTPServerTestsApi(unittest.TestCase):
                     "verifyCertificate" : false,
                     "overrideAgentProxy" : false,
                     "liveShare" : false,
-                    "agentInterfaces" : {
-                      "agentId" : "2954",
-                      "ipAddress" : "192.1.1.0"
-                    },
                     "randomizedStartTime" : false,
                     "modifiedDate" : "2022-07-17T22:00:54Z",
                     "interval" : 60,
@@ -837,6 +820,7 @@ class TestHTTPServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.HttpServerTests.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_http_server_test_models_validation(self) -> None:
         """Test case for update_http_server_test request and response models"""
@@ -883,10 +867,6 @@ class TestHTTPServerTestsApi(unittest.TestCase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ "9842", "1283" ],
                   "tags" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "ec8e64fb-6f11-485c-a5d5-488098ad626a" ],
                   "randomizedStartTime" : false,
@@ -944,9 +924,6 @@ class TestHTTPServerTestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "postBody" : "{ \\"example\\" : \\"value\\"}",
@@ -963,6 +940,7 @@ class TestHTTPServerTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.HttpServerTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "clientCertificate" : "-----BEGIN PRIVATE KEY-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END PRIVATE KEY-----\\n-----BEGIN CERTIFICATE-----\\nMIICUTCCAfugAwIBAgIBADANBgkqhkiG9w0BAQQFADBXMQswCQYDVQQGEwJDTjEL\\n-----END CERTIFICATE-----\\n",
@@ -1006,10 +984,6 @@ class TestHTTPServerTestsApi(unittest.TestCase):
                   "verifyCertificate" : false,
                   "overrideAgentProxy" : false,
                   "liveShare" : false,
-                  "agentInterfaces" : {
-                    "agentId" : "2954",
-                    "ipAddress" : "192.1.1.0"
-                  },
                   "labels" : [ {
                     "labelId" : "961",
                     "name" : "Artem label",
@@ -1186,6 +1160,7 @@ class TestHTTPServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.HttpServerTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

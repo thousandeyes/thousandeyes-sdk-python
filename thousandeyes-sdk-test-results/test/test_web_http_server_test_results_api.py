@@ -31,6 +31,7 @@ class TestWebHTTPServerTestResultsApi(unittest.TestCase):
     def test_get_test_http_server_results_models_validation(self) -> None:
         """Test case for get_test_http_server_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "test" : {
@@ -359,6 +360,7 @@ class TestWebHTTPServerTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.test_results.models.HttpTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

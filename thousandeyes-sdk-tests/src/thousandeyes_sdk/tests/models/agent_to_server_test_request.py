@@ -20,7 +20,7 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional
 from typing_extensions import Annotated
-from thousandeyes_sdk.tests.models.test_agent_request import TestAgentRequest
+from thousandeyes_sdk.tests.models.test_agent_with_source_ip_request import TestAgentWithSourceIpRequest
 from thousandeyes_sdk.tests.models.test_dscp_id import TestDscpId
 from thousandeyes_sdk.tests.models.test_interval import TestInterval
 from thousandeyes_sdk.tests.models.test_ipv6_policy import TestIpv6Policy
@@ -70,7 +70,7 @@ class AgentToServerTestRequest(BaseModel):
     tags: Optional[List[StrictStr]] = Field(default=None, description="Contains list of test tag IDs (get `id` from `/tags` endpoint).")
     shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="Contains list of account group IDs. Test is shared with the listed account groups (get `aid` from `/account-groups` endpoint)", alias="sharedWithAccounts")
     alert_rules: Optional[List[StrictStr]] = Field(default=None, description="List of alert rules IDs to apply to the test (get `ruleId` from `/alerts/rules` endpoint. If `alertsEnabled` is set to `true` and `alertRules` is not included on test creation or update, applicable user default alert rules will be used)", alias="alertRules")
-    agents: List[TestAgentRequest] = Field(description="Contains list of Agent IDs (get `agentId` from `/agents` endpoint).")
+    agents: List[TestAgentWithSourceIpRequest] = Field(description="Agents assigned to the test. To select a source interface, set `sourceIpAddress` on the same object as its `agentId`.")
     monitors: Optional[List[StrictStr]] = Field(default=None, description="Contains list of BGP monitor IDs (get `monitorId` from `/monitors` endpoint)")
     port: Optional[StrictInt] = Field(default=None, description="Port number to use for the test. The default port is 80.")
     __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "bandwidthMeasurements", "continuousMode", "fixedPacketRate", "mtuMeasurements", "numPathTraces", "pathTraceMode", "probeMode", "protocol", "randomizedStartTime", "server", "dscp", "dscpId", "ipv6Policy", "pingPayloadSize", "networkMeasurements", "bgpMeasurements", "usePublicBgp", "labels", "tags", "sharedWithAccounts", "alertRules", "agents", "monitors", "port"]
@@ -190,7 +190,7 @@ class AgentToServerTestRequest(BaseModel):
             "tags": obj.get("tags"),
             "sharedWithAccounts": obj.get("sharedWithAccounts"),
             "alertRules": obj.get("alertRules"),
-            "agents": [TestAgentRequest.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
+            "agents": [TestAgentWithSourceIpRequest.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
             "monitors": obj.get("monitors"),
             "port": obj.get("port")
         })

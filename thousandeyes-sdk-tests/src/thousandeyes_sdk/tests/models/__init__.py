@@ -14,7 +14,6 @@
 
 # import models into model package
 from thousandeyes_sdk.tests.models.agent_base import AgentBase
-from thousandeyes_sdk.tests.models.agent_interfaces import AgentInterfaces
 from thousandeyes_sdk.tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.tests.models.agent_to_agent_instant_test import AgentToAgentInstantTest
 from thousandeyes_sdk.tests.models.agent_to_agent_properties import AgentToAgentProperties
@@ -129,9 +128,11 @@ from thousandeyes_sdk.tests.models.sip_server_test_request import SipServerTestR
 from thousandeyes_sdk.tests.models.sip_server_test_response import SipServerTestResponse
 from thousandeyes_sdk.tests.models.sip_server_tests import SipServerTests
 from thousandeyes_sdk.tests.models.sip_test_protocol import SipTestProtocol
+from thousandeyes_sdk.tests.models.source_interface_test_request import SourceInterfaceTestRequest
 from thousandeyes_sdk.tests.models.test_agent_request import TestAgentRequest
 from thousandeyes_sdk.tests.models.test_agent_response import TestAgentResponse
 from thousandeyes_sdk.tests.models.test_agent_response_properties import TestAgentResponseProperties
+from thousandeyes_sdk.tests.models.test_agent_with_source_ip_request import TestAgentWithSourceIpRequest
 from thousandeyes_sdk.tests.models.test_auth_type import TestAuthType
 from thousandeyes_sdk.tests.models.test_chromium_track import TestChromiumTrack
 from thousandeyes_sdk.tests.models.test_custom_headers import TestCustomHeaders

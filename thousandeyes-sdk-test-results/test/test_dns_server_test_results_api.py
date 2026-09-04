@@ -31,6 +31,7 @@ class TestDNSServerTestResultsApi(unittest.TestCase):
     def test_get_test_dns_server_result_models_validation(self) -> None:
         """Test case for get_test_dns_server_result request and response models"""
 
+        
         response_body_json = """
                 {
                   "test" : {
@@ -161,10 +162,12 @@ class TestDNSServerTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.test_results.models.DnsServerTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_test_dns_servers_results_models_validation(self) -> None:
         """Test case for get_test_dns_servers_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "test" : {
@@ -295,6 +298,7 @@ class TestDNSServerTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.test_results.models.DnsServerTestResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

@@ -49,6 +49,7 @@ class TestAgentToServerEndpointInstantScheduledTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_instant_tests.models.EndpointAgentToServerInstantTest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "server" : "www.example.com",
@@ -103,6 +104,7 @@ class TestAgentToServerEndpointInstantScheduledTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_instant_tests.models.EndpointAgentToServerTest.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

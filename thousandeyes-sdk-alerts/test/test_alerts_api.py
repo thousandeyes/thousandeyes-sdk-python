@@ -31,6 +31,7 @@ class TestAlertsApi(unittest.TestCase):
     def test_get_alert_models_validation(self) -> None:
         """Test case for get_alert request and response models"""
 
+        
         response_body_json = """
                 {
                   "severity" : "major",
@@ -124,10 +125,12 @@ class TestAlertsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.alerts.models.AlertDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_alerts_models_validation(self) -> None:
         """Test case for get_alerts request and response models"""
 
+        
         response_body_json = """
                 {
                   "alerts" : [ {
@@ -304,6 +307,7 @@ class TestAlertsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.alerts.models.Alerts.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

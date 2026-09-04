@@ -29,7 +29,7 @@ class InstantTestRequest(BaseModel):
     labels: Optional[List[StrictStr]] = Field(default=None, description="A list of test label identifiers (get `labelId` from `/labels` endpoint).")
     tags: Optional[List[StrictStr]] = Field(default=None, description="A list of test tag identifiers (get `id` from `/tags` endpoint).")
     shared_with_accounts: Optional[List[StrictStr]] = Field(default=None, description="A list of account group identifiers that the test is shared with (get `aid` from `/account-groups` endpoint).", alias="sharedWithAccounts")
-    agents: List[TestAgent] = Field(description="A list of objects with `agentId` (required) and `sourceIpAddress` (optional).")
+    agents: List[TestAgent] = Field(description="Agents assigned to the test.")
     __properties: ClassVar[List[str]] = ["labels", "tags", "sharedWithAccounts", "agents"]
 
     model_config = ConfigDict(

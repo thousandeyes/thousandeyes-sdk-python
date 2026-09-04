@@ -536,8 +536,10 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         expand = ["cluster-member"]
         agent_types = ["enterprise"]
-        labels = ['[\"myCustomLabeledAgent\"]']
-        tag_keys = ['tag_keys_example']
+        labels = ["myCustomLabeledAgent"]
+        tag_keys = [
+                    'myCustomTagKeyForAgent'
+                    ]
         response_body_json = """
                 {
                   "_links" : {
@@ -620,8 +622,10 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         expand = ["cluster-member"]
         agent_types = ["enterprise"]
-        labels = ['[\"myCustomLabeledAgent\"]']
-        tag_keys = ['tag_keys_example']
+        labels = ["myCustomLabeledAgent"]
+        tag_keys = [
+                    'myCustomTagKeyForAgent'
+                    ]
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -654,8 +658,10 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         expand = ["cluster-member"]
         agent_types = ["enterprise"]
-        labels = ['[\"myCustomLabeledAgent\"]']
-        tag_keys = ['tag_keys_example']
+        labels = ["myCustomLabeledAgent"]
+        tag_keys = [
+                    'myCustomTagKeyForAgent'
+                    ]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -691,8 +697,10 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         expand = ["cluster-member"]
         agent_types = ["enterprise"]
-        labels = ['[\"myCustomLabeledAgent\"]']
-        tag_keys = ['tag_keys_example']
+        labels = ["myCustomLabeledAgent"]
+        tag_keys = [
+                    'myCustomTagKeyForAgent'
+                    ]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -728,8 +736,10 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         expand = ["cluster-member"]
         agent_types = ["enterprise"]
-        labels = ['[\"myCustomLabeledAgent\"]']
-        tag_keys = ['tag_keys_example']
+        labels = ["myCustomLabeledAgent"]
+        tag_keys = [
+                    'myCustomTagKeyForAgent'
+                    ]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -765,8 +775,10 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         expand = ["cluster-member"]
         agent_types = ["enterprise"]
-        labels = ['[\"myCustomLabeledAgent\"]']
-        tag_keys = ['tag_keys_example']
+        labels = ["myCustomLabeledAgent"]
+        tag_keys = [
+                    'myCustomTagKeyForAgent'
+                    ]
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -802,8 +814,10 @@ class TestCloudAndEnterpriseAgentsApiIntegration(IntegrationTestBase):
         aid = '1234'
         expand = ["cluster-member"]
         agent_types = ["enterprise"]
-        labels = ['[\"myCustomLabeledAgent\"]']
-        tag_keys = ['tag_keys_example']
+        labels = ["myCustomLabeledAgent"]
+        tag_keys = [
+                    'myCustomTagKeyForAgent'
+                    ]
         error_body_json = """
                 {
                   "instance" : "instance",

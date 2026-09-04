@@ -75,9 +75,6 @@ class TestFTPServerInstantTestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -95,6 +92,7 @@ class TestFTPServerInstantTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.instant_tests.models.FtpServerInstantTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "mtuMeasurements" : false,
@@ -218,6 +216,7 @@ class TestFTPServerInstantTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.instant_tests.models.FtpServerInstantTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

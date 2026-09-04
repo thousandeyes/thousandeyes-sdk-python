@@ -31,6 +31,7 @@ class TestInstantTestsApi(unittest.TestCase):
     def test_run_instant_test_models_validation(self) -> None:
         """Test case for run_instant_test request and response models"""
 
+        
 
 
 if __name__ == '__main__':
