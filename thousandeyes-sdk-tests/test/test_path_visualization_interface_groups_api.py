@@ -44,6 +44,7 @@ class TestPathVisualizationInterfaceGroupsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.InterfaceGroup.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "groupName" : "PathVis Interface Group",
@@ -56,14 +57,17 @@ class TestPathVisualizationInterfaceGroupsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.InterfaceGroup.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_path_vis_interface_group_models_validation(self) -> None:
         """Test case for delete_path_vis_interface_group request and response models"""
 
+        
 
     def test_get_path_vis_interface_groups_models_validation(self) -> None:
         """Test case for get_path_vis_interface_groups request and response models"""
 
+        
         response_body_json = """
                 {
                   "pathVisInterfaceGroups" : [ {
@@ -96,6 +100,7 @@ class TestPathVisualizationInterfaceGroupsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.InterfaceGroups.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_path_vis_interface_group_models_validation(self) -> None:
         """Test case for update_path_vis_interface_group request and response models"""
@@ -113,6 +118,7 @@ class TestPathVisualizationInterfaceGroupsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.InterfaceGroup.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "groupName" : "PathVis Interface Group",
@@ -125,6 +131,7 @@ class TestPathVisualizationInterfaceGroupsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.InterfaceGroup.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

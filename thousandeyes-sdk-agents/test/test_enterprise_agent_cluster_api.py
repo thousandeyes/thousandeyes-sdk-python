@@ -40,6 +40,7 @@ class TestEnterpriseAgentClusterApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.agents.models.AgentClusterAssignRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "agentId" : "281474976710706",
@@ -158,6 +159,7 @@ class TestEnterpriseAgentClusterApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.agents.models.AgentDetails.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_unassign_agent_from_cluster_models_validation(self) -> None:
         """Test case for unassign_agent_from_cluster request and response models"""
@@ -171,6 +173,7 @@ class TestEnterpriseAgentClusterApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.agents.models.AgentClusterUnassignRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -233,6 +236,7 @@ class TestEnterpriseAgentClusterApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.agents.models.CloudEnterpriseAgents.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

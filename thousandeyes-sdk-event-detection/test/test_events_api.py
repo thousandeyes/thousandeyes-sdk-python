@@ -31,6 +31,7 @@ class TestEventsApi(unittest.TestCase):
     def test_get_event_models_validation(self) -> None:
         """Test case for get_event request and response models"""
 
+        
         response_body_json = """
                 {
                   "severity" : "medium",
@@ -167,10 +168,12 @@ class TestEventsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.event_detection.models.EventDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_events_models_validation(self) -> None:
         """Test case for get_events request and response models"""
 
+        
         response_body_json = """
                 {
                   "endDate" : "2022-07-18T22:00:54Z",
@@ -272,6 +275,7 @@ class TestEventsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.event_detection.models.Events.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

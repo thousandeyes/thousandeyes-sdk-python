@@ -46,6 +46,7 @@ class TestTagAssignmentApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.TagAssignment.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "assignments" : [ {
@@ -73,6 +74,7 @@ class TestTagAssignmentApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tags.models.BulkTagAssignment.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_assign_tags_models_validation(self) -> None:
         """Test case for assign_tags request and response models"""
@@ -140,6 +142,7 @@ class TestTagAssignmentApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -202,6 +205,7 @@ class TestTagAssignmentApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_unassign_tag_models_validation(self) -> None:
         """Test case for unassign_tag request and response models"""
@@ -221,6 +225,7 @@ class TestTagAssignmentApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.TagAssignment.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
 
     def test_unassign_tags_models_validation(self) -> None:
         """Test case for unassign_tags request and response models"""
@@ -288,6 +293,7 @@ class TestTagAssignmentApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -350,6 +356,7 @@ class TestTagAssignmentApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tags.models.BulkTagAssignments.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

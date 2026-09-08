@@ -14,7 +14,6 @@
 
 # import models into model package
 from thousandeyes_sdk.instant_tests.models.agent_base import AgentBase
-from thousandeyes_sdk.instant_tests.models.agent_interfaces import AgentInterfaces
 from thousandeyes_sdk.instant_tests.models.agent_response import AgentResponse
 from thousandeyes_sdk.instant_tests.models.agent_to_agent_instant_test import AgentToAgentInstantTest
 from thousandeyes_sdk.instant_tests.models.agent_to_agent_instant_test_request import AgentToAgentInstantTestRequest
@@ -70,6 +69,7 @@ from thousandeyes_sdk.instant_tests.models.http_server_instant_test_response imp
 from thousandeyes_sdk.instant_tests.models.http_server_properties import HttpServerProperties
 from thousandeyes_sdk.instant_tests.models.instant_test import InstantTest
 from thousandeyes_sdk.instant_tests.models.instant_test_request import InstantTestRequest
+from thousandeyes_sdk.instant_tests.models.instant_test_request_properties import InstantTestRequestProperties
 from thousandeyes_sdk.instant_tests.models.link import Link
 from thousandeyes_sdk.instant_tests.models.network_provider_info import NetworkProviderInfo
 from thousandeyes_sdk.instant_tests.models.network_provider_type import NetworkProviderType
@@ -88,9 +88,11 @@ from thousandeyes_sdk.instant_tests.models.sip_server_instant_test_request impor
 from thousandeyes_sdk.instant_tests.models.sip_server_instant_test_response import SipServerInstantTestResponse
 from thousandeyes_sdk.instant_tests.models.sip_server_properties import SipServerProperties
 from thousandeyes_sdk.instant_tests.models.sip_test_protocol import SipTestProtocol
+from thousandeyes_sdk.instant_tests.models.source_interface_instant_test_request import SourceInterfaceInstantTestRequest
 from thousandeyes_sdk.instant_tests.models.test_agent import TestAgent
 from thousandeyes_sdk.instant_tests.models.test_agent_response import TestAgentResponse
 from thousandeyes_sdk.instant_tests.models.test_agent_response_properties import TestAgentResponseProperties
+from thousandeyes_sdk.instant_tests.models.test_agent_with_source_ip_address import TestAgentWithSourceIpAddress
 from thousandeyes_sdk.instant_tests.models.test_auth_type import TestAuthType
 from thousandeyes_sdk.instant_tests.models.test_chromium_track import TestChromiumTrack
 from thousandeyes_sdk.instant_tests.models.test_custom_headers import TestCustomHeaders

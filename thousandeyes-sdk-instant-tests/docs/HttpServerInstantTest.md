@@ -20,7 +20,6 @@ Name | Type | Description | Notes
 **tags** | [**List[TestTag]**](TestTag.md) | Tags assigned to the test. Returned only when &#x60;expand&#x3D;tag&#x60; is specified. This field is not returned for Instant Tests. For more information, see &#x60;/tags&#x60;. | [optional] [readonly] 
 **shared_with_accounts** | [**List[SharedWithAccount]**](SharedWithAccount.md) |  | [optional] [readonly] 
 **auth_type** | [**TestAuthType**](TestAuthType.md) |  | [optional] 
-**agent_interfaces** | [**AgentInterfaces**](AgentInterfaces.md) |  | [optional] 
 **bandwidth_measurements** | **bool** | Set to &#x60;true&#x60; to enable bandwidth measurements, only applies to Enterprise agents assigned to the test. | [optional] 
 **client_certificate** | **str** | String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate. | [optional] 
 **content_regex** | **str** | Content regex, this field does not require escaping. | [optional] 

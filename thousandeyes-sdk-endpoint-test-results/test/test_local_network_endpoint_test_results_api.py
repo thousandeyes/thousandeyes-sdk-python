@@ -66,6 +66,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.endpoint_test_results.models.EndpointNetworkTopologyResultRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "endDate" : "2022-07-18T22:00:54Z",
@@ -428,10 +429,12 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.LocalNetworkTopologyResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_local_networks_test_results_models_validation(self) -> None:
         """Test case for get_local_networks_test_results request and response models"""
 
+        
         response_body_json = """
                 {
                   "localNetworks" : [ {
@@ -462,10 +465,12 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.LocalNetworkResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_local_networks_test_results_topology_models_validation(self) -> None:
         """Test case for get_local_networks_test_results_topology request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -1066,6 +1071,7 @@ class TestLocalNetworkEndpointTestResultsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.endpoint_test_results.models.LocalNetworkTopologyDetailResults.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

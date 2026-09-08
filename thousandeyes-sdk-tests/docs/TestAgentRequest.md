@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **agent_id** | **str** | The agent ID. Get &#x60;agentId&#x60; from &#x60;/agents&#x60; endpoint. | 
-**source_ip_address** | **str** | The IP address from the &#x60;ipAddresses&#x60; field in agent details, used for interface selection. Get &#x60;ipAddresses&#x60; from the &#x60;/agents&#x60; endpoint. | [optional] 
 
 ## Example
 

@@ -17,7 +17,7 @@ import re  # noqa: F401
 import json
 
 from pydantic import BaseModel, ConfigDict, Field, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
+from typing import Any, ClassVar, Dict, List
 from typing import Optional, Set
 from typing_extensions import Self
 
@@ -26,8 +26,7 @@ class TestAgentRequest(BaseModel):
     TestAgentRequest
     """ # noqa: E501
     agent_id: StrictStr = Field(description="The agent ID. Get `agentId` from `/agents` endpoint.", alias="agentId")
-    source_ip_address: Optional[StrictStr] = Field(default=None, description="The IP address from the `ipAddresses` field in agent details, used for interface selection. Get `ipAddresses` from the `/agents` endpoint.", alias="sourceIpAddress")
-    __properties: ClassVar[List[str]] = ["agentId", "sourceIpAddress"]
+    __properties: ClassVar[List[str]] = ["agentId"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -81,8 +80,7 @@ class TestAgentRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "agentId": obj.get("agentId"),
-            "sourceIpAddress": obj.get("sourceIpAddress")
+            "agentId": obj.get("agentId")
         })
         return _obj
 

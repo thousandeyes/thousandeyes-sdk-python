@@ -31,6 +31,7 @@ class TestCloudAndEnterpriseAgentNotificationRulesApi(unittest.TestCase):
     def test_get_agents_notification_rule_models_validation(self) -> None:
         """Test case for get_agents_notification_rule request and response models"""
 
+        
         response_body_json = """
                 {
                   "isDefault" : false,
@@ -142,10 +143,12 @@ class TestCloudAndEnterpriseAgentNotificationRulesApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.agents.models.NotificationRuleDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_agents_notification_rules_models_validation(self) -> None:
         """Test case for get_agents_notification_rules request and response models"""
 
+        
         response_body_json = """
                 {
                   "agentAlertRules" : [ {
@@ -178,6 +181,7 @@ class TestCloudAndEnterpriseAgentNotificationRulesApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.agents.models.ListNotificationRulesResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

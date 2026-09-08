@@ -60,6 +60,7 @@ class TestPanoramaConnectorsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.connectors.models.PanoramaConnector.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "lastModifiedDate" : 1770293655756,
@@ -88,14 +89,17 @@ class TestPanoramaConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.PanoramaConnector.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_panorama_connector_models_validation(self) -> None:
         """Test case for delete_panorama_connector request and response models"""
 
+        
 
     def test_get_panorama_connector_models_validation(self) -> None:
         """Test case for get_panorama_connector request and response models"""
 
+        
         response_body_json = """
                 {
                   "lastModifiedDate" : 1770293655756,
@@ -124,10 +128,12 @@ class TestPanoramaConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.PanoramaConnector.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_panorama_connector_operations_models_validation(self) -> None:
         """Test case for get_panorama_connector_operations request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -148,10 +154,12 @@ class TestPanoramaConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.Assignments.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_panorama_connectors_models_validation(self) -> None:
         """Test case for get_panorama_connectors request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -216,6 +224,7 @@ class TestPanoramaConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.PanoramaConnectors.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_set_panorama_connector_operations_models_validation(self) -> None:
         """Test case for set_panorama_connector_operations request and response models"""
@@ -227,6 +236,7 @@ class TestPanoramaConnectorsApi(unittest.TestCase):
         request_from_json = json.loads(request_body_json)
         self.assertEqual(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -247,6 +257,7 @@ class TestPanoramaConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.Assignments.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_panorama_connector_models_validation(self) -> None:
         """Test case for update_panorama_connector request and response models"""
@@ -280,6 +291,7 @@ class TestPanoramaConnectorsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.connectors.models.PanoramaConnector.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "lastModifiedDate" : 1770293655756,
@@ -308,6 +320,7 @@ class TestPanoramaConnectorsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.connectors.models.PanoramaConnector.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

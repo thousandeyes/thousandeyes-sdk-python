@@ -50,6 +50,7 @@ class TestUsersApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.administrative.models.UserRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "loginAccountGroup" : {
@@ -121,14 +122,17 @@ class TestUsersApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.administrative.models.CreatedUser.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_user_models_validation(self) -> None:
         """Test case for delete_user request and response models"""
 
+        
 
     def test_get_current_user_models_validation(self) -> None:
         """Test case for get_current_user request and response models"""
 
+        
         response_body_json = """
                 {
                   "loginAccountGroup" : {
@@ -201,10 +205,12 @@ class TestUsersApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.administrative.models.UserDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_user_models_validation(self) -> None:
         """Test case for get_user request and response models"""
 
+        
         response_body_json = """
                 {
                   "loginAccountGroup" : {
@@ -277,10 +283,12 @@ class TestUsersApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.administrative.models.UserDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_users_models_validation(self) -> None:
         """Test case for get_users request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -321,6 +329,7 @@ class TestUsersApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.administrative.models.Users.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_user_models_validation(self) -> None:
         """Test case for update_user request and response models"""
@@ -344,6 +353,7 @@ class TestUsersApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.administrative.models.UserRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "loginAccountGroup" : {
@@ -416,6 +426,7 @@ class TestUsersApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.administrative.models.UserDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

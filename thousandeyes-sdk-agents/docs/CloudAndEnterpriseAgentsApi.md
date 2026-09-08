@@ -226,8 +226,10 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
     expand = ["cluster-member"] # List[AgentListExpand] | Optional parameter, off by default. Indicates which agent sub-resource to expand. For example, if you wish to expand the `clusterMembers` sub-resource, pass the `?expand=cluster-member` query. (optional)
     agent_types = ["enterprise"] # List[CloudEnterpriseAgentType] | Specifies the type of agent to request. (optional)
-    labels = ['[\"myCustomLabeledAgent\"]'] # List[str] | Specifies the labels of the agents to request. (optional)
-    tag_keys = ['tag_keys_example'] # List[str] | Specifies which tag keys to request from the agents. (optional)
+    labels = ["myCustomLabeledAgent"] # List[str] | Specifies the labels of the agents to request. (optional)
+    tag_keys = [
+                    'myCustomTagKeyForAgent'
+                    ] # List[str] | Specifies which tag keys to request from the agents. (optional)
 
     try:
         # List Cloud and Enterprise Agents

@@ -77,9 +77,6 @@ class TestAgentToServerTestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "createdDate" : "2022-07-17T22:00:54Z",
                   "createdBy" : "user@user.com",
@@ -99,6 +96,7 @@ class TestAgentToServerTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.AgentToServerTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "server" : "www.thousandeyes.com:80",
@@ -267,14 +265,17 @@ class TestAgentToServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.AgentToServerTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_agent_to_server_test_models_validation(self) -> None:
         """Test case for delete_agent_to_server_test request and response models"""
 
+        
 
     def test_get_agent_to_server_test_models_validation(self) -> None:
         """Test case for get_agent_to_server_test request and response models"""
 
+        
         response_body_json = """
                 {
                   "server" : "www.thousandeyes.com:80",
@@ -443,10 +444,12 @@ class TestAgentToServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.AgentToServerTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_agent_to_server_tests_models_validation(self) -> None:
         """Test case for get_agent_to_server_tests request and response models"""
 
+        
         response_body_json = """
                 {
                   "tests" : [ {
@@ -563,6 +566,7 @@ class TestAgentToServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.AgentToServerTests.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_agent_to_server_test_models_validation(self) -> None:
         """Test case for update_agent_to_server_test request and response models"""
@@ -592,9 +596,6 @@ class TestAgentToServerTestsApi(unittest.TestCase):
                   "agents" : [ {
                     "agentId" : "125",
                     "sourceIpAddress" : "1.1.1.1"
-                  }, {
-                    "agentId" : "125",
-                    "sourceIpAddress" : "1.1.1.1"
                   } ],
                   "randomizedStartTime" : false,
                   "port" : 443,
@@ -610,6 +611,7 @@ class TestAgentToServerTestsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.tests.models.UpdateAgentToServerTestRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "server" : "www.thousandeyes.com:80",
@@ -778,6 +780,7 @@ class TestAgentToServerTestsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.tests.models.AgentToServerTestResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

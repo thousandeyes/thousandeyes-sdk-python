@@ -6,7 +6,6 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auth_type** | [**TestAuthType**](TestAuthType.md) |  | [optional] 
-**agent_interfaces** | [**AgentInterfaces**](AgentInterfaces.md) |  | [optional] 
 **bandwidth_measurements** | **bool** | Set to &#x60;true&#x60; to enable bandwidth measurements, only applies to Enterprise agents assigned to the test. | [optional] 
 **client_certificate** | **str** | String representation (containing newline characters) of client certificate, the private key must be placed first, then the certificate. | [optional] 
 **content_regex** | **str** | Content regex, this field does not require escaping. | [optional] 

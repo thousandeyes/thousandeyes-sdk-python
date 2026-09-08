@@ -102,6 +102,7 @@ class TestStreamingApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.streaming.models.Stream.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "endpointAgentLabel" : [ {
@@ -187,14 +188,17 @@ class TestStreamingApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.streaming.models.CreateStreamResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_stream_models_validation(self) -> None:
         """Test case for delete_stream request and response models"""
 
+        
 
     def test_get_stream_models_validation(self) -> None:
         """Test case for get_stream request and response models"""
 
+        
         response_body_json = """
                 {
                   "endpointAgentLabel" : [ {
@@ -282,10 +286,12 @@ class TestStreamingApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.streaming.models.GetStreamResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_streams_models_validation(self) -> None:
         """Test case for get_streams request and response models"""
 
+        
         response_body_json = """
                 [ {
                   "endpointAgentLabel" : [ {
@@ -457,6 +463,7 @@ class TestStreamingApi(unittest.TestCase):
         for index, element in enumerate(response_from_dict):
             self.assertIsNotNone(element)
             assert_constructed_model_matches_example_json(element, response_loaded_json[index])
+        
 
     def test_update_stream_models_validation(self) -> None:
         """Test case for update_stream request and response models"""
@@ -528,6 +535,7 @@ class TestStreamingApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.streaming.models.PutStream.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "endpointAgentLabel" : [ {
@@ -615,6 +623,7 @@ class TestStreamingApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.streaming.models.GetStreamResponse.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':

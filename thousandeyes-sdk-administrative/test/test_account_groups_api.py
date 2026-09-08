@@ -41,6 +41,7 @@ class TestAccountGroupsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "isCurrentAccountGroup" : true,
@@ -101,14 +102,17 @@ class TestAccountGroupsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.administrative.models.CreatedAccountGroup.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_delete_account_group_models_validation(self) -> None:
         """Test case for delete_account_group request and response models"""
 
+        
 
     def test_get_account_group_models_validation(self) -> None:
         """Test case for get_account_group request and response models"""
 
+        
         response_body_json = """
                 {
                   "isCurrentAccountGroup" : true,
@@ -477,10 +481,12 @@ class TestAccountGroupsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.administrative.models.AccountGroupDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_get_account_groups_models_validation(self) -> None:
         """Test case for get_account_groups request and response models"""
 
+        
         response_body_json = """
                 {
                   "_links" : {
@@ -515,6 +521,7 @@ class TestAccountGroupsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.administrative.models.AccountGroups.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
     def test_update_account_group_models_validation(self) -> None:
         """Test case for update_account_group request and response models"""
@@ -529,6 +536,7 @@ class TestAccountGroupsApi(unittest.TestCase):
         request_from_json = thousandeyes_sdk.administrative.models.AccountGroupRequest.from_json(request_body_json)
         assert_constructed_model_matches_example_json(request_from_json, request_loaded_json)
 
+        
         response_body_json = """
                 {
                   "isCurrentAccountGroup" : true,
@@ -897,6 +905,7 @@ class TestAccountGroupsApi(unittest.TestCase):
         response_loaded_json = json.loads(response_body_json)
         response_from_json = thousandeyes_sdk.administrative.models.AccountGroupDetail.from_json(response_body_json)
         assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
 
 
 if __name__ == '__main__':
