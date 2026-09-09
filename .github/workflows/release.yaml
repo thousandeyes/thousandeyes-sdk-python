@@ -58,6 +58,10 @@ jobs:
               echo "Invalid package directory name: ${name}" >&2
               exit 1
             fi
+            if [ "$name" = "thousandeyes-sdk-cloud-insights-integrations" ]; then
+              echo "Skipping ${name}: release is not yet enabled"
+              continue
+            fi
             packages+=("$name")
           done
           if [ "${#packages[@]}" -eq 0 ]; then
