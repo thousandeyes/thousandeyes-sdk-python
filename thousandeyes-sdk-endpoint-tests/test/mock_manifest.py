@@ -967,6 +967,28 @@ OPERATION_MANIFEST = {
                 content_type="application/json",
             ),
 
+            "409": ErrorResponseExpectation(
+                status=409,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
             "429": ErrorResponseExpectation(
                 status=429,
                 body=json.loads("""
@@ -1592,6 +1614,28 @@ OPERATION_MANIFEST = {
                   "detail" : "detail",
                   "type" : "type",
                   "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "409": ErrorResponseExpectation(
+                status=409,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
                   "status" : 0
                 }"""),
                 content_type="application/json",

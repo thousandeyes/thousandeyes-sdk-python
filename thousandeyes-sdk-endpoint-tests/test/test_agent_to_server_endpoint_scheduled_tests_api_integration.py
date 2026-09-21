@@ -309,6 +309,62 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
 
 
+    def test_create_agent_to_server_endpoint_scheduled_test_error_409(self) -> None:
+        """Integration test for create_agent_to_server_endpoint_scheduled_test error path (HTTP 409)"""
+        request_body_json = """
+        
+                {
+                  "server" : "www.example.com",
+                  "agentSelectorType" : "all-agents",
+                  "tagIds" : [ "c6b78e57-81a2-4c5f-a11a-d96c3c664d55", "5aeab5d5-0d34-4d44-a7ac-fb440185295c" ],
+                  "maxMachines" : 25,
+                  "serverName" : "www.example.com",
+                  "isPrioritized" : false,
+                  "endpointAgentLabels" : [ "567", "214" ],
+                  "agents" : [ "0a3b9998-dc3a-4ff2-b50d-ac4a7cd986e1", "66eec0f1-72b4-4755-aa83-3aed61d17f3c" ],
+                  "protocol" : "icmp",
+                  "ipVersion" : "V4_ONLY",
+                  "port" : 443,
+                  "interval" : 60,
+                  "testName" : "Test name"
+                }
+        
+                """
+        endpoint_agent_to_server_test_request = thousandeyes_sdk.endpoint_tests.models.EndpointAgentToServerTestRequest.from_json(request_body_json)
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(409)
+        ) as context:
+            self.api.create_agent_to_server_endpoint_scheduled_test(
+
+                endpoint_agent_to_server_test_request=endpoint_agent_to_server_test_request,
+
+                aid=aid,
+
+                _headers=self.te_headers("create_agent_to_server_endpoint_scheduled_test", error_status="409"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
     def test_create_agent_to_server_endpoint_scheduled_test_error_429(self) -> None:
         """Integration test for create_agent_to_server_endpoint_scheduled_test error path (HTTP 429)"""
         request_body_json = """
@@ -1417,6 +1473,59 @@ class TestAgentToServerEndpointScheduledTestsApiIntegration(IntegrationTestBase)
                 aid=aid,
 
                 _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test", error_status="404"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_update_agent_to_server_endpoint_scheduled_test_error_409(self) -> None:
+        """Integration test for update_agent_to_server_endpoint_scheduled_test error path (HTTP 409)"""
+        request_body_json = """
+        
+                {
+                  "server" : "www.example.com",
+                  "protocol" : "icmp",
+                  "port" : 49153,
+                  "isEnabled" : true,
+                  "interval" : 60,
+                  "tcpProbeMode" : "auto",
+                  "testName" : "Test name"
+                }
+        
+                """
+        endpoint_network_test_update = thousandeyes_sdk.endpoint_tests.models.EndpointNetworkTestUpdate.from_json(request_body_json)
+        test_id = '584739201'
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(409)
+        ) as context:
+            self.api.update_agent_to_server_endpoint_scheduled_test(
+
+                test_id=test_id,
+
+                endpoint_network_test_update=endpoint_network_test_update,
+
+                aid=aid,
+
+                _headers=self.te_headers("update_agent_to_server_endpoint_scheduled_test", error_status="409"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
 

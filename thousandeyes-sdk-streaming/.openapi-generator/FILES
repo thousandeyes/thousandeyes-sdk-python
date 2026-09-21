@@ -17,6 +17,10 @@ docs/ExporterConfigAuthorization.md
 docs/ExporterConfigOAuth2.md
 docs/ExporterConfigSplunkHec.md
 docs/Filters.md
+docs/FiltersAttributes.md
+docs/FiltersAttributesExcludedAttributes.md
+docs/FiltersMetrics.md
+docs/FiltersMetricsExcludedMetrics.md
 docs/FiltersTestTypes.md
 docs/GetStreamResponse.md
 docs/InputConfig.md
@@ -36,6 +40,12 @@ docs/TestMatch.md
 docs/TestMatchDomain.md
 docs/TestType.md
 docs/UnauthorizedError.md
+docs/V1MetricAttributeFilterName.md
+docs/V1MetricFilterName.md
+docs/V2LogAttributeFilterName.md
+docs/V2MetricAttributeFilterName.md
+docs/V2MetricFilterName.md
+docs/V2TraceAttributeFilterName.md
 pyproject.toml
 setup.cfg
 src/thousandeyes_sdk/streaming/__init__.py
@@ -58,6 +68,10 @@ src/thousandeyes_sdk/streaming/models/exporter_config_authorization.py
 src/thousandeyes_sdk/streaming/models/exporter_config_o_auth2.py
 src/thousandeyes_sdk/streaming/models/exporter_config_splunk_hec.py
 src/thousandeyes_sdk/streaming/models/filters.py
+src/thousandeyes_sdk/streaming/models/filters_attributes.py
+src/thousandeyes_sdk/streaming/models/filters_attributes_excluded_attributes.py
+src/thousandeyes_sdk/streaming/models/filters_metrics.py
+src/thousandeyes_sdk/streaming/models/filters_metrics_excluded_metrics.py
 src/thousandeyes_sdk/streaming/models/filters_test_types.py
 src/thousandeyes_sdk/streaming/models/get_stream_response.py
 src/thousandeyes_sdk/streaming/models/input_config.py
@@ -76,6 +90,12 @@ src/thousandeyes_sdk/streaming/models/test_match.py
 src/thousandeyes_sdk/streaming/models/test_match_domain.py
 src/thousandeyes_sdk/streaming/models/test_type.py
 src/thousandeyes_sdk/streaming/models/unauthorized_error.py
+src/thousandeyes_sdk/streaming/models/v1_metric_attribute_filter_name.py
+src/thousandeyes_sdk/streaming/models/v1_metric_filter_name.py
+src/thousandeyes_sdk/streaming/models/v2_log_attribute_filter_name.py
+src/thousandeyes_sdk/streaming/models/v2_metric_attribute_filter_name.py
+src/thousandeyes_sdk/streaming/models/v2_metric_filter_name.py
+src/thousandeyes_sdk/streaming/models/v2_trace_attribute_filter_name.py
 src/thousandeyes_sdk/streaming/py.typed
 test/__init__.py
 test/conftest.py
