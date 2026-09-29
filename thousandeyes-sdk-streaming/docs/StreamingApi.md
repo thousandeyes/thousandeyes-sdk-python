@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 **400** | Bad Request |  -  |
 **401** | Unauthorized |  -  |
 **409** | An existing item already exists |  -  |
-**412** | Reached limit on number of streams (maximum 10 data streams per account group) |  -  |
+**412** | Reached limit on number of streams (maximum 30 data streams per account group) |  -  |
 **500** | Internal Server Error |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 Update data stream
 
-Updates a configured data stream using its ID. The fields are overwritten, not appended.
+Updates a configured data stream using its ID. The fields are overwritten, not appended. **Important:** When changing `streamEndpointUrl`, include replacement values for any configured `customHeaders`, Splunk HEC, or OAuth2 credentials. Omitted or redacted credential values are rejected. To remove custom headers, send `{}`. When the destination is unchanged, omitted credentials are preserved.
 
 ### Example
 
