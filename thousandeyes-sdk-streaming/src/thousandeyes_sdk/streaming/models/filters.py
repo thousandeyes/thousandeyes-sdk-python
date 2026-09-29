@@ -18,16 +18,20 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from thousandeyes_sdk.streaming.models.filters_attributes import FiltersAttributes
+from thousandeyes_sdk.streaming.models.filters_metrics import FiltersMetrics
 from thousandeyes_sdk.streaming.models.filters_test_types import FiltersTestTypes
 from typing import Optional, Set
 from typing_extensions import Self
 
 class Filters(BaseModel):
     """
-    Provides the ability to filter data points based on the specified test types.
+    Controls which test data the integration exports.  `testTypes` is an inclusion filter: when specified, only data from the selected test types is included. `metricsFilter` and `attributesFilter` exclude metrics or attributes from the included data.  Filter support depends on the stream's signal and data model version:  - For `metric` streams using data model `v1` or `v2`, both   `metricsFilter` and `attributesFilter` are supported. - For `log` and `trace` streams using data model `v2`, only   `attributesFilter` is supported. `metricsFilter` is not supported.  On create, an omitted `testTypes` filter includes all test types, while omitted exclusion filters exclude nothing. On update, each omitted filter remains unchanged. Empty exclusion lists clear existing exclusions; `testTypes.values` must not be empty. 
     """ # noqa: E501
     test_types: Optional[FiltersTestTypes] = Field(default=None, alias="testTypes")
-    __properties: ClassVar[List[str]] = ["testTypes"]
+    metrics_filter: Optional[FiltersMetrics] = Field(default=None, alias="metricsFilter")
+    attributes_filter: Optional[FiltersAttributes] = Field(default=None, alias="attributesFilter")
+    __properties: ClassVar[List[str]] = ["testTypes", "metricsFilter", "attributesFilter"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -72,6 +76,12 @@ class Filters(BaseModel):
         # override the default output from pydantic by calling `to_dict()` of test_types
         if self.test_types:
             _dict['testTypes'] = self.test_types.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of metrics_filter
+        if self.metrics_filter:
+            _dict['metricsFilter'] = self.metrics_filter.to_dict()
+        # override the default output from pydantic by calling `to_dict()` of attributes_filter
+        if self.attributes_filter:
+            _dict['attributesFilter'] = self.attributes_filter.to_dict()
         return _dict
 
     @classmethod
@@ -84,7 +94,9 @@ class Filters(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
-            "testTypes": FiltersTestTypes.from_dict(obj["testTypes"]) if obj.get("testTypes") is not None else None
+            "testTypes": FiltersTestTypes.from_dict(obj["testTypes"]) if obj.get("testTypes") is not None else None,
+            "metricsFilter": FiltersMetrics.from_dict(obj["metricsFilter"]) if obj.get("metricsFilter") is not None else None,
+            "attributesFilter": FiltersAttributes.from_dict(obj["attributesFilter"]) if obj.get("attributesFilter") is not None else None
         })
         return _obj
 
