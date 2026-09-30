@@ -23,6 +23,7 @@ from thousandeyes_sdk.endpoint_agents.api.endpoint_proxies_api import EndpointPr
 # import models into sdk package
 from thousandeyes_sdk.endpoint_agents.models.address_profile import AddressProfile
 from thousandeyes_sdk.endpoint_agents.models.address_type import AddressType
+from thousandeyes_sdk.endpoint_agents.models.agent_explainability_failure import AgentExplainabilityFailure
 from thousandeyes_sdk.endpoint_agents.models.agent_license_type import AgentLicenseType
 from thousandeyes_sdk.endpoint_agents.models.agent_search_filters import AgentSearchFilters
 from thousandeyes_sdk.endpoint_agents.models.agent_search_request import AgentSearchRequest
@@ -41,6 +42,7 @@ from thousandeyes_sdk.endpoint_agents.models.bulk_agent_transfer_response import
 from thousandeyes_sdk.endpoint_agents.models.cellular_profile import CellularProfile
 from thousandeyes_sdk.endpoint_agents.models.conditional_operator import ConditionalOperator
 from thousandeyes_sdk.endpoint_agents.models.connection_string import ConnectionString
+from thousandeyes_sdk.endpoint_agents.models.deployment_info_item import DeploymentInfoItem
 from thousandeyes_sdk.endpoint_agents.models.endpoint_agent import EndpointAgent
 from thousandeyes_sdk.endpoint_agents.models.endpoint_agent_ethernet_profile import EndpointAgentEthernetProfile
 from thousandeyes_sdk.endpoint_agents.models.endpoint_agent_location import EndpointAgentLocation

@@ -33,6 +33,8 @@ Name | Type | Description | Notes
 **agent_type** | **str** |  | [optional] [readonly] 
 **vpn_profiles** | [**List[EndpointVpnProfile]**](EndpointVpnProfile.md) | List of VPN connections on the agent. Not populated by default.  | [optional] [readonly] 
 **external_metadata** | [**List[ExternalMetadataItem]**](ExternalMetadataItem.md) | List of external metadata assigned to the endpoint agent.  Visible only if the &#x60;expandAgent&#x3D;externalMetadata&#x60; query parameter is included.  | [optional] 
+**agent_explainability_failures** | [**List[AgentExplainabilityFailure]**](AgentExplainabilityFailure.md) | Current failures reported by the agent. An empty list means no current failures. | [optional] [readonly] 
+**deployment_info** | [**List[DeploymentInfoItem]**](DeploymentInfoItem.md) | Included when the agent has reported deployment metadata. | [optional] [readonly] 
 **network_interface_profiles** | [**List[InterfaceProfile]**](InterfaceProfile.md) | List of network interfaces on the agent. Not populated by default.  | [optional] [readonly] 
 **asn_details** | [**EndpointAsnDetails**](EndpointAsnDetails.md) |  | [optional] 
 **license_type** | [**AgentLicenseType**](AgentLicenseType.md) |  | [optional] 
