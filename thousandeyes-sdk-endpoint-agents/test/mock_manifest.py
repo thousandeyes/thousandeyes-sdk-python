@@ -398,6 +398,11 @@ OPERATION_MANIFEST = {
                     "interfaceName" : "interfaceName",
                     "vpnClientAddresses" : [ "10.100.0.10" ]
                   } ],
+                  "agentExplainabilityFailures" : [ {
+                    "reasonCode" : "dns_failure"
+                  }, {
+                    "reasonCode" : "dns_failure"
+                  } ],
                   "lastSeen" : "2022-05-26T23:37:16Z",
                   "deleted" : true,
                   "totalMemory" : "16384 MB",
@@ -408,6 +413,19 @@ OPERATION_MANIFEST = {
                     "latitude" : 51.51279,
                     "longitude" : -0.09184
                   },
+                  "deploymentInfo" : [ {
+                    "key" : "enrollmentType",
+                    "value" : "device_owner"
+                  }, {
+                    "key" : "installMethod",
+                    "value" : "mdm"
+                  }, {
+                    "key" : "mdmVendor",
+                    "value" : "meraki"
+                  }, {
+                    "key" : "oemConfigStatus",
+                    "value" : "applied"
+                  } ],
                   "aid" : "",
                   "status" : "enabled",
                   "networkInterfaceProfiles" : [ {
@@ -648,6 +666,11 @@ OPERATION_MANIFEST = {
                     "interfaceName" : "interfaceName",
                     "vpnClientAddresses" : [ "10.100.0.10" ]
                   } ],
+                  "agentExplainabilityFailures" : [ {
+                    "reasonCode" : "dns_failure"
+                  }, {
+                    "reasonCode" : "dns_failure"
+                  } ],
                   "lastSeen" : "2022-05-26T23:37:16Z",
                   "deleted" : true,
                   "totalMemory" : "16384 MB",
@@ -658,6 +681,19 @@ OPERATION_MANIFEST = {
                     "latitude" : 51.51279,
                     "longitude" : -0.09184
                   },
+                  "deploymentInfo" : [ {
+                    "key" : "enrollmentType",
+                    "value" : "device_owner"
+                  }, {
+                    "key" : "installMethod",
+                    "value" : "mdm"
+                  }, {
+                    "key" : "mdmVendor",
+                    "value" : "meraki"
+                  }, {
+                    "key" : "oemConfigStatus",
+                    "value" : "applied"
+                  } ],
                   "aid" : "",
                   "status" : "enabled",
                   "networkInterfaceProfiles" : [ {
@@ -911,6 +947,11 @@ OPERATION_MANIFEST = {
                       "interfaceName" : "interfaceName",
                       "vpnClientAddresses" : [ "10.100.0.10" ]
                     } ],
+                    "agentExplainabilityFailures" : [ {
+                      "reasonCode" : "dns_failure"
+                    }, {
+                      "reasonCode" : "dns_failure"
+                    } ],
                     "lastSeen" : "2022-05-26T23:37:16Z",
                     "deleted" : true,
                     "totalMemory" : "16384 MB",
@@ -921,6 +962,19 @@ OPERATION_MANIFEST = {
                       "latitude" : 51.51279,
                       "longitude" : -0.09184
                     },
+                    "deploymentInfo" : [ {
+                      "key" : "enrollmentType",
+                      "value" : "device_owner"
+                    }, {
+                      "key" : "installMethod",
+                      "value" : "mdm"
+                    }, {
+                      "key" : "mdmVendor",
+                      "value" : "meraki"
+                    }, {
+                      "key" : "oemConfigStatus",
+                      "value" : "applied"
+                    } ],
                     "aid" : "",
                     "status" : "enabled",
                     "networkInterfaceProfiles" : [ {
@@ -1090,6 +1144,11 @@ OPERATION_MANIFEST = {
                       "interfaceName" : "interfaceName",
                       "vpnClientAddresses" : [ "10.100.0.10" ]
                     } ],
+                    "agentExplainabilityFailures" : [ {
+                      "reasonCode" : "dns_failure"
+                    }, {
+                      "reasonCode" : "dns_failure"
+                    } ],
                     "lastSeen" : "2022-05-26T23:37:16Z",
                     "deleted" : true,
                     "totalMemory" : "16384 MB",
@@ -1100,6 +1159,19 @@ OPERATION_MANIFEST = {
                       "latitude" : 51.51279,
                       "longitude" : -0.09184
                     },
+                    "deploymentInfo" : [ {
+                      "key" : "enrollmentType",
+                      "value" : "device_owner"
+                    }, {
+                      "key" : "installMethod",
+                      "value" : "mdm"
+                    }, {
+                      "key" : "mdmVendor",
+                      "value" : "meraki"
+                    }, {
+                      "key" : "oemConfigStatus",
+                      "value" : "applied"
+                    } ],
                     "aid" : "",
                     "status" : "enabled",
                     "networkInterfaceProfiles" : [ {
@@ -1391,6 +1463,11 @@ OPERATION_MANIFEST = {
                     "interfaceName" : "interfaceName",
                     "vpnClientAddresses" : [ "10.100.0.10" ]
                   } ],
+                  "agentExplainabilityFailures" : [ {
+                    "reasonCode" : "dns_failure"
+                  }, {
+                    "reasonCode" : "dns_failure"
+                  } ],
                   "lastSeen" : "2022-05-26T23:37:16Z",
                   "deleted" : true,
                   "totalMemory" : "16384 MB",
@@ -1401,6 +1478,19 @@ OPERATION_MANIFEST = {
                     "latitude" : 51.51279,
                     "longitude" : -0.09184
                   },
+                  "deploymentInfo" : [ {
+                    "key" : "enrollmentType",
+                    "value" : "device_owner"
+                  }, {
+                    "key" : "installMethod",
+                    "value" : "mdm"
+                  }, {
+                    "key" : "mdmVendor",
+                    "value" : "meraki"
+                  }, {
+                    "key" : "oemConfigStatus",
+                    "value" : "applied"
+                  } ],
                   "aid" : "",
                   "status" : "enabled",
                   "networkInterfaceProfiles" : [ {
@@ -1664,6 +1754,11 @@ OPERATION_MANIFEST = {
                       "interfaceName" : "interfaceName",
                       "vpnClientAddresses" : [ "10.100.0.10" ]
                     } ],
+                    "agentExplainabilityFailures" : [ {
+                      "reasonCode" : "dns_failure"
+                    }, {
+                      "reasonCode" : "dns_failure"
+                    } ],
                     "lastSeen" : "2022-05-26T23:37:16Z",
                     "deleted" : true,
                     "totalMemory" : "16384 MB",
@@ -1674,6 +1769,19 @@ OPERATION_MANIFEST = {
                       "latitude" : 51.51279,
                       "longitude" : -0.09184
                     },
+                    "deploymentInfo" : [ {
+                      "key" : "enrollmentType",
+                      "value" : "device_owner"
+                    }, {
+                      "key" : "installMethod",
+                      "value" : "mdm"
+                    }, {
+                      "key" : "mdmVendor",
+                      "value" : "meraki"
+                    }, {
+                      "key" : "oemConfigStatus",
+                      "value" : "applied"
+                    } ],
                     "aid" : "",
                     "status" : "enabled",
                     "networkInterfaceProfiles" : [ {
@@ -1843,6 +1951,11 @@ OPERATION_MANIFEST = {
                       "interfaceName" : "interfaceName",
                       "vpnClientAddresses" : [ "10.100.0.10" ]
                     } ],
+                    "agentExplainabilityFailures" : [ {
+                      "reasonCode" : "dns_failure"
+                    }, {
+                      "reasonCode" : "dns_failure"
+                    } ],
                     "lastSeen" : "2022-05-26T23:37:16Z",
                     "deleted" : true,
                     "totalMemory" : "16384 MB",
@@ -1853,6 +1966,19 @@ OPERATION_MANIFEST = {
                       "latitude" : 51.51279,
                       "longitude" : -0.09184
                     },
+                    "deploymentInfo" : [ {
+                      "key" : "enrollmentType",
+                      "value" : "device_owner"
+                    }, {
+                      "key" : "installMethod",
+                      "value" : "mdm"
+                    }, {
+                      "key" : "mdmVendor",
+                      "value" : "meraki"
+                    }, {
+                      "key" : "oemConfigStatus",
+                      "value" : "applied"
+                    } ],
                     "aid" : "",
                     "status" : "enabled",
                     "networkInterfaceProfiles" : [ {
@@ -2152,6 +2278,11 @@ OPERATION_MANIFEST = {
                     "interfaceName" : "interfaceName",
                     "vpnClientAddresses" : [ "10.100.0.10" ]
                   } ],
+                  "agentExplainabilityFailures" : [ {
+                    "reasonCode" : "dns_failure"
+                  }, {
+                    "reasonCode" : "dns_failure"
+                  } ],
                   "lastSeen" : "2022-05-26T23:37:16Z",
                   "deleted" : true,
                   "totalMemory" : "16384 MB",
@@ -2162,6 +2293,19 @@ OPERATION_MANIFEST = {
                     "latitude" : 51.51279,
                     "longitude" : -0.09184
                   },
+                  "deploymentInfo" : [ {
+                    "key" : "enrollmentType",
+                    "value" : "device_owner"
+                  }, {
+                    "key" : "installMethod",
+                    "value" : "mdm"
+                  }, {
+                    "key" : "mdmVendor",
+                    "value" : "meraki"
+                  }, {
+                    "key" : "oemConfigStatus",
+                    "value" : "applied"
+                  } ],
                   "aid" : "",
                   "status" : "enabled",
                   "networkInterfaceProfiles" : [ {
