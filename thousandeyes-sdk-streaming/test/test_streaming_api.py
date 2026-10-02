@@ -65,6 +65,12 @@ class TestStreamingApi(unittest.TestCase):
                   "filters" : {
                     "testTypes" : {
                       "values" : [ "agent-to-server", "bgp", "http-server" ]
+                    },
+                    "attributesFilter" : {
+                      "excludedAttributes" : [ "agent.name" ]
+                    },
+                    "metricsFilter" : {
+                      "excludedMetrics" : [ "http.metrics.availability" ]
                     }
                   },
                   "type" : "opentelemetry",
@@ -143,6 +149,12 @@ class TestStreamingApi(unittest.TestCase):
                   "filters" : {
                     "testTypes" : {
                       "values" : [ "agent-to-server", "bgp", "http-server" ]
+                    },
+                    "attributesFilter" : {
+                      "excludedAttributes" : [ "agent.name" ]
+                    },
+                    "metricsFilter" : {
+                      "excludedMetrics" : [ "http.metrics.availability" ]
                     }
                   },
                   "type" : "opentelemetry",
@@ -239,6 +251,12 @@ class TestStreamingApi(unittest.TestCase):
                   "filters" : {
                     "testTypes" : {
                       "values" : [ "agent-to-server", "bgp", "http-server" ]
+                    },
+                    "attributesFilter" : {
+                      "excludedAttributes" : [ "agent.name" ]
+                    },
+                    "metricsFilter" : {
+                      "excludedMetrics" : [ "http.metrics.availability" ]
                     }
                   },
                   "type" : "opentelemetry",
@@ -332,6 +350,12 @@ class TestStreamingApi(unittest.TestCase):
                   "filters" : {
                     "testTypes" : {
                       "values" : [ "agent-to-server", "bgp", "http-server" ]
+                    },
+                    "attributesFilter" : {
+                      "excludedAttributes" : [ "agent.name" ]
+                    },
+                    "metricsFilter" : {
+                      "excludedMetrics" : [ "http.metrics.availability" ]
                     }
                   },
                   "type" : "opentelemetry",
@@ -413,6 +437,12 @@ class TestStreamingApi(unittest.TestCase):
                   "filters" : {
                     "testTypes" : {
                       "values" : [ "agent-to-server", "bgp", "http-server" ]
+                    },
+                    "attributesFilter" : {
+                      "excludedAttributes" : [ "agent.name" ]
+                    },
+                    "metricsFilter" : {
+                      "excludedMetrics" : [ "http.metrics.availability" ]
                     }
                   },
                   "type" : "opentelemetry",
@@ -521,6 +551,12 @@ class TestStreamingApi(unittest.TestCase):
                   "filters" : {
                     "testTypes" : {
                       "values" : [ "agent-to-server", "bgp", "http-server" ]
+                    },
+                    "attributesFilter" : {
+                      "excludedAttributes" : [ "agent.name" ]
+                    },
+                    "metricsFilter" : {
+                      "excludedMetrics" : [ "http.metrics.availability" ]
                     }
                   },
                   "customHeaders" : {
@@ -576,6 +612,12 @@ class TestStreamingApi(unittest.TestCase):
                   "filters" : {
                     "testTypes" : {
                       "values" : [ "agent-to-server", "bgp", "http-server" ]
+                    },
+                    "attributesFilter" : {
+                      "excludedAttributes" : [ "agent.name" ]
+                    },
+                    "metricsFilter" : {
+                      "excludedMetrics" : [ "http.metrics.availability" ]
                     }
                   },
                   "type" : "opentelemetry",
