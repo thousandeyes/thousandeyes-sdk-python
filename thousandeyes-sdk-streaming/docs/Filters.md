@@ -1,12 +1,14 @@
 # Filters
 
-Provides the ability to filter data points based on the specified test types.
+Controls which test data the integration exports.  `testTypes` is an inclusion filter: when specified, only data from the selected test types is included. `metricsFilter` and `attributesFilter` exclude metrics or attributes from the included data.  Filter support depends on the stream's signal and data model version:  - For `metric` streams using data model `v1` or `v2`, both   `metricsFilter` and `attributesFilter` are supported. - For `log` and `trace` streams using data model `v2`, only   `attributesFilter` is supported. `metricsFilter` is not supported.  On create, an omitted `testTypes` filter includes all test types, while omitted exclusion filters exclude nothing. On update, each omitted filter remains unchanged. Empty exclusion lists clear existing exclusions; `testTypes.values` must not be empty. 
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **test_types** | [**FiltersTestTypes**](FiltersTestTypes.md) |  | [optional] 
+**metrics_filter** | [**FiltersMetrics**](FiltersMetrics.md) |  | [optional] 
+**attributes_filter** | [**FiltersAttributes**](FiltersAttributes.md) |  | [optional] 
 
 ## Example
 
