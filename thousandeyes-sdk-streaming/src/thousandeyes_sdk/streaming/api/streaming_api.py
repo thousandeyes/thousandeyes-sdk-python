@@ -1275,7 +1275,7 @@ class StreamingApi:
     ) -> GetStreamResponse:
         """Update data stream
 
-        Updates a configured data stream using its ID. The fields are overwritten, not appended.
+        Updates a configured data stream using its ID. The fields are overwritten, not appended. **Important:** When changing `streamEndpointUrl`, include replacement values for any configured `customHeaders`, Splunk HEC, or OAuth2 credentials. Omitted or redacted credential values are rejected. To remove custom headers, send `{}`. When the destination is unchanged, omitted credentials are preserved.
 
         :param id: ID of stream to query (required)
         :type id: str
@@ -1359,7 +1359,7 @@ class StreamingApi:
     ) -> ApiResponse[GetStreamResponse]:
         """Update data stream
 
-        Updates a configured data stream using its ID. The fields are overwritten, not appended.
+        Updates a configured data stream using its ID. The fields are overwritten, not appended. **Important:** When changing `streamEndpointUrl`, include replacement values for any configured `customHeaders`, Splunk HEC, or OAuth2 credentials. Omitted or redacted credential values are rejected. To remove custom headers, send `{}`. When the destination is unchanged, omitted credentials are preserved.
 
         :param id: ID of stream to query (required)
         :type id: str
@@ -1443,7 +1443,7 @@ class StreamingApi:
     ) -> RESTResponseType:
         """Update data stream
 
-        Updates a configured data stream using its ID. The fields are overwritten, not appended.
+        Updates a configured data stream using its ID. The fields are overwritten, not appended. **Important:** When changing `streamEndpointUrl`, include replacement values for any configured `customHeaders`, Splunk HEC, or OAuth2 credentials. Omitted or redacted credential values are rejected. To remove custom headers, send `{}`. When the destination is unchanged, omitted credentials are preserved.
 
         :param id: ID of stream to query (required)
         :type id: str

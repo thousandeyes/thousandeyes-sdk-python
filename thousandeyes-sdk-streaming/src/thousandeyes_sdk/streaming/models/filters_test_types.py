@@ -18,6 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
+from typing_extensions import Annotated
 from thousandeyes_sdk.streaming.models.test_type import TestType
 from typing import Optional, Set
 from typing_extensions import Self
@@ -26,7 +27,7 @@ class FiltersTestTypes(BaseModel):
     """
     Test types that can be used for filtering data points.
     """ # noqa: E501
-    values: Optional[List[TestType]] = Field(default=None, description="A list of test types to filter data points.")
+    values: Optional[Annotated[List[TestType], Field(min_length=1)]] = Field(default=None, description="A list of test types to filter data points.")
     __properties: ClassVar[List[str]] = ["values"]
 
     model_config = ConfigDict(
