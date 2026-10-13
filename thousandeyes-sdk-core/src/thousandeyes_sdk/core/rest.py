@@ -111,6 +111,10 @@ class RESTClientObject:
         else:
             self.pool_manager = urllib3.PoolManager(**pool_args)
 
+    def close(self) -> None:
+        """Release all connection pools owned by this client."""
+        self.pool_manager.clear()
+
     def request(
             self,
             method,
