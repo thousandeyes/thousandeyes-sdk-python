@@ -19,6 +19,45 @@ def test_api_client_initialization(api_client):
     assert api_client.default_headers == {}
 
 
+def test_close_closes_rest_client(api_client):
+    with patch.object(api_client.rest_client, 'close') as mock_close:
+        api_client.close()
+
+    mock_close.assert_called_once_with()
+
+
+def test_close_is_idempotent(api_client):
+    api_client.rest_client.pool_manager.connection_from_url(
+        'https://example.com'
+    )
+    assert len(api_client.rest_client.pool_manager.pools) == 1
+
+    api_client.close()
+    api_client.close()
+
+    assert len(api_client.rest_client.pool_manager.pools) == 0
+
+
+def test_context_manager_closes_client(api_client):
+    with api_client as entered_client:
+        entered_client.rest_client.pool_manager.connection_from_url(
+            'https://example.com'
+        )
+        assert entered_client is api_client
+        assert len(entered_client.rest_client.pool_manager.pools) == 1
+
+    assert len(api_client.rest_client.pool_manager.pools) == 0
+
+
+def test_context_manager_closes_client_and_propagates_exception(api_client):
+    with patch.object(api_client, 'close') as mock_close:
+        with pytest.raises(RuntimeError, match='operation failed'):
+            with api_client:
+                raise RuntimeError('operation failed')
+
+    mock_close.assert_called_once_with()
+
+
 def test_set_default_header(api_client):
     api_client.set_default_header('X-Test-Header', 'test_value')
     assert api_client.default_headers['X-Test-Header'] == 'test_value'

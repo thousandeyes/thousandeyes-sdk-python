@@ -83,7 +83,11 @@ class ApiClient:
         return self
 
     def __exit__(self, exc_type, exc_value, traceback):
-        pass
+        self.close()
+
+    def close(self) -> None:
+        """Release transport resources owned by this client."""
+        self.rest_client.close()
 
     @property
     def user_agent(self):
