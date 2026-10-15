@@ -25,7 +25,6 @@ Each of the APIs being published includes a README file with instructions on how
 * [instant-tests](/thousandeyes-sdk-instant-tests/README.md)
 * [internet-insights](/thousandeyes-sdk-internet-insights/README.md)
 * [snapshots](/thousandeyes-sdk-snapshots/README.md)
-* [streaming](/thousandeyes-sdk-streaming/README.md)
 * [tags](/thousandeyes-sdk-tags/README.md)
 * [test-results](/thousandeyes-sdk-test-results/README.md)
 * [tests](/thousandeyes-sdk-tests/README.md)
