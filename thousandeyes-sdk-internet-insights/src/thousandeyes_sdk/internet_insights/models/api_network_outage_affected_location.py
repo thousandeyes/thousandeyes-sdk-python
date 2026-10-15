@@ -81,6 +81,7 @@ class ApiNetworkOutageAffectedLocation(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "location": obj.get("location"),
             "affectedInterfaces": obj.get("affectedInterfaces")
         })

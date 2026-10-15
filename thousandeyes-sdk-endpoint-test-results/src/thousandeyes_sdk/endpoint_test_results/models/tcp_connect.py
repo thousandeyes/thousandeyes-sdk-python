@@ -91,6 +91,7 @@ class TcpConnect(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "rtt": obj.get("rtt"),
             "errorCode": obj.get("errorCode"),
             "error": obj.get("error"),

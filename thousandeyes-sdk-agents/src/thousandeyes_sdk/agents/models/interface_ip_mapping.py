@@ -85,6 +85,7 @@ class InterfaceIpMapping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "interfaceName": obj.get("interfaceName"),
             "ipAddresses": obj.get("ipAddresses")
         })

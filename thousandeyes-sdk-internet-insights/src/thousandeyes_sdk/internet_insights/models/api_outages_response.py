@@ -93,6 +93,7 @@ class ApiOutagesResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "outages": [ApiOutage.from_dict(_item) for _item in obj["outages"]] if obj.get("outages") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

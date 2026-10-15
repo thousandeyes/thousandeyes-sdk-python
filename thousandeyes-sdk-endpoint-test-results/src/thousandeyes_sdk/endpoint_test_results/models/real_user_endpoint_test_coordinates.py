@@ -88,6 +88,7 @@ class RealUserEndpointTestCoordinates(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "latitude": obj.get("latitude"),
             "location": obj.get("location"),
             "longitude": obj.get("longitude")

@@ -93,6 +93,7 @@ class BgpUpdates(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "updates": [BgpUpdate.from_dict(_item) for _item in obj["updates"]] if obj.get("updates") is not None else None,
             "_links": PaginationLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

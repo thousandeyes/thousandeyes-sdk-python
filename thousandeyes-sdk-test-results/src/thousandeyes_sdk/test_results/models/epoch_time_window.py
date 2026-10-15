@@ -85,6 +85,7 @@ class EpochTimeWindow(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "startTime": obj.get("startTime"),
             "endTime": obj.get("endTime")
         })

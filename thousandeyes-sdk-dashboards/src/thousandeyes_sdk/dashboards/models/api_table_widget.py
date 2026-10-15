@@ -135,6 +135,7 @@ class ApiTableWidget(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "title": obj.get("title"),
             "visualMode": obj.get("visualMode"),

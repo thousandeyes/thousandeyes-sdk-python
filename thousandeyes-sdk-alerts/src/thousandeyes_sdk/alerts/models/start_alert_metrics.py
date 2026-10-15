@@ -80,6 +80,7 @@ class StartAlertMetrics(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "metrics": obj.get("metrics")
         })
         return _obj

@@ -82,6 +82,7 @@ class ConsoleLogs(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "level": obj.get("level"),
             "timestamp": obj.get("timestamp"),
             "value": obj.get("value")

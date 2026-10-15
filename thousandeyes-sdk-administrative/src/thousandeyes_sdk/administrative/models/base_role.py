@@ -82,6 +82,7 @@ class BaseRole(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "name": obj.get("name"),
             "roleId": obj.get("roleId"),
             "isBuiltin": obj.get("isBuiltin")

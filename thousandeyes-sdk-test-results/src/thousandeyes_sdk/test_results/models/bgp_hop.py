@@ -85,6 +85,7 @@ class BgpHop(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "asn": obj.get("asn"),
             "asName": obj.get("asName")
         })

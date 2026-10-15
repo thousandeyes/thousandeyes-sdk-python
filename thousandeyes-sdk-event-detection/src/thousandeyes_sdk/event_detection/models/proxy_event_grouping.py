@@ -82,6 +82,7 @@ class ProxyEventGrouping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "proxy": obj.get("proxy")
         })
         return _obj

@@ -88,6 +88,7 @@ class NetworkEventGrouping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "sourceAsn": obj.get("sourceAsn"),
             "destAsn": obj.get("destAsn"),
             "sourceCountryCode": obj.get("sourceCountryCode")

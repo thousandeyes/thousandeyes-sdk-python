@@ -91,6 +91,7 @@ class SubscriptionsPolicy(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "rules": [SubscriptionsPolicyRule.from_dict(_item) for _item in obj["rules"]] if obj.get("rules") is not None else None,
             "defaultAction": obj.get("defaultAction")
         })

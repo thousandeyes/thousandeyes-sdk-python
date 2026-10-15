@@ -82,6 +82,7 @@ class ApiDuration(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "value": obj.get("value"),
             "unit": obj.get("unit")
         })

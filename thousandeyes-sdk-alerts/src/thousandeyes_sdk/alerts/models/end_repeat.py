@@ -84,6 +84,7 @@ class EndRepeat(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "type": obj.get("type"),
             "count": obj.get("count"),
             "date": obj.get("date")

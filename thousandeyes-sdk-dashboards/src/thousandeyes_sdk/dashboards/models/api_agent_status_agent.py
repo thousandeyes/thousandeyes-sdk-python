@@ -93,6 +93,7 @@ class ApiAgentStatusAgent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentId": obj.get("agentId"),
             "status": obj.get("status"),
             "ipInfo": ApiAgentStatusIpInfo.from_dict(obj["ipInfo"]) if obj.get("ipInfo") is not None else None,

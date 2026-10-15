@@ -80,6 +80,7 @@ class AgentTestsAssignRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "testIds": obj.get("testIds")
         })
         return _obj

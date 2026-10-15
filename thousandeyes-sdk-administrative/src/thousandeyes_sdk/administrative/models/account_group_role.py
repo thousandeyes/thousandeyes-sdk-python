@@ -93,6 +93,7 @@ class AccountGroupRole(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "accountGroup": AccountGroup.from_dict(obj["accountGroup"]) if obj.get("accountGroup") is not None else None,
             "roles": [Role.from_dict(_item) for _item in obj["roles"]] if obj.get("roles") is not None else None
         })

@@ -88,6 +88,7 @@ class EndpointHttpTestUpdate(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "interval": obj.get("interval"),
             "testName": obj.get("testName"),
             "protocol": obj.get("protocol"),

@@ -81,6 +81,7 @@ class ProviderLocation(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "location": obj.get("location"),
             "interfacesCount": obj.get("interfacesCount")
         })

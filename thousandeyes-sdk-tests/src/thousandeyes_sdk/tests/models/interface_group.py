@@ -90,6 +90,7 @@ class InterfaceGroup(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "aid": obj.get("aid"),
             "groupId": obj.get("groupId"),
             "groupName": obj.get("groupName"),

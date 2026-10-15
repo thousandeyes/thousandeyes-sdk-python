@@ -94,6 +94,7 @@ class DashboardSnapshotsPage(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "pages": obj.get("pages"),
             "dashboardSnapshots": [ApiDashboardSnapshot.from_dict(_item) for _item in obj["dashboardSnapshots"]] if obj.get("dashboardSnapshots") is not None else None,
             "_links": PaginationLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None

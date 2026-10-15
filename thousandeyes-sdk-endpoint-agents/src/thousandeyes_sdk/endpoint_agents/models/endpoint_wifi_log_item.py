@@ -147,6 +147,7 @@ class EndpointWifiLogItem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "logItemType": obj.get("logItemType"),
             "ssid": obj.get("ssid"),
             "bssid": obj.get("bssid"),

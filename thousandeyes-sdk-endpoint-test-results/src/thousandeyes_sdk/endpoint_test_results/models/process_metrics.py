@@ -84,6 +84,7 @@ class ProcessMetrics(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "name": obj.get("name"),
             "pid": obj.get("pid"),
             "cpu": obj.get("cpu"),

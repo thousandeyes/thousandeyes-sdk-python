@@ -84,6 +84,7 @@ class SnapshotRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "displayName": obj.get("displayName"),
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),

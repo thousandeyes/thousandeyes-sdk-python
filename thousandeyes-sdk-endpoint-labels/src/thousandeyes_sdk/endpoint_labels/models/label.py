@@ -95,6 +95,7 @@ class Label(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "name": obj.get("name"),
             "color": obj.get("color"),

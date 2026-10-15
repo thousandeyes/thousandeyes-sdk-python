@@ -80,6 +80,7 @@ class QuotasUnassign(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "organizations": obj.get("organizations")
         })
         return _obj

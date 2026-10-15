@@ -81,6 +81,7 @@ class ApiReportDataComponentLabelMapEntry(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "groupId": obj.get("groupId"),
             "groupLabel": obj.get("groupLabel")
         })

@@ -82,6 +82,7 @@ class ApiDataSourceFilter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "filterId": obj.get("filterId"),
             "values": obj.get("values"),
             "metricIds": obj.get("metricIds")

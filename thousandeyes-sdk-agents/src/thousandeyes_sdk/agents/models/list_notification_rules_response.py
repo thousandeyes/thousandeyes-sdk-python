@@ -93,6 +93,7 @@ class ListNotificationRulesResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentAlertRules": [NotificationRule.from_dict(_item) for _item in obj["agentAlertRules"]] if obj.get("agentAlertRules") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

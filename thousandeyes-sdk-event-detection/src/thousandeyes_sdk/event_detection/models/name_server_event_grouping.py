@@ -82,6 +82,7 @@ class NameServerEventGrouping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "serverName": obj.get("serverName")
         })
         return _obj

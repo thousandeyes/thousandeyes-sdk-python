@@ -93,6 +93,7 @@ class EndpointClient(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "userProfile": EndpointUserProfile.from_dict(obj["userProfile"]) if obj.get("userProfile") is not None else None,
             "browserExtensions": [EndpointBrowserExtension.from_dict(_item) for _item in obj["browserExtensions"]] if obj.get("browserExtensions") is not None else None
         })

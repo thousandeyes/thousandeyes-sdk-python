@@ -82,6 +82,7 @@ class NotificationThirdParty(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "integrationId": obj.get("integrationId"),
             "integrationType": obj.get("integrationType")
         })

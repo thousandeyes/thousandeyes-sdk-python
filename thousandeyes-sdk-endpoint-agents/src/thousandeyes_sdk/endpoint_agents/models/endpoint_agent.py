@@ -20,9 +20,11 @@ from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
 from typing import Any, ClassVar, Dict, List, Optional, Union
 from typing_extensions import Annotated
+from thousandeyes_sdk.endpoint_agents.models.agent_explainability_failure import AgentExplainabilityFailure
 from thousandeyes_sdk.endpoint_agents.models.agent_license_type import AgentLicenseType
 from thousandeyes_sdk.endpoint_agents.models.battery_metrics import BatteryMetrics
 from thousandeyes_sdk.endpoint_agents.models.cellular_profile import CellularProfile
+from thousandeyes_sdk.endpoint_agents.models.deployment_info_item import DeploymentInfoItem
 from thousandeyes_sdk.endpoint_agents.models.endpoint_agent_location import EndpointAgentLocation
 from thousandeyes_sdk.endpoint_agents.models.endpoint_asn_details import EndpointAsnDetails
 from thousandeyes_sdk.endpoint_agents.models.endpoint_client import EndpointClient
@@ -66,6 +68,8 @@ class EndpointAgent(BaseModel):
     agent_type: Optional[StrictStr] = Field(default=None, alias="agentType")
     vpn_profiles: Optional[List[EndpointVpnProfile]] = Field(default=None, description="List of VPN connections on the agent. Not populated by default. ", alias="vpnProfiles")
     external_metadata: Optional[List[ExternalMetadataItem]] = Field(default=None, description="List of external metadata assigned to the endpoint agent.  Visible only if the `expandAgent=externalMetadata` query parameter is included. ", alias="externalMetadata")
+    agent_explainability_failures: Optional[List[AgentExplainabilityFailure]] = Field(default=None, description="Current failures reported by the agent. An empty list means no current failures.", alias="agentExplainabilityFailures")
+    deployment_info: Optional[List[DeploymentInfoItem]] = Field(default=None, description="Included when the agent has reported deployment metadata.", alias="deploymentInfo")
     network_interface_profiles: Optional[List[InterfaceProfile]] = Field(default=None, description="List of network interfaces on the agent. Not populated by default. ", alias="networkInterfaceProfiles")
     asn_details: Optional[EndpointAsnDetails] = Field(default=None, alias="asnDetails")
     license_type: Optional[AgentLicenseType] = Field(default=None, alias="licenseType")
@@ -74,7 +78,7 @@ class EndpointAgent(BaseModel):
     battery_metrics: Optional[BatteryMetrics] = Field(default=None, alias="batteryMetrics")
     cellular_profile: Optional[CellularProfile] = Field(default=None, alias="cellularProfile")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "freeDiskSpaceNormalized", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "nicDriverVersion", "nicModel", "serialNumber", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "externalMetadata", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "batteryMetrics", "cellularProfile", "_links"]
+    __properties: ClassVar[List[str]] = ["id", "aid", "name", "computerName", "freeDiskSpaceNormalized", "osVersion", "platform", "kernelVersion", "manufacturer", "model", "nicDriverVersion", "nicModel", "serialNumber", "lastSeen", "status", "deleted", "version", "targetVersion", "createdAt", "numberOfClients", "publicIP", "location", "clients", "totalMemory", "agentType", "vpnProfiles", "externalMetadata", "agentExplainabilityFailures", "deploymentInfo", "networkInterfaceProfiles", "asnDetails", "licenseType", "tcpDriverAvailable", "npcapVersion", "batteryMetrics", "cellularProfile", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -131,6 +135,8 @@ class EndpointAgent(BaseModel):
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
         * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
+        * OpenAPI `readOnly` fields are excluded.
         """
         excluded_fields: Set[str] = set([
             "id",
@@ -154,6 +160,8 @@ class EndpointAgent(BaseModel):
             "total_memory",
             "agent_type",
             "vpn_profiles",
+            "agent_explainability_failures",
+            "deployment_info",
             "network_interface_profiles",
             "tcp_driver_available",
             "npcap_version",
@@ -188,6 +196,20 @@ class EndpointAgent(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['externalMetadata'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in agent_explainability_failures (list)
+        _items = []
+        if self.agent_explainability_failures:
+            for _item in self.agent_explainability_failures:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['agentExplainabilityFailures'] = _items
+        # override the default output from pydantic by calling `to_dict()` of each item in deployment_info (list)
+        _items = []
+        if self.deployment_info:
+            for _item in self.deployment_info:
+                if _item:
+                    _items.append(_item.to_dict())
+            _dict['deploymentInfo'] = _items
         # override the default output from pydantic by calling `to_dict()` of each item in network_interface_profiles (list)
         _items = []
         if self.network_interface_profiles:
@@ -234,6 +256,7 @@ class EndpointAgent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "aid": obj.get("aid"),
             "name": obj.get("name"),
@@ -261,6 +284,8 @@ class EndpointAgent(BaseModel):
             "agentType": obj.get("agentType"),
             "vpnProfiles": [EndpointVpnProfile.from_dict(_item) for _item in obj["vpnProfiles"]] if obj.get("vpnProfiles") is not None else None,
             "externalMetadata": [ExternalMetadataItem.from_dict(_item) for _item in obj["externalMetadata"]] if obj.get("externalMetadata") is not None else None,
+            "agentExplainabilityFailures": [AgentExplainabilityFailure.from_dict(_item) for _item in obj["agentExplainabilityFailures"]] if obj.get("agentExplainabilityFailures") is not None else None,
+            "deploymentInfo": [DeploymentInfoItem.from_dict(_item) for _item in obj["deploymentInfo"]] if obj.get("deploymentInfo") is not None else None,
             "networkInterfaceProfiles": [InterfaceProfile.from_dict(_item) for _item in obj["networkInterfaceProfiles"]] if obj.get("networkInterfaceProfiles") is not None else None,
             "asnDetails": EndpointAsnDetails.from_dict(obj["asnDetails"]) if obj.get("asnDetails") is not None else None,
             "licenseType": obj.get("licenseType"),

@@ -125,6 +125,7 @@ class ApiRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "assertions": [ApiRequestAssertion.from_dict(_item) for _item in obj["assertions"]] if obj.get("assertions") is not None else None,
             "authType": obj.get("authType"),
             "bearerToken": obj.get("bearerToken"),

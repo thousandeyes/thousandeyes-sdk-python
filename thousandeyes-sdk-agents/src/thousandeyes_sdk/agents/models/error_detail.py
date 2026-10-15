@@ -84,6 +84,7 @@ class ErrorDetail(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "code": obj.get("code"),
             "description": obj.get("description")
         })

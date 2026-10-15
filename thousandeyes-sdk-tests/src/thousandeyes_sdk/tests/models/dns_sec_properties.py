@@ -86,6 +86,7 @@ class DnsSecProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "domain": obj.get("domain"),
             "dnsQueryClass": obj.get("dnsQueryClass"),
             "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,

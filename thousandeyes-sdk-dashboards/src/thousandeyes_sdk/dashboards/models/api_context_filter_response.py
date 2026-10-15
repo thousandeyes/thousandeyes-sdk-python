@@ -109,6 +109,7 @@ class ApiContextFilterResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "context": [ApiDataSourceFilters.from_dict(_item) for _item in obj["context"]] if obj.get("context") is not None else None,
             "aid": obj.get("aid"),
             "id": obj.get("id"),

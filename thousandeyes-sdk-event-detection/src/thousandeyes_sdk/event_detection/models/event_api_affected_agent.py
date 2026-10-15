@@ -100,6 +100,7 @@ class EventApiAffectedAgent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentId": obj.get("agentId"),
             "type": obj.get("type"),
             "name": obj.get("name"),

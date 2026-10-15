@@ -100,6 +100,7 @@ class TracerouteHop(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "hop": obj.get("hop"),
             "ipAddress": obj.get("ipAddress"),
             "prefix": obj.get("prefix"),

@@ -88,6 +88,7 @@ class PanoramaTokenAuthentication(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "token": obj.get("token"),
             "type": obj.get("type")
         })

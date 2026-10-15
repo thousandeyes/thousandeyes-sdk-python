@@ -87,6 +87,7 @@ class NetworkProviderInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "asn": obj.get("asn"),
             "name": obj.get("name"),
             "type": obj.get("type")

@@ -85,6 +85,7 @@ class HttpEndpointTestResultHeaders(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "requestHeaders": obj.get("requestHeaders"),
             "responseHeaders": obj.get("responseHeaders")
         })

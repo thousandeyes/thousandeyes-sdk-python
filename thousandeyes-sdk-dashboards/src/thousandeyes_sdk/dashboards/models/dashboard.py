@@ -145,6 +145,7 @@ class Dashboard(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "globalFilterId": obj.get("globalFilterId"),
             "dashboardId": obj.get("dashboardId"),
             "title": obj.get("title"),

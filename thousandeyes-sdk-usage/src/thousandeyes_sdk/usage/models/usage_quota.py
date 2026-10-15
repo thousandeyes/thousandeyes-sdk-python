@@ -88,6 +88,7 @@ class UsageQuota(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "monthStart": obj.get("monthStart"),
             "monthEnd": obj.get("monthEnd"),
             "cloudUnitsIncluded": obj.get("cloudUnitsIncluded"),

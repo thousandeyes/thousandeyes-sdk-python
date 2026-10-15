@@ -84,6 +84,7 @@ class BatteryMetrics(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "batteryHealthNormalizedPercent": obj.get("batteryHealthNormalizedPercent"),
             "batteryLevel": obj.get("batteryLevel"),
             "batteryLevelNormalizedPercent": obj.get("batteryLevelNormalizedPercent")

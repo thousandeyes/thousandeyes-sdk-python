@@ -89,6 +89,7 @@ class AwsIntegrationPolicySetting(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "enabledResourceGroupTypes": obj.get("enabledResourceGroupTypes"),
             "enabledRegions": obj.get("enabledRegions"),
             "enabledCloudtrail": obj.get("enabledCloudtrail"),

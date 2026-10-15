@@ -89,6 +89,7 @@ class EndpointNetworkTopologyResultRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "thresholdFilter": EndpointNetworkTopologyThresholdFilter.from_dict(obj["thresholdFilter"]) if obj.get("thresholdFilter") is not None else None,
             "searchFilters": EndpointNetworkTopologyResultRequestFilter.from_dict(obj["searchFilters"]) if obj.get("searchFilters") is not None else None
         })

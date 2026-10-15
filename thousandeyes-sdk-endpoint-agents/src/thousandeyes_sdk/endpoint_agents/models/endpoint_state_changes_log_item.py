@@ -81,6 +81,7 @@ class EndpointStateChangesLogItem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "logItemType": obj.get("logItemType")
         })
         return _obj

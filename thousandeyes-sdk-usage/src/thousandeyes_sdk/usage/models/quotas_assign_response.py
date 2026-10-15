@@ -88,6 +88,7 @@ class QuotasAssignResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "organizations": [OrganizationQuota.from_dict(_item) for _item in obj["organizations"]] if obj.get("organizations") is not None else None
         })
         return _obj

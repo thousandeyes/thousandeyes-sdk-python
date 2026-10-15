@@ -91,6 +91,7 @@ class PathVisRoute(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "pathId": obj.get("pathId"),
             "hops": [PathVisHop.from_dict(_item) for _item in obj["hops"]] if obj.get("hops") is not None else None
         })

@@ -91,6 +91,7 @@ class EndpointAgentToServerInstantTest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentSelectorType": obj.get("agentSelectorType"),
             "agents": obj.get("agents"),
             "endpointAgentLabels": obj.get("endpointAgentLabels"),

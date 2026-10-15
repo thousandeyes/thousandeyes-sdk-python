@@ -82,6 +82,7 @@ class ApiWidgetMeasure(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "type": obj.get("type"),
             "percentileValue": obj.get("percentileValue")
         })

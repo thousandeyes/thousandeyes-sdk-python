@@ -101,6 +101,7 @@ class Events(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "aid": obj.get("aid"),
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),

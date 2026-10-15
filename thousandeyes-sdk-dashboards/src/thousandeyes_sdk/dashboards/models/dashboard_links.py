@@ -88,6 +88,7 @@ class DashboardLinks(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "self": Link.from_dict(obj["self"]) if obj.get("self") is not None else None,
             "snapshots": Link.from_dict(obj["snapshots"]) if obj.get("snapshots") is not None else None
         })

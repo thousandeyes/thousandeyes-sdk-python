@@ -97,6 +97,7 @@ class EndpointPathVisRoute(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "pathId": obj.get("pathId"),
             "protocol": obj.get("protocol"),
             "tcpPathTraceMode": obj.get("tcpPathTraceMode"),

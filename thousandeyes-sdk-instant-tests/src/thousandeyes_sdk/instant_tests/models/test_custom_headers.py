@@ -82,6 +82,7 @@ class TestCustomHeaders(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "root": obj.get("root"),
             "domains": obj.get("domains"),
             "all": obj.get("all")

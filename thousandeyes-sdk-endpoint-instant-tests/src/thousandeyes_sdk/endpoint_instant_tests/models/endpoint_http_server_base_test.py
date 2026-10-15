@@ -92,6 +92,7 @@ class EndpointHttpServerBaseTest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "authType": obj.get("authType"),
             "hasPathTraceInSession": obj.get("hasPathTraceInSession"),
             "httpTimeLimit": obj.get("httpTimeLimit") if obj.get("httpTimeLimit") is not None else 5000,

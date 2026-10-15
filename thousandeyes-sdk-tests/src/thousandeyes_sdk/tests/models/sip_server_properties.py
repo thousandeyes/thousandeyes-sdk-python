@@ -98,6 +98,7 @@ class SipServerProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "mtuMeasurements": obj.get("mtuMeasurements"),
             "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
             "numPathTraces": obj.get("numPathTraces") if obj.get("numPathTraces") is not None else 3,

@@ -89,6 +89,7 @@ class DashboardScheduleDateEndCondition(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "endConditionType": obj.get("endConditionType"),
             "value": obj.get("value")
         })

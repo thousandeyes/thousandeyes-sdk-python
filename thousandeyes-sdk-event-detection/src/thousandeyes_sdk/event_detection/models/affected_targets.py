@@ -94,6 +94,7 @@ class AffectedTargets(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "total": obj.get("total"),
             "inAccountGroup": obj.get("inAccountGroup"),
             "targets": [ApiAffectedTarget.from_dict(_item) for _item in obj["targets"]] if obj.get("targets") is not None else None

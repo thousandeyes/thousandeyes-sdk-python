@@ -84,6 +84,7 @@ class DashboardScheduleCustomRepeat(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "repeatEvery": obj.get("repeatEvery"),
             "daysOfWeek": obj.get("daysOfWeek"),
             "repeatUnit": obj.get("repeatUnit")

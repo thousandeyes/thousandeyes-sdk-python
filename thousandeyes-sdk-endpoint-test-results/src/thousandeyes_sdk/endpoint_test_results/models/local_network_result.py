@@ -91,6 +91,7 @@ class LocalNetworkResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "networkId": obj.get("networkId"),
             "networkName": obj.get("networkName"),
             "localPrefix": obj.get("localPrefix"),

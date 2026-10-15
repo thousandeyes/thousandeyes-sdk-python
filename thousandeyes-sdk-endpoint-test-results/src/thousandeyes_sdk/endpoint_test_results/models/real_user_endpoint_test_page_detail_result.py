@@ -85,6 +85,7 @@ class RealUserEndpointTestPageDetailResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "har": obj.get("har"),
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

@@ -85,6 +85,7 @@ class VpnEventGrouping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "vpnType": obj.get("vpnType"),
             "vpnServerIpAddress": obj.get("vpnServerIpAddress")
         })

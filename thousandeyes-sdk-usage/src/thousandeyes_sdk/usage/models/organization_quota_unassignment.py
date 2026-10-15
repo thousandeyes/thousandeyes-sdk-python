@@ -81,6 +81,7 @@ class OrganizationQuotaUnassignment(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "orgId": obj.get("orgId"),
             "accountGroups": obj.get("accountGroups")
         })

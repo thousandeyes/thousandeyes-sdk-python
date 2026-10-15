@@ -116,6 +116,7 @@ class ApiDashboardSnapshot(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "accountId": obj.get("accountId"),
             "createdDate": obj.get("createdDate"),
             "expirationDate": obj.get("expirationDate"),

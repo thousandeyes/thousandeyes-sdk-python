@@ -112,6 +112,7 @@ class DnsServerProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "dnsServers": [TestDnsServer.from_dict(_item) for _item in obj["dnsServers"]] if obj.get("dnsServers") is not None else None,
             "dnsTransportProtocol": obj.get("dnsTransportProtocol"),

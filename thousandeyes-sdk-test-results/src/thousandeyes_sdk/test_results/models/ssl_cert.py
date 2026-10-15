@@ -88,6 +88,7 @@ class SslCert(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "daysUntilExpiry": obj.get("daysUntilExpiry"),
             "isFetchDateInValidCertDateRange": obj.get("isFetchDateInValidCertDateRange"),
             "hasValidSigningCert": obj.get("hasValidSigningCert"),

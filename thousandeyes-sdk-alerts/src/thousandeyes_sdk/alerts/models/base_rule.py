@@ -107,6 +107,7 @@ class BaseRule(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "ruleId": obj.get("ruleId"),
             "ruleName": obj.get("ruleName"),
             "expression": obj.get("expression"),

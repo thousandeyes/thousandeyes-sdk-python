@@ -164,6 +164,7 @@ class NetworkEndpointTestResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "aid": obj.get("aid"),
             "testId": obj.get("testId"),
             "agentId": obj.get("agentId"),

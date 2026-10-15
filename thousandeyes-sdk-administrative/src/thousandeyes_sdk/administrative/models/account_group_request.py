@@ -81,6 +81,7 @@ class AccountGroupRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "accountGroupName": obj.get("accountGroupName"),
             "agents": obj.get("agents")
         })

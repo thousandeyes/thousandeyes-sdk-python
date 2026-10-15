@@ -1584,7 +1584,7 @@ class DashboardsApi:
         dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
         widget_id: Annotated[StrictStr, Field(description="A Identifier for a widget.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optionally specify the maximum number of objects to retrieve. This only applies to the **Alert List** and **Test Table** Widgets. * The default for the **Alert List** widget is set by its limitBy configuration. * The default value for the **Test Table** widget is 10.")] = None,
@@ -1614,7 +1614,7 @@ class DashboardsApi:
         :type widget_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
         :type window: str
         :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
         :type start_date: datetime
@@ -1694,7 +1694,7 @@ class DashboardsApi:
         dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
         widget_id: Annotated[StrictStr, Field(description="A Identifier for a widget.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optionally specify the maximum number of objects to retrieve. This only applies to the **Alert List** and **Test Table** Widgets. * The default for the **Alert List** widget is set by its limitBy configuration. * The default value for the **Test Table** widget is 10.")] = None,
@@ -1724,7 +1724,7 @@ class DashboardsApi:
         :type widget_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
         :type window: str
         :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
         :type start_date: datetime
@@ -1804,7 +1804,7 @@ class DashboardsApi:
         dashboard_id: Annotated[StrictStr, Field(description="A Identifier for a dashboard which can be obtained from the `/dashboards` endpoint.")],
         widget_id: Annotated[StrictStr, Field(description="A Identifier for a widget.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         max: Annotated[Optional[Union[StrictFloat, StrictInt]], Field(description="Optionally specify the maximum number of objects to retrieve. This only applies to the **Alert List** and **Test Table** Widgets. * The default for the **Alert List** widget is set by its limitBy configuration. * The default value for the **Test Table** widget is 10.")] = None,
@@ -1834,7 +1834,7 @@ class DashboardsApi:
         :type widget_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
         :type window: str
         :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
         :type start_date: datetime
@@ -2316,7 +2316,7 @@ class DashboardsApi:
         widget_id: Annotated[StrictStr, Field(description="A Identifier for a widget.")],
         card_id: Annotated[StrictStr, Field(description="An identifier for a card within the numbers widget.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         _request_timeout: Union[
@@ -2344,7 +2344,7 @@ class DashboardsApi:
         :type card_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
         :type window: str
         :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
         :type start_date: datetime
@@ -2414,7 +2414,7 @@ class DashboardsApi:
         widget_id: Annotated[StrictStr, Field(description="A Identifier for a widget.")],
         card_id: Annotated[StrictStr, Field(description="An identifier for a card within the numbers widget.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         _request_timeout: Union[
@@ -2442,7 +2442,7 @@ class DashboardsApi:
         :type card_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
         :type window: str
         :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
         :type start_date: datetime
@@ -2512,7 +2512,7 @@ class DashboardsApi:
         widget_id: Annotated[StrictStr, Field(description="A Identifier for a widget.")],
         card_id: Annotated[StrictStr, Field(description="An identifier for a card within the numbers widget.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         _request_timeout: Union[
@@ -2540,7 +2540,7 @@ class DashboardsApi:
         :type card_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
         :type window: str
         :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
         :type start_date: datetime
@@ -2712,7 +2712,7 @@ class DashboardsApi:
         widget_id: Annotated[StrictStr, Field(description="A Identifier for a widget.")],
         column_id: Annotated[StrictStr, Field(description="An identifier for a column within the multi-metric table widget.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         _request_timeout: Union[
@@ -2740,7 +2740,7 @@ class DashboardsApi:
         :type column_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
         :type window: str
         :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
         :type start_date: datetime
@@ -2810,7 +2810,7 @@ class DashboardsApi:
         widget_id: Annotated[StrictStr, Field(description="A Identifier for a widget.")],
         column_id: Annotated[StrictStr, Field(description="An identifier for a column within the multi-metric table widget.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         _request_timeout: Union[
@@ -2838,7 +2838,7 @@ class DashboardsApi:
         :type column_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
         :type window: str
         :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
         :type start_date: datetime
@@ -2908,7 +2908,7 @@ class DashboardsApi:
         widget_id: Annotated[StrictStr, Field(description="A Identifier for a widget.")],
         column_id: Annotated[StrictStr, Field(description="An identifier for a column within the multi-metric table widget.")],
         aid: Annotated[Optional[StrictStr], Field(description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.")] = None,
-        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
+        window: Annotated[Optional[Annotated[str, Field(strict=True)]], Field(description="A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.")] = None,
         start_date: Annotated[Optional[datetime], Field(description="Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         end_date: Annotated[Optional[datetime], Field(description="Defaults to current time the request is made. Use with the `startDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.")] = None,
         _request_timeout: Union[
@@ -2936,7 +2936,7 @@ class DashboardsApi:
         :type column_id: str
         :param aid: A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response.
         :type aid: str
-        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by an optional type: `s` for seconds (default if no type is specified), `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
+        :param window: A dynamic time interval up to the current time of the request. Specify the interval as a number followed by a type: `s` for seconds, `m` for minutes, `h` for hours, `d` for days, and `w` for weeks. For a precise date range, use `startDate` and `endDate`.
         :type window: str
         :param start_date: Use with the `endDate` parameter. Include the complete time (hours, minutes, and seconds) in UTC time zone, following the ISO 8601 date-time format. See the example for reference. Please note that this parameter can't be used with `window`.
         :type start_date: datetime

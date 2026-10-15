@@ -85,6 +85,7 @@ class ApiCatalogProviderFilter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "providerName": obj.get("providerName"),
             "providerType": obj.get("providerType"),
             "region": obj.get("region"),

@@ -98,6 +98,7 @@ class SystemMetrics(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "startTimeMs": obj.get("startTimeMs"),
             "endTimeMs": obj.get("endTimeMs"),
             "cpuUtilization": CpuUtilization.from_dict(obj["cpuUtilization"]) if obj.get("cpuUtilization") is not None else None,

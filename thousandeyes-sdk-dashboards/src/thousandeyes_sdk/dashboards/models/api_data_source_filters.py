@@ -89,6 +89,7 @@ class ApiDataSourceFilters(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "dataSourceId": obj.get("dataSourceId"),
             "filters": [ApiDataSourceFilter.from_dict(_item) for _item in obj["filters"]] if obj.get("filters") is not None else None
         })

@@ -84,6 +84,7 @@ class EmulatedDevice(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "category": obj.get("category"),
             "width": obj.get("width"),
             "height": obj.get("height")

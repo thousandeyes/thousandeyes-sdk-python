@@ -96,6 +96,7 @@ class LocalProblemAgent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentId": obj.get("agentId"),
             "agentName": obj.get("agentName"),
             "countryId": obj.get("countryId"),

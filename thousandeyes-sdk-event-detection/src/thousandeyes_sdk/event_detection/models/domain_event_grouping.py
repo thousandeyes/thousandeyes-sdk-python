@@ -82,6 +82,7 @@ class DomainEventGrouping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "fqdn": obj.get("fqdn")
         })
         return _obj

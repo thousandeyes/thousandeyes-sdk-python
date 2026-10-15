@@ -82,6 +82,7 @@ class AgentTag(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "key": obj.get("key"),
             "value": obj.get("value")

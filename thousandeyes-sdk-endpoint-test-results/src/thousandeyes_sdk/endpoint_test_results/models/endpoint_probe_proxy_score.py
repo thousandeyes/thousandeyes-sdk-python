@@ -82,6 +82,7 @@ class EndpointProbeProxyScore(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "score": obj.get("score"),
             "quality": obj.get("quality")
         })

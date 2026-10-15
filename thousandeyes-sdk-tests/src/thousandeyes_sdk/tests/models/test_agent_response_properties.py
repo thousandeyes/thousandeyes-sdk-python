@@ -82,6 +82,7 @@ class TestAgentResponseProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "sourceIpAddress": obj.get("sourceIpAddress")
         })
         return _obj

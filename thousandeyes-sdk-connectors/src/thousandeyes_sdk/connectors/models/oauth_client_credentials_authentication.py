@@ -86,6 +86,7 @@ class OauthClientCredentialsAuthentication(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "token": obj.get("token"),
             "oauthClientId": obj.get("oauthClientId"),
             "oauthTokenUrl": obj.get("oauthTokenUrl"),

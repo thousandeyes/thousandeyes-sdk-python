@@ -97,6 +97,7 @@ class PathTrace(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "ipAddress": obj.get("ipAddress"),
             "mss": obj.get("mss"),
             "numberOfHops": obj.get("numberOfHops"),

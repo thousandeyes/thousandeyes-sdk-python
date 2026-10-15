@@ -102,6 +102,7 @@ class CloneDashboardRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "title": obj.get("title"),
             "tagIds": obj.get("tagIds"),
             "description": obj.get("description"),

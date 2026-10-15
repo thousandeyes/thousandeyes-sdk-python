@@ -107,6 +107,7 @@ class FtpServerProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "downloadLimit": obj.get("downloadLimit"),
             "ftpTargetTime": obj.get("ftpTargetTime"),

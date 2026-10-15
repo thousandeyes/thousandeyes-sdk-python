@@ -91,6 +91,7 @@ class NetworkMetrics(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "jitter": obj.get("jitter"),
             "latency": obj.get("latency"),
             "loss": obj.get("loss"),

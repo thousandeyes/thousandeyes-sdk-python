@@ -81,6 +81,7 @@ class DashboardScheduleCustomRepeatNot(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "repeatUnit": obj.get("repeatUnit")
         })
         return _obj

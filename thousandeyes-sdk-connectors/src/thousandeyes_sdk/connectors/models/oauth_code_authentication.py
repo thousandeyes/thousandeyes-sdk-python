@@ -89,6 +89,7 @@ class OauthCodeAuthentication(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "token": obj.get("token"),
             "refreshToken": obj.get("refreshToken"),
             "oauthClientId": obj.get("oauthClientId"),

@@ -136,6 +136,7 @@ class DnsServerResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "qr": obj.get("qr"),
             "opcode": obj.get("opcode"),

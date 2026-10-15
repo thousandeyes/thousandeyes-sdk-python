@@ -80,6 +80,7 @@ class EndpointAgentEthernetProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "linkSpeed": obj.get("linkSpeed")
         })
         return _obj

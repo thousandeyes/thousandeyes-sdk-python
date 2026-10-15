@@ -84,6 +84,7 @@ class PaginationNextLink(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "next": Link.from_dict(obj["next"]) if obj.get("next") is not None else None
         })
         return _obj

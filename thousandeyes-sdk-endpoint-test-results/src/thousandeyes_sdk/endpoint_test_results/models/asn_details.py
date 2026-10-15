@@ -85,6 +85,7 @@ class AsnDetails(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "asName": obj.get("asName"),
             "asNumber": obj.get("asNumber")
         })

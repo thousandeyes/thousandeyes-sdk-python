@@ -81,6 +81,7 @@ class ApiRequestDetailAssertion(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "step": obj.get("step"),
             "hasFailed": obj.get("hasFailed")
         })

@@ -210,6 +210,7 @@ class HttpServerInstantTest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "createdBy": obj.get("createdBy"),
             "createdDate": obj.get("createdDate"),
             "description": obj.get("description"),

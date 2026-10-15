@@ -88,6 +88,7 @@ class OAuth(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "testUrl": obj.get("testUrl"),
             "requestMethod": obj.get("requestMethod"),
             "postBody": obj.get("postBody"),

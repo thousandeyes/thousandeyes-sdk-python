@@ -88,6 +88,7 @@ class ApiContextFiltersResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "dashboardFilters": [ApiContextFilterResponse.from_dict(_item) for _item in obj["dashboardFilters"]] if obj.get("dashboardFilters") is not None else None
         })
         return _obj

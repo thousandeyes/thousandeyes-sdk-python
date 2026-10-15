@@ -98,6 +98,7 @@ class DnsServerMeasurement(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "usedDnsResponse": DnsServerResponse.from_dict(obj["usedDnsResponse"]) if obj.get("usedDnsResponse") is not None else None,
             "unusedDnsResponses": [DnsServerResponse.from_dict(_item) for _item in obj["unusedDnsResponses"]] if obj.get("unusedDnsResponses") is not None else None,
             "usedHostsFile": obj.get("usedHostsFile"),

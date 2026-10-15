@@ -101,6 +101,7 @@ class ApiWidgetData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "groupLabels": [ApiReportDataComponentLabelMap.from_dict(_item) for _item in obj["groupLabels"]] if obj.get("groupLabels") is not None else None,
             "binSize": obj.get("binSize"),
             "data": ApiWidgetsDataV2.from_dict(obj["data"]) if obj.get("data") is not None else None,

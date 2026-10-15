@@ -94,6 +94,7 @@ class EventApiAffectedTest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "testId": obj.get("testId"),
             "testType": obj.get("testType"),
             "name": obj.get("name"),

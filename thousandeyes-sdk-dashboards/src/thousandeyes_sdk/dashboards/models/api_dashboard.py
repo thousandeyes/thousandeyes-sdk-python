@@ -162,6 +162,7 @@ class ApiDashboard(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "globalFilterId": obj.get("globalFilterId"),
             "accountId": obj.get("accountId"),
             "createdBy": obj.get("createdBy"),

@@ -106,6 +106,7 @@ class NetworkPing(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "avgRtt": obj.get("avgRtt"),
             "maxRtt": obj.get("maxRtt"),
             "loss": obj.get("loss"),

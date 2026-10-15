@@ -82,6 +82,7 @@ class ApiMultiSearchFilterApiTestTableFilterKey(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "key": obj.get("key"),
             "value": obj.get("value")
         })

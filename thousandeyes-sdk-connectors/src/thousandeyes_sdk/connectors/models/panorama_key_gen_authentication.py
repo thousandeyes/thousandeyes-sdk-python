@@ -91,6 +91,7 @@ class PanoramaKeyGenAuthentication(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "username": obj.get("username"),
             "password": obj.get("password"),
             "keyTtl": obj.get("keyTtl"),

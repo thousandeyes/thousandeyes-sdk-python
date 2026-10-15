@@ -115,6 +115,7 @@ class SimpleAgent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "ipAddresses": obj.get("ipAddresses"),
             "publicIpAddresses": obj.get("publicIpAddresses"),
             "network": obj.get("network"),

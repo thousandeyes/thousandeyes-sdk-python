@@ -88,6 +88,7 @@ class AlertIntegrationBase(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "integrationId": obj.get("integrationId"),
             "integrationName": obj.get("integrationName"),
             "integrationType": obj.get("integrationType"),

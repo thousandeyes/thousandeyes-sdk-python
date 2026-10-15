@@ -91,6 +91,7 @@ class DynamicBaseEndpointTestResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "application": obj.get("application"),
             "protocol": obj.get("protocol"),
             "tcpProbeMode": obj.get("tcpProbeMode"),

@@ -88,6 +88,7 @@ class DashboardLayoutDetails(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "widgetPositioning": [WidgetPosition.from_dict(_item) for _item in obj["widgetPositioning"]] if obj.get("widgetPositioning") is not None else None
         })
         return _obj

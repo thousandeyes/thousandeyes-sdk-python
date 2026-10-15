@@ -100,6 +100,7 @@ class AuditUserEvents(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "auditEvents": [UserEvent.from_dict(_item) for _item in obj["auditEvents"]] if obj.get("auditEvents") is not None else None,
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),

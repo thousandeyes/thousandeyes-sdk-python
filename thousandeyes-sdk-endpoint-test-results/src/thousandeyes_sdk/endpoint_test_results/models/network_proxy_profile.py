@@ -91,6 +91,7 @@ class NetworkProxyProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "method": obj.get("method"),
             "proxies": [NetworkProxy.from_dict(_item) for _item in obj["proxies"]] if obj.get("proxies") is not None else None
         })

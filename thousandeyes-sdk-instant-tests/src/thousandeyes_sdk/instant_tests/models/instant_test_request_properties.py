@@ -82,6 +82,7 @@ class InstantTestRequestProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "labels": obj.get("labels"),
             "tags": obj.get("tags"),
             "sharedWithAccounts": obj.get("sharedWithAccounts")

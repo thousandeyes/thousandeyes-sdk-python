@@ -98,6 +98,7 @@ class ApiStackedAreaChartWidgetProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "type": obj.get("type"),
             "groupBy": obj.get("groupBy"),
             "dataSource": obj.get("dataSource"),

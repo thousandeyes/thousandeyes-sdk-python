@@ -92,6 +92,7 @@ class ApiListWidgetRow(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "_links": ApiListWidgetRowLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         # store additional fields in additional_properties

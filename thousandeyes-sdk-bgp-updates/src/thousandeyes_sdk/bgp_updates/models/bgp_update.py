@@ -100,6 +100,7 @@ class BgpUpdate(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "prefix": obj.get("prefix"),
             "originAs": obj.get("originAs"),
             "asPath": obj.get("asPath"),

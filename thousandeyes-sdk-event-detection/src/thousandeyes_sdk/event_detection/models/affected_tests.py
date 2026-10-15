@@ -94,6 +94,7 @@ class AffectedTests(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "total": obj.get("total"),
             "inAccountGroup": obj.get("inAccountGroup"),
             "tests": [EventApiAffectedTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None

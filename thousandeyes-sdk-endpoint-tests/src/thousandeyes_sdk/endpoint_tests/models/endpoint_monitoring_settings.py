@@ -107,6 +107,7 @@ class EndpointMonitoringSettings(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "monitoringSettingsId": obj.get("monitoringSettingsId"),
             "monitoringSettingsType": obj.get("monitoringSettingsType"),
             "agentIds": obj.get("agentIds"),

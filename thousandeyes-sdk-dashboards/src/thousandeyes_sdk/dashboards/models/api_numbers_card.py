@@ -111,6 +111,7 @@ class ApiNumbersCard(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "minScale": obj.get("minScale"),
             "maxScale": obj.get("maxScale"),
             "unit": obj.get("unit"),

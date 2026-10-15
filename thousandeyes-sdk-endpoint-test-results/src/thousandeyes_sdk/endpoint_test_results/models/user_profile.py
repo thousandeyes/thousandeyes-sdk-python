@@ -81,6 +81,7 @@ class UserProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "userName": obj.get("userName"),
             "userPrincipalName": obj.get("userPrincipalName")
         })

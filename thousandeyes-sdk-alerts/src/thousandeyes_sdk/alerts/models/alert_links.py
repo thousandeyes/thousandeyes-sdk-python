@@ -96,6 +96,7 @@ class AlertLinks(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "test": Link.from_dict(obj["test"]) if obj.get("test") is not None else None,
             "rule": Link.from_dict(obj["rule"]) if obj.get("rule") is not None else None,
             "appLink": Link.from_dict(obj["appLink"]) if obj.get("appLink") is not None else None,

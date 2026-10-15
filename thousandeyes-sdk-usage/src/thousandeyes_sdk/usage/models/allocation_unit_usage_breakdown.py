@@ -81,6 +81,7 @@ class AllocationUnitUsageBreakdown(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "productName": obj.get("productName"),
             "allocatedUnits": obj.get("allocatedUnits")
         })

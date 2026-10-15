@@ -82,6 +82,7 @@ class ValidationErrorItem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "code": obj.get("code"),
             "field": obj.get("field"),
             "message": obj.get("message")

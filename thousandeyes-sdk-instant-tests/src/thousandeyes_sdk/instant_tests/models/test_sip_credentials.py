@@ -87,6 +87,7 @@ class TestSipCredentials(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "authUser": obj.get("authUser"),
             "password": obj.get("password"),
             "port": obj.get("port") if obj.get("port") is not None else 49153,

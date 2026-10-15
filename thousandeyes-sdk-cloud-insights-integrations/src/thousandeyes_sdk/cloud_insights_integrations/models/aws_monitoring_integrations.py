@@ -93,6 +93,7 @@ class AwsMonitoringIntegrations(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "integrations": [AwsMonitoringIntegration.from_dict(_item) for _item in obj["integrations"]] if obj.get("integrations") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

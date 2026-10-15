@@ -84,6 +84,7 @@ class WirelessProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "bssid": obj.get("bssid"),
             "ssid": obj.get("ssid"),
             "rssi": obj.get("rssi"),

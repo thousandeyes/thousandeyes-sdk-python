@@ -90,6 +90,7 @@ class VpnProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "vpnClientAddresses": obj.get("vpnClientAddresses"),
             "vpnClientNetworkRange": obj.get("vpnClientNetworkRange"),
             "vpnGatewayAddress": obj.get("vpnGatewayAddress"),

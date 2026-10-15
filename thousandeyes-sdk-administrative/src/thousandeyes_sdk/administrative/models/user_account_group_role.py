@@ -81,6 +81,7 @@ class UserAccountGroupRole(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "accountGroupId": obj.get("accountGroupId"),
             "roleIds": obj.get("roleIds")
         })

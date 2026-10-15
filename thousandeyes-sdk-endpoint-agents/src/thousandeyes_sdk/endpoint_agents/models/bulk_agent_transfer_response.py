@@ -88,6 +88,7 @@ class BulkAgentTransferResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "items": [AgentTransferStatus.from_dict(_item) for _item in obj["items"]] if obj.get("items") is not None else None
         })
         return _obj

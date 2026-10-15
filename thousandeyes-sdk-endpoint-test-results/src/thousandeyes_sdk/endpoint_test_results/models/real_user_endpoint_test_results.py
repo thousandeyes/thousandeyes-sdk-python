@@ -100,6 +100,7 @@ class RealUserEndpointTestResults(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "results": [RealUserEndpointTest.from_dict(_item) for _item in obj["results"]] if obj.get("results") is not None else None,
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),

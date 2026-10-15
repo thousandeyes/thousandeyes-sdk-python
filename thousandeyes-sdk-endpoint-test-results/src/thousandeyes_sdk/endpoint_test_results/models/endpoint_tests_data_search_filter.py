@@ -83,6 +83,7 @@ class EndpointTestsDataSearchFilter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentId": obj.get("agentId"),
             "userPrincipalName": obj.get("userPrincipalName"),
             "nicModel": obj.get("nicModel"),

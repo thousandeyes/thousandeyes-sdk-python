@@ -83,6 +83,7 @@ class ApiDefaultTimespan(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "duration": obj.get("duration"),
             "start": obj.get("start"),
             "end": obj.get("end")

@@ -82,6 +82,7 @@ class Asn(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "name": obj.get("name"),
             "type": obj.get("type")

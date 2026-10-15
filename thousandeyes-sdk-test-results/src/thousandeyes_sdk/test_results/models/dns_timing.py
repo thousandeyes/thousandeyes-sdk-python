@@ -85,6 +85,7 @@ class DnsTiming(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "startTimeUs": obj.get("startTimeUs"),
             "totalTimeUs": obj.get("totalTimeUs")
         })

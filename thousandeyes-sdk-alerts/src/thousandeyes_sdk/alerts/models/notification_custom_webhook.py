@@ -84,6 +84,7 @@ class NotificationCustomWebhook(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "integrationId": obj.get("integrationId"),
             "integrationType": obj.get("integrationType"),
             "integrationName": obj.get("integrationName"),

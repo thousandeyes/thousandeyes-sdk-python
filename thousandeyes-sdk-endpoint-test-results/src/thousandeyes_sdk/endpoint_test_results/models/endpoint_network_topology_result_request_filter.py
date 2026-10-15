@@ -95,6 +95,7 @@ class EndpointNetworkTopologyResultRequestFilter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "location": obj.get("location"),
             "connection": obj.get("connection"),
             "platform": obj.get("platform"),

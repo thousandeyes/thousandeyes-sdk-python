@@ -83,6 +83,7 @@ class ConjurHostAuthentication(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "hostId": obj.get("hostId"),
             "apiKey": obj.get("apiKey"),
             "type": obj.get("type")

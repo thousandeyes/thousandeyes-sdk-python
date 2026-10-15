@@ -92,6 +92,7 @@ class DnsResourceRecord(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "name": obj.get("name"),
             "type": obj.get("type"),
             "class": obj.get("class"),

@@ -84,6 +84,7 @@ class WidgetPosition(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "x": obj.get("x"),
             "y": obj.get("y"),
             "w": obj.get("w"),

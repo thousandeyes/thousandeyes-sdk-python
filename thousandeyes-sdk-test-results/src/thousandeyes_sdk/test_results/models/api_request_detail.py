@@ -105,6 +105,7 @@ class ApiRequestDetail(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "apiCallTime": obj.get("apiCallTime"),
             "assertErrorCount": obj.get("assertErrorCount"),
             "blockedTime": obj.get("blockedTime"),

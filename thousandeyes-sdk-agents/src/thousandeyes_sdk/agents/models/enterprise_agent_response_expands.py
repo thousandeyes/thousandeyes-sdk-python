@@ -122,6 +122,7 @@ class EnterpriseAgentResponseExpands(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "testIds": obj.get("testIds"),
             "tests": [SimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "notificationRules": [NotificationRules.from_dict(_item) for _item in obj["notificationRules"]] if obj.get("notificationRules") is not None else None,

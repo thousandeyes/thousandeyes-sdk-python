@@ -87,6 +87,7 @@ class Credential(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "name": obj.get("name"),
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,

@@ -85,6 +85,7 @@ class AddressProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "addressType": obj.get("addressType"),
             "ipAddress": obj.get("ipAddress"),
             "prefixLength": obj.get("prefixLength"),

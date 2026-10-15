@@ -84,6 +84,7 @@ class EventTestLinks(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "test": Link.from_dict(obj["test"]) if obj.get("test") is not None else None
         })
         return _obj

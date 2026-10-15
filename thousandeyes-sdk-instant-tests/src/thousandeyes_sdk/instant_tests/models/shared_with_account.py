@@ -81,6 +81,7 @@ class SharedWithAccount(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "aid": obj.get("aid"),
             "name": obj.get("name")
         })

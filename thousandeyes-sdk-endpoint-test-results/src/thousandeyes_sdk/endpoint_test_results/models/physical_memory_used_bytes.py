@@ -97,6 +97,7 @@ class PhysicalMemoryUsedBytes(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "min": obj.get("min"),
             "max": obj.get("max"),
             "mean": obj.get("mean"),

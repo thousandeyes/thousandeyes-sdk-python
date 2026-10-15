@@ -82,6 +82,7 @@ class LocalNetworkTopologyDnsServerTest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "resolutionTime": obj.get("resolutionTime")
         })
         return _obj

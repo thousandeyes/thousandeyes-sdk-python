@@ -80,6 +80,7 @@ class AgentClusterAssignRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agents": obj.get("agents")
         })
         return _obj

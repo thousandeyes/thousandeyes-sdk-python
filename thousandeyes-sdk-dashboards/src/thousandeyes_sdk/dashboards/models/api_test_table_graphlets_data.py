@@ -90,6 +90,7 @@ class ApiTestTableGraphletsData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "metric": obj.get("metric"),
             "testId": obj.get("testId"),
             "points": [ApiGraphletPoint.from_dict(_item) for _item in obj["points"]] if obj.get("points") is not None else None

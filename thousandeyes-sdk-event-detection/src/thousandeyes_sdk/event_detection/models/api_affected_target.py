@@ -90,6 +90,7 @@ class ApiAffectedTarget(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "serverId": obj.get("serverId"),
             "name": obj.get("name"),
             "ip": obj.get("ip"),

@@ -84,6 +84,7 @@ class Filter(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "key": obj.get("key"),
             "values": obj.get("values"),
             "mode": obj.get("mode")

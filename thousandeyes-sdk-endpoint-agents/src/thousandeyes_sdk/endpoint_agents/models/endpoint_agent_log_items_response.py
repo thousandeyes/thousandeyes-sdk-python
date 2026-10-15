@@ -93,6 +93,7 @@ class EndpointAgentLogItemsResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "logs": [EndpointAgentLogItem.from_dict(_item) for _item in obj["logs"]] if obj.get("logs") is not None else None,
             "_links": PaginationNextAndSelfLink.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

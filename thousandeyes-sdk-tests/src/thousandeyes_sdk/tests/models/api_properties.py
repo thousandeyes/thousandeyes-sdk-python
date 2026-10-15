@@ -123,6 +123,7 @@ class ApiProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "clientCertificate": obj.get("clientCertificate"),
             "clientCertDomainsAllowList": obj.get("clientCertDomainsAllowList"),
             "collectProxyNetworkData": obj.get("collectProxyNetworkData") if obj.get("collectProxyNetworkData") is not None else False,
