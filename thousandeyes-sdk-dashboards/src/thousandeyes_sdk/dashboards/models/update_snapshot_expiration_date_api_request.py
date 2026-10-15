@@ -82,6 +82,7 @@ class UpdateSnapshotExpirationDateApiRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "snapshotExpirationDate": obj.get("snapshotExpirationDate"),
             "expirationDate": obj.get("expirationDate")
         })

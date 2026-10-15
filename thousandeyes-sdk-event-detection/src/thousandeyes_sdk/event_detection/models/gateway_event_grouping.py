@@ -85,6 +85,7 @@ class GatewayEventGrouping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "ipAddress": obj.get("ipAddress"),
             "macAddress": obj.get("macAddress")
         })

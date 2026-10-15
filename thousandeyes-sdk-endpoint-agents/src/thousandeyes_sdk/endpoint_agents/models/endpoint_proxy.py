@@ -141,6 +141,7 @@ class EndpointProxy(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "proxyId": obj.get("proxyId"),
             "name": obj.get("name"),
             "type": obj.get("type"),

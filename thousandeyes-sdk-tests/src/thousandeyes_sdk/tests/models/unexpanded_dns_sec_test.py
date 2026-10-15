@@ -119,6 +119,7 @@ class UnexpandedDnsSecTest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "interval": obj.get("interval"),
             "alertsEnabled": obj.get("alertsEnabled"),
             "enabled": obj.get("enabled") if obj.get("enabled") is not None else True,

@@ -89,6 +89,7 @@ class ApiReportDataComponentLabelMap(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "groupProperty": obj.get("groupProperty"),
             "groupLabels": [ApiReportDataComponentLabelMapEntry.from_dict(_item) for _item in obj["groupLabels"]] if obj.get("groupLabels") is not None else None
         })

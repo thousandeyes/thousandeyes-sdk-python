@@ -161,6 +161,7 @@ class ApiWidgetsDataV2(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "cards": [ApiNumbersCardData.from_dict(_item) for _item in obj["cards"]] if obj.get("cards") is not None else None,
             "columns": [ApiMultiMetricColumnData.from_dict(_item) for _item in obj["columns"]] if obj.get("columns") is not None else None,
             "points": [ApiWidgetDataPoint.from_dict(_item) for _item in obj["points"]] if obj.get("points") is not None else None,

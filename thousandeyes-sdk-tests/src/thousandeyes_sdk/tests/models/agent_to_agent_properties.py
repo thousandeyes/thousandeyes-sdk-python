@@ -103,6 +103,7 @@ class AgentToAgentProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "direction": obj.get("direction"),
             "dscp": obj.get("dscp"),
             "dscpId": obj.get("dscpId"),

@@ -84,6 +84,7 @@ class RealUserEndpointTestResultsRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "searchFilters": RealUserEndpointTestResultRequestFilter.from_dict(obj["searchFilters"]) if obj.get("searchFilters") is not None else None
         })
         return _obj

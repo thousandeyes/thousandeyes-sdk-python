@@ -81,6 +81,7 @@ class ApiDashboardFilterUserDetails(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "uid": obj.get("uid"),
             "name": obj.get("name")
         })

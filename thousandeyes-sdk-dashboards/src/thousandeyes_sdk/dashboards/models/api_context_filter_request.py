@@ -90,6 +90,7 @@ class ApiContextFilterRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "context": [ApiDataSourceFilters.from_dict(_item) for _item in obj["context"]] if obj.get("context") is not None else None,
             "name": obj.get("name"),
             "description": obj.get("description")

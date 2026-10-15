@@ -82,6 +82,7 @@ class TestVaultCredential(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "secretId": obj.get("secretId"),
             "target": obj.get("target")
         })

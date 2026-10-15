@@ -84,6 +84,7 @@ class AgentLinks(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agent": Link.from_dict(obj["agent"]) if obj.get("agent") is not None else None
         })
         return _obj

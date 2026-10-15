@@ -80,6 +80,7 @@ class MonitorsRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "monitors": obj.get("monitors")
         })
         return _obj

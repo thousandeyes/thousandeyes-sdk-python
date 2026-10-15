@@ -99,6 +99,7 @@ class BaseAlertSuppressionWindow(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "alertSuppressionWindowId": obj.get("alertSuppressionWindowId"),
             "name": obj.get("name"),
             "isEnabled": obj.get("isEnabled"),

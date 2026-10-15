@@ -100,6 +100,7 @@ class TargetTraceroute(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "destination": obj.get("destination"),
             "error": obj.get("error"),
             "infoFlags": obj.get("infoFlags"),

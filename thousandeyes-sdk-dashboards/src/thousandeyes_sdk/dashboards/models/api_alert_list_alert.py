@@ -90,6 +90,7 @@ class ApiAlertListAlert(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "alertId": obj.get("alertId"),
             "testId": obj.get("testId"),
             "ruleId": obj.get("ruleId"),

@@ -107,6 +107,7 @@ class ApiCatalogProviderDetails(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "providerName": obj.get("providerName"),
             "providerType": obj.get("providerType"),

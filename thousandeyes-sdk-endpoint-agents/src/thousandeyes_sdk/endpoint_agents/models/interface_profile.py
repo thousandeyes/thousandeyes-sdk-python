@@ -101,6 +101,7 @@ class InterfaceProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "interfaceName": obj.get("interfaceName"),
             "addressProfiles": [AddressProfile.from_dict(_item) for _item in obj["addressProfiles"]] if obj.get("addressProfiles") is not None else None,
             "hardwareType": obj.get("hardwareType"),

@@ -97,6 +97,7 @@ class EndpointPathTrace(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "ipAddress": obj.get("ipAddress"),
             "numberOfHops": obj.get("numberOfHops"),
             "protocol": obj.get("protocol"),

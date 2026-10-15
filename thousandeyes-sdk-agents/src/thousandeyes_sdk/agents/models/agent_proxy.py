@@ -93,6 +93,7 @@ class AgentProxy(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "aid": obj.get("aid"),
             "authType": obj.get("authType"),
             "bypassList": obj.get("bypassList"),

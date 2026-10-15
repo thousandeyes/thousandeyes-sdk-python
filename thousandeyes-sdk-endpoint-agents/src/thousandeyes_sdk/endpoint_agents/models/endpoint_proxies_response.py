@@ -88,6 +88,7 @@ class EndpointProxiesResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "proxies": [EndpointProxy.from_dict(_item) for _item in obj["proxies"]] if obj.get("proxies") is not None else None
         })
         return _obj

@@ -84,6 +84,7 @@ class SubscriptionsPolicyRule(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "field": obj.get("field"),
             "pattern": obj.get("pattern"),
             "action": obj.get("action")

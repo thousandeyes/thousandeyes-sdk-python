@@ -98,6 +98,7 @@ class ValidationError(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "type": obj.get("type"),
             "title": obj.get("title"),
             "status": obj.get("status"),

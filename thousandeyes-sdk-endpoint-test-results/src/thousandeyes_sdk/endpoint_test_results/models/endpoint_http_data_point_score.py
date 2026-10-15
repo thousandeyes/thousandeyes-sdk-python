@@ -82,6 +82,7 @@ class EndpointHttpDataPointScore(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "applicationScore": obj.get("applicationScore"),
             "quality": obj.get("quality")
         })

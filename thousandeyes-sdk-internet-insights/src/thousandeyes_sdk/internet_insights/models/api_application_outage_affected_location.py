@@ -89,6 +89,7 @@ class ApiApplicationOutageAffectedLocation(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "location": obj.get("location"),
             "affectedServers": [ApiApplicationOutageAffectedServer.from_dict(_item) for _item in obj["affectedServers"]] if obj.get("affectedServers") is not None else None
         })

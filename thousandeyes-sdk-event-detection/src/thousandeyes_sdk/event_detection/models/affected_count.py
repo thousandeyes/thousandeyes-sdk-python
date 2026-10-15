@@ -85,6 +85,7 @@ class AffectedCount(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "total": obj.get("total"),
             "inAccountGroup": obj.get("inAccountGroup")
         })

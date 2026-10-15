@@ -82,6 +82,7 @@ class TestLabel(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "labelId": obj.get("labelId"),
             "name": obj.get("name"),
             "isBuiltin": obj.get("isBuiltin")

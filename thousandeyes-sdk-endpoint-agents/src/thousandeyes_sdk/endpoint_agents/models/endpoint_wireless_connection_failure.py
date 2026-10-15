@@ -97,6 +97,7 @@ class EndpointWirelessConnectionFailure(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "type": obj.get("type"),
             "context": obj.get("context"),
             "code": obj.get("code")

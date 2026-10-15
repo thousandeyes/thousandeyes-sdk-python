@@ -81,6 +81,7 @@ class TestAgentWithSourceIpRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentId": obj.get("agentId"),
             "sourceIpAddress": obj.get("sourceIpAddress")
         })

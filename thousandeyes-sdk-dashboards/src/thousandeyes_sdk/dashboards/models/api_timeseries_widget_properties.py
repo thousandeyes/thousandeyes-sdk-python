@@ -95,6 +95,7 @@ class ApiTimeseriesWidgetProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "type": obj.get("type"),
             "showTimeseriesOverallBaseline": obj.get("showTimeseriesOverallBaseline") if obj.get("showTimeseriesOverallBaseline") is not None else False,
             "groupBy": obj.get("groupBy"),

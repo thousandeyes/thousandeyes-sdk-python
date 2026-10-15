@@ -102,6 +102,7 @@ class DashboardScheduleRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "cronSpec": DashboardScheduleCronSpec.from_dict(obj["cronSpec"]) if obj.get("cronSpec") is not None else None,
             "dataSource": DashboardScheduleDataSource.from_dict(obj["dataSource"]) if obj.get("dataSource") is not None else None,
             "dataTimespan": DashboardScheduleTimespan.from_dict(obj["dataTimespan"]) if obj.get("dataTimespan") is not None else None,

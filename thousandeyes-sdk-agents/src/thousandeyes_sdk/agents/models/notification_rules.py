@@ -88,6 +88,7 @@ class NotificationRules(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentAlertRules": [NotificationRule.from_dict(_item) for _item in obj["agentAlertRules"]] if obj.get("agentAlertRules") is not None else None
         })
         return _obj

@@ -93,6 +93,7 @@ class TestLinks(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "self": TestSelfLink.from_dict(obj["self"]) if obj.get("self") is not None else None,
             "testResults": [Link.from_dict(_item) for _item in obj["testResults"]] if obj.get("testResults") is not None else None
         })

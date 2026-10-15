@@ -84,6 +84,7 @@ class AlertEmbedded(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "asn": Asn.from_dict(obj["asn"]) if obj.get("asn") is not None else None
         })
         return _obj

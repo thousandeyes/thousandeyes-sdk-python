@@ -92,6 +92,7 @@ class DashboardLayout(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "layoutId": obj.get("layoutId"),
             "type": obj.get("type"),
             "details": DashboardLayoutDetails.from_dict(obj["details"]) if obj.get("details") is not None else None

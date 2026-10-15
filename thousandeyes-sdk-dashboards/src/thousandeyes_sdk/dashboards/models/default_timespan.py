@@ -86,6 +86,7 @@ class DefaultTimespan(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "timespanDuration": obj.get("timespanDuration"),
             "timespanStart": obj.get("timespanStart"),
             "timespanEnd": obj.get("timespanEnd"),

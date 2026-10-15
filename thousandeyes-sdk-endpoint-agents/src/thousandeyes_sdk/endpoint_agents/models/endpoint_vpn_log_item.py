@@ -99,6 +99,7 @@ class EndpointVpnLogItem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "logItemType": obj.get("logItemType"),
             "vpnType": obj.get("vpnType"),
             "vpnServerName": obj.get("vpnServerName"),

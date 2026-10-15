@@ -96,6 +96,7 @@ class LegacyApiDashboard(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "accountId": obj.get("accountId"),
             "createdBy": obj.get("createdBy"),
             "modifiedBy": obj.get("modifiedBy"),

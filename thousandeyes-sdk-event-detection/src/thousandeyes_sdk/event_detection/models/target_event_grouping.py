@@ -82,6 +82,7 @@ class TargetEventGrouping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "target": obj.get("target")
         })
         return _obj

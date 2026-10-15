@@ -88,6 +88,7 @@ class DnsTraceProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "dnsTransportProtocol": obj.get("dnsTransportProtocol"),
             "domain": obj.get("domain"),
             "dnsQueryClass": obj.get("dnsQueryClass"),

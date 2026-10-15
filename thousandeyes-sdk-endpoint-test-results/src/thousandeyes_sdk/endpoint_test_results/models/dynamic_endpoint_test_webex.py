@@ -94,6 +94,7 @@ class DynamicEndpointTestWebex(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "conferenceId": obj.get("conferenceId"),
             "correlationId": obj.get("correlationId"),
             "localSipSessionId": obj.get("localSipSessionId"),

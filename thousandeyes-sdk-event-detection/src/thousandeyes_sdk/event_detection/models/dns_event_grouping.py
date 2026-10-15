@@ -82,6 +82,7 @@ class DnsEventGrouping(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "rootDomain": obj.get("rootDomain")
         })
         return _obj

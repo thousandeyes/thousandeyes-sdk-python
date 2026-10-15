@@ -156,6 +156,7 @@ class UsageDetails(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "quota": UsageQuota.from_dict(obj["quota"]) if obj.get("quota") is not None else None,
             "cloudUnitsUsed": obj.get("cloudUnitsUsed"),
             "cloudUnitsProjected": obj.get("cloudUnitsProjected"),

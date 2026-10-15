@@ -91,6 +91,7 @@ class BgpMonitor(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "countryId": obj.get("countryId"),
             "monitorId": obj.get("monitorId"),
             "ipAddress": obj.get("ipAddress"),

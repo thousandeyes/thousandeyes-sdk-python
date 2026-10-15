@@ -83,6 +83,7 @@ class ApiReportSnapshotTimeSpan(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "startDate": obj.get("startDate"),
             "start": obj.get("start"),
             "duration": obj.get("duration")

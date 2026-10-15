@@ -90,6 +90,7 @@ class UnitAllocationSummary(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "used": obj.get("used"),
             "projected": obj.get("projected"),
             "allocations": [AllocationUnitUsageBreakdown.from_dict(_item) for _item in obj["allocations"]] if obj.get("allocations") is not None else None

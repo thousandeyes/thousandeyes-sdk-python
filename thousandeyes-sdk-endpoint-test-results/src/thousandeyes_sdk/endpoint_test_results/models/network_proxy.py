@@ -85,6 +85,7 @@ class NetworkProxy(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "bypass": obj.get("bypass"),
             "proxy": obj.get("proxy")
         })

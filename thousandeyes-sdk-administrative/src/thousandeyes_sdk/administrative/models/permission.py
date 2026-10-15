@@ -83,6 +83,7 @@ class Permission(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "label": obj.get("label"),
             "permissionId": obj.get("permissionId"),
             "isManagementPermission": obj.get("isManagementPermission"),

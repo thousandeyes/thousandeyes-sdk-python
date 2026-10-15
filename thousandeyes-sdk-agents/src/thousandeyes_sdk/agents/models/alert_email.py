@@ -81,6 +81,7 @@ class AlertEmail(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "message": obj.get("message"),
             "recipients": obj.get("recipients")
         })

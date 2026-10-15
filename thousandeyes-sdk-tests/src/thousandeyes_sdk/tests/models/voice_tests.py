@@ -93,6 +93,7 @@ class VoiceTests(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "tests": [UnexpandedVoiceTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

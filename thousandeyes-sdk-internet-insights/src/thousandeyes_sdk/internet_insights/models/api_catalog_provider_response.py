@@ -93,6 +93,7 @@ class ApiCatalogProviderResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "providers": [ApiCatalogProvider.from_dict(_item) for _item in obj["providers"]] if obj.get("providers") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

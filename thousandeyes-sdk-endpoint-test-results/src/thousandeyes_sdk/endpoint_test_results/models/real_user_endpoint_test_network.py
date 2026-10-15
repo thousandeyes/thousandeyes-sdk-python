@@ -123,6 +123,7 @@ class RealUserEndpointTestNetwork(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "networkProfile": NetworkProfile.from_dict(obj["networkProfile"]) if obj.get("networkProfile") is not None else None,
             "systemMetrics": SystemMetrics.from_dict(obj["systemMetrics"]) if obj.get("systemMetrics") is not None else None,
             "gatewayPing": GatewayNetworkPing.from_dict(obj["gatewayPing"]) if obj.get("gatewayPing") is not None else None,

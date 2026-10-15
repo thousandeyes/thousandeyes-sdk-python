@@ -109,6 +109,7 @@ class AccountGroupDetail(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "aid": obj.get("aid"),
             "accountGroupName": obj.get("accountGroupName"),
             "isCurrentAccountGroup": obj.get("isCurrentAccountGroup"),

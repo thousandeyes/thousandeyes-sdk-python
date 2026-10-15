@@ -138,6 +138,7 @@ class HttpServerBaseProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "authType": obj.get("authType"),
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "clientCertificate": obj.get("clientCertificate"),

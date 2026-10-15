@@ -128,6 +128,7 @@ class NetworkProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "ipAddress": obj.get("ipAddress"),
             "subnetMask": obj.get("subnetMask"),
             "publicIpAddress": obj.get("publicIpAddress"),

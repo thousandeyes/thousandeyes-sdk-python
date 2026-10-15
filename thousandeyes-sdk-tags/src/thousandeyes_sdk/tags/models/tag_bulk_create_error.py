@@ -90,6 +90,7 @@ class TagBulkCreateError(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "tag": dict(
                 (_k, TagInfo.from_dict(_v))
                 for _k, _v in obj["tag"].items()

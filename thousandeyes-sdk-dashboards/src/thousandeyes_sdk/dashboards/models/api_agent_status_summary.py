@@ -82,6 +82,7 @@ class ApiAgentStatusSummary(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "online": obj.get("online"),
             "offline": obj.get("offline"),
             "disabled": obj.get("disabled")

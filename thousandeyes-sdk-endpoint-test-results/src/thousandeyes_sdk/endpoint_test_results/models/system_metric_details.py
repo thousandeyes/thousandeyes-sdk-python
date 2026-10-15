@@ -100,6 +100,7 @@ class SystemMetricDetails(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "topCpuApplications": [ApplicationMetrics.from_dict(_item) for _item in obj["topCpuApplications"]] if obj.get("topCpuApplications") is not None else None,
             "topMemoryApplications": [ApplicationMetrics.from_dict(_item) for _item in obj["topMemoryApplications"]] if obj.get("topMemoryApplications") is not None else None
         })

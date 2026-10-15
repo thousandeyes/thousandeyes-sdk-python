@@ -81,6 +81,7 @@ class AccountGroupQuota(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "value": obj.get("value"),
             "aid": obj.get("aid")
         })

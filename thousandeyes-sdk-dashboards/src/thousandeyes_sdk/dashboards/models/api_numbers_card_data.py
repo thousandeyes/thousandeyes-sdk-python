@@ -104,6 +104,7 @@ class ApiNumbersCardData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "cardId": obj.get("cardId"),
             "cardName": obj.get("cardName"),
             "startDate": obj.get("startDate"),

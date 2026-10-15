@@ -94,6 +94,7 @@ class FilterEndpointAgentsResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "totalAgents": obj.get("totalAgents"),
             "agents": [EndpointAgent.from_dict(_item) for _item in obj["agents"]] if obj.get("agents") is not None else None,
             "_links": PaginationNextLink.from_dict(obj["_links"]) if obj.get("_links") is not None else None

@@ -89,6 +89,7 @@ class OrganizationQuotaAssignment(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "orgId": obj.get("orgId"),
             "accountGroups": [AccountGroupQuota.from_dict(_item) for _item in obj["accountGroups"]] if obj.get("accountGroups") is not None else None
         })

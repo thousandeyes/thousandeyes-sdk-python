@@ -170,6 +170,7 @@ class LocalNetworkTopologyResultBase(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentId": obj.get("agentId"),
             "date": obj.get("date"),
             "networkTopologyId": obj.get("networkTopologyId"),

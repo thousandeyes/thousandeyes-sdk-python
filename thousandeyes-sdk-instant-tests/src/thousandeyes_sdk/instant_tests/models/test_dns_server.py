@@ -81,6 +81,7 @@ class TestDnsServer(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "serverId": obj.get("serverId"),
             "serverName": obj.get("serverName")
         })

@@ -102,6 +102,7 @@ class LocalProblem(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agent": LocalProblemAgent.from_dict(obj["agent"]) if obj.get("agent") is not None else None,
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),

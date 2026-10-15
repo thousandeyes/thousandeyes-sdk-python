@@ -101,6 +101,7 @@ class CredentialVaultOperation(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "name": obj.get("name"),
             "secrets": [CredentialVaultSecret.from_dict(_item) for _item in obj["secrets"]] if obj.get("secrets") is not None else None,

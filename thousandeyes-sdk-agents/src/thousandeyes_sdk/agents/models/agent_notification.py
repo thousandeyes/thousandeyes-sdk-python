@@ -101,6 +101,7 @@ class AgentNotification(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "email": AlertEmail.from_dict(obj["email"]) if obj.get("email") is not None else None,
             "thirdParty": [AlertIntegrationBase.from_dict(_item) for _item in obj["thirdParty"]] if obj.get("thirdParty") is not None else None,
             "webhook": [AlertIntegrationBase.from_dict(_item) for _item in obj["webhook"]] if obj.get("webhook") is not None else None

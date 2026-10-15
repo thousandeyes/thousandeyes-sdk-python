@@ -91,6 +91,7 @@ class WirelessOnboarding(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "dot11AuthTimeMs": obj.get("dot11AuthTimeMs"),
             "dot11AssocTimeMs": obj.get("dot11AssocTimeMs"),
             "dot1xAuthTimeMs": obj.get("dot1xAuthTimeMs"),

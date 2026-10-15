@@ -93,6 +93,7 @@ class Labels(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "labels": [LabelResponse.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
             "_links": PaginationNextAndSelfLink.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

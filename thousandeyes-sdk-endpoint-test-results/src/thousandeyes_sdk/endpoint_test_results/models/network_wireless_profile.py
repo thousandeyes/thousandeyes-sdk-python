@@ -109,6 +109,7 @@ class NetworkWirelessProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "ssid": obj.get("ssid"),
             "bssid": obj.get("bssid"),
             "channel": obj.get("channel"),

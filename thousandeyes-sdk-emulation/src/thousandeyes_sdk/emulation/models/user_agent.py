@@ -82,6 +82,7 @@ class UserAgent(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "browser": obj.get("browser"),
             "os": obj.get("os"),
             "value": obj.get("value")

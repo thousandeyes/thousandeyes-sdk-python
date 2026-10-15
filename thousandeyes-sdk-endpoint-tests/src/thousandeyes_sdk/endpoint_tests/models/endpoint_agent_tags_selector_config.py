@@ -91,6 +91,7 @@ class EndpointAgentTagsSelectorConfig(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentSelectorType": obj.get("agentSelectorType"),
             "maxMachines": obj.get("maxMachines") if obj.get("maxMachines") is not None else 25,
             "endpointAgentLabels": obj.get("endpointAgentLabels"),

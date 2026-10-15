@@ -83,6 +83,7 @@ class HttpEndpointTestsDataSearchSort(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "sort": obj.get("sort"),
             "order": obj.get("order")
         })

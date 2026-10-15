@@ -83,6 +83,7 @@ class ApiError(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "timestamp": obj.get("timestamp"),
             "status": obj.get("status"),
             "errors": obj.get("errors"),

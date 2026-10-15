@@ -92,6 +92,7 @@ class UserRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "name": obj.get("name"),
             "email": obj.get("email"),
             "loginAccountGroupId": obj.get("loginAccountGroupId"),

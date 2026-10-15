@@ -84,6 +84,7 @@ class AppLinks(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "appLink": Link.from_dict(obj["appLink"]) if obj.get("appLink") is not None else None
         })
         return _obj

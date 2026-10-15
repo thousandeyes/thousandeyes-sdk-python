@@ -81,6 +81,7 @@ class UnauthorizedError(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "error": obj.get("error"),
             "error_description": obj.get("error_description")
         })

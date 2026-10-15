@@ -89,6 +89,7 @@ class DashboardScheduleNonCustomCronSpec(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "startTime": obj.get("startTime"),
             "zoneCode": obj.get("zoneCode"),
             "repeat": obj.get("repeat"),

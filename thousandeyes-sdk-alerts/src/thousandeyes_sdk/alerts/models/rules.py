@@ -93,6 +93,7 @@ class Rules(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "alertRules": [BaseRule.from_dict(_item) for _item in obj["alertRules"]] if obj.get("alertRules") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

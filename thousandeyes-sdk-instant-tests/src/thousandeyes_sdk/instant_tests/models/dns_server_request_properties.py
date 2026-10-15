@@ -104,6 +104,7 @@ class DnsServerRequestProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "dnsServers": obj.get("dnsServers"),
             "dnsTransportProtocol": obj.get("dnsTransportProtocol"),

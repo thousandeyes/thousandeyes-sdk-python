@@ -88,6 +88,7 @@ class PaginationNextAndSelfLinks(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "next": Link.from_dict(obj["next"]) if obj.get("next") is not None else None,
             "self": Link.from_dict(obj["self"]) if obj.get("self") is not None else None
         })

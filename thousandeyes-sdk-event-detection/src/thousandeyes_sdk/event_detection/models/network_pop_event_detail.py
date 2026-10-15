@@ -142,6 +142,7 @@ class NetworkPopEventDetail(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "typeName": obj.get("typeName"),
             "state": obj.get("state"),

@@ -120,6 +120,7 @@ class TestAgentResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentType": obj.get("agentType"),
             "ipAddresses": obj.get("ipAddresses"),
             "publicIpAddresses": obj.get("publicIpAddresses"),

@@ -89,6 +89,7 @@ class CellularProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "carrierName": obj.get("carrierName"),
             "networkGen": obj.get("networkGen"),
             "networkSubtype": obj.get("networkSubtype"),

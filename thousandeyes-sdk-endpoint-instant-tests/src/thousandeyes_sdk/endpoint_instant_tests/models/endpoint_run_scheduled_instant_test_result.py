@@ -80,6 +80,7 @@ class EndpointRunScheduledInstantTestResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "message": obj.get("message")
         })
         return _obj

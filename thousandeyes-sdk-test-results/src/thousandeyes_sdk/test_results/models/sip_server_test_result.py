@@ -149,6 +149,7 @@ class SipServerTestResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "date": obj.get("date"),
             "roundId": obj.get("roundId"),
             "_links": TestResultAppLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,

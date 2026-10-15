@@ -87,6 +87,7 @@ class TestSelfLink(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "href": obj.get("href"),
             "templated": obj.get("templated"),
             "type": obj.get("type"),

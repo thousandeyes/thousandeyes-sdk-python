@@ -83,6 +83,7 @@ class LegacyAlertDetail(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "state": obj.get("state"),
             "severity": obj.get("severity")
         })

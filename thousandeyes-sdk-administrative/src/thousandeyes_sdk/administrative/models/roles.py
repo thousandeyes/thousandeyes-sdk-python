@@ -93,6 +93,7 @@ class Roles(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "roles": [Role.from_dict(_item) for _item in obj["roles"]] if obj.get("roles") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

@@ -106,6 +106,7 @@ class SnapshotResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "startRoundId": obj.get("startRoundId"),
             "endRoundId": obj.get("endRoundId"),

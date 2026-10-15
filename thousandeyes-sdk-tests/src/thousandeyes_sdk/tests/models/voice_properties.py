@@ -98,6 +98,7 @@ class VoiceProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "codec": obj.get("codec"),
             "codecId": obj.get("codecId"),
             "dscp": obj.get("dscp"),

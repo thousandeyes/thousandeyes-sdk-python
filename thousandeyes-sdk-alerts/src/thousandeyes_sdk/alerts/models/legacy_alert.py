@@ -117,6 +117,7 @@ class LegacyAlert(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "alertId": obj.get("alertId"),
             "dateStart": obj.get("dateStart"),
             "dateEnd": obj.get("dateEnd"),

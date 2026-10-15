@@ -104,6 +104,7 @@ class BulkTagResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "tags": [Tag.from_dict(_item) for _item in obj["tags"]] if obj.get("tags") is not None else None,
             "errors": [TagBulkCreateError.from_dict(_item) for _item in obj["errors"]] if obj.get("errors") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None

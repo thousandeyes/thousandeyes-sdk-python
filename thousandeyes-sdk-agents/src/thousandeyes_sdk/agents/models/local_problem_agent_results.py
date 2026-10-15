@@ -100,6 +100,7 @@ class LocalProblemAgentResults(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "localProblems": [LocalProblem.from_dict(_item) for _item in obj["localProblems"]] if obj.get("localProblems") is not None else None,
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),

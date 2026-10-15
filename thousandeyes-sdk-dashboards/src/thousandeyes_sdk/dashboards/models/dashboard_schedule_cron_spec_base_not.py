@@ -81,6 +81,7 @@ class DashboardScheduleCronSpecBaseNot(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "repeat": obj.get("repeat")
         })
         return _obj

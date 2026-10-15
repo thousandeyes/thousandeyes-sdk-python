@@ -83,6 +83,7 @@ class BasicAuthentication(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "username": obj.get("username"),
             "password": obj.get("password"),
             "type": obj.get("type")

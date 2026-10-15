@@ -80,6 +80,7 @@ class DashboardGlobalFilterId(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "globalFilterId": obj.get("globalFilterId")
         })
         return _obj

@@ -80,6 +80,7 @@ class AgentTransferRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "toAid": obj.get("toAid")
         })
         return _obj

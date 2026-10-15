@@ -85,6 +85,7 @@ class EndpointZtaMetrics(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "loss": obj.get("loss"),
             "avgLatency": obj.get("avgLatency"),
             "jitter": obj.get("jitter"),

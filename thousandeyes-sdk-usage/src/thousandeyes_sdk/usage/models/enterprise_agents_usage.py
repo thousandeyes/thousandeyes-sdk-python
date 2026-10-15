@@ -93,6 +93,7 @@ class EnterpriseAgentsUsage(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "breakdowns": [EnterpriseAgentUnitsByTestOwnerAccountGroup.from_dict(_item) for _item in obj["breakdowns"]] if obj.get("breakdowns") is not None else None,
             "_links": PaginationLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

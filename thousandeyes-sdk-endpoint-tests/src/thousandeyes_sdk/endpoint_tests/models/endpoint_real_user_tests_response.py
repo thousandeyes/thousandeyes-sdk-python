@@ -88,6 +88,7 @@ class EndpointRealUserTestsResponse(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "realUserTests": [EndpointRealUserTest.from_dict(_item) for _item in obj["realUserTests"]] if obj.get("realUserTests") is not None else None
         })
         return _obj

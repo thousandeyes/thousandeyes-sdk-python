@@ -97,6 +97,7 @@ class AgentSearchFilters(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "id": obj.get("id"),
             "agentName": obj.get("agentName"),
             "computerName": obj.get("computerName"),

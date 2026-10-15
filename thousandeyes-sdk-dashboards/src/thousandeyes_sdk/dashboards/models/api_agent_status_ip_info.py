@@ -83,6 +83,7 @@ class ApiAgentStatusIpInfo(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "publicIp": obj.get("publicIp"),
             "privateIp": obj.get("privateIp"),
             "ipv6": obj.get("ipv6"),

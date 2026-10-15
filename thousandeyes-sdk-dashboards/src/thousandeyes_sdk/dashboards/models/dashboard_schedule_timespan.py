@@ -83,6 +83,7 @@ class DashboardScheduleTimespan(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "n": obj.get("n"),
             "period": obj.get("period")
         })

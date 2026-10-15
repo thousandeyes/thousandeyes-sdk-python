@@ -84,6 +84,7 @@ class TestVersionHistory(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "versionTimestamp": obj.get("versionTimestamp"),
             "testId": obj.get("testId"),
             "createdBy": obj.get("createdBy"),

@@ -87,6 +87,7 @@ class TargetProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "remotePort": obj.get("remotePort"),
             "remoteIpAddress": obj.get("remoteIpAddress"),
             "protocol": obj.get("protocol")

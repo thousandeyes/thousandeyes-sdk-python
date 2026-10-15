@@ -85,6 +85,7 @@ class Coordinates(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "latitude": obj.get("latitude"),
             "longitude": obj.get("longitude")
         })

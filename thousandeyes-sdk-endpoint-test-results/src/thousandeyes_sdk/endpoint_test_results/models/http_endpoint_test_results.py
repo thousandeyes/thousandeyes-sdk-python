@@ -106,6 +106,7 @@ class HttpEndpointTestResults(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "results": [HttpEndpointTestResult.from_dict(_item) for _item in obj["results"]] if obj.get("results") is not None else None,
             "totalHits": obj.get("totalHits"),
             "test": EndpointHttpServerTest.from_dict(obj["test"]) if obj.get("test") is not None else None,

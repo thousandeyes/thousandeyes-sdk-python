@@ -117,6 +117,7 @@ class RealUserEndpointTestPageResult(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "pageId": obj.get("pageId"),
             "pageTitle": obj.get("pageTitle"),
             "pageUrl": obj.get("pageUrl"),

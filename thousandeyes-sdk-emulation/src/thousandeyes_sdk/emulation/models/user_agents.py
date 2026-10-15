@@ -93,6 +93,7 @@ class UserAgents(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "userAgents": [UserAgent.from_dict(_item) for _item in obj["userAgents"]] if obj.get("userAgents") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

@@ -85,6 +85,7 @@ class EndpointVpnProfile(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "interfaceName": obj.get("interfaceName"),
             "vpnType": obj.get("vpnType"),
             "vpnGatewayAddress": obj.get("vpnGatewayAddress"),

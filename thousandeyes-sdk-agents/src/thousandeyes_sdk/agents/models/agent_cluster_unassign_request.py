@@ -80,6 +80,7 @@ class AgentClusterUnassignRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "members": obj.get("members")
         })
         return _obj

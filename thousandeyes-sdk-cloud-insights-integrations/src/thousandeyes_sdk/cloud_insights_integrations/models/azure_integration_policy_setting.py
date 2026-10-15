@@ -91,6 +91,7 @@ class AzureIntegrationPolicySetting(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "enabledResourceGroupTypes": obj.get("enabledResourceGroupTypes"),
             "subscriptionsPolicy": SubscriptionsPolicy.from_dict(obj["subscriptionsPolicy"]) if obj.get("subscriptionsPolicy") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None

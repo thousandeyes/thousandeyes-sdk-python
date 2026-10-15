@@ -81,6 +81,7 @@ class ApiDataPointGroup(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "groupProperty": obj.get("groupProperty"),
             "groupValue": obj.get("groupValue")
         })

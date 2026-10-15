@@ -88,6 +88,7 @@ class AgentRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "agentName": obj.get("agentName"),
             "enabled": obj.get("enabled"),
             "accountGroups": obj.get("accountGroups"),

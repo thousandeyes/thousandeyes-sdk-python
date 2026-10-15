@@ -84,6 +84,7 @@ class SelfLinks(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "self": Link.from_dict(obj["self"]) if obj.get("self") is not None else None
         })
         return _obj

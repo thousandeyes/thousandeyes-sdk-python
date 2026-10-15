@@ -86,6 +86,7 @@ class EndpointBrowserExtension(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "browser": obj.get("browser"),
             "profile": obj.get("profile"),
             "version": obj.get("version"),

@@ -94,6 +94,7 @@ class Page(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "pageNum": obj.get("pageNum"),
             "pageName": obj.get("pageName"),
             "componentCount": obj.get("componentCount"),

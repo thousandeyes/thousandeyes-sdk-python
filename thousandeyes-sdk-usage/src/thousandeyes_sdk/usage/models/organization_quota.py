@@ -81,6 +81,7 @@ class OrganizationQuota(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "value": obj.get("value"),
             "orgId": obj.get("orgId")
         })

@@ -94,6 +94,7 @@ class AlertMetricDetail(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "end": EndAlertMetrics.from_dict(obj["end"]) if obj.get("end") is not None else None,
             "id": obj.get("id"),
             "name": obj.get("name"),

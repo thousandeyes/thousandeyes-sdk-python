@@ -81,6 +81,7 @@ class ApiApplicationOutageAffectedServer(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "domain": obj.get("domain"),
             "prefix": obj.get("prefix")
         })

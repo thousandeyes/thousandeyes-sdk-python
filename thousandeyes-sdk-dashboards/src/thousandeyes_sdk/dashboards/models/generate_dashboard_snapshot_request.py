@@ -87,6 +87,7 @@ class GenerateDashboardSnapshotRequest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),
             "displayName": obj.get("displayName"),

@@ -85,6 +85,7 @@ class RealUserEndpointTestPageTimings(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "onContentLoad": obj.get("onContentLoad"),
             "onLoad": obj.get("onLoad")
         })

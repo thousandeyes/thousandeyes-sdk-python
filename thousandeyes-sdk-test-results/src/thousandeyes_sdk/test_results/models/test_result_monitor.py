@@ -88,6 +88,7 @@ class TestResultMonitor(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "monitorId": obj.get("monitorId"),
             "monitorName": obj.get("monitorName"),
             "countryId": obj.get("countryId")

@@ -94,6 +94,7 @@ class ApiTestTableData(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "testId": obj.get("testId"),
             "testName": obj.get("testName"),
             "target": obj.get("target"),

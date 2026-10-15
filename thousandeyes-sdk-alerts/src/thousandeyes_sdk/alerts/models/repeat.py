@@ -86,6 +86,7 @@ class Repeat(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "type": obj.get("type"),
             "intervalType": obj.get("intervalType"),
             "intervalLength": obj.get("intervalLength"),

@@ -91,6 +91,7 @@ class ApiWidgetDataPoint(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "timestamp": obj.get("timestamp"),
             "numberOfDataPoints": obj.get("numberOfDataPoints"),
             "value": obj.get("value"),

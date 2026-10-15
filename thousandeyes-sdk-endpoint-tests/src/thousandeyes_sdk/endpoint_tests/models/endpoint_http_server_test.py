@@ -154,6 +154,7 @@ class EndpointHttpServerTest(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "aid": obj.get("aid"),
             "_links": EndpointTestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
             "agentSelectorConfig": EndpointAgentSelectorConfig.from_dict(obj["agentSelectorConfig"]) if obj.get("agentSelectorConfig") is not None else None,

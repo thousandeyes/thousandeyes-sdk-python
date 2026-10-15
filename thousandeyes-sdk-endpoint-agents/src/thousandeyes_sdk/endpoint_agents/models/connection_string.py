@@ -85,6 +85,7 @@ class ConnectionString(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "connectionString": obj.get("connectionString"),
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

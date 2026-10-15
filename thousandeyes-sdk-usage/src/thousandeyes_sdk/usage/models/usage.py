@@ -89,6 +89,7 @@ class Usage(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "usage": UsageDetails.from_dict(obj["usage"]) if obj.get("usage") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })

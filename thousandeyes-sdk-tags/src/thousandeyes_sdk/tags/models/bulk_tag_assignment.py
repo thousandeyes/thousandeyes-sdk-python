@@ -94,6 +94,7 @@ class BulkTagAssignment(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "assignments": [Assignment.from_dict(_item) for _item in obj["assignments"]] if obj.get("assignments") is not None else None,
             "tagId": obj.get("tagId"),
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None

@@ -105,6 +105,7 @@ class AgentToServerProperties(BaseModel):
             return cls.model_validate(obj)
 
         _obj = cls.model_validate({
+            **obj,
             "bandwidthMeasurements": obj.get("bandwidthMeasurements"),
             "continuousMode": obj.get("continuousMode"),
             "fixedPacketRate": obj.get("fixedPacketRate"),
