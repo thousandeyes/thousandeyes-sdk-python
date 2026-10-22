@@ -18,7 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.endpoint_test_results.models.endpoint_scheduled_test import EndpointScheduledTest
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_test import EndpointTest
 from thousandeyes_sdk.endpoint_test_results.models.path_vis_detail_endpoint_test_result import PathVisDetailEndpointTestResult
 from thousandeyes_sdk.endpoint_test_results.models.self_links import SelfLinks
 from typing import Optional, Set
@@ -29,7 +29,7 @@ class PathVisDetailEndpointTestResults(BaseModel):
     PathVisDetailEndpointTestResults
     """ # noqa: E501
     results: Optional[List[PathVisDetailEndpointTestResult]] = None
-    test: Optional[EndpointScheduledTest] = Field(default=None, description="The scheduled test configuration. Omitted when the user lacks the `View endpoint experience tests` permission.")
+    test: Optional[EndpointTest] = Field(default=None, description="The scheduled test configuration. Omitted when the user lacks the `View endpoint experience tests` permission.")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
     __properties: ClassVar[List[str]] = ["results", "test", "_links"]
 
@@ -100,7 +100,7 @@ class PathVisDetailEndpointTestResults(BaseModel):
         _obj = cls.model_validate({
             **obj,
             "results": [PathVisDetailEndpointTestResult.from_dict(_item) for _item in obj["results"]] if obj.get("results") is not None else None,
-            "test": EndpointScheduledTest.from_dict(obj["test"]) if obj.get("test") is not None else None,
+            "test": EndpointTest.from_dict(obj["test"]) if obj.get("test") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj
