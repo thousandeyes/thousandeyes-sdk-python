@@ -19,7 +19,7 @@ import json
 from datetime import datetime
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.endpoint_test_results.models.endpoint_scheduled_test import EndpointScheduledTest
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_test import EndpointTest
 from thousandeyes_sdk.endpoint_test_results.models.pagination_next_and_self_link import PaginationNextAndSelfLink
 from thousandeyes_sdk.endpoint_test_results.models.path_vis_endpoint_test_result import PathVisEndpointTestResult
 from typing import Optional, Set
@@ -30,7 +30,7 @@ class PathVisEndpointTestResults(BaseModel):
     PathVisEndpointTestResults
     """ # noqa: E501
     results: Optional[List[PathVisEndpointTestResult]] = None
-    test: Optional[EndpointScheduledTest] = Field(default=None, description="The scheduled test configuration. Omitted when the user lacks the `View endpoint experience tests` permission.")
+    test: Optional[EndpointTest] = Field(default=None, description="The scheduled test configuration. Omitted when the user lacks the `View endpoint experience tests` permission.")
     start_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `startDate` parameter,  the client will also receive the `startDate` field indicating the UTC start date of the data's time range being retrieved  (ISO date-time format).", alias="startDate")
     end_date: Optional[datetime] = Field(default=None, description="(Optional) When passing `window` or `endDate` parameter,  the client will also receive the `endDate` field indicating the UTC end date of the data's time range being retrieved  (ISO date-time format).", alias="endDate")
     links: Optional[PaginationNextAndSelfLink] = Field(default=None, alias="_links")
@@ -107,7 +107,7 @@ class PathVisEndpointTestResults(BaseModel):
         _obj = cls.model_validate({
             **obj,
             "results": [PathVisEndpointTestResult.from_dict(_item) for _item in obj["results"]] if obj.get("results") is not None else None,
-            "test": EndpointScheduledTest.from_dict(obj["test"]) if obj.get("test") is not None else None,
+            "test": EndpointTest.from_dict(obj["test"]) if obj.get("test") is not None else None,
             "startDate": obj.get("startDate"),
             "endDate": obj.get("endDate"),
             "_links": PaginationNextAndSelfLink.from_dict(obj["_links"]) if obj.get("_links") is not None else None

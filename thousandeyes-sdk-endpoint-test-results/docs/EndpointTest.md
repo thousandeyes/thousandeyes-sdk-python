@@ -22,9 +22,20 @@ Name | Type | Description | Notes
 **server** | **str** | Target domain name or IP address. | [optional] 
 **test_id** | **str** | Each test is assigned a unique ID to access test data from other endpoints. | [optional] [readonly] 
 **test_name** | **str** | Name of the test. | [optional] 
-**type** | [**EndpointScheduledTestType**](EndpointScheduledTestType.md) |  | 
+**type** | **str** | Type of test being queried. | [readonly] 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
 **port** | **int** | Port number. | [optional] [default to 443]
+**auth_type** | [**EndpointTestAuthType**](EndpointTestAuthType.md) |  | [optional] 
+**http_time_limit** | **int** | Maximum amount of time in milliseconds the agents wait before a request times out. | [optional] [default to 5000]
+**username** | **str** | Username for Basic/NTLM authentication. | [optional] 
+**ssl_version_id** | [**TestSslVersionId**](TestSslVersionId.md) |  | [optional] 
+**verify_certificate** | **bool** | Flag indicating if a certificate should be verified. | [optional] [default to True]
+**url** | **str** | The test target URL. | [optional] 
+**follow_redirects** | **bool** | To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to &#x60;false&#x60;. | [optional] [default to True]
+**http_target_time** | **int** | Target time for HTTP server completion, specified in milliseconds. | [optional] 
+**http_version** | **int** | HTTP protocol version. Set to &#39;2&#39; to prefer HTTP/2, or &#39;1&#39; to use only HTTP/1.1. | [optional] [default to 2]
+**ssl_version** | **str** | Reflects the verbose SSL protocol version used by a test. | [optional] [readonly] 
+**use_ntlm** | **bool** | Set to true to use NTLM, false to use Basic Authentication. Requires username and password to be set. | [optional] 
 
 ## Example
 
