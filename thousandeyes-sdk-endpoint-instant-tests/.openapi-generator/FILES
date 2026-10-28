@@ -16,9 +16,9 @@ docs/EndpointIpVersionIn.md
 docs/EndpointRunScheduledInstantTestResult.md
 docs/EndpointScheduledTestType.md
 docs/EndpointSpecificAgentsSelectorConfig.md
-docs/EndpointTest.md
 docs/EndpointTestAgentSelectorType.md
 docs/EndpointTestAuthType.md
+docs/EndpointTestBase.md
 docs/EndpointTestLinks.md
 docs/EndpointTestProtocol.md
 docs/EndpointTestSelfLink.md
@@ -56,9 +56,9 @@ src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_ip_version_in.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_run_scheduled_instant_test_result.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_scheduled_test_type.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_specific_agents_selector_config.py
-src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_test.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_test_agent_selector_type.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_test_auth_type.py
+src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_test_base.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_test_links.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_test_protocol.py
 src/thousandeyes_sdk/endpoint_instant_tests/models/endpoint_test_self_link.py

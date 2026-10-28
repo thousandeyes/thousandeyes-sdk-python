@@ -1,0 +1,47 @@
+# EndpointTestBase
+
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**aid** | **str** | A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. | [optional] 
+**links** | [**EndpointTestLinks**](EndpointTestLinks.md) |  | [optional] 
+**agent_selector_config** | [**EndpointAgentSelectorConfig**](EndpointAgentSelectorConfig.md) |  | [optional] 
+**created_date** | **datetime** | UTC created date (ISO date-time format). | [optional] [readonly] 
+**is_prioritized** | **bool** | Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit. | [optional] [default to False]
+**interval** | [**TestInterval**](TestInterval.md) |  | [optional] 
+**is_enabled** | **bool** | Indicates if test is enabled. | [optional] [default to True]
+**is_saved_event** | **bool** | Indicates if the test is a saved event.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API.  | [optional] [readonly] 
+**has_path_trace_in_session** | **bool** | Enables \&quot;in session\&quot; path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session. | [optional] 
+**labels** | [**List[TestLabel]**](TestLabel.md) | Labels to which the test is assigned. This field is not returned for Instant Tests. | [optional] [readonly] 
+**modified_date** | **datetime** | UTC last modification date (ISO date-time format). | [optional] [readonly] 
+**network_measurements** | **bool** | Enable or disable network measurements. Set to true to enable or false to disable network measurements. | [optional] [default to True]
+**protocol** | [**EndpointTestProtocol**](EndpointTestProtocol.md) |  | [optional] 
+**ip_version** | **str** | For reading current network test configurations, the IP version of the test. Values include V4_ONLY, V6_ONLY, V6_PREFER, and OS_DEFAULT. | [optional] 
+**server** | **str** | Target domain name or IP address. | [optional] 
+**test_id** | **str** | Each test is assigned a unique ID to access test data from other endpoints. | [optional] [readonly] 
+**test_name** | **str** | Name of the test. | [optional] 
+**type** | [**EndpointScheduledTestType**](EndpointScheduledTestType.md) |  | 
+**tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
+
+## Example
+
+```python
+from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_test_base import EndpointTestBase
+
+# TODO update the JSON string below
+json = "{}"
+# create an instance of EndpointTestBase from a JSON string
+endpoint_test_base_instance = EndpointTestBase.from_json(json)
+# print the JSON string representation of the object
+print(EndpointTestBase.to_json())
+
+# convert the object into a dict
+endpoint_test_base_dict = endpoint_test_base_instance.to_dict()
+# create an instance of EndpointTestBase from a dict
+endpoint_test_base_from_dict = EndpointTestBase.from_dict(endpoint_test_base_dict)
+```
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+
