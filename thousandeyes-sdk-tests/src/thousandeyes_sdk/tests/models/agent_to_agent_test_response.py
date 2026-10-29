@@ -60,7 +60,7 @@ class AgentToAgentTestResponse(BaseModel):
     direction: Optional[TestDirection] = None
     dscp: Optional[StrictStr] = Field(default=None, description="DSCP label.")
     dscp_id: Optional[TestDscpId] = Field(default=None, alias="dscpId")
-    mss: Optional[Annotated[int, Field(le=1400, strict=True, ge=20)]] = Field(default=None, description="Maximum segment size, in bytes.")
+    mss: Optional[Annotated[int, Field(le=9176, strict=True, ge=30)]] = Field(default=None, description="Maximum segment size, in bytes.")
     num_path_traces: Optional[Annotated[int, Field(le=10, strict=True, ge=1)]] = Field(default=3, description="Number of path traces executed by the agent.", alias="numPathTraces")
     path_trace_mode: Optional[TestPathTraceMode] = Field(default=None, alias="pathTraceMode")
     port: Optional[Annotated[int, Field(le=65535, strict=True, ge=1)]] = Field(default=49153, description="Target port.")

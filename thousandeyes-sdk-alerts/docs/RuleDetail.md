@@ -28,6 +28,7 @@ Name | Type | Description | Notes
 **notifications** | [**AlertNotification**](AlertNotification.md) |  | [optional] 
 **tests** | [**List[AlertSimpleTest]**](AlertSimpleTest.md) |  | [optional] [readonly] 
 **test_ids** | **List[str]** | Array of test IDs to link to alert rule (get &#x60;testId&#x60; from &#x60;/tests&#x60; endpoint). | [optional] [readonly] 
+**optimization** | [**AlertRuleOptimization**](AlertRuleOptimization.md) |  | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
