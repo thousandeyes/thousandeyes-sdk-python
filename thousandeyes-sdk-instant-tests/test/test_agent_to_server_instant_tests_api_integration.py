@@ -80,7 +80,7 @@ class TestAgentToServerInstantTestsApiIntegration(IntegrationTestBase):
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "continuousMode" : false
                 }
@@ -201,7 +201,7 @@ class TestAgentToServerInstantTestsApiIntegration(IntegrationTestBase):
                     "name" : "Account name",
                     "aid" : "1234"
                   } ],
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "continuousMode" : false
                 }
                 """
@@ -270,7 +270,7 @@ class TestAgentToServerInstantTestsApiIntegration(IntegrationTestBase):
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "continuousMode" : false
                 }
@@ -365,7 +365,7 @@ class TestAgentToServerInstantTestsApiIntegration(IntegrationTestBase):
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "continuousMode" : false
                 }
@@ -448,7 +448,7 @@ class TestAgentToServerInstantTestsApiIntegration(IntegrationTestBase):
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "continuousMode" : false
                 }
@@ -534,7 +534,7 @@ class TestAgentToServerInstantTestsApiIntegration(IntegrationTestBase):
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "continuousMode" : false
                 }
@@ -620,7 +620,7 @@ class TestAgentToServerInstantTestsApiIntegration(IntegrationTestBase):
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "continuousMode" : false
                 }
@@ -706,7 +706,7 @@ class TestAgentToServerInstantTestsApiIntegration(IntegrationTestBase):
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "continuousMode" : false
                 }
@@ -792,7 +792,7 @@ class TestAgentToServerInstantTestsApiIntegration(IntegrationTestBase):
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "continuousMode" : false
                 }
