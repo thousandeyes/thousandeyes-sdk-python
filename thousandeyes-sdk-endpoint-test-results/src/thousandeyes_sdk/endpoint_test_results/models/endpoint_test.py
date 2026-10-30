@@ -12,146 +12,132 @@
 
 
 from __future__ import annotations
-import pprint
-import re  # noqa: F401
 import json
+import pprint
+from pydantic import BaseModel, ConfigDict, Field, StrictStr, ValidationError, field_validator
+from typing import Any, List, Optional
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_agent_to_server_test import EndpointAgentToServerTest
+from thousandeyes_sdk.endpoint_test_results.models.endpoint_http_server_test import EndpointHttpServerTest
+from pydantic import StrictStr, Field, model_serializer
+from typing import Union, List, Set, Optional, Dict
+from typing_extensions import Literal, Self
 
-from datetime import datetime
-from pydantic import BaseModel, ConfigDict, Field, StrictBool, StrictInt, StrictStr
-from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.endpoint_test_results.models.endpoint_agent_selector_config import EndpointAgentSelectorConfig
-from thousandeyes_sdk.endpoint_test_results.models.endpoint_scheduled_test_type import EndpointScheduledTestType
-from thousandeyes_sdk.endpoint_test_results.models.endpoint_test_links import EndpointTestLinks
-from thousandeyes_sdk.endpoint_test_results.models.endpoint_test_protocol import EndpointTestProtocol
-from thousandeyes_sdk.endpoint_test_results.models.test_interval import TestInterval
-from thousandeyes_sdk.endpoint_test_results.models.test_label import TestLabel
-from thousandeyes_sdk.endpoint_test_results.models.test_probe_mode_response import TestProbeModeResponse
-from typing import Optional, Set
-from typing_extensions import Self
+ENDPOINTTEST_ONE_OF_SCHEMAS = ["EndpointAgentToServerTest", "EndpointHttpServerTest"]
 
 class EndpointTest(BaseModel):
     """
     EndpointTest
-    """ # noqa: E501
-    aid: Optional[StrictStr] = Field(default=None, description="A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint.")
-    links: Optional[EndpointTestLinks] = Field(default=None, alias="_links")
-    agent_selector_config: Optional[EndpointAgentSelectorConfig] = Field(default=None, alias="agentSelectorConfig")
-    created_date: Optional[datetime] = Field(default=None, description="UTC created date (ISO date-time format).", alias="createdDate")
-    is_prioritized: Optional[StrictBool] = Field(default=False, description="Indicates whether the test should be prioritized when the number of tests assigned to an agent exceeds the license limit.", alias="isPrioritized")
-    interval: Optional[TestInterval] = None
-    is_enabled: Optional[StrictBool] = Field(default=True, description="Indicates if test is enabled.", alias="isEnabled")
-    is_saved_event: Optional[StrictBool] = Field(default=None, description="Indicates if the test is a saved event.  **Note**: **Saved Events** are now called **Private Snapshots** in the user interface. This change does not affect API. ", alias="isSavedEvent")
-    has_path_trace_in_session: Optional[StrictBool] = Field(default=None, description="Enables \"in session\" path trace. When enabled, this option initiates a TCP session with the target server and sends path trace packets within the established TCP session.", alias="hasPathTraceInSession")
-    labels: Optional[List[TestLabel]] = Field(default=None, description="Labels to which the test is assigned. This field is not returned for Instant Tests.")
-    modified_date: Optional[datetime] = Field(default=None, description="UTC last modification date (ISO date-time format).", alias="modifiedDate")
-    network_measurements: Optional[StrictBool] = Field(default=True, description="Enable or disable network measurements. Set to true to enable or false to disable network measurements.", alias="networkMeasurements")
-    protocol: Optional[EndpointTestProtocol] = None
-    ip_version: Optional[StrictStr] = Field(default=None, description="For reading current network test configurations, the IP version of the test. Values include V4_ONLY, V6_ONLY, V6_PREFER, and OS_DEFAULT.", alias="ipVersion")
-    server: Optional[StrictStr] = Field(default=None, description="Target domain name or IP address.")
-    test_id: Optional[StrictStr] = Field(default=None, description="Each test is assigned a unique ID to access test data from other endpoints.", alias="testId")
-    test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")
-    type: EndpointScheduledTestType
-    tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
-    port: Optional[StrictInt] = Field(default=443, description="Port number.")
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "isPrioritized", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "labels", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "port"]
+    """
+    # data type: EndpointAgentToServerTest
+    oneof_schema_1_validator: Optional[EndpointAgentToServerTest] = None
+    # data type: EndpointHttpServerTest
+    oneof_schema_2_validator: Optional[EndpointHttpServerTest] = None
+    actual_instance: Optional[Union[EndpointAgentToServerTest, EndpointHttpServerTest]] = None
+    one_of_schemas: Set[str] = { "EndpointAgentToServerTest", "EndpointHttpServerTest" }
 
     model_config = ConfigDict(
-        populate_by_name=True,
         validate_assignment=True,
         protected_namespaces=(),
-        extra="allow",
     )
 
 
-    def to_str(self) -> str:
-        """Returns the string representation of the model using alias"""
-        return pprint.pformat(self.model_dump(by_alias=True))
+    discriminator_value_class_map: Dict[str, str] = {
+    }
+
+    def __init__(self, *args, **kwargs) -> None:
+        if args:
+            if len(args) > 1:
+                raise ValueError("If a position argument is used, only 1 is allowed to set `actual_instance`")
+            if kwargs:
+                raise ValueError("If a position argument is used, keyword arguments cannot be used.")
+            super().__init__(actual_instance=args[0])
+        else:
+            super().__init__(**kwargs)
+
+    @field_validator('actual_instance')
+    def actual_instance_must_validate_oneof(cls, v):
+        instance = EndpointTest.model_construct()
+        error_messages = []
+        match = 0
+        # validate data type: EndpointAgentToServerTest
+        if not isinstance(v, EndpointAgentToServerTest):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EndpointAgentToServerTest`")
+        else:
+            match += 1
+        # validate data type: EndpointHttpServerTest
+        if not isinstance(v, EndpointHttpServerTest):
+            error_messages.append(f"Error! Input type `{type(v)}` is not `EndpointHttpServerTest`")
+        else:
+            match += 1
+        if match > 1:
+            # more than 1 match
+            raise ValueError("Multiple matches found when setting `actual_instance` in EndpointTest with oneOf schemas: EndpointAgentToServerTest, EndpointHttpServerTest. Details: " + ", ".join(error_messages))
+        elif match == 0:
+            # no match
+            raise ValueError("No match found when setting `actual_instance` in EndpointTest with oneOf schemas: EndpointAgentToServerTest, EndpointHttpServerTest. Details: " + ", ".join(error_messages))
+        else:
+            return v
+
+    @classmethod
+    def from_dict(cls, obj: Union[str, Dict[str, Any]]) -> Self:
+        return cls.from_json(json.dumps(obj))
+
+    @classmethod
+    def from_json(cls, json_str: str) -> Self:
+        """Returns the object represented by the json string"""
+        instance = cls.model_construct()
+        error_messages = []
+        match = 0
+
+        # deserialize data into EndpointAgentToServerTest
+        try:
+            instance.actual_instance = EndpointAgentToServerTest.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+        # deserialize data into EndpointHttpServerTest
+        try:
+            instance.actual_instance = EndpointHttpServerTest.from_json(json_str)
+            match += 1
+        except (ValidationError, ValueError) as e:
+            error_messages.append(str(e))
+
+        if match > 1:
+            # more than 1 match
+            raise ValueError("Multiple matches found when deserializing the JSON string into EndpointTest with oneOf schemas: EndpointAgentToServerTest, EndpointHttpServerTest. Details: " + ", ".join(error_messages))
+        elif match == 0:
+            # no match
+            raise ValueError("No match found when deserializing the JSON string into EndpointTest with oneOf schemas: EndpointAgentToServerTest, EndpointHttpServerTest. Details: " + ", ".join(error_messages))
+        else:
+            return instance
+
+    @model_serializer(when_used="json")
+    def serialize_model(self):
+        return json.loads(self.to_json())
 
     def to_json(self) -> str:
-        """Returns the JSON representation of the model using alias"""
-        # TODO: pydantic v2: use .model_dump_json(by_alias=True, exclude_unset=True) instead
-        return self.model_dump_json(by_alias=True, exclude_unset=True, exclude_none=True)
+        """Returns the JSON representation of the actual instance"""
+        if self.actual_instance is None:
+            return "null"
 
-    @classmethod
-    def from_json(cls, json_str: str) -> Optional[Self]:
-        """Create an instance of EndpointTest from a JSON string"""
-        return cls.from_dict(json.loads(json_str))
+        if hasattr(self.actual_instance, "to_json") and callable(self.actual_instance.to_json):
+            return self.actual_instance.to_json()
+        else:
+            return json.dumps(self.actual_instance)
 
-    def to_dict(self) -> Dict[str, Any]:
-        """Return the dictionary representation of the model using alias.
-
-        This has the following differences from calling pydantic's
-        `self.model_dump(by_alias=True)`:
-
-        * `None` is only added to the output dict for nullable fields that
-          were set at model initialization. Other fields with value `None`
-          are ignored.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        * OpenAPI `readOnly` fields are excluded.
-        """
-        excluded_fields: Set[str] = set([
-            "created_date",
-            "is_saved_event",
-            "labels",
-            "modified_date",
-            "test_id",
-        ])
-
-        _dict = self.model_dump(
-            by_alias=True,
-            exclude=excluded_fields,
-            exclude_none=True,
-        )
-        # override the default output from pydantic by calling `to_dict()` of links
-        if self.links:
-            _dict['_links'] = self.links.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of agent_selector_config
-        if self.agent_selector_config:
-            _dict['agentSelectorConfig'] = self.agent_selector_config.to_dict()
-        # override the default output from pydantic by calling `to_dict()` of each item in labels (list)
-        _items = []
-        if self.labels:
-            for _item in self.labels:
-                if _item:
-                    _items.append(_item.to_dict())
-            _dict['labels'] = _items
-        return _dict
-
-    @classmethod
-    def from_dict(cls, obj: Optional[Dict[str, Any]]) -> Optional[Self]:
-        """Create an instance of EndpointTest from a dict"""
-        if obj is None:
+    def to_dict(self) -> Optional[Union[Dict[str, Any], EndpointAgentToServerTest, EndpointHttpServerTest]]:
+        """Returns the dict representation of the actual instance"""
+        if self.actual_instance is None:
             return None
 
-        if not isinstance(obj, dict):
-            return cls.model_validate(obj)
+        if hasattr(self.actual_instance, "to_dict") and callable(self.actual_instance.to_dict):
+            return self.actual_instance.to_dict()
+        else:
+            # primitive type
+            return self.actual_instance
 
-        _obj = cls.model_validate({
-            **obj,
-            "aid": obj.get("aid"),
-            "_links": EndpointTestLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None,
-            "agentSelectorConfig": EndpointAgentSelectorConfig.from_dict(obj["agentSelectorConfig"]) if obj.get("agentSelectorConfig") is not None else None,
-            "createdDate": obj.get("createdDate"),
-            "isPrioritized": obj.get("isPrioritized") if obj.get("isPrioritized") is not None else False,
-            "interval": obj.get("interval"),
-            "isEnabled": obj.get("isEnabled") if obj.get("isEnabled") is not None else True,
-            "isSavedEvent": obj.get("isSavedEvent"),
-            "hasPathTraceInSession": obj.get("hasPathTraceInSession"),
-            "labels": [TestLabel.from_dict(_item) for _item in obj["labels"]] if obj.get("labels") is not None else None,
-            "modifiedDate": obj.get("modifiedDate"),
-            "networkMeasurements": obj.get("networkMeasurements") if obj.get("networkMeasurements") is not None else True,
-            "protocol": obj.get("protocol"),
-            "ipVersion": obj.get("ipVersion"),
-            "server": obj.get("server"),
-            "testId": obj.get("testId"),
-            "testName": obj.get("testName"),
-            "type": obj.get("type"),
-            "tcpProbeMode": obj.get("tcpProbeMode"),
-            "port": obj.get("port") if obj.get("port") is not None else 443
-        })
-        return _obj
+    def to_str(self) -> str:
+        """Returns the string representation of the actual instance"""
+        return pprint.pformat(self.model_dump())
 
 
