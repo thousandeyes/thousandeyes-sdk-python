@@ -22,6 +22,7 @@ from thousandeyes_sdk.alerts.models.alert_direction import AlertDirection
 from thousandeyes_sdk.alerts.models.alert_group_type import AlertGroupType
 from thousandeyes_sdk.alerts.models.alert_notification import AlertNotification
 from thousandeyes_sdk.alerts.models.alert_rounds_violation_mode import AlertRoundsViolationMode
+from thousandeyes_sdk.alerts.models.alert_rule_optimization import AlertRuleOptimization
 from thousandeyes_sdk.alerts.models.alert_simple_test import AlertSimpleTest
 from thousandeyes_sdk.alerts.models.alert_type import AlertType
 from thousandeyes_sdk.alerts.models.self_links import SelfLinks
@@ -57,8 +58,9 @@ class RuleDetail(BaseModel):
     notifications: Optional[AlertNotification] = None
     tests: Optional[List[AlertSimpleTest]] = None
     test_ids: Optional[List[StrictStr]] = Field(default=None, description="Array of test IDs to link to alert rule (get `testId` from `/tests` endpoint).", alias="testIds")
+    optimization: Optional[AlertRuleOptimization] = None
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
-    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "description", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "endpointAgentIds", "endpointLabelIds", "visitedSitesFilter", "notifications", "tests", "testIds", "_links"]
+    __properties: ClassVar[List[str]] = ["ruleId", "ruleName", "expression", "description", "direction", "notifyOnClear", "isDefault", "alertType", "alertGroupType", "minimumSources", "minimumSourcesPct", "roundsViolatingMode", "roundsViolatingOutOf", "roundsViolatingRequired", "includeCoveredPrefixes", "sensitivityLevel", "severity", "endpointAgentIds", "endpointLabelIds", "visitedSitesFilter", "notifications", "tests", "testIds", "optimization", "_links"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -116,9 +118,17 @@ class RuleDetail(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['tests'] = _items
+        # override the default output from pydantic by calling `to_dict()` of optimization
+        if self.optimization:
+            _dict['optimization'] = self.optimization.to_dict()
         # override the default output from pydantic by calling `to_dict()` of links
         if self.links:
             _dict['_links'] = self.links.to_dict()
+        # set to None if optimization (nullable) is None
+        # and model_fields_set contains the field
+        if self.optimization is None and "optimization" in self.model_fields_set:
+            _dict['optimization'] = None
+
         return _dict
 
     @classmethod
@@ -155,6 +165,7 @@ class RuleDetail(BaseModel):
             "notifications": AlertNotification.from_dict(obj["notifications"]) if obj.get("notifications") is not None else None,
             "tests": [AlertSimpleTest.from_dict(_item) for _item in obj["tests"]] if obj.get("tests") is not None else None,
             "testIds": obj.get("testIds"),
+            "optimization": AlertRuleOptimization.from_dict(obj["optimization"]) if obj.get("optimization") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj
