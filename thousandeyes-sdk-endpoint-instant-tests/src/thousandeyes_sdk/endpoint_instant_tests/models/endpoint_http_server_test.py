@@ -54,7 +54,6 @@ class EndpointHttpServerTest(BaseModel):
     test_name: Optional[StrictStr] = Field(default=None, description="Name of the test.", alias="testName")
     type: Annotated[str, Field(strict=True)] = Field(description="Type of test being queried.")
     tcp_probe_mode: Optional[TestProbeModeResponse] = Field(default=None, alias="tcpProbeMode")
-    port: Optional[StrictInt] = Field(default=443, description="Port number.")
     auth_type: Optional[EndpointTestAuthType] = Field(default=None, alias="authType")
     http_time_limit: Optional[StrictInt] = Field(default=5000, description="Maximum amount of time in milliseconds the agents wait before a request times out.", alias="httpTimeLimit")
     username: Optional[StrictStr] = Field(default=None, description="Username for Basic/NTLM authentication.")
@@ -64,9 +63,10 @@ class EndpointHttpServerTest(BaseModel):
     follow_redirects: Optional[StrictBool] = Field(default=True, description="To disable following HTTP/301 or HTTP/302 redirect directives, set this parameter to `false`.", alias="followRedirects")
     http_target_time: Optional[Annotated[int, Field(le=5000, strict=True, ge=100)]] = Field(default=None, description="Target time for HTTP server completion, specified in milliseconds.", alias="httpTargetTime")
     http_version: Optional[Annotated[int, Field(le=2, strict=True, ge=1)]] = Field(default=2, description="HTTP protocol version. Set to '2' to prefer HTTP/2, or '1' to use only HTTP/1.1.", alias="httpVersion")
+    port: Optional[StrictInt] = Field(default=443, description="Port number.")
     ssl_version: Optional[StrictStr] = Field(default=None, description="Reflects the verbose SSL protocol version used by a test.", alias="sslVersion")
     use_ntlm: Optional[StrictBool] = Field(default=None, description="Set to true to use NTLM, false to use Basic Authentication. Requires username and password to be set.", alias="useNtlm")
-    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "isPrioritized", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "labels", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "port", "authType", "httpTimeLimit", "username", "sslVersionId", "verifyCertificate", "url", "followRedirects", "httpTargetTime", "httpVersion", "sslVersion", "useNtlm"]
+    __properties: ClassVar[List[str]] = ["aid", "_links", "agentSelectorConfig", "createdDate", "isPrioritized", "interval", "isEnabled", "isSavedEvent", "hasPathTraceInSession", "labels", "modifiedDate", "networkMeasurements", "protocol", "ipVersion", "server", "testId", "testName", "type", "tcpProbeMode", "authType", "httpTimeLimit", "username", "sslVersionId", "verifyCertificate", "url", "followRedirects", "httpTargetTime", "httpVersion", "port", "sslVersion", "useNtlm"]
 
     @field_validator('type')
     def type_validate_regular_expression(cls, value):
@@ -174,7 +174,6 @@ class EndpointHttpServerTest(BaseModel):
             "testName": obj.get("testName"),
             "type": obj.get("type"),
             "tcpProbeMode": obj.get("tcpProbeMode"),
-            "port": obj.get("port") if obj.get("port") is not None else 443,
             "authType": obj.get("authType"),
             "httpTimeLimit": obj.get("httpTimeLimit") if obj.get("httpTimeLimit") is not None else 5000,
             "username": obj.get("username"),
@@ -184,6 +183,7 @@ class EndpointHttpServerTest(BaseModel):
             "followRedirects": obj.get("followRedirects") if obj.get("followRedirects") is not None else True,
             "httpTargetTime": obj.get("httpTargetTime"),
             "httpVersion": obj.get("httpVersion") if obj.get("httpVersion") is not None else 2,
+            "port": obj.get("port") if obj.get("port") is not None else 443,
             "sslVersion": obj.get("sslVersion"),
             "useNtlm": obj.get("useNtlm")
         })
