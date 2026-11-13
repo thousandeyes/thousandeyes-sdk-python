@@ -38,11 +38,11 @@ docs/EndpointProbeGatewayScore.md
 docs/EndpointProbeProxyScore.md
 docs/EndpointProbeVpnScore.md
 docs/EndpointResultRequestFilter.md
-docs/EndpointScheduledTest.md
 docs/EndpointScheduledTestType.md
 docs/EndpointSpecificAgentsSelectorConfig.md
 docs/EndpointTest.md
 docs/EndpointTestAuthType.md
+docs/EndpointTestBase.md
 docs/EndpointTestEthernetProfile.md
 docs/EndpointTestLinks.md
 docs/EndpointTestProtocol.md
@@ -214,11 +214,11 @@ src/thousandeyes_sdk/endpoint_test_results/models/endpoint_probe_gateway_score.p
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_probe_proxy_score.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_probe_vpn_score.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_result_request_filter.py
-src/thousandeyes_sdk/endpoint_test_results/models/endpoint_scheduled_test.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_scheduled_test_type.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_specific_agents_selector_config.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_auth_type.py
+src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_base.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_ethernet_profile.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_links.py
 src/thousandeyes_sdk/endpoint_test_results/models/endpoint_test_protocol.py
