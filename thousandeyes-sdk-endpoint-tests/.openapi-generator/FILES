@@ -37,6 +37,7 @@ docs/EndpointSpecificAgentsSelectorConfig.md
 docs/EndpointTest.md
 docs/EndpointTestAgentSelectorType.md
 docs/EndpointTestAuthType.md
+docs/EndpointTestBase.md
 docs/EndpointTestLinks.md
 docs/EndpointTestProtocol.md
 docs/EndpointTestSelfLink.md
@@ -96,6 +97,7 @@ src/thousandeyes_sdk/endpoint_tests/models/endpoint_specific_agents_selector_con
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_test.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_test_agent_selector_type.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_test_auth_type.py
+src/thousandeyes_sdk/endpoint_tests/models/endpoint_test_base.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_test_links.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_test_protocol.py
 src/thousandeyes_sdk/endpoint_tests/models/endpoint_test_self_link.py

@@ -4206,55 +4206,7 @@ OPERATION_MANIFEST = {
         success_body=json.loads("""
 
                 {
-                  "test" : {
-                    "server" : "www.example.com",
-                    "isSavedEvent" : false,
-                    "_links" : {
-                      "testResults" : [ {
-                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
-                      }, {
-                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
-                      } ],
-                      "self" : {
-                        "hreflang" : "hreflang",
-                        "templated" : true,
-                        "profile" : "profile",
-                        "name" : "name",
-                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
-                        "type" : "type",
-                        "deprecation" : "deprecation",
-                        "title" : "title"
-                      }
-                    },
-                    "isPrioritized" : false,
-                    "networkMeasurements" : true,
-                    "type" : "agent-to-server",
-                    "tcpProbeMode" : "auto",
-                    "labels" : [ {
-                      "labelId" : "961",
-                      "name" : "Artem label",
-                      "isBuiltin" : false
-                    }, {
-                      "labelId" : "961",
-                      "name" : "Artem label",
-                      "isBuiltin" : false
-                    } ],
-                    "protocol" : "icmp",
-                    "createdDate" : "2022-07-17T22:00:54Z",
-                    "ipVersion" : "V4_ONLY",
-                    "port" : 443,
-                    "isEnabled" : true,
-                    "modifiedDate" : "2022-07-17T22:00:54Z",
-                    "interval" : 60,
-                    "testId" : "281474976710706",
-                    "aid" : "1234",
-                    "agentSelectorConfig" : {
-                      "agentSelectorType" : "all-agents",
-                      "maxMachines" : 25
-                    },
-                    "hasPathTraceInSession" : true,
-                    "testName" : "Test name"
-                  },
+                  "test" : "",
                   "totalHits" : 12,
                   "endDate" : "2022-07-18T22:00:54Z",
                   "_links" : {
@@ -5068,55 +5020,7 @@ OPERATION_MANIFEST = {
         success_body=json.loads("""
 
                 {
-                  "test" : {
-                    "server" : "www.example.com",
-                    "isSavedEvent" : false,
-                    "_links" : {
-                      "testResults" : [ {
-                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
-                      }, {
-                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
-                      } ],
-                      "self" : {
-                        "hreflang" : "hreflang",
-                        "templated" : true,
-                        "profile" : "profile",
-                        "name" : "name",
-                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
-                        "type" : "type",
-                        "deprecation" : "deprecation",
-                        "title" : "title"
-                      }
-                    },
-                    "isPrioritized" : false,
-                    "networkMeasurements" : true,
-                    "type" : "agent-to-server",
-                    "tcpProbeMode" : "auto",
-                    "labels" : [ {
-                      "labelId" : "961",
-                      "name" : "Artem label",
-                      "isBuiltin" : false
-                    }, {
-                      "labelId" : "961",
-                      "name" : "Artem label",
-                      "isBuiltin" : false
-                    } ],
-                    "protocol" : "icmp",
-                    "createdDate" : "2022-07-17T22:00:54Z",
-                    "ipVersion" : "V4_ONLY",
-                    "port" : 443,
-                    "isEnabled" : true,
-                    "modifiedDate" : "2022-07-17T22:00:54Z",
-                    "interval" : 60,
-                    "testId" : "281474976710706",
-                    "aid" : "1234",
-                    "agentSelectorConfig" : {
-                      "agentSelectorType" : "all-agents",
-                      "maxMachines" : 25
-                    },
-                    "hasPathTraceInSession" : true,
-                    "testName" : "Test name"
-                  },
+                  "test" : "",
                   "_links" : {
                     "self" : {
                       "hreflang" : "hreflang",
@@ -5636,55 +5540,7 @@ OPERATION_MANIFEST = {
         success_body=json.loads("""
 
                 {
-                  "test" : {
-                    "server" : "www.example.com",
-                    "isSavedEvent" : false,
-                    "_links" : {
-                      "testResults" : [ {
-                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/network/filter"
-                      }, {
-                        "href" : "https://api.thousandeyes.com/v7/endpoint/test-results/scheduled-tests/281474976710706/pathvis"
-                      } ],
-                      "self" : {
-                        "hreflang" : "hreflang",
-                        "templated" : true,
-                        "profile" : "profile",
-                        "name" : "name",
-                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
-                        "type" : "type",
-                        "deprecation" : "deprecation",
-                        "title" : "title"
-                      }
-                    },
-                    "isPrioritized" : false,
-                    "networkMeasurements" : true,
-                    "type" : "agent-to-server",
-                    "tcpProbeMode" : "auto",
-                    "labels" : [ {
-                      "labelId" : "961",
-                      "name" : "Artem label",
-                      "isBuiltin" : false
-                    }, {
-                      "labelId" : "961",
-                      "name" : "Artem label",
-                      "isBuiltin" : false
-                    } ],
-                    "protocol" : "icmp",
-                    "createdDate" : "2022-07-17T22:00:54Z",
-                    "ipVersion" : "V4_ONLY",
-                    "port" : 443,
-                    "isEnabled" : true,
-                    "modifiedDate" : "2022-07-17T22:00:54Z",
-                    "interval" : 60,
-                    "testId" : "281474976710706",
-                    "aid" : "1234",
-                    "agentSelectorConfig" : {
-                      "agentSelectorType" : "all-agents",
-                      "maxMachines" : 25
-                    },
-                    "hasPathTraceInSession" : true,
-                    "testName" : "Test name"
-                  },
+                  "test" : "",
                   "endDate" : "2022-07-18T22:00:54Z",
                   "_links" : {
                     "next" : {
