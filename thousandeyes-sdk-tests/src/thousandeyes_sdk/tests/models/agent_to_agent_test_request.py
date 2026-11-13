@@ -51,13 +51,14 @@ class AgentToAgentTestRequest(BaseModel):
     direction: Optional[TestDirection] = None
     dscp: Optional[StrictStr] = Field(default=None, description="DSCP label.")
     dscp_id: Optional[TestDscpId] = Field(default=None, alias="dscpId")
-    mss: Optional[Annotated[int, Field(le=1400, strict=True, ge=20)]] = Field(default=None, description="Maximum segment size, in bytes.")
+    mss: Optional[Annotated[int, Field(le=9176, strict=True, ge=30)]] = Field(default=None, description="Maximum segment size, in bytes.")
     num_path_traces: Optional[Annotated[int, Field(le=10, strict=True, ge=1)]] = Field(default=3, description="Number of path traces executed by the agent.", alias="numPathTraces")
     path_trace_mode: Optional[TestPathTraceMode] = Field(default=None, alias="pathTraceMode")
     port: Optional[Annotated[int, Field(le=65535, strict=True, ge=1)]] = Field(default=49153, description="Target port.")
     protocol: Optional[AgentToAgentTestProtocol] = None
     randomized_start_time: Optional[StrictBool] = Field(default=False, description="Indicates whether agents should randomize the start time in each test round.", alias="randomizedStartTime")
     target_agent_id: StrictStr = Field(description="`agentId` of the target agent for the test.", alias="targetAgentId")
+    target_agent_interface: Optional[StrictStr] = Field(default=None, description="IP address of the target Enterprise Agent interface to use for the test. The value must match an address in the target agent's `ipAddresses` field returned by `GET /v7/agents`. This field is not supported for Cloud Agents or Enterprise Agent clusters. If omitted, the test does not select a specific target interface.", alias="targetAgentInterface")
     throughput_measurements: Optional[StrictBool] = Field(default=False, description="Enable or disable throughput measurements. Throughput measurements cannot be enabled when the source or target of the test is a cloud agent.", alias="throughputMeasurements")
     throughput_duration: Optional[Annotated[int, Field(le=30000, strict=True, ge=5000)]] = Field(default=10000, description="The throughput duration.", alias="throughputDuration")
     throughput_rate: Optional[Annotated[int, Field(le=1000, strict=True, ge=8)]] = Field(default=None, description="The throughput rate, only applicable for UDP protocol.", alias="throughputRate")
@@ -70,7 +71,7 @@ class AgentToAgentTestRequest(BaseModel):
     alert_rules: Optional[List[StrictStr]] = Field(default=None, description="List of alert rules IDs to apply to the test (get `ruleId` from `/alerts/rules` endpoint. If `alertsEnabled` is set to `true` and `alertRules` is not included on test creation or update, applicable user default alert rules will be used)", alias="alertRules")
     agents: List[TestAgentWithSourceIpRequest] = Field(description="Agents assigned to the test. To select a source interface, set `sourceIpAddress` on the same object as its `agentId`.")
     monitors: Optional[List[StrictStr]] = Field(default=None, description="Contains list of BGP monitor IDs (get `monitorId` from `/monitors` endpoint)")
-    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "direction", "dscp", "dscpId", "mss", "numPathTraces", "pathTraceMode", "port", "protocol", "randomizedStartTime", "targetAgentId", "throughputMeasurements", "throughputDuration", "throughputRate", "fixedPacketRate", "bgpMeasurements", "usePublicBgp", "labels", "tags", "sharedWithAccounts", "alertRules", "agents", "monitors"]
+    __properties: ClassVar[List[str]] = ["interval", "alertsEnabled", "enabled", "createdBy", "createdDate", "description", "liveShare", "modifiedBy", "modifiedDate", "savedEvent", "testId", "testName", "type", "_links", "direction", "dscp", "dscpId", "mss", "numPathTraces", "pathTraceMode", "port", "protocol", "randomizedStartTime", "targetAgentId", "targetAgentInterface", "throughputMeasurements", "throughputDuration", "throughputRate", "fixedPacketRate", "bgpMeasurements", "usePublicBgp", "labels", "tags", "sharedWithAccounts", "alertRules", "agents", "monitors"]
 
     model_config = ConfigDict(
         populate_by_name=True,
@@ -177,6 +178,7 @@ class AgentToAgentTestRequest(BaseModel):
             "protocol": obj.get("protocol"),
             "randomizedStartTime": obj.get("randomizedStartTime") if obj.get("randomizedStartTime") is not None else False,
             "targetAgentId": obj.get("targetAgentId"),
+            "targetAgentInterface": obj.get("targetAgentInterface"),
             "throughputMeasurements": obj.get("throughputMeasurements") if obj.get("throughputMeasurements") is not None else False,
             "throughputDuration": obj.get("throughputDuration") if obj.get("throughputDuration") is not None else 10000,
             "throughputRate": obj.get("throughputRate"),
