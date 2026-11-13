@@ -5,7 +5,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**alert_rules** | [**List[BaseRule]**](BaseRule.md) |  | [optional] 
+**alert_rules** | [**List[RuleListItem]**](RuleListItem.md) |  | [optional] 
 **links** | [**SelfLinks**](SelfLinks.md) |  | [optional] 
 
 ## Example
