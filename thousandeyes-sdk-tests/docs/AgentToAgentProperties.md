@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **protocol** | [**AgentToAgentTestProtocol**](AgentToAgentTestProtocol.md) |  | [optional] 
 **randomized_start_time** | **bool** | Indicates whether agents should randomize the start time in each test round. | [optional] [default to False]
 **target_agent_id** | **str** | &#x60;agentId&#x60; of the target agent for the test. | 
+**target_agent_interface** | **str** | IP address of the target Enterprise Agent interface to use for the test. The value must match an address in the target agent&#39;s &#x60;ipAddresses&#x60; field returned by &#x60;GET /v7/agents&#x60;. This field is not supported for Cloud Agents or Enterprise Agent clusters. If omitted, the test does not select a specific target interface. | [optional] 
 **throughput_measurements** | **bool** | Enable or disable throughput measurements. Throughput measurements cannot be enabled when the source or target of the test is a cloud agent. | [optional] [default to False]
 **throughput_duration** | **int** | The throughput duration. | [optional] [default to 10000]
 **throughput_rate** | **int** | The throughput rate, only applicable for UDP protocol. | [optional] 

@@ -148,6 +148,7 @@ Class | Method | HTTP request | Description
  - [EndpointTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTest.md)
  - [EndpointTestAgentSelectorType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestAgentSelectorType.md)
  - [EndpointTestAuthType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestAuthType.md)
+ - [EndpointTestBase](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestBase.md)
  - [EndpointTestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestLinks.md)
  - [EndpointTestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestProtocol.md)
  - [EndpointTestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestSelfLink.md)
