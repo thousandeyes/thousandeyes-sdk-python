@@ -29,6 +29,204 @@ class TestHTTPServerEndpointScheduledTestsApiIntegration(IntegrationTestBase):
         self.api = HTTPServerEndpointScheduledTestsApi(self.api_client)
 
 
+    def test_bulk_delete_http_server_endpoint_scheduled_tests_happy_path(self) -> None:
+        """Integration test for bulk_delete_http_server_endpoint_scheduled_tests success path"""
+        test_id = ["4503599627370497","4503599627370498"]
+        aid = '1234'
+        response_body_json = """
+                {
+                  "deletedTestIds" : [ "281474976710706", "281474976710707" ]
+                }
+                """
+        expected_response = json.loads(response_body_json)
+        response = self.api.bulk_delete_http_server_endpoint_scheduled_tests(
+
+            test_id=test_id,
+
+            aid=aid,
+
+            _headers=self.te_headers("bulk_delete_http_server_endpoint_scheduled_tests"),
+        )
+        assert_constructed_model_matches_example_json(response, expected_response)
+
+
+    def test_bulk_delete_http_server_endpoint_scheduled_tests_error_400(self) -> None:
+        """Integration test for bulk_delete_http_server_endpoint_scheduled_tests error path (HTTP 400)"""
+        test_id = ["4503599627370497","4503599627370498"]
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "maximumTestsSupported" : 200,
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(400)
+        ) as context:
+            self.api.bulk_delete_http_server_endpoint_scheduled_tests(
+
+                test_id=test_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("bulk_delete_http_server_endpoint_scheduled_tests", error_status="400"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_bulk_delete_http_server_endpoint_scheduled_tests_error_401(self) -> None:
+        """Integration test for bulk_delete_http_server_endpoint_scheduled_tests error path (HTTP 401)"""
+        test_id = ["4503599627370497","4503599627370498"]
+        aid = '1234'
+        error_body_json = """
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(401)
+        ) as context:
+            self.api.bulk_delete_http_server_endpoint_scheduled_tests(
+
+                test_id=test_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("bulk_delete_http_server_endpoint_scheduled_tests", error_status="401"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_bulk_delete_http_server_endpoint_scheduled_tests_error_403(self) -> None:
+        """Integration test for bulk_delete_http_server_endpoint_scheduled_tests error path (HTTP 403)"""
+        test_id = ["4503599627370497","4503599627370498"]
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(403)
+        ) as context:
+            self.api.bulk_delete_http_server_endpoint_scheduled_tests(
+
+                test_id=test_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("bulk_delete_http_server_endpoint_scheduled_tests", error_status="403"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_bulk_delete_http_server_endpoint_scheduled_tests_error_429(self) -> None:
+        """Integration test for bulk_delete_http_server_endpoint_scheduled_tests error path (HTTP 429)"""
+        test_id = ["4503599627370497","4503599627370498"]
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(429)
+        ) as context:
+            self.api.bulk_delete_http_server_endpoint_scheduled_tests(
+
+                test_id=test_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("bulk_delete_http_server_endpoint_scheduled_tests", error_status="429"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_bulk_delete_http_server_endpoint_scheduled_tests_error_500(self) -> None:
+        """Integration test for bulk_delete_http_server_endpoint_scheduled_tests error path (HTTP 500)"""
+        test_id = ["4503599627370497","4503599627370498"]
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(500)
+        ) as context:
+            self.api.bulk_delete_http_server_endpoint_scheduled_tests(
+
+                test_id=test_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("bulk_delete_http_server_endpoint_scheduled_tests", error_status="500"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_bulk_delete_http_server_endpoint_scheduled_tests_error_502(self) -> None:
+        """Integration test for bulk_delete_http_server_endpoint_scheduled_tests error path (HTTP 502)"""
+        test_id = ["4503599627370497","4503599627370498"]
+        aid = '1234'
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(502)
+        ) as context:
+            self.api.bulk_delete_http_server_endpoint_scheduled_tests(
+
+                test_id=test_id,
+
+                aid=aid,
+
+                _headers=self.te_headers("bulk_delete_http_server_endpoint_scheduled_tests", error_status="502"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+
+
     def test_create_http_server_endpoint_scheduled_test_happy_path(self) -> None:
         """Integration test for create_http_server_endpoint_scheduled_test success path"""
         request_body_json = """

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ip_address** | **str** | Network IP address. | [optional] [readonly] 
 **subnet_mask** | **str** | Network subnet mask - only for IPv4. | [optional] [readonly] 
+**prefix_length** | **int** | Number of bits in the network prefix, for IPv4 and IPv6. | [optional] [readonly] 
 **public_ip_address** | **str** | Network public IP address. | [optional] [readonly] 
 **local_prefix** | **str** | Network local prefix. | [optional] [readonly] 
 **public_ip_range** | **str** | Network public IP range. | [optional] [readonly] 

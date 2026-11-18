@@ -363,9 +363,6 @@ OPERATION_MANIFEST = {
         success_body=json.loads("""
 
                 {
-                  "severity" : "major",
-                  "expression" : "((hops((hopDelay >= 100 ms))))",
-                  "alertType" : "http-server",
                   "_links" : {
                     "self" : {
                       "hreflang" : "hreflang",
@@ -378,15 +375,45 @@ OPERATION_MANIFEST = {
                       "title" : "title"
                     }
                   },
-                  "includeCoveredPrefixes" : true,
-                  "visitedSitesFilter" : [ "app.thousandeyes.com" ],
                   "description" : "A rule description string",
-                  "roundsViolatingMode" : "exact",
                   "sensitivityLevel" : "medium",
                   "alertGroupType" : "endpoint",
                   "notifyOnClear" : true,
-                  "testIds" : [ "281474976710706", "271659" ],
                   "roundsViolatingOutOf" : 5,
+                  "optimization" : {
+                    "createdDate" : "2026-07-17T22:00:54Z",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "confidence" : "high",
+                    "id" : "3289d651-d557-42a3-9d9e-8cd2f2f8960c",
+                    "updatedDate" : "2026-07-24T22:00:54Z",
+                    "title" : "Fewer distractions from flapping alerts",
+                    "type" : "flapping",
+                    "rationale" : "This alert rule frequently triggers and clears within a short period, producing notifications that do not require action.",
+                    "status" : "active"
+                  },
+                  "minimumSourcesPct" : 99,
+                  "ruleName" : "The End of the Internet",
+                  "endpointLabelIds" : [ "123456", "123456" ],
+                  "ruleId" : "127094",
+                  "direction" : "to-target",
+                  "severity" : "major",
+                  "expression" : "((hops((hopDelay >= 100 ms))))",
+                  "alertType" : "http-server",
+                  "includeCoveredPrefixes" : true,
+                  "visitedSitesFilter" : [ "app.thousandeyes.com" ],
+                  "roundsViolatingMode" : "exact",
+                  "testIds" : [ "281474976710706", "271659" ],
                   "roundsViolatingRequired" : 2,
                   "isDefault" : true,
                   "endpointAgentIds" : [ "281474976710706", "281474976710706" ],
@@ -453,11 +480,7 @@ OPERATION_MANIFEST = {
                     "alertsEnabled" : true,
                     "testName" : "ThousandEyes Test"
                   } ],
-                  "minimumSourcesPct" : 99,
-                  "ruleName" : "The End of the Internet",
-                  "endpointLabelIds" : [ "123456", "123456" ],
                   "minimumSources" : 10,
-                  "ruleId" : "127094",
                   "notifications" : {
                     "thirdParty" : [ {
                       "integrationType" : "slack",
@@ -492,8 +515,7 @@ OPERATION_MANIFEST = {
                       "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     } ]
-                  },
-                  "direction" : "to-target"
+                  }
                 }
 
                 """),
@@ -599,6 +621,7 @@ OPERATION_MANIFEST = {
                     "description" : "A rule description string",
                     "roundsViolatingMode" : "exact",
                     "sensitivityLevel" : "medium",
+                    "hasOptimization" : true,
                     "alertGroupType" : "endpoint",
                     "notifyOnClear" : true,
                     "roundsViolatingOutOf" : 5,
@@ -620,6 +643,7 @@ OPERATION_MANIFEST = {
                     "description" : "A rule description string",
                     "roundsViolatingMode" : "exact",
                     "sensitivityLevel" : "medium",
+                    "hasOptimization" : true,
                     "alertGroupType" : "endpoint",
                     "notifyOnClear" : true,
                     "roundsViolatingOutOf" : 5,
@@ -700,6 +724,20 @@ OPERATION_MANIFEST = {
                   "type" : "type",
                   "title" : "title",
                   "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "503": ErrorResponseExpectation(
+                status=503,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "code" : "OPTIMIZATION_DATA_UNAVAILABLE",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 503
                 }"""),
                 content_type="application/json",
             ),

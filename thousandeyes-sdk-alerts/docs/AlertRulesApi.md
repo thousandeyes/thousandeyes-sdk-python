@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 Create alert rule
 
-Creates a new alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to create an alert rule. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+Creates a new alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to create an alert rule. The `optimization` field is system-generated and read-only; it is not included in create responses. Supplying `optimization` in the request body returns `400 Bad Request` with a field-level validation error stating that `optimization` is system-generated and read-only. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
 ### Example
 
@@ -186,7 +186,7 @@ void (empty response body)
 
 Retrieve alert rule
 
-Returns detailed information about an alert rule using the `ruleId`. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. If the `ruleId` doesn’t exist or is inaccessible by your account, an empty response is returned.
+Returns detailed information about an alert rule using the `ruleId`. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. If the `ruleId` doesn’t exist or is inaccessible by your account, `404` is returned; the same response is used for both cases so callers cannot distinguish a missing rule from an inaccessible one. This is the only alert-rule response that includes optimization details. No optimization query parameter is required. For callers with the `View alert rules` permission, `optimization` is a singular, system-generated, read-only object when an authorized lookup finds an active optimization, or explicit `null` when the lookup completes and none exists. If optimization lookup is temporarily unavailable, the alert rule is still returned with `200` and `optimization` is omitted; omission must not be interpreted as no optimization. An optimization-service timeout or failure does not fail this request or produce `503`. Callers without the `View alert rules` permission receive `403`.
 
 ### Example
 
@@ -267,11 +267,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **get_alerts_rules**
-> Rules get_alerts_rules(aid=aid)
+> Rules get_alerts_rules(aid=aid, has_optimization=has_optimization)
 
 List alert rules
 
-Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests.
+Returns a list of alert rules. Default rules for each test type are indicated with a boolean response (true or false); these default alert rules automatically apply to their respective test types. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. Each list row may include the response-only boolean `hasOptimization`. `true` means the authorized lookup completed and an active optimization exists. `false` means the lookup completed and no active optimization exists. If `hasOptimization` is omitted from a row, enrichment could not be completed and the absence must not be interpreted as `false`. Query `hasOptimization=true` returns only rows with an active optimization; `hasOptimization=false` returns only rows without one. Omitting the query parameter preserves the unfiltered list. When the query parameter is explicitly supplied and optimization data cannot be retrieved, the request returns `503` with `OPTIMIZATION_DATA_UNAVAILABLE`. Unfiltered requests remain `200` if enrichment is unavailable; affected rows omit `hasOptimization`. List rows do not include the full `optimization` object. Callers without the `View alert rules` permission receive `403`.
 
 ### Example
 
@@ -304,10 +304,11 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.alerts.AlertRulesApi(api_client)
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+    has_optimization = True # bool | Filters alert rules by whether they currently have an active optimization. `true` returns only rules with an active optimization; every successfully returned row contains `hasOptimization: true`. `false` returns only rules without an active optimization; every successfully returned row contains `hasOptimization: false`. When omitted, the list is unfiltered. Rows whose lookup succeeds include `hasOptimization` `true` or `false`; the field is omitted when enrichment is unavailable. When this parameter is explicitly supplied and optimization data cannot be retrieved, the request returns `503` with `OPTIMIZATION_DATA_UNAVAILABLE`. (optional)
 
     try:
         # List alert rules
-        api_response = api_instance.get_alerts_rules(aid=aid)
+        api_response = api_instance.get_alerts_rules(aid=aid, has_optimization=has_optimization)
         print("The response of AlertRulesApi->get_alerts_rules:\n")
         pprint(api_response)
     except Exception as e:
@@ -322,6 +323,7 @@ with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+ **has_optimization** | **bool**| Filters alert rules by whether they currently have an active optimization. &#x60;true&#x60; returns only rules with an active optimization; every successfully returned row contains &#x60;hasOptimization: true&#x60;. &#x60;false&#x60; returns only rules without an active optimization; every successfully returned row contains &#x60;hasOptimization: false&#x60;. When omitted, the list is unfiltered. Rows whose lookup succeeds include &#x60;hasOptimization&#x60; &#x60;true&#x60; or &#x60;false&#x60;; the field is omitted when enrichment is unavailable. When this parameter is explicitly supplied and optimization data cannot be retrieved, the request returns &#x60;503&#x60; with &#x60;OPTIMIZATION_DATA_UNAVAILABLE&#x60;. | [optional] 
 
 ### Return type
 
@@ -346,6 +348,7 @@ Name | Type | Description  | Notes
 **404** | Not found |  -  |
 **429** | Exhausted rate limit for the organization |  -  |
 **500** | Internal server error |  -  |
+**503** | Service unavailable. For requests that include &#x60;hasOptimization&#x60;, this response can indicate that optimization data could not be retrieved. Do not interpret an optimization-data-unavailable response as an empty result or as “no optimizations found.” |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -354,7 +357,7 @@ Name | Type | Description  | Notes
 
 Update alert rule
 
-Modifies an existing alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to modify an alert rule.  Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
+Modifies an existing alert rule in your account, using the provided POST data. This endpoint is limited to alert rules for Network & App Synthetics tests and Routing tests. The `Edit alert rules` permission is required to modify an alert rule. The `optimization` field is system-generated and read-only; it is not included in update responses. Supplying `optimization` in the request body returns `400 Bad Request` with a field-level validation error stating that `optimization` is system-generated and read-only. Note: Assigning an alert rule to a test during creation requires the `Edit tests` permission.
 
 ### Example
 

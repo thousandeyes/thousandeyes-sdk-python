@@ -4,12 +4,100 @@ All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**bulk_delete_agent_to_server_endpoint_scheduled_tests**](AgentToServerEndpointScheduledTestsApi.md#bulk_delete_agent_to_server_endpoint_scheduled_tests) | **DELETE** /endpoint/tests/scheduled-tests/agent-to-server | Bulk delete agent to server endpoint scheduled tests
 [**create_agent_to_server_endpoint_scheduled_test**](AgentToServerEndpointScheduledTestsApi.md#create_agent_to_server_endpoint_scheduled_test) | **POST** /endpoint/tests/scheduled-tests/agent-to-server | Creates agent to server endpoint scheduled test
 [**delete_agent_to_server_endpoint_scheduled_test**](AgentToServerEndpointScheduledTestsApi.md#delete_agent_to_server_endpoint_scheduled_test) | **DELETE** /endpoint/tests/scheduled-tests/agent-to-server/{testId} | Delete agent to server scheduled test
 [**get_agent_to_server_endpoint_scheduled_test**](AgentToServerEndpointScheduledTestsApi.md#get_agent_to_server_endpoint_scheduled_test) | **GET** /endpoint/tests/scheduled-tests/agent-to-server/{testId} | Retrieve agent to server endpoint scheduled test
 [**get_agent_to_server_endpoint_scheduled_tests**](AgentToServerEndpointScheduledTestsApi.md#get_agent_to_server_endpoint_scheduled_tests) | **GET** /endpoint/tests/scheduled-tests/agent-to-server | List agent to server endpoint scheduled tests
 [**update_agent_to_server_endpoint_scheduled_test**](AgentToServerEndpointScheduledTestsApi.md#update_agent_to_server_endpoint_scheduled_test) | **PATCH** /endpoint/tests/scheduled-tests/agent-to-server/{testId} | Update agent to server endpoint scheduled test
 
+
+# **bulk_delete_agent_to_server_endpoint_scheduled_tests**
+> EndpointTestBulkDeleteResult bulk_delete_agent_to_server_endpoint_scheduled_tests(test_id, aid=aid)
+
+Bulk delete agent to server endpoint scheduled tests
+
+Deletes multiple agent to server endpoint scheduled tests in one all-or-nothing operation. Missing test IDs are ignored.  Before any tests are deleted, all found tests are validated to ensure they belong to this test family and can be deleted by the caller or, for partner-owned tests, by the owning partner. If any validation check fails, no tests are deleted. 
+
+### Example
+
+* Bearer Authentication (BearerAuth):
+
+```python
+import thousandeyes_sdk.endpoint_tests
+from thousandeyes_sdk.endpoint_tests.models.endpoint_test_bulk_delete_result import EndpointTestBulkDeleteResult
+from thousandeyes_sdk.endpoint_tests.rest import ApiException
+from pprint import pprint
+
+# Defining the host is optional and defaults to https://api.thousandeyes.com/v7
+# See configuration.py for a list of all supported configuration parameters.
+configuration = thousandeyes_sdk.core.Configuration(
+    host = "https://api.thousandeyes.com/v7"
+)
+
+# The client must configure the authentication and authorization parameters
+# in accordance with the API server security policy.
+# Examples for each auth method are provided below, use the example that
+# satisfies your auth use case.
+
+# Configure Bearer authorization: BearerAuth
+configuration = thousandeyes_sdk.core.Configuration(
+    access_token = os.environ["BEARER_TOKEN"]
+)
+
+# Enter a context with an instance of the API client
+with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
+    # Create an instance of the API class
+    api_instance = thousandeyes_sdk.endpoint_tests.AgentToServerEndpointScheduledTestsApi(api_client)
+    test_id = ["4503599627370497","4503599627370498"] # List[str] | Endpoint test IDs to delete. Specify this parameter once for each test ID. The request must not contain more than the maximum number of tests supported by the operation. If the limit is exceeded, the `400 Bad Request` response includes the supported maximum in `maximumTestsSupported`.
+    aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
+
+    try:
+        # Bulk delete agent to server endpoint scheduled tests
+        api_response = api_instance.bulk_delete_agent_to_server_endpoint_scheduled_tests(test_id, aid=aid)
+        print("The response of AgentToServerEndpointScheduledTestsApi->bulk_delete_agent_to_server_endpoint_scheduled_tests:\n")
+        pprint(api_response)
+    except Exception as e:
+        print("Exception when calling AgentToServerEndpointScheduledTestsApi->bulk_delete_agent_to_server_endpoint_scheduled_tests: %s\n" % e)
+```
+
+
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **test_id** | [**List[str]**](str.md)| Endpoint test IDs to delete. Specify this parameter once for each test ID. The request must not contain more than the maximum number of tests supported by the operation. If the limit is exceeded, the &#x60;400 Bad Request&#x60; response includes the supported maximum in &#x60;maximumTestsSupported&#x60;. | 
+ **aid** | **str**| A unique identifier associated with your account group. You can retrieve your &#x60;AccountGroupId&#x60; from the &#x60;/account-groups&#x60; endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. | [optional] 
+
+### Return type
+
+[**EndpointTestBulkDeleteResult**](EndpointTestBulkDeleteResult.md)
+
+### Authorization
+
+[BearerAuth](../README.md#BearerAuth)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json, application/problem+json
+
+### HTTP response details
+
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The IDs of tests successfully deleted. |  -  |
+**400** | The request is invalid. Missing test IDs are ignored. Each test that is found must belong to the endpoint test family addressed by the operation and must be deletable by the caller or owning partner. If any validation check fails, no tests are deleted. When the request exceeds the bulk-delete limit, the response includes the maximum number of tests supported by the operation. |  -  |
+**401** | Unauthorized |  -  |
+**403** | Insufficient permissions to query endpoint |  -  |
+**429** | Exhausted rate limit for the organization |  -  |
+**500** | Internal server error |  -  |
+**502** | Bad Gateway |  -  |
+**0** | An error occurred |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **create_agent_to_server_endpoint_scheduled_test**
 > EndpointAgentToServerTest create_agent_to_server_endpoint_scheduled_test(endpoint_agent_to_server_test_request, aid=aid)

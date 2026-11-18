@@ -76,16 +76,16 @@ configuration = thousandeyes_sdk.core.Configuration(
 with thousandeyes_sdk.core.ApiClient(configuration) as api_client:
     # Create an instance of the API class
     api_instance = thousandeyes_sdk.endpoint_tests.AgentToServerEndpointDynamicTestsApi(api_client)
-    dynamic_test_request = thousandeyes_sdk.endpoint_tests.DynamicTestRequest() # DynamicTestRequest | 
+    test_id = ["4503599627370497","4503599627370498"] # List[str] | Endpoint test IDs to delete. Specify this parameter once for each test ID. The request must not contain more than the maximum number of tests supported by the operation. If the limit is exceeded, the `400 Bad Request` response includes the supported maximum in `maximumTestsSupported`.
     aid = '1234' # str | A unique identifier associated with your account group. You can retrieve your `AccountGroupId` from the `/account-groups` endpoint. Note that you must be assigned to the target account group. Specifying this parameter without being assigned to the target account group will result in an error response. (optional)
 
     try:
-        # Create endpoint dynamic test
-        api_response = api_instance.create_agent_to_server_endpoint_dynamic_test(dynamic_test_request, aid=aid)
-        print("The response of AgentToServerEndpointDynamicTestsApi->create_agent_to_server_endpoint_dynamic_test:\n")
+        # Bulk delete agent to server endpoint dynamic tests
+        api_response = api_instance.bulk_delete_agent_to_server_endpoint_dynamic_tests(test_id, aid=aid)
+        print("The response of AgentToServerEndpointDynamicTestsApi->bulk_delete_agent_to_server_endpoint_dynamic_tests:\n")
         pprint(api_response)
     except ApiException as e:
-        print("Exception when calling AgentToServerEndpointDynamicTestsApi->create_agent_to_server_endpoint_dynamic_test: %s\n" % e)
+        print("Exception when calling AgentToServerEndpointDynamicTestsApi->bulk_delete_agent_to_server_endpoint_dynamic_tests: %s\n" % e)
 
 ```
 
@@ -95,11 +95,13 @@ All URIs are relative to *https://api.thousandeyes.com/v7*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
+*AgentToServerEndpointDynamicTestsApi* | [**bulk_delete_agent_to_server_endpoint_dynamic_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointDynamicTestsApi.md#bulk_delete_agent_to_server_endpoint_dynamic_tests) | **DELETE** /endpoint/tests/dynamic-tests/agent-to-server | Bulk delete agent to server endpoint dynamic tests
 *AgentToServerEndpointDynamicTestsApi* | [**create_agent_to_server_endpoint_dynamic_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointDynamicTestsApi.md#create_agent_to_server_endpoint_dynamic_test) | **POST** /endpoint/tests/dynamic-tests/agent-to-server | Create endpoint dynamic test
 *AgentToServerEndpointDynamicTestsApi* | [**delete_agent_to_server_endpoint_dynamic_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointDynamicTestsApi.md#delete_agent_to_server_endpoint_dynamic_test) | **DELETE** /endpoint/tests/dynamic-tests/agent-to-server/{testId} | Delete agent to server dynamic test
 *AgentToServerEndpointDynamicTestsApi* | [**get_agent_to_server_endpoint_dynamic_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointDynamicTestsApi.md#get_agent_to_server_endpoint_dynamic_test) | **GET** /endpoint/tests/dynamic-tests/agent-to-server/{testId} | Retrieve endpoint dynamic test
 *AgentToServerEndpointDynamicTestsApi* | [**get_agent_to_server_endpoint_dynamic_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointDynamicTestsApi.md#get_agent_to_server_endpoint_dynamic_tests) | **GET** /endpoint/tests/dynamic-tests/agent-to-server | List endpoint dynamic tests
 *AgentToServerEndpointDynamicTestsApi* | [**update_agent_to_server_endpoint_dynamic_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointDynamicTestsApi.md#update_agent_to_server_endpoint_dynamic_test) | **PATCH** /endpoint/tests/dynamic-tests/agent-to-server/{testId} | Update agent to server dynamic test
+*AgentToServerEndpointScheduledTestsApi* | [**bulk_delete_agent_to_server_endpoint_scheduled_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointScheduledTestsApi.md#bulk_delete_agent_to_server_endpoint_scheduled_tests) | **DELETE** /endpoint/tests/scheduled-tests/agent-to-server | Bulk delete agent to server endpoint scheduled tests
 *AgentToServerEndpointScheduledTestsApi* | [**create_agent_to_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointScheduledTestsApi.md#create_agent_to_server_endpoint_scheduled_test) | **POST** /endpoint/tests/scheduled-tests/agent-to-server | Creates agent to server endpoint scheduled test
 *AgentToServerEndpointScheduledTestsApi* | [**delete_agent_to_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointScheduledTestsApi.md#delete_agent_to_server_endpoint_scheduled_test) | **DELETE** /endpoint/tests/scheduled-tests/agent-to-server/{testId} | Delete agent to server scheduled test
 *AgentToServerEndpointScheduledTestsApi* | [**get_agent_to_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointScheduledTestsApi.md#get_agent_to_server_endpoint_scheduled_test) | **GET** /endpoint/tests/scheduled-tests/agent-to-server/{testId} | Retrieve agent to server endpoint scheduled test
@@ -107,6 +109,7 @@ Class | Method | HTTP request | Description
 *AgentToServerEndpointScheduledTestsApi* | [**update_agent_to_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/AgentToServerEndpointScheduledTestsApi.md#update_agent_to_server_endpoint_scheduled_test) | **PATCH** /endpoint/tests/scheduled-tests/agent-to-server/{testId} | Update agent to server endpoint scheduled test
 *EndpointRealUserTestsApi* | [**get_endpoint_real_user_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointRealUserTestsApi.md#get_endpoint_real_user_tests) | **GET** /endpoint/tests/real-user-tests | List endpoint real user tests
 *EndpointScheduledTestsApi* | [**get_endpoint_scheduled_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointScheduledTestsApi.md#get_endpoint_scheduled_tests) | **GET** /endpoint/tests/scheduled-tests | List endpoint scheduled tests
+*HTTPServerEndpointScheduledTestsApi* | [**bulk_delete_http_server_endpoint_scheduled_tests**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/HTTPServerEndpointScheduledTestsApi.md#bulk_delete_http_server_endpoint_scheduled_tests) | **DELETE** /endpoint/tests/scheduled-tests/http-server | Bulk delete HTTP server endpoint scheduled tests
 *HTTPServerEndpointScheduledTestsApi* | [**create_http_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/HTTPServerEndpointScheduledTestsApi.md#create_http_server_endpoint_scheduled_test) | **POST** /endpoint/tests/scheduled-tests/http-server | Create HTTP server endpoint scheduled test
 *HTTPServerEndpointScheduledTestsApi* | [**delete_http_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/HTTPServerEndpointScheduledTestsApi.md#delete_http_server_endpoint_scheduled_test) | **DELETE** /endpoint/tests/scheduled-tests/http-server/{testId} | Delete HTTP server scheduled test
 *HTTPServerEndpointScheduledTestsApi* | [**get_http_server_endpoint_scheduled_test**](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/HTTPServerEndpointScheduledTestsApi.md#get_http_server_endpoint_scheduled_test) | **GET** /endpoint/tests/scheduled-tests/http-server/{testId} | Retrieves HTTP server endpoint scheduled test
@@ -148,6 +151,9 @@ Class | Method | HTTP request | Description
  - [EndpointTest](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTest.md)
  - [EndpointTestAgentSelectorType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestAgentSelectorType.md)
  - [EndpointTestAuthType](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestAuthType.md)
+ - [EndpointTestBase](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestBase.md)
+ - [EndpointTestBulkDeleteResult](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestBulkDeleteResult.md)
+ - [EndpointTestBulkDeleteValidationError](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestBulkDeleteValidationError.md)
  - [EndpointTestLinks](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestLinks.md)
  - [EndpointTestProtocol](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestProtocol.md)
  - [EndpointTestSelfLink](https://github.com/thousandeyes/thousandeyes-sdk-python//tree/main/thousandeyes-sdk-endpoint-tests/docs/EndpointTestSelfLink.md)

@@ -925,9 +925,6 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
         aid = '1234'
         response_body_json = """
                 {
-                  "severity" : "major",
-                  "expression" : "((hops((hopDelay >= 100 ms))))",
-                  "alertType" : "http-server",
                   "_links" : {
                     "self" : {
                       "hreflang" : "hreflang",
@@ -940,15 +937,45 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
                       "title" : "title"
                     }
                   },
-                  "includeCoveredPrefixes" : true,
-                  "visitedSitesFilter" : [ "app.thousandeyes.com" ],
                   "description" : "A rule description string",
-                  "roundsViolatingMode" : "exact",
                   "sensitivityLevel" : "medium",
                   "alertGroupType" : "endpoint",
                   "notifyOnClear" : true,
-                  "testIds" : [ "281474976710706", "271659" ],
                   "roundsViolatingOutOf" : 5,
+                  "optimization" : {
+                    "createdDate" : "2026-07-17T22:00:54Z",
+                    "_links" : {
+                      "appLink" : {
+                        "hreflang" : "hreflang",
+                        "templated" : true,
+                        "profile" : "profile",
+                        "name" : "name",
+                        "href" : "https://api.thousandeyes.com/v7/link/to/resource/id",
+                        "type" : "type",
+                        "deprecation" : "deprecation",
+                        "title" : "title"
+                      }
+                    },
+                    "confidence" : "high",
+                    "id" : "3289d651-d557-42a3-9d9e-8cd2f2f8960c",
+                    "updatedDate" : "2026-07-24T22:00:54Z",
+                    "title" : "Fewer distractions from flapping alerts",
+                    "type" : "flapping",
+                    "rationale" : "This alert rule frequently triggers and clears within a short period, producing notifications that do not require action.",
+                    "status" : "active"
+                  },
+                  "minimumSourcesPct" : 99,
+                  "ruleName" : "The End of the Internet",
+                  "endpointLabelIds" : [ "123456", "123456" ],
+                  "ruleId" : "127094",
+                  "direction" : "to-target",
+                  "severity" : "major",
+                  "expression" : "((hops((hopDelay >= 100 ms))))",
+                  "alertType" : "http-server",
+                  "includeCoveredPrefixes" : true,
+                  "visitedSitesFilter" : [ "app.thousandeyes.com" ],
+                  "roundsViolatingMode" : "exact",
+                  "testIds" : [ "281474976710706", "271659" ],
                   "roundsViolatingRequired" : 2,
                   "isDefault" : true,
                   "endpointAgentIds" : [ "281474976710706", "281474976710706" ],
@@ -1015,11 +1042,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
                     "alertsEnabled" : true,
                     "testName" : "ThousandEyes Test"
                   } ],
-                  "minimumSourcesPct" : 99,
-                  "ruleName" : "The End of the Internet",
-                  "endpointLabelIds" : [ "123456", "123456" ],
                   "minimumSources" : 10,
-                  "ruleId" : "127094",
                   "notifications" : {
                     "thirdParty" : [ {
                       "integrationType" : "slack",
@@ -1054,8 +1077,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
                       "integrationId" : "6e069ae9-8537-4120-b988-61bf8e0d8b87",
                       "target" : "https://example.com/test/webhooks/notifications"
                     } ]
-                  },
-                  "direction" : "to-target"
+                  }
                 }
                 """
         expected_response = json.loads(response_body_json)
@@ -1212,6 +1234,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
     def test_get_alerts_rules_happy_path(self) -> None:
         """Integration test for get_alerts_rules success path"""
         aid = '1234'
+        has_optimization = True
         response_body_json = """
                 {
                   "_links" : {
@@ -1235,6 +1258,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
                     "description" : "A rule description string",
                     "roundsViolatingMode" : "exact",
                     "sensitivityLevel" : "medium",
+                    "hasOptimization" : true,
                     "alertGroupType" : "endpoint",
                     "notifyOnClear" : true,
                     "roundsViolatingOutOf" : 5,
@@ -1256,6 +1280,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
                     "description" : "A rule description string",
                     "roundsViolatingMode" : "exact",
                     "sensitivityLevel" : "medium",
+                    "hasOptimization" : true,
                     "alertGroupType" : "endpoint",
                     "notifyOnClear" : true,
                     "roundsViolatingOutOf" : 5,
@@ -1276,6 +1301,8 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
 
             aid=aid,
 
+            has_optimization=has_optimization,
+
             _headers=self.te_headers("get_alerts_rules"),
         )
         assert_constructed_model_matches_example_json(response, expected_response)
@@ -1284,6 +1311,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
     def test_get_alerts_rules_error_401(self) -> None:
         """Integration test for get_alerts_rules error path (HTTP 401)"""
         aid = '1234'
+        has_optimization = True
         error_body_json = """
                 {
                   "error_description" : "Invalid access token",
@@ -1298,6 +1326,8 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
 
                 aid=aid,
 
+                has_optimization=has_optimization,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="401"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1306,6 +1336,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
     def test_get_alerts_rules_error_403(self) -> None:
         """Integration test for get_alerts_rules error path (HTTP 403)"""
         aid = '1234'
+        has_optimization = True
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1323,6 +1354,8 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
 
                 aid=aid,
 
+                has_optimization=has_optimization,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="403"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1331,6 +1364,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
     def test_get_alerts_rules_error_404(self) -> None:
         """Integration test for get_alerts_rules error path (HTTP 404)"""
         aid = '1234'
+        has_optimization = True
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1348,6 +1382,8 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
 
                 aid=aid,
 
+                has_optimization=has_optimization,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="404"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1356,6 +1392,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
     def test_get_alerts_rules_error_429(self) -> None:
         """Integration test for get_alerts_rules error path (HTTP 429)"""
         aid = '1234'
+        has_optimization = True
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1373,6 +1410,8 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
 
                 aid=aid,
 
+                has_optimization=has_optimization,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="429"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
@@ -1381,6 +1420,7 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
     def test_get_alerts_rules_error_500(self) -> None:
         """Integration test for get_alerts_rules error path (HTTP 500)"""
         aid = '1234'
+        has_optimization = True
         error_body_json = """
                 {
                   "instance" : "instance",
@@ -1398,7 +1438,38 @@ class TestAlertRulesApiIntegration(IntegrationTestBase):
 
                 aid=aid,
 
+                has_optimization=has_optimization,
+
                 _headers=self.te_headers("get_alerts_rules", error_status="500"),
+            )
+        assert_constructed_model_matches_example_json(context.exception.data, expected_error)
+
+
+    def test_get_alerts_rules_error_503(self) -> None:
+        """Integration test for get_alerts_rules error path (HTTP 503)"""
+        aid = '1234'
+        has_optimization = True
+        error_body_json = """
+                {
+                  "instance" : "instance",
+                  "code" : "OPTIMIZATION_DATA_UNAVAILABLE",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 503
+                }
+                """
+        expected_error = json.loads(error_body_json)
+        with self.assertRaises(
+            ApiException.exception_class_for_http_status(503)
+        ) as context:
+            self.api.get_alerts_rules(
+
+                aid=aid,
+
+                has_optimization=has_optimization,
+
+                _headers=self.te_headers("get_alerts_rules", error_status="503"),
             )
         assert_constructed_model_matches_example_json(context.exception.data, expected_error)
 

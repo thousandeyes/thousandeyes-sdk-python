@@ -1,4 +1,4 @@
-# EndpointTest
+# EndpointTestBase
 
 
 ## Properties
@@ -24,24 +24,23 @@ Name | Type | Description | Notes
 **test_name** | **str** | Name of the test. | [optional] 
 **type** | [**EndpointScheduledTestType**](EndpointScheduledTestType.md) |  | 
 **tcp_probe_mode** | [**TestProbeModeResponse**](TestProbeModeResponse.md) |  | [optional] 
-**port** | **int** | Port number. | [optional] [default to 443]
 
 ## Example
 
 ```python
-from thousandeyes_sdk.endpoint_instant_tests.models.endpoint_test import EndpointTest
+from thousandeyes_sdk.endpoint_tests.models.endpoint_test_base import EndpointTestBase
 
 # TODO update the JSON string below
 json = "{}"
-# create an instance of EndpointTest from a JSON string
-endpoint_test_instance = EndpointTest.from_json(json)
+# create an instance of EndpointTestBase from a JSON string
+endpoint_test_base_instance = EndpointTestBase.from_json(json)
 # print the JSON string representation of the object
-print(EndpointTest.to_json())
+print(EndpointTestBase.to_json())
 
 # convert the object into a dict
-endpoint_test_dict = endpoint_test_instance.to_dict()
-# create an instance of EndpointTest from a dict
-endpoint_test_from_dict = EndpointTest.from_dict(endpoint_test_dict)
+endpoint_test_base_dict = endpoint_test_base_instance.to_dict()
+# create an instance of EndpointTestBase from a dict
+endpoint_test_base_from_dict = EndpointTestBase.from_dict(endpoint_test_base_dict)
 ```
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

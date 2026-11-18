@@ -70,7 +70,7 @@ class AgentToServerTest(BaseModel):
     dscp: Optional[StrictStr] = Field(default=None, description="DSCP label.")
     dscp_id: Optional[TestDscpId] = Field(default=None, alias="dscpId")
     ipv6_policy: Optional[TestIpv6Policy] = Field(default=None, alias="ipv6Policy")
-    ping_payload_size: Optional[Annotated[int, Field(le=1400, strict=True, ge=0)]] = Field(default=None, description="Payload size (not total packet size) for the end-to-end metric's probes, ping payload size allows values from 0 to 1400 bytes. When set to null, payload sizes are 0 bytes for ICMP-based tests and 1 byte for TCP-based tests.", alias="pingPayloadSize")
+    ping_payload_size: Optional[Annotated[int, Field(le=9188, strict=True, ge=0)]] = Field(default=None, description="Payload size (not total packet size) for the end-to-end metric's probes, ping payload size allows values from 0 to 9188 bytes. When omitted or set to null, payload sizes are 0 bytes for ICMP-based tests and 1 byte for TCP-based tests.", alias="pingPayloadSize")
     network_measurements: Optional[StrictBool] = Field(default=False, description="View packet loss in 1-second intervals. This is only available for 1-minute interval tests. Set to `true` to enable network measurements.", alias="networkMeasurements")
     bgp_measurements: Optional[StrictBool] = Field(default=True, description="Set to `true` to enable bgp measurements.", alias="bgpMeasurements")
     use_public_bgp: Optional[StrictBool] = Field(default=True, description="Indicate if all available public BGP monitors should be used, when ommited defaults to `bgpMeasurements` value.", alias="usePublicBgp")
@@ -181,6 +181,11 @@ class AgentToServerTest(BaseModel):
                 if _item:
                     _items.append(_item.to_dict())
             _dict['monitors'] = _items
+        # set to None if ping_payload_size (nullable) is None
+        # and model_fields_set contains the field
+        if self.ping_payload_size is None and "ping_payload_size" in self.model_fields_set:
+            _dict['pingPayloadSize'] = None
+
         return _dict
 
     @classmethod
