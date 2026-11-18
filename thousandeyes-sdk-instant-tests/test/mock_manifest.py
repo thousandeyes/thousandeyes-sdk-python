@@ -535,6 +535,7 @@ OPERATION_MANIFEST = {
                   "dscp" : "Best Effort (DSCP 0)",
                   "pathTraceMode" : "classic",
                   "throughputRate" : 10,
+                  "targetAgentInterface" : "1.1.1.1",
                   "modifiedBy" : "user@user.com",
                   "testName" : "ThousandEyes Test",
                   "direction" : "to-target",
@@ -655,6 +656,7 @@ OPERATION_MANIFEST = {
                   "dscp" : "Best Effort (DSCP 0)",
                   "pathTraceMode" : "classic",
                   "throughputRate" : 10,
+                  "targetAgentInterface" : "1.1.1.1",
                   "modifiedBy" : "user@user.com",
                   "testName" : "ThousandEyes Test",
                   "direction" : "to-target",
@@ -902,7 +904,7 @@ OPERATION_MANIFEST = {
                     "name" : "Account name",
                     "aid" : "1234"
                   } ],
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "continuousMode" : false
                 }
 
@@ -959,7 +961,7 @@ OPERATION_MANIFEST = {
                   "randomizedStartTime" : false,
                   "modifiedDate" : "2022-07-17T22:00:54Z",
                   "testId" : "281474976710706",
-                  "pingPayloadSize" : 112,
+                  "pingPayloadSize" : 735,
                   "sharedWithAccounts" : [ "1234", "12345" ],
                   "continuousMode" : false
                 }

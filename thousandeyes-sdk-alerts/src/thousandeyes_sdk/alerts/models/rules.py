@@ -18,7 +18,7 @@ import json
 
 from pydantic import BaseModel, ConfigDict, Field
 from typing import Any, ClassVar, Dict, List, Optional
-from thousandeyes_sdk.alerts.models.base_rule import BaseRule
+from thousandeyes_sdk.alerts.models.rule_list_item import RuleListItem
 from thousandeyes_sdk.alerts.models.self_links import SelfLinks
 from typing import Optional, Set
 from typing_extensions import Self
@@ -27,7 +27,7 @@ class Rules(BaseModel):
     """
     Rules
     """ # noqa: E501
-    alert_rules: Optional[List[BaseRule]] = Field(default=None, alias="alertRules")
+    alert_rules: Optional[List[RuleListItem]] = Field(default=None, alias="alertRules")
     links: Optional[SelfLinks] = Field(default=None, alias="_links")
     __properties: ClassVar[List[str]] = ["alertRules", "_links"]
 
@@ -94,7 +94,7 @@ class Rules(BaseModel):
 
         _obj = cls.model_validate({
             **obj,
-            "alertRules": [BaseRule.from_dict(_item) for _item in obj["alertRules"]] if obj.get("alertRules") is not None else None,
+            "alertRules": [RuleListItem.from_dict(_item) for _item in obj["alertRules"]] if obj.get("alertRules") is not None else None,
             "_links": SelfLinks.from_dict(obj["_links"]) if obj.get("_links") is not None else None
         })
         return _obj

@@ -17,6 +17,114 @@ from sdk_test_support.mock_server_types import ErrorResponseExpectation, Operati
 
 OPERATION_MANIFEST = {
 
+    "bulk_delete_agent_to_server_endpoint_dynamic_tests": OperationExpectation(
+        operation_id="bulk_delete_agent_to_server_endpoint_dynamic_tests",
+        method="DELETE",
+        path="/endpoint/tests/dynamic-tests/agent-to-server",
+        path_param_examples={
+        },
+        success_status=200,
+        success_body=json.loads("""
+
+                {
+                  "deletedTestIds" : [ "281474976710706", "281474976710707" ]
+                }
+
+                """),
+
+        success_content_type="application/json",
+
+        request_body_example=None,
+        error_responses={
+
+            "400": ErrorResponseExpectation(
+                status=400,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "maximumTestsSupported" : 200,
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "401": ErrorResponseExpectation(
+                status=401,
+                body=json.loads("""
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }"""),
+                content_type="application/json",
+            ),
+
+            "403": ErrorResponseExpectation(
+                status=403,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "429": ErrorResponseExpectation(
+                status=429,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "500": ErrorResponseExpectation(
+                status=500,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "502": ErrorResponseExpectation(
+                status=502,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+        },
+    ),
+
     "create_agent_to_server_endpoint_dynamic_test": OperationExpectation(
         operation_id="create_agent_to_server_endpoint_dynamic_test",
         method="POST",
@@ -772,6 +880,114 @@ OPERATION_MANIFEST = {
 
             "404": ErrorResponseExpectation(
                 status=404,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "429": ErrorResponseExpectation(
+                status=429,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "500": ErrorResponseExpectation(
+                status=500,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "502": ErrorResponseExpectation(
+                status=502,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+        },
+    ),
+
+    "bulk_delete_agent_to_server_endpoint_scheduled_tests": OperationExpectation(
+        operation_id="bulk_delete_agent_to_server_endpoint_scheduled_tests",
+        method="DELETE",
+        path="/endpoint/tests/scheduled-tests/agent-to-server",
+        path_param_examples={
+        },
+        success_status=200,
+        success_body=json.loads("""
+
+                {
+                  "deletedTestIds" : [ "281474976710706", "281474976710707" ]
+                }
+
+                """),
+
+        success_content_type="application/json",
+
+        request_body_example=None,
+        error_responses={
+
+            "400": ErrorResponseExpectation(
+                status=400,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "maximumTestsSupported" : 200,
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "401": ErrorResponseExpectation(
+                status=401,
+                body=json.loads("""
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }"""),
+                content_type="application/json",
+            ),
+
+            "403": ErrorResponseExpectation(
+                status=403,
                 body=json.loads("""
                 {
                   "instance" : "instance",
@@ -1906,6 +2122,114 @@ OPERATION_MANIFEST = {
 
         request_body_example=None,
         error_responses={
+
+            "401": ErrorResponseExpectation(
+                status=401,
+                body=json.loads("""
+                {
+                  "error_description" : "Invalid access token",
+                  "error" : "invalid_token"
+                }"""),
+                content_type="application/json",
+            ),
+
+            "403": ErrorResponseExpectation(
+                status=403,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "429": ErrorResponseExpectation(
+                status=429,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "500": ErrorResponseExpectation(
+                status=500,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+            "502": ErrorResponseExpectation(
+                status=502,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
+
+        },
+    ),
+
+    "bulk_delete_http_server_endpoint_scheduled_tests": OperationExpectation(
+        operation_id="bulk_delete_http_server_endpoint_scheduled_tests",
+        method="DELETE",
+        path="/endpoint/tests/scheduled-tests/http-server",
+        path_param_examples={
+        },
+        success_status=200,
+        success_body=json.loads("""
+
+                {
+                  "deletedTestIds" : [ "281474976710706", "281474976710707" ]
+                }
+
+                """),
+
+        success_content_type="application/json",
+
+        request_body_example=None,
+        error_responses={
+
+            "400": ErrorResponseExpectation(
+                status=400,
+                body=json.loads("""
+                {
+                  "instance" : "instance",
+                  "maximumTestsSupported" : 200,
+                  "detail" : "detail",
+                  "type" : "type",
+                  "title" : "title",
+                  "errors" : [ {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  }, {
+                    "code" : "code",
+                    "field" : "field",
+                    "message" : "message"
+                  } ],
+                  "status" : 0
+                }"""),
+                content_type="application/json",
+            ),
 
             "401": ErrorResponseExpectation(
                 status=401,

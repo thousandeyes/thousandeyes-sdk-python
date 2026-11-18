@@ -28,6 +28,20 @@ class TestHTTPServerEndpointScheduledTestsApi(unittest.TestCase):
     def tearDown(self) -> None:
         pass
 
+    def test_bulk_delete_http_server_endpoint_scheduled_tests_models_validation(self) -> None:
+        """Test case for bulk_delete_http_server_endpoint_scheduled_tests request and response models"""
+
+        
+        response_body_json = """
+                {
+                  "deletedTestIds" : [ "281474976710706", "281474976710707" ]
+                }"""
+
+        response_loaded_json = json.loads(response_body_json)
+        response_from_json = thousandeyes_sdk.endpoint_tests.models.EndpointTestBulkDeleteResult.from_json(response_body_json)
+        assert_constructed_model_matches_example_json(response_from_json, response_loaded_json)
+        
+
     def test_create_http_server_endpoint_scheduled_test_models_validation(self) -> None:
         """Test case for create_http_server_endpoint_scheduled_test request and response models"""
         request_body_json = """
